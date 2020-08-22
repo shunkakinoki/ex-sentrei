@@ -8,7 +8,7 @@ jobs:
   cla:
     runs-on: ubuntu-latest
     steps:
-      - uses: peterjgrainger/action-create-branch@v1.0.0
+      - uses: peterjgrainger/action-create-branch@2.0.1
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
