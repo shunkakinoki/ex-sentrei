@@ -89,7 +89,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://www.shunkakinoki.com/"><img src="https://avatars0.githubusercontent.com/u/39187513?v=4" width="100px;" alt=""/><br /><sub><b>Shun Kakinoki</b></sub></a><br /><a href="https://github.com/sentrei/sentrei/commits?author=shunkakinoki" title="Code">💻</a> <a href="#projectManagement-shunkakinoki" title="Project Management">📆</a> <a href="#ideas-shunkakinoki" title="Ideas, Planning, & Feedback">🤔</a> <a href="#business-shunkakinoki" title="Business development">💼</a> <a href="#infra-shunkakinoki" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-    <td align="center"><a href="https://imgbot.net"><img src="https://avatars1.githubusercontent.com/u/31427850?v=4" width="100px;" alt=""/><br /><sub><b>Imgbot</b></sub></a><br /><a href="#maintenance-ImgBotApp" title="Maintenance">🚧</a> <a href="#a11y-ImgBotApp" title="Accessibility">️️️️♿️</a> <a href="#design-ImgBotApp" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/sentrei-bot"><img src="https://avatars2.githubusercontent.com/u/70007101?v=4" width="100px;" alt=""/><br /><sub><b>sentrei-bot</b></sub></a><br /><a href="https://github.com/sentrei/sentrei/commits?author=sentrei-bot" title="Code">💻</a> <a href="#maintenance-sentrei-bot" title="Maintenance">🚧</a> <a href="#platform-sentrei-bot" title="Packaging/porting to new platform">📦</a></td>
   </tr>
 </table>
