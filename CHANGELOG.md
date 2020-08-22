@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/sentrei/sentrei/compare/v1.0.3...v1.1.0) (2020-08-22)
+
+### Features
+
+- 🎸 refactor footer section ([cb52691](https://github.com/sentrei/sentrei/commit/cb526913f790e9d339049ce18fc7c6464e26ea25))
+
 ## [1.0.3](https://github.com/sentrei/sentrei/compare/v1.0.2...v1.0.3) (2020-08-22)
 
 ### Performance Improvements
