@@ -45,5 +45,3 @@ jobs:
           git config --local user.email 'github-actions[bot]@users.noreply.github.com'
           git commit -am "[sentrei-auto-fix]"
           git push
-      - run: |
-          yarn run build
