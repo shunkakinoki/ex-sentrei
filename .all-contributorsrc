@@ -17,6 +17,17 @@
         "business",
         "infra"
       ]
+    },
+    {
+      "login": "sentrei-bot",
+      "name": "sentrei-bot",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/70007101?v=4",
+      "profile": "https://github.com/sentrei-bot",
+      "contributions": [
+        "code",
+        "maintenance",
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
