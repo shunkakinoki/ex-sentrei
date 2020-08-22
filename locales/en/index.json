@@ -1,0 +1,94 @@
+{
+  "banner": {
+    "bannerHeaderOne": "Bond.",
+    "bannerHeaderThree": "Work.",
+    "bannerHeaderTwo": "Focus.",
+    "bannerTextOne": "A dedicated video conferencing tool",
+    "bannerTextRough": "get things done",
+    "bannerTextThree": "- A focus oriented virtual workspace -",
+    "bannerTextTwo": "that helps you ",
+    "googleText": "Sign up with Google",
+    "startText": "Get Started Now (Beta)"
+  },
+  "faq": {
+    "bodyOne": "Yes, it comes with unlimited time for anyone - as long as you don't have simultaneously three people on the workspace. In that case, you will have to create a seperate workspace for free (which supports up to 3 people) or upgrade to the Pro version.",
+    "bodyThree": "The dominant competitors on the market are premised on the fact that we will simultaneously communicate at all times, which hardly recreates the real needs for virtual workspaces. That's where we are here to help.",
+    "bodyTwo": "Yes, the video communication is encrypted under the industry standard Web RTC protocols.",
+    "sectionTitle": "FAQ",
+    "titleOne": "Does the virtual workspace really come with unlimited time?",
+    "titleThree": "What's the motivation behind the product?",
+    "titleTwo": "Is the video communication encrypted?"
+  },
+  "feature": {
+    "sectionTitle": "Features",
+    "subTitleOne": "Everyone can access the workspace anytime they like, just in the real world, so you can get things done.",
+    "subTitleThree": "Track daily analytics spent on the virtual workspace to achieve your personal goals",
+    "subTitleTwo": "We provide focus oriented features so that you will not get distracted easily",
+    "titleOne": "Unlimited Time",
+    "titleThree": "Meet personal goals",
+    "titleTwo": "Focus Oriented"
+  },
+  "pricing": {
+    "buttonTextOne": "Sign up for free",
+    "buttonTextThree": "Contact us",
+    "buttonTextTwo": "Learn more",
+    "description1One": "Unlimited time",
+    "description1Three": "Unlimited time",
+    "description1Two": "Unlimited time",
+    "description2One": "3 users included",
+    "description2Three": "Unlimited users & workspaces",
+    "description2Two": "Unlimited users",
+    "description3One": "Help center access",
+    "description3Three": "Designated success team",
+    "description3Two": "Help center access",
+    "perUser": "per user",
+    "priceMonth": "/mo",
+    "priceOne": "$0",
+    "priceThree": "$45",
+    "priceTwo": "$30",
+    "sectionTitle": "Pricing",
+    "subTitleTwo": "Most popular",
+    "titleOne": "Free",
+    "titleThree": "Enterprise",
+    "titleTwo": "Pro"
+  },
+  "product": {
+    "bottomSubTitle": "Our data analytics team will track everyone's presence on the workspace and present you with real-time updates for team productivity and efficiency, so that you can get your work done.",
+    "bottomTitleOne": " ",
+    "bottomTitleThree": " analytics and data",
+    "bottomTitleTwo": "Insightful",
+    "centerSubTitle": "Tired of minutes-restriced video conference apps? Our virtual workspace will be always there for you - just like in the physical world",
+    "centerTitleOne": " ",
+    "centerTitleThree": " Always available for everyone",
+    "centerTitleTwo": "Seamless.",
+    "topSubTitle": "Ever dreamed of having a perfect experience of virtually working with your colleagues without ever getting distracted? You can now focus solely on your work with the company of others all while listening to your favorite music",
+    "topTitleOne": " ",
+    "topTitleThree": " while focusing",
+    "topTitleTwo": "Bond together"
+  },
+  "screen": {
+    "labelOne": "Bond",
+    "labelThree": "Work",
+    "labelTwo": "Focus"
+  },
+  "slider": {
+    "titleOne": "The people from these teams are ",
+    "titleThree": " Sentrei",
+    "titleTwo": "loving"
+  },
+  "testimonial": {
+    "authorOne": "Shun Kakinoki",
+    "authorThree": "Shun Kakinoki",
+    "authorTwo": "Shun Kakinoki",
+    "bodyOne": "We don't have any actual testimonials yet, but I assure you we will build a great product!",
+    "bodyThree": "We don't have any actual testimonials yet, but I assure you we will build a great product!",
+    "bodyTwo": "We don't have any actual testimonials yet, but I assure you we will build a great product!",
+    "occupationOne": "Founder, Sentrei Inc.",
+    "occupationThree": "Founder, Sentrei Inc.",
+    "occupationTwo": "Founder, Sentrei Inc.",
+    "sectionTitle": "Testimonial",
+    "titleOne": "A Great Product",
+    "titleThree": "A Great Product",
+    "titleTwo": "A Great Product"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@sentrei/typedoc",
+  "version": "1.44.3",
+  "homepage": "https://sentrei.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sentrei/sentrei.git",
+    "directory": "packages/typedoc"
+  },
+  "license": "GPL-3.0-only",
+  "author": "Shun Kakinoki",
+  "scripts": {
+    "alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy",
+    "beta": "yarn run swap:beta && firebase use beta && yarn run deploy",
+    "build": "typedoc",
+    "deploy": "yarn run deploy:typedoc",
+    "deploy:typedoc": "firebase deploy --only hosting:typedoc",
+    "main": "yarn run swap:main && firebase use main && yarn run deploy",
+    "swap:alpha": "cp alpha.firebase.json firebase.json",
+    "swap:beta": "cp beta.firebase.json firebase.json",
+    "swap:main": "cp main.firebase.json firebase.json"
+  },
+  "dependencies": {
+    "typedoc": "^0.17.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "5915ac673cb6ddfe6cd4b6b93a8f71f6337aa24e"
+}

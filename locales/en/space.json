@@ -1,0 +1,28 @@
+{
+  "activity": {
+    "title": "Activities"
+  },
+  "dashboard": {
+    "create": "Create one",
+    "none": "You have no spaces ...",
+    "title": "My Spaces"
+  },
+  "invite": {
+    "invite": "Invite"
+  },
+  "leaderboard": {
+    "title": "Leaderboard"
+  },
+  "member": {
+    "title": "Members"
+  },
+  "settings": {
+    "title": "Space Settings"
+  },
+  "space": {
+    "createSpace": "Create Space",
+    "deleteSpace": "Delete Space",
+    "editSpace": "Edit Space",
+    "quitSpace": "Quit Space"
+  }
+}

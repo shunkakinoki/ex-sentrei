@@ -1,0 +1,51 @@
+name: UI
+on:
+  pull_request:
+    paths:
+      - "package.json"
+      - "tsconfig.json"
+      - "yarn.lock"
+      - ".github/workflows/ui.yml"
+      - "packages/@types/**"
+      - "packages/common/**"
+      - "packages/video/**"
+jobs:
+  ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.4.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@v2.1.1
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - run: |
+          yarn run typescript
+      - working-directory: packages/ui
+        run: |
+          yarn run build
+          yarn run test
+      - uses: codecov/codecov-action@v1.0.13
+        continue-on-error: true
+        timeout-minutes: 3
+        with:
+          file: packages/ui/coverage/lcov.info
+          name: sentrei
+          fail_ci_if_error: true
+          flags: ui

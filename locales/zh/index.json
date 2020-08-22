@@ -1,0 +1,94 @@
+{
+  "banner": {
+    "bannerHeaderOne": "键",
+    "bannerHeaderThree": "工作",
+    "bannerHeaderTwo": "焦点",
+    "bannerTextOne": "统一的虚拟工作区",
+    "bannerTextRough": "处不在",
+    "bannerTextThree": "-只需单击一下按钮，即可随时随地进行访问-",
+    "bannerTextTwo": "永无",
+    "googleText": "使用Google注册",
+    "startText": "入门-永久免费-"
+  },
+  "faq": {
+    "bodyOne": "是的，任何人都可以享受无限的时间-只要您在工作空间中同时没有三个人即可。在这种情况下，您将必须免费创建一个单独的工作区（最多支持3个人）或升级到Pro版本。",
+    "bodyThree": "市场上的主要竞争者都基于这样一个事实，那就是我们将始终保持同步交流，这几乎无法再现对虚拟工作区的真正需求。那就是我们在这里为您提供帮助的地方.",
+    "bodyTwo": "是的，视频通信是根据行业标准的Web RTC协议进行加密的。",
+    "sectionTitle": "FAQ",
+    "titleOne": "虚拟工作区真的有无限的时间吗？",
+    "titleThree": "产品背后的动机是什么？",
+    "titleTwo": "视频通信是否已加密？"
+  },
+  "feature": {
+    "sectionTitle": "特征",
+    "subTitleOne": "每个人都可以随时访问工作空间",
+    "subTitleThree": "跟踪花费在虚拟工作区上的每日分析以实现您的个人目标",
+    "subTitleTwo": "我们提供了针对焦点的功能，因此您不会轻易分心",
+    "titleOne": "无限时间",
+    "titleThree": "达到个人目标",
+    "titleTwo": "关注焦点"
+  },
+  "pricing": {
+    "buttonTextOne": "免费注册",
+    "buttonTextThree": "联系我们",
+    "buttonTextTwo": "开始吧",
+    "description1One": "无限时间",
+    "description1Three": "无限时间",
+    "description1Two": "无限时间",
+    "description2One": "包括3个用户",
+    "description2Three": "未限制的用户和工作区",
+    "description2Two": "无限的用户",
+    "description3One": "帮助中心访问",
+    "description3Three": "指定成功团队",
+    "description3Two": "帮助中心访问",
+    "perUser": "每个用户",
+    "priceMonth": "/月",
+    "priceOne": "$0",
+    "priceThree": "$45",
+    "priceTwo": "$30",
+    "sectionTitle": "Pricing",
+    "subTitleTwo": "最受欢迎",
+    "titleOne": "自由",
+    "titleThree": "企业",
+    "titleTwo": "对于"
+  },
+  "product": {
+    "bottomSubTitle": "我们的数据分析团队将跟踪每个人在工作区中的存在，并向您提供实时更新，以提高团队的工作效率",
+    "bottomTitleOne": " ",
+    "bottomTitleThree": "分析和数据",
+    "bottomTitleTwo": "深入的",
+    "centerSubTitle": "厌倦了分钟受限的视频会议应用程序？我们的虚拟工作空间将永远为您服务-就像现实世界一样",
+    "centerTitleOne": " ",
+    "centerTitleThree": "随时向所有人开放",
+    "centerTitleTwo": "24/7",
+    "topSubTitle": "想要一个面向远程的工作空间来与他人合作，而又不会分心吗？现在，您可以一边聆听自己喜欢的音乐，一边全神贯注地与他人一起工作",
+    "topTitleOne": " ",
+    "topTitleThree": "结合在一起",
+    "topTitleTwo": "聚焦时"
+  },
+  "screen": {
+    "labelOne": "键",
+    "labelThree": "工作",
+    "labelTwo": "焦点"
+  },
+  "slider": {
+    "titleOne": "这些团队的人",
+    "titleThree": " Sentrei",
+    "titleTwo": "都喜欢"
+  },
+  "testimonial": {
+    "authorOne": "中野信树",
+    "authorThree": "Shun Kakinoki",
+    "authorTwo": "Shun Kakinoki",
+    "bodyOne": "我们还没有任何实际的推荐，但是我向您保证，我们将打造出一个出色的产品！",
+    "bodyThree": "We don't have any actual testimonials yet, but I assure you we will build a great product!",
+    "bodyTwo": "We don't have any actual testimonials yet, but I assure you we will build a great product!",
+    "occupationOne": "Sentrei Inc.创始人",
+    "occupationThree": "Founder, Sentrei Inc.",
+    "occupationTwo": "Founder, Sentrei Inc.",
+    "sectionTitle": "Testimonial",
+    "titleOne": "很棒的产品",
+    "titleThree": "A Great Product",
+    "titleTwo": "A Great Product"
+  }
+}

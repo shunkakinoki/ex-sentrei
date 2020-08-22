@@ -1,0 +1,28 @@
+{
+  "banner": {
+    "fromSentreiTeam": "Love, from the Sentrei Team",
+    "journey": "for being part of the journey",
+    "support": "Sentrei wouldn't be possble without all of your support",
+    "thankYou": "Thank you"
+  },
+  "credits": {
+    "family": "Family",
+    "friends": "Friends"
+  },
+  "sentrei": {
+    "sentrei": "Sentrei Team"
+  },
+  "shunkakinoki": {
+    "family": {
+      "danKakinoki": "Dan Kakinoki",
+      "makiKakinoki": "Maki Kakinoki",
+      "yuKakinoki": "Yu Kakinoki"
+    },
+    "friends": {
+      "kojuFuruta": "Koju Furuta",
+      "ryotaroSaishu": "Ryotaro Saishu",
+      "yuiTonokawa": "Yui Tonokawa"
+    },
+    "shunkakinoki": "Shun Kakinoki"
+  }
+}

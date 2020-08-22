@@ -1,0 +1,82 @@
+{
+  "29:116": {
+    "name": "GradientBgs Tropical",
+    "id": "29:116",
+    "key": "",
+    "file": "FcE7ACUUJAey0gspwpFN48",
+    "description": "",
+    "width": 160,
+    "height": 60,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/851b/50b3/f8158bc0533fba3409fa8eea547113e9"
+  },
+  "42:46": {
+    "name": "GradientBgs Passion",
+    "id": "42:46",
+    "key": "",
+    "file": "FcE7ACUUJAey0gspwpFN48",
+    "description": "",
+    "width": 160,
+    "height": 60,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/d231/1347/e54947b872f207391560e9fa0b8ee814"
+  },
+  "66:17": {
+    "name": "GradientBgs Ocean",
+    "id": "66:17",
+    "key": "",
+    "file": "FcE7ACUUJAey0gspwpFN48",
+    "description": "",
+    "width": 110,
+    "height": 60,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/f1e6/b5c5/c0acbe772b580a5181fdbcc8c05d360f"
+  },
+  "22:1": {
+    "name": "Colours Primary",
+    "id": "22:1",
+    "key": "",
+    "file": "FcE7ACUUJAey0gspwpFN48",
+    "description": "",
+    "width": 160,
+    "height": 60,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/0681/fa92/009465c630440efb97e0178ba5f10f12"
+  },
+  "42:14": {
+    "name": "Colours Black",
+    "id": "42:14",
+    "key": "",
+    "file": "FcE7ACUUJAey0gspwpFN48",
+    "description": "",
+    "width": 110,
+    "height": 60,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/df57/7508/406e8ede54d92ca352de4476de009a6d"
+  },
+  "66:6": {
+    "name": "Colours Blue",
+    "id": "66:6",
+    "key": "",
+    "file": "FcE7ACUUJAey0gspwpFN48",
+    "description": "",
+    "width": 60,
+    "height": 60,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/17d1/8168/205181c20cc38b1d8ad04ddfb7377c2c"
+  },
+  "54:15": {
+    "name": "Colours White",
+    "id": "54:15",
+    "key": "",
+    "file": "FcE7ACUUJAey0gspwpFN48",
+    "description": "",
+    "width": 160,
+    "height": 60,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/e127/0a32/c1198783092689add57c78ce4089005c"
+  },
+  "54:20": {
+    "name": "Text Heading",
+    "id": "54:20",
+    "key": "",
+    "file": "FcE7ACUUJAey0gspwpFN48",
+    "description": "",
+    "width": 310,
+    "height": 132,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/81b8/9300/b42fc7de113fd3ec4a6969e4c705062d"
+  }
+}

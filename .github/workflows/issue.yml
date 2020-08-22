@@ -1,0 +1,12 @@
+name: Issue
+on:
+  issues:
+    types: [opened]
+jobs:
+  issue:
+    runs-on: ubuntu-latest
+    steps:
+      - if: github.actor == 'shunkakinoki'
+        uses: technote-space/assign-author@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,29 @@
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{json,mdx,yml,js,tf,ts,tsx}]
+indent_size = 2
+
+[Fastfile]
+indent_size = 2
+
+[*.{pbxproj,js,jsx,ts,tsx}]
+indent_style = none
+indent_size = none
+
+[Makefile]
+indent_style = tab
+
+[*.{arb,flr,png,gpg,html,snap}]
+charset = none
+end_of_line = none
+insert_final_newline = none
+trim_trailing_whitespace = none
+indent_style = none
+indent_size = none

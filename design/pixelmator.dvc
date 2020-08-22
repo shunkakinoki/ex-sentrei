@@ -1,0 +1,7 @@
+md5: 6721e7b73dcde40e9d2f567f1a9f17cb
+outs:
+- md5: 82293894ae297e24d68bae1ab2d5ae74.dir
+  path: pixelmator
+  cache: true
+  metric: false
+  persist: false

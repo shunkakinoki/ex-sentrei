@@ -1,0 +1,30 @@
+{
+  "card": {
+    "buttonTextOne": "無料でお申し込み頂けます",
+    "buttonTextThree": "お問い合わせ",
+    "buttonTextTwo": "始めましょう",
+    "description1One": "時間無制限",
+    "description1Three": "時間無制限",
+    "description1Two": "時間無制限",
+    "description2One": "3ユーザーを含む",
+    "description2Three": "制限のないユーザーとワークスペース",
+    "description2Two": "無制限のユーザー",
+    "description3One": "ヘルプセンターへのアクセス",
+    "description3Three": "専任ヘルプチーム",
+    "description3Two": "ヘルプセンターへのアクセス",
+    "perUser": "ユーザー",
+    "priceMonth": "/月",
+    "priceOne": "0円",
+    "priceThree": "4500円",
+    "priceTwo": "3000円",
+    "sectionTitle": "Pricing",
+    "subTitleTwo": "最も人気のある",
+    "titleOne": "無料",
+    "titleThree": "企業",
+    "titleTwo": "プロフェッショナル"
+  },
+  "pricing": {
+    "questions": "ご不明な点がございましたら、お気軽にお問い合わせください",
+    "title": "価格"
+  }
+}

@@ -1,0 +1,15 @@
+name: CodeQL
+on:
+  push:
+    branches:
+      - alpha
+      - beta
+      - main
+jobs:
+  codeql:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # - uses: github/codeql-action/init@v1
+      # - uses: github/codeql-action/autobuild@v1
+      # - uses: github/codeql-action/analyze@v1

@@ -1,0 +1,26 @@
+name: Lighthouse
+on:
+  schedule:
+    - cron: "0 0,8,16 * * *"
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - id: lighthouse
+        uses: treosh/lighthouse-ci-action@v3
+        with:
+          runs: 3
+          uploadArtifacts: true
+          urls: |
+            https://sentrei.com
+      - uses: actions-ecosystem/action-slack-notifier@v1
+        with:
+          slack_token: ${{ secrets.SLACK_APP_TOKEN }}
+          message: |
+            ${{ steps.lighthouse.outputs.resultsPath }}
+            ${{ steps.lighthouse.outputs.links }}
+            ${{ steps.lighthouse.outputs.assertionResults }}
+          channel: lighthouse
+          color: yellow
+          verbose: true

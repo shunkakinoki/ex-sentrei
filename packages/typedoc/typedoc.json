@@ -1,0 +1,14 @@
+{
+  "mode": "modules",
+  "out": "public",
+  "exclude": ["**/node_modules/**", "**/internal/**", "**/template/**"],
+  "name": "sentrei",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeNotExported": true,
+  "excludeExternals": true,
+  "hideGenerator": true,
+  "ignoreCompilerErrors": true,
+  "plugin": "none",
+  "listInvalidSymbolLinks": true
+}

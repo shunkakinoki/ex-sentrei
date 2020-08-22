@@ -1,0 +1,51 @@
+[
+  {
+    "command": " backup",
+    "permission": "none",
+    "issue_type": "both",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
+  },
+  {
+    "command": "deploy",
+    "permission": "admin",
+    "issue_type": "pull-request",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
+  },
+  {
+    "command": "figma",
+    "permission": "admin",
+    "issue_type": "issue",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
+  },
+  {
+    "command": "gcr",
+    "permission": "none",
+    "issue_type": "both",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
+  },
+  {
+    "command": "lgtm",
+    "permission": "admin",
+    "issue_type": "pull-request",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
+  },
+  {
+    "command": "lighthouse",
+    "permission": "none",
+    "issue_type": "both",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
+  },
+  {
+    "command": "sync",
+    "permission": "none",
+    "issue_type": "both",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
+  }
+]

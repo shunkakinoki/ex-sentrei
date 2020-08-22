@@ -1,0 +1,30 @@
+{
+  "card": {
+    "buttonTextOne": "Sign up for free",
+    "buttonTextThree": "Contact us",
+    "buttonTextTwo": "Get started",
+    "description1One": "Unlimited time",
+    "description1Three": "Unlimited time",
+    "description1Two": "Unlimited time",
+    "description2One": "3 users included",
+    "description2Three": "Unlimited users & workspaces",
+    "description2Two": "Unlimited users",
+    "description3One": "Help center access",
+    "description3Three": "Designated success team",
+    "description3Two": "Help center access",
+    "perUser": "per user",
+    "priceMonth": "/mo",
+    "priceOne": "$0",
+    "priceThree": "$45",
+    "priceTwo": "$30",
+    "sectionTitle": "Pricing",
+    "subTitleTwo": "Most popular",
+    "titleOne": "Free",
+    "titleThree": "Enterprise",
+    "titleTwo": "Pro"
+  },
+  "pricing": {
+    "questions": "If you have any questions, please don't hesitate to contact us",
+    "title": "Pricing"
+  }
+}

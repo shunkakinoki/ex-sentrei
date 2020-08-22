@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "site": "sentrei-main-blog",
+      "target": "blog",
+      "public": "public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

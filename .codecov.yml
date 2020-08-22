@@ -1,0 +1,23 @@
+coverage:
+  status:
+    project: off
+    patch: off
+flags:
+  ui:
+    paths:
+      - packages/ui/src
+    carryforward: true
+  video:
+    paths:
+      - packages/video/src
+    carryforward: true
+  web:
+    paths:
+      - packages/web/src
+    carryforward: true
+comment:
+  layout: "reach, diff, flags, files"
+  behavior: default
+  require_changes: false
+  require_base: no
+  require_head: no

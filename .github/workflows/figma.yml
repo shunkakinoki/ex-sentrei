@@ -1,0 +1,36 @@
+name: Figma
+on:
+  repository_dispatch:
+    types: [figma-cmd]
+jobs:
+  figma:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          find design/figma -name "*.png" -type f -delete
+      - uses: primer/figma-action@v1.0.0-alpha.2
+        with:
+          args: "format=png outputDir=design/figma/const"
+        env:
+          FIGMA_FILE_URL: "https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const"
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+      - uses: primer/figma-action@v1.0.0-alpha.2
+        with:
+          args: "format=png outputDir=design/figma/mobile"
+        env:
+          FIGMA_FILE_URL: "https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile"
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+      - uses: primer/figma-action@v1.0.0-alpha.2
+        with:
+          args: "format=png outputDir=design/figma/web"
+        env:
+          FIGMA_FILE_URL: "https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web"
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+      - uses: peter-evans/create-pull-request@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch-suffix: create-pull-request/figma
+          title: "chore: [sentrei-auto-pr]"
+          commit-message: "chore: [sentrei-auto-pr]"
+          committer: Shun Kakinoki <shunkakinoki@users.noreply.github.com>

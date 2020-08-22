@@ -1,0 +1,44 @@
+name: LGTM
+on:
+  repository_dispatch:
+    types: [lgtm-cmd]
+jobs:
+  lgtm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v2
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            github.issues.removeAllLabels({
+              issue_number: ${{ github.event.client_payload.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            })
+      - uses: actions/github-script@v2
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            github.issues.addLabels({
+              issue_number: ${{ github.event.client_payload.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['ready-to-merge'],
+            })
+      - if: github.actor != 'shunkakinoki'
+        uses: actions/github-script@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.pulls.createReview({
+              pull_number: ${{ github.event.client_payload.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              event: 'APPROVE',
+            })
+      - uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
+          reaction-type: hooray

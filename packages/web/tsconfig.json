@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "noEmit": true,
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@sentrei/types/*": ["../@types/dist/*"],
+      "@sentrei/common/*": ["../common/dist/*"],
+      "@sentrei/ui/*": ["../ui/dist/*"],
+      "@sentrei/video/*": ["../video/dist/*"],
+      "@sentrei/web/*": ["src/*"]
+    }
+  },
+  "include": ["pages_/**/*", "src/**/*", "next-env.d.ts"],
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../ui"
+    },
+    {
+      "path": "../video"
+    }
+  ]
+}

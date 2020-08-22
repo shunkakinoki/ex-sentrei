@@ -1,0 +1,24 @@
+{
+  "about": {
+    "investor": "投资人",
+    "mission": "任务",
+    "team": "球队"
+  },
+  "default": {
+    "about": "关于",
+    "home": "家",
+    "pricing": "价钱"
+  },
+  "header": {
+    "login": "登入",
+    "signup": "免费注册"
+  },
+  "landing": {
+    "faq": "常问问题",
+    "features": "特征",
+    "pricing": "价钱",
+    "product": "产品",
+    "testimonial": "感言",
+    "title": "森特雷"
+  }
+}

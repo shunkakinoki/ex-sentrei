@@ -1,0 +1,7 @@
+name: sentrei
+root: ~/ghq/github.com/sentrei/sentrei
+attach: true
+windows:
+  - zsh: pipenv shell
+  - zsh: pipenv shell
+  - zsh: pipenv shell

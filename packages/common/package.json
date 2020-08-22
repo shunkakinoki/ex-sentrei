@@ -1,0 +1,49 @@
+{
+  "name": "@sentrei/common",
+  "version": "1.44.3",
+  "homepage": "https://sentrei.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sentrei/sentrei.git",
+    "directory": "packages/common"
+  },
+  "license": "GPL-3.0-only",
+  "author": "Shun Kakinoki",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
+    "clean:dist": "rimraf dist",
+    "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
+    "jest": "jest --coverage",
+    "test": "yarn run jest",
+    "tsc": "tsc --p tsconfig.build.json",
+    "typescript": "yarn run clean && yarn run tsc",
+    "watch": "yarn run tsc -w --preserveWatchOutput"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@sentrei/types": "*",
+    "@sentry/browser": "^5.21.1",
+    "@types/lodash.get": "^4.4.6",
+    "@types/nprogress": "^0.2.0",
+    "dayjs": "^1.8.31",
+    "firebase": "^7.16.1",
+    "firebase-admin": "^9.0.0",
+    "lodash": "^4.17.20",
+    "lodash.get": "^4.4.2",
+    "mitt": "^2.1.0",
+    "next": "^9.5.2",
+    "nprogress": "^0.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "5915ac673cb6ddfe6cd4b6b93a8f71f6337aa24e"
+}

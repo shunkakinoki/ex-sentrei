@@ -1,0 +1,32 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "composite": true,
+    "jsx": "react",
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "../../.",
+    "paths": {
+      "@sentrei/types/*": ["../@types/dist/*"],
+      "@sentrei/common/*": ["../common/dist/*"],
+      "@sentrei/ui/*": ["src/*"],
+      "@sentrei/video/*": ["../video/dist/*"],
+      "@sentrei/locales/*": ["src/locales/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "../@types"
+    },
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../video"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "about": {
+    "investor": "投資家",
+    "mission": "ミッション",
+    "team": "チーム"
+  },
+  "default": {
+    "about": "約",
+    "home": "ホーム",
+    "pricing": "価格"
+  },
+  "header": {
+    "login": "Log In",
+    "signup": "Sign Up"
+  },
+  "landing": {
+    "faq": "FAQ",
+    "features": "特徴",
+    "pricing": "料金",
+    "product": "プロダクト",
+    "testimonial": "お客様の声",
+    "title": "セントレイ"
+  }
+}

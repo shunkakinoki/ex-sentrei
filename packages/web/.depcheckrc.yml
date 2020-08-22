@@ -1,0 +1,14 @@
+ignores:
+  [
+    "babel-*",
+    "image*",
+    "next-*",
+    "*-loader",
+    "@zeit/next-source-maps",
+    "jimp",
+    "sass",
+    "@cypress/*",
+    "@istanbuljs/*",
+  ]
+ignore-path: .gitignore
+skip-missing: true

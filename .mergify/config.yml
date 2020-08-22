@@ -1,0 +1,34 @@
+pull_request_rules:
+  - name: sentrei
+    conditions:
+      - label=ready-to-merge
+      - label!=packages/blog
+      - label!=packages/fastlane
+      - label!=packages/pioneer
+      - label!=packages/typedoc
+      - label!=packages/ui
+      - label!=packages/web
+    actions:
+      delete_head_branch:
+        force: true
+      merge:
+        method: merge
+        strict: smart
+  - name: sentrei-auto-pr
+    conditions:
+      - label=sentrei-auto-pr
+    actions:
+      delete_head_branch:
+        force: true
+      merge:
+        method: merge
+        strict: smart
+  - name: dependabot
+    conditions:
+      - author~=^dependabot(|-preview)\[bot\]$
+    actions:
+      delete_head_branch:
+        force: true
+      merge:
+        method: merge
+        strict: smart

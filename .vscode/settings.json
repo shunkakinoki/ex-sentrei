@@ -1,0 +1,47 @@
+{
+  "eslint.lintTask.options": ". -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "files.exclude": {
+    "**/packages/ui/src/locales/**": true
+  },
+  "i18n-ally.enabledFrameworks": ["i18next", "react"],
+  "i18n-ally.enabledParsers": ["js", "json", "ts"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.namespace": true,
+  "i18n-ally.sourceLanguage": "en",
+  "peacock.color": "#b52e31",
+  "python.linting.mypyEnabled": false,
+  "python.pythonPath": ".venv/bin/python",
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.promptToConfigure": false,
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": false,
+  "terminal.integrated.env.linux": {
+    "ZSH_INIT_COMMAND": "mux start sentrei"
+  },
+  "terminal.integrated.env.osx": {
+    "ZSH_INIT_COMMAND": "mux start sentrei"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#d04649",
+    "activityBar.activeBorder": "#37cb34",
+    "activityBar.background": "#d04649",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#37cb34",
+    "activityBarBadge.foreground": "#15202b",
+    "editorGroup.border": "#d04649",
+    "panel.border": "#d04649",
+    "sideBar.border": "#d04649",
+    "tab.activeBorder": "#d04649",
+    "titleBar.activeBackground": "#b52e31",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#b52e3199",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  }
+}

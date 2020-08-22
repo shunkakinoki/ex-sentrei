@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "ignore": ["node_modules", ".next", "out"],
+  "watch": ["locales/**/*", "pages_/**/*", "i18n.json"],
+  "ext": "json"
+}

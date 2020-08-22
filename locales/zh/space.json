@@ -1,0 +1,28 @@
+{
+  "activity": {
+    "title": "活动项目"
+  },
+  "dashboard": {
+    "create": "创建一个",
+    "none": "你没有空格...",
+    "title": "您的空间"
+  },
+  "invite": {
+    "invite": "邀请"
+  },
+  "leaderboard": {
+    "title": "排行榜"
+  },
+  "member": {
+    "title": "会员"
+  },
+  "settings": {
+    "title": "空间设定"
+  },
+  "space": {
+    "createSpace": "创造空间",
+    "deleteSpace": "删除空间",
+    "editSpace": "编辑空间",
+    "quitSpace": "退出空间"
+  }
+}

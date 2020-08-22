@@ -1,0 +1,22 @@
+{
+  "40:14": {
+    "name": "Progress Dot",
+    "id": "40:14",
+    "key": "",
+    "file": "0HJCBXV4H81774BKNzdTPs",
+    "description": "",
+    "width": 50,
+    "height": 10,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/b435/0e04/2f2c186be7c2803a1e41485cd7bb5d5c"
+  },
+  "41:4": {
+    "name": "Onboarding Button",
+    "id": "41:4",
+    "key": "",
+    "file": "0HJCBXV4H81774BKNzdTPs",
+    "description": "",
+    "width": 337,
+    "height": 54,
+    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/9bd0/938f/168329776c91a6287fc0b03ad0951941"
+  }
+}

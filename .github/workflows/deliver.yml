@@ -1,0 +1,27 @@
+name: Deliver
+on:
+  repository_dispatch:
+    types: [deliver-cmd]
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ steps.branch.outputs.branch }}
+    steps:
+      - run: |
+          echo $GITHUB_CONTEXT
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+      - id: branch
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+  fastlane:
+    needs: context
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: deploy-cmd
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ github.event.client_payload.slash_command.arg1 }}", "comment_id": "${{ github.event.client_payload.github.payload.comment.id }}", "environment": "deliver", "event_name": "release", "pull_request_number": "", "release": "true", "task": "fastlane", "tag": "fastlane", "url_prefix": ""}'

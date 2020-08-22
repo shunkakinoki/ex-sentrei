@@ -1,0 +1,21 @@
+name: Backup
+on:
+  repository_dispatch:
+    types: [backup-cmd]
+  schedule:
+    - cron: "0 0,8,16 * * *"
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ matrix.branch }}
+          fetch-depth: 0
+      - run: |
+          git fetch --quiet
+      - uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url: git@gitlab.com:sentrei/sentrei.git
+          ssh_private_key: ${{ secrets.GITLAB_SSH_KEY }}

@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Blank
+    url: https://github.com/sentrei/sentrei/issues/new
+    about: blank
+  - name: Chatops
+    url: https://github.com/sentrei/sentrei/issues/1#partial-timeline
+    about: Chatops
+  - name: Inspirations
+    url: https://github.com/sentrei/sentrei/issues/2#partial-timeline
+    about: Inspirations
+  - name: Timeline
+    url: https://github.com/sentrei/sentrei/issues/3#partial-timeline
+    about: Timeline

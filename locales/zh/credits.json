@@ -1,0 +1,28 @@
+{
+  "banner": {
+    "fromSentreiTeam": "来自Sentrei团队的爱",
+    "journey": "成为旅程的一部分",
+    "support": "没有您的全力支持，Sentrei不可能",
+    "thankYou": "谢谢"
+  },
+  "credits": {
+    "family": "家庭",
+    "friends": "友人"
+  },
+  "sentrei": {
+    "sentrei": "森特雷队"
+  },
+  "shunkakinoki": {
+    "family": {
+      "danKakinoki": "Dan Kakinoki",
+      "makiKakinoki": "Maki Kakinoki",
+      "yuKakinoki": "Yu Kakinoki"
+    },
+    "friends": {
+      "kojuFuruta": "Koju Furuta",
+      "ryotaroSaishu": "Ryotaro Saishu",
+      "yuiTonokawa": "Yui Tonokawa"
+    },
+    "shunkakinoki": "Shun Kakinoki"
+  }
+}

@@ -1,0 +1,19 @@
+name: Dummy
+on: push
+jobs:
+  ui:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
+  yarn:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
+  video:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0

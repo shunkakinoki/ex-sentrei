@@ -1,0 +1,89 @@
+{
+  "name": "sentrei",
+  "version": "1.44.3",
+  "private": true,
+  "homepage": "https://github.com/sentrei/sentrei",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sentrei/sentrei.git"
+  },
+  "license": "GPL-3.0-only",
+  "author": "Shun Kakinoki",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build --stream --scope={@sentrei/blog,@sentrei/pioneer,@sentrei/typedoc}",
+    "clean": "lerna clean -y",
+    "depcheck": "lerna exec --stream --no-bail 'yarn run depcheck .' --scope={@sentrei/common,@sentrei/ui,@sentrei/video,@sentrei/web}",
+    "env:set:all": "yarn run env:set:alpha && yarn run env:set:beta && yarn run env:set:main",
+    "env:set:alpha": "deploy-env development",
+    "env:set:beta": "deploy-env preview",
+    "env:set:main": "deploy-env production",
+    "eslint:check": "eslint . -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
+    "eslint:fix": "eslint --fix . -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
+    "firebase:alpha": "lerna run firebase:alpha --stream --scope @sentrei/web",
+    "firebase:beta": "lerna run firebase:beta --stream --scope @sentrei/web",
+    "firebase:login": "firebase login --no-localhost",
+    "firebase:main": "lerna run firebase:main --stream --scope @sentrei/web",
+    "fix": "yarn run jsonsort:fix && yarn run sort-package-json:fix && yarn run eslint:fix && yarn run prettier:fix",
+    "jsonsort:check": "jsonsort .devcontainer .vscode locales -a -c",
+    "jsonsort:fix": "jsonsort .devcontainer .vscode locales -a",
+    "lint": "yarn run jsonsort:check && yarn run sort-package-json:check && yarn run eslint:check && yarn run prettier:check",
+    "now-build": "yarn run typescript && lerna run build --scope @sentrei/web",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "publish:lerna": "lerna publish from-package --yes --dist-tag ${DIST_TAG}",
+    "release": "semantic-release",
+    "release-test": "semantic-release -d",
+    "sentry": "lerna run sentry --stream --parallel",
+    "sort-package-json:check": "sort-package-json 'package.json' 'packages/*/package.json' --check",
+    "sort-package-json:fix": "sort-package-json 'package.json' 'packages/*/package.json'",
+    "test": "yarn run depcheck && yarn run lint && yarn run release-test",
+    "typescript": "lerna run typescript --stream",
+    "typescript:clean": "lerna run clean --stream",
+    "typescript:watch": "nodemon --exec yarn run typescript",
+    "unsplash": "yarn run clean && yarn run bootstrap",
+    "watch": "lerna run watch --stream --parallel"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git-cz --hook || true"
+    }
+  },
+  "dependencies": {
+    "lerna": "^3.22.0",
+    "next": "^9.5.2",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.9.0",
+    "commitizen": "^4.0.4",
+    "depcheck": "^1.0.0",
+    "deploy-env": "^1.1.3",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-typescript": "^9.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "git-cz": "^4.7.0",
+    "husky": "^4.2.5",
+    "json-sort-cli": "^1.15.23",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.4",
+    "semantic-release": "^17.1.1",
+    "sort-package-json": "^1.43.0",
+    "vercel": "^19.2.0"
+  },
+  "engines": {
+    "npm": "please_use_yarn_instead"
+  }
+}

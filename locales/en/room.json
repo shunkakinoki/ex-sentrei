@@ -1,0 +1,13 @@
+{
+  "room": {
+    "createRoom": "Create Room",
+    "deleteRoom": "Delete Room",
+    "editRoom": "Edit Room",
+    "none": "You have no rooms ...",
+    "quitRoom": "Quit Room",
+    "settings": "Room Settings"
+  },
+  "settings": {
+    "title": "Room Settings"
+  }
+}

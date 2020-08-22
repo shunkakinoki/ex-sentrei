@@ -1,0 +1,16 @@
+name: Star
+on:
+  watch:
+    types: [started]
+jobs:
+  star:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-slack-notifier@v1
+        with:
+          slack_token: ${{ secrets.SLACK_APP_TOKEN }}
+          message: |
+            ${{ github.event.repository.stargazers_count }}
+          channel: github-star-log
+          color: blue
+          verbose: true

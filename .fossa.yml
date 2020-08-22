@@ -1,0 +1,45 @@
+version: 2
+cli:
+  server: https://app.fossa.com
+  fetcher: custom
+  project: https://github.com/sentrei/sentrei.git
+analyze:
+  modules:
+    - name: .
+      type: pip
+      target: .
+      path: .
+      options:
+        strategy: pipenv
+    - name: .
+      type: npm
+      target: .
+      path: .
+    - name: blog
+      type: npm
+      target: packages/blog
+      path: packages/blog
+    - name: common
+      type: npm
+      target: packages/common
+      path: packages/common
+    - name: pioneer
+      type: npm
+      target: packages/pioneer
+      path: packages/pioneer
+    - name: typedoc
+      type: npm
+      target: packages/typedoc
+      path: packages/typedoc
+    - name: ui
+      type: npm
+      target: packages/ui
+      path: packages/ui
+    - name: video
+      type: npm
+      target: packages/web
+      path: packages/video
+    - name: web
+      type: npm
+      target: packages/web
+      path: packages/web

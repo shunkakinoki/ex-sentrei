@@ -1,0 +1,30 @@
+{
+  "projects": {
+    "alpha": "sentrei-alpha",
+    "beta": "sentrei-beta",
+    "main": "sentrei-main"
+  },
+  "targets": {
+    "sentrei-alpha": {
+      "hosting": {
+        "typedoc": [
+          "sentrei-alpha-typedoc"
+        ]
+      }
+    },
+    "sentrei-beta": {
+      "hosting": {
+        "typedoc": [
+          "sentrei-beta-typedoc"
+        ]
+      }
+    },
+    "sentrei-main": {
+      "hosting": {
+        "typedoc": [
+          "sentrei-main-typedoc"
+        ]
+      }
+    }
+  }
+}

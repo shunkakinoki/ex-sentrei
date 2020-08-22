@@ -1,0 +1,40 @@
+{
+  "delete": {
+    "deleteRequired": "必须为“删除”",
+    "deleteType": "请输入“删除”"
+  },
+  "email": {
+    "check": "请查看你的邮箱",
+    "required": "电子邮件为必填项",
+    "valid": "请输入有效电子邮件"
+  },
+  "id": {
+    "idAlreadyUsed": "ID已被使用",
+    "idInvalid": "ID无效",
+    "idMatch": "ID必须匹配",
+    "idRequired": "ID为必填项",
+    "pleaseType": "请输入",
+    "toDelete": "删除",
+    "toQuit": "退出"
+  },
+  "name": {
+    "nameRequired": "名称为必填项"
+  },
+  "password": {
+    "match": "密码必须匹配",
+    "valid": "请输入有效密码"
+  },
+  "quit": {
+    "quitRequired": "必须填写“ QUIT”",
+    "quitType": "请输入“ QUIT”"
+  },
+  "type": {
+    "typeRequired": "类型为必填项"
+  },
+  "username": {
+    "usernameAlreadyUsed": "用户名已被使用",
+    "usernameInvalid": "无效的用户名",
+    "usernameNotExist": "用户名不存在",
+    "usernameRequired": "用户名为必填项"
+  }
+}

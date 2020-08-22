@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "site": "sentrei-alpha-typedoc",
+      "target": "typedoc",
+      "public": "public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

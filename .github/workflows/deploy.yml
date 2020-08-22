@@ -1,0 +1,330 @@
+name: Deploy
+on:
+  repository_dispatch:
+    types: [deploy-cmd]
+jobs:
+  blog:
+    if: github.event.client_payload.event_name == 'blog'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
+          environment: "Blog ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.4.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@v2.1.1
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - working-directory: packages/blog
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
+  pioneer:
+    if: github.event.client_payload.event_name == 'pioneer'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
+          environment: "Pioneer ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.4.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@v2.1.1
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - working-directory: packages/pioneer
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
+  typedoc:
+    if: github.event.client_payload.event_name == 'typedoc'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
+          environment: "Typedoc ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.4.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@v2.1.1
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - working-directory: packages/typedoc
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
+  ui:
+    if: github.event.client_payload.event_name == 'ui'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
+          environment: "UI ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.4.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@v2.1.1
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - run: |
+          yarn run typescript
+      - working-directory: packages/ui
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
+  web:
+    if: github.event.client_payload.event_name == 'web'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
+          environment: "Web ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.4.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@v2.1.1
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - run: |
+          yarn run typescript
+      - working-directory: packages/web
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - id: secrets
+        uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@0.1.3
+        with:
+          credentials: ${{ secrets.GCP_CREDENTIALS }}
+          secrets: |-
+            SERVICE_ACCOUNT_EMAIL:sentrei-main/github_${{ github.event.client_payload.base }}_email
+            SERVICE_ACCOUNT_KEY:sentrei-main/github_${{ github.event.client_payload.base }}_key
+            WEB_ENV:sentrei-main/web_${{ github.event.client_payload.base }}_env
+      - id: version
+        run: |
+          version=$(node -pe "require('./package.json').version")
+          echo "::set-output name=release::sentrei@${version}"
+      - working-directory: packages/web
+        run: |
+          echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
+      - working-directory: packages/web
+        run: |
+          echo "SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT}" >> .env
+          echo "SENTRY_RELEASE=${SENTRY_RELEASE}" >> .env
+        env:
+          SENTRY_ENVIRONMENT: ${{ github.event.client_payload.base }}
+          SENTRY_RELEASE: ${{ steps.version.outputs.release }}
+      - working-directory: packages/web
+        run: |
+          yarn run build
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: ${{ github.repository }}
+          tags: ${{ github.event.client_payload.tag }}
+          cache_froms: ${{ github.repository }}:${{ github.event.client_payload.tag }}
+          dockerfile: packages/web/Dockerfile
+          path: "."
+          always_pull: true
+          add_git_labels: true
+          tag_with_ref: true
+          tag_with_sha: true
+          push: true
+      - uses: docker/build-push-action@v1
+        with:
+          username: _json_key
+          password: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
+          registry: gcr.io
+          repository: sentrei-${{ github.event.client_payload.base }}/sentrei
+          tags: ${{ github.event.client_payload.tag }}
+          dockerfile: packages/web/Dockerfile
+          path: "."
+          always_pull: false
+          add_git_labels: true
+          tag_with_ref: false
+          tag_with_sha: false
+          push: true
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.3
+        with:
+          version: "286.0.0"
+          service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
+          service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
+          project_id: "sentrei-${{ github.event.client_payload.base }}"
+      - run: |
+          gcloud run deploy "sentrei-${{ github.event.client_payload.tag }}-web" \
+            --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.tag }}" \
+            --platform "managed" \
+            --region "us-central1" \
+            --allow-unauthenticated \
+            --quiet
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com

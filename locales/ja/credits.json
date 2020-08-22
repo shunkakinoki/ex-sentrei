@@ -1,0 +1,28 @@
+{
+  "banner": {
+    "fromSentreiTeam": "セントレイチームからの愛",
+    "journey": "旅の一部であるため",
+    "support": "セントレイはあなたのすべてのサポートなしではあり得ないでしょう",
+    "thankYou": "ありがとうございました"
+  },
+  "credits": {
+    "family": "家族",
+    "friends": "フレンズ"
+  },
+  "sentrei": {
+    "sentrei": "セントレイチーム"
+  },
+  "shunkakinoki": {
+    "family": {
+      "danKakinoki": "Dan Kakinoki",
+      "makiKakinoki": "Maki Kakinoki",
+      "yuKakinoki": "Yu Kakinoki"
+    },
+    "friends": {
+      "kojuFuruta": "Koju Furuta",
+      "ryotaroSaishu": "Ryotaro Saishu",
+      "yuiTonokawa": "Yui Tonokawa"
+    },
+    "shunkakinoki": "Shun Kakinoki"
+  }
+}

@@ -1,0 +1,3 @@
+ignores: ["@sentrei/*", "jest*", "mocha*", "twilio"]
+ignore-path: .gitignore
+skip-missing: true

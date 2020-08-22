@@ -1,0 +1,28 @@
+{
+  "activity": {
+    "title": "活動内容"
+  },
+  "dashboard": {
+    "create": "一つ作る",
+    "none": "スペースがありません...",
+    "title": "あなたのスペース"
+  },
+  "invite": {
+    "invite": "招待する"
+  },
+  "leaderboard": {
+    "title": "リーダーボード"
+  },
+  "member": {
+    "title": "会員"
+  },
+  "settings": {
+    "title": "スペース設定"
+  },
+  "space": {
+    "createSpace": "スペースを作成する",
+    "deleteSpace": "スペースを削除",
+    "editSpace": "スペースを編集",
+    "quitSpace": "スペースを終了"
+  }
+}

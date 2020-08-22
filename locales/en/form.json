@@ -1,0 +1,40 @@
+{
+  "delete": {
+    "deleteRequired": "'DELETE' is required",
+    "deleteType": "Please Type 'DELETE'"
+  },
+  "email": {
+    "check": "Please check your email",
+    "required": "Email is required",
+    "valid": "Please enter a valid email"
+  },
+  "id": {
+    "idAlreadyUsed": "ID is already used",
+    "idInvalid": "ID is invalid",
+    "idMatch": "ID must match",
+    "idRequired": "ID is required",
+    "pleaseType": "Please type",
+    "toDelete": "to Delete",
+    "toQuit": "to Quit"
+  },
+  "name": {
+    "nameRequired": "Name is required"
+  },
+  "password": {
+    "match": "Passwords must match",
+    "valid": "Please enter a valid password"
+  },
+  "quit": {
+    "quitRequired": "'QUIT' is required",
+    "quitType": "Please Type 'QUIT'"
+  },
+  "type": {
+    "typeRequired": "Type is required"
+  },
+  "username": {
+    "usernameAlreadyUsed": "Username is already used",
+    "usernameInvalid": "Username is invalid",
+    "usernameNotExist": "Username doesn't exist",
+    "usernameRequired": "Username is required"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "about": {
+    "investor": "Investors",
+    "mission": "Mission",
+    "team": "Team"
+  },
+  "default": {
+    "about": "About",
+    "home": "Home",
+    "pricing": "Pricing"
+  },
+  "header": {
+    "login": "Log In",
+    "signup": "Sign Up For Free"
+  },
+  "landing": {
+    "faq": "FAQ",
+    "features": "Features",
+    "pricing": "Pricing",
+    "product": "Product",
+    "testimonial": "Testimonials",
+    "title": "Sentrei"
+  }
+}

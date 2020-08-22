@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "main": "sentrei-main"
+  },
+  "targets": {
+    "sentrei-main": {
+      "hosting": {
+        "ui": [
+          "sentrei-main-ui"
+        ]
+      }
+    }
+  }
+}

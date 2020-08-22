@@ -1,0 +1,69 @@
+name: Web
+on:
+  pull_request:
+    paths:
+      - "package.json"
+      - "tsconfig.json"
+      - "yarn.lock"
+      - ".github/workflows/web.yml"
+      - "packages/@types/**"
+      - "packages/common/**"
+      - "packages/ui/**"
+      - "packages/video/**"
+      - "packages/web/**"
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.4.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@v2.1.1
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - run: |
+          yarn run typescript
+      - uses: chrnorm/deployment-action@releases/v1
+        id: pull
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.branch }}
+          target_url: https://${{ github.event.pull_request.base.ref }}.preview.sentrei.com
+          environment: "Web pull ${{ github.event.pull_request.base.ref }}"
+      - uses: amondnet/vercel-action@v19.0.1+3
+        timeout-minutes: 30
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          alias-domains: |
+            preview.sentrei.com
+            ${{ github.event.pull_request.base.ref }}.preview.sentrei.com
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.pull.outputs.deployment_id }}
+          target_url: https://${{ github.event.pull_request.base.ref }}.preview.sentrei.com
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.pull.outputs.deployment_id }}
+          target_url: https://${{ github.event.pull_request.base.ref }}.preview.sentrei.com

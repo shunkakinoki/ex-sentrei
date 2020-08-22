@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "site": "sentrei-main-pioneer",
+      "target": "pioneer",
+      "public": "src/.vuepress/dist",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

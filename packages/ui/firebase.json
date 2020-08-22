@@ -1,0 +1,10 @@
+{
+  "hosting": [
+    {
+      "site": "sentrei-main-ui",
+      "target": "ui",
+      "public": "out",
+      "predeploy": ["yarn run build"]
+    }
+  ]
+}

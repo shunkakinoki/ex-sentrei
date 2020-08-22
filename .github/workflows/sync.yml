@@ -1,0 +1,23 @@
+name: Sync
+on:
+  repository_dispatch:
+    types: [sync-cmd]
+  schedule:
+    - cron: "0 0,8,16 * * *"
+jobs:
+  sync:
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: [alpha, beta, cla]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ matrix.branch }}
+          fetch-depth: 0
+      - run: |
+          git config --local user.name 'github-actions[bot]'
+          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+          git fetch --quiet && git merge --ff-only origin/main && git push || true

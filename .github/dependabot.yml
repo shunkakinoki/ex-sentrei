@@ -1,0 +1,48 @@
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/.devcontainer"
+    schedule:
+      interval: "daily"
+      time: "00:00"
+    commit-message:
+      prefix: "perf"
+      prefix-development: "chore"
+      include: "scope"
+  - package-ecosystem: "docker"
+    directory: "/packages/web"
+    schedule:
+      interval: "daily"
+      time: "00:00"
+    commit-message:
+      prefix: "perf"
+      prefix-development: "chore"
+      include: "scope"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "00:00"
+    commit-message:
+      prefix: "perf"
+      prefix-development: "chore"
+      include: "scope"
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "00:00"
+    commit-message:
+      prefix: "perf"
+      prefix-development: "chore"
+      include: "scope"
+    versioning-strategy: increase
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "00:00"
+    commit-message:
+      prefix: "perf"
+      prefix-development: "chore"
+      include: "scope"

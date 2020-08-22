@@ -1,0 +1,76 @@
+{
+  "name": "@sentrei/video",
+  "version": "1.44.3",
+  "homepage": "https://sentrei.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sentrei/sentrei.git",
+    "directory": "packages/video"
+  },
+  "license": "GPL-3.0-only",
+  "author": "Shun Kakinoki",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
+    "clean:dist": "rimraf dist",
+    "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
+    "jest": "jest --coverage",
+    "jest:watch": "jest --watch",
+    "test": "yarn run jest",
+    "test:watch": "yarn run jest:watch",
+    "tsc": "tsc --p tsconfig.build.json",
+    "typescript": "yarn run clean && yarn run tsc",
+    "watch": "yarn run tsc -w --preserveWatchOutput"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
+    "@primer/octicons-react": "^9.0.0",
+    "@sentrei/common": "*",
+    "@sentrei/types": "*",
+    "@testing-library/jest-dom": "^5.11.2",
+    "@testing-library/react": "^10.4.3",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/d3-timer": "^1.0.9",
+    "@types/fscreen": "^1.0.1",
+    "@types/lodash.throttle": "^4.1.6",
+    "@types/node": "^12.12.26",
+    "@types/react": "^16.9.41",
+    "@types/twilio-video": "^2.7.0",
+    "clsx": "^1.1.1",
+    "d3-timer": "^1.0.10",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "fscreen": "^1.0.2",
+    "is-plain-object": "^4.1.1",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash.throttle": "^4.1.1",
+    "react": "^16.13.1",
+    "react-test-renderer": "^16.12.0",
+    "twilio": "^3.48.2",
+    "twilio-video": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "jest": "^26.1.0",
+    "jest-junit": "^11.1.0",
+    "mocha": "^8.0.1",
+    "mocha-junit-reporter": "^2.0.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^24.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "5915ac673cb6ddfe6cd4b6b93a8f71f6337aa24e"
+}

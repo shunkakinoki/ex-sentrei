@@ -1,0 +1,49 @@
+{
+  "hosting": [
+    {
+      "site": "sentrei-main",
+      "appAssociation": "AUTO",
+      "public": "public",
+      "ignore": ["**/static/**"],
+      "target": "web",
+      "headers": [
+        {
+          "source": "**/*.html",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(css|js|json)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=604800"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|eot|otf|ttf|ttc|woff|woff2|font.css)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=604800"
+            }
+          ]
+        }
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "sentrei-main-web",
+            "region": "us-central1"
+          }
+        }
+      ]
+    }
+  ]
+}

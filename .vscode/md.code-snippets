@@ -1,0 +1,21 @@
+{
+  "Day Sprint": {
+    "scope": "markdown",
+    "prefix": "day",
+    "body": [
+      "# Day Update",
+      "",
+      "## OKR",
+      "",
+      "### Key Results",
+      "",
+      "## Morning",
+      "",
+      "## Noon",
+      "",
+      "### Night",
+      ""
+    ],
+    "description": "Day Sprint Template"
+  }
+}

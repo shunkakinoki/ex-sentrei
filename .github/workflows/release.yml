@@ -1,0 +1,125 @@
+name: Release
+on:
+  push:
+    branches:
+      - alpha
+      - beta
+      - main
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ steps.branch.outputs.branch }}
+    steps:
+      - run: |
+          echo $GITHUB_CONTEXT
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+      - id: branch
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+  release:
+    if: github.actor != 'sentrei-bot'
+    runs-on: ubuntu-latest
+    needs: context
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN }}
+      - uses: actions/setup-node@v2.1.1
+        with:
+          always-auth: false
+          node-version: "14.4.0"
+          registry-url: https://registry.npmjs.org
+          scope: "@sentrei"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@v2.1.1
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - run: |
+          yarn run typescript
+      - run: |
+          yarn run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: "sentrei-bot"
+          GIT_COMMITTER_NAME: "sentrei-bot"
+          GIT_AUTHOR_EMAIL: "70007101+sentrei-bot@users.noreply.github.com"
+          GIT_COMMITTER_EMAIL: "70007101+sentrei-bot@users.noreply.github.com"
+      - if: needs.context.outputs.branch != 'main'
+        run: |
+          echo "::set-env name=DIST_TAG::${{ needs.context.outputs.branch }}"
+      - if: needs.context.outputs.branch == 'main'
+        run: |
+          echo "::set-env name=DIST_TAG::latest"
+      - run: |
+          cat <<< $(jq '.private = false' package.json) > package.json && npm publish . --tag $DIST_TAG || true
+          cat <<< $(jq '.private = true' package.json) > package.json
+          git stash && yarn run publish:lerna && git stash pop || true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  blog:
+    if: github.actor == 'sentrei-bot'
+    runs-on: ubuntu-latest
+    needs: context
+    steps:
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: deploy-cmd
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "blog", "pull_request_number": "", "release": "true", "task": "blog", "tag": "blog", "url_prefix": ""}'
+  pioneer:
+    if: github.actor == 'sentrei-bot'
+    runs-on: ubuntu-latest
+    needs: context
+    steps:
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: deploy-cmd
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "pioneer", "pull_request_number": "", "release": "true", "task": "pioneer", "tag": "pioneer", "url_prefix": ""}'
+  typedoc:
+    if: github.actor == 'sentrei-bot'
+    runs-on: ubuntu-latest
+    needs: context
+    steps:
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: deploy-cmd
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "typedoc", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
+  ui:
+    if: github.actor == 'sentrei-bot'
+    runs-on: ubuntu-latest
+    needs: context
+    steps:
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: deploy-cmd
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "ui", "pull_request_number": "", "release": "true", "task": "ui", "tag": "ui", "url_prefix": ""}'
+  web:
+    if: github.actor == 'sentrei-bot'
+    runs-on: ubuntu-latest
+    needs: context
+    steps:
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: deploy-cmd
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "web", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'

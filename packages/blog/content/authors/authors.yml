@@ -1,0 +1,8 @@
+- name: Shun Kakinoki
+  bio: Shun Kakinoki
+  avatar: ./avatars/shunkakinoki.png
+  featured: true
+  slug: shunkakinoki
+  social:
+    - name: github
+      url: https://github.com/shunkakinoki
