@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/sentrei/sentrei/compare/v1.0.2...v1.0.3) (2020-08-22)
+
+### Performance Improvements
+
+- **deps:** bump peterjgrainger/action-create-branch ([213ae0f](https://github.com/sentrei/sentrei/commit/213ae0f91aec33758b7387d07fd546879523386b))
+
 ## [1.0.2](https://github.com/sentrei/sentrei/compare/v1.0.1...v1.0.2) (2020-08-22)
 
 ### Performance Improvements
