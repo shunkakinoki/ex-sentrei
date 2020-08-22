@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: github.actor == 'shunkakinoki'
-        uses: actions/github-script@v2
+        uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -21,7 +21,7 @@ jobs:
           github.actor == 'dependabot-preview[bot]' ||
           github.actor == 'imgbot' ||
           github.actor == 'imgbot[bot]'
-        uses: actions/github-script@v2
+        uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
@@ -32,7 +32,7 @@ jobs:
               event: 'APPROVE',
             })
       - if: contains(toJson(github.event.pull_request.title), '[sentrei-auto-pr]') == true
-        uses: actions/github-script@v2
+        uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
