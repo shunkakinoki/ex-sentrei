@@ -48,13 +48,16 @@ export default function FooterSection(): JSX.Element {
         <Typography variant="h6" gutterBottom>
           {t("footer:footer.product")}
         </Typography>
-        <Link href="/pitch">
+        <MuiLink href="/pitch">
           <Typography gutterBottom>{t("footer:footer.pitch")}</Typography>
-        </Link>
-        <Link href="/pricing">
+        </MuiLink>
+        <MuiLink href="/pricing">
           <Typography gutterBottom>{t("footer:footer.pricing")}</Typography>
-        </Link>
-        <Link href="https://github.com/sentrei/sentrei/releases">
+        </MuiLink>
+        <Link
+          href="https://github.com/sentrei/sentrei/releases"
+          target="_blank"
+        >
           <Typography gutterBottom>{t("footer:footer.releases")}</Typography>
         </Link>
       </Grid>
