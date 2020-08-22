@@ -25,6 +25,6 @@ jobs:
           path-to-signatures: ".github/signatures/v1/cla.json"
           path-to-cla-document: "https://github.com/sentrei/sentrei/blob/main/CLA.md"
           branch: "cla"
-          allowlist: dependabot[bot],github-actions[bot],mergify[bot]
+          allowlist: allcontributors[bot],dependabot[bot],github-actions[bot],ImgBotApp,mergify[bot]
           empty-commit-flag: false
           blockchain-storage-flag: false
