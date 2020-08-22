@@ -14,10 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.BOT_TOKEN }}
           ref: ${{ matrix.branch }}
           fetch-depth: 0
       - run: |
-          git config --local user.name 'github-actions[bot]'
-          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --local user.name 'sentrei-bot'
+          git config --local user.email '70007101+sentrei-bot@users.noreply.github.com'
           git fetch --quiet && git merge --ff-only origin/main && git push || true
