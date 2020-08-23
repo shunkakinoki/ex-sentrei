@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/sentrei/sentrei/compare/v1.1.0...v1.1.1) (2020-08-23)
+
+### Performance Improvements
+
+- ⚡️ ini color labels ([eb6da04](https://github.com/sentrei/sentrei/commit/eb6da0422f51f8735497cf7d02991f3b5bc42681))
+
 # [1.1.0](https://github.com/sentrei/sentrei/compare/v1.0.3...v1.1.0) (2020-08-22)
 
 ### Features
