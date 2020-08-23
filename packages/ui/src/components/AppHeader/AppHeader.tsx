@@ -8,6 +8,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import * as React from "react";
 
 import Profile from "@sentrei/types/models/Profile";
+import AppTab from "@sentrei/ui/components/AppTab";
 import ListMenu from "@sentrei/ui/components/ListMenu";
 import Logo from "@sentrei/ui/components/Logo";
 import ProfileMenu from "@sentrei/ui/components/ProfileMenu";
@@ -100,6 +101,7 @@ export default function AppHeader({
           />
         </Toolbar>
       </AppBar>
+      <AppTab />
     </>
   );
 }
