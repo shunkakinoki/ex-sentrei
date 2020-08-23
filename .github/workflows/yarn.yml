@@ -35,8 +35,6 @@ jobs:
       - run: |
           yarn install --frozen-lockfile
       - run: |
-          yarn run typescript
-      - run: |
           yarn run test
       - if: failure()
         run: |
