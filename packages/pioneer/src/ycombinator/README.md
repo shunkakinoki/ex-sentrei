@@ -160,7 +160,7 @@ but I will get kicked out next March.
 
 #### How do or will you make money? How much could you make?
 
-- We charge $30/month per user.
+- We charge \$30/month per user.
 - Roughly at least 50~60% gross margin.
 - I could be the best decision your organization has ever made
 
