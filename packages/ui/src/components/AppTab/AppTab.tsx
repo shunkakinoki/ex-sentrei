@@ -55,9 +55,10 @@ export default function AppTab(): JSX.Element {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <AntTabs value={value} onChange={handleChange} aria-label="ant example">
           <AntTab label={t("common:common.dashboard")} />
+          <AntTab label={t("common:common.rooms")} />
           <AntTab label={t("common:common.activity")} />
           <AntTab label={t("common:common.leaderboard")} />
           <AntTab label={t("common:common.members")} />
