@@ -27,4 +27,3 @@ jobs:
           branch: "cla"
           allowlist: allcontributors[bot],dependabot[bot],github-actions[bot],ImgBotApp,mergify[bot]
           empty-commit-flag: false
-          blockchain-storage-flag: false
