@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/sentrei/sentrei/compare/v1.1.6...v1.1.7) (2020-08-24)
+
+### Performance Improvements
+
+- ⚡️ complete pioneer week ([c97fc0d](https://github.com/sentrei/sentrei/commit/c97fc0d09756d724c07771e2856b8279db2e75c6))
+- ⚡️ ini sus week update ([446b8a9](https://github.com/sentrei/sentrei/commit/446b8a92c552c1e7812d0b83770625c7f1759496))
+
 ## [1.1.6](https://github.com/sentrei/sentrei/compare/v1.1.5...v1.1.6) (2020-08-24)
 
 ### Performance Improvements
