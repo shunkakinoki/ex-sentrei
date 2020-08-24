@@ -45,7 +45,7 @@
 | ------- | ---- | ------- | ------- |
 | Blog | https://blog.sentrei.com | [`packages/blog`](packages/blog) | [![version](https://img.shields.io/npm/v/@sentrei/blog/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/blog) |
 | Pioneer | https://pioneer.sentrei.com | [`packages/pioneer`](packages/pioneer) | [![version](https://img.shields.io/npm/v/@sentrei/pioneer/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/sentrei) |
-| Sentrei | https://preview.sentrei.com | [`sentrei`](package.json) | [![version](https://img.shields.io/npm/v/sentrei/latest.svg?color=success)](https://www.npmjs.com/package/sentrei) |
+| Sentrei | https://sentrei.com | [`sentrei`](package.json) | [![version](https://img.shields.io/npm/v/sentrei/latest.svg?color=success)](https://www.npmjs.com/package/sentrei) |
 <!-- prettier-ignore-end -->
 
 ### Components 🧰
