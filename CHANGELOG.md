@@ -1,3 +1,9 @@
+## [1.1.4](https://github.com/sentrei/sentrei/compare/v1.1.3...v1.1.4) (2020-08-24)
+
+### Performance Improvements
+
+- **deps:** bump react-player from 2.6.0 to 2.6.1 ([ec86a0b](https://github.com/sentrei/sentrei/commit/ec86a0bfa4c3bfbc0cae8b2acee29344acb0e842))
+
 ## [1.1.3](https://github.com/sentrei/sentrei/compare/v1.1.2...v1.1.3) (2020-08-24)
 
 ### Performance Improvements
