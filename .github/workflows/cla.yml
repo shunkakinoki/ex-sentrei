@@ -22,8 +22,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          allowlist: allcontributors[bot],dependabot[bot],github-actions[bot],ImgBotApp,mergify[bot]
+          branch: "cla"
           path-to-signatures: ".github/signatures/v1/cla.json"
           path-to-cla-document: "https://github.com/sentrei/sentrei/blob/main/CLA.md"
-          branch: "cla"
-          allowlist: allcontributors[bot],dependabot[bot],github-actions[bot],ImgBotApp,mergify[bot]
-          empty-commit-flag: false
