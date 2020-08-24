@@ -1,3 +1,9 @@
+## [1.1.5](https://github.com/sentrei/sentrei/compare/v1.1.4...v1.1.5) (2020-08-24)
+
+### Performance Improvements
+
+- **deps:** bump @google-cloud/firestore from 4.1.1 to 4.2.0 ([99d4beb](https://github.com/sentrei/sentrei/commit/99d4beb31a468803b1466de64a3bb07fc9049474))
+
 ## [1.1.4](https://github.com/sentrei/sentrei/compare/v1.1.3...v1.1.4) (2020-08-24)
 
 ### Performance Improvements
