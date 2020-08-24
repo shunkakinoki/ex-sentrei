@@ -1,3 +1,9 @@
+## [1.1.6](https://github.com/sentrei/sentrei/compare/v1.1.5...v1.1.6) (2020-08-24)
+
+### Performance Improvements
+
+- **deps:** bump @types/styled-components from 5.1.1 to 5.1.2 ([704f8f4](https://github.com/sentrei/sentrei/commit/704f8f42ffa30fe4affb19fa913f9fb320e82146))
+
 ## [1.1.5](https://github.com/sentrei/sentrei/compare/v1.1.4...v1.1.5) (2020-08-24)
 
 ### Performance Improvements
