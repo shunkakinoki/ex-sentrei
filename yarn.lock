@@ -27392,10 +27392,10 @@ react-particles-js@^3.3.0:
     lodash "^4.17.11"
     tsparticles "^1.17.1"
 
-react-player@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.6.0.tgz#5b425d5c8514b552c29af353adb232f4dbb0bdcf"
-  integrity sha512-RLzAnHO00ZA5VnAZX6A6SGfCKQLOEcBGOM4POWAQkugh0VY2HjWUOYbHVt/7xeogyK3E1fP9dOxoPyLv8lBZ/A==
+react-player@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.6.1.tgz#3c296039898bfd726b52ba31984cc406af03de2f"
+  integrity sha512-vN/25GHH5wB8A6ED0x6TXGtJqUVg8wv0dQ8Q+CeBu7tPGD47FeMPuH/Q/3t1HgXVLA27x1+62iqhTU33rY7WMw==
   dependencies:
     deepmerge "^4.0.0"
     load-script "^1.0.0"
