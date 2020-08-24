@@ -62,7 +62,7 @@
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
-    "@typescript-eslint/parser": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.1",
     "commitizen": "^4.0.4",
     "depcheck": "^1.0.0",
     "deploy-env": "^1.1.3",
