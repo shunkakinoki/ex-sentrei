@@ -21,6 +21,7 @@ jobs:
         uses: cla-assistant/github-action@v2.0.0-alpha
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PERSONAL_ACCESS_TOKEN : ${{ secrets.ACCESS_TOKEN }}
         with:
           allowlist: allcontributors[bot],dependabot[bot],github-actions[bot],ImgBotApp,mergify[bot]
           branch: "cla"
