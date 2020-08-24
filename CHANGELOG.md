@@ -1,3 +1,9 @@
+## [1.1.8](https://github.com/sentrei/sentrei/compare/v1.1.7...v1.1.8) (2020-08-24)
+
+### Performance Improvements
+
+- **deps:** bump react-hook-form from 6.3.0 to 6.5.0 ([83835ed](https://github.com/sentrei/sentrei/commit/83835edea57daa3929b8589f1076447544c96db2))
+
 ## [1.1.7](https://github.com/sentrei/sentrei/compare/v1.1.6...v1.1.7) (2020-08-24)
 
 ### Performance Improvements
