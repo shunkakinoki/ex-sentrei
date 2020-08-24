@@ -18,13 +18,12 @@ jobs:
           github.event_name == 'pull_request' ||
           github.event.comment.body == 'recheckcla' ||
           github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA'
-        uses: cla-assistant/github-action@v1.4.3-alpha
+        uses: cla-assistant/github-action@v2.0.0-alpha
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
+          allowlist: allcontributors[bot],dependabot[bot],github-actions[bot],ImgBotApp,mergify[bot]
+          branch: "cla"
           path-to-signatures: ".github/signatures/v1/cla.json"
           path-to-cla-document: "https://github.com/sentrei/sentrei/blob/main/CLA.md"
-          branch: "cla"
-          allowlist: allcontributors[bot],dependabot[bot],github-actions[bot],ImgBotApp,mergify[bot]
-          empty-commit-flag: false
-          blockchain-storage-flag: false
