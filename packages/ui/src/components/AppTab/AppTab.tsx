@@ -30,14 +30,6 @@ const TabMap = {
   settings: 6,
 };
 
-const AntTabs = withStyles((theme: Theme) =>
-  createStyles({
-    indicator: {
-      backgroundColor: theme.palette.primary.main,
-    },
-  }),
-)(Tabs);
-
 const AntTab = withStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -69,9 +61,10 @@ export default function AppTab({
   return (
     <div className={classes.root}>
       <Container maxWidth="md">
-        <AntTabs
+        <Tabs
           value={TabMap[tabKey]}
           aria-label="appTab"
+          indicatorColor="primary"
           variant="scrollable"
           scrollButtons="auto"
         >
@@ -96,7 +89,7 @@ export default function AppTab({
           <Link href="/[spaceId]/settings" as={`/${spaceId}/settings`}>
             <AntTab label={t("common:common.settings")} />
           </Link>
-        </AntTabs>
+        </Tabs>
       </Container>
     </div>
   );
