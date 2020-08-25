@@ -1,14 +1,14 @@
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditAttributesIcon from "@material-ui/icons/EditAttributes";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import SettingsIcon from "@material-ui/icons/Settings";
-import Link from "next-translate/Link";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
+
+import MuiMenuItem from "@sentrei/ui/components/MuiMenuItem";
 
 export interface Props {
   anchorEl?: Element | ((element: Element) => Element) | null | undefined;
@@ -46,50 +46,42 @@ export default function RoomMenu({
       open={open}
       onClose={onClose}
     >
-      <Link
+      <MuiMenuItem
         href="/[spaceId]/room/[roomId]/edit"
         as={`/${spaceId}/room/${roomId}/edit`}
       >
-        <MenuItem>
-          <ListItemIcon>
-            <EditAttributesIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary={t("room:room.editRoom")} />
-        </MenuItem>
-      </Link>
-      <Link
+        <ListItemIcon>
+          <EditAttributesIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText primary={t("room:room.editRoom")} />
+      </MuiMenuItem>
+      <MuiMenuItem
         href="/[spaceId]/room/[roomId]/quit"
         as={`/${spaceId}/room/${roomId}/quit`}
       >
-        <MenuItem>
-          <ListItemIcon>
-            <ExitToAppIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary={t("room:room.quitRoom")} />
-        </MenuItem>
-      </Link>
-      <Link
+        <ListItemIcon>
+          <ExitToAppIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText primary={t("room:room.quitRoom")} />
+      </MuiMenuItem>
+      <MuiMenuItem
         href="/[spaceId]/room/[roomId]/delete"
         as={`/${spaceId}/room/${roomId}/delete`}
       >
-        <MenuItem>
-          <ListItemIcon>
-            <DeleteIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary={t("room:room.deleteRoom")} />
-        </MenuItem>
-      </Link>
-      <Link
+        <ListItemIcon>
+          <DeleteIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText primary={t("room:room.deleteRoom")} />
+      </MuiMenuItem>
+      <MuiMenuItem
         href="/[spaceId]/room/[roomId]/settings"
         as={`/${spaceId}/room/${roomId}/settings`}
       >
-        <MenuItem>
-          <ListItemIcon>
-            <SettingsIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary={t("room:room.settings")} />
-        </MenuItem>
-      </Link>
+        <ListItemIcon>
+          <SettingsIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText primary={t("room:room.settings")} />
+      </MuiMenuItem>
     </Menu>
   );
 }
