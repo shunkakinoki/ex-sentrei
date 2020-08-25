@@ -57,7 +57,6 @@ export default function AppBar({
             aria-controls="list-menu"
             aria-haspopup="true"
             onClick={handleListClick}
-            className={classes.left}
           >
             {listAnchorEl ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
@@ -67,26 +66,28 @@ export default function AppBar({
             onClose={handleClose}
             userId={userId}
           />
-          <IconButton
-            edge="end"
-            aria-label="profile-menu"
-            aria-haspopup="true"
-            onClick={handleProfileClick}
-            className={classes.right}
-          >
-            <Avatar
-              className={classes.avatar}
-              component="span"
-              sizes="small"
-              src={profile ? profile.photo || profile.name[0] : undefined}
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <IconButton
+              edge="end"
+              aria-label="profile-menu"
+              aria-haspopup="true"
+              onClick={handleProfileClick}
+            >
+              <Avatar
+                className={classes.avatar}
+                component="span"
+                sizes="small"
+                src={profile ? profile.photo || profile.name[0] : undefined}
+              />
+            </IconButton>
+            <ProfileMenu
+              notificationCount={notificationCount}
+              anchorEl={profileAnchorEl}
+              open={Boolean(profileAnchorEl)}
+              onClose={handleClose}
             />
-          </IconButton>
-          <ProfileMenu
-            notificationCount={notificationCount}
-            anchorEl={profileAnchorEl}
-            open={Boolean(profileAnchorEl)}
-            onClose={handleClose}
-          />
+          </div>
         </Toolbar>
       </Container>
     </div>

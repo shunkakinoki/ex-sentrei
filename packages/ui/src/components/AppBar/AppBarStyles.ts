@@ -12,20 +12,13 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
       width: theme.spacing(4),
       height: theme.spacing(4),
     },
-    left: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(3),
+    grow: {
+      flexGrow: 1,
     },
-    right: {
-      marginLeft: theme.spacing(3),
-      marginRight: theme.spacing(1),
-    },
-    toolbar: {
-      width: "180px",
-      height: "180px",
-      [theme.breakpoints.down("md")]: {
-        width: "120px",
-        height: "120px",
+    sectionDesktop: {
+      display: "none",
+      [theme.breakpoints.up("md")]: {
+        display: "flex",
       },
     },
   }),
