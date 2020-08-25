@@ -1,8 +1,7 @@
 import Container from "@material-ui/core/Container";
 import {withStyles, Theme, createStyles} from "@material-ui/core/styles";
-import Tab from "@material-ui/core/Tab";
+import Tab, {TabProps} from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
-import Link from "next-translate/Link";
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
 
@@ -18,6 +17,13 @@ interface Props {
 
 interface StyledTabProps {
   label: string;
+}
+
+interface AntTabProps {
+  href: string;
+  as: string;
+  label: string;
+  props?: Omit<TabProps, "href" | "ref" | "classes">;
 }
 
 const TabMap = {
@@ -68,27 +74,42 @@ export default function AppTab({
           variant="scrollable"
           scrollButtons="auto"
         >
-          <Link href="/[spaceId]" as={`/${spaceId}`}>
-            <AntTab label={t("common:common.dashboard")} />
-          </Link>
-          <Link href="/[spaceId]" as={`/${spaceId}`}>
-            <AntTab label={t("common:common.rooms")} />
-          </Link>
-          <Link href="/[spaceId]/activity" as={`/${spaceId}/activity`}>
-            <AntTab label={t("common:common.activity")} />
-          </Link>
-          <Link href="/[spaceId]/analytics" as={`/${spaceId}/analytics`}>
-            <AntTab label={t("common:common.analytics")} />
-          </Link>
-          <Link href="/[spaceId]/leaderboard" as={`/${spaceId}/leaderboard`}>
-            <AntTab label={t("common:common.leaderboard")} />
-          </Link>
-          <Link href="/[spaceId]/members" as={`/${spaceId}/members`}>
-            <AntTab label={t("common:common.members")} />
-          </Link>
-          <Link href="/[spaceId]/settings" as={`/${spaceId}/settings`}>
-            <AntTab label={t("common:common.settings")} />
-          </Link>
+          <AntTab label="a" />
+          {/* <AntTab
+            href="/[spaceId]"
+            as={`/${spaceId}`}
+            label={t("common:common.dashboard")}
+          />
+          <AntTab
+            href="/[spaceId]"
+            as={`/${spaceId}`}
+            label={t("common:common.rooms")}
+          />
+          <AntTab
+            href="/[spaceId]/activity"
+            as={`/${spaceId}/activity`}
+            label={t("common:common.activity")}
+          />
+          <AntTab
+            href="/[spaceId]/analytics"
+            as={`/${spaceId}/analytics`}
+            label={t("common:common.analytics")}
+          />
+          <AntTab
+            href="/[spaceId]/leaderboard"
+            as={`/${spaceId}/leaderboard`}
+            label={t("common:common.leaderboard")}
+          />
+          <AntTab
+            href="/[spaceId]/members"
+            as={`/${spaceId}/members`}
+            label={t("common:common.members")}
+          />
+          <AntTab
+            href="/[spaceId]/settings"
+            as={`/${spaceId}/settings`}
+            label={t("common:common.settings")}
+          /> */}
         </Tabs>
       </Container>
     </div>

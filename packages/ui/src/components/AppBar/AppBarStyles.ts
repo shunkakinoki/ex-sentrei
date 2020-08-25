@@ -16,6 +16,7 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     button: {
+      textTransform: "none",
       margin: theme.spacing(1),
     },
     sectionDesktop: {

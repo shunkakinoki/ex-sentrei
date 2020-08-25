@@ -4,13 +4,13 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
-import Link from "next-translate/Link";
 import useTranslation from "next-translate/useTranslation";
 import {useRouter} from "next/router";
 import * as React from "react";
 
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import LandingBannerGradient from "@sentrei/ui/components/LandingBannerGradient";
+import MuiButton from "@sentrei/ui/components/MuiButton";
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -75,15 +75,14 @@ export default function LandingBanner(): JSX.Element {
       <Grid container justify="center" direction="row" spacing={1}>
         <Grid item xs={12} md={6}>
           <div className={classes.item}>
-            <Link href="/signup">
-              <Button
-                color="primary"
-                variant="contained"
-                className={classes.button}
-              >
-                <Typography noWrap>{t("index:banner.startText")}</Typography>
-              </Button>
-            </Link>
+            <MuiButton
+              color="primary"
+              variant="contained"
+              className={classes.button}
+              href="/signup"
+            >
+              <Typography noWrap>{t("index:banner.startText")}</Typography>
+            </MuiButton>
           </div>
         </Grid>
         <Grid item xs={12} md={6}>

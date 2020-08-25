@@ -1,4 +1,3 @@
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -8,8 +7,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import Link from "next-translate/Link";
 import * as React from "react";
+
+import MuiButton from "@sentrei/ui/components/MuiButton";
 
 import PricingCardStyles from "./PricingCardStyles";
 
@@ -87,11 +87,14 @@ export default function PricingCard({
         ))}
       </CardContent>
       <CardActions>
-        <Link href={href}>
-          <Button fullWidth variant={buttonVariant} color="primary">
-            {buttonText}
-          </Button>
-        </Link>
+        <MuiButton
+          fullWidth
+          href={href}
+          variant={buttonVariant}
+          color="primary"
+        >
+          {buttonText}
+        </MuiButton>
       </CardActions>
     </Card>
   );

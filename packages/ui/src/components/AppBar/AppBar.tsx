@@ -12,6 +12,7 @@ import * as React from "react";
 
 import Profile from "@sentrei/types/models/Profile";
 import ListMenu from "@sentrei/ui/components/ListMenu";
+import MuiButton from "@sentrei/ui/components/MuiButton";
 import ProfileMenu from "@sentrei/ui/components/ProfileMenu";
 
 import AppBarStyles from "./AppBarStyles";
@@ -84,9 +85,14 @@ export default function AppBar({
             >
               <Typography noWrap>{t("common:common.feedback")}</Typography>
             </Button>
-            <Button className={classes.button} size="small">
+            <MuiButton
+              href={spaceId ? "/[spaceId]/support" : "/support"}
+              as={spaceId ? `/${spaceId}/support` : "/support"}
+              className={classes.button}
+              size="small"
+            >
               <Typography noWrap>{t("common:common.support")}</Typography>
-            </Button>
+            </MuiButton>
             <IconButton
               edge="end"
               aria-label="profile-menu"

@@ -41,7 +41,7 @@ export default function FooterCredits(): JSX.Element {
           )}
         />
         {t("footer:footer.titleTwo")}{" "}
-        <MuiLink href="/team">{t("footer:footer.titleThree")}</MuiLink>
+        <MuiLink href="/about">{t("footer:footer.titleThree")}</MuiLink>
       </Typography>
       <AnimatePresence initial={isOpen}>
         {isOpen && (

@@ -1,7 +1,7 @@
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Link from "next-translate/Link";
 import * as React from "react";
+
+import MuiButton from "@sentrei/ui/components/MuiButton";
 
 import HeaderButtonStyles from "./HeaderButtonStyles";
 
@@ -14,10 +14,8 @@ export default function Header({href, title}: Props): JSX.Element {
   const classes = HeaderButtonStyles();
 
   return (
-    <Link href={href}>
-      <Button className={classes.button}>
-        <Typography>{title}</Typography>
-      </Button>
-    </Link>
+    <MuiButton className={classes.button} href={href}>
+      <Typography>{title}</Typography>
+    </MuiButton>
   );
 }

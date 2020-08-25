@@ -24,7 +24,7 @@ export default function AppHeader({
 }: Props): JSX.Element {
   return (
     <>
-      <AppBar />
+      <AppBar spaceId={spaceId} />
       {spaceId && tabKey ? (
         <AppTab spaceId={spaceId} tabKey={tabKey} />
       ) : (
