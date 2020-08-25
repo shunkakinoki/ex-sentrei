@@ -33,6 +33,7 @@ const LeaderboardPage: NextPage = () => {
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
+          tabKey="leaderboard"
         />
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />

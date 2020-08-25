@@ -34,6 +34,7 @@ const ActivityPage: NextPage = () => {
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
+          tabKey="activity"
         />
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />

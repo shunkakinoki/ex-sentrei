@@ -3,7 +3,6 @@ import * as React from "react";
 import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
-import SpacePanelAccordion from "@sentrei/ui/components/SpacePanelAccordion";
 import SpacePanelBanner from "@sentrei/ui/components/SpacePanelBanner";
 import SpacePanelStatus from "@sentrei/ui/components/SpacePanelStatus";
 
@@ -33,7 +32,6 @@ export default function SpacePanel({
         spaceId={spaceId}
         user={user}
       />
-      <SpacePanelAccordion spaceId={spaceId} />
     </>
   );
 }

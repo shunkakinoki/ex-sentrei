@@ -33,6 +33,7 @@ const SettingsPage: NextPage = () => {
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
+          tabKey="settings"
         />
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />

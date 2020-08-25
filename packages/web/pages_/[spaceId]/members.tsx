@@ -61,6 +61,7 @@ const MembersPage = ({
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
+          tabKey="members"
         />
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />

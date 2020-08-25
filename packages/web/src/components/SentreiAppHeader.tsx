@@ -11,6 +11,7 @@ export default function SentreiAppHeader({
   profile,
   spaceId,
   userId,
+  tabKey,
 }: Props): JSX.Element {
   return (
     <AppHeader
@@ -19,6 +20,7 @@ export default function SentreiAppHeader({
       profile={profile}
       spaceId={spaceId}
       userId={userId}
+      tabKey={tabKey}
     />
   );
 }
