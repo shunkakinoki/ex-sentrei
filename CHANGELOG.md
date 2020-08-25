@@ -1,3 +1,9 @@
+## [1.1.10](https://github.com/sentrei/sentrei/compare/v1.1.9...v1.1.10) (2020-08-25)
+
+### Performance Improvements
+
+- **deps:** bump dvc from 1.6.0 to 1.6.1 ([04cc138](https://github.com/sentrei/sentrei/commit/04cc138c758ba11b953d725227d9a90f36464d58))
+
 ## [1.1.9](https://github.com/sentrei/sentrei/compare/v1.1.8...v1.1.9) (2020-08-25)
 
 ### Performance Improvements
