@@ -1,20 +1,20 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import MenuItem, {MenuItemProps} from "@material-ui/core/MenuItem";
+import Tab, {TabProps} from "@material-ui/core/Tab";
 import Link from "next-translate/Link";
 import {LinkProps} from "next/link";
 import * as React from "react";
 
-export type MuiMenuItemProps = Omit<MenuItemProps, "href" | "classes"> &
+export type TabLinkProps = Omit<TabProps, "href" | "classes"> &
   Pick<LinkProps, "href" | "as" | "prefetch">;
 
-const MuiMenuItem = React.forwardRef<MuiMenuItemProps, any>(
+const MuiTab = React.forwardRef<TabLinkProps, any>(
   ({href, as, prefetch, ...props}, ref) => (
     <Link href={href} as={as} prefetch={prefetch} passHref>
-      <MenuItem ref={ref} {...props} />
+      <Tab ref={ref} {...props} />
     </Link>
   ),
 );
 
-export default MuiMenuItem;
+export default MuiTab;
