@@ -73,21 +73,21 @@ export default function FooterSection(): JSX.Element {
         </Typography>
         <Grid container direction="row" spacing={3}>
           <Grid item>
-            <Link href="https://github.com/sentrei/sentrei">
+            <Link href="https://github.com/sentrei/sentrei" target="_blank">
               <Avatar aria-label="github" variant="rounded">
                 <UseAnimations animation={github} />
               </Avatar>
             </Link>
           </Grid>
           <Grid item>
-            <Link href="https://linkedin.com/company/sentrei">
+            <Link href="https://linkedin.com/company/sentrei" target="_blank">
               <Avatar aria-label="linkedin" variant="rounded">
                 <UseAnimations animation={linkedin} />
               </Avatar>
             </Link>
           </Grid>
           <Grid item>
-            <Link href="https://twitter.com/sentrei_com">
+            <Link href="https://twitter.com/sentrei_com" target="_blank">
               <Avatar aria-label="twitter" variant="rounded">
                 <UseAnimations animation={twitter} />
               </Avatar>
