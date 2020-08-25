@@ -7,7 +7,7 @@ export default function FooterCopyright(): JSX.Element {
     <>
       <Typography variant="body2" color="textSecondary" align="center">
         {"Copyright © "}
-        <MuiLink color="inherit" href="https://sentrei.com/">
+        <MuiLink color="inherit" href="/">
           Sentrei, Inc.
         </MuiLink>{" "}
         {new Date().getFullYear()}.
