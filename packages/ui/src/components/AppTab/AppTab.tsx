@@ -66,12 +66,15 @@ export default function AppTab({
   const classes = AppTabStyles();
   const {t} = useTranslation();
 
-  const [value] = React.useState(TabMap[tabKey]);
-
   return (
     <div className={classes.root}>
       <Container maxWidth="md">
-        <AntTabs value={value} aria-label="appTab">
+        <AntTabs
+          value={TabMap[tabKey]}
+          aria-label="appTab"
+          variant="scrollable"
+          scrollButtons="auto"
+        >
           <Link href="/[spaceId]" as={`/${spaceId}`}>
             <AntTab label={t("common:common.dashboard")} />
           </Link>
