@@ -6,6 +6,9 @@ const AppTabStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       borderBottom: `1px solid ${theme.palette.divider}`,
     },
+    labelIcon: {
+      verticalAlign: "middle",
+    },
     indicator: {
       backgroundColor: theme.palette.primary.main,
     },

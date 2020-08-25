@@ -62,12 +62,12 @@ export default function AppProfileMenu({
         </ListItemIcon>
         <ListItemText primary={t("common:common.notifications")} />
       </MuiMenuItem>
-      <MenuItem href="/settings">
+      <MuiMenuItem href="/settings">
         <ListItemIcon>
           <SettingsIcon fontSize="small" />
         </ListItemIcon>
         <ListItemText primary={t("common:common.settings")} />
-      </MenuItem>
+      </MuiMenuItem>
       <Divider />
       <MenuItem onClick={(): Promise<void> => auth.signOut()}>
         <ListItemIcon>
