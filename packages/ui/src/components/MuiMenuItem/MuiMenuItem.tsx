@@ -12,7 +12,7 @@ export type MuiMenuItemProps = Omit<MenuItemProps, "href" | "classes"> &
 const MuiMenuItem = React.forwardRef<MuiMenuItemProps, any>(
   ({href, as, prefetch, ...props}, ref) => (
     <Link href={href} as={as} prefetch={prefetch} passHref>
-      <MenuItem ref={ref} {...props} />
+      <MenuItem component="a" ref={ref} {...props} />
     </Link>
   ),
 );
