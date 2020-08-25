@@ -1,9 +1,17 @@
 import Avatar from "@material-ui/core/Avatar";
+import Badge from "@material-ui/core/Badge";
+import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
+import ButtonBase from "@material-ui/core/ButtonBase";
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import MenuIcon from "@material-ui/icons/Menu";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import Profile from "@sentrei/types/models/Profile";
@@ -26,6 +34,7 @@ export default function AppBar({
   spaceId,
 }: Props): JSX.Element {
   const classes = AppBarStyles();
+  const {t} = useTranslation();
 
   const [listAnchorEl, listSetAnchorEl] = React.useState<null | HTMLElement>(
     null,
@@ -68,6 +77,17 @@ export default function AppBar({
           />
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+            <Button
+              className={classes.button}
+              color="primary"
+              variant="outlined"
+              size="small"
+            >
+              <Typography noWrap>{t("common:common.feedback")}</Typography>
+            </Button>
+            <Button className={classes.button} size="small">
+              <Typography noWrap>{t("common:common.support")}</Typography>
+            </Button>
             <IconButton
               edge="end"
               aria-label="profile-menu"

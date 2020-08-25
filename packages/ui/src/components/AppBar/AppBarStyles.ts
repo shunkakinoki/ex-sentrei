@@ -15,10 +15,14 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
     grow: {
       flexGrow: 1,
     },
+    button: {
+      margin: theme.spacing(1),
+    },
     sectionDesktop: {
       display: "none",
       [theme.breakpoints.up("md")]: {
         display: "flex",
+        margin: theme.spacing(1),
       },
     },
   }),
