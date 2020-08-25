@@ -1,3 +1,15 @@
+## [1.1.10](https://github.com/sentrei/sentrei/compare/v1.1.9...v1.1.10) (2020-08-25)
+
+### Performance Improvements
+
+- **deps:** bump dvc from 1.6.0 to 1.6.1 ([04cc138](https://github.com/sentrei/sentrei/commit/04cc138c758ba11b953d725227d9a90f36464d58))
+
+## [1.1.9](https://github.com/sentrei/sentrei/compare/v1.1.8...v1.1.9) (2020-08-25)
+
+### Performance Improvements
+
+- **deps:** bump react-hook-form from 6.5.0 to 6.5.1 ([868bc52](https://github.com/sentrei/sentrei/commit/868bc5296e17f1d4c08710546693856f57e24e3f))
+
 ## [1.1.8](https://github.com/sentrei/sentrei/compare/v1.1.7...v1.1.8) (2020-08-24)
 
 ### Performance Improvements

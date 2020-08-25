@@ -135,11 +135,11 @@
                 "gs"
             ],
             "hashes": [
-                "sha256:315ea945cbc5be74855cc28bbc1a82ed650fee2213697781d6ac4b58628ade65",
-                "sha256:8a4d30954f46443a4181cf7477e16a840f5e67a796bc2059f7d31b930353c96f"
+                "sha256:23d1b4e0368ab0160e324a1099d706deb20d7895baba3eadaf4f06cd5ad39bcc",
+                "sha256:ad8ce80d63954407ea98d6836e326d6ea6bedbca8c585dd9967ad3a4e3767559"
             ],
             "index": "pypi",
-            "version": "==1.6.0"
+            "version": "==1.6.1"
         },
         "flatten-json": {
             "hashes": [
