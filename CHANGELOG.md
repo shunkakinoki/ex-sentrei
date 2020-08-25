@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/sentrei/sentrei/compare/v1.2.1...v1.2.2) (2020-08-25)
+
+### Performance Improvements
+
+- ⚡️ target blank footer section ([dc8bcc8](https://github.com/sentrei/sentrei/commit/dc8bcc8b3a068323197d38c4be17c7194fa200a2))
+
 ## [1.2.1](https://github.com/sentrei/sentrei/compare/v1.2.0...v1.2.1) (2020-08-25)
 
 ### Bug Fixes
