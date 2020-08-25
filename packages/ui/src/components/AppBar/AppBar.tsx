@@ -11,9 +11,9 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import Profile from "@sentrei/types/models/Profile";
+import AppProfileMenu from "@sentrei/ui/components/AppProfileMenu";
 import ListMenu from "@sentrei/ui/components/ListMenu";
 import MuiButton from "@sentrei/ui/components/MuiButton";
-import ProfileMenu from "@sentrei/ui/components/ProfileMenu";
 
 import AppBarStyles from "./AppBarStyles";
 
@@ -106,7 +106,7 @@ export default function AppBar({
                 src={profile ? profile.photo || profile.name[0] : undefined}
               />
             </IconButton>
-            <ProfileMenu
+            <AppProfileMenu
               notificationCount={notificationCount}
               anchorEl={profileAnchorEl}
               open={Boolean(profileAnchorEl)}
