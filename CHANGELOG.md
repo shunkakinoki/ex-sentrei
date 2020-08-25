@@ -1,3 +1,21 @@
+# [1.2.0](https://github.com/sentrei/sentrei/compare/v1.1.10...v1.2.0) (2020-08-25)
+
+### Features
+
+- 🎸 ini app bar + app tab ([6233a79](https://github.com/sentrei/sentrei/commit/6233a797929252b8bd059de595f2207fcec10cfb))
+- 🎸 ini app bar layout w/ flex ([ecc9f8a](https://github.com/sentrei/sentrei/commit/ecc9f8ae7170e857c63139fc25cb84b20721f20d))
+- 🎸 ini app profile menu ([c917294](https://github.com/sentrei/sentrei/commit/c91729457fbdc7ab21b75cc65a600f2508fb390a))
+- 🎸 ini app tab ([cb79297](https://github.com/sentrei/sentrei/commit/cb792979a45b7c0eaa9179829d167f4e9cbd72d1))
+- 🎸 ini icons for app tab ([816c5c0](https://github.com/sentrei/sentrei/commit/816c5c07ef1963ef24e29927634732be2fceef33))
+- 🎸 ini mui button and mui button base ([8d4b9e0](https://github.com/sentrei/sentrei/commit/8d4b9e0928c985fb3dfd8aa8cdf12172440575ef))
+- 🎸 ini mui menu item link ([99be54a](https://github.com/sentrei/sentrei/commit/99be54a4bd024dc2e8131d2fafacf70f9ab40609))
+- 🎸 ini space tab ([eaf351d](https://github.com/sentrei/sentrei/commit/eaf351d16f466ce8da4757b95a1751d3f785cf11))
+
+### Performance Improvements
+
+- ⚡️ migrate to app profile menu ([404121a](https://github.com/sentrei/sentrei/commit/404121a4955d0808a96bf2b37bce04c1b76ee76b))
+- ⚡️ migrate to mui menu item for room menu ([0d55835](https://github.com/sentrei/sentrei/commit/0d55835d535e63303b39c37c1d1ce2e1aa5941ff))
+
 ## [1.1.10](https://github.com/sentrei/sentrei/compare/v1.1.9...v1.1.10) (2020-08-25)
 
 ### Performance Improvements
