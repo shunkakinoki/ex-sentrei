@@ -1,21 +1,20 @@
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import classNames from "classnames";
-import Link from "next-translate/Link";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
 import HeaderButton from "@sentrei/ui/components/HeaderButton";
 import HeaderScrollButton from "@sentrei/ui/components/HeaderScrollButton";
-
 import Logo from "@sentrei/ui/components/Logo";
+import MuiButton from "@sentrei/ui/components/MuiButton";
+
 import PaperCups from "@sentrei/ui/components/PaperCups";
 
 import HeaderStyles from "./HeaderStyles";
@@ -129,24 +128,22 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
               </div>
               <div className={classes.sectionDesktop}>
                 <Grid item>
-                  <Link href="/login">
-                    <Button
-                      color="primary"
-                      variant="outlined"
-                      className={classes.margin}
-                    >
-                      <Typography>{t("header:header.login")}</Typography>
-                    </Button>
-                  </Link>
-                  <Link href="/signup">
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      className={classes.margin}
-                    >
-                      <Typography>{t("header:header.signup")}</Typography>
-                    </Button>
-                  </Link>
+                  <MuiButton
+                    color="primary"
+                    variant="outlined"
+                    href="/login"
+                    className={classes.margin}
+                  >
+                    <Typography>{t("header:header.login")}</Typography>
+                  </MuiButton>
+                  <MuiButton
+                    color="primary"
+                    variant="contained"
+                    href="/signup"
+                    className={classes.margin}
+                  >
+                    <Typography>{t("header:header.signup")}</Typography>
+                  </MuiButton>
                   <IconButton edge="end">
                     <DarkModeButton />
                   </IconButton>

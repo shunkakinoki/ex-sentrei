@@ -92,6 +92,7 @@ const SpaceId = ({
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
+          spaceId={String(query.spaceId)}
         />
       ) : (
         <SentreiAppHeader />

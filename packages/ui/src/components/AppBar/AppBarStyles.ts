@@ -5,7 +5,6 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
     appBar: {
       backgroundColor: "transparent !important",
       boxShadow: "none",
-      paddingTop: "25px",
       color: theme.palette.common.white,
       width: "100%",
     },
@@ -13,20 +12,18 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
       width: theme.spacing(4),
       height: theme.spacing(4),
     },
-    left: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(3),
+    grow: {
+      flexGrow: 1,
     },
-    right: {
-      marginLeft: theme.spacing(3),
-      marginRight: theme.spacing(1),
+    button: {
+      textTransform: "none",
+      margin: theme.spacing(1),
     },
-    toolbar: {
-      width: "180px",
-      height: "180px",
-      [theme.breakpoints.down("md")]: {
-        width: "120px",
-        height: "120px",
+    sectionDesktop: {
+      display: "none",
+      [theme.breakpoints.up("md")]: {
+        display: "flex",
+        margin: theme.spacing(1),
       },
     },
   }),
