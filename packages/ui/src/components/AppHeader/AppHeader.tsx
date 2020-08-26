@@ -24,7 +24,13 @@ export default function AppHeader({
 }: Props): JSX.Element {
   return (
     <>
-      <AppBar spaceId={spaceId} />
+      <AppBar
+        logo={logo}
+        profile={profile}
+        userId={userId}
+        spaceId={spaceId}
+        notificationCount={notificationCount}
+      />
       {spaceId && tabKey ? (
         <AppTab spaceId={spaceId} tabKey={tabKey} />
       ) : (

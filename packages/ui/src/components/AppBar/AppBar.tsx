@@ -5,19 +5,20 @@ import Container from "@material-ui/core/Container";
 import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import CloseIcon from "@material-ui/icons/Close";
-import MenuIcon from "@material-ui/icons/Menu";
+import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import Profile from "@sentrei/types/models/Profile";
+import AppListMenu from "@sentrei/ui/components/AppListMenu";
 import AppProfileMenu from "@sentrei/ui/components/AppProfileMenu";
-import ListMenu from "@sentrei/ui/components/ListMenu";
 import MuiButton from "@sentrei/ui/components/MuiButton";
+import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
 
 import AppBarStyles from "./AppBarStyles";
 
 export interface Props {
+  logo: JSX.Element;
   profile?: Profile.Get;
   notificationCount?: number;
   userId?: string;
@@ -25,6 +26,7 @@ export interface Props {
 }
 
 export default function AppBar({
+  logo,
   profile,
   notificationCount,
   userId,
@@ -59,20 +61,38 @@ export default function AppBar({
       <Container maxWidth="md">
         <Toolbar>
           <Breadcrumbs aria-label="breadcrumb">
-            <IconButton
-              edge="start"
-              aria-controls="list-menu"
-              aria-haspopup="true"
-              onClick={handleListClick}
+            <MuiButtonBase
+              href={spaceId ? "/[spaceId]" : "/dashboard"}
+              as={spaceId ? `/${spaceId}` : "dashboard"}
             >
-              {listAnchorEl ? <CloseIcon /> : <MenuIcon />}
-            </IconButton>
-            <Avatar />
+              <Avatar className={classes.logo}>{logo}</Avatar>
+            </MuiButtonBase>
+            {spaceId && (
+              <>
+                <MuiButtonBase href="/[spaceId]" as={`/${spaceId}`}>
+                  <Typography display="inline">{spaceId}</Typography>
+                </MuiButtonBase>
+                <IconButton
+                  edge="start"
+                  aria-controls="list-menu"
+                  aria-haspopup="true"
+                  size="small"
+                  onClick={handleListClick}
+                >
+                  {listAnchorEl ? (
+                    <UnfoldMoreIcon color="disabled" />
+                  ) : (
+                    <UnfoldMoreIcon />
+                  )}
+                </IconButton>
+              </>
+            )}
           </Breadcrumbs>
-          <ListMenu
+          <AppListMenu
             anchorEl={listAnchorEl}
             open={Boolean(listAnchorEl)}
             onClose={handleClose}
+            profile={profile}
             userId={userId}
           />
           <div className={classes.grow} />
