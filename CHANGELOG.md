@@ -1,3 +1,9 @@
+## [1.2.4](https://github.com/sentrei/sentrei/compare/v1.2.3...v1.2.4) (2020-08-26)
+
+### Performance Improvements
+
+- **deps:** bump firebase from 7.17.1 to 7.19.0 ([e31efac](https://github.com/sentrei/sentrei/commit/e31efac8760aef2c7ea0d4750ff560005d56b74d))
+
 ## [1.2.3](https://github.com/sentrei/sentrei/compare/v1.2.2...v1.2.3) (2020-08-26)
 
 ### Performance Improvements
