@@ -1,5 +1,4 @@
 import Avatar from "@material-ui/core/Avatar";
-import Box from "@material-ui/core/Box";
 import Chip from "@material-ui/core/Chip";
 import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
@@ -34,78 +33,82 @@ export default function SpacePanelBanner({
   const {t} = useTranslation();
 
   return (
-    <Box p={1}>
-      <Grid container alignItems="center" direction="row">
-        <Grid item xs={1}>
-          {photo ? (
-            <Avatar src={photo || undefined} className={classes.large} />
-          ) : (
-            <DashboardIcon color="disabled" className={classes.large} />
-          )}
-        </Grid>
-        <Grid item xs={11}>
-          <Grid
-            container
-            alignItems="center"
-            justify="flex-start"
-            direction="column"
-            spacing={1}
-          >
-            <Grid item xs={12}>
-              <Grid container direction="row" alignItems="center" spacing={1}>
-                <Grid item xs={10}>
-                  <Typography noWrap variant="h4" component="h4" align="left">
-                    {name}
-                  </Typography>
-                </Grid>
-                <Grid item xs={1} />
-                <Grid item xs={1}>
-                  <MuiButtonBase
-                    href="/[spaceId]/settings/billing"
-                    as={`${spaceId}/settings/billing`}
-                  >
-                    <Chip clickable label="Basic" variant="outlined" />
-                  </MuiButtonBase>
-                </Grid>
+    <Grid
+      container
+      alignContent="space-around"
+      alignItems="center"
+      direction="row"
+    >
+      <Grid item>
+        {photo ? (
+          <Avatar src={photo || undefined} className={classes.large} />
+        ) : (
+          <DashboardIcon color="disabled" className={classes.large} />
+        )}
+      </Grid>
+      <Grid item xs={1} />
+      <Grid item>
+        <Grid
+          container
+          alignItems="center"
+          justify="flex-start"
+          direction="column"
+          spacing={1}
+        >
+          <Grid item xs={12}>
+            <Grid container direction="row" alignItems="center" spacing={1}>
+              <Grid item xs={10}>
+                <Typography noWrap variant="h4" component="h4" align="left">
+                  {name}
+                </Typography>
+              </Grid>
+              <Grid item xs={1} />
+              <Grid item xs={1}>
+                <MuiButtonBase
+                  href="/[spaceId]/settings/billing"
+                  as={`${spaceId}/settings/billing`}
+                >
+                  <Chip clickable label="Basic" variant="outlined" />
+                </MuiButtonBase>
               </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <Grid container direction="row" spacing={2}>
-                <Grid item xs={4}>
-                  <SpacePanelBannerSection
-                    count={memberCount}
-                    section="members"
-                    spaceId={spaceId}
-                    title={t("common:common.members")}
-                  />
-                </Grid>
-                <Grid item xs={1}>
-                  <Divider orientation="vertical" className={classes.divider} />
-                </Grid>
-                <Grid item xs={4}>
-                  <SpacePanelBannerSection
-                    count={roomCount}
-                    section="rooms"
-                    spaceId={spaceId}
-                    title={t("common:common.rooms")}
-                  />
-                </Grid>
-                <Grid item xs={1}>
-                  <Divider orientation="vertical" className={classes.divider} />
-                </Grid>
-                <Grid item xs={2}>
-                  <SpacePanelBannerSection
-                    count={scoreCount}
-                    section="leaderboard"
-                    spaceId={spaceId}
-                    title={t("common:common.score")}
-                  />
-                </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <Grid container direction="row" spacing={2}>
+              <Grid item xs={4}>
+                <SpacePanelBannerSection
+                  count={memberCount}
+                  section="members"
+                  spaceId={spaceId}
+                  title={t("common:common.members")}
+                />
+              </Grid>
+              <Grid item xs={1}>
+                <Divider orientation="vertical" className={classes.divider} />
+              </Grid>
+              <Grid item xs={4}>
+                <SpacePanelBannerSection
+                  count={roomCount}
+                  section="rooms"
+                  spaceId={spaceId}
+                  title={t("common:common.rooms")}
+                />
+              </Grid>
+              <Grid item xs={1}>
+                <Divider orientation="vertical" className={classes.divider} />
+              </Grid>
+              <Grid item xs={2}>
+                <SpacePanelBannerSection
+                  count={scoreCount}
+                  section="leaderboard"
+                  spaceId={spaceId}
+                  title={t("common:common.score")}
+                />
               </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-    </Box>
+    </Grid>
   );
 }
