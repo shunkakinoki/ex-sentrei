@@ -9,7 +9,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
-import MuiLink from "@sentrei/ui/components/MuiLink";
+import SpacePanelBannerSection from "@sentrei/ui/components/SpacePanelBannerSection";
 
 import SpacePanelBannerStyles from "./SpacePanelBannerStyles";
 
@@ -72,73 +72,34 @@ export default function SpacePanelBanner({
             <Grid item xs={12}>
               <Grid container direction="row" spacing={2}>
                 <Grid item xs={4}>
-                  <Grid
-                    container
-                    alignItems="center"
-                    justify="flex-start"
-                    direction="column"
-                  >
-                    <MuiLink
-                      href="/[spaceId]/members"
-                      as={`/${spaceId}/members`}
-                      color="inherit"
-                    >
-                      <Typography variant="button" gutterBottom>
-                        {t("common:common.members")}
-                      </Typography>
-                    </MuiLink>
-                    <Typography variant="button" gutterBottom>
-                      {memberCount}
-                    </Typography>
-                  </Grid>
+                  <SpacePanelBannerSection
+                    count={memberCount}
+                    section="members"
+                    spaceId={spaceId}
+                    title={t("common:common.members")}
+                  />
                 </Grid>
                 <Grid item xs={1}>
                   <Divider orientation="vertical" className={classes.divider} />
                 </Grid>
                 <Grid item xs={4}>
-                  <Grid
-                    container
-                    alignItems="center"
-                    justify="space-around"
-                    direction="column"
-                  >
-                    <MuiLink
-                      href="/[spaceId]/rooms"
-                      as={`/${spaceId}/rooms`}
-                      color="inherit"
-                    >
-                      <Typography variant="button" gutterBottom>
-                        {t("common:common.rooms")}
-                      </Typography>
-                    </MuiLink>
-                    <Typography variant="button" gutterBottom>
-                      {roomCount}
-                    </Typography>
-                  </Grid>
+                  <SpacePanelBannerSection
+                    count={roomCount}
+                    section="rooms"
+                    spaceId={spaceId}
+                    title={t("common:common.rooms")}
+                  />
                 </Grid>
                 <Grid item xs={1}>
                   <Divider orientation="vertical" className={classes.divider} />
                 </Grid>
                 <Grid item xs={2}>
-                  <Grid
-                    container
-                    alignItems="center"
-                    justify="flex-start"
-                    direction="column"
-                  >
-                    <MuiLink
-                      href="/[spaceId]/leaderboard"
-                      as={`/${spaceId}/leaderboard`}
-                      color="inherit"
-                    >
-                      <Typography variant="button" gutterBottom>
-                        {t("common:common.score")}
-                      </Typography>
-                    </MuiLink>
-                    <Typography variant="button" gutterBottom>
-                      {scoreCount}
-                    </Typography>
-                  </Grid>
+                  <SpacePanelBannerSection
+                    count={scoreCount}
+                    section="leaderboard"
+                    spaceId={spaceId}
+                    title={t("common:common.score")}
+                  />
                 </Grid>
               </Grid>
             </Grid>
