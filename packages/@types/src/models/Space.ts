@@ -12,6 +12,8 @@ declare namespace Space {
   interface Fields extends EditableFields {
     inviteCount?: FirebaseFirestore.FieldValue | number;
     memberCount: FirebaseFirestore.FieldValue | number;
+    roomCount: FirebaseFirestore.FieldValue | number;
+    scoreCount: FirebaseFirestore.FieldValue | number;
     tier: Tiers;
   }
 
