@@ -1,6 +1,6 @@
 {
   "name": "sentrei",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": true,
   "homepage": "https://github.com/sentrei/sentrei",
   "repository": {
@@ -76,7 +76,7 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "git-cz": "^4.7.0",
     "husky": "^4.2.5",
-    "json-sort-cli": "^1.15.23",
+    "json-sort-cli": "^1.15.26",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.4",
     "semantic-release": "^17.1.1",
