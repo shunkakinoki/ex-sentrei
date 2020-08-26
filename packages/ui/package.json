@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/ui",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -85,7 +85,7 @@
     "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-info": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
-    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addon-links": "^6.0.18",
     "@storybook/addon-storysource": "^5.3.18",
     "@storybook/addon-viewport": "^5.3.18",
     "@storybook/addons": "^5.3.18",
