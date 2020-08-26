@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/sentrei/sentrei/compare/v1.5.2...v1.6.0) (2020-08-26)
+
+### Features
+
+- 🎸 ini space panel banner score ([8bdd01f](https://github.com/sentrei/sentrei/commit/8bdd01f3608a08de14a4afd4f0ce75db7ed98748))
+- 🎸 refactor types number ([7b6788e](https://github.com/sentrei/sentrei/commit/7b6788e0c59e2c5379d629c8183a5e76dacd0404))
+
 ## [1.5.2](https://github.com/sentrei/sentrei/compare/v1.5.1...v1.5.2) (2020-08-26)
 
 ### Performance Improvements
