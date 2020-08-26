@@ -36,6 +36,9 @@ export default function SpacePanel({
             photo={space.photo}
             name={space.name}
             memberCount={space.memberCount}
+            roomCount={space.memberCount}
+            scoreCount={space.memberCount}
+            spaceId={space.id}
           />
         </Grid>
         <Grid item xs={12} sm={6} md={6}>

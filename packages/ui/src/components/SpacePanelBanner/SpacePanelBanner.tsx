@@ -8,24 +8,28 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
+import MuiLink from "@sentrei/ui/components/MuiLink";
+
 import SpacePanelBannerStyles from "./SpacePanelBannerStyles";
 
 export interface Props {
   photo?: string | null;
   memberCount: number;
   name: string;
-  // roomCount: number;
-  // scoreCount: number;
+  roomCount: number;
+  scoreCount: number;
+  spaceId: string;
 }
 
 export default function SpacePanelBanner({
   photo,
   memberCount,
   name,
-}: // TODO: roomCount & scoreCount
-// roomCount,
-// scoreCount,
-Props): JSX.Element {
+  roomCount,
+  scoreCount,
+  spaceId,
+}: Props): JSX.Element {
   const classes = SpacePanelBannerStyles();
   const {t} = useTranslation();
 
@@ -56,7 +60,12 @@ Props): JSX.Element {
                 </Grid>
                 <Grid item xs={1} />
                 <Grid item xs={1}>
-                  <Chip label="Basic" variant="outlined" />
+                  <MuiButtonBase
+                    href="/[spaceId]/settings/billing"
+                    as={`${spaceId}/settings/billing`}
+                  >
+                    <Chip clickable label="Basic" variant="outlined" />
+                  </MuiButtonBase>
                 </Grid>
               </Grid>
             </Grid>
@@ -69,9 +78,15 @@ Props): JSX.Element {
                     justify="flex-start"
                     direction="column"
                   >
-                    <Typography variant="button" gutterBottom>
-                      {t("common:common.members")}
-                    </Typography>
+                    <MuiLink
+                      href="/[spaceId]/members"
+                      as={`/${spaceId}/members`}
+                      color="inherit"
+                    >
+                      <Typography variant="button" gutterBottom>
+                        {t("common:common.members")}
+                      </Typography>
+                    </MuiLink>
                     <Typography variant="button" gutterBottom>
                       {memberCount}
                     </Typography>
@@ -87,11 +102,17 @@ Props): JSX.Element {
                     justify="space-around"
                     direction="column"
                   >
+                    <MuiLink
+                      href="/[spaceId]/rooms"
+                      as={`/${spaceId}/rooms`}
+                      color="inherit"
+                    >
+                      <Typography variant="button" gutterBottom>
+                        {t("common:common.rooms")}
+                      </Typography>
+                    </MuiLink>
                     <Typography variant="button" gutterBottom>
-                      {t("common:common.rooms")}
-                    </Typography>
-                    <Typography variant="button" gutterBottom>
-                      {memberCount}
+                      {roomCount}
                     </Typography>
                   </Grid>
                 </Grid>
@@ -105,11 +126,17 @@ Props): JSX.Element {
                     justify="flex-start"
                     direction="column"
                   >
+                    <MuiLink
+                      href="/[spaceId]/leaderboard"
+                      as={`/${spaceId}/leaderboard`}
+                      color="inherit"
+                    >
+                      <Typography variant="button" gutterBottom>
+                        {t("common:common.score")}
+                      </Typography>
+                    </MuiLink>
                     <Typography variant="button" gutterBottom>
-                      {t("common:common.score")}
-                    </Typography>
-                    <Typography variant="button" gutterBottom>
-                      {memberCount}
+                      {scoreCount}
                     </Typography>
                   </Grid>
                 </Grid>
