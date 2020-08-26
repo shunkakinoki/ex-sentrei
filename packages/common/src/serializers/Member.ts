@@ -12,6 +12,7 @@ export const serializeMember = (
     ...data,
     createdAt: serializeFirebaseDate(data.createdAt),
     id: snap.id,
+    score: data.score as number,
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };
 };
@@ -25,6 +26,7 @@ export const serializeAdminMember = (
     ...data,
     createdAt: serializeFirebaseDate(data.createdAt),
     id: snap.id,
+    score: data.score as number,
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };
 };
