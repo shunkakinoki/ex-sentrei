@@ -84,8 +84,6 @@ export default function SpaceScreen({
 
   return (
     <>
-      {members && matches && <MemberFab members={members} space={space} />}
-      {space && <SpaceFab spaceId={space.id} type="space" />}
       {space && members && member && (
         <SpaceBoard
           member={member}
