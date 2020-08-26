@@ -1,3 +1,9 @@
+## [1.3.1](https://github.com/sentrei/sentrei/compare/v1.3.0...v1.3.1) (2020-08-26)
+
+### Bug Fixes
+
+- 🐛 credits tree nossr ([20d3d0a](https://github.com/sentrei/sentrei/commit/20d3d0aa0ddd5434bb97130fa86c43a4b1ccef4c))
+
 # [1.3.0](https://github.com/sentrei/sentrei/compare/v1.2.4...v1.3.0) (2020-08-26)
 
 ### Features
