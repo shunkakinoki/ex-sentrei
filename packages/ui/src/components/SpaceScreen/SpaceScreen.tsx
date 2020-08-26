@@ -1,5 +1,3 @@
-import {useTheme} from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Error from "next/error";
 import * as React from "react";
 
@@ -33,9 +31,6 @@ export default function SpaceScreen({
   spaceData,
   spaceId,
 }: Props): JSX.Element {
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("md"));
-
   const [space, setSpace] = React.useState<Space.Get | null | undefined>(
     spaceData,
   );
