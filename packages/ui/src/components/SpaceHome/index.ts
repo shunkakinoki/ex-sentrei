@@ -1,1 +1,1 @@
-export {default} from "./SpaceBoard";
+export {default} from "./SpaceHome";
