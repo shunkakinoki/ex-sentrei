@@ -18,7 +18,7 @@ export interface Props {
   memberCount: number;
   name: string;
   roomCount: number;
-  scoreCount: number;
+  score: number;
   spaceId: string;
   tier: Space.Tiers;
 }
@@ -28,7 +28,7 @@ export default function SpacePanelBanner({
   memberCount,
   name,
   roomCount,
-  scoreCount,
+  score,
   spaceId,
   tier,
 }: Props): JSX.Element {
@@ -107,7 +107,7 @@ export default function SpacePanelBanner({
               </Grid>
               <Grid item xs={2}>
                 <SpacePanelBannerSection
-                  count={scoreCount}
+                  count={score}
                   section="leaderboard"
                   spaceId={spaceId}
                   title={t("common:common.score")}
