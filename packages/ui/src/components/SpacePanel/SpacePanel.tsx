@@ -42,6 +42,7 @@ export default function SpacePanel({
               roomCount={space.memberCount}
               scoreCount={space.memberCount}
               spaceId={space.id}
+              tier={space.tier}
             />
           </Grid>
           <Grid item xs={false} sm={false} md={1} />
