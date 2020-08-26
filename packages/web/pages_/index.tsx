@@ -65,7 +65,7 @@ const Index: NextPage = () => {
         <SentreiFaq />
       </div>
       <Spacing />
-      <Footer />
+      <Footer metomic />
     </>
   );
 };

@@ -15,7 +15,7 @@ const Pitch: NextPage = () => {
     <>
       <SentreiHeader />
       <PitchScreen />
-      <Footer metomic={false} />
+      <Footer />
     </>
   );
 };

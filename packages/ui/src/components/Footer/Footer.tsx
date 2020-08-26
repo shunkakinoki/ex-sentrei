@@ -14,7 +14,7 @@ export interface Props {
   metomic?: boolean;
 }
 
-export default function Footer({metomic = true}: Props): JSX.Element {
+export default function Footer({metomic = false}: Props): JSX.Element {
   const classes = FooterStyles();
 
   return (
