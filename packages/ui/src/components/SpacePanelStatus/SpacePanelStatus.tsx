@@ -1,5 +1,4 @@
 import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import * as React from "react";
@@ -28,7 +27,7 @@ export default function SpacePanelStatus({
   const classes = SpacePanelStatusStyles();
 
   return (
-    <Container maxWidth="sm">
+    <Box p={3}>
       <Paper className={classes.root}>
         <SpacePanelEmojiPicker
           profile={profile}
@@ -45,6 +44,6 @@ export default function SpacePanelStatus({
         />
       </Paper>
       <Box pb={3} />
-    </Container>
+    </Box>
   );
 }

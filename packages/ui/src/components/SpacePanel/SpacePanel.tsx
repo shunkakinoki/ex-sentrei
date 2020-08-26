@@ -1,37 +1,53 @@
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 import * as React from "react";
 
 import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
+import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import SpacePanelBanner from "@sentrei/ui/components/SpacePanelBanner";
 import SpacePanelStatus from "@sentrei/ui/components/SpacePanelStatus";
 
 export interface Props {
-  photo?: string | null;
   member: Member.Get;
-  name: string;
   profile: Profile.Get;
-  spaceId: string;
+  space: Space.Get;
   user: User.Get;
 }
 
 export default function SpacePanel({
   member,
-  name,
   profile,
-  photo,
-  spaceId,
+  space,
   user,
 }: Props): JSX.Element {
   return (
-    <>
-      <SpacePanelBanner photo={photo} name={name} />
-      <SpacePanelStatus
-        profile={profile}
-        member={member}
-        spaceId={spaceId}
-        user={user}
-      />
-    </>
+    <Container maxWidth="md">
+      <Grid
+        container
+        alignItems="center"
+        justify="center"
+        direction="row"
+        spacing={3}
+      >
+        <Grid item xs={12} sm={6} md={5}>
+          <SpacePanelBanner
+            photo={space.photo}
+            name={space.name}
+            memberCount={space.memberCount}
+            roomCount={space.memberCount}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={7}>
+          <SpacePanelStatus
+            profile={profile}
+            member={member}
+            spaceId={space.id}
+            user={user}
+          />
+        </Grid>
+      </Grid>
+    </Container>
   );
 }

@@ -11,10 +11,8 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
-import MemberFab from "@sentrei/ui/components/MemberFab";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import SpaceBoard from "@sentrei/ui/components/SpaceBoard";
-import SpaceFab from "@sentrei/ui/components/SpaceFab";
 
 export interface Props {
   user: User.Get;
