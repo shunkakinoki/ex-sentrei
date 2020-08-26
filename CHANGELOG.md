@@ -1,3 +1,9 @@
+## [1.5.1](https://github.com/sentrei/sentrei/compare/v1.5.0...v1.5.1) (2020-08-26)
+
+### Bug Fixes
+
+- 🐛 metomic footer patch ([a8c2e95](https://github.com/sentrei/sentrei/commit/a8c2e957b845384950c68c1a8889c9041bd9964a))
+
 # [1.5.0](https://github.com/sentrei/sentrei/compare/v1.4.0...v1.5.0) (2020-08-26)
 
 ### Features
