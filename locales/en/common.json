@@ -30,7 +30,6 @@
     "members": "Members",
     "mode": "Mode",
     "mySpaces": "My Spaces",
-    "pro": "Pro",
     "name": "Name",
     "never": "Never",
     "next": "Next",
@@ -44,6 +43,7 @@
     "personal": "Personal",
     "photo": "Photo",
     "pickYourEmoji": "Pick Your Emoji",
+    "pro": "Pro",
     "profile": "Profile",
     "quit": "Quit",
     "room": "Room",
@@ -61,6 +61,7 @@
     "username": "Username",
     "visit": "Visit",
     "week": "Week",
+    "workspace": "Workspace",
     "writeYourStatus": "Write your status..."
   },
   "snackbar": {
