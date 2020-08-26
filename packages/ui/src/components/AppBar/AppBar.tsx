@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
+import Skeleton from "@material-ui/lab/Skeleton";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
@@ -71,7 +72,11 @@ export default function AppBar({
               href={spaceId ? "/[spaceId]" : "/dashboard"}
               as={spaceId ? `/${spaceId}` : "/dashboard"}
             >
-              <Typography display="inline">{spaceId || userId}</Typography>
+              {spaceId || userId ? (
+                <Typography display="inline">{spaceId || userId}</Typography>
+              ) : (
+                <Skeleton width={90} />
+              )}
             </MuiButtonBase>
             <IconButton
               edge="start"
