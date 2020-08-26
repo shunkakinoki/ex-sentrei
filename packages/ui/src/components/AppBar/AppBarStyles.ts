@@ -12,6 +12,11 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
       width: theme.spacing(4),
       height: theme.spacing(4),
     },
+    logo: {
+      backgroundColor: "transparent !important",
+      width: theme.spacing(5),
+      height: theme.spacing(5),
+    },
     grow: {
       flexGrow: 1,
     },

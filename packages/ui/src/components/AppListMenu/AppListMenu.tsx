@@ -1,19 +1,16 @@
 import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import Link from "next-translate/Link";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {getSpaces} from "@sentrei/common/firebase/spaces";
+import Profile from "@sentrei/types/models/Profile";
 import Space from "@sentrei/types/models/Space";
-import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
-import IntlForm from "@sentrei/ui/components/IntlForm";
+import MuiMenuItem from "@sentrei/ui/components/MuiMenuItem";
 
 export interface Props {
   anchorEl?: Element | ((element: Element) => Element) | null | undefined;
@@ -21,13 +18,15 @@ export interface Props {
   onClose?:
     | ((event: {}, reason: "backdropClick" | "escapeKeyDown") => void)
     | undefined;
+  profile?: Profile.Get;
   userId?: string;
 }
 
-export default function ListMenu({
+export default function AppListMenu({
   anchorEl,
   open,
   onClose,
+  profile,
   userId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
@@ -58,39 +57,33 @@ export default function ListMenu({
       onClose={onClose}
     >
       <MenuItem disabled>
-        <ListItemText primary={t("common:common.mySpaces")} />
+        <ListItemText primary={t("common:common.team")} />
       </MenuItem>
       {spaces &&
         spaces.map(space => (
-          <Link key={space.id} href="/[spaceId]" as={`/${space.id}`}>
-            <MenuItem>
-              <ListItemIcon>
-                {space.photo ? (
-                  <Avatar src={space.photo} />
-                ) : (
-                  <Avatar>{space.name[0]}</Avatar>
-                )}
-              </ListItemIcon>
-              <ListItemText primary={space.name} />
-            </MenuItem>
-          </Link>
+          <MuiMenuItem key={space.id} href="/[spaceId]" as={`/${space.id}`}>
+            <ListItemIcon>
+              {space.photo ? (
+                <Avatar src={space.photo} />
+              ) : (
+                <Avatar>{space.name[0]}</Avatar>
+              )}
+            </ListItemIcon>
+            <ListItemText primary={space.name} />
+          </MuiMenuItem>
         ))}
       <Divider />
       <MenuItem disabled>
-        <ListItemText primary={t("common:common.mode")} />
+        <ListItemText primary={t("common:common.personal")} />
       </MenuItem>
-      <ListItem>
-        <IconButton>
-          <DarkModeButton />
-        </IconButton>
-      </ListItem>
-      <Divider />
-      <MenuItem disabled>
-        <ListItemText primary={t("common:common.language")} />
-      </MenuItem>
-      <ListItem>
-        <IntlForm />
-      </ListItem>
+      <MuiMenuItem href="/dashboard">
+        <ListItemIcon>
+          <Avatar
+            src={profile ? profile.photo || profile.name[0] : undefined}
+          />
+        </ListItemIcon>
+        <ListItemText primary={profile ? profile.name : userId} />
+      </MuiMenuItem>
     </Menu>
   );
 }
