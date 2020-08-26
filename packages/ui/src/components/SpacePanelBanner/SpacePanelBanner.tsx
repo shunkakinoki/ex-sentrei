@@ -1,5 +1,6 @@
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
+import Chip from "@material-ui/core/Chip";
 import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -30,15 +31,15 @@ Props): JSX.Element {
 
   return (
     <Box p={1}>
-      <Grid container alignItems="center" justify="center" direction="row">
-        <Grid item xs={3}>
+      <Grid container alignItems="center" direction="row">
+        <Grid item xs={1}>
           {photo ? (
             <Avatar src={photo || undefined} className={classes.large} />
           ) : (
             <DashboardIcon color="disabled" className={classes.large} />
           )}
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={11}>
           <Grid
             container
             alignItems="center"
@@ -47,9 +48,17 @@ Props): JSX.Element {
             spacing={1}
           >
             <Grid item xs={12}>
-              <Typography variant="h3" component="h3" align="center">
-                {name}
-              </Typography>
+              <Grid container direction="row" alignItems="center" spacing={1}>
+                <Grid item xs={10}>
+                  <Typography noWrap variant="h4" component="h4" align="left">
+                    {name}
+                  </Typography>
+                </Grid>
+                <Grid item xs={1} />
+                <Grid item xs={1}>
+                  <Chip label="Basic" variant="outlined" />
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item xs={12}>
               <Grid container direction="row" spacing={2}>

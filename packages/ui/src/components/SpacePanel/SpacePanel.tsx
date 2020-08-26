@@ -31,15 +31,14 @@ export default function SpacePanel({
         direction="row"
         spacing={3}
       >
-        <Grid item xs={12} sm={6} md={5}>
+        <Grid item xs={12} sm={6} md={6}>
           <SpacePanelBanner
             photo={space.photo}
             name={space.name}
             memberCount={space.memberCount}
-            roomCount={space.memberCount}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={7}>
+        <Grid item xs={12} sm={6} md={6}>
           <SpacePanelStatus
             profile={profile}
             member={member}
