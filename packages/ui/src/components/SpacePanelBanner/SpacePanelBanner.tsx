@@ -74,7 +74,7 @@ export default function SpacePanelBanner({
                   <Chip
                     clickable
                     color={tier === "free" ? "secondary" : "primary"}
-                    label={`${tier[0].toUpperCase()}${tier.substring(1)}`}
+                    label={t(`common:common.${tier}`)}
                     variant={tier === "free" ? "outlined" : "default"}
                   />
                 </MuiButtonBase>
