@@ -3,11 +3,11 @@ import {withStyles, Theme, createStyles} from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 import HistoryIcon from "@material-ui/icons/History";
+import HomeIcon from "@material-ui/icons/Home";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import PeopleIcon from "@material-ui/icons/People";
 import PollIcon from "@material-ui/icons/Poll";
 import SettingsIcon from "@material-ui/icons/Settings";
-import StorageIcon from "@material-ui/icons/Storage";
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
 
@@ -90,8 +90,8 @@ export default function AppTab({
           <SpaceTab
             href="/[spaceId]"
             as={`/${spaceId}`}
-            label={t("common:common.dashboard")}
-            labelIcon={<StorageIcon />}
+            label={t("common:common.home")}
+            labelIcon={<HomeIcon />}
           />
           <SpaceTab
             href="/[spaceId]"

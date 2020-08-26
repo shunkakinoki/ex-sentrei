@@ -7,6 +7,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import Space from "@sentrei/types/models/Space";
 import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
 import SpacePanelBannerSection from "@sentrei/ui/components/SpacePanelBannerSection";
 
@@ -19,6 +20,7 @@ export interface Props {
   roomCount: number;
   scoreCount: number;
   spaceId: string;
+  tier: Space.Tiers;
 }
 
 export default function SpacePanelBanner({
@@ -28,6 +30,7 @@ export default function SpacePanelBanner({
   roomCount,
   scoreCount,
   spaceId,
+  tier,
 }: Props): JSX.Element {
   const classes = SpacePanelBannerStyles();
   const {t} = useTranslation();
@@ -68,7 +71,12 @@ export default function SpacePanelBanner({
                   href="/[spaceId]/settings/billing"
                   as={`${spaceId}/settings/billing`}
                 >
-                  <Chip clickable label="Basic" variant="outlined" />
+                  <Chip
+                    clickable
+                    color={tier === "free" ? "default" : "primary"}
+                    label={t(`common:common.${tier}`)}
+                    variant={tier === "free" ? "outlined" : "default"}
+                  />
                 </MuiButtonBase>
               </Grid>
             </Grid>

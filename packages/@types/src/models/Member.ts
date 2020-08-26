@@ -10,6 +10,7 @@ declare namespace Member {
     description: string;
     emoji: string;
     status: Status;
+    score: FirebaseFirestore.FieldValue | number;
   };
 
   interface Fields extends EditableFields {

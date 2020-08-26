@@ -57,6 +57,8 @@ const SpaceStepperOther = ({atom, form, profile, user}: Props): JSX.Element => {
           createdBy: profile,
           createdByUid: user.uid,
           memberCount: 0,
+          roomCount: 0,
+          scoreCount: 0,
           tier: "free",
           updatedAt: timestamp,
           updatedBy: profile,

@@ -3,8 +3,9 @@ import {createStyles, makeStyles} from "@material-ui/core/styles";
 const SpaceScreenStyles = makeStyles(() =>
   createStyles({
     root: {
-      display: "flex",
       alignItems: "center",
+      backgroundColor: "transparent !important",
+      display: "flex",
     },
     iconButton: {
       padding: 10,

@@ -24,11 +24,11 @@ export default function SpacePanelBannerSection({
         as={`/${spaceId}/${section}`}
         color="inherit"
       >
-        <Typography variant="button" gutterBottom>
+        <Typography variant="button" color="textSecondary" gutterBottom>
           {title}
         </Typography>
       </MuiLink>
-      <Typography variant="button" gutterBottom>
+      <Typography variant="button" color="textSecondary" gutterBottom>
         {count}
       </Typography>
     </Grid>

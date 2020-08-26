@@ -1,5 +1,4 @@
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
@@ -18,6 +17,7 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
+import MuiButton from "@sentrei/ui/components/MuiButton";
 import RoomCardEmojiPicker from "@sentrei/ui/components/RoomCardEmojiPicker";
 import RoomMenu from "@sentrei/ui/components/RoomMenu";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -129,14 +129,15 @@ export default function RoomCard({
           <Grid container direction="row" justify="space-around">
             <Grid item xs={9} />
             <Grid item xs={3}>
-              <Link
+              <MuiButton
                 href="/[spaceId]/room/[roomId]"
                 as={`/${space.id}/room/${room.id}`}
+                fullWidth
+                variant="contained"
+                color="primary"
               >
-                <Button fullWidth variant="outlined" color="primary">
-                  {t("common:common.visit")}
-                </Button>
-              </Link>
+                {t("common:common.visit")}
+              </MuiButton>
             </Grid>
           </Grid>
         </div>
