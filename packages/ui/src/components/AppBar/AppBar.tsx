@@ -67,26 +67,25 @@ export default function AppBar({
             >
               <Avatar className={classes.logo}>{logo}</Avatar>
             </MuiButtonBase>
-            {spaceId && (
-              <>
-                <MuiButtonBase href="/[spaceId]" as={`/${spaceId}`}>
-                  <Typography display="inline">{spaceId}</Typography>
-                </MuiButtonBase>
-                <IconButton
-                  edge="start"
-                  aria-controls="list-menu"
-                  aria-haspopup="true"
-                  size="small"
-                  onClick={handleListClick}
-                >
-                  {listAnchorEl ? (
-                    <UnfoldMoreIcon color="disabled" />
-                  ) : (
-                    <UnfoldMoreIcon />
-                  )}
-                </IconButton>
-              </>
-            )}
+            <MuiButtonBase
+              href={spaceId ? "/[spaceId]" : "/dashboard"}
+              as={spaceId ? `/${spaceId}` : "/dashboard"}
+            >
+              <Typography display="inline">{spaceId || userId}</Typography>
+            </MuiButtonBase>
+            <IconButton
+              edge="start"
+              aria-controls="list-menu"
+              aria-haspopup="true"
+              size="small"
+              onClick={handleListClick}
+            >
+              {listAnchorEl ? (
+                <UnfoldMoreIcon color="disabled" />
+              ) : (
+                <UnfoldMoreIcon />
+              )}
+            </IconButton>
           </Breadcrumbs>
           <AppListMenu
             anchorEl={listAnchorEl}
