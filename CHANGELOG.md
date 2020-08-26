@@ -1,3 +1,19 @@
+# [1.4.0](https://github.com/sentrei/sentrei/compare/v1.3.1...v1.4.0) (2020-08-26)
+
+### Features
+
+- 🎸 completely refactor space panel banner ([f6dff66](https://github.com/sentrei/sentrei/commit/f6dff66ca278b5535e0fccbf580c0558375ea6df))
+- 🎸 ini space banner mui link ([7ebffbc](https://github.com/sentrei/sentrei/commit/7ebffbce05b8cba5d935876f29793ec0d339b5b6))
+- 🎸 ini space panel ([ad14ae1](https://github.com/sentrei/sentrei/commit/ad14ae13ae2c6994cf9094b3a069ea727481e165))
+- 🎸 ini space panel banner chip ([660298c](https://github.com/sentrei/sentrei/commit/660298cc1c36737fd761da97f71e06e67bd44316))
+- 🎸 ini space panel banner section ([f4b5f72](https://github.com/sentrei/sentrei/commit/f4b5f727d5dea055ee20aa0827b7ef673a53a55d))
+- 🎸 ni space panel action ([f38a2ed](https://github.com/sentrei/sentrei/commit/f38a2edf0c2a7d16b928f64a2b7a700c575fbb75))
+
+### Performance Improvements
+
+- ⚡️ ini skeleton for breadcrumb typography ([935fe54](https://github.com/sentrei/sentrei/commit/935fe54e07eacfadcbd23212e087232f3559df2c))
+- ⚡️ remove fab on space screen ([67f9847](https://github.com/sentrei/sentrei/commit/67f98473ed4c24cefeacfe74c86097fe02a31829))
+
 ## [1.3.1](https://github.com/sentrei/sentrei/compare/v1.3.0...v1.3.1) (2020-08-26)
 
 ### Bug Fixes
