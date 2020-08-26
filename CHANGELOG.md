@@ -1,3 +1,9 @@
+## [1.2.3](https://github.com/sentrei/sentrei/compare/v1.2.2...v1.2.3) (2020-08-26)
+
+### Performance Improvements
+
+- **deps:** bump cla-assistant/github-action ([e5935eb](https://github.com/sentrei/sentrei/commit/e5935ebae1020c0129fff93caa263018ebca7ea3))
+
 ## [1.2.2](https://github.com/sentrei/sentrei/compare/v1.2.1...v1.2.2) (2020-08-25)
 
 ### Performance Improvements
