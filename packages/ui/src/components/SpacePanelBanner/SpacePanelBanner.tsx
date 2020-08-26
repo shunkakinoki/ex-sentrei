@@ -73,7 +73,7 @@ export default function SpacePanelBanner({
                 >
                   <Chip
                     clickable
-                    color={tier === "free" ? "secondary" : "primary"}
+                    color={tier === "free" ? "default" : "primary"}
                     label={t(`common:common.${tier}`)}
                     variant={tier === "free" ? "outlined" : "default"}
                   />
