@@ -1,3 +1,19 @@
+# [1.5.0](https://github.com/sentrei/sentrei/compare/v1.4.0...v1.5.0) (2020-08-26)
+
+### Features
+
+- 🎸 ini member list item ([f576b09](https://github.com/sentrei/sentrei/commit/f576b09c95a1838b8ad0e8c364ad653b97f4e3b3))
+- 🎸 ini room w/ score count for member & space ([c4bc760](https://github.com/sentrei/sentrei/commit/c4bc760af88d578ccbd14452b8ac9758fc555cb8))
+- 🎸 ini space home ([495a480](https://github.com/sentrei/sentrei/commit/495a480a2fbde8189107797dfb51bae2fe0505cd))
+- 🎸 ini space home board ([5813f7b](https://github.com/sentrei/sentrei/commit/5813f7bf48d4275b07343b457ca2b2fe38db5efd))
+- 🎸 refactor space banner chip & avatar ([5cb48a6](https://github.com/sentrei/sentrei/commit/5cb48a60eb5a79ba231f521073a68290cacb9701))
+
+### Performance Improvements
+
+- ⚡️ ini tier i18n ([1202e6c](https://github.com/sentrei/sentrei/commit/1202e6c9df8a9e4a3537a9832d1fb8a124c1a780))
+- ⚡️ refactor room card mui button ([589b960](https://github.com/sentrei/sentrei/commit/589b9602da395207a30c71cedbc7db50c595f931))
+- ⚡️ update model for ui components ([a00396a](https://github.com/sentrei/sentrei/commit/a00396adc3b999e93c31025625036d979b257d43))
+
 # [1.4.0](https://github.com/sentrei/sentrei/compare/v1.3.1...v1.4.0) (2020-08-26)
 
 ### Features
