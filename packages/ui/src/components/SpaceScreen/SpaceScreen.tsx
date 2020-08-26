@@ -10,7 +10,7 @@ import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
-import SpaceBoard from "@sentrei/ui/components/SpaceBoard";
+import SpaceHome from "@sentrei/ui/components/SpaceHome";
 
 export interface Props {
   user: User.Get;
@@ -78,7 +78,7 @@ export default function SpaceScreen({
   return (
     <>
       {space && members && member && (
-        <SpaceBoard
+        <SpaceHome
           member={member}
           members={members}
           profile={profile}
