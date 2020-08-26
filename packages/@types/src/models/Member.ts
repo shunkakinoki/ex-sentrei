@@ -29,6 +29,7 @@ declare namespace Member {
 
   export interface Get extends Fields, Profile.Get, Metadata.Get {
     id: string;
+    score: number;
   }
 
   export interface Snapshot extends Get {

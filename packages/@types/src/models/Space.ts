@@ -29,6 +29,8 @@ declare namespace Space {
     id: string;
     inviteCount?: number;
     memberCount: number;
+    roomCount: number;
+    scoreCount: number;
   }
 
   export interface Snapshot extends Get {

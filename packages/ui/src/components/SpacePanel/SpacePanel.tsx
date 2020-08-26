@@ -39,8 +39,8 @@ export default function SpacePanel({
               photo={space.photo}
               name={space.name}
               memberCount={space.memberCount}
-              roomCount={space.memberCount}
-              scoreCount={space.memberCount}
+              roomCount={space.roomCount}
+              score={member.score}
               spaceId={space.id}
               tier={space.tier}
             />
