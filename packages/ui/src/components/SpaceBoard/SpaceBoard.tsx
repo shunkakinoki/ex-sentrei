@@ -31,14 +31,8 @@ export default function SpaceBoard({
 }: Props): JSX.Element {
   return (
     <>
-      <SpacePanel
-        member={member}
-        photo={space.photo}
-        profile={profile}
-        name={space.name}
-        spaceId={space.id}
-        user={user}
-      />
+      <Box py={2} />
+      <SpacePanel member={member} profile={profile} space={space} user={user} />
       <Box py={2} />
       <Container maxWidth="lg" component="main">
         <Grid container alignItems="center" justify="center" spacing={3}>

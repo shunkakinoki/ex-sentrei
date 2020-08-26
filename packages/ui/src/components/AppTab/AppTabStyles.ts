@@ -3,7 +3,6 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 const AppTabStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      flexGrow: 1,
       borderBottom: `1px solid ${theme.palette.divider}`,
     },
     labelIcon: {

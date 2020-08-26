@@ -1,5 +1,3 @@
-import {useTheme} from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Error from "next/error";
 import * as React from "react";
 
@@ -11,10 +9,8 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
-import MemberFab from "@sentrei/ui/components/MemberFab";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import SpaceBoard from "@sentrei/ui/components/SpaceBoard";
-import SpaceFab from "@sentrei/ui/components/SpaceFab";
 
 export interface Props {
   user: User.Get;
@@ -35,9 +31,6 @@ export default function SpaceScreen({
   spaceData,
   spaceId,
 }: Props): JSX.Element {
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("md"));
-
   const [space, setSpace] = React.useState<Space.Get | null | undefined>(
     spaceData,
   );
@@ -84,8 +77,6 @@ export default function SpaceScreen({
 
   return (
     <>
-      {members && matches && <MemberFab members={members} space={space} />}
-      {space && <SpaceFab spaceId={space.id} type="space" />}
       {space && members && member && (
         <SpaceBoard
           member={member}
