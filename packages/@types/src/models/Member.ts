@@ -17,6 +17,8 @@ declare namespace Member {
     role: "admin" | "moderator" | "viewer";
   }
 
+  export type AdminUpdate = Partial<Fields>;
+
   export interface Create extends Fields, Profile.Get, Metadata.Create {}
 
   export interface Request extends Fields, Profile.Get, Metadata.Get {}
