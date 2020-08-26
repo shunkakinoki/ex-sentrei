@@ -1,4 +1,3 @@
-import Box from "@material-ui/core/Box";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import * as React from "react";
@@ -27,23 +26,20 @@ export default function SpacePanelStatus({
   const classes = SpacePanelStatusStyles();
 
   return (
-    <Box p={3}>
-      <Paper className={classes.root}>
-        <SpacePanelEmojiPicker
-          profile={profile}
-          emoji={member.emoji}
-          spaceId={spaceId}
-          userId={user.uid}
-        />
-        <Divider className={classes.divider} orientation="vertical" />
-        <SpacePanelDescriptionForm
-          profile={profile}
-          member={member}
-          spaceId={spaceId}
-          userId={user.uid}
-        />
-      </Paper>
-      <Box pb={3} />
-    </Box>
+    <Paper className={classes.root}>
+      <SpacePanelEmojiPicker
+        profile={profile}
+        emoji={member.emoji}
+        spaceId={spaceId}
+        userId={user.uid}
+      />
+      <Divider className={classes.divider} orientation="vertical" />
+      <SpacePanelDescriptionForm
+        profile={profile}
+        member={member}
+        spaceId={spaceId}
+        userId={user.uid}
+      />
+    </Paper>
   );
 }
