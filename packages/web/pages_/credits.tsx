@@ -15,7 +15,7 @@ const Credits: NextPage = () => {
     <>
       <SentreiHeader />
       <CreditsScreen />
-      <Footer metomic={false} />
+      <Footer />
     </>
   );
 };

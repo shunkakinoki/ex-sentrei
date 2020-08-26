@@ -15,7 +15,7 @@ const Pricing: NextPage = () => {
     <>
       <SentreiHeader />
       <PricingScreen />
-      <Footer metomic={false} />
+      <Footer />
     </>
   );
 };

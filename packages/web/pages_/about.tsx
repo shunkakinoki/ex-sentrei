@@ -15,7 +15,7 @@ const About: NextPage = () => {
     <>
       <SentreiHeader type="about" />
       <AboutScreen />
-      <Footer metomic={false} />
+      <Footer />
     </>
   );
 };
