@@ -90,7 +90,7 @@ export default function AppTab({
           <SpaceTab
             href="/[spaceId]"
             as={`/${spaceId}`}
-            label={t("common:common.workspace")}
+            label={t("common:common.home")}
             labelIcon={<HomeIcon />}
           />
           <SpaceTab
