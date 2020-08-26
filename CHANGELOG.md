@@ -1,3 +1,13 @@
+# [1.3.0](https://github.com/sentrei/sentrei/compare/v1.2.4...v1.3.0) (2020-08-26)
+
+### Features
+
+- 🎸 ini app list menu ([e7a5587](https://github.com/sentrei/sentrei/commit/e7a5587b170aeafb9ed01d631cddeba287721965))
+
+### Performance Improvements
+
+- ⚡️ userId breadcrumb base ([9ec47ed](https://github.com/sentrei/sentrei/commit/9ec47edeab5cbfb536874741375f94f4ac2226aa))
+
 ## [1.2.4](https://github.com/sentrei/sentrei/compare/v1.2.3...v1.2.4) (2020-08-26)
 
 ### Performance Improvements
