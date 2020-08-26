@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/ui",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -55,7 +55,7 @@
     "classnames": "^2.2.6",
     "clsx": "^1.1.1",
     "emoji-mart": "^3.0.0",
-    "firebase": "^7.16.1",
+    "firebase": "^7.19.0",
     "framer-motion": "^2.2.0",
     "next": "^9.5.2",
     "next-translate": "^0.17.2-canary.6",
