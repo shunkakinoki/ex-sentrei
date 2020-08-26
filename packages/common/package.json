@@ -32,7 +32,7 @@
     "@types/lodash.get": "^4.4.6",
     "@types/nprogress": "^0.2.0",
     "dayjs": "^1.8.31",
-    "firebase": "^7.16.1",
+    "firebase": "^7.19.0",
     "firebase-admin": "^9.0.0",
     "lodash": "^4.17.20",
     "lodash.get": "^4.4.2",
