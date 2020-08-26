@@ -50,7 +50,7 @@ export default function SpacePanel({
           </Grid>
         </Grid>
       </Container>
-      <Box py={2} />
+      <Box py={1} />
       <Container maxWidth="sm">
         <SpacePanelStatus
           profile={profile}
