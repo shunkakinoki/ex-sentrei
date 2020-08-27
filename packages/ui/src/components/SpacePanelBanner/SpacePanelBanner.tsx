@@ -81,7 +81,7 @@ export default function SpacePanelBanner({
           </Grid>
           <Grid item xs={12}>
             <Grid container direction="row" spacing={2}>
-              <Grid item xs={4}>
+              <Grid item xs={6}>
                 <SpacePanelBannerSection
                   count={duration}
                   section="analytics"
@@ -92,7 +92,7 @@ export default function SpacePanelBanner({
               <Grid item xs={1}>
                 <Divider orientation="vertical" className={classes.divider} />
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={5}>
                 <SpacePanelBannerSection
                   count={score}
                   section="leaderboard"
