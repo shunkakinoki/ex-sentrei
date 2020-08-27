@@ -1,3 +1,4 @@
+import Analytics from "@sentrei/types/models/Analytics";
 import Profile from "@sentrei/types/models/Profile";
 
 declare namespace User {
@@ -11,7 +12,8 @@ declare namespace User {
     update: NotificationType[];
   }
 
-  export interface Response extends Profile.Response {
+  export interface Fields extends Profile.Fields {
+    analytics: Analytics.Fields;
     email: string | null;
     mode?: Mode;
     language?: Language;
@@ -20,6 +22,8 @@ declare namespace User {
     notificationSettings: NotificationSettings;
     role: "admin" | "moderator" | "viewer";
   }
+
+  export type Response = Fields;
 
   export interface Get extends Response {
     uid: string;

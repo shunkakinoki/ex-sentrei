@@ -1,6 +1,6 @@
 declare namespace Analytics {
   export type Fields = {
-    [s: string]: FirebaseFirestore.FieldValue | number;
+    [analytics: string]: FirebaseFirestore.FieldValue | number;
   };
 }
 

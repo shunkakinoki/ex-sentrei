@@ -92,14 +92,14 @@ export default function SpaceCard({space}: Props): JSX.Element {
         <div className={classes.container}>
           <Grid container direction="row" justify="space-around">
             <Grid item xs={9}>
-              <AvatarGroup max={space.memberCount}>
+              <AvatarGroup max={space.stats.members || 0}>
                 {members
                   ? members
                       .slice(0, 3)
                       .map(member => (
                         <ProfileCard key={member.username} member={member} />
                       ))
-                  : [...Array(space.memberCount)].map(e => (
+                  : [...Array(space.stats.members || 0)].map(e => (
                       <Skeleton key={e} variant="circle">
                         <Avatar />
                       </Skeleton>

@@ -1,4 +1,5 @@
 import Metadata from "@sentrei/types/models/Metadata";
+import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Space {
   export type Tiers = "free" | "pro" | "enterprise";
@@ -10,10 +11,7 @@ declare namespace Space {
   };
 
   interface Fields extends EditableFields {
-    inviteCount?: FirebaseFirestore.FieldValue | number;
-    memberCount: FirebaseFirestore.FieldValue | number;
-    roomCount: FirebaseFirestore.FieldValue | number;
-    scoreCount: FirebaseFirestore.FieldValue | number;
+    stats: Stats.Fields;
     tier: Tiers;
   }
 
@@ -27,10 +25,7 @@ declare namespace Space {
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
-    inviteCount?: number;
-    memberCount: number;
-    roomCount: number;
-    scoreCount: number;
+    stats: Stats.NumberFields;
   }
 
   export interface Snapshot extends Get {
