@@ -1,6 +1,7 @@
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import MuiLink from "@material-ui/core/Link";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -10,8 +11,6 @@ import PublicIcon from "@material-ui/icons/Public";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import * as React from "react";
 import Avatar from "react-avatar";
-
-import MuiLink from "@sentrei/ui/components/MuiLink";
 
 import AboutTeamCardStyles from "./AboutTeamCardStyles";
 
