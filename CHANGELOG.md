@@ -1,3 +1,9 @@
+# [1.8.0](https://github.com/sentrei/sentrei/compare/v1.7.0...v1.8.0) (2020-08-27)
+
+### Features
+
+- 🎸 ini models namespaces ([14bd6b2](https://github.com/sentrei/sentrei/commit/14bd6b2e89b1b4a3c0aa8f74902eacfbc62681c3))
+
 # [1.7.0](https://github.com/sentrei/sentrei/compare/v1.6.2...v1.7.0) (2020-08-27)
 
 ### Features
