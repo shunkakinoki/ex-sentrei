@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/sentrei/sentrei/compare/v1.8.2...v1.8.3) (2020-08-27)
+
+### Performance Improvements
+
+- ⚡️ ini analytics member ([a2fc33e](https://github.com/sentrei/sentrei/commit/a2fc33e0de5b9312036a86a870d342156ad5edc5))
+- ⚡️ ini analytics stats for user and member ([b4c83ed](https://github.com/sentrei/sentrei/commit/b4c83ed21dd8d10f26772a693c18df87d59f0996))
+
 ## [1.8.2](https://github.com/sentrei/sentrei/compare/v1.8.1...v1.8.2) (2020-08-27)
 
 ### Bug Fixes
