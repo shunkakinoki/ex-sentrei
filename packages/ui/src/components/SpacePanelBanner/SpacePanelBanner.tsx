@@ -1,4 +1,5 @@
 import Avatar from "@material-ui/core/Avatar";
+import Box from "@material-ui/core/Box";
 import Chip from "@material-ui/core/Chip";
 import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
@@ -80,25 +81,29 @@ export default function SpacePanelBanner({
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Grid container direction="row" spacing={2}>
-              <Grid item xs={6}>
-                <SpacePanelBannerSection
-                  count={duration}
-                  section="analytics"
-                  spaceId={spaceId}
-                  title={t("common:common.duration")}
-                />
+            <Grid container direction="row" spacing={1}>
+              <Grid item>
+                <Box mx={1}>
+                  <SpacePanelBannerSection
+                    count={duration}
+                    section="analytics"
+                    spaceId={spaceId}
+                    title={t("common:common.duration")}
+                  />
+                </Box>
               </Grid>
-              <Grid item xs={1}>
+              <Grid item>
                 <Divider orientation="vertical" className={classes.divider} />
               </Grid>
-              <Grid item xs={5}>
-                <SpacePanelBannerSection
-                  count={score}
-                  section="leaderboard"
-                  spaceId={spaceId}
-                  title={t("common:common.score")}
-                />
+              <Grid item>
+                <Box mx={1}>
+                  <SpacePanelBannerSection
+                    count={score}
+                    section="leaderboard"
+                    spaceId={spaceId}
+                    title={t("common:common.score")}
+                  />
+                </Box>
               </Grid>
             </Grid>
           </Grid>
