@@ -5,9 +5,9 @@ export type RootCollection =
   | "usernames"
   | "users";
 
-export const rootStatsCollection: RootCollection[] = [
-  "notifications",
+export const rootCollection: RootCollection[] = [
   "profiles",
+  "notifications",
   "spaces",
   "usernames",
   "users",
@@ -15,7 +15,7 @@ export const rootStatsCollection: RootCollection[] = [
 
 export type RoomCollection = "participants";
 
-export const roomStatsCollection: RoomCollection[] = ["participants"];
+export const roomCollection: RoomCollection[] = ["participants"];
 
 export type SpaceCollection =
   | "activity"
@@ -24,7 +24,7 @@ export type SpaceCollection =
   | "rooms"
   | "sessions";
 
-export const spaceStatsCollection: SpaceCollection[] = [
+export const spaceCollection: SpaceCollection[] = [
   "activity",
   "invites",
   "members",
@@ -34,32 +34,32 @@ export const spaceStatsCollection: SpaceCollection[] = [
 
 export type RoomSpaceCollection = RoomCollection | SpaceCollection;
 
-export const roomSpaceStatsCollection: RoomSpaceCollection[] = [
-  ...roomStatsCollection,
-  ...spaceStatsCollection,
+export const roomSpaceCollection: RoomSpaceCollection[] = [
+  ...roomCollection,
+  ...spaceCollection,
 ];
 
 export type Collection = RootCollection | RoomSpaceCollection;
 
-export const statsCollection: Collection[] = [
-  ...rootStatsCollection,
-  ...roomSpaceStatsCollection,
+export const Collection: Collection[] = [
+  ...rootCollection,
+  ...roomSpaceCollection,
 ];
 
 declare namespace Stats {
-  export type RoomStats = {
+  export type Room = {
     [x in RoomCollection]?: FirebaseFirestore.FieldValue | number;
   };
 
-  export type RoomSpaceStats = {
+  export type RoomSpace = {
     [x in RoomSpaceCollection]?: FirebaseFirestore.FieldValue | number;
   };
 
-  export type RootStats = {
+  export type Root = {
     [x in RootCollection]?: FirebaseFirestore.FieldValue | number;
   };
 
-  export type SpaceStats = {
+  export type Space = {
     [x in SpaceCollection]?: FirebaseFirestore.FieldValue | number;
   };
 
