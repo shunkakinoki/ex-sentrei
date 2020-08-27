@@ -14,7 +14,7 @@ declare namespace Space {
 
   interface Fields extends EditableFields {
     analytics: Analytics.Fields;
-    record: Record.Space;
+    record: Record.Fields;
     stats: Stats.Fields;
     tier: Tiers;
   }
@@ -30,7 +30,7 @@ declare namespace Space {
   export interface Get extends Fields, Metadata.Get {
     id: string;
     analytics: Analytics.NumberFields;
-    record: Record.NumberFields;
+    record: Record.Get;
     stats: Stats.NumberFields;
   }
 

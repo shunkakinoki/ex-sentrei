@@ -12,7 +12,7 @@ export const serializeMember = (
   return {
     ...data,
     id: snap.id,
-    record: data.record as Record.NumberFields,
+    record: data.record as Record.Get,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };
@@ -26,7 +26,7 @@ export const serializeAdminMember = (
   return {
     ...data,
     id: snap.id,
-    record: data.record as Record.NumberFields,
+    record: data.record as Record.Get,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };

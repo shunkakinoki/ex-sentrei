@@ -1,6 +1,7 @@
+import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
-
 import Record from "@sentrei/types/models/Record";
+import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Room {
   export type Types = "breakout" | "focus";
@@ -13,8 +14,9 @@ declare namespace Room {
   };
 
   interface Fields extends EditableFields {
-    record: Record.Space;
-    memberCount: number;
+    analytics: Analytics.Fields;
+    record: Record.Fields;
+    stats: Stats.Fields;
     spaceId: string;
     type: Types;
   }
@@ -29,7 +31,9 @@ declare namespace Room {
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
-    record: Record.NumberFields;
+    analytics: Analytics.Get;
+    record: Record.Get;
+    stats: Stats.NumberFields;
   }
 
   export interface Snapshot extends Get {

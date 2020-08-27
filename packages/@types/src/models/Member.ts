@@ -1,6 +1,5 @@
 import firebase from "firebase";
 
-import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
 import Profile from "@sentrei/types/models/Profile";
 import Record from "@sentrei/types/models/Record";
@@ -15,7 +14,7 @@ declare namespace Member {
   };
 
   interface Fields extends EditableFields {
-    record: Record.Member;
+    record: Record.Fields;
     role: "admin" | "moderator" | "viewer";
   }
 
@@ -31,7 +30,7 @@ declare namespace Member {
 
   export interface Get extends Fields, Profile.Get, Metadata.Get {
     id: string;
-    record: Record.NumberFields;
+    record: Record.Get;
   }
 
   export interface Snapshot extends Get {
