@@ -1,5 +1,6 @@
 import firebase from "firebase";
 
+import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
 import Profile from "@sentrei/types/models/Profile";
 
@@ -10,10 +11,10 @@ declare namespace Member {
     description: string;
     emoji: string;
     status: Status;
-    score: FirebaseFirestore.FieldValue | number;
   };
 
   interface Fields extends EditableFields {
+    analytics: Analytics.Fields;
     role: "admin" | "moderator" | "viewer";
   }
 
@@ -29,7 +30,7 @@ declare namespace Member {
 
   export interface Get extends Fields, Profile.Get, Metadata.Get {
     id: string;
-    score: number;
+    analytics: Analytics.NumberFields;
   }
 
   export interface Snapshot extends Get {

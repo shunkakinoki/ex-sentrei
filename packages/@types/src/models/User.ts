@@ -1,4 +1,3 @@
-import Analytics from "@sentrei/types/models/Analytics";
 import Profile from "@sentrei/types/models/Profile";
 
 declare namespace User {
@@ -13,7 +12,6 @@ declare namespace User {
   }
 
   export interface Fields extends Profile.Fields {
-    analytics: Analytics.Fields;
     email: string | null;
     mode?: Mode;
     language?: Language;

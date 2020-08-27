@@ -40,7 +40,7 @@ export default function SpacePanel({
               name={space.name}
               memberCount={space.stats.members || 0}
               roomCount={space.stats.rooms || 0}
-              score={member.score}
+              score={0}
               spaceId={space.id}
               tier={space.tier}
             />
