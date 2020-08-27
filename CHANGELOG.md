@@ -1,3 +1,11 @@
+## [1.8.1](https://github.com/sentrei/sentrei/compare/v1.8.0...v1.8.1) (2020-08-27)
+
+### Performance Improvements
+
+- ⚡️ ini analytics for user field ([b05dc18](https://github.com/sentrei/sentrei/commit/b05dc18bb747053c444a74a1c61d84bb38a027ac))
+- ⚡️ ini stats number fields ([e28894b](https://github.com/sentrei/sentrei/commit/e28894b383d5591f13e5618ca56fa5a45058c8f7))
+- ⚡️ refactor analytics stats ([c024942](https://github.com/sentrei/sentrei/commit/c0249429b24cd08ae49d412fe38dff8be6ce04d2))
+
 # [1.8.0](https://github.com/sentrei/sentrei/compare/v1.7.0...v1.8.0) (2020-08-27)
 
 ### Features
