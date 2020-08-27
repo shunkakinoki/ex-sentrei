@@ -1,3 +1,4 @@
+import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
 import Stats from "@sentrei/types/models/Stats";
 
@@ -11,6 +12,7 @@ declare namespace Space {
   };
 
   interface Fields extends EditableFields {
+    analytics: Analytics.Fields;
     stats: Stats.Fields;
     tier: Tiers;
   }
@@ -25,6 +27,7 @@ declare namespace Space {
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
+    analytics: Analytics.NumberFields;
     stats: Stats.NumberFields;
   }
 
