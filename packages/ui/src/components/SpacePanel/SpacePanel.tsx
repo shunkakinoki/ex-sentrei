@@ -38,9 +38,8 @@ export default function SpacePanel({
             <SpacePanelBanner
               photo={space.photo}
               name={space.name}
-              memberCount={space.stats.members || 0}
-              roomCount={space.stats.rooms || 0}
-              score={0}
+              duration={member.record.duration || 0}
+              score={member.record.score || 0}
               spaceId={space.id}
               tier={space.tier}
             />
