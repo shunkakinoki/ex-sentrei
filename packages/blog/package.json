@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/blog",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^10.0.27",
-    "@narative/gatsby-theme-novela": "^0.16.5",
+    "@narative/gatsby-theme-novela": "^0.17.0",
     "gatsby": "^2.24.3",
     "gatsby-plugin-google-analytics": "^2.3.13",
     "gatsby-plugin-i18n": "^1.0.1",
