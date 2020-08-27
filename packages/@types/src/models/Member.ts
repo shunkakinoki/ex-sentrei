@@ -3,7 +3,6 @@ import firebase from "firebase";
 import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
 import Profile from "@sentrei/types/models/Profile";
-import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Member {
   export type Status = "online" | "offline" | "away";
@@ -12,13 +11,11 @@ declare namespace Member {
     description: string;
     emoji: string;
     status: Status;
-    score: FirebaseFirestore.FieldValue | number;
   };
 
   interface Fields extends EditableFields {
-    role: "admin" | "moderator" | "viewer";
     analytics: Analytics.Fields;
-    stats: Stats.Fields;
+    role: "admin" | "moderator" | "viewer";
   }
 
   export type AdminUpdate = Partial<Fields>;
@@ -33,9 +30,7 @@ declare namespace Member {
 
   export interface Get extends Fields, Profile.Get, Metadata.Get {
     id: string;
-    score: number;
     analytics: Analytics.NumberFields;
-    stats: Stats.NumberFields;
   }
 
   export interface Snapshot extends Get {

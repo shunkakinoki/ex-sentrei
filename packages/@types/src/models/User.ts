@@ -1,6 +1,4 @@
-import Analytics from "@sentrei/types/models/Analytics";
 import Profile from "@sentrei/types/models/Profile";
-import Stats from "@sentrei/types/models/Stats";
 
 declare namespace User {
   export type Mode = "dark" | "light" | "system";
@@ -14,8 +12,6 @@ declare namespace User {
   }
 
   export interface Fields extends Profile.Fields {
-    analytics: Analytics.Fields;
-    stats: Stats.Fields;
     email: string | null;
     mode?: Mode;
     language?: Language;
@@ -29,8 +25,6 @@ declare namespace User {
 
   export interface Get extends Response {
     uid: string;
-    analytics: Analytics.NumberFields;
-    stats: Stats.NumberFields;
   }
 
   export interface Snapshot extends Get {
