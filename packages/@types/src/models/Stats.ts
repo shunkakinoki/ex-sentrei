@@ -67,6 +67,10 @@ declare namespace Stats {
     [x in Collection]?: FirebaseFirestore.FieldValue | number;
   };
 
+  export type NumberFields = {
+    [x in Collection]?: number;
+  };
+
   export type Response = Fields;
 
   export type Update = Partial<Response>;
