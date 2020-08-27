@@ -1,3 +1,13 @@
+## [1.8.2](https://github.com/sentrei/sentrei/compare/v1.8.1...v1.8.2) (2020-08-27)
+
+### Bug Fixes
+
+- 🐛 ini leaderboard tab ([794c7a3](https://github.com/sentrei/sentrei/commit/794c7a37c1b866fa1b68c4433386648c4aaa3c4d))
+
+### Performance Improvements
+
+- ⚡️ ini space stepper other component ([8e030d1](https://github.com/sentrei/sentrei/commit/8e030d1407e42bfe736854ab4435d5f8a021fd61))
+
 ## [1.8.1](https://github.com/sentrei/sentrei/compare/v1.8.0...v1.8.1) (2020-08-27)
 
 ### Performance Improvements
