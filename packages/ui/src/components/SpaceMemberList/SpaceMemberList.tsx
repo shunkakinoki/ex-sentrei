@@ -24,7 +24,7 @@ export default function SpaceMemberList({members}: Props): JSX.Element {
           color="textSecondary"
           component="h4"
         >
-          {t("space:member.title")}
+          {t("common:common.members")}
         </Typography>
       </Box>
       <Container maxWidth="md" component="main">
