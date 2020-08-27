@@ -84,7 +84,7 @@ export default function MemberFab({space, members}: Props): JSX.Element {
                 </Typography>
               </MuiLink>
               <Box p={1} />
-              <Badge badgeContent={space.memberCount} color="primary">
+              <Badge badgeContent={space.stats.members || 0} color="primary">
                 <SupervisorAccountIcon color="primary" />
               </Badge>
               <Box p={1} />
