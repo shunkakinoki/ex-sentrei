@@ -1,9 +1,6 @@
-import Box from "@material-ui/core/Box";
-
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
-import Typography from "@material-ui/core/Typography";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
@@ -14,6 +11,7 @@ import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import RoomCard from "@sentrei/ui/components/RoomCard";
 import RoomNone from "@sentrei/ui/components/RoomNone";
+import SpaceSection from "@sentrei/ui/components/SpaceSection";
 
 export interface Props {
   members: Member.Get[];
@@ -33,16 +31,7 @@ export default function SpaceHomeBoard({
 
   return (
     <>
-      <Box mt={3} mb={6}>
-        <Typography
-          variant="h3"
-          align="center"
-          color="textSecondary"
-          component="h4"
-        >
-          {t("common:common.rooms")}
-        </Typography>
-      </Box>
+      <SpaceSection title={t("space:rooms.title")} />
       <Container maxWidth="lg" component="main">
         <Grid container alignItems="center" justify="center">
           {rooms?.length === 0 && <RoomNone spaceId={space.id} />}

@@ -1,13 +1,12 @@
-import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import Activity from "@sentrei/types/models/Activity";
 import ActivityCard from "@sentrei/ui/components/ActivityCard";
 import SpaceActivityLoadMore from "@sentrei/ui/components/SpaceActivityLoadMore";
+import SpaceSection from "@sentrei/ui/components/SpaceSection";
 
 export interface Props {
   activityShot: Activity.Snapshot[];
@@ -30,16 +29,7 @@ export default function SpaceActivityList({
 
   return (
     <>
-      <Box mt={3} mb={6}>
-        <Typography
-          variant="h3"
-          align="center"
-          color="textSecondary"
-          component="h4"
-        >
-          {t("space:activity.title")}
-        </Typography>
-      </Box>
+      <SpaceSection title={t("space:activity.title")} />
       <Container maxWidth="md" component="main">
         <Grid container alignItems="center" justify="center" spacing={3}>
           {activities.map(activity => (
