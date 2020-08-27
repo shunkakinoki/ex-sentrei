@@ -73,9 +73,11 @@ declare namespace Stats {
 
   export type Response = Fields;
 
+  export type NumberResponse = NumberFields;
+
   export type Update = Partial<Response>;
 
-  export interface Get extends Response {
+  export interface Get extends NumberResponse {
     id: string;
   }
 }

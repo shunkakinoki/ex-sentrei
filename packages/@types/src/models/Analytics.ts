@@ -47,6 +47,16 @@ declare namespace Analytics {
   export type NumberFields = {
     [analytics in AnalyticsCollection]?: number;
   };
+
+  export type Response = Fields;
+
+  export type NumberResponse = NumberFields;
+
+  export type Update = Partial<Response>;
+
+  export interface Get extends NumberResponse {
+    id: string;
+  }
 }
 
 export default Analytics;
