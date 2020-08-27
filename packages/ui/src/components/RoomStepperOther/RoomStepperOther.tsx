@@ -56,6 +56,7 @@ const RoomStepperOther = ({
         createdBy: profile,
         createdByUid: user.uid,
         memberCount: 0,
+        record: {},
         type: activeForm.type,
         spaceId,
         updatedAt: timestamp,
