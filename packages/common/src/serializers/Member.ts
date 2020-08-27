@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import serializeFirebaseDate from "@sentrei/common/serializers/Date";
-import Analytics from "@sentrei/types/models/Analytics";
 import Member from "@sentrei/types/models/Member";
+import Record from "@sentrei/types/models/Record";
 
 export const serializeMember = (
   snap: firebase.firestore.DocumentSnapshot<Member.Response>,
@@ -12,7 +12,7 @@ export const serializeMember = (
   return {
     ...data,
     id: snap.id,
-    analytics: data.analytics as Analytics.NumberFields,
+    record: data.record as Record.NumberFields,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };
@@ -26,7 +26,7 @@ export const serializeAdminMember = (
   return {
     ...data,
     id: snap.id,
-    analytics: data.analytics as Analytics.NumberFields,
+    record: data.record as Record.NumberFields,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };
