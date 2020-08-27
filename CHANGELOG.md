@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/sentrei/sentrei/compare/v1.9.1...v1.9.2) (2020-08-27)
+
+### Performance Improvements
+
+- ⚡️ ini record score model for types ([803b327](https://github.com/sentrei/sentrei/commit/803b327acd061fae02bfd1b9db12857db7bf73d5))
+- ⚡️ refactor record model ([82cf9cb](https://github.com/sentrei/sentrei/commit/82cf9cbb1a6658ebc548258aafcee7868618b761))
+
 ## [1.9.1](https://github.com/sentrei/sentrei/compare/v1.9.0...v1.9.1) (2020-08-27)
 
 ### Performance Improvements
