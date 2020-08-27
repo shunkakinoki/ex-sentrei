@@ -1,3 +1,10 @@
+## [1.9.3](https://github.com/sentrei/sentrei/compare/v1.9.2...v1.9.3) (2020-08-27)
+
+### Performance Improvements
+
+- ⚡️ refactor grid item ([754f34f](https://github.com/sentrei/sentrei/commit/754f34fcd9762078932dd89d1452d677479429af))
+- ⚡️ refactor space panel banner ([0865723](https://github.com/sentrei/sentrei/commit/08657235afb42919788c1e8ef40651270d01c18a))
+
 ## [1.9.2](https://github.com/sentrei/sentrei/compare/v1.9.1...v1.9.2) (2020-08-27)
 
 ### Performance Improvements
