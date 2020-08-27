@@ -1,3 +1,9 @@
+## [1.6.2](https://github.com/sentrei/sentrei/compare/v1.6.1...v1.6.2) (2020-08-27)
+
+### Performance Improvements
+
+- **deps:** bump gatsby from 2.24.3 to 2.24.51 ([0d347c5](https://github.com/sentrei/sentrei/commit/0d347c5466ec0a3661135208498c206edac61b16))
+
 ## [1.6.1](https://github.com/sentrei/sentrei/compare/v1.6.0...v1.6.1) (2020-08-27)
 
 ### Performance Improvements
