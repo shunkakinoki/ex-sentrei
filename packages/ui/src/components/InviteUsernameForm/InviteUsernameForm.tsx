@@ -59,6 +59,7 @@ const InviteUsernameForm = ({profile, user, spaceId}: Props): JSX.Element => {
       );
       if (memberProfile && memberProfile !== null) {
         const member: Member.Create = {
+          analytics: {},
           createdAt: timestamp,
           createdBy: profile,
           createdByUid: user.uid,
@@ -66,7 +67,6 @@ const InviteUsernameForm = ({profile, user, spaceId}: Props): JSX.Element => {
           emoji: "joy",
           name: memberProfile.name,
           photo: memberProfile.photo,
-          score: 0,
           status: "offline",
           role: "viewer",
           updatedAt: timestamp,
