@@ -14,20 +14,18 @@ import SpacePanelBannerSection from "@sentrei/ui/components/SpacePanelBannerSect
 import SpacePanelBannerStyles from "./SpacePanelBannerStyles";
 
 export interface Props {
+  duration: number;
   photo?: string | null;
-  memberCount: number;
   name: string;
-  roomCount: number;
   score: number;
   spaceId: string;
   tier: Space.Tiers;
 }
 
 export default function SpacePanelBanner({
+  duration,
   photo,
-  memberCount,
   name,
-  roomCount,
   score,
   spaceId,
   tier,
@@ -85,21 +83,10 @@ export default function SpacePanelBanner({
             <Grid container direction="row" spacing={2}>
               <Grid item xs={4}>
                 <SpacePanelBannerSection
-                  count={memberCount}
-                  section="members"
+                  count={duration}
+                  section="analytics"
                   spaceId={spaceId}
-                  title={t("common:common.members")}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Divider orientation="vertical" className={classes.divider} />
-              </Grid>
-              <Grid item xs={4}>
-                <SpacePanelBannerSection
-                  count={roomCount}
-                  section="rooms"
-                  spaceId={spaceId}
-                  title={t("common:common.rooms")}
+                  title={t("common:common.duration")}
                 />
               </Grid>
               <Grid item xs={1}>
