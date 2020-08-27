@@ -61,7 +61,7 @@ const LeaderboardPage = ({
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
-          tabKey="members"
+          tabKey="leaderboard"
         />
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />
