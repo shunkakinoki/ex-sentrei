@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/ui",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -90,7 +90,7 @@
     "@storybook/addon-viewport": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/cli": "^5.3.18",
-    "@storybook/react": "^5.3.18",
+    "@storybook/react": "^6.0.19",
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "^10.4.3",
     "@testing-library/react-hooks": "^3.2.1",
