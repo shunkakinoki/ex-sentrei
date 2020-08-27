@@ -1,3 +1,13 @@
+# [1.9.0](https://github.com/sentrei/sentrei/compare/v1.8.3...v1.9.0) (2020-08-27)
+
+### Features
+
+- 🎸 ini record for member model ([aefbe1d](https://github.com/sentrei/sentrei/commit/aefbe1d80fbc4093c4d56a421e48ca13ec4f615f))
+
+### Performance Improvements
+
+- ⚡️ ini count model ([c86666a](https://github.com/sentrei/sentrei/commit/c86666a3140cc6eb1a0cf12d929a85fb20babdc0))
+
 ## [1.8.3](https://github.com/sentrei/sentrei/compare/v1.8.2...v1.8.3) (2020-08-27)
 
 ### Performance Improvements
