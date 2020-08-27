@@ -31,7 +31,7 @@
 [![Firebase](https://img.shields.io/badge/developed%20with-firebase-green)](https://console.firebase.google.com/project/sentrei-main)
 [![Startup School](https://img.shields.io/badge/see%20me%20on-Startup%20School-orange)](https://www.startupschool.org/companies/sentrei)
 [![Pioneer](https://img.shields.io/badge/competing%20on-pioneer.app-yellow)](https://pioneer.app/join/shunkakinoki)
-[![Sentry](https://img.shields.io/badge/hosted%20with-Sentry-red)](https://sentry.io/organizations/sentrei/projects/)
+[![IndieHackers](https://img.shields.io/badge/look%20on-Indie%20Hackers-blue)](https://www.indiehackers.com/product/sentrei)
 [![ZenHub](https://img.shields.io/badge/managed_with-ZenHub-5e60ba)](https://app.zenhub.com/workspace/o/sentrei/sentrei/boards)
 
 <br>
