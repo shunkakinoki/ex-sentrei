@@ -1,3 +1,9 @@
+## [1.6.1](https://github.com/sentrei/sentrei/compare/v1.6.0...v1.6.1) (2020-08-27)
+
+### Performance Improvements
+
+- **deps:** bump vuepress from 1.5.2 to 1.5.4 ([a8aff33](https://github.com/sentrei/sentrei/commit/a8aff33444d53e9eae37f2bc44b8de2ef5a6f10d))
+
 # [1.6.0](https://github.com/sentrei/sentrei/compare/v1.5.2...v1.6.0) (2020-08-26)
 
 ### Features
