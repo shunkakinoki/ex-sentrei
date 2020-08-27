@@ -1,5 +1,7 @@
 import Metadata from "@sentrei/types/models/Metadata";
 
+import Record from "@sentrei/types/models/Record";
+
 declare namespace Room {
   export type Types = "breakout" | "focus";
 
@@ -11,9 +13,10 @@ declare namespace Room {
   };
 
   interface Fields extends EditableFields {
-    type: Types;
+    record: Record.Space;
     memberCount: number;
     spaceId: string;
+    type: Types;
   }
 
   export type AdminUpdate = Partial<Fields>;
@@ -26,6 +29,7 @@ declare namespace Room {
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
+    record: Record.NumberFields;
   }
 
   export interface Snapshot extends Get {
