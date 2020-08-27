@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/sentrei/sentrei/compare/v1.9.0...v1.9.1) (2020-08-27)
+
+### Performance Improvements
+
+- ⚡️ ini indie hackers ([ad7be86](https://github.com/sentrei/sentrei/commit/ad7be86a87c2e764d653ea9eec5bbd7de5019fd5))
+- ⚡️ ini record for room and space ([dfdab13](https://github.com/sentrei/sentrei/commit/dfdab13ee5542138530e017ec8c736dc8eef4c40))
+
 # [1.9.0](https://github.com/sentrei/sentrei/compare/v1.8.3...v1.9.0) (2020-08-27)
 
 ### Features
