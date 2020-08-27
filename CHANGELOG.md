@@ -1,3 +1,9 @@
+# [1.7.0](https://github.com/sentrei/sentrei/compare/v1.6.2...v1.7.0) (2020-08-27)
+
+### Features
+
+- 🎸 remove leaderboard components ([8638aac](https://github.com/sentrei/sentrei/commit/8638aac6b37f37f4d64680a6ebd5cae253df53ad))
+
 ## [1.6.2](https://github.com/sentrei/sentrei/compare/v1.6.1...v1.6.2) (2020-08-27)
 
 ### Performance Improvements
