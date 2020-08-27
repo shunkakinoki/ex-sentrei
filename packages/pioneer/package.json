@@ -23,7 +23,7 @@
     "@vuepress/plugin-google-analytics": "^1.5.3",
     "@vuepress/plugin-nprogress": "^1.4.1",
     "@vuepress/plugin-search": "^1.4.1",
-    "vuepress": "^1.4.1",
+    "vuepress": "^1.5.4",
     "vuepress-plugin-rss": "^2.0.0",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-theme-yuu": "^2.2.1"
