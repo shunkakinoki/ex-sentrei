@@ -868,7 +868,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.1.0", "@babel/parser@^7.1.6", "@babel/parser@^7.10.3", "@babel/parser@^7.10.4", "@babel/parser@^7.10.5", "@babel/parser@^7.11.0", "@babel/parser@^7.4.5", "@babel/parser@^7.7.0", "@babel/parser@^7.7.7", "@babel/parser@^7.9.6":
+"@babel/parser@^7.1.0", "@babel/parser@^7.1.6", "@babel/parser@^7.10.3", "@babel/parser@^7.10.4", "@babel/parser@^7.10.5", "@babel/parser@^7.11.0", "@babel/parser@^7.4.5", "@babel/parser@^7.7.0", "@babel/parser@^7.7.7":
   version "7.11.4"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.11.4.tgz#6fa1a118b8b0d80d0267b719213dc947e88cc0ca"
   integrity sha512-MggwidiH+E9j5Sh8pbrX5sJvMcsqS5o+7iB42M9/k0CD63MjYbdP4nhSh7uB5wnv2/RVzTZFTxzF/kIa5mrCqA==
@@ -2440,7 +2440,7 @@
     "@babel/parser" "^7.10.4"
     "@babel/types" "^7.10.4"
 
-"@babel/traverse@^7.1.0", "@babel/traverse@^7.10.0", "@babel/traverse@^7.10.1", "@babel/traverse@^7.10.2", "@babel/traverse@^7.10.3", "@babel/traverse@^7.10.4", "@babel/traverse@^7.10.5", "@babel/traverse@^7.4.5", "@babel/traverse@^7.7.0", "@babel/traverse@^7.7.4", "@babel/traverse@^7.9.6":
+"@babel/traverse@^7.1.0", "@babel/traverse@^7.10.0", "@babel/traverse@^7.10.1", "@babel/traverse@^7.10.2", "@babel/traverse@^7.10.3", "@babel/traverse@^7.10.4", "@babel/traverse@^7.10.5", "@babel/traverse@^7.4.5", "@babel/traverse@^7.7.0", "@babel/traverse@^7.7.4":
   version "7.11.0"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.11.0.tgz#9b996ce1b98f53f7c3e4175115605d56ed07dd24"
   integrity sha512-ZB2V+LskoWKNpMq6E5UUCrjtDUh5IOTAyIl0dTjIEoXum/iKWkoIEKIRDnUucO6f+2FzNkE0oD4RLKoPIufDtg==
@@ -32226,10 +32226,10 @@ twilio-video@^2.7.1:
     ws "^3.3.1"
     xmlhttprequest "^1.8.0"
 
-twilio@^3.48.2:
-  version "3.48.2"
-  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.48.2.tgz#b062045c5046cdbca425cce8c95b396c7464aabc"
-  integrity sha512-9HoEIANLUpqHQNzX8j9kXUx/YRbo+HANlT7dpORgyAGEu4pm1HlA0MTWRtR3Rj13Cuut0n8GXvHO9uizCNfGmg==
+twilio@^3.49.0:
+  version "3.49.0"
+  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.49.0.tgz#4c2caa9fb9f293c4535fb8e87c4bbe4ee928f11c"
+  integrity sha512-XuWny4sqj92ch3dQhC6WhGcPSODOOFd3fgkYocSi5j59Rq1DwAxGL4b9MgM5to4CbrGlm4Qr4gaxffiQsRfyEQ==
   dependencies:
     "@types/express" "^4.17.7"
     axios "^0.19.2"
