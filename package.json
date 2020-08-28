@@ -81,7 +81,7 @@
     "prettier": "^2.0.4",
     "semantic-release": "^17.1.1",
     "sort-package-json": "^1.43.0",
-    "vercel": "^19.2.0"
+    "vercel": "^20.1.0"
   },
   "engines": {
     "npm": "please_use_yarn_instead"
