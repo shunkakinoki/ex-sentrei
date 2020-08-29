@@ -2,7 +2,7 @@
 
 import serializeFirebaseDate from "@sentrei/common/serializers/Date";
 import Stats from "@sentrei/types/dist/models/Stats";
-import Analytics from "@sentrei/types/models/Analytics";
+import Actions from "@sentrei/types/models/Actions";
 import Record from "@sentrei/types/models/Record";
 import Room from "@sentrei/types/models/Room";
 
@@ -14,7 +14,7 @@ export const serializeRoom = (
   return {
     ...data,
     id: snap.id,
-    analytics: data.analytics as Analytics.Get,
+    actions: data.actions as Actions.Get,
     record: data.record as Record.Get,
     stats: data.stats as Stats.NumberFields,
     createdAt: serializeFirebaseDate(data.createdAt),
@@ -30,7 +30,7 @@ export const serializeAdminRoom = (
   return {
     ...data,
     id: snap.id,
-    analytics: data.analytics as Analytics.Get,
+    actions: data.actions as Actions.Get,
     record: data.record as Record.Get,
     stats: data.stats as Stats.Get,
     createdAt: serializeFirebaseDate(data.createdAt),

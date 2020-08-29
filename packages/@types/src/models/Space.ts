@@ -1,4 +1,4 @@
-import Analytics from "@sentrei/types/models/Analytics";
+import Actions from "@sentrei/types/models/Actions";
 import Metadata from "@sentrei/types/models/Metadata";
 import Record from "@sentrei/types/models/Record";
 import Stats from "@sentrei/types/models/Stats";
@@ -13,7 +13,7 @@ declare namespace Space {
   };
 
   interface Fields extends EditableFields {
-    analytics: Analytics.Fields;
+    actions: Actions.Fields;
     record: Record.Fields;
     stats: Stats.Fields;
     tier: Tiers;
@@ -29,7 +29,7 @@ declare namespace Space {
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
-    analytics: Analytics.NumberFields;
+    actions: Actions.NumberFields;
     record: Record.Get;
     stats: Stats.NumberFields;
   }
