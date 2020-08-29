@@ -6,6 +6,7 @@ import * as React from "react";
 
 import {analytics} from "@sentrei/common/utils/firebase";
 
+import Footer from "@sentrei/ui/components/Footer";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const Terms: NextPage = () => {
@@ -1108,6 +1109,7 @@ const Terms: NextPage = () => {
           <p>Last updated May 28, 2020</p>
         </div>
       </Container>
+      <Footer />
     </>
   );
 };

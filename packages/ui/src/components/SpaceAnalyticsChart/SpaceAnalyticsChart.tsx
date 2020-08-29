@@ -5,6 +5,7 @@ import * as React from "react";
 import {Line} from "react-chartjs-2";
 
 import Activity from "@sentrei/types/models/Activity";
+import SpaceAnalyticsNone from "@sentrei/ui/components/SpaceAnalyticsNone";
 
 import SpaceAnalyticsChartStyles from "./SpaceAnalyticsChartStyles";
 
@@ -49,10 +50,22 @@ export default function SpaceAnalyticsChart({activities}: Props): JSX.Element {
     layout: {
       padding: 0,
     },
+    scales: {
+      xAxes: [
+        {
+          ticks: {
+            callback(value: string): string {
+              return value.split(",", 3).join();
+            },
+          },
+        },
+      ],
+    },
   };
 
   return (
     <div className={classes.root}>
+      {!activities && <SpaceAnalyticsNone />}
       <Line data={data} options={options} />
     </div>
   );

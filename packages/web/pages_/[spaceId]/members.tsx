@@ -66,10 +66,13 @@ const MembersPage = ({
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      <SpaceMember
-        spaceId={String(query.spaceId)}
-        membersData={JSON.parse(membersData) as Member.Get[]}
-      />
+      {user && (
+        <SpaceMember
+          spaceId={String(query.spaceId)}
+          membersData={JSON.parse(membersData) as Member.Get[]}
+          userId={user.uid}
+        />
+      )}
     </>
   );
 };

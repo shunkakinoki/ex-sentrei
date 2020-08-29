@@ -3,6 +3,7 @@
     "title": "活动项目"
   },
   "analytics": {
+    "none": "您没有会话...",
     "title": "分析工具"
   },
   "dashboard": {
@@ -14,7 +15,6 @@
     "invite": "邀请"
   },
   "leaderboard": {
-    "ranking": "排行",
     "title": "排行榜"
   },
   "member": {

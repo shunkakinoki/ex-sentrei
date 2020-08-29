@@ -30,9 +30,8 @@ export default function MemberListItem({member}: Props): JSX.Element {
         secondary={
           <div className={classes.root}>
             <Emoji emoji={member.emoji} set="twitter" size={20} />
-            &nbsp;
+            &nbsp; &nbsp; &nbsp;
             <Typography component="span" variant="body2" color="textSecondary">
-              {" - "}
               {member.description}
             </Typography>
           </div>

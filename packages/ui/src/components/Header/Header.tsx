@@ -78,6 +78,10 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
                           title={t("header:about.mission")}
                         />
                         <HeaderScrollButton
+                          href="core"
+                          title={t("header:about.core")}
+                        />
+                        <HeaderScrollButton
                           href="team"
                           title={t("header:about.team")}
                         />
@@ -100,6 +104,10 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
                         <HeaderButton
                           href="/pricing"
                           title={t("header:default.pricing")}
+                        />
+                        <HeaderButton
+                          href="/support"
+                          title={t("header:default.support")}
                         />
                       </>
                     )}

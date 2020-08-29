@@ -3,6 +3,7 @@
     "title": "Activity"
   },
   "analytics": {
+    "none": "You have no sessions ...",
     "title": "Analytics"
   },
   "dashboard": {
@@ -14,7 +15,6 @@
     "invite": "Invite"
   },
   "leaderboard": {
-    "ranking": "Ranking",
     "title": "Leaderboard"
   },
   "member": {

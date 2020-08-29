@@ -28,22 +28,39 @@ export default function SpaceMemberList({members}: Props): JSX.Element {
       <Table aria-label="table">
         <TableHead>
           <TableRow>
-            <TableCell align="left">{t("space:leaderboard.ranking")}</TableCell>
-            <TableCell align="center">{t("common:common.name")}</TableCell>
+            <TableCell align="left">{t("common:common.ranking")}</TableCell>
+            <TableCell align="left">{t("common:common.avatar")}</TableCell>
+            <TableCell align="left">{t("common:common.name")}</TableCell>
+            <TableCell align="center">{t("common:common.id")}</TableCell>
             <TableCell align="right">{t("common:common.score")}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {members.map((member, ranking) => (
             <TableRow key={member.name}>
+              <TableCell align="center">
+                <Box px={1}>
+                  <Avatar
+                    variant="rounded"
+                    className={
+                      ranking === 0
+                        ? classes.first
+                        : ranking === 1
+                        ? classes.second
+                        : ranking === 2
+                        ? classes.third
+                        : undefined
+                    }
+                  >
+                    {ranking + 1}
+                  </Avatar>
+                </Box>
+              </TableCell>
               <TableCell align="left">
-                <Avatar variant="rounded">{ranking + 1}</Avatar>
-              </TableCell>
-              <TableCell align="center" className={classes.avatar}>
                 <ProfileCard member={member} />
-                <Box px={3} />
-                {member.name}
               </TableCell>
+              <TableCell align="left">{member.name}</TableCell>
+              <TableCell align="center">{member.username}</TableCell>
               <TableCell align="right">{member.score}</TableCell>
             </TableRow>
           ))}

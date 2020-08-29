@@ -1,5 +1,6 @@
 {
   "about": {
+    "core": "基本的価値観",
     "investor": "投資家",
     "mission": "ミッション",
     "team": "チーム"
@@ -7,7 +8,8 @@
   "default": {
     "about": "会社について",
     "home": "ホーム",
-    "pricing": "価格"
+    "pricing": "価格",
+    "support": "サポート"
   },
   "header": {
     "login": "Log In",

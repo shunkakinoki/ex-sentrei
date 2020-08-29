@@ -2,6 +2,7 @@ import Box from "@material-ui/core/Box";
 
 import * as React from "react";
 
+import AboutCore from "@sentrei/ui/components/AboutCore";
 import AboutInvestor from "@sentrei/ui/components/AboutInvestor";
 import AboutMessage from "@sentrei/ui/components/AboutMessage";
 import AboutMission from "@sentrei/ui/components/AboutMission";
@@ -13,6 +14,10 @@ export default function AboutScreen(): JSX.Element {
       <Box p={1} />
       <div id="mission">
         <AboutMission />
+      </div>
+      <Box p={5} />
+      <div id="core">
+        <AboutCore />
       </div>
       <Box p={3} />
       <div id="team">

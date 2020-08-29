@@ -50,7 +50,7 @@ export default function LandingPricing(): JSX.Element {
               description1={t("index:pricing.description1Three")}
               description2={t("index:pricing.description2Three")}
               description3={t("index:pricing.description3Three")}
-              href="/pricing"
+              href="/support"
               perUser={t("index:pricing.perUser")}
               price={t("index:pricing.priceThree")}
               priceMonth={t("index:pricing.priceMonth")}

@@ -1,5 +1,6 @@
 {
   "about": {
+    "core": "核心价值",
     "investor": "投资人",
     "mission": "任务",
     "team": "球队"
@@ -7,7 +8,8 @@
   "default": {
     "about": "关于",
     "home": "家",
-    "pricing": "价钱"
+    "pricing": "价钱",
+    "support": "支持"
   },
   "header": {
     "login": "登入",

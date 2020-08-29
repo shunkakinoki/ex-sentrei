@@ -22,6 +22,7 @@
     "/[spaceId]/room/[roomId]/settings": ["room"],
     "/[spaceId]/rooms": ["room", "space"],
     "/[spaceId]/quit": ["space"],
+    "/[spaceId]/support": ["papercups", "space"],
     "/[spaceId]/settings": ["space"],
     "/[spaceId]": ["room", "space"],
     "/about": ["about", "footer", "header", "papercups"],
@@ -33,11 +34,12 @@
     "/notifications": ["notifications"],
     "/pitch": ["footer", "header", "papercups", "pitch"],
     "/pricing": ["footer", "header", "papercups", "pricing"],
-    "/privacy": ["auth", "header", "papercups"],
+    "/privacy": ["auth", "footer", "header", "papercups"],
     "/profile": ["profile"],
     "/settings": ["settings"],
     "/signup": ["auth", "header", "papercups"],
+    "/support": ["footer", "header", "papercups"],
     "/reset-password": ["auth", "header", "papercups"],
-    "/terms": ["auth", "header", "papercups"]
+    "/terms": ["auth", "footer", "header", "papercups"]
   }
 }

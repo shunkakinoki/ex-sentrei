@@ -6,6 +6,7 @@ import * as React from "react";
 
 import {analytics} from "@sentrei/common/utils/firebase";
 
+import Footer from "@sentrei/ui/components/Footer";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const Privacy: NextPage = () => {
@@ -1120,6 +1121,7 @@ const Privacy: NextPage = () => {
           </p>
         </div>
       </Container>
+      <Footer />
     </>
   );
 };

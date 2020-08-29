@@ -4,15 +4,15 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import HelpScreen from "@sentrei/ui/components/HelpScreen";
 import Loader from "@sentrei/ui/components/Loader";
+import SupportScreen from "@sentrei/ui/components/SupportScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const Help: NextPage = () => {
+const Support: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("help");
+    analytics().setCurrentScreen("support");
   }, []);
 
   if (user === undefined) {
@@ -35,10 +35,14 @@ const Help: NextPage = () => {
         <SentreiAppHeader />
       )}
       {user && profile && (
-        <HelpScreen email={user.email} name={profile.name} userId={user.uid} />
+        <SupportScreen
+          email={user.email}
+          name={profile.name}
+          userId={user.uid}
+        />
       )}
     </>
   );
 };
 
-export default Help;
+export default Support;
