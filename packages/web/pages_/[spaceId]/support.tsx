@@ -4,13 +4,12 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Footer from "@sentrei/ui/components/Footer";
 import Loader from "@sentrei/ui/components/Loader";
 import SupportScreen from "@sentrei/ui/components/SupportScreen";
-import SentreiHeader from "@sentrei/web/components/SentreiHeader";
+import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Support: NextPage = () => {
-  const {user} = React.useContext(AuthContext);
+  const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
     analytics().setCurrentScreen("support");
@@ -20,15 +19,28 @@ const Support: NextPage = () => {
     return <Loader />;
   }
 
-  if (user) {
-    Router.pushI18n(`/[spaceId/support`, `/${user.uid}/support`);
+  if (!user) {
+    Router.pushI18n("/");
   }
 
   return (
     <>
-      <SentreiHeader />
-      <SupportScreen />
-      <Footer />
+      {user && profile ? (
+        <SentreiAppHeader
+          notificationCount={Number(user.notificationCount)}
+          profile={profile}
+          userId={user.uid}
+        />
+      ) : (
+        <SentreiAppHeader />
+      )}
+      {user && profile && (
+        <SupportScreen
+          email={user.email}
+          name={profile.name}
+          userId={user.uid}
+        />
+      )}
     </>
   );
 };

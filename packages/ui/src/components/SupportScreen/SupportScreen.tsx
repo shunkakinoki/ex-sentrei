@@ -4,9 +4,9 @@ import * as React from "react";
 import PaperCups from "@sentrei/ui/components/PaperCups";
 
 export interface Props {
-  email: string | null;
-  name: string;
-  userId: string;
+  email?: string;
+  name?: string;
+  userId?: string;
 }
 export default function SupportScreen({
   email,
@@ -19,8 +19,8 @@ export default function SupportScreen({
         <PaperCups
           defaultIsOpen
           customerEmail={email || ""}
-          customerName={name}
-          customerUid={userId}
+          customerName={name || ""}
+          customerUid={userId || ""}
         />
       </Container>
     </>
