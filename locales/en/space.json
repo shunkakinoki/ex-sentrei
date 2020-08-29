@@ -1,6 +1,6 @@
 {
   "activity": {
-    "title": "Activities"
+    "title": "Activity"
   },
   "dashboard": {
     "create": "Create one",
@@ -15,6 +15,9 @@
   },
   "member": {
     "title": "Members"
+  },
+  "rooms": {
+    "title": "Rooms"
   },
   "settings": {
     "title": "Space Settings"

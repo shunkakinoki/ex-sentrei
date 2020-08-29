@@ -94,8 +94,8 @@ export default function AppTab({
             labelIcon={<HomeIcon />}
           />
           <SpaceTab
-            href="/[spaceId]"
-            as={`/${spaceId}`}
+            href="/[spaceId]/rooms"
+            as={`/${spaceId}/rooms`}
             label={t("common:common.rooms")}
             labelIcon={<MeetingRoomIcon />}
           />

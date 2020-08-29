@@ -9,14 +9,16 @@
   },
   "license": "GPL-3.0-only",
   "author": "Shun Kakinoki",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream --scope={@sentrei/blog,@sentrei/pioneer,@sentrei/typedoc}",
     "clean": "lerna clean -y",
-    "depcheck": "lerna exec --stream --no-bail 'yarn run depcheck .' --scope={@sentrei/common,@sentrei/ui,@sentrei/video,@sentrei/web}",
+    "depcheck": "lerna exec --stream --no-bail 'yarn run depcheck .' --scope={@sentrei/common,@sentrei/ui,@sentrei/video,@sentrei/web} || true",
     "env:set:all": "yarn run env:set:alpha && yarn run env:set:beta && yarn run env:set:main",
     "env:set:alpha": "deploy-env development",
     "env:set:beta": "deploy-env preview",
@@ -41,11 +43,11 @@
     "sort-package-json:check": "sort-package-json 'package.json' 'packages/*/package.json' --check",
     "sort-package-json:fix": "sort-package-json 'package.json' 'packages/*/package.json'",
     "test": "yarn run depcheck && yarn run lint && yarn run release-test",
-    "typescript": "lerna run typescript --stream",
-    "typescript:clean": "lerna run clean --stream",
+    "typescript": "lerna run typescript --stream --scope={@sentrei/common,@sentrei/types,@sentrei/ui,@sentrei/video}",
+    "typescript:clean": "lerna run clean --stream --scope={@sentrei/common,@sentrei/types,@sentrei/ui,@sentrei/video}",
     "typescript:watch": "nodemon --exec yarn run typescript",
     "unsplash": "yarn run clean && yarn run bootstrap",
-    "watch": "lerna run watch --stream --parallel"
+    "watch": "lerna run watch --stream --parallel --scope={@sentrei/common,@sentrei/types,@sentrei/ui,@sentrei/video}"
   },
   "husky": {
     "hooks": {
@@ -54,7 +56,6 @@
   },
   "dependencies": {
     "lerna": "^3.22.0",
-    "next": "^9.5.2",
     "typescript": "^3.9.7"
   },
   "devDependencies": {
@@ -81,7 +82,7 @@
     "prettier": "^2.0.4",
     "semantic-release": "^17.1.1",
     "sort-package-json": "^1.43.0",
-    "vercel": "^19.2.0"
+    "vercel": "^20.1.0"
   },
   "engines": {
     "npm": "please_use_yarn_instead"

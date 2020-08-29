@@ -28,7 +28,7 @@ const SpaceStepperId = ({atom, form}: Props): JSX.Element => {
       .strict(true)
       .matches(/^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/, t("form:id.idInvalid"))
       .test("id", t("form:id.idAlreadyUsed"), async value => {
-        const result = await validateSpaceId(value);
+        const result = await validateSpaceId(value || "");
         return result;
       })
       .required(t("form:id.idRequired")),

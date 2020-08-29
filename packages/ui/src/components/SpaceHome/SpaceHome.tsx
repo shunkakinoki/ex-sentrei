@@ -1,6 +1,4 @@
 import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
 
 import * as React from "react";
 
@@ -9,8 +7,6 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
-import RoomCard from "@sentrei/ui/components/RoomCard";
-import RoomNone from "@sentrei/ui/components/RoomNone";
 import SpaceHomeBoard from "@sentrei/ui/components/SpaceHomeBoard";
 import SpacePanel from "@sentrei/ui/components/SpacePanel";
 

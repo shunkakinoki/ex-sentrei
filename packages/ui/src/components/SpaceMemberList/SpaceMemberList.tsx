@@ -1,12 +1,11 @@
-import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import Member from "@sentrei/types/models/Member";
 import MemberCard from "@sentrei/ui/components/MemberCard";
+import SpaceSection from "@sentrei/ui/components/SpaceSection";
 
 export interface Props {
   members: Member.Get[];
@@ -17,16 +16,7 @@ export default function SpaceMemberList({members}: Props): JSX.Element {
 
   return (
     <>
-      <Box mt={3} mb={6}>
-        <Typography
-          variant="h3"
-          align="center"
-          color="textSecondary"
-          component="h4"
-        >
-          {t("space:member.title")}
-        </Typography>
-      </Box>
+      <SpaceSection title={t("space:member.title")} />
       <Container maxWidth="md" component="main">
         <Grid container alignItems="center" justify="center" spacing={3}>
           {members.map(member => (

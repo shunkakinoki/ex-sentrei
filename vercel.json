@@ -1,14 +1,1 @@
-{
-  "version": 2,
-  "alias": ["sentrei.com"],
-  "cleanUrls": true,
-  "public": true,
-  "scope": "sentrei",
-  "trailingSlash": false,
-  "github": {
-    "enabled": false,
-    "autoJobCancelation": false,
-    "autoAlias": true,
-    "silent": false
-  }
-}
+packages/web/vercel.json

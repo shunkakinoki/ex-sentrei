@@ -38,7 +38,7 @@ const InviteUsernameForm = ({profile, user, spaceId}: Props): JSX.Element => {
       //   t("form:username.usernameInvalid"),
       // )
       .test("id", t("form:username.usernameNotExist"), async value => {
-        const result = await validateUsername(value);
+        const result = await validateUsername(value || "");
         return !result;
       }),
   });
