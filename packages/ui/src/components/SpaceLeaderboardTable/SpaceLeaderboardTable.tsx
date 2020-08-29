@@ -28,7 +28,7 @@ export default function SpaceMemberList({members}: Props): JSX.Element {
       <Table aria-label="table">
         <TableHead>
           <TableRow>
-            <TableCell align="left">{t("space:leaderboard.ranking")}</TableCell>
+            <TableCell align="left">{t("common:common.ranking")}</TableCell>
             <TableCell align="left">{t("common:common.avatar")}</TableCell>
             <TableCell align="left">{t("common:common.name")}</TableCell>
             <TableCell align="center">{t("common:common.id")}</TableCell>
