@@ -8,7 +8,11 @@ export interface Props {
   name: string;
   userId: string;
 }
-export default function HelpScreen({email, name, userId}: Props): JSX.Element {
+export default function SupportScreen({
+  email,
+  name,
+  userId,
+}: Props): JSX.Element {
   return (
     <>
       <Container maxWidth="xs">
