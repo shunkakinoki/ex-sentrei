@@ -43,11 +43,11 @@
     "sort-package-json:check": "sort-package-json 'package.json' 'packages/*/package.json' --check",
     "sort-package-json:fix": "sort-package-json 'package.json' 'packages/*/package.json'",
     "test": "yarn run depcheck && yarn run lint && yarn run release-test",
-    "typescript": "lerna run typescript --stream --scope={@sentrei/common,@sentrei/types,@sentrei/ui,@sentrei/video}",
-    "typescript:clean": "lerna run clean --stream --scope={@sentrei/common,@sentrei/types,@sentrei/ui,@sentrei/video}",
+    "typescript": "lerna run typescript --stream",
+    "typescript:clean": "lerna run clean --stream",
     "typescript:watch": "nodemon --exec yarn run typescript",
     "unsplash": "yarn run clean && yarn run bootstrap",
-    "watch": "lerna run watch --stream --parallel --scope={@sentrei/common,@sentrei/types,@sentrei/ui,@sentrei/video}"
+    "watch": "lerna run watch --stream --parallel"
   },
   "husky": {
     "hooks": {

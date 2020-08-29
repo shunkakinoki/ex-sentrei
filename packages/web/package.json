@@ -17,6 +17,8 @@
     "build": "next-translate && next build",
     "build:analyze": "cross-env ANALYZE=true yarn run build",
     "build:test": "cross-env NODE_ENV=test yarn run build",
+    "build:typescript": "cd ../.. && yarn run typescript",
+    "build:watch": "cd ../.. && yarn run watch",
     "coverage": "nyc report --reporter=lcov --reporter=text",
     "cypress": "cypress run --record false",
     "cypress:install": "cypress install",
@@ -35,9 +37,7 @@
     "swap:alpha": "cp alpha.firebase.json firebase.json",
     "swap:beta": "cp beta.firebase.json firebase.json",
     "swap:main": "cp main.firebase.json firebase.json",
-    "test": "start-server-and-test start http://localhost:3000 cypress",
-    "typescript": "cd ../.. && yarn run typescript",
-    "watch": "cd ../.. && yarn run watch"
+    "test": "start-server-and-test start http://localhost:3000 cypress"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
