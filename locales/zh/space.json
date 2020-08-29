@@ -3,6 +3,7 @@
     "title": "活动项目"
   },
   "analytics": {
+    "none": "您没有会话...",
     "title": "分析工具"
   },
   "dashboard": {

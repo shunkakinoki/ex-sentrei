@@ -3,6 +3,7 @@
     "title": "活動内容"
   },
   "analytics": {
+    "none": "セッションがありません...",
     "title": "分析"
   },
   "dashboard": {
