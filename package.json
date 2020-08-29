@@ -12,9 +12,6 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ],
-    "nohoist": [
-      "next"
     ]
   },
   "scripts": {
