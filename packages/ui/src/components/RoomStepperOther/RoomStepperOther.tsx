@@ -56,7 +56,7 @@ const RoomStepperOther = ({
         description: null,
         photo: null,
         name: activeForm.name,
-        record: {
+        analytics: {
           duration: 0,
           score: 0,
         },
