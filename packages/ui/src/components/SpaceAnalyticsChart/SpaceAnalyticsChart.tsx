@@ -65,7 +65,7 @@ export default function SpaceAnalyticsChart({activities}: Props): JSX.Element {
 
   return (
     <div className={classes.root}>
-      {activities && <SpaceAnalyticsNone />}
+      {!activities && <SpaceAnalyticsNone />}
       <Line data={data} options={options} />
     </div>
   );
