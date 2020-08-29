@@ -7,7 +7,8 @@
   "default": {
     "about": "About",
     "home": "Home",
-    "pricing": "Pricing"
+    "pricing": "Pricing",
+    "support": "Support"
   },
   "header": {
     "login": "Log In",

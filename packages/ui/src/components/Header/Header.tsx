@@ -101,6 +101,10 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
                           href="/pricing"
                           title={t("header:default.pricing")}
                         />
+                        <HeaderButton
+                          href="/support"
+                          title={t("header:default.support")}
+                        />
                       </>
                     )}
                     {type === "landing" && (
