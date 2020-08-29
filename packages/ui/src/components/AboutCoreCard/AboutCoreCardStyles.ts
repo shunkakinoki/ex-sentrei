@@ -3,10 +3,8 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 const AboutCoreCardStyles = makeStyles((theme: Theme) =>
   createStyles({
     avatar: {
-      width: theme.spacing(15),
-      height: theme.spacing(15),
-      boxShadow: "0px 0px 5px 1px grey",
-      backgroundColor: theme.palette.common.white,
+      width: theme.spacing(10),
+      height: theme.spacing(10),
     },
     card: {
       alignItems: "stretch",

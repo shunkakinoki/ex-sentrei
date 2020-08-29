@@ -27,7 +27,12 @@ export default function AboutCoreCard({
           <Avatar className={classes.avatar}>{icon}</Avatar>
         </div>
         <Box m={1} />
-        <Typography noWrap variant="h5" className={classes.title}>
+        <Typography
+          noWrap
+          variant="h5"
+          color="primary"
+          className={classes.title}
+        >
           {title}
         </Typography>
         <Box m={1} />

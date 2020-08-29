@@ -29,21 +29,21 @@ export default function AboutCore(): JSX.Element {
         >
           <Grid item xs={12} sm={4}>
             <AboutCoreCard
-              icon={<EmojiEventsIcon />}
+              icon={<EmojiEventsIcon fontSize="large" />}
               title={t("about:core.work.title")}
               subTitle={t("about:core.work.subTitle")}
             />
           </Grid>
           <Grid item xs={12} sm={4}>
             <AboutCoreCard
-              icon={<FlareIcon />}
+              icon={<FlareIcon fontSize="large" />}
               title={t("about:core.think.title")}
               subTitle={t("about:core.think.subTitle")}
             />
           </Grid>
           <Grid item xs={12} sm={4}>
             <AboutCoreCard
-              icon={<ImportContactsIcon />}
+              icon={<ImportContactsIcon fontSize="large" />}
               title={t("about:core.open.title")}
               subTitle={t("about:core.open.subTitle")}
             />
