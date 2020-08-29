@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import TextField from "@material-ui/core/TextField";
+import clsx from "clsx";
 import {Emoji} from "emoji-mart";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -105,34 +106,34 @@ const AppFeedbackForm = ({handleClick, profile}: Props): JSX.Element => {
           justify="flex-start"
         >
           <Grid item xs={2}>
-            <IconButton
-              size="small"
-              onClick={(): void => handleSelect(1)}
-              className={emojiValue === 1 ? classes.button : undefined}
-            >
-              <Avatar className={classes.large}>
+            <IconButton size="small" onClick={(): void => handleSelect(1)}>
+              <Avatar
+                className={clsx(classes.large, {
+                  [classes.selected]: emojiValue === 1,
+                })}
+              >
                 <Emoji emoji=":hugging_face:" set="twitter" size={30} />
               </Avatar>
             </IconButton>
           </Grid>
           <Grid item xs={2}>
-            <IconButton
-              size="small"
-              onClick={(): void => handleSelect(2)}
-              className={emojiValue === 2 ? classes.button : undefined}
-            >
-              <Avatar className={classes.large}>
+            <IconButton size="small" onClick={(): void => handleSelect(2)}>
+              <Avatar
+                className={clsx(classes.large, {
+                  [classes.selected]: emojiValue === 2,
+                })}
+              >
                 <Emoji emoji=":thinking_face:" set="twitter" size={30} />
               </Avatar>
             </IconButton>
           </Grid>
           <Grid item xs={2}>
-            <IconButton
-              size="small"
-              onClick={(): void => handleSelect(3)}
-              className={emojiValue === 3 ? classes.button : undefined}
-            >
-              <Avatar className={classes.large}>
+            <IconButton size="small" onClick={(): void => handleSelect(3)}>
+              <Avatar
+                className={clsx(classes.large, {
+                  [classes.selected]: emojiValue === 3,
+                })}
+              >
                 <Emoji emoji=":frowning:" set="twitter" size={30} />
               </Avatar>
             </IconButton>
