@@ -1,8 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
-import Stats from "@sentrei/types/dist/models/Stats";
-import Actions from "@sentrei/types/models/Actions";
-import Analytics from "@sentrei/types/models/Analytics";
 import User from "@sentrei/types/models/User";
 
 export const serializeUser = (
@@ -13,9 +10,8 @@ export const serializeUser = (
   return {
     ...data,
     uid: snap.id,
-    actions: data.actions as Actions.Get,
-    analytics: data.analytics as Analytics.Get,
-    stats: data.stats as Stats.NumberFields,
+    duration: data.duration as number,
+    score: data.score as number,
   };
 };
 
@@ -27,8 +23,7 @@ export const serializeAdminUser = (
   return {
     ...data,
     uid: snap.id,
-    actions: data.actions as Actions.Get,
-    analytics: data.analytics as Analytics.Get,
-    stats: data.stats as Stats.Get,
+    duration: data.duration as number,
+    score: data.score as number,
   };
 };
