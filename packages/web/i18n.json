@@ -22,6 +22,7 @@
     "/[spaceId]/room/[roomId]/settings": ["room"],
     "/[spaceId]/rooms": ["room", "space"],
     "/[spaceId]/quit": ["space"],
+    "/[spaceId]/support": ["papercups", "space"],
     "/[spaceId]/settings": ["space"],
     "/[spaceId]": ["room", "space"],
     "/about": ["about", "footer", "header", "papercups"],
