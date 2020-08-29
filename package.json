@@ -10,8 +10,12 @@
   "license": "GPL-3.0-only",
   "author": "Shun Kakinoki",
   "workspaces": {
-    "packages": "packages/*",
-    "nohoist": "next"
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "next"
+    ]
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
