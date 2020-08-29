@@ -4,6 +4,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import CreateIcon from "@material-ui/icons/Create";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
@@ -83,6 +84,16 @@ export default function AppListMenu({
           />
         </ListItemIcon>
         <ListItemText primary={profile ? profile.name : userId} />
+      </MuiMenuItem>
+      <Divider />
+      <MenuItem disabled>
+        <ListItemText primary={t("common:common.other")} />
+      </MenuItem>
+      <MuiMenuItem href="/create">
+        <ListItemIcon>
+          <CreateIcon />
+        </ListItemIcon>
+        <ListItemText primary={t("common:common.createSpace")} />
       </MuiMenuItem>
     </Menu>
   );
