@@ -1,3 +1,13 @@
+# [1.13.0](https://github.com/sentrei/sentrei/compare/v1.12.0...v1.13.0) (2020-08-29)
+
+### Features
+
+- 🎸 ini space leaderboard ([a22d286](https://github.com/sentrei/sentrei/commit/a22d2865b245bb9b122f374272a445158242a230))
+
+### Performance Improvements
+
+- ⚡️ imp i18n common ([3b8235c](https://github.com/sentrei/sentrei/commit/3b8235c577c44d8b77bfdae5f4d1ac400e905a71))
+
 # [1.12.0](https://github.com/sentrei/sentrei/compare/v1.11.0...v1.12.0) (2020-08-29)
 
 ### Features
