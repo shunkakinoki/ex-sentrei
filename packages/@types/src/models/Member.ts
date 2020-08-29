@@ -13,7 +13,7 @@ declare namespace Member {
     status: Status;
   };
 
-  interface Fields extends EditableFields, Analytics.Fields {
+  interface Fields extends Analytics.Fields, EditableFields {
     role: "admin" | "moderator" | "viewer";
   }
 
