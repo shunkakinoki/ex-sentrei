@@ -1,3 +1,22 @@
+# [1.14.0](https://github.com/sentrei/sentrei/compare/v1.13.0...v1.14.0) (2020-08-29)
+
+### Features
+
+- 🎸 ini about core section ([9199a4a](https://github.com/sentrei/sentrei/commit/9199a4ab2f603b92063771684ed2163698cc83af))
+- 🎸 ini space members ([38cccd2](https://github.com/sentrei/sentrei/commit/38cccd295eabe23b0b52efc2feb0e9747be15c29))
+
+### Performance Improvements
+
+- ⚡️ i18n for core ([94fe7ff](https://github.com/sentrei/sentrei/commit/94fe7ff1765a97d24dbfb1e15cc22f5d5ead3ed2))
+- ⚡️ ini create space for app list menu ([e2a5bc4](https://github.com/sentrei/sentrei/commit/e2a5bc4a135c3d204714c359ac7dacfc145bef84))
+- ⚡️ ini footer i18n for pages ([5865abb](https://github.com/sentrei/sentrei/commit/5865abbfd2f9933c1a6abff2fc6492f678ff002d))
+- ⚡️ ini medal color for leaderboard ([446e0bb](https://github.com/sentrei/sentrei/commit/446e0bba013b934320df8c32997a0319a17a11ae))
+- ⚡️ ini support screen ([4fdee37](https://github.com/sentrei/sentrei/commit/4fdee3750a247056021414818691a512fc0b659e))
+- ⚡️ migrate help to support screen ([c717899](https://github.com/sentrei/sentrei/commit/c717899aa39f9005937d8134de2c55b7c15a9081))
+- ⚡️ refactoring ui components ([081e69c](https://github.com/sentrei/sentrei/commit/081e69c4dea1cfc9887d6c09b27372e639b40e9c))
+- ⚡️ update about core ([664ea4c](https://github.com/sentrei/sentrei/commit/664ea4c4e9cb3fe3f38a6b4ebdfbfce3b0f7b913))
+- ⚡️ update i18n common ([4c65609](https://github.com/sentrei/sentrei/commit/4c6560924972df9aaa31420faa63eb6d17fc54fa))
+
 # [1.13.0](https://github.com/sentrei/sentrei/compare/v1.12.0...v1.13.0) (2020-08-29)
 
 ### Features
