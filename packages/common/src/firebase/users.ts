@@ -35,8 +35,7 @@ export const getUserLive = (
     });
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export const updateNotificationSettings = async (
+export const updateNotificationSettings = (
   userId: string,
   field: Notification.Type,
   active: User.NotificationType[],
