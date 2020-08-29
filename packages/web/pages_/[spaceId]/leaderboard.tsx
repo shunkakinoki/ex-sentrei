@@ -4,11 +4,11 @@ import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-import {getAdminMembers} from "@sentrei/common/firebaseAdmin/members";
+import {getAdminLeaderboard} from "@sentrei/common/firebaseAdmin/leaderboard";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Member from "@sentrei/types/models/Member";
 import Loader from "@sentrei/ui/components/Loader";
-import SpaceMember from "@sentrei/ui/components/SpaceMember";
+import SpaceLeaderboard from "@sentrei/ui/components/SpaceLeaderboard";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 export interface Props {
@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   const spaceId = String(params?.spaceId);
-  const membersReq = getAdminMembers({
+  const membersReq = getAdminLeaderboard({
     spaceId,
   });
   const [membersData] = await Promise.all([membersReq]);
@@ -42,7 +42,7 @@ const LeaderboardPage = ({
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("spaceMembers");
+    analytics().setCurrentScreen("spaceLeaderboard");
   }, []);
 
   if (user === undefined || !membersData) {
@@ -66,7 +66,7 @@ const LeaderboardPage = ({
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      <SpaceMember
+      <SpaceLeaderboard
         spaceId={String(query.spaceId)}
         membersData={JSON.parse(membersData) as Member.Get[]}
       />
