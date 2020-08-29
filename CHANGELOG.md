@@ -1,3 +1,9 @@
+# [1.15.0-beta.2](https://github.com/sentrei/sentrei/compare/v1.15.0-beta.1...v1.15.0-beta.2) (2020-08-29)
+
+### Performance Improvements
+
+- ⚡️ refactor app feedback form ([dc96e52](https://github.com/sentrei/sentrei/commit/dc96e52be1b264b05db31c06fe6594b171fd8c39))
+
 # [1.15.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.14.0...v1.15.0-beta.1) (2020-08-29)
 
 ### Features
