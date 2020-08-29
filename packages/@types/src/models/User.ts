@@ -1,4 +1,7 @@
+import Actions from "@sentrei/types/models/Actions";
+import Analytics from "@sentrei/types/models/Analytics";
 import Profile from "@sentrei/types/models/Profile";
+import Stats from "@sentrei/types/models/Stats";
 
 declare namespace User {
   export type Mode = "dark" | "light" | "system";
@@ -12,6 +15,8 @@ declare namespace User {
   }
 
   export interface Fields extends Profile.Fields {
+    actions: Actions.Fields;
+    analytics: Analytics.Fields;
     email: string | null;
     mode?: Mode;
     language?: Language;
@@ -19,6 +24,7 @@ declare namespace User {
     notificationCount: FirebaseFirestore.FieldValue | number;
     notificationSettings: NotificationSettings;
     role: "admin" | "moderator" | "viewer";
+    stats: Stats.Fields;
   }
 
   export type Response = Fields;
