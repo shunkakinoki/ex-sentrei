@@ -1,3 +1,9 @@
+## [1.10.2](https://github.com/sentrei/sentrei/compare/v1.10.1...v1.10.2) (2020-08-29)
+
+### Performance Improvements
+
+- ⚡️ ini sentrei-bot allow cla ([6d8932c](https://github.com/sentrei/sentrei/commit/6d8932c5aa0c34bde98a62a3183835b6cd7ee1f3))
+
 ## [1.10.1](https://github.com/sentrei/sentrei/compare/v1.10.0...v1.10.1) (2020-08-29)
 
 ### Performance Improvements
