@@ -36,6 +36,7 @@ declare namespace Activity {
     itemPath: string;
     language?: User.Language;
     spaceId: string;
+    type: string;
     updatedAt: firebase.firestore.FieldValue;
     user: Profile.Response;
     userNotification: string[];
