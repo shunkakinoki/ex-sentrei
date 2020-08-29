@@ -4,16 +4,18 @@ import * as React from "react";
 import {getMembersLive} from "@sentrei/common/firebase/members";
 import Member from "@sentrei/types/models/Member";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
-import SpaceMemberList from "@sentrei/ui/components/SpaceMemberList";
+import SpaceMemberBoard from "@sentrei/ui/components/SpaceMemberBoard";
 
 export interface Props {
   membersData: Member.Get[];
   spaceId: string;
+  userId: string;
 }
 
 export default function SpaceMember({
   membersData,
   spaceId,
+  userId,
 }: Props): JSX.Element {
   const [members, setMembers] = React.useState<Member.Get[] | null | undefined>(
     membersData,
@@ -36,5 +38,5 @@ export default function SpaceMember({
     return <Error statusCode={404} />;
   }
 
-  return <SpaceMemberList members={members} />;
+  return <SpaceMemberBoard members={members} userId={userId} />;
 }

@@ -1,6 +1,7 @@
 {
   "common": {
     "activity": "Activity",
+    "avatar": "Avatar",
     "analytics": "Analytics",
     "app": "App",
     "back": "Back",
@@ -24,6 +25,7 @@
     "id": "ID",
     "invite": "Invite",
     "language": "Language",
+    "lastUpdated": "Last Updated",
     "leaderboard": "Leaderboard",
     "lightMode": "Light Mode",
     "link": "Link",
@@ -48,6 +50,7 @@
     "pro": "Pro",
     "profile": "Profile",
     "quit": "Quit",
+    "role": "Role",
     "room": "Room",
     "rooms": "Rooms",
     "score": "Score",
