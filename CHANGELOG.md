@@ -1,3 +1,11 @@
+## [1.10.1](https://github.com/sentrei/sentrei/compare/v1.10.0...v1.10.1) (2020-08-29)
+
+### Performance Improvements
+
+- ⚡️ migrate analytics to actions ([6715fdc](https://github.com/sentrei/sentrei/commit/6715fdc4103939639a2926800aed6cb31379a8cf))
+- ⚡️ migrate records model to analytics ([033974d](https://github.com/sentrei/sentrei/commit/033974db45b358f03a88d541fd62e1b17b4633cb))
+- ⚡️ refactor member records ([78c98b0](https://github.com/sentrei/sentrei/commit/78c98b0e81779db8735be5c6fe07eda1cd0402c5))
+
 # [1.10.0](https://github.com/sentrei/sentrei/compare/v1.9.3...v1.10.0) (2020-08-29)
 
 ### Bug Fixes
