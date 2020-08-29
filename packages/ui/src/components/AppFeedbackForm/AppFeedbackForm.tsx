@@ -49,7 +49,7 @@ const AppFeedbackForm = ({profile}: Props): JSX.Element => {
   });
 
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
-    snackbar("info", t("common:snackbar.editing"));
+    snackbar("info", t("common:snackbar.creating"));
     try {
       await createFeedback({
         createdAt: timestamp,
