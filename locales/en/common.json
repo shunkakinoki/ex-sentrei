@@ -1,9 +1,9 @@
 {
   "common": {
     "activity": "Activity",
-    "avatar": "Avatar",
     "analytics": "Analytics",
     "app": "App",
+    "avatar": "Avatar",
     "back": "Back",
     "billing": "Billing",
     "cancel": "Cancel",
