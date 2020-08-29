@@ -6,7 +6,7 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
-import SpaceActivity from "@sentrei/ui/components/SpaceActivity";
+import SpaceAnalytics from "@sentrei/ui/components/SpaceAnalytics";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const AnalyticsPage: NextPage = () => {
@@ -39,7 +39,7 @@ const AnalyticsPage: NextPage = () => {
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      <SpaceActivity spaceId={String(query.spaceId)} />
+      <SpaceAnalytics spaceId={String(query.spaceId)} />
     </>
   );
 };

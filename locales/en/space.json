@@ -2,6 +2,9 @@
   "activity": {
     "title": "Activity"
   },
+  "analytics": {
+    "title": "Analytics"
+  },
   "dashboard": {
     "create": "Create one",
     "none": "You have no spaces ...",
