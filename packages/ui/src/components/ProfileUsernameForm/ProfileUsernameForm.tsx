@@ -38,7 +38,7 @@ const ProfileUsernameForm = ({profile}: Props): JSX.Element => {
         t("form:username.usernameInvalid"),
       )
       .test("id", t("form:username.usernameAlreadyUsed"), async value => {
-        const result = await validateUsername(value);
+        const result = await validateUsername(value || "");
         return result;
       }),
   });

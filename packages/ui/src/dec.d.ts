@@ -1,7 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 
-declare module "react-typical";
-declare module "react-typist";
 declare module "react-useanimations";
 declare module "@metomic/react";
 declare module "next-translate";

@@ -55,6 +55,7 @@ export default function CustomRoughNotation({
     <NoSsr>
       <span ref={ref}>
         <RoughNotation
+          // @ts-expect-error
           animate={animate}
           animationDelay={animationDelay}
           animationDuration={animationDuration}
