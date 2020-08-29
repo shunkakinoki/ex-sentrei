@@ -20,7 +20,7 @@
     "/[spaceId]/room/[roomId]/edit": ["room"],
     "/[spaceId]/room/[roomId]/quit": ["room"],
     "/[spaceId]/room/[roomId]/settings": ["room"],
-    "/[spaceId]/rooms": ["space"],
+    "/[spaceId]/rooms": ["room", "space"],
     "/[spaceId]/quit": ["space"],
     "/[spaceId]/settings": ["space"],
     "/[spaceId]": ["room", "space"],
