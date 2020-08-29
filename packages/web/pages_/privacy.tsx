@@ -6,8 +6,9 @@ import * as React from "react";
 
 import {analytics} from "@sentrei/common/utils/firebase";
 
-import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import Footer from "@sentrei/ui/components/Footer";
+import SentreiHeader from "@sentrei/web/components/SentreiHeader";
+
 const Privacy: NextPage = () => {
   React.useEffect(() => {
     analytics().setCurrentScreen("privacy");

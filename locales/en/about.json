@@ -4,16 +4,16 @@
       "subTitle": "We believe in open source and transparency. We will support open source technology and will strive towards being a driving force behing it. We also will be as transparent as possible regarding every aspect of our business.",
       "title": "Open Source & Transparency"
     },
+    "root": "Fundamental values in which we stand upon",
     "think": {
       "subTitle": "We will strive to think as different as possible. We will not defer to the status quo, nor will we accept what is considered normal to be the norm. We value diversity & ingenuity more than anyone else.",
       "title": "Think Different"
     },
+    "title": "Core Values",
     "work": {
       "subTitle": "We will strive to do great work. We will not pursue work that we do not consider as being great. We do not lower our standards and continue to pursue towards being great in the moment.",
       "title": "Do Great Work"
-    },
-    "root": "Fundamental values in which we stand upon",
-    "title": "Core Values"
+    }
   },
   "investor": {
     "back": "We are backed by an incredible group of investors",
