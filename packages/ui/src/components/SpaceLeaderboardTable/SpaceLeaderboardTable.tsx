@@ -44,9 +44,7 @@ export default function SpaceMemberList({members}: Props): JSX.Element {
                 <Box px={3} />
                 {member.name}
               </TableCell>
-              <TableCell align="right">
-                <Box pr={3}>{member.score}</Box>
-              </TableCell>
+              <TableCell align="right">{member.score}</TableCell>
             </TableRow>
           ))}
         </TableBody>
