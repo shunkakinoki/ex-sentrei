@@ -1,3 +1,9 @@
+# [1.12.0](https://github.com/sentrei/sentrei/compare/v1.11.0...v1.12.0) (2020-08-29)
+
+### Features
+
+- 🎸 ini space analytics ([a2fe2e2](https://github.com/sentrei/sentrei/commit/a2fe2e2df1602e4b8bde2050bcedcb13db2f24c9))
+
 # [1.11.0](https://github.com/sentrei/sentrei/compare/v1.10.2...v1.11.0) (2020-08-29)
 
 ### Features
