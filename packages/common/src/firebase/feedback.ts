@@ -5,5 +5,5 @@ import Feedback from "@sentrei/types/models/Feedback";
 export const createFeedback = async (
   feedback: Feedback.Create,
 ): Promise<void> => {
-  await db.collection(`feedbacks`).add(feedback);
+  await db.collection(`feedback`).add(feedback);
 };
