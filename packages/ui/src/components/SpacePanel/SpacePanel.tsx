@@ -38,8 +38,8 @@ export default function SpacePanel({
             <SpacePanelBanner
               photo={space.photo}
               name={space.name}
-              duration={member.record.duration || 0}
-              score={member.record.score || 0}
+              duration={member.duration}
+              score={member.score}
               spaceId={space.id}
               tier={space.tier}
             />

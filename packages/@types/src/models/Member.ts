@@ -13,8 +13,7 @@ declare namespace Member {
     status: Status;
   };
 
-  interface Fields extends EditableFields {
-    record: Record.Fields;
+  interface Fields extends EditableFields, Record.Fields {
     role: "admin" | "moderator" | "viewer";
   }
 
@@ -30,7 +29,8 @@ declare namespace Member {
 
   export interface Get extends Fields, Profile.Get, Metadata.Get {
     id: string;
-    record: Record.Get;
+    duration: number;
+    score: number;
   }
 
   export interface Snapshot extends Get {
