@@ -39,6 +39,8 @@ declare namespace Activity {
     updatedAt: firebase.firestore.FieldValue;
     user: Profile.Response;
     userNotification: string[];
+    type?: string;
+    value?: number;
   }
 
   interface Create<T, C extends keyof EditableContentType>

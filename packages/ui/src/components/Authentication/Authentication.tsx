@@ -2,11 +2,10 @@ import Router from "next-translate/Router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-
+import {getUserLive} from "@sentrei/common/firebase/users";
 import logIPAddress from "@sentrei/common/services/logIPAddress";
 import {pageView} from "@sentrei/common/utils/analytics";
-import {auth, db, performance} from "@sentrei/common/utils/firebase";
-import User from "@sentrei/types/models/User";
+import {auth, performance} from "@sentrei/common/utils/firebase";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 
 const Authentication = (): null => {
@@ -25,11 +24,8 @@ const Authentication = (): null => {
     let unsubscribe: firebase.Unsubscribe = () => {};
 
     if (authState) {
-      unsubscribe = db.doc(`users/${authState.uid}`).onSnapshot(snap => {
-        if (snap && snap.data()) {
-          const fbUser = snap.data() as User.Response;
-          setUser({...fbUser, uid: authState.uid});
-        }
+      unsubscribe = getUserLive(authState.uid, snap => {
+        setUser(snap);
       });
     }
 

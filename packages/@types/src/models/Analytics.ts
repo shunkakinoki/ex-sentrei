@@ -6,9 +6,16 @@ declare namespace Analytics {
     score: FirebaseFirestore.FieldValue | number;
   };
 
+  export type NumberFields = {
+    duration: number;
+    score: number;
+  };
+
   export type Response = Fields;
 
-  export interface Create extends Fields, Metadata.Create {}
+  export type NumberResponse = NumberFields;
+
+  export interface Create extends Partial<Fields>, Metadata.Create {}
 
   export interface Request extends Fields, Metadata.Get {}
 
