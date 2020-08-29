@@ -1,6 +1,1 @@
-{
-  "version": 2,
-  "github": {
-    "enabled": false
-  }
-}
+packages/web/vercel.json
