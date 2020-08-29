@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import serializeFirebaseDate from "@sentrei/common/serializers/Date";
+import Actions from "@sentrei/types/models/Actions";
 import Analytics from "@sentrei/types/models/Analytics";
-import Record from "@sentrei/types/models/Record";
 import Space from "@sentrei/types/models/Space";
 import Stats from "@sentrei/types/models/Stats";
 
@@ -14,8 +14,8 @@ export const serializeSpace = (
   return {
     ...data,
     id: snap.id,
-    analytics: data.analytics as Analytics.NumberFields,
-    record: data.record as Record.Get,
+    actions: data.actions as Actions.NumberFields,
+    analytics: data.analytics as Analytics.Get,
     stats: data.stats as Stats.NumberFields,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
@@ -30,8 +30,8 @@ export const serializeAdminSpace = (
   return {
     ...data,
     id: snap.id,
-    analytics: data.analytics as Analytics.NumberFields,
-    record: data.record as Record.Get,
+    actions: data.actions as Actions.NumberFields,
+    analytics: data.analytics as Analytics.Get,
     stats: data.stats as Stats.NumberFields,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),

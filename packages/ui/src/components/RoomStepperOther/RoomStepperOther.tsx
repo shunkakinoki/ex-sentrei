@@ -48,7 +48,7 @@ const RoomStepperOther = ({
     snackbar("info", t("common:snackbar.creating"));
     try {
       await createRoom({
-        analytics: {},
+        actions: {},
         createdAt: timestamp,
         createdBy: profile,
         createdByUid: user.uid,
@@ -56,7 +56,7 @@ const RoomStepperOther = ({
         description: null,
         photo: null,
         name: activeForm.name,
-        record: {
+        analytics: {
           duration: 0,
           score: 0,
         },

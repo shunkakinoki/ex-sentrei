@@ -1,8 +1,8 @@
 import firebase from "firebase";
 
+import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
 import Profile from "@sentrei/types/models/Profile";
-import Record from "@sentrei/types/models/Record";
 
 declare namespace Member {
   export type Status = "online" | "offline" | "away";
@@ -13,8 +13,7 @@ declare namespace Member {
     status: Status;
   };
 
-  interface Fields extends EditableFields {
-    record: Record.Fields;
+  interface Fields extends EditableFields, Analytics.Fields {
     role: "admin" | "moderator" | "viewer";
   }
 
@@ -30,7 +29,8 @@ declare namespace Member {
 
   export interface Get extends Fields, Profile.Get, Metadata.Get {
     id: string;
-    record: Record.Get;
+    duration: number;
+    score: number;
   }
 
   export interface Snapshot extends Get {

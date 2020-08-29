@@ -1,6 +1,6 @@
+import Actions from "@sentrei/types/models/Actions";
 import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
-import Record from "@sentrei/types/models/Record";
 import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Room {
@@ -14,8 +14,8 @@ declare namespace Room {
   };
 
   interface Fields extends EditableFields {
+    actions: Actions.Fields;
     analytics: Analytics.Fields;
-    record: Record.Fields;
     stats: Stats.Fields;
     spaceId: string;
     type: Types;
@@ -31,8 +31,8 @@ declare namespace Room {
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
+    actions: Actions.Get;
     analytics: Analytics.Get;
-    record: Record.Get;
     stats: Stats.NumberFields;
   }
 
