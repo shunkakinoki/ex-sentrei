@@ -1,3 +1,9 @@
+# [1.15.0-beta.3](https://github.com/sentrei/sentrei/compare/v1.15.0-beta.2...v1.15.0-beta.3) (2020-08-29)
+
+### Bug Fixes
+
+- 🐛 activity model optional spaceId field ([ddccf49](https://github.com/sentrei/sentrei/commit/ddccf49f6f732ce76ea7f7d4ad4fd85c4ded0488))
+
 # [1.15.0-beta.2](https://github.com/sentrei/sentrei/compare/v1.15.0-beta.1...v1.15.0-beta.2) (2020-08-29)
 
 ### Performance Improvements
