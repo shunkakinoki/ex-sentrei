@@ -6,6 +6,7 @@ import serializeFirebaseDate from "@sentrei/common/serializers/Date";
 import Activity from "@sentrei/types/models/Activity";
 
 export const editableFields = {
+  feedback: [],
   invites: [],
   members: ["description", "emoji"],
   participants: [],
