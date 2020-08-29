@@ -1,9 +1,11 @@
 import Metadata from "@sentrei/types/models/Metadata";
 
 declare namespace Feedback {
+  export type Emoji = 1 | 2 | 3;
+
   interface Fields {
     description?: string;
-    emoji: string;
+    emoji?: Emoji;
   }
 
   export interface Create extends Fields, Metadata.Create {}
