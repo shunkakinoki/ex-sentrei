@@ -2,6 +2,9 @@
   "activity": {
     "title": "活動内容"
   },
+  "analytics": {
+    "title": "分析"
+  },
   "dashboard": {
     "create": "一つ作る",
     "none": "スペースがありません...",
@@ -11,10 +14,14 @@
     "invite": "招待する"
   },
   "leaderboard": {
+    "ranking": "ランキング",
     "title": "リーダーボード"
   },
   "member": {
     "title": "会員"
+  },
+  "rooms": {
+    "title": "部屋"
   },
   "settings": {
     "title": "スペース設定"

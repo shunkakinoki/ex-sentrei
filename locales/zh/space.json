@@ -2,6 +2,9 @@
   "activity": {
     "title": "活动项目"
   },
+  "analytics": {
+    "title": "分析工具"
+  },
   "dashboard": {
     "create": "创建一个",
     "none": "你没有空格...",
@@ -11,10 +14,14 @@
     "invite": "邀请"
   },
   "leaderboard": {
+    "ranking": "排行",
     "title": "排行榜"
   },
   "member": {
     "title": "会员"
+  },
+  "rooms": {
+    "title": "房间数"
   },
   "settings": {
     "title": "空间设定"
