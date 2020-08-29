@@ -15,7 +15,7 @@ declare namespace Analytics {
 
   export type NumberResponse = NumberFields;
 
-  export interface Create extends Fields, Metadata.Create {}
+  export interface Create extends Partial<Fields>, Metadata.Create {}
 
   export interface Request extends Fields, Metadata.Get {}
 
