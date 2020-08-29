@@ -1,3 +1,19 @@
+# [1.10.0](https://github.com/sentrei/sentrei/compare/v1.9.3...v1.10.0) (2020-08-29)
+
+### Bug Fixes
+
+- 🐛 ini nohoist for yarn workspaces ([38f282c](https://github.com/sentrei/sentrei/commit/38f282c2d8c741d8e1a7d9d9ca4bc98c61a859a6))
+
+### Features
+
+- 🎸 ini room screen for space ([abd53e8](https://github.com/sentrei/sentrei/commit/abd53e899655940197fcc6938390ec8e367f89eb))
+- 🎸 ini space room member activity list ([b58e289](https://github.com/sentrei/sentrei/commit/b58e2895399073e37bc8bbdbcc5dcd436547ce79))
+
+### Performance Improvements
+
+- ⚡️ refactor space panel banner grid ([4d5f3e9](https://github.com/sentrei/sentrei/commit/4d5f3e92718a7f6d00db6255ed6e67dbdaefd716))
+- ⚡️ refactor space section ([2fff2dc](https://github.com/sentrei/sentrei/commit/2fff2dca55503a05cc6b6ac83fad0650ae3ac52a))
+
 ## [1.9.3](https://github.com/sentrei/sentrei/compare/v1.9.2...v1.9.3) (2020-08-27)
 
 ### Performance Improvements
