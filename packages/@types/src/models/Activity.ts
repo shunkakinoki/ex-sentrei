@@ -1,3 +1,4 @@
+import Feedback from "@sentrei/types/models/Feedback";
 import Invite from "@sentrei/types/models/Invite";
 import Member from "@sentrei/types/models/Member";
 import Participant from "@sentrei/types/models/Participant";
@@ -10,6 +11,7 @@ import User from "@sentrei/types/models/User";
 export type UserAction = "created" | "updated" | "deleted";
 
 type EditableContent =
+  | "feedback"
   | "invites"
   | "members"
   | "participants"
@@ -64,6 +66,7 @@ declare namespace Activity {
     after: null;
   }
 
+  export type CreateFeedback = Create<Feedback.Response, "feedback">;
   export type CreateInvite = Create<Invite.Response, "invites">;
   export type DeleteInvite = Delete<Invite.Response, "invites">;
   export type CreateMember = Create<Member.Response, "members">;
@@ -81,6 +84,7 @@ declare namespace Activity {
   export type DeleteSpace = Delete<Space.Response, "spaces">;
 
   export type CreateActions =
+    | CreateFeedback
     | CreateInvite
     | CreateMember
     | CreateParticipant
