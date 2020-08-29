@@ -121,6 +121,7 @@ export default function AppBar({
             {profile && (
               <AppFeedback
                 anchorEl={feedbackAnchorEl}
+                handleClick={feedbackSetAnchorEl}
                 open={Boolean(feedbackAnchorEl)}
                 onClose={handleClose}
                 profile={profile}

@@ -2,7 +2,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const AppFeedbackFormStyles = makeStyles((theme: Theme) =>
   createStyles({
-    button: {background: theme.palette.primary.main},
+    button: {background: theme.palette.secondary.main},
     large: {
       height: theme.spacing(6),
       width: theme.spacing(6),

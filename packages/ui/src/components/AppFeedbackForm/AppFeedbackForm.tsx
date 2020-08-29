@@ -23,15 +23,16 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 import AppFeedbackFormStyles from "./AppFeedbackFormStyles";
 
 export interface Props {
+  handleClick: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
   profile: Profile.Get;
 }
 
-const AppFeedbackForm = ({profile}: Props): JSX.Element => {
+const AppFeedbackForm = ({handleClick, profile}: Props): JSX.Element => {
   const classes = AppFeedbackFormStyles();
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
-  const [emojiValue, setEmojiValue] = React.useState<Feedback.Emoji>();
+  const [emojiValue, setEmojiValue] = React.useState<Feedback.Emoji>(null);
 
   const handleSelect = (value: Feedback.Emoji): void => {
     setEmojiValue(value);
@@ -39,7 +40,6 @@ const AppFeedbackForm = ({profile}: Props): JSX.Element => {
 
   const AppFeedbackFormSchema = Yup.object().shape({
     description: Yup.string(),
-    emoji: Yup.number(),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
@@ -61,6 +61,7 @@ const AppFeedbackForm = ({profile}: Props): JSX.Element => {
         updatedBy: profile,
         updatedByUid: profile.uid,
       })?.then(() => {
+        handleClick(null);
         snackbar("success");
       });
     } catch (err) {

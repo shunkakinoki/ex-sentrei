@@ -8,7 +8,8 @@ import AppFeedbackForm from "@sentrei/ui/components/AppFeedbackForm";
 import AppFeedbackStyles from "./AppFeedbackStyles";
 
 export interface Props {
-  anchorEl?: Element | ((element: Element) => Element) | null | undefined;
+  anchorEl: Element | ((element: Element) => Element) | null | undefined;
+  handleClick: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
   open: boolean;
   onClose?:
     | ((event: {}, reason: "backdropClick" | "escapeKeyDown") => void)
@@ -18,6 +19,7 @@ export interface Props {
 
 export default function AppListMenu({
   anchorEl,
+  handleClick,
   open,
   onClose,
   profile,
@@ -39,7 +41,7 @@ export default function AppListMenu({
       }}
     >
       <Box className={classes.popover}>
-        <AppFeedbackForm profile={profile} />
+        <AppFeedbackForm handleClick={handleClick} profile={profile} />
       </Box>
     </Popover>
   );
