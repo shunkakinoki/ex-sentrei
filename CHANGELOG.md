@@ -1,3 +1,16 @@
+# [1.11.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.10.1...v1.11.0-beta.1) (2020-08-29)
+
+### Features
+
+- 🎸 ini user firebase service ([9e86fce](https://github.com/sentrei/sentrei/commit/9e86fce13da1236c5d072ce2dc79eac2a87b1951))
+
+### Performance Improvements
+
+- ⚡️ imp-user-state ([34b5f6c](https://github.com/sentrei/sentrei/commit/34b5f6c3edb37b7155c22bff36058e46cc9abf68))
+- ⚡️ update activity value ([778be5b](https://github.com/sentrei/sentrei/commit/778be5b345e681d825ab8b7ec2b271aa1bf48cb9))
+- ⚡️ update analytics create to partial ([ef09381](https://github.com/sentrei/sentrei/commit/ef09381954fa25cd96af6926fc1da90b560ba16a))
+- ⚡️ upgrade user model to include analytics ([f84bad7](https://github.com/sentrei/sentrei/commit/f84bad7d880eca1617420f190e23a14a50fd624e))
+
 ## [1.10.1](https://github.com/sentrei/sentrei/compare/v1.10.0...v1.10.1) (2020-08-29)
 
 ### Performance Improvements
