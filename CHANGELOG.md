@@ -1,3 +1,16 @@
+# [1.18.0](https://github.com/sentrei/sentrei/compare/v1.17.0...v1.18.0) (2020-08-30)
+
+### Features
+
+- 🎸 completely refactor app tab profile ([77ab8fb](https://github.com/sentrei/sentrei/commit/77ab8fbc8dfa770123dd906bd8824c9516587848))
+- 🎸 ini app tab complete refactor ([b93bf89](https://github.com/sentrei/sentrei/commit/b93bf89e7e2b69466f9ae57d090ea2224b010c5d))
+- 🎸 ini app tab icon ([04c5bc9](https://github.com/sentrei/sentrei/commit/04c5bc9f75dd0dbe4d30a0afab71c38074394ba1))
+
+### Performance Improvements
+
+- ⚡️ refactor dashbaord to home key ([c9ed546](https://github.com/sentrei/sentrei/commit/c9ed546cf0a1be548474e6cea3dd64aed97d4cc5))
+- ⚡️ refactor space tabs ([13f3bbf](https://github.com/sentrei/sentrei/commit/13f3bbf1e7c99f28f1ac767e3d245614c1af4d3e))
+
 # [1.17.0](https://github.com/sentrei/sentrei/compare/v1.16.1...v1.17.0) (2020-08-30)
 
 ### Features
