@@ -17,6 +17,10 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
       width: theme.spacing(5),
       height: theme.spacing(5),
     },
+    other: {
+      marginTop: theme.spacing(1.5),
+      marginBottom: theme.spacing(1.5),
+    },
     grow: {
       flexGrow: 1,
     },

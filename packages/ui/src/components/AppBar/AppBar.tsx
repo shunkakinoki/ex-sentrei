@@ -5,6 +5,7 @@ import Container from "@material-ui/core/Container";
 import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 import Skeleton from "@material-ui/lab/Skeleton";
 import useTranslation from "next-translate/useTranslation";
@@ -13,6 +14,7 @@ import * as React from "react";
 import Profile from "@sentrei/types/models/Profile";
 import AppFeedback from "@sentrei/ui/components/AppFeedback";
 import AppListMenu from "@sentrei/ui/components/AppListMenu";
+import AppOtherMenu from "@sentrei/ui/components/AppOtherMenu";
 import AppProfileMenu from "@sentrei/ui/components/AppProfileMenu";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
@@ -44,6 +46,9 @@ export default function AppBar({
   const [listAnchorEl, listSetAnchorEl] = React.useState<null | HTMLElement>(
     null,
   );
+  const [otherAnchorEl, otherSetAnchorEl] = React.useState<null | HTMLElement>(
+    null,
+  );
   const [
     profileAnchorEl,
     profileSetAnchorEl,
@@ -55,6 +60,9 @@ export default function AppBar({
   const handleListClick = (event: React.MouseEvent<HTMLElement>): void => {
     listSetAnchorEl(event.currentTarget);
   };
+  const handleOtherClick = (event: React.MouseEvent<HTMLElement>): void => {
+    otherSetAnchorEl(event.currentTarget);
+  };
   const handleProfileClick = (event: React.MouseEvent<HTMLElement>): void => {
     profileSetAnchorEl(event.currentTarget);
   };
@@ -62,6 +70,7 @@ export default function AppBar({
   const handleClose = (): void => {
     feedbackSetAnchorEl(null);
     listSetAnchorEl(null);
+    otherSetAnchorEl(null);
     profileSetAnchorEl(null);
   };
 
@@ -135,6 +144,21 @@ export default function AppBar({
             >
               <Typography noWrap>{t("common:common.support")}</Typography>
             </MuiButton>
+            <AppOtherMenu
+              anchorEl={otherAnchorEl}
+              open={Boolean(otherAnchorEl)}
+              onClose={handleClose}
+            />
+            <IconButton
+              edge="start"
+              aria-label="other-menu"
+              aria-haspopup="true"
+              size="small"
+              onClick={handleOtherClick}
+              className={classes.other}
+            >
+              <MoreVertIcon />
+            </IconButton>
             <IconButton
               edge="end"
               aria-label="profile-menu"
