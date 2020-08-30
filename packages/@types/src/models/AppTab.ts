@@ -7,4 +7,11 @@ export type AppSpaceTabKey =
   | "members"
   | "settings";
 
-export type AppTabType = "personal" | "room" | "space";
+export type AppUserTabKey =
+  | "dashboard"
+  | "create"
+  | "profile"
+  | "notifications"
+  | "settings";
+
+export type AppTabType = "room" | "space" | "user";

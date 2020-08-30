@@ -25,7 +25,7 @@ const Create: NextPage = () => {
   if (user === undefined || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton />
+        <SentreiAppHeader skeleton tabUserKey="create" type="user" />
         <SkeletonForm />
       </>
     );
@@ -42,6 +42,8 @@ const Create: NextPage = () => {
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
+          tabUserKey="create"
+          type="user"
         />
       )}
       {user && <SpaceCreate profile={profile} user={user} />}

@@ -8,7 +8,8 @@ import AppTabIconStyles from "./AppTabIconStyles";
 
 interface MuiAppTabIconProps {
   href: string;
-  as: string;
+  // eslint-disable-next-line react/require-default-props
+  as?: string;
 }
 
 interface Props extends MuiAppTabIconProps {
