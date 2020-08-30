@@ -4,15 +4,15 @@ import * as React from "react";
 
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 
-import SectionStyles from "./SectionStyles";
+import LandingSectionStyles from "./LandingSectionStyles";
 
 export interface Props {
   subTitle: string;
   title: string;
 }
 
-export default function Section({subTitle, title}: Props): JSX.Element {
-  const classes = SectionStyles();
+export default function LandingSection({subTitle, title}: Props): JSX.Element {
+  const classes = LandingSectionStyles();
 
   return (
     <Container maxWidth="sm" component="main" className={classes.section}>

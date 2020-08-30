@@ -4,14 +4,14 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import LandingPricingCard from "@sentrei/ui/components/LandingPricingCard";
-import Section from "@sentrei/ui/components/Section";
+import LandingSection from "@sentrei/ui/components/LandingSection";
 
 export default function LandingPricing(): JSX.Element {
   const {t} = useTranslation();
 
   return (
     <>
-      <Section title={t("index:pricing.sectionTitle")} subTitle="" />
+      <LandingSection title={t("index:pricing.sectionTitle")} subTitle="" />
       <Container maxWidth="md" component="main">
         <Grid container spacing={3} alignItems="flex-end">
           <Grid item xs={12} sm={4}>
