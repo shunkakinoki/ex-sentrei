@@ -45,7 +45,7 @@ const LeaderboardPage = ({
     analytics().setCurrentScreen("spaceLeaderboard");
   }, []);
 
-  if (user === undefined || !membersData) {
+  if (user === undefined || !profile || !membersData) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
@@ -60,7 +60,7 @@ const LeaderboardPage = ({
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}

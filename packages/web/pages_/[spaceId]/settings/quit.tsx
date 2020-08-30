@@ -22,7 +22,7 @@ const SettingsQuitPage: NextPage = () => {
     analytics().setCurrentScreen("spaceQuit");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
@@ -37,7 +37,7 @@ const SettingsQuitPage: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
@@ -47,9 +47,7 @@ const SettingsQuitPage: NextPage = () => {
           type="space"
         />
       )}
-      {user && profile && (
-        <SpaceQuit spaceId={String(query.spaceId)} user={user} />
-      )}
+      {user && <SpaceQuit spaceId={String(query.spaceId)} user={user} />}
     </>
   );
 };

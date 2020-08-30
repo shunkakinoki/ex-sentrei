@@ -24,7 +24,7 @@ const SettingsInvitePage: NextPage = () => {
     analytics().setCurrentScreen("spaceEdit");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
@@ -39,7 +39,7 @@ const SettingsInvitePage: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
@@ -48,7 +48,7 @@ const SettingsInvitePage: NextPage = () => {
           tabSpaceKey="settings"
         />
       )}
-      {user && profile && (
+      {user && (
         <InviteScreen
           profile={profile}
           user={user}

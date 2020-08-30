@@ -25,7 +25,7 @@ const InviteId: NextPage = () => {
     analytics().setCurrentScreen("inviteSignup");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton />
@@ -40,7 +40,7 @@ const InviteId: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
@@ -48,7 +48,7 @@ const InviteId: NextPage = () => {
           spaceId={String(query.spaceId)}
         />
       )}
-      {user && profile && (
+      {user && (
         <InviteSignup
           inviteId={String(query.inviteId)}
           spaceId={String(query.spaceId)}

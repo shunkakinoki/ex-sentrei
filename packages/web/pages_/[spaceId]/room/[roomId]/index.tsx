@@ -24,7 +24,7 @@ const RoomId = (): JSX.Element => {
     analytics().setCurrentScreen("room");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return <Loader />;
   }
 
@@ -34,7 +34,7 @@ const RoomId = (): JSX.Element => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <RoomScreen
           user={user}
           profile={profile}

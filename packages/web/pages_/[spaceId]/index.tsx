@@ -72,7 +72,7 @@ const SpaceId = ({
     analytics().setCurrentScreen("space");
   }, []);
 
-  if (user === undefined || !spaceData || !membersData) {
+  if (user === undefined || !profile || !spaceData || !membersData) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="dashboard" type="space" />
@@ -87,7 +87,7 @@ const SpaceId = ({
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
@@ -97,8 +97,8 @@ const SpaceId = ({
           type="space"
         />
       )}
-      {user && profile && <StatusSpace userId={user.uid} profile={profile} />}
-      {user && profile && (
+      {user && <StatusSpace userId={user.uid} profile={profile} />}
+      {user && (
         <SpaceScreen
           user={user}
           profile={profile}

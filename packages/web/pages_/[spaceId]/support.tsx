@@ -18,7 +18,7 @@ const SupportPage: NextPage = () => {
     analytics().setCurrentScreen("support");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton />
@@ -33,7 +33,7 @@ const SupportPage: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
@@ -41,7 +41,7 @@ const SupportPage: NextPage = () => {
           spaceId={String(query.spaceId)}
         />
       )}
-      {user && profile && (
+      {user && (
         <SupportScreen
           email={user.email}
           name={profile.name}

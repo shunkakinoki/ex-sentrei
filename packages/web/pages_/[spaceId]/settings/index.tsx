@@ -22,7 +22,7 @@ const SettingsPage: NextPage = () => {
     analytics().setCurrentScreen("spaceEdit");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
@@ -37,7 +37,7 @@ const SettingsPage: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
@@ -46,7 +46,7 @@ const SettingsPage: NextPage = () => {
           tabSpaceKey="settings"
         />
       )}
-      {user && profile && (
+      {user && (
         <SpaceEdit
           spaceId={String(query.spaceId)}
           profile={profile}

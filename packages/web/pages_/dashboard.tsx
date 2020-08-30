@@ -23,7 +23,7 @@ const Dashboard: NextPage = () => {
     analytics().setCurrentScreen("dashboard");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
@@ -38,14 +38,14 @@ const Dashboard: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
         />
       )}
-      {user && profile && <StatusSpace userId={user.uid} profile={profile} />}
+      {user && <StatusSpace userId={user.uid} profile={profile} />}
       {user && <SpaceDashboard user={user} />}
     </>
   );

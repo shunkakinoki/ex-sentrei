@@ -45,7 +45,7 @@ const MembersPage = ({
     analytics().setCurrentScreen("spaceMembers");
   }, []);
 
-  if (user === undefined || !membersData) {
+  if (user === undefined || !profile || !membersData) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="members" type="space" />
@@ -60,7 +60,7 @@ const MembersPage = ({
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}

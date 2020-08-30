@@ -15,7 +15,7 @@ const Settings: NextPage = () => {
     analytics().setCurrentScreen("settings");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return <Loader />;
   }
 
@@ -25,14 +25,14 @@ const Settings: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
         />
       )}
-      {user && profile && <SettingsScreen user={user} profile={profile} />}
+      {user && <SettingsScreen user={user} profile={profile} />}
     </>
   );
 };

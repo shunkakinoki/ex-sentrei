@@ -22,7 +22,7 @@ const Create: NextPage = () => {
     analytics().setCurrentScreen("SpaceForm");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
@@ -37,14 +37,14 @@ const Create: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
         />
       )}
-      {user && profile && <SpaceCreate profile={profile} user={user} />}
+      {user && <SpaceCreate profile={profile} user={user} />}
     </>
   );
 };

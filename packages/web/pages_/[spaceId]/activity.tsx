@@ -18,7 +18,7 @@ const ActivityPage: NextPage = () => {
     analytics().setCurrentScreen("spaceActivity");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
@@ -33,7 +33,7 @@ const ActivityPage: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}

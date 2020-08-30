@@ -22,7 +22,7 @@ const CreatePage: NextPage = () => {
     analytics().setCurrentScreen("roomCreate");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return <Loader />;
   }
 
@@ -32,7 +32,7 @@ const CreatePage: NextPage = () => {
 
   return (
     <>
-      {user && profile && (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
@@ -42,7 +42,7 @@ const CreatePage: NextPage = () => {
           type="space"
         />
       )}
-      {user && profile && (
+      {user && (
         <RoomCreate
           spaceId={String(query.spaceId)}
           profile={profile}
