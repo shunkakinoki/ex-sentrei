@@ -36,7 +36,9 @@ export default function AppTabIcon({
         minWidth: 72,
         marginRight: theme.spacing(1),
       },
-      selected: {},
+      selected: {
+        color: theme.palette.primary.main,
+      },
     }),
   )(() => (
     <Tab
