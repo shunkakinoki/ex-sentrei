@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/sentrei/sentrei/compare/v1.16.0...v1.16.1) (2020-08-30)
+
+### Performance Improvements
+
+- ⚡️ ini ui gha ([e05f822](https://github.com/sentrei/sentrei/commit/e05f822ed2f0edc28ab4588f0f9455efa8c91644))
+- ⚡️ refactor mobile dialog ([4011139](https://github.com/sentrei/sentrei/commit/40111397dfc67089d1e5ab27ceaba41265c87b0a))
+
 # [1.16.0](https://github.com/sentrei/sentrei/compare/v1.15.0...v1.16.0) (2020-08-30)
 
 ### Features
