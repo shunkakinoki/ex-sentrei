@@ -1,5 +1,4 @@
 import Container from "@material-ui/core/Container";
-import {withStyles, Theme, createStyles} from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 import HistoryIcon from "@material-ui/icons/History";
@@ -12,7 +11,7 @@ import useTranslation from "next-translate/useTranslation";
 import React from "react";
 
 import {AppTabKey} from "@sentrei/types/models/AppTab";
-import MuiTab from "@sentrei/ui/components/MuiTab";
+import AppTabIcon from "@sentrei/ui/components/AppTabIcon";
 
 import AppTabStyles from "./AppTabStyles";
 
@@ -20,13 +19,6 @@ interface Props {
   spaceId: string;
   // eslint-disable-next-line react/require-default-props
   tabKey?: AppTabKey;
-}
-
-interface SpaceTabProps {
-  href: string;
-  as: string;
-  label: string;
-  labelIcon: JSX.Element;
 }
 
 const TabMap = {
@@ -46,37 +38,6 @@ export default function AppTab({
   const classes = AppTabStyles();
   const {t} = useTranslation();
 
-  const SpaceTab = withStyles((theme: Theme) =>
-    createStyles({
-      root: {
-        textTransform: "none",
-        minWidth: 72,
-        marginRight: theme.spacing(1),
-        "&:hover": {
-          color: theme.palette.primary.main,
-          opacity: 1,
-        },
-        "&$selected": {
-          color: theme.palette.primary.main,
-        },
-        "&:focus": {
-          color: theme.palette.primary.main,
-        },
-      },
-      selected: {},
-    }),
-  )((props: SpaceTabProps) => (
-    <MuiTab
-      {...props}
-      label={
-        <div>
-          <span className={classes.labelIcon}>{props.labelIcon}</span>{" "}
-          {props.label}
-        </div>
-      }
-    />
-  ));
-
   return (
     <div className={classes.root}>
       <Container maxWidth="md">
@@ -87,43 +48,43 @@ export default function AppTab({
           variant="scrollable"
           scrollButtons="auto"
         >
-          <SpaceTab
+          <AppTabIcon
             href="/[spaceId]"
             as={`/${spaceId}`}
             label={t("common:common.home")}
             labelIcon={<HomeIcon />}
           />
-          <SpaceTab
+          <AppTabIcon
             href="/[spaceId]/rooms"
             as={`/${spaceId}/rooms`}
             label={t("common:common.rooms")}
             labelIcon={<MeetingRoomIcon />}
           />
-          <SpaceTab
+          <AppTabIcon
             href="/[spaceId]/activity"
             as={`/${spaceId}/activity`}
             label={t("common:common.activity")}
             labelIcon={<HistoryIcon />}
           />
-          <SpaceTab
+          <AppTabIcon
             href="/[spaceId]/analytics"
             as={`/${spaceId}/analytics`}
             label={t("common:common.analytics")}
             labelIcon={<PollIcon />}
           />
-          <SpaceTab
+          <AppTabIcon
             href="/[spaceId]/leaderboard"
             as={`/${spaceId}/leaderboard`}
             label={t("common:common.leaderboard")}
             labelIcon={<FormatListNumberedIcon />}
           />
-          <SpaceTab
+          <AppTabIcon
             href="/[spaceId]/members"
             as={`/${spaceId}/members`}
             label={t("common:common.members")}
             labelIcon={<PeopleIcon />}
           />
-          <SpaceTab
+          <AppTabIcon
             href="/[spaceId]/settings"
             as={`/${spaceId}/settings`}
             label={t("common:common.settings")}
