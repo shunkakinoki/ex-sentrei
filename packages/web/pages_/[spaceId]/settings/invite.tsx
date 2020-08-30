@@ -16,7 +16,7 @@ const InviteScreen = dynamic(
   {ssr: false},
 );
 
-const SettingsInvitePage: NextPage = () => {
+const SpaceInvitePage: NextPage = () => {
   const {query} = useRouter();
   const {user, profile} = React.useContext(AuthContext);
 
@@ -60,4 +60,4 @@ const SettingsInvitePage: NextPage = () => {
   );
 };
 
-export default SettingsInvitePage;
+export default SpaceInvitePage;

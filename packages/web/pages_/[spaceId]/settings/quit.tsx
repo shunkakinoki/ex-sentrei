@@ -13,7 +13,7 @@ const SpaceQuit = dynamic(() => import("@sentrei/ui/components/SpaceQuit"), {
   ssr: false,
 });
 
-const SettingsQuitPage: NextPage = () => {
+const SpaceQuitPage: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -52,4 +52,4 @@ const SettingsQuitPage: NextPage = () => {
   );
 };
 
-export default SettingsQuitPage;
+export default SpaceQuitPage;

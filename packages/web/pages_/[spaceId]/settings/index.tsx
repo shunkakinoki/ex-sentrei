@@ -13,7 +13,7 @@ const SpaceEdit = dynamic(() => import("@sentrei/ui/components/SpaceEdit"), {
   ssr: false,
 });
 
-const SettingsPage: NextPage = () => {
+const SpaceSettingsPage: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -58,4 +58,4 @@ const SettingsPage: NextPage = () => {
   );
 };
 
-export default SettingsPage;
+export default SpaceSettingsPage;
