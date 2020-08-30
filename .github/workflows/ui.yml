@@ -8,6 +8,7 @@ on:
       - ".github/workflows/ui.yml"
       - "packages/@types/**"
       - "packages/common/**"
+      - "packages/ui/**"
       - "packages/video/**"
 jobs:
   ui:

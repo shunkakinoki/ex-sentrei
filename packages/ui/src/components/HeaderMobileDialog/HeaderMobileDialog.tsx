@@ -6,7 +6,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import AccessibilityIcon from "@material-ui/icons/Accessibility";
-import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
@@ -69,19 +68,12 @@ export default function HeaderMobileDialog({
         </ListItemIcon>
         <ListItemText primary={t("header:default.about")} />
       </MuiMenuItem>
-      <MuiMenuItem href="/home">
-        <ListItemIcon>
-          <HomeIcon fontSize="small" />
-        </ListItemIcon>
-        <ListItemText primary={t("header:default.home")} />
-      </MuiMenuItem>
       <MuiMenuItem href="/pricing">
         <ListItemIcon>
           <LocalOfferIcon fontSize="small" />
         </ListItemIcon>
         <ListItemText primary={t("header:default.pricing")} />
       </MuiMenuItem>
-      <Divider />
       <MuiMenuItem href="/support">
         <ListItemIcon>
           <AccessibilityIcon fontSize="small" />
