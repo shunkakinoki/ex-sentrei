@@ -5,16 +5,18 @@ import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import CloseIcon from "@material-ui/icons/Close";
+import MenuIcon from "@material-ui/icons/Menu";
 import classNames from "classnames";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
 import HeaderButton from "@sentrei/ui/components/HeaderButton";
+import HeaderMobileDialog from "@sentrei/ui/components/HeaderMobileDialog";
 import HeaderScrollButton from "@sentrei/ui/components/HeaderScrollButton";
 import Logo from "@sentrei/ui/components/Logo";
 import MuiButton from "@sentrei/ui/components/MuiButton";
-
 import PaperCups from "@sentrei/ui/components/PaperCups";
 
 import HeaderStyles from "./HeaderStyles";
@@ -28,11 +30,24 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
   const classes = HeaderStyles();
   const {t} = useTranslation();
 
+  const [
+    mobileAnchorEl,
+    mobileSetAnchorEl,
+  ] = React.useState<null | HTMLElement>(null);
+
   const appBarClasses = classNames({
     [classes.appBar]: true,
     [classes.transparent]: true,
     [classes.paper]: false,
   });
+
+  const handleMobileClick = (event: React.MouseEvent<HTMLElement>): void => {
+    mobileSetAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = (): void => {
+    mobileSetAnchorEl(null);
+  };
 
   const headerColorChange = (): void => {
     const windowsScrollTop = window.pageYOffset;
@@ -158,9 +173,14 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
                 </Grid>
               </div>
               <div className={classes.sectionMobile}>
-                <IconButton edge="end">
-                  <DarkModeButton />
+                <IconButton edge="end" onClick={handleMobileClick}>
+                  {mobileAnchorEl ? <CloseIcon /> : <MenuIcon />}
                 </IconButton>
+                <HeaderMobileDialog
+                  anchorEl={mobileAnchorEl}
+                  open={Boolean(mobileAnchorEl)}
+                  onClose={handleClose}
+                />
               </div>
             </Grid>
           </Toolbar>
