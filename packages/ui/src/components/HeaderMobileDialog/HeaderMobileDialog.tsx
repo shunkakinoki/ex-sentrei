@@ -1,4 +1,3 @@
-import Badge from "@material-ui/core/Badge";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ListItem from "@material-ui/core/ListItem";
@@ -10,6 +9,8 @@ import AccessibilityIcon from "@material-ui/icons/Accessibility";
 import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
+import LockOpenIcon from "@material-ui/icons/LockOpen";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
@@ -49,6 +50,19 @@ export default function HeaderMobileDialog({
       open={open}
       onClose={onClose}
     >
+      <MuiMenuItem href="/login">
+        <ListItemIcon>
+          <LockOpenIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText primary={t("header:header.login")} />
+      </MuiMenuItem>
+      <MuiMenuItem href="/signup">
+        <ListItemIcon>
+          <VpnKeyIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText primary={t("header:header.signup")} />
+      </MuiMenuItem>
+      <Divider />
       <MuiMenuItem href="/about">
         <ListItemIcon>
           <InfoIcon fontSize="small" />
@@ -57,9 +71,7 @@ export default function HeaderMobileDialog({
       </MuiMenuItem>
       <MuiMenuItem href="/home">
         <ListItemIcon>
-          <Badge color="secondary">
-            <HomeIcon fontSize="small" />
-          </Badge>
+          <HomeIcon fontSize="small" />
         </ListItemIcon>
         <ListItemText primary={t("header:default.home")} />
       </MuiMenuItem>
