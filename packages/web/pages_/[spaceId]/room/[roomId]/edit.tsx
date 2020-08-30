@@ -22,7 +22,7 @@ const Edit: NextPage = () => {
     analytics().setCurrentScreen("roomEdit");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return <Loader />;
   }
 
@@ -32,17 +32,15 @@ const Edit: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      {user && profile && (
+      {user && (
         <RoomEdit
           roomId={String(query.roomId)}
           spaceId={String(query.spaceId)}

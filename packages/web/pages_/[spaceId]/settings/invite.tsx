@@ -6,7 +6,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const InviteScreen = dynamic(
@@ -24,8 +24,13 @@ const SettingsInvitePage: NextPage = () => {
     analytics().setCurrentScreen("spaceEdit");
   }, []);
 
-  if (user === undefined) {
-    return <Loader />;
+  if (user === undefined || !profile) {
+    return (
+      <>
+        <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -34,18 +39,17 @@ const SettingsInvitePage: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
-          tabKey="settings"
+          tabSpaceKey="settings"
+          type="space"
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      {user && profile && (
+      {user && (
         <InviteScreen
           profile={profile}
           user={user}

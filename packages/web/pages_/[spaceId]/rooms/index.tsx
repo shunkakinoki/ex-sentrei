@@ -72,10 +72,10 @@ const RoomsPage = ({
     analytics().setCurrentScreen("space");
   }, []);
 
-  if (user === undefined || !spaceData || !membersData) {
+  if (user === undefined || !profile || !spaceData || !membersData) {
     return (
       <>
-        <SentreiAppHeader />
+        <SentreiAppHeader skeleton tabSpaceKey="rooms" type="space" />
         <SkeletonScreen />
       </>
     );
@@ -87,19 +87,18 @@ const RoomsPage = ({
 
   return (
     <>
-      {user && profile ? (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
-          tabKey="rooms"
+          tabSpaceKey="rooms"
+          type="space"
         />
-      ) : (
-        <SentreiAppHeader />
       )}
-      {user && profile && <StatusSpace userId={user.uid} profile={profile} />}
-      {user && profile && (
+      {user && <StatusSpace userId={user.uid} profile={profile} />}
+      {user && (
         <SpaceRoom
           user={user}
           profile={profile}

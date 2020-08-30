@@ -6,7 +6,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const SpaceQuit = dynamic(() => import("@sentrei/ui/components/SpaceQuit"), {
@@ -22,8 +22,13 @@ const SettingsQuitPage: NextPage = () => {
     analytics().setCurrentScreen("spaceQuit");
   }, []);
 
-  if (user === undefined) {
-    return <Loader />;
+  if (user === undefined || !profile) {
+    return (
+      <>
+        <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -32,20 +37,17 @@ const SettingsQuitPage: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
-          tabKey="settings"
+          tabSpaceKey="settings"
+          type="space"
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      {user && profile && (
-        <SpaceQuit spaceId={String(query.spaceId)} user={user} />
-      )}
+      {user && <SpaceQuit spaceId={String(query.spaceId)} user={user} />}
     </>
   );
 };

@@ -23,7 +23,7 @@ const Notifications: NextPage = () => {
     analytics().setCurrentScreen("notifications");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return <Loader />;
   }
 
@@ -33,14 +33,12 @@ const Notifications: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
         />
-      ) : (
-        <SentreiAppHeader />
       )}
       {user ? <NotificationScreen user={user} /> : <SkeletonScreen />}
     </>

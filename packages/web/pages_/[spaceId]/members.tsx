@@ -7,7 +7,7 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 import {getAdminMembers} from "@sentrei/common/firebaseAdmin/members";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Member from "@sentrei/types/models/Member";
-import Loader from "@sentrei/ui/components/Loader";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SpaceMember from "@sentrei/ui/components/SpaceMember";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -45,8 +45,13 @@ const MembersPage = ({
     analytics().setCurrentScreen("spaceMembers");
   }, []);
 
-  if (user === undefined || !membersData) {
-    return <Loader />;
+  if (user === undefined || !profile || !membersData) {
+    return (
+      <>
+        <SentreiAppHeader skeleton tabSpaceKey="members" type="space" />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -55,16 +60,15 @@ const MembersPage = ({
 
   return (
     <>
-      {user && profile ? (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
-          tabKey="members"
+          tabSpaceKey="members"
+          type="space"
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
       {user && (
         <SpaceMember

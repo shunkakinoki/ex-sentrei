@@ -6,7 +6,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const InviteSignup = dynamic(
@@ -25,8 +25,13 @@ const InviteId: NextPage = () => {
     analytics().setCurrentScreen("inviteSignup");
   }, []);
 
-  if (user === undefined) {
-    return <Loader />;
+  if (user === undefined || !profile) {
+    return (
+      <>
+        <SentreiAppHeader skeleton />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -35,17 +40,15 @@ const InviteId: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      {user && profile && (
+      {user && (
         <InviteSignup
           inviteId={String(query.inviteId)}
           spaceId={String(query.spaceId)}

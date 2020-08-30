@@ -22,7 +22,7 @@ const Delete: NextPage = () => {
     analytics().setCurrentScreen("roomDelete");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return <Loader />;
   }
 
@@ -32,17 +32,15 @@ const Delete: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      {user && profile && (
+      {user && (
         <RoomDelete
           roomId={String(query.roomId)}
           spaceId={String(query.spaceId)}

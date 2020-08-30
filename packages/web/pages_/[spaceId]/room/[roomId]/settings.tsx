@@ -25,7 +25,7 @@ const Settings: NextPage = () => {
     analytics().setCurrentScreen("roomSettings");
   }, []);
 
-  if (user === undefined) {
+  if (user === undefined || !profile) {
     return <Loader />;
   }
 
@@ -35,17 +35,15 @@ const Settings: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      {user && profile && (
+      {user && (
         <RoomSettings
           roomId={String(query.roomId)}
           spaceId={String(query.spaceId)}

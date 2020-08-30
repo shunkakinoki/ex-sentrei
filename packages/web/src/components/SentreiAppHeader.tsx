@@ -9,18 +9,22 @@ type Props = Omit<Original, "logo">;
 export default function SentreiAppHeader({
   notificationCount,
   profile,
+  skeleton,
   spaceId,
+  tabSpaceKey,
+  type,
   userId,
-  tabKey,
 }: Props): JSX.Element {
   return (
     <AppHeader
       logo={<LogoRoundPicture />}
       notificationCount={notificationCount}
       profile={profile}
+      skeleton={skeleton}
       spaceId={spaceId}
+      tabSpaceKey={tabSpaceKey}
+      type={type}
       userId={userId}
-      tabKey={tabKey}
     />
   );
 }
