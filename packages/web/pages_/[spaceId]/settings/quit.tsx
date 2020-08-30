@@ -6,6 +6,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
+import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -26,7 +27,9 @@ const SpaceQuitPage: NextPage = () => {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
-        <SkeletonForm />
+        <GridSettings skeleton tabSpaceKey="quit" type="space">
+          <SkeletonForm />
+        </GridSettings>
       </>
     );
   }

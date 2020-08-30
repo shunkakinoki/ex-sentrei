@@ -15,7 +15,6 @@ import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SpaceDescriptionForm from "@sentrei/ui/components/SpaceDescriptionForm";
 import SpaceNameForm from "@sentrei/ui/components/SpaceNameForm";
-import SpaceSettingsButton from "@sentrei/ui/components/SpaceSettingsButton";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 interface Props {
@@ -46,7 +45,7 @@ export default function SpaceEdit({
   }
 
   return (
-    <GridSettings button={<SpaceSettingsButton />}>
+    <GridSettings spaceId={spaceId} tabSpaceKey="general" type="space">
       <FormSection
         icon={<SettingsIcon />}
         title={t("space:space.editSpace")}

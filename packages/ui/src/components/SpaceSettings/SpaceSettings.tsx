@@ -5,6 +5,7 @@ import {getSpace} from "@sentrei/common/firebase/spaces";
 import Profile from "@sentrei/types/models/Profile";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
+import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SpaceSettingsForm from "@sentrei/ui/components/SpaceSettingsForm";
 
@@ -26,12 +27,20 @@ export default function SpaceSettings({
   }, [spaceId]);
 
   if (space === undefined) {
-    return <SkeletonForm />;
+    return (
+      <GridSettings skeleton tabSpaceKey="general" type="space">
+        <SkeletonForm />
+      </GridSettings>
+    );
   }
 
   if (space === null) {
     return <Error statusCode={404} />;
   }
 
-  return <SpaceSettingsForm profile={profile} user={user} space={space} />;
+  return (
+    <GridSettings spaceId={spaceId} tabSpaceKey="general" type="space">
+      <SpaceSettingsForm profile={profile} user={user} space={space} />
+    </GridSettings>
+  );
 }
