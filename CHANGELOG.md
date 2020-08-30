@@ -1,3 +1,14 @@
+# [1.17.0](https://github.com/sentrei/sentrei/compare/v1.16.1...v1.17.0) (2020-08-30)
+
+### Features
+
+- 🎸 refactor settings pages ([a8f40ba](https://github.com/sentrei/sentrei/commit/a8f40ba108846dd9de16ccb31fbe26774d47e49e))
+- 🎸 refactor settings tab ([d30c66d](https://github.com/sentrei/sentrei/commit/d30c66d4a083b19015b9cf97c90ec20215c42bc5))
+
+### Performance Improvements
+
+- ⚡️ refactor button createRoom ([286722b](https://github.com/sentrei/sentrei/commit/286722bde7e126980808a2de575e10a519bd8ce1))
+
 ## [1.16.1](https://github.com/sentrei/sentrei/compare/v1.16.0...v1.16.1) (2020-08-30)
 
 ### Performance Improvements
