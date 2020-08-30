@@ -1,21 +1,17 @@
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import CreateIcon from "@material-ui/icons/Create";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
-import ShareIcon from "@material-ui/icons/Share";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
-import CopyToClipboard from "react-copy-to-clipboard";
 
 import MuiButton from "@sentrei/ui/components/MuiButton";
-import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   spaceId: string;
 }
 
 export default function SpacePanelAction({spaceId}: Props): JSX.Element {
-  const {snackbar} = useSnackbar();
   const {t} = useTranslation();
 
   return (
@@ -42,21 +38,16 @@ export default function SpacePanelAction({spaceId}: Props): JSX.Element {
       </Grid>
       <Grid xs={6}>
         <Box p={1}>
-          <CopyToClipboard
-            text={`${window.location.origin}/${spaceId}`}
-            onCopy={(): void =>
-              snackbar("success", t("common:snackbar.clipboard"))
-            }
+          <MuiButton
+            href="/[spaceId]/create"
+            as={`${spaceId}/create`}
+            fullWidth
+            color="primary"
+            variant="contained"
+            startIcon={<CreateIcon />}
           >
-            <Button
-              fullWidth
-              color="primary"
-              variant="contained"
-              startIcon={<ShareIcon />}
-            >
-              {t("common:common.share")}
-            </Button>
-          </CopyToClipboard>
+            {t("common:common.createRoom")}
+          </MuiButton>
         </Box>
       </Grid>
     </Grid>
