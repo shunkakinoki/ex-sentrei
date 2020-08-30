@@ -12,8 +12,9 @@ export default function SkeletonBoard(): JSX.Element {
       <Box py={2} />
       <Container maxWidth="lg" component="main">
         <Grid container alignItems="center" justify="center" spacing={3}>
-          {[...Array(3)].map(e => (
-            <Grid item key={e} xs={12} sm={6} md={4}>
+          {[...Array(3)].map((e, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <Grid item key={i} xs={12} sm={6} md={4}>
               <SkeletonCard />
             </Grid>
           ))}

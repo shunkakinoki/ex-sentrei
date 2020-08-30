@@ -6,17 +6,14 @@ import MuiTab from "@sentrei/ui/components/MuiTab";
 
 import AppTabIconStyles from "./AppTabIconStyles";
 
-interface SkeletonAppTabIconProps {
-  label: string;
-  labelIcon: JSX.Element;
-}
-
-interface MuiAppTabIconProps extends SkeletonAppTabIconProps {
+interface MuiAppTabIconProps {
   href: string;
   as: string;
 }
 
 interface Props extends MuiAppTabIconProps {
+  label: string;
+  labelIcon: JSX.Element;
   selected: boolean;
   skeleton: boolean;
 }
@@ -40,13 +37,11 @@ export default function AppTabIcon({
       },
       selected: {},
     }),
-  )((props: SkeletonAppTabIconProps) => (
+  )(() => (
     <Tab
-      {...props}
       label={
         <div>
-          <span className={classes.labelIcon}>{props.labelIcon}</span>{" "}
-          {props.label}
+          <span className={classes.labelIcon}>{labelIcon}</span> {label}
         </div>
       }
     />
@@ -79,17 +74,15 @@ export default function AppTabIcon({
       selected={selected}
       label={
         <div>
-          <span className={classes.labelIcon}>{labelIcon}</span> {props.label}
+          <span className={classes.labelIcon}>{labelIcon}</span> {label}
         </div>
       }
     />
   ));
 
   if (skeleton) {
-    return <SkeletonAppTabIcon label={label} labelIcon={labelIcon} />;
+    return <SkeletonAppTabIcon />;
   }
 
-  return (
-    <MuiAppTabIcon href={href} as={as} label={label} labelIcon={labelIcon} />
-  );
+  return <MuiAppTabIcon href={href} as={as} />;
 }
