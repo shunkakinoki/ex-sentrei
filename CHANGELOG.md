@@ -1,3 +1,15 @@
+# [1.16.0](https://github.com/sentrei/sentrei/compare/v1.15.0...v1.16.0) (2020-08-30)
+
+### Features
+
+- 🎸 ini app mobile header ([3bf828d](https://github.com/sentrei/sentrei/commit/3bf828daa6a5bdeb9012e45ae839dbc65500b54a))
+- 🎸 ini app other menu ([5eb1fc3](https://github.com/sentrei/sentrei/commit/5eb1fc32506a168343044168a516dbf65f71cbe8))
+- 🎸 ini header mobile dialog ([bf65feb](https://github.com/sentrei/sentrei/commit/bf65feb1539766a159c21dc21726c712f87584f1))
+
+### Performance Improvements
+
+- ⚡️ ini login and signup to header mobile dialog ([f8ba4d5](https://github.com/sentrei/sentrei/commit/f8ba4d54552eb9a1ffc499a727c5ca240198f6df))
+
 # [1.15.0](https://github.com/sentrei/sentrei/compare/v1.14.0...v1.15.0) (2020-08-30)
 
 ### Bug Fixes
