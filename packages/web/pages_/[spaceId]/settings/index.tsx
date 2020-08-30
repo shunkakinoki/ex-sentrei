@@ -9,15 +9,13 @@ import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const InviteScreen = dynamic(
-  () => {
-    return import("@sentrei/ui/components/InviteScreen");
-  },
-  {ssr: false},
-);
+const SpaceEdit = dynamic(() => import("@sentrei/ui/components/SpaceEdit"), {
+  ssr: false,
+});
 
-const Invite: NextPage = () => {
+const SettingsPage: NextPage = () => {
   const {query} = useRouter();
+
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
@@ -40,19 +38,20 @@ const Invite: NextPage = () => {
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
+          tabKey="settings"
         />
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
       {user && profile && (
-        <InviteScreen
+        <SpaceEdit
+          spaceId={String(query.spaceId)}
           profile={profile}
           user={user}
-          spaceId={String(query.spaceId)}
         />
       )}
     </>
   );
 };
 
-export default Invite;
+export default SettingsPage;

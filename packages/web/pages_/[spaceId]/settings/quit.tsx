@@ -9,17 +9,17 @@ import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const SpaceEdit = dynamic(() => import("@sentrei/ui/components/SpaceEdit"), {
+const SpaceQuit = dynamic(() => import("@sentrei/ui/components/SpaceQuit"), {
   ssr: false,
 });
 
-const Edit: NextPage = () => {
+const SettingsQuitPage: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("spaceEdit");
+    analytics().setCurrentScreen("spaceQuit");
   }, []);
 
   if (user === undefined) {
@@ -38,19 +38,16 @@ const Edit: NextPage = () => {
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
+          tabKey="settings"
         />
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
       {user && profile && (
-        <SpaceEdit
-          spaceId={String(query.spaceId)}
-          profile={profile}
-          user={user}
-        />
+        <SpaceQuit spaceId={String(query.spaceId)} user={user} />
       )}
     </>
   );
 };
 
-export default Edit;
+export default SettingsQuitPage;

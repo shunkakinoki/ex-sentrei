@@ -9,17 +9,19 @@ import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const RoomCreate = dynamic(() => import("@sentrei/ui/components/RoomCreate"), {
-  ssr: false,
-});
+const InviteScreen = dynamic(
+  () => {
+    return import("@sentrei/ui/components/InviteScreen");
+  },
+  {ssr: false},
+);
 
-const Create: NextPage = () => {
+const SettingsInvitePage: NextPage = () => {
   const {query} = useRouter();
-
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("roomCreate");
+    analytics().setCurrentScreen("spaceEdit");
   }, []);
 
   if (user === undefined) {
@@ -38,19 +40,20 @@ const Create: NextPage = () => {
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
+          tabKey="settings"
         />
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
       {user && profile && (
-        <RoomCreate
-          spaceId={String(query.spaceId)}
+        <InviteScreen
           profile={profile}
           user={user}
+          spaceId={String(query.spaceId)}
         />
       )}
     </>
   );
 };
 
-export default Create;
+export default SettingsInvitePage;

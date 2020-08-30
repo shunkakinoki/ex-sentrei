@@ -1,6 +1,6 @@
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 
-const SkeletonPanelStyles = makeStyles((theme: Theme) =>
+const SpaceAnalyticsNoneStyles = makeStyles(() =>
   createStyles({
     panel: {
       width: "100%",
@@ -14,4 +14,4 @@ const SkeletonPanelStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default SkeletonPanelStyles;
+export default SpaceAnalyticsNoneStyles;
