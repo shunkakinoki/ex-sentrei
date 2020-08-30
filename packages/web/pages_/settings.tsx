@@ -25,14 +25,12 @@ const Settings: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && profile && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
         />
-      ) : (
-        <SentreiAppHeader />
       )}
       {user && profile && <SettingsScreen user={user} profile={profile} />}
     </>

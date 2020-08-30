@@ -5,8 +5,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
-import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import StatusSpace from "@sentrei/ui/components/StatusSpace";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -25,7 +24,12 @@ const Dashboard: NextPage = () => {
   }, []);
 
   if (user === undefined) {
-    return <Loader />;
+    return (
+      <>
+        <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -34,17 +38,15 @@ const Dashboard: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && profile && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
         />
-      ) : (
-        <SentreiAppHeader />
       )}
       {user && profile && <StatusSpace userId={user.uid} profile={profile} />}
-      {user ? <SpaceDashboard user={user} /> : <SkeletonScreen />}
+      {user && <SpaceDashboard user={user} />}
     </>
   );
 };

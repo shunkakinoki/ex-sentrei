@@ -32,16 +32,15 @@ const CreatePage: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && profile && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
-          tabKey="rooms"
+          tabSpaceKey="rooms"
+          type="space"
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
       {user && profile && (
         <RoomCreate

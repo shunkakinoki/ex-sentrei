@@ -1,4 +1,4 @@
-export type AppTabKey =
+export type AppSpaceTabKey =
   | "dashboard"
   | "rooms"
   | "activity"
@@ -6,3 +6,5 @@ export type AppTabKey =
   | "leaderboard"
   | "members"
   | "settings";
+
+export type AppTabType = "personal" | "room" | "space";

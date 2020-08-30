@@ -35,15 +35,13 @@ const Settings: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && profile && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
       {user && profile && (
         <RoomSettings

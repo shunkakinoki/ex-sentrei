@@ -1,14 +1,17 @@
 import {NextPage} from "next";
 import Router from "next-translate/Router";
+import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SupportScreen from "@sentrei/ui/components/SupportScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const SupportPage: NextPage = () => {
+  const {query} = useRouter();
+
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
@@ -16,7 +19,12 @@ const SupportPage: NextPage = () => {
   }, []);
 
   if (user === undefined) {
-    return <Loader />;
+    return (
+      <>
+        <SentreiAppHeader skeleton />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -25,14 +33,13 @@ const SupportPage: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && profile && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
+          spaceId={String(query.spaceId)}
         />
-      ) : (
-        <SentreiAppHeader />
       )}
       {user && profile && (
         <SupportScreen

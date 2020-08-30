@@ -7,7 +7,7 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 import {getAdminLeaderboard} from "@sentrei/common/firebaseAdmin/leaderboard";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Member from "@sentrei/types/models/Member";
-import Loader from "@sentrei/ui/components/Loader";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SpaceLeaderboard from "@sentrei/ui/components/SpaceLeaderboard";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -46,7 +46,12 @@ const LeaderboardPage = ({
   }, []);
 
   if (user === undefined || !membersData) {
-    return <Loader />;
+    return (
+      <>
+        <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -55,16 +60,15 @@ const LeaderboardPage = ({
 
   return (
     <>
-      {user && profile ? (
+      {user && profile && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
-          tabKey="leaderboard"
+          tabSpaceKey="leaderboard"
+          type="space"
         />
-      ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
       <SpaceLeaderboard
         spaceId={String(query.spaceId)}

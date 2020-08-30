@@ -5,7 +5,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const SpaceCreate = dynamic(
@@ -23,7 +23,12 @@ const Create: NextPage = () => {
   }, []);
 
   if (user === undefined) {
-    return <Loader />;
+    return (
+      <>
+        <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -32,14 +37,12 @@ const Create: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && profile && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
         />
-      ) : (
-        <SentreiAppHeader />
       )}
       {user && profile && <SpaceCreate profile={profile} user={user} />}
     </>

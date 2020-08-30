@@ -33,14 +33,12 @@ const Notifications: NextPage = () => {
 
   return (
     <>
-      {user && profile ? (
+      {user && profile && (
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
         />
-      ) : (
-        <SentreiAppHeader />
       )}
       {user ? <NotificationScreen user={user} /> : <SkeletonScreen />}
     </>
