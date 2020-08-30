@@ -75,7 +75,7 @@ const SpaceId = ({
   if (user === undefined || !profile || !spaceData || !membersData) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="dashboard" type="space" />
+        <SentreiAppHeader skeleton tabSpaceKey="home" type="space" />
         <SkeletonScreen />
       </>
     );
@@ -93,7 +93,7 @@ const SpaceId = ({
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
-          tabSpaceKey="dashboard"
+          tabSpaceKey="home"
           type="space"
         />
       )}

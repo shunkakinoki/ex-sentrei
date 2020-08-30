@@ -1,5 +1,5 @@
 export type AppSpaceTabKey =
-  | "dashboard"
+  | "home"
   | "rooms"
   | "activity"
   | "analytics"

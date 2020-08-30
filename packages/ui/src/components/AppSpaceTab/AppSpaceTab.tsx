@@ -28,7 +28,7 @@ interface Props {
 }
 
 const TabMap = {
-  dashboard: 0,
+  home: 0,
   rooms: 1,
   activity: 2,
   analytics: 3,
@@ -54,7 +54,7 @@ interface AppTabIconProps extends MuiAppTabIconProps {
 export default function AppSpaceTab({
   skeleton = false,
   spaceId,
-  tabKey = "dashboard",
+  tabKey = "home",
 }: Props): JSX.Element {
   const classes = AppSpaceTabStyles();
   const {t} = useTranslation();
