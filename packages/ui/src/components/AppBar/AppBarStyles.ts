@@ -35,6 +35,12 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
         margin: theme.spacing(1),
       },
     },
+    sectionMobile: {
+      [theme.breakpoints.up("md")]: {
+        display: "none",
+      },
+      marginLeft: "auto",
+    },
   }),
 );
 
