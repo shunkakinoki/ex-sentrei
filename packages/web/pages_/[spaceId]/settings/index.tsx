@@ -25,7 +25,7 @@ const SettingsPage: NextPage = () => {
   if (user === undefined || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
+        <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
         <SkeletonForm />
       </>
     );
@@ -44,6 +44,7 @@ const SettingsPage: NextPage = () => {
           userId={user.uid}
           spaceId={String(query.spaceId)}
           tabSpaceKey="settings"
+          type="space"
         />
       )}
       {user && (

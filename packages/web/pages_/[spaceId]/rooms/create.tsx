@@ -6,8 +6,8 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 const RoomCreate = dynamic(() => import("@sentrei/ui/components/RoomCreate"), {
   ssr: false,
@@ -23,7 +23,12 @@ const CreatePage: NextPage = () => {
   }, []);
 
   if (user === undefined || !profile) {
-    return <Loader />;
+    return (
+      <>
+        <SentreiAppHeader skeleton tabSpaceKey="rooms" type="space" />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {

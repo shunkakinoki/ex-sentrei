@@ -25,7 +25,7 @@ const Create: NextPage = () => {
   if (user === undefined || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
+        <SentreiAppHeader skeleton />
         <SkeletonForm />
       </>
     );

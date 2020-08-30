@@ -75,7 +75,7 @@ const RoomsPage = ({
   if (user === undefined || !profile || !spaceData || !membersData) {
     return (
       <>
-        <SentreiAppHeader />
+        <SentreiAppHeader skeleton tabSpaceKey="rooms" type="space" />
         <SkeletonScreen />
       </>
     );

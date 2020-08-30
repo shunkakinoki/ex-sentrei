@@ -25,7 +25,7 @@ const SettingsQuitPage: NextPage = () => {
   if (user === undefined || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
+        <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
         <SkeletonForm />
       </>
     );

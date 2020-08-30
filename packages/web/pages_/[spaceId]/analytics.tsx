@@ -21,7 +21,7 @@ const AnalyticsPage: NextPage = () => {
   if (user === undefined || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
+        <SentreiAppHeader skeleton tabSpaceKey="analytics" type="space" />
         <SkeletonForm />
       </>
     );
