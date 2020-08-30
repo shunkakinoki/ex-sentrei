@@ -8,7 +8,7 @@ import Loader from "@sentrei/ui/components/Loader";
 import SettingsScreen from "@sentrei/ui/components/SettingsScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const Settings: NextPage = () => {
+const SettingsPage: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
@@ -39,4 +39,4 @@ const Settings: NextPage = () => {
   );
 };
 
-export default Settings;
+export default SettingsPage;

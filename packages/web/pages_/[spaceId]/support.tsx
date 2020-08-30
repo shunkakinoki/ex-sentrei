@@ -8,7 +8,7 @@ import Loader from "@sentrei/ui/components/Loader";
 import SupportScreen from "@sentrei/ui/components/SupportScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const Support: NextPage = () => {
+const SupportPage: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
@@ -45,4 +45,4 @@ const Support: NextPage = () => {
   );
 };
 
-export default Support;
+export default SupportPage;

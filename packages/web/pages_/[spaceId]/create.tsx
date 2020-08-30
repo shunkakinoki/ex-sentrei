@@ -13,7 +13,7 @@ const RoomCreate = dynamic(() => import("@sentrei/ui/components/RoomCreate"), {
   ssr: false,
 });
 
-const Create: NextPage = () => {
+const CreatePage: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -53,4 +53,4 @@ const Create: NextPage = () => {
   );
 };
 
-export default Create;
+export default CreatePage;

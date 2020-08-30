@@ -13,7 +13,7 @@ const SpaceEdit = dynamic(() => import("@sentrei/ui/components/SpaceEdit"), {
   ssr: false,
 });
 
-const Edit: NextPage = () => {
+const EditPage: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -53,4 +53,4 @@ const Edit: NextPage = () => {
   );
 };
 
-export default Edit;
+export default EditPage;

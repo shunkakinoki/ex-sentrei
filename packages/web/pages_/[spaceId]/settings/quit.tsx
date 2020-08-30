@@ -9,19 +9,17 @@ import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const InviteScreen = dynamic(
-  () => {
-    return import("@sentrei/ui/components/InviteScreen");
-  },
-  {ssr: false},
-);
+const SpaceQuit = dynamic(() => import("@sentrei/ui/components/SpaceQuit"), {
+  ssr: false,
+});
 
-const Invite: NextPage = () => {
+const QuitPage: NextPage = () => {
   const {query} = useRouter();
+
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("spaceEdit");
+    analytics().setCurrentScreen("spaceQuit");
   }, []);
 
   if (user === undefined) {
@@ -45,14 +43,10 @@ const Invite: NextPage = () => {
         <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
       {user && profile && (
-        <InviteScreen
-          profile={profile}
-          user={user}
-          spaceId={String(query.spaceId)}
-        />
+        <SpaceQuit spaceId={String(query.spaceId)} user={user} />
       )}
     </>
   );
 };
 
-export default Invite;
+export default QuitPage;
