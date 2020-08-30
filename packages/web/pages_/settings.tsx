@@ -15,12 +15,12 @@ const Settings: NextPage = () => {
     analytics().setCurrentScreen("settings");
   }, []);
 
-  if (user === undefined || !profile) {
-    return <Loader />;
-  }
-
   if (!user) {
     Router.pushI18n("/");
+  }
+
+  if (user === undefined || !profile) {
+    return <Loader />;
   }
 
   return (

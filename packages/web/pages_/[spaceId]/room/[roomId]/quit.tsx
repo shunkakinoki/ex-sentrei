@@ -22,12 +22,12 @@ const Quit: NextPage = () => {
     analytics().setCurrentScreen("roomQuit");
   }, []);
 
-  if (user === undefined || !profile) {
-    return <Loader />;
-  }
-
   if (!user) {
     Router.pushI18n("/");
+  }
+
+  if (user === undefined || !profile) {
+    return <Loader />;
   }
 
   return (

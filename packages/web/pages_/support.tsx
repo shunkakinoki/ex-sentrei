@@ -16,12 +16,16 @@ const Support: NextPage = () => {
     analytics().setCurrentScreen("support");
   }, []);
 
-  if (user === undefined) {
-    return <Loader />;
+  if (!user) {
+    Router.pushI18n("/");
   }
 
   if (user) {
     Router.pushI18n(`/[spaceId/support`, `/${user.uid}/support`);
+  }
+
+  if (user === undefined) {
+    return <Loader />;
   }
 
   return (

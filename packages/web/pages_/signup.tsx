@@ -17,12 +17,12 @@ const Signup: NextPage = () => {
     analytics().setCurrentScreen("signup");
   }, []);
 
-  if (user === undefined) {
-    return <Loader />;
-  }
-
   if (user) {
     Router.pushI18n("/dashboard");
+  }
+
+  if (user === undefined) {
+    return <Loader />;
   }
 
   return (

@@ -18,6 +18,10 @@ const SupportPage: NextPage = () => {
     analytics().setCurrentScreen("support");
   }, []);
 
+  if (!user) {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile) {
     return (
       <>
@@ -25,10 +29,6 @@ const SupportPage: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

@@ -23,6 +23,10 @@ const Dashboard: NextPage = () => {
     analytics().setCurrentScreen("dashboard");
   }, []);
 
+  if (!user) {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile) {
     return (
       <>
@@ -30,10 +34,6 @@ const Dashboard: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

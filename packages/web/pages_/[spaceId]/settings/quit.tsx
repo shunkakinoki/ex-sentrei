@@ -22,6 +22,10 @@ const SettingsQuitPage: NextPage = () => {
     analytics().setCurrentScreen("spaceQuit");
   }, []);
 
+  if (!user) {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile) {
     return (
       <>
@@ -29,10 +33,6 @@ const SettingsQuitPage: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

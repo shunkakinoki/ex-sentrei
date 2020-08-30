@@ -18,6 +18,10 @@ const ActivityPage: NextPage = () => {
     analytics().setCurrentScreen("spaceActivity");
   }, []);
 
+  if (!user) {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile) {
     return (
       <>
@@ -25,10 +29,6 @@ const ActivityPage: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

@@ -45,6 +45,10 @@ const MembersPage = ({
     analytics().setCurrentScreen("spaceMembers");
   }, []);
 
+  if (!user) {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile || !membersData) {
     return (
       <>
@@ -52,10 +56,6 @@ const MembersPage = ({
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

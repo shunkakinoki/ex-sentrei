@@ -25,12 +25,12 @@ const Index: NextPage = () => {
     analytics().setCurrentScreen("landing");
   }, []);
 
-  if (user === undefined) {
-    return <Loader />;
-  }
-
   if (user) {
     Router.pushI18n("/dashboard");
+  }
+
+  if (user === undefined) {
+    return <Loader />;
   }
 
   return (

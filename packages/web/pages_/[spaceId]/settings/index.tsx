@@ -22,6 +22,10 @@ const SettingsPage: NextPage = () => {
     analytics().setCurrentScreen("spaceEdit");
   }, []);
 
+  if (!user) {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile) {
     return (
       <>
@@ -29,10 +33,6 @@ const SettingsPage: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

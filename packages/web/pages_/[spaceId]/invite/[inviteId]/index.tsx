@@ -25,6 +25,10 @@ const InviteId: NextPage = () => {
     analytics().setCurrentScreen("inviteSignup");
   }, []);
 
+  if (!user) {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile) {
     return (
       <>
@@ -32,10 +36,6 @@ const InviteId: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

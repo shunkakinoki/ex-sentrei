@@ -1,3 +1,5 @@
+export type AppRoomTabKey = "room" | "settings";
+
 export type AppSpaceTabKey =
   | "home"
   | "rooms"
@@ -7,4 +9,6 @@ export type AppSpaceTabKey =
   | "members"
   | "settings";
 
-export type AppTabType = "personal" | "room" | "space";
+export type AppUserTabKey = "dashboard" | "notifications" | "settings";
+
+export type AppTabType = "room" | "space" | "user";

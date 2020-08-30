@@ -17,12 +17,12 @@ const Profile: NextPage = () => {
     analytics().setCurrentScreen("profile");
   }, []);
 
-  if (user === undefined || !profile) {
-    return <Loader />;
-  }
-
   if (!user) {
     Router.pushI18n("/");
+  }
+
+  if (user === undefined || !profile) {
+    return <Loader />;
   }
 
   return (
