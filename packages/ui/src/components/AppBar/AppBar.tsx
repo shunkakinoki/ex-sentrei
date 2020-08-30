@@ -11,6 +11,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import Profile from "@sentrei/types/models/Profile";
+import AppFeedback from "@sentrei/ui/components/AppFeedback";
 import AppListMenu from "@sentrei/ui/components/AppListMenu";
 import AppProfileMenu from "@sentrei/ui/components/AppProfileMenu";
 import MuiButton from "@sentrei/ui/components/MuiButton";
@@ -36,6 +37,10 @@ export default function AppBar({
   const classes = AppBarStyles();
   const {t} = useTranslation();
 
+  const [
+    feedbackAnchorEl,
+    feedbackSetAnchorEl,
+  ] = React.useState<null | HTMLElement>(null);
   const [listAnchorEl, listSetAnchorEl] = React.useState<null | HTMLElement>(
     null,
   );
@@ -44,15 +49,18 @@ export default function AppBar({
     profileSetAnchorEl,
   ] = React.useState<null | HTMLElement>(null);
 
+  const handleFeedbackClick = (event: React.MouseEvent<HTMLElement>): void => {
+    feedbackSetAnchorEl(event.currentTarget);
+  };
+  const handleListClick = (event: React.MouseEvent<HTMLElement>): void => {
+    listSetAnchorEl(event.currentTarget);
+  };
   const handleProfileClick = (event: React.MouseEvent<HTMLElement>): void => {
     profileSetAnchorEl(event.currentTarget);
   };
 
-  const handleListClick = (event: React.MouseEvent<HTMLElement>): void => {
-    listSetAnchorEl(event.currentTarget);
-  };
-
   const handleClose = (): void => {
+    feedbackSetAnchorEl(null);
     listSetAnchorEl(null);
     profileSetAnchorEl(null);
   };
@@ -106,9 +114,19 @@ export default function AppBar({
               color="primary"
               variant="outlined"
               size="small"
+              onClick={handleFeedbackClick}
             >
               <Typography noWrap>{t("common:common.feedback")}</Typography>
             </Button>
+            {profile && (
+              <AppFeedback
+                anchorEl={feedbackAnchorEl}
+                handleClick={feedbackSetAnchorEl}
+                open={Boolean(feedbackAnchorEl)}
+                onClose={handleClose}
+                profile={profile}
+              />
+            )}
             <MuiButton
               href={spaceId ? "/[spaceId]/support" : "/support"}
               as={spaceId ? `/${spaceId}/support` : "/support"}
