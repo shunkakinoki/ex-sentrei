@@ -36,10 +36,10 @@ export default function AppHeader({
         notificationCount={notificationCount}
       />
       {type === "space" && skeleton && tabSpaceKey && (
-        <AppSpaceTab skeleton={skeleton} tabKey={tabSpaceKey} />
+        <AppSpaceTab skeleton tabKey={tabSpaceKey} />
       )}
       {type === "space" && !skeleton && spaceId && tabSpaceKey && (
-        <AppSpaceTab spaceId={spaceId} tabKey={tabSpaceKey} />
+        <AppSpaceTab skeleton={false} spaceId={spaceId} tabKey={tabSpaceKey} />
       )}
     </>
   );
