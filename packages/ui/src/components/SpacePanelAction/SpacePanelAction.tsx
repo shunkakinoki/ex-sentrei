@@ -39,8 +39,8 @@ export default function SpacePanelAction({spaceId}: Props): JSX.Element {
       <Grid xs={6}>
         <Box p={1}>
           <MuiButton
-            href="/[spaceId]/create"
-            as={`${spaceId}/create`}
+            href="/[spaceId]/rooms/create"
+            as={`${spaceId}/rooms/create`}
             fullWidth
             color="primary"
             variant="contained"

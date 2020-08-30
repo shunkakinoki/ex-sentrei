@@ -1,25 +1,18 @@
 import {NextPage} from "next";
 import Router from "next-translate/Router";
-import dynamic from "next/dynamic";
-import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
+import SettingsScreen from "@sentrei/ui/components/SettingsScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const RoomCreate = dynamic(() => import("@sentrei/ui/components/RoomCreate"), {
-  ssr: false,
-});
-
-const CreatePage: NextPage = () => {
-  const {query} = useRouter();
-
+const Settings: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("roomCreate");
+    analytics().setCurrentScreen("settings");
   }, []);
 
   if (user === undefined) {
@@ -37,20 +30,13 @@ const CreatePage: NextPage = () => {
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
-          spaceId={String(query.spaceId)}
         />
       ) : (
-        <SentreiAppHeader spaceId={String(query.spaceId)} />
+        <SentreiAppHeader />
       )}
-      {user && profile && (
-        <RoomCreate
-          spaceId={String(query.spaceId)}
-          profile={profile}
-          user={user}
-        />
-      )}
+      {user && profile && <SettingsScreen user={user} profile={profile} />}
     </>
   );
 };
 
-export default CreatePage;
+export default Settings;

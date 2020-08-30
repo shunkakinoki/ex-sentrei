@@ -1,18 +1,25 @@
 import {NextPage} from "next";
 import Router from "next-translate/Router";
+import dynamic from "next/dynamic";
+import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
-import SettingsScreen from "@sentrei/ui/components/SettingsScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
+const SpaceEdit = dynamic(() => import("@sentrei/ui/components/SpaceEdit"), {
+  ssr: false,
+});
+
 const SettingsPage: NextPage = () => {
+  const {query} = useRouter();
+
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("settings");
+    analytics().setCurrentScreen("spaceEdit");
   }, []);
 
   if (user === undefined) {
@@ -30,11 +37,19 @@ const SettingsPage: NextPage = () => {
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
+          spaceId={String(query.spaceId)}
+          tabKey="settings"
         />
       ) : (
-        <SentreiAppHeader />
+        <SentreiAppHeader spaceId={String(query.spaceId)} />
       )}
-      {user && profile && <SettingsScreen user={user} profile={profile} />}
+      {user && profile && (
+        <SpaceEdit
+          spaceId={String(query.spaceId)}
+          profile={profile}
+          user={user}
+        />
+      )}
     </>
   );
 };

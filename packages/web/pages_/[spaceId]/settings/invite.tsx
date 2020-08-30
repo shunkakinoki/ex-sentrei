@@ -16,7 +16,7 @@ const InviteScreen = dynamic(
   {ssr: false},
 );
 
-const InvitePage: NextPage = () => {
+const SettingsInvitePage: NextPage = () => {
   const {query} = useRouter();
   const {user, profile} = React.useContext(AuthContext);
 
@@ -40,6 +40,7 @@ const InvitePage: NextPage = () => {
           profile={profile}
           userId={user.uid}
           spaceId={String(query.spaceId)}
+          tabKey="settings"
         />
       ) : (
         <SentreiAppHeader spaceId={String(query.spaceId)} />
@@ -55,4 +56,4 @@ const InvitePage: NextPage = () => {
   );
 };
 
-export default InvitePage;
+export default SettingsInvitePage;
