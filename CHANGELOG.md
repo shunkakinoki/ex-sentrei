@@ -1,3 +1,21 @@
+# [1.21.0-beta.3](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.2...v1.21.0-beta.3) (2020-08-31)
+
+### Features
+
+- 🎸 complete refactor space namespace logic ([36209f0](https://github.com/sentrei/sentrei/commit/36209f0ef054e16154fc0c6b9eedbe7f1193ac49))
+- 🎸 complete refactor stepper to submit ([3e34cdf](https://github.com/sentrei/sentrei/commit/3e34cdfb33b81e3808a4aab07e0818d6a9e3b94a))
+- 🎸 completely refactor namespaces in ui, web ([2ebb867](https://github.com/sentrei/sentrei/commit/2ebb8673816540099760150247d272c5f1a957de))
+- 🎸 completely refactored namespaces ([7dd51fc](https://github.com/sentrei/sentrei/commit/7dd51fc800abda8a287bdffcbe8ab64e6d1f68cc))
+- 🎸 ini common types complete refactor ([a3b05b9](https://github.com/sentrei/sentrei/commit/a3b05b97a789e4524030c8751c72035efde31bb2))
+- 🎸 ini namespaces refactor ([ca79738](https://github.com/sentrei/sentrei/commit/ca797386d423a6601e2babaccf311be1e355bee5))
+- 🎸 migrate username to namespace ([197f62e](https://github.com/sentrei/sentrei/commit/197f62e82271b41c9183b1cb8b68c72798d6175a))
+- 🎸 refactor namespace for common firebase and admin ([c8b8086](https://github.com/sentrei/sentrei/commit/c8b80864db0f7fc68ccd6588b5a3dff7218282b3))
+
+### Performance Improvements
+
+- ⚡️ ini app header update for namespaceId ([4dbc6d2](https://github.com/sentrei/sentrei/commit/4dbc6d2761454d1172dde9c10baca2d0b22f8a72))
+- ⚡️ refactor firebase admin function names ([ae91c5b](https://github.com/sentrei/sentrei/commit/ae91c5b725e194038c4f85441c0088e9816ae36c))
+
 # [1.21.0-beta.2](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.1...v1.21.0-beta.2) (2020-08-31)
 
 ### Performance Improvements
