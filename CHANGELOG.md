@@ -1,3 +1,9 @@
+# [1.21.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.20.0...v1.21.0-beta.1) (2020-08-31)
+
+### Features
+
+- 🎸 ini model namespace ([b59d9aa](https://github.com/sentrei/sentrei/commit/b59d9aad20820b5a778ae68903a6a0a8b0b96988))
+
 # [1.20.0](https://github.com/sentrei/sentrei/compare/v1.19.0...v1.20.0) (2020-08-31)
 
 ### Features
