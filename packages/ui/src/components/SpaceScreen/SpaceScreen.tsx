@@ -19,7 +19,7 @@ export interface Props {
   membersData: Member.Get[];
   roomsData: Room.Get[] | null;
   spaceData: Space.Get;
-  namespaceId: string;
+  spaceId: string;
 }
 
 export default function SpaceScreen({
@@ -29,7 +29,7 @@ export default function SpaceScreen({
   membersData,
   roomsData,
   spaceData,
-  namespaceId,
+  spaceId,
 }: Props): JSX.Element {
   const [space, setSpace] = React.useState<Space.Get | null | undefined>(
     spaceData,
@@ -45,27 +45,27 @@ export default function SpaceScreen({
   );
 
   React.useEffect(() => {
-    getSpace(namespaceId).then(setSpace);
-  }, [namespaceId]);
+    getSpace(spaceId).then(setSpace);
+  }, [spaceId]);
 
   React.useEffect(() => {
-    const unsubscribe = getMembersLive(namespaceId, snap => {
+    const unsubscribe = getMembersLive(spaceId, snap => {
       setMember(snap.filter(doc => doc.uid === profile.uid)[0]);
       setMembers(snap);
     });
     return (): void => {
       unsubscribe();
     };
-  }, [namespaceId, profile]);
+  }, [spaceId, profile]);
 
   React.useEffect(() => {
-    const unsubscribe = getRoomsLive(namespaceId, snap => {
+    const unsubscribe = getRoomsLive(spaceId, snap => {
       setRooms(snap);
     });
     return (): void => {
       unsubscribe();
     };
-  }, [namespaceId]);
+  }, [spaceId]);
 
   if (space === undefined || members === undefined || rooms === undefined) {
     return <SkeletonScreen />;

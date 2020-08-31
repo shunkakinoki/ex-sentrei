@@ -21,7 +21,7 @@ export interface Props {
   form: RecoilState<RoomCreateForm>;
   profile: Profile.Get;
   user: User.Get;
-  namespaceId: string;
+  spaceId: string;
 }
 
 const RoomStepperSubmit = ({
@@ -29,7 +29,7 @@ const RoomStepperSubmit = ({
   form,
   profile,
   user,
-  namespaceId,
+  spaceId,
 }: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
@@ -62,7 +62,7 @@ const RoomStepperSubmit = ({
         photoHash: null,
         name: activeForm.name,
         stats: {},
-        spaceId: namespaceId,
+        spaceId,
         type: activeForm.type,
         updatedAt: timestamp,
         updatedBy: profile,
@@ -73,7 +73,7 @@ const RoomStepperSubmit = ({
         setActiveForm({name: "", type: "focus"});
         setActiveStep(0);
         setTimeout(() => {
-          Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
+          Router.pop();
         }, 1500);
       });
     } catch (err) {

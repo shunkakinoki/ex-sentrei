@@ -10,15 +10,20 @@ import SpaceQuitForm from "@sentrei/ui/components/SpaceQuitForm";
 
 export interface Props {
   namespaceId: string;
+  spaceId: string;
   user: User.Get;
 }
 
-export default function SpaceQuit({namespaceId, user}: Props): JSX.Element {
+export default function SpaceQuit({
+  namespaceId,
+  spaceId,
+  user,
+}: Props): JSX.Element {
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
 
   React.useEffect(() => {
-    getSpace(namespaceId).then(setSpace);
-  }, [namespaceId]);
+    getSpace(spaceId).then(setSpace);
+  }, [spaceId]);
 
   if (space === undefined) {
     return (
@@ -34,7 +39,7 @@ export default function SpaceQuit({namespaceId, user}: Props): JSX.Element {
 
   return (
     <GridSettings namespaceId={namespaceId} tabSpaceKey="quit" type="space">
-      <SpaceQuitForm spaceId={space.id} userId={user.uid} />
+      <SpaceQuitForm spaceId={spaceId} userId={user.uid} />
     </GridSettings>
   );
 }

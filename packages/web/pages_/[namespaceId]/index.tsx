@@ -7,6 +7,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getAdminMembers} from "@sentrei/common/firebaseAdmin/members";
+import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 import {getAdminRooms} from "@sentrei/common/firebaseAdmin/rooms";
 import {getAdminSpace} from "@sentrei/common/firebaseAdmin/spaces";
 import {analytics} from "@sentrei/common/utils/firebase";
@@ -25,6 +26,7 @@ const SpaceScreen = dynamic(
 );
 
 export interface Props {
+  spaceId: string | null;
   spaceData: string | null;
   membersData: string | null;
   roomsData: string | null;
@@ -37,12 +39,23 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   const namespaceId = String(params?.namespaceId);
-  const spaceReq = getAdminSpace(namespaceId);
+  const namespace = await getAdminNamespace(namespaceId);
+  if (!namespace || namespace.type === "user") {
+    return {
+      props: {
+        spaceId: null,
+        spaceData: null,
+        membersData: null,
+        roomsData: null,
+      },
+    };
+  }
+  const spaceReq = getAdminSpace(namespace.uid);
   const membersReq = getAdminMembers({
-    namespaceId,
+    spaceId: namespace.uid,
   });
   const roomsReq = getAdminRooms({
-    namespaceId,
+    spaceId: namespace.uid,
   });
   const [spaceData, membersData, roomsData] = await Promise.all([
     spaceReq,
@@ -51,6 +64,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   ]);
   return {
     props: {
+      spaceId: JSON.stringify(namespace.uid),
       spaceData: JSON.stringify(spaceData),
       membersData: JSON.stringify(membersData),
       roomsData: JSON.stringify(roomsData),
@@ -60,6 +74,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
 };
 
 const SpaceId = ({
+  spaceId,
   spaceData,
   membersData,
   roomsData,
@@ -72,7 +87,13 @@ const SpaceId = ({
     analytics().setCurrentScreen("space");
   }, []);
 
-  if (user === undefined || !profile || !spaceData || !membersData) {
+  if (
+    user === undefined ||
+    !profile ||
+    !spaceId ||
+    !spaceData ||
+    !membersData
+  ) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="home" type="space" />
@@ -110,7 +131,7 @@ const SpaceId = ({
           membersData={JSON.parse(membersData) as Member.Get[]}
           roomsData={roomsData ? (JSON.parse(roomsData) as Room.Get[]) : null}
           spaceData={JSON.parse(spaceData) as Space.Get}
-          namespaceId={String(query.namespaceId)}
+          spaceId={JSON.parse(spaceId) as string}
         />
       )}
     </>

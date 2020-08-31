@@ -5,6 +5,7 @@ import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
+import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {analytics} from "@sentrei/common/utils/firebase";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -17,12 +18,24 @@ const CreatePage: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
+  const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
 
   React.useEffect(() => {
     analytics().setCurrentScreen("roomCreate");
   }, []);
 
-  if (user === undefined || !profile) {
+  React.useEffect(() => {
+    async function setSpace(): Promise<void> {
+      const namespace = await getNamespace(String(query.namespaceId));
+      if (!namespace || namespace.type === "user") {
+        return;
+      }
+      setSpaceId(namespace.uid);
+    }
+    setSpace();
+  }, [query.namespaceId]);
+
+  if (user === undefined || !profile || !spaceId) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="rooms" type="space" />
@@ -47,13 +60,7 @@ const CreatePage: NextPage = () => {
           type="space"
         />
       )}
-      {user && (
-        <RoomCreate
-          namespaceId={String(query.namespaceId)}
-          profile={profile}
-          user={user}
-        />
-      )}
+      {user && <RoomCreate spaceId={spaceId} profile={profile} user={user} />}
     </>
   );
 };

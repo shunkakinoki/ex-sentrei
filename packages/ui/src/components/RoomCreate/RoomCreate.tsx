@@ -13,13 +13,13 @@ import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
   profile: Profile.Get;
-  namespaceId: string;
+  spaceId: string;
   user: User.Get;
 }
 
 export default function RoomCreate({
   profile,
-  namespaceId,
+  spaceId,
   user,
 }: Props): JSX.Element {
   const {t} = useTranslation();
@@ -27,8 +27,8 @@ export default function RoomCreate({
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
 
   React.useEffect(() => {
-    getSpace(namespaceId).then(setSpace);
-  }, [namespaceId]);
+    getSpace(spaceId).then(setSpace);
+  }, [spaceId]);
 
   if (space === undefined) {
     return <SkeletonForm />;
@@ -44,11 +44,7 @@ export default function RoomCreate({
         icon={<AddToPhotosIcon />}
         title={t("room:room.createRoom")}
       />
-      <RoomStepperCreate
-        profile={profile}
-        user={user}
-        namespaceId={namespaceId}
-      />
+      <RoomStepperCreate profile={profile} user={user} spaceId={spaceId} />
     </>
   );
 }

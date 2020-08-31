@@ -8,25 +8,25 @@ import SpaceLeaderboardBoard from "@sentrei/ui/components/SpaceLeaderboardBoard"
 
 export interface Props {
   membersData: Member.Get[];
-  namespaceId: string;
+  spaceId: string;
 }
 
 export default function SpaceMember({
   membersData,
-  namespaceId,
+  spaceId,
 }: Props): JSX.Element {
   const [members, setMembers] = React.useState<Member.Get[] | null | undefined>(
     membersData,
   );
 
   React.useEffect(() => {
-    const unsubscribe = getLeaderboardLive(namespaceId, snap => {
+    const unsubscribe = getLeaderboardLive(spaceId, snap => {
       setMembers(snap);
     });
     return (): void => {
       unsubscribe();
     };
-  }, [namespaceId]);
+  }, [spaceId]);
 
   if (members === undefined) {
     return <SkeletonList />;

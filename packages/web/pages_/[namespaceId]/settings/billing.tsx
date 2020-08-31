@@ -5,6 +5,7 @@ import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
+import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {analytics} from "@sentrei/common/utils/firebase";
 import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
@@ -21,16 +22,28 @@ const SpaceBillingPage: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
+  const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
 
   React.useEffect(() => {
     analytics().setCurrentScreen("spaceEdit");
   }, []);
 
-  if (user === undefined || !profile) {
+  React.useEffect(() => {
+    async function setSpace(): Promise<void> {
+      const namespace = await getNamespace(String(query.namespaceId));
+      if (!namespace || namespace.type === "user") {
+        return;
+      }
+      setSpaceId(namespace.uid);
+    }
+    setSpace();
+  }, [query.namespaceId]);
+
+  if (user === undefined || !profile || !spaceId) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
-        <GridSettings skeleton tabSpaceKey="billing" type="space">
+        <GridSettings skeleton tabSpaceKey="general" type="space">
           <SkeletonForm />
         </GridSettings>
       </>
@@ -54,7 +67,11 @@ const SpaceBillingPage: NextPage = () => {
         />
       )}
       {user && (
-        <SpaceBilling namespaceId={String(query.namespaceId)} user={user} />
+        <SpaceBilling
+          namespaceId={String(query.namespaceId)}
+          spaceId={spaceId}
+          user={user}
+        />
       )}
     </>
   );
