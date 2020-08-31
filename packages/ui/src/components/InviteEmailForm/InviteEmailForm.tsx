@@ -17,11 +17,11 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   profile: Profile.Get;
-  spaceId: string;
+  namespaceId: string;
   user: User.Get;
 }
 
-const InviteEmailForm = ({profile, user, spaceId}: Props): JSX.Element => {
+const InviteEmailForm = ({profile, user, namespaceId}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
@@ -40,13 +40,13 @@ const InviteEmailForm = ({profile, user, spaceId}: Props): JSX.Element => {
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.editing"));
     try {
-      await createInvite(spaceId, {
+      await createInvite(namespaceId, {
         createdAt: timestamp,
         createdBy: profile,
         createdByUid: user.uid,
         email: data.email,
         method: "email",
-        spaceId,
+        spaceId: namespaceId,
         updatedAt: timestamp,
         updatedBy: profile,
         updatedByUid: user.uid,

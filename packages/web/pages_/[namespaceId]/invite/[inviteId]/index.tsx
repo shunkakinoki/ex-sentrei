@@ -6,27 +6,32 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const RoomSettings = dynamic(
-  () => import("@sentrei/ui/components/RoomSettings"),
-  {
-    ssr: false,
+const InviteSignup = dynamic(
+  () => {
+    return import("@sentrei/ui/components/InviteSignup");
   },
+  {ssr: false},
 );
 
-const Settings: NextPage = () => {
+const InviteId: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("roomSettings");
+    analytics().setCurrentScreen("inviteSignup");
   }, []);
 
   if (user === undefined || !profile) {
-    return <Loader />;
+    return (
+      <>
+        <SentreiAppHeader skeleton />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -40,19 +45,17 @@ const Settings: NextPage = () => {
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
-          spaceId={String(query.spaceId)}
+          namespaceId={String(query.namespaceId)}
         />
       )}
       {user && (
-        <RoomSettings
-          roomId={String(query.roomId)}
-          spaceId={String(query.spaceId)}
-          profile={profile}
-          user={user}
+        <InviteSignup
+          inviteId={String(query.inviteId)}
+          namespaceId={String(query.namespaceId)}
         />
       )}
     </>
   );
 };
 
-export default Settings;
+export default InviteId;

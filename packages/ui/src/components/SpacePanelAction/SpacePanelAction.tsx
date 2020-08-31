@@ -8,10 +8,10 @@ import * as React from "react";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 
 export interface Props {
-  spaceId: string;
+  namespaceId: string;
 }
 
-export default function SpacePanelAction({spaceId}: Props): JSX.Element {
+export default function SpacePanelAction({namespaceId}: Props): JSX.Element {
   const {t} = useTranslation();
 
   return (
@@ -25,8 +25,8 @@ export default function SpacePanelAction({spaceId}: Props): JSX.Element {
       <Grid xs={6}>
         <Box p={1}>
           <MuiButton
-            href="/[spaceId]/settings/invite"
-            as={`${spaceId}/settings/invite`}
+            href="/[namespaceId]/settings/invite"
+            as={`${namespaceId}/settings/invite`}
             fullWidth
             color="primary"
             variant="outlined"
@@ -39,8 +39,8 @@ export default function SpacePanelAction({spaceId}: Props): JSX.Element {
       <Grid xs={6}>
         <Box p={1}>
           <MuiButton
-            href="/[spaceId]/rooms/create"
-            as={`${spaceId}/rooms/create`}
+            href="/[namespaceId]/rooms/create"
+            as={`${namespaceId}/rooms/create`}
             fullWidth
             color="primary"
             variant="contained"

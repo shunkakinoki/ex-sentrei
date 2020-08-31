@@ -10,7 +10,7 @@ import SpaceSection from "@sentrei/ui/components/SpaceSection";
 
 export interface Props {
   activityShot: Activity.Snapshot[];
-  spaceId: string;
+  namespaceId: string;
   last?: firebase.firestore.DocumentSnapshot;
   limit?: number;
 }
@@ -19,7 +19,7 @@ export default function SpaceActivityList({
   activityShot,
   last,
   limit = 5,
-  spaceId,
+  namespaceId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
@@ -43,7 +43,7 @@ export default function SpaceActivityList({
         lastItem={last || activities[activities.length - 1].id}
         length={activities.length}
         limit={limit}
-        spaceId={spaceId}
+        namespaceId={namespaceId}
         onLoadMore={(res: Activity.Get[]): void =>
           setActivities([...activities, ...res])
         }

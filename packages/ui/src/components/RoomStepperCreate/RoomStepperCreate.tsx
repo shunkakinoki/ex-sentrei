@@ -14,7 +14,7 @@ import StepperBoard from "@sentrei/ui/components/StepperBoard";
 export interface Props {
   profile: Profile.Get;
   user: User.Get;
-  spaceId: string;
+  namespaceId: string;
 }
 
 const stepperState: RecoilState<number> = atom({
@@ -30,7 +30,7 @@ const roomCreateForm: RecoilState<RoomCreateForm> = atom({
 export default function RoomCreate({
   profile,
   user,
-  spaceId,
+  namespaceId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
@@ -52,7 +52,7 @@ export default function RoomCreate({
           form={roomCreateForm}
           profile={profile}
           user={user}
-          spaceId={spaceId}
+          namespaceId={namespaceId}
         />
       }
     />

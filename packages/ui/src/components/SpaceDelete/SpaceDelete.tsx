@@ -10,17 +10,17 @@ import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SpaceDeleteForm from "@sentrei/ui/components/SpaceDeleteForm";
 
 interface Props {
-  spaceId: string;
+  namespaceId: string;
 }
 
-export default function SpaceEdit({spaceId}: Props): JSX.Element {
+export default function SpaceEdit({namespaceId}: Props): JSX.Element {
   const {t} = useTranslation();
 
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
 
   React.useEffect(() => {
-    getSpace(spaceId).then(setSpace);
-  }, [spaceId]);
+    getSpace(namespaceId).then(setSpace);
+  }, [namespaceId]);
 
   if (space === undefined) {
     return <SkeletonForm />;
@@ -37,7 +37,7 @@ export default function SpaceEdit({spaceId}: Props): JSX.Element {
         title={t("space:space.deleteSpace")}
         size="md"
       />
-      <SpaceDeleteForm spaceId={spaceId} />
+      <SpaceDeleteForm namespaceId={namespaceId} />
     </>
   );
 }

@@ -1,6 +1,6 @@
 export default interface ActivityQuery {
   last?: firebase.firestore.DocumentSnapshot;
-  spaceId?: string | undefined;
+  namespaceId?: string | undefined;
   limit?: number;
   itemPath?: string;
 }

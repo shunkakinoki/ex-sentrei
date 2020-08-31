@@ -1,27 +1,25 @@
+import {NextPage} from "next";
 import Router from "next-translate/Router";
 import dynamic from "next/dynamic";
-
 import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
+import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const RoomScreen = dynamic(
-  () => {
-    return import("@sentrei/ui/components/RoomScreen");
-  },
-  {ssr: false},
-);
+const RoomEdit = dynamic(() => import("@sentrei/ui/components/RoomEdit"), {
+  ssr: false,
+});
 
-const RoomId = (): JSX.Element => {
+const Edit: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("room");
+    analytics().setCurrentScreen("roomEdit");
   }, []);
 
   if (user === undefined || !profile) {
@@ -35,15 +33,23 @@ const RoomId = (): JSX.Element => {
   return (
     <>
       {user && (
-        <RoomScreen
-          user={user}
+        <SentreiAppHeader
+          notificationCount={Number(user.notificationCount)}
           profile={profile}
-          spaceId={String(query.spaceId)}
+          userId={user.uid}
+          namespaceId={String(query.namespaceId)}
+        />
+      )}
+      {user && (
+        <RoomEdit
           roomId={String(query.roomId)}
+          namespaceId={String(query.namespaceId)}
+          profile={profile}
+          user={user}
         />
       )}
     </>
   );
 };
 
-export default RoomId;
+export default Edit;

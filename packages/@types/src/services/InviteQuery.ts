@@ -1,5 +1,5 @@
 export default interface InviteQuery {
-  spaceId: string | undefined;
+  namespaceId: string | undefined;
   last?: firebase.firestore.DocumentSnapshot;
   limit?: number;
 }

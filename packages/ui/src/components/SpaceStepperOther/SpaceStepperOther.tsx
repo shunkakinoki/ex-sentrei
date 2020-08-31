@@ -37,9 +37,9 @@ const SpaceStepperOther = ({atom, form, profile, user}: Props): JSX.Element => {
     reValidateMode: "onBlur",
   });
 
-  async function goToSpace(spaceId: string): Promise<void> {
-    if (await validateSpaceMember(spaceId, user.uid)) {
-      Router.pushI18n("/[spaceId]", `/${spaceId}`);
+  async function goToSpace(namespaceId: string): Promise<void> {
+    if (await validateSpaceMember(namespaceId, user.uid)) {
+      Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
     }
     Router.pushI18n("/dashboard");
   }
@@ -48,29 +48,26 @@ const SpaceStepperOther = ({atom, form, profile, user}: Props): JSX.Element => {
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.creating"));
     try {
-      await createSpace(
-        {
-          actions: {},
-          analytics: {
-            duration: 0,
-            score: 0,
-          },
-          createdAt: timestamp,
-          createdBy: profile,
-          createdByUid: user.uid,
-          description: null,
-          photo: null,
-          photoHash: null,
-          name: activeForm.name,
-          namespace: activeForm.id,
-          stats: {},
-          tier: "free",
-          updatedAt: timestamp,
-          updatedBy: profile,
-          updatedByUid: user.uid,
+      await createSpace({
+        actions: {},
+        analytics: {
+          duration: 0,
+          score: 0,
         },
-        activeForm.id,
-      )?.then(() => {
+        createdAt: timestamp,
+        createdBy: profile,
+        createdByUid: user.uid,
+        description: null,
+        photo: null,
+        photoHash: null,
+        name: activeForm.name,
+        namespace: activeForm.id,
+        stats: {},
+        tier: "free",
+        updatedAt: timestamp,
+        updatedBy: profile,
+        updatedByUid: user.uid,
+      })?.then(() => {
         snackbar("success");
         backdrop("loading");
         setActiveForm({id: "", name: ""});

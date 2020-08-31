@@ -12,7 +12,7 @@ import * as Yup from "yup";
 
 import {inviteMember} from "@sentrei/common/firebase/members";
 import {validateNamespace} from "@sentrei/common/firebase/namespaces";
-import {getProfileNamespace} from "@sentrei/common/firebase/profiles";
+import {getProfile} from "@sentrei/common/firebase/profiles";
 import {timestamp} from "@sentrei/common/utils/firebase";
 
 import Member from "@sentrei/types/models/Member";
@@ -22,11 +22,15 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   profile: Profile.Get;
-  spaceId: string;
+  namespaceId: string;
   user: User.Get;
 }
 
-const InviteNamespaceForm = ({profile, user, spaceId}: Props): JSX.Element => {
+const InviteNamespaceForm = ({
+  profile,
+  user,
+  namespaceId,
+}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
@@ -52,11 +56,9 @@ const InviteNamespaceForm = ({profile, user, spaceId}: Props): JSX.Element => {
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.inviting"));
     try {
-      const memberProfile = await getProfileNamespace(data.namespace).catch(
-        err => {
-          snackbar("error", err.message);
-        },
-      );
+      const memberProfile = await getProfile(data.namespace).catch(err => {
+        snackbar("error", err.message);
+      });
       if (memberProfile && memberProfile !== null) {
         const member: Member.Create = {
           createdAt: timestamp,
@@ -77,7 +79,7 @@ const InviteNamespaceForm = ({profile, user, spaceId}: Props): JSX.Element => {
           uid: memberProfile.uid,
           namespace: memberProfile.namespace,
         };
-        await inviteMember(spaceId, memberProfile.uid, member)
+        await inviteMember(namespaceId, memberProfile.uid, member)
           ?.then(() => {
             snackbar("success");
           })

@@ -33,7 +33,7 @@ export default function SpaceHomeBoard({
       <Grid container justify="center" direction="row">
         <Grid item xs={12} sm={12} md={6}>
           <Box px={1}>
-            {rooms?.length === 0 && <RoomNone spaceId={space.id} />}
+            {rooms?.length === 0 && <RoomNone namespaceId={space.id} />}
             {rooms &&
               rooms.map(room => (
                 <Box pb={3} key={room.id}>

@@ -1,25 +1,27 @@
-import {NextPage} from "next";
 import Router from "next-translate/Router";
 import dynamic from "next/dynamic";
+
 import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
-import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const RoomDelete = dynamic(() => import("@sentrei/ui/components/RoomDelete"), {
-  ssr: false,
-});
+const RoomScreen = dynamic(
+  () => {
+    return import("@sentrei/ui/components/RoomScreen");
+  },
+  {ssr: false},
+);
 
-const Delete: NextPage = () => {
+const RoomId = (): JSX.Element => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("roomDelete");
+    analytics().setCurrentScreen("room");
   }, []);
 
   if (user === undefined || !profile) {
@@ -33,21 +35,15 @@ const Delete: NextPage = () => {
   return (
     <>
       {user && (
-        <SentreiAppHeader
-          notificationCount={Number(user.notificationCount)}
+        <RoomScreen
+          user={user}
           profile={profile}
-          userId={user.uid}
-          spaceId={String(query.spaceId)}
-        />
-      )}
-      {user && (
-        <RoomDelete
+          namespaceId={String(query.namespaceId)}
           roomId={String(query.roomId)}
-          spaceId={String(query.spaceId)}
         />
       )}
     </>
   );
 };
 
-export default Delete;
+export default RoomId;

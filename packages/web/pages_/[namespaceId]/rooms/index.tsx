@@ -17,9 +17,9 @@ import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import StatusSpace from "@sentrei/ui/components/StatusSpace";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const SpaceScreen = dynamic(
+const SpaceRoom = dynamic(
   () => {
-    return import("@sentrei/ui/components/SpaceScreen");
+    return import("@sentrei/ui/components/SpaceRoom");
   },
   {ssr: false},
 );
@@ -36,13 +36,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
-  const spaceId = String(params?.spaceId);
-  const spaceReq = getAdminSpace(spaceId);
+  const namespaceId = String(params?.namespaceId);
+  const spaceReq = getAdminSpace(namespaceId);
   const membersReq = getAdminMembers({
-    spaceId,
+    namespaceId,
   });
   const roomsReq = getAdminRooms({
-    spaceId,
+    namespaceId,
   });
   const [spaceData, membersData, roomsData] = await Promise.all([
     spaceReq,
@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   };
 };
 
-const SpaceId = ({
+const RoomsPage = ({
   spaceData,
   membersData,
   roomsData,
@@ -75,7 +75,7 @@ const SpaceId = ({
   if (user === undefined || !profile || !spaceData || !membersData) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="home" type="space" />
+        <SentreiAppHeader skeleton tabSpaceKey="rooms" type="space" />
         <SkeletonScreen />
       </>
     );
@@ -92,29 +92,24 @@ const SpaceId = ({
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
-          spaceId={String(query.spaceId)}
-          tabSpaceKey="home"
+          namespaceId={String(query.namespaceId)}
+          tabSpaceKey="rooms"
           type="space"
         />
       )}
       {user && <StatusSpace userId={user.uid} profile={profile} />}
       {user && (
-        <SpaceScreen
+        <SpaceRoom
           user={user}
           profile={profile}
-          memberData={
-            (JSON.parse(membersData) as Member.Get[]).filter(
-              doc => doc.uid === profile.uid,
-            )[0] as Member.Get
-          }
           membersData={JSON.parse(membersData) as Member.Get[]}
           roomsData={roomsData ? (JSON.parse(roomsData) as Room.Get[]) : null}
           spaceData={JSON.parse(spaceData) as Space.Get}
-          spaceId={String(query.spaceId)}
+          namespaceId={String(query.namespaceId)}
         />
       )}
     </>
   );
 };
 
-export default SpaceId;
+export default RoomsPage;

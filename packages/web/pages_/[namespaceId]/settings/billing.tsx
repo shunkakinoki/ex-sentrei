@@ -10,26 +10,27 @@ import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const SpaceInvite = dynamic(
-  () => {
-    return import("@sentrei/ui/components/SpaceInvite");
+const SpaceBilling = dynamic(
+  () => import("@sentrei/ui/components/SpaceBilling"),
+  {
+    ssr: false,
   },
-  {ssr: false},
 );
 
-const SpaceInvitePage: NextPage = () => {
+const SpaceBillingPage: NextPage = () => {
   const {query} = useRouter();
+
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("spaceInvite");
+    analytics().setCurrentScreen("spaceEdit");
   }, []);
 
   if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
-        <GridSettings skeleton tabSpaceKey="invite" type="space">
+        <GridSettings skeleton tabSpaceKey="billing" type="space">
           <SkeletonForm />
         </GridSettings>
       </>
@@ -47,20 +48,16 @@ const SpaceInvitePage: NextPage = () => {
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
-          spaceId={String(query.spaceId)}
+          namespaceId={String(query.namespaceId)}
           tabSpaceKey="settings"
           type="space"
         />
       )}
       {user && (
-        <SpaceInvite
-          profile={profile}
-          user={user}
-          spaceId={String(query.spaceId)}
-        />
+        <SpaceBilling namespaceId={String(query.namespaceId)} user={user} />
       )}
     </>
   );
 };
 
-export default SpaceInvitePage;
+export default SpaceBillingPage;

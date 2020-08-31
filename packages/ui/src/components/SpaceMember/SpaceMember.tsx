@@ -8,13 +8,13 @@ import SpaceMemberBoard from "@sentrei/ui/components/SpaceMemberBoard";
 
 export interface Props {
   membersData: Member.Get[];
-  spaceId: string;
+  namespaceId: string;
   userId: string;
 }
 
 export default function SpaceMember({
   membersData,
-  spaceId,
+  namespaceId,
   userId,
 }: Props): JSX.Element {
   const [members, setMembers] = React.useState<Member.Get[] | null | undefined>(
@@ -22,13 +22,13 @@ export default function SpaceMember({
   );
 
   React.useEffect(() => {
-    const unsubscribe = getMembersLive(spaceId, snap => {
+    const unsubscribe = getMembersLive(namespaceId, snap => {
       setMembers(snap);
     });
     return (): void => {
       unsubscribe();
     };
-  }, [spaceId]);
+  }, [namespaceId]);
 
   if (members === undefined) {
     return <SkeletonList />;

@@ -15,7 +15,7 @@ export interface Props {
   profile?: Profile.Get;
   notificationCount?: number;
   skeleton?: boolean;
-  spaceId?: string;
+  namespaceId?: string;
   tabUserKey?: AppUserTabKey;
   tabSpaceKey?: AppSpaceTabKey;
   type?: AppTabType;
@@ -27,7 +27,7 @@ export default function AppHeader({
   profile,
   notificationCount,
   skeleton = false,
-  spaceId,
+  namespaceId,
   tabUserKey,
   tabSpaceKey,
   type,
@@ -39,14 +39,18 @@ export default function AppHeader({
         logo={logo}
         profile={profile}
         userId={userId}
-        spaceId={spaceId}
+        namespaceId={namespaceId}
         notificationCount={notificationCount}
       />
       {type === "space" && skeleton && tabSpaceKey && (
         <AppSpaceTab skeleton tabKey={tabSpaceKey} />
       )}
-      {type === "space" && !skeleton && spaceId && tabSpaceKey && (
-        <AppSpaceTab skeleton={false} spaceId={spaceId} tabKey={tabSpaceKey} />
+      {type === "space" && !skeleton && namespaceId && tabSpaceKey && (
+        <AppSpaceTab
+          skeleton={false}
+          namespaceId={namespaceId}
+          tabKey={tabSpaceKey}
+        />
       )}
       {type === "user" && skeleton && tabUserKey && (
         <AppUserTab skeleton tabKey={tabUserKey} />

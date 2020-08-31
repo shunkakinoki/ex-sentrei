@@ -24,14 +24,14 @@ import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
   profile: Profile.Get;
-  spaceId: string;
+  namespaceId: string;
   user: User.Get;
 }
 
 export default function SpaceInvite({
   profile,
   user,
-  spaceId,
+  namespaceId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
@@ -41,17 +41,17 @@ export default function SpaceInvite({
   >();
 
   React.useEffect(() => {
-    getSpace(spaceId).then(setSpace);
-  }, [spaceId]);
+    getSpace(namespaceId).then(setSpace);
+  }, [namespaceId]);
 
   React.useEffect(() => {
-    const unsubscribe = getInvitesLive(spaceId, snap => {
+    const unsubscribe = getInvitesLive(namespaceId, snap => {
       setInvites(snap);
     });
     return (): void => {
       unsubscribe();
     };
-  }, [spaceId]);
+  }, [namespaceId]);
 
   if (space === undefined) {
     return (
@@ -66,7 +66,7 @@ export default function SpaceInvite({
   }
 
   return (
-    <GridSettings spaceId={spaceId} tabSpaceKey="invite" type="space">
+    <GridSettings namespaceId={namespaceId} tabSpaceKey="invite" type="space">
       <FormSection icon={<SettingsIcon />} title={t("common:common.invite")} />
       <TabBoard
         size="sm"
@@ -78,14 +78,22 @@ export default function SpaceInvite({
         tabLabelThree={t("common:common.namespace")}
         tabPanelOne={
           <>
-            <InviteEmailForm profile={profile} user={user} spaceId={spaceId} />
+            <InviteEmailForm
+              profile={profile}
+              user={user}
+              namespaceId={namespaceId}
+            />
             <Box p={1} />
             {invites && <InviteList invites={invites} type="email" />}
           </>
         }
         tabPanelTwo={
           <>
-            <InviteLinkForm profile={profile} user={user} spaceId={spaceId} />
+            <InviteLinkForm
+              profile={profile}
+              user={user}
+              namespaceId={namespaceId}
+            />
             <Box p={1} />
             {invites && <InviteList invites={invites} type="link" />}
           </>
@@ -94,7 +102,7 @@ export default function SpaceInvite({
           <InviteNamespaceForm
             profile={profile}
             user={user}
-            spaceId={spaceId}
+            namespaceId={namespaceId}
           />
         }
       />

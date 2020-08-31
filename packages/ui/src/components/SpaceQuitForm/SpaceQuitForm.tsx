@@ -8,11 +8,11 @@ import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
-  spaceId: string;
+  namespaceId: string;
   userId: string;
 }
 
-const SpaceQuitForm = ({spaceId, userId}: Props): JSX.Element => {
+const SpaceQuitForm = ({namespaceId, userId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -20,7 +20,7 @@ const SpaceQuitForm = ({spaceId, userId}: Props): JSX.Element => {
   const onSubmit = async (): Promise<void> => {
     snackbar("info", t("common:snackbar.quiting"));
     try {
-      await quitSpace(spaceId, userId)?.then(() => {
+      await quitSpace(namespaceId, userId)?.then(() => {
         snackbar("success");
         backdrop("loading");
       });
@@ -30,7 +30,7 @@ const SpaceQuitForm = ({spaceId, userId}: Props): JSX.Element => {
     }
   };
 
-  return <QuitForm id={spaceId} onSubmit={onSubmit} />;
+  return <QuitForm id={namespaceId} onSubmit={onSubmit} />;
 };
 
 export default SpaceQuitForm;

@@ -11,20 +11,20 @@ import SpaceSettingsForm from "@sentrei/ui/components/SpaceSettingsForm";
 
 export interface Props {
   profile: Profile.Get;
-  spaceId: string;
+  namespaceId: string;
   user: User.Get;
 }
 
 export default function SpaceSettings({
   profile,
-  spaceId,
+  namespaceId,
   user,
 }: Props): JSX.Element {
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
 
   React.useEffect(() => {
-    getSpace(spaceId).then(setSpace);
-  }, [spaceId]);
+    getSpace(namespaceId).then(setSpace);
+  }, [namespaceId]);
 
   if (space === undefined) {
     return (
@@ -39,7 +39,7 @@ export default function SpaceSettings({
   }
 
   return (
-    <GridSettings spaceId={spaceId} tabSpaceKey="general" type="space">
+    <GridSettings namespaceId={namespaceId} tabSpaceKey="general" type="space">
       <SpaceSettingsForm profile={profile} user={user} space={space} />
     </GridSettings>
   );

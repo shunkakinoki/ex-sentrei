@@ -8,16 +8,16 @@ import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
-  spaceId: string;
+  namespaceId: string;
   user: User.Get;
 }
 
-export default function SpaceSettings({spaceId}: Props): JSX.Element {
+export default function SpaceSettings({namespaceId}: Props): JSX.Element {
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
 
   React.useEffect(() => {
-    getSpace(spaceId).then(setSpace);
-  }, [spaceId]);
+    getSpace(namespaceId).then(setSpace);
+  }, [namespaceId]);
 
   if (space === undefined) {
     return (
@@ -32,7 +32,7 @@ export default function SpaceSettings({spaceId}: Props): JSX.Element {
   }
 
   return (
-    <GridSettings spaceId={spaceId} tabSpaceKey="billing" type="space">
+    <GridSettings namespaceId={namespaceId} tabSpaceKey="billing" type="space">
       <></>
     </GridSettings>
   );

@@ -6,24 +6,35 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
+import GridSettings from "@sentrei/ui/components/GridSettings";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const RoomQuit = dynamic(() => import("@sentrei/ui/components/RoomQuit"), {
-  ssr: false,
-});
+const SpaceSettings = dynamic(
+  () => import("@sentrei/ui/components/SpaceSettings"),
+  {
+    ssr: false,
+  },
+);
 
-const Quit: NextPage = () => {
+const SpaceSettingsPage: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("roomQuit");
+    analytics().setCurrentScreen("spaceEdit");
   }, []);
 
   if (user === undefined || !profile) {
-    return <Loader />;
+    return (
+      <>
+        <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
+        <GridSettings skeleton tabSpaceKey="general" type="space">
+          <SkeletonForm />
+        </GridSettings>
+      </>
+    );
   }
 
   if (!user) {
@@ -37,18 +48,20 @@ const Quit: NextPage = () => {
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
-          spaceId={String(query.spaceId)}
+          namespaceId={String(query.namespaceId)}
+          tabSpaceKey="settings"
+          type="space"
         />
       )}
       {user && (
-        <RoomQuit
-          roomId={String(query.roomId)}
+        <SpaceSettings
+          namespaceId={String(query.namespaceId)}
+          profile={profile}
           user={user}
-          spaceId={String(query.spaceId)}
         />
       )}
     </>
   );
 };
 
-export default Quit;
+export default SpaceSettingsPage;

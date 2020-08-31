@@ -31,14 +31,14 @@ import InviteSignupFormStyles from "./InviteSignupFormStyles";
 
 export interface Props {
   inviteId: string;
-  spaceId: string;
+  namespaceId: string;
 }
 
 export default function InviteSignupForm({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   inviteId,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  spaceId,
+  namespaceId,
 }: Props): JSX.Element {
   const classes = InviteSignupFormStyles();
   const {backdrop} = useBackdrop();

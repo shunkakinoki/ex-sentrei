@@ -29,7 +29,7 @@ export interface Props {
   profile?: Profile.Get;
   notificationCount?: number;
   userId?: string;
-  spaceId?: string;
+  namespaceId?: string;
 }
 
 export default function AppBar({
@@ -37,7 +37,7 @@ export default function AppBar({
   profile,
   notificationCount,
   userId,
-  spaceId,
+  namespaceId,
 }: Props): JSX.Element {
   const classes = AppBarStyles();
   const {t} = useTranslation();
@@ -91,18 +91,18 @@ export default function AppBar({
         <Toolbar>
           <Breadcrumbs aria-label="breadcrumb">
             <MuiButtonBase
-              href={spaceId ? "/[spaceId]" : "/dashboard"}
-              as={spaceId ? `/${spaceId}` : "dashboard"}
+              href={namespaceId ? "/[namespaceId]" : "/dashboard"}
+              as={namespaceId ? `/${namespaceId}` : "dashboard"}
             >
               <Avatar className={classes.logo}>{logo}</Avatar>
             </MuiButtonBase>
             <MuiButtonBase
-              href={spaceId ? "/[spaceId]" : "/dashboard"}
-              as={spaceId ? `/${spaceId}` : "/dashboard"}
+              href={namespaceId ? "/[namespaceId]" : "/dashboard"}
+              as={namespaceId ? `/${namespaceId}` : "/dashboard"}
             >
-              {spaceId || (userId && profile) ? (
+              {namespaceId || (userId && profile) ? (
                 <Typography display="inline">
-                  {spaceId || profile?.namespace || userId}
+                  {namespaceId || profile?.namespace || userId}
                 </Typography>
               ) : (
                 <Skeleton width={90} />
@@ -150,8 +150,8 @@ export default function AppBar({
               />
             )}
             <MuiButton
-              href={spaceId ? "/[spaceId]/support" : "/support"}
-              as={spaceId ? `/${spaceId}/support` : "/support"}
+              href={namespaceId ? "/[namespaceId]/support" : "/support"}
+              as={namespaceId ? `/${namespaceId}/support` : "/support"}
               className={classes.button}
               size="small"
             >

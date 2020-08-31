@@ -4,11 +4,11 @@ import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-import {getAdminMembers} from "@sentrei/common/firebaseAdmin/members";
+import {getAdminLeaderboard} from "@sentrei/common/firebaseAdmin/leaderboard";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Member from "@sentrei/types/models/Member";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
-import SpaceMember from "@sentrei/ui/components/SpaceMember";
+import SpaceLeaderboard from "@sentrei/ui/components/SpaceLeaderboard";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 export interface Props {
@@ -21,9 +21,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
-  const spaceId = String(params?.spaceId);
-  const membersReq = getAdminMembers({
-    spaceId,
+  const namespaceId = String(params?.namespaceId);
+  const membersReq = getAdminLeaderboard({
+    namespaceId,
   });
   const [membersData] = await Promise.all([membersReq]);
   return {
@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   };
 };
 
-const MembersPage = ({
+const LeaderboardPage = ({
   membersData,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const {query} = useRouter();
@@ -42,13 +42,13 @@ const MembersPage = ({
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("spaceMembers");
+    analytics().setCurrentScreen("spaceLeaderboard");
   }, []);
 
   if (user === undefined || !profile || !membersData) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="members" type="space" />
+        <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
         <SkeletonForm />
       </>
     );
@@ -65,20 +65,17 @@ const MembersPage = ({
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
-          spaceId={String(query.spaceId)}
-          tabSpaceKey="members"
+          namespaceId={String(query.namespaceId)}
+          tabSpaceKey="leaderboard"
           type="space"
         />
       )}
-      {user && (
-        <SpaceMember
-          spaceId={String(query.spaceId)}
-          membersData={JSON.parse(membersData) as Member.Get[]}
-          userId={user.uid}
-        />
-      )}
+      <SpaceLeaderboard
+        namespaceId={String(query.namespaceId)}
+        membersData={JSON.parse(membersData) as Member.Get[]}
+      />
     </>
   );
 };
 
-export default MembersPage;
+export default LeaderboardPage;

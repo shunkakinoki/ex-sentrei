@@ -1,28 +1,37 @@
 import {NextPage} from "next";
 import Router from "next-translate/Router";
+import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
+import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
-import SupportScreen from "@sentrei/ui/components/SupportScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const SupportPage: NextPage = () => {
-  const {query} = useRouter();
+const SpaceInvite = dynamic(
+  () => {
+    return import("@sentrei/ui/components/SpaceInvite");
+  },
+  {ssr: false},
+);
 
+const SpaceInvitePage: NextPage = () => {
+  const {query} = useRouter();
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("support");
+    analytics().setCurrentScreen("spaceInvite");
   }, []);
 
   if (user === undefined || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton />
-        <SkeletonForm />
+        <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
+        <GridSettings skeleton tabSpaceKey="invite" type="space">
+          <SkeletonForm />
+        </GridSettings>
       </>
     );
   }
@@ -38,18 +47,20 @@ const SupportPage: NextPage = () => {
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
-          spaceId={String(query.spaceId)}
+          namespaceId={String(query.namespaceId)}
+          tabSpaceKey="settings"
+          type="space"
         />
       )}
       {user && (
-        <SupportScreen
-          email={user.email}
-          name={profile.name}
-          userId={user.uid}
+        <SpaceInvite
+          profile={profile}
+          user={user}
+          namespaceId={String(query.namespaceId)}
         />
       )}
     </>
   );
 };
 
-export default SupportPage;
+export default SpaceInvitePage;

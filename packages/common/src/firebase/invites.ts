@@ -15,12 +15,12 @@ export const inviteConverter: firebase.firestore.FirestoreDataConverter<Invite.G
 };
 
 export const InvitesQuery = ({
-  spaceId,
+  namespaceId,
   last,
   limit = 10,
 }: InviteQuery): firebase.firestore.Query<Invite.Get> => {
   let ref = db
-    .collection(`spaces/${spaceId}/invites`)
+    .collection(`spaces/${namespaceId}/invites`)
     .withConverter(inviteConverter)
     .limit(limit);
 
@@ -32,11 +32,11 @@ export const InvitesQuery = ({
 };
 
 export const getInvite = async (
-  spaceId: string,
+  namespaceId: string,
   inviteId: string,
 ): Promise<Invite.Get | null> => {
   const snap = await db
-    .doc(`spaces/${spaceId}/invites/${inviteId}`)
+    .doc(`spaces/${namespaceId}/invites/${inviteId}`)
     .withConverter(inviteConverter)
     .get();
 
@@ -49,11 +49,11 @@ export const getInvites = async (query: InviteQuery): Promise<Invite.Get[]> => {
 };
 
 export const getInvitesLive = (
-  spaceId: string,
+  namespaceId: string,
   onSnapshot: (snap: Invite.Get[]) => void,
 ): firebase.Unsubscribe => {
   return db
-    .collection(`spaces/${spaceId}/invites`)
+    .collection(`spaces/${namespaceId}/invites`)
     .orderBy("updatedAt", "desc")
     .withConverter(inviteConverter)
     .onSnapshot(snap => {
@@ -63,10 +63,12 @@ export const getInvitesLive = (
 };
 
 export const validateSpaceInvite = async (
-  spaceId: string,
+  namespaceId: string,
   inviteId: string,
 ): Promise<boolean> => {
-  const invite = await db.doc(`spaces/${spaceId}/invites/${inviteId}`).get();
+  const invite = await db
+    .doc(`spaces/${namespaceId}/invites/${inviteId}`)
+    .get();
   return invite.exists;
 };
 
@@ -78,15 +80,15 @@ export const getInvitesSnapshot = async (
 };
 
 export const createInvite = async (
-  spaceId: string,
+  namespaceId: string,
   invite: Invite.Create,
 ): Promise<void> => {
-  await db.collection(`spaces/${spaceId}/invites`).add(invite);
+  await db.collection(`spaces/${namespaceId}/invites`).add(invite);
 };
 
 export const deleteInvite = (
-  spaceId: string,
+  namespaceId: string,
   inviteId: string,
 ): Promise<void> => {
-  return db.doc(`spaces/${spaceId}/invites/${inviteId}`).delete();
+  return db.doc(`spaces/${namespaceId}/invites/${inviteId}`).delete();
 };
