@@ -49,7 +49,7 @@ const Authentication = (): null => {
       name: user.name,
       photo: user.photo,
       photoHash: user.photoHash,
-      username: user.username,
+      namespace: user.namespace,
     });
   }, [setProfile, user]);
 

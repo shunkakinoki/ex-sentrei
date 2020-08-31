@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 
-import {getUsername} from "@sentrei/common/firebaseAdmin/usernames";
+import {getNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 import {serializeAdminProfile} from "@sentrei/common/serializers/Profile";
 import {adminDb} from "@sentrei/common/utils/firebaseAdmin";
 import Profile from "@sentrei/types/models/Profile";
@@ -30,17 +30,17 @@ export const getProfile = async (
   return snap.data() || null;
 };
 
-export const getProfileUsername = async (
-  usernameId: string,
+export const getProfileNamespace = async (
+  namespaceId: string,
 ): Promise<Profile.Get | null> => {
-  const username = await getUsername(usernameId);
+  const namespace = await getNamespace(namespaceId);
 
-  if (!username) {
+  if (!namespace) {
     return null;
   }
 
   const snap = await adminDb
-    .doc(`profiles/${username.uid}`)
+    .doc(`profiles/${namespace.uid}`)
     .withConverter(profileConverter)
     .get();
 

@@ -58,7 +58,7 @@ export default function MemberCard({member}: Props): JSX.Element {
               <Typography noWrap>
                 {t("common:common.id")}
                 {": "}
-                {member.username}
+                {member.namespace}
               </Typography>
             </Grid>
             <Grid item xs={1} sm={2} md={4}>

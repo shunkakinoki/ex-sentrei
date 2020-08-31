@@ -3,7 +3,7 @@ export type RootCollection =
   | "profiles"
   | "notifications"
   | "spaces"
-  | "usernames"
+  | "namespaces"
   | "users";
 
 export const rootCollection: RootCollection[] = [
@@ -11,7 +11,7 @@ export const rootCollection: RootCollection[] = [
   "profiles",
   "notifications",
   "spaces",
-  "usernames",
+  "namespaces",
   "users",
 ];
 

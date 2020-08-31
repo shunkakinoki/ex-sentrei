@@ -11,8 +11,8 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import {inviteMember} from "@sentrei/common/firebase/members";
-import {getProfileUsername} from "@sentrei/common/firebase/profiles";
-import {validateUsername} from "@sentrei/common/firebase/usernames";
+import {validateNamespace} from "@sentrei/common/firebase/namespaces";
+import {getProfileNamespace} from "@sentrei/common/firebase/profiles";
 import {timestamp} from "@sentrei/common/utils/firebase";
 
 import Member from "@sentrei/types/models/Member";
@@ -26,19 +26,19 @@ export interface Props {
   user: User.Get;
 }
 
-const InviteUsernameForm = ({profile, user, spaceId}: Props): JSX.Element => {
+const InviteNamespaceForm = ({profile, user, spaceId}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
-  const InviteUsernameFormSchema = Yup.object().shape({
-    username: Yup.string()
-      .required(t("form:username.usernameRequired"))
+  const InviteNamespaceFormSchema = Yup.object().shape({
+    namespace: Yup.string()
+      .required(t("form:namespace.namespaceRequired"))
       // .matches(
       //   /^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/,
-      //   t("form:username.usernameInvalid"),
+      //   t("form:namespace.namespaceInvalid"),
       // )
-      .test("id", t("form:username.usernameNotExist"), async value => {
-        const result = await validateUsername(value || "");
+      .test("id", t("form:namespace.namespaceNotExist"), async value => {
+        const result = await validateNamespace(value || "");
         return !result;
       }),
   });
@@ -46,13 +46,13 @@ const InviteUsernameForm = ({profile, user, spaceId}: Props): JSX.Element => {
   const {control, register, errors, handleSubmit} = useForm({
     mode: "onSubmit",
     reValidateMode: "onBlur",
-    resolver: yupResolver(InviteUsernameFormSchema),
+    resolver: yupResolver(InviteNamespaceFormSchema),
   });
 
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.inviting"));
     try {
-      const memberProfile = await getProfileUsername(data.username).catch(
+      const memberProfile = await getProfileNamespace(data.namespace).catch(
         err => {
           snackbar("error", err.message);
         },
@@ -75,7 +75,7 @@ const InviteUsernameForm = ({profile, user, spaceId}: Props): JSX.Element => {
           updatedBy: profile,
           updatedByUid: user.uid,
           uid: memberProfile.uid,
-          username: memberProfile.username,
+          namespace: memberProfile.namespace,
         };
         await inviteMember(spaceId, memberProfile.uid, member)
           ?.then(() => {
@@ -99,19 +99,19 @@ const InviteUsernameForm = ({profile, user, spaceId}: Props): JSX.Element => {
               <TextField
                 autoFocus
                 fullWidth
-                id="username"
-                label={t("common:common.username")}
+                id="namespace"
+                label={t("common:common.namespace")}
                 margin="normal"
-                name="username"
+                name="namespace"
                 required
                 variant="outlined"
-                error={!!errors.username}
+                error={!!errors.namespace}
                 inputRef={register}
-                helperText={errors.username ? errors.username.message : ""}
+                helperText={errors.namespace ? errors.namespace.message : ""}
                 type="text"
               />
             }
-            name="username"
+            name="namespace"
             control={control}
             defaultValue=""
           />
@@ -137,4 +137,4 @@ const InviteUsernameForm = ({profile, user, spaceId}: Props): JSX.Element => {
   );
 };
 
-export default InviteUsernameForm;
+export default InviteNamespaceForm;

@@ -68,7 +68,7 @@
     "title": "Sentrei",
     "type": "Type",
     "update": "Update",
-    "username": "Username",
+    "namespace": "Namespace",
     "visit": "Visit",
     "week": "Week",
     "workspace": "Workspace",

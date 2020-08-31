@@ -11,9 +11,9 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import {
-  createUsername,
-  validateUsername,
-} from "@sentrei/common/firebase/usernames";
+  createNamespace,
+  validateNamespace,
+} from "@sentrei/common/firebase/namespaces";
 
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
@@ -25,20 +25,20 @@ export interface Props {
   user: User.Get;
 }
 
-const ProfileUsernameForm = ({profile}: Props): JSX.Element => {
+const ProfileNamespaceForm = ({profile}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
 
-  const ProfileUsernameFormSchema = Yup.object().shape({
-    username: Yup.string()
-      .required(t("form:username.usernameRequired"))
+  const ProfileNamespaceFormSchema = Yup.object().shape({
+    namespace: Yup.string()
+      .required(t("form:namespace.namespaceRequired"))
       .matches(
         /^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/,
-        t("form:username.usernameInvalid"),
+        t("form:namespace.namespaceInvalid"),
       )
-      .test("id", t("form:username.usernameAlreadyUsed"), async value => {
-        const result = await validateUsername(value || "");
+      .test("id", t("form:namespace.namespaceAlreadyUsed"), async value => {
+        const result = await validateNamespace(value || "");
         return result;
       }),
   });
@@ -46,13 +46,13 @@ const ProfileUsernameForm = ({profile}: Props): JSX.Element => {
   const {control, register, errors, handleSubmit} = useForm({
     mode: "onSubmit",
     reValidateMode: "onBlur",
-    resolver: yupResolver(ProfileUsernameFormSchema),
+    resolver: yupResolver(ProfileNamespaceFormSchema),
   });
 
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.editing"));
     try {
-      await createUsername(data.username, profile.uid)?.then(() => {
+      await createNamespace(data.namespace, profile.uid)?.then(() => {
         snackbar("success");
         backdrop("loading");
         setTimeout(() => {
@@ -73,21 +73,21 @@ const ProfileUsernameForm = ({profile}: Props): JSX.Element => {
               <TextField
                 autoFocus
                 fullWidth
-                id="username"
-                label={t("common:common.username")}
+                id="namespace"
+                label={t("common:common.namespace")}
                 margin="normal"
-                name="username"
+                name="namespace"
                 required
                 variant="outlined"
-                error={!!errors.username}
+                error={!!errors.namespace}
                 inputRef={register}
-                helperText={errors.username ? errors.username.message : ""}
+                helperText={errors.namespace ? errors.namespace.message : ""}
                 type="text"
               />
             }
-            name="username"
+            name="namespace"
             control={control}
-            defaultValue={profile.username}
+            defaultValue={profile.namespace}
           />
         </Grid>
         <Grid item xs={12}>
@@ -111,4 +111,4 @@ const ProfileUsernameForm = ({profile}: Props): JSX.Element => {
   );
 };
 
-export default ProfileUsernameForm;
+export default ProfileNamespaceForm;

@@ -31,10 +31,10 @@
   "type": {
     "typeRequired": "タイプは必須です"
   },
-  "username": {
-    "usernameAlreadyUsed": "ユーザー名は既に使用されています",
-    "usernameInvalid": "ユーザー名が無効です",
-    "usernameNotExist": "ユーザー名が存在しません",
-    "usernameRequired": "ユーザー名は必須です"
+  "namespace": {
+    "namespaceAlreadyUsed": "ユーザー名は既に使用されています",
+    "namespaceInvalid": "ユーザー名が無効です",
+    "namespaceNotExist": "ユーザー名が存在しません",
+    "namespaceRequired": "ユーザー名は必須です"
   }
 }

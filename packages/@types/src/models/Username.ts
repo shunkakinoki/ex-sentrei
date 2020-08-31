@@ -1,3 +1,3 @@
-export default interface Username {
+export default interface Namespace {
   uid: string;
 }
