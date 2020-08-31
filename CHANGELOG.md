@@ -1,3 +1,9 @@
+# [1.21.0-beta.4](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.3...v1.21.0-beta.4) (2020-08-31)
+
+### Bug Fixes
+
+- 🐛 remove username model ([1261ee2](https://github.com/sentrei/sentrei/commit/1261ee289256135c919891a750328dd505cacb6a))
+
 # [1.21.0-beta.3](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.2...v1.21.0-beta.3) (2020-08-31)
 
 ### Features
