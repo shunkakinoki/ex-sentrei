@@ -1,3 +1,15 @@
+# [1.20.0](https://github.com/sentrei/sentrei/compare/v1.19.0...v1.20.0) (2020-08-31)
+
+### Features
+
+- 🎸 ini grid tab icon ([c4b3d58](https://github.com/sentrei/sentrei/commit/c4b3d581c9a61d2901a767da4aa218dd42edc8c6))
+- 🎸 ini space billing ([e836284](https://github.com/sentrei/sentrei/commit/e8362844c1e2618c6311fee01df4a1f1e297ec21))
+
+### Performance Improvements
+
+- ⚡️ i18n for common ([309663c](https://github.com/sentrei/sentrei/commit/309663c8828d31ced828056061838a4205dca043))
+- ⚡️ ini profile username for app bar ([fcb7834](https://github.com/sentrei/sentrei/commit/fcb783445d15e42ca143cf0a9b43311ef6e9fc15))
+
 # [1.19.0](https://github.com/sentrei/sentrei/compare/v1.18.0...v1.19.0) (2020-08-31)
 
 ### Features
