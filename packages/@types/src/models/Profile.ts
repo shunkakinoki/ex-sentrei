@@ -2,6 +2,7 @@ declare namespace Profile {
   export type Fields = {
     name: string;
     photo: string | null;
+    photoHash: string | null;
     username: string;
   };
 

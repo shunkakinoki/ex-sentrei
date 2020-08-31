@@ -50,17 +50,19 @@ const SpaceStepperOther = ({atom, form, profile, user}: Props): JSX.Element => {
     try {
       await createSpace(
         {
-          name: activeForm.name,
-          description: null,
-          photo: null,
-          createdAt: timestamp,
-          createdBy: profile,
-          createdByUid: user.uid,
           actions: {},
           analytics: {
             duration: 0,
             score: 0,
           },
+          createdAt: timestamp,
+          createdBy: profile,
+          createdByUid: user.uid,
+          description: null,
+          photo: null,
+          photoHash: null,
+          name: activeForm.name,
+          namespace: activeForm.id,
           stats: {},
           tier: "free",
           updatedAt: timestamp,

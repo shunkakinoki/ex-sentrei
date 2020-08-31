@@ -6,7 +6,8 @@
     }
   ],
   "files.exclude": {
-    "**/packages/ui/src/locales/**": true
+    "**/.venv": true,
+    "**/packages/*/dist": true
   },
   "i18n-ally.enabledFrameworks": ["i18next", "react"],
   "i18n-ally.enabledParsers": ["js", "json", "ts"],

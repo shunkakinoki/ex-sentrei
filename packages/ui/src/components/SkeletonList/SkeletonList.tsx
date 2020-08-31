@@ -15,8 +15,9 @@ export default function SkeletonList(): JSX.Element {
       <SkeletonPanel />
       <Container maxWidth="md" component="main">
         <Grid container alignItems="center" justify="center" spacing={3}>
-          {[...Array(7)].map(e => (
-            <Grid item key={e} xs={12}>
+          {[...Array(7)].map((e, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <Grid item key={i} xs={12}>
               <Skeleton
                 animation="wave"
                 variant="rect"

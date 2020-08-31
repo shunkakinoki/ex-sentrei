@@ -1,3 +1,30 @@
+# [1.20.0](https://github.com/sentrei/sentrei/compare/v1.19.0...v1.20.0) (2020-08-31)
+
+### Features
+
+- 🎸 ini grid tab icon ([c4b3d58](https://github.com/sentrei/sentrei/commit/c4b3d581c9a61d2901a767da4aa218dd42edc8c6))
+- 🎸 ini space billing ([e836284](https://github.com/sentrei/sentrei/commit/e8362844c1e2618c6311fee01df4a1f1e297ec21))
+
+### Performance Improvements
+
+- ⚡️ i18n for common ([309663c](https://github.com/sentrei/sentrei/commit/309663c8828d31ced828056061838a4205dca043))
+- ⚡️ ini profile username for app bar ([fcb7834](https://github.com/sentrei/sentrei/commit/fcb783445d15e42ca143cf0a9b43311ef6e9fc15))
+
+# [1.19.0](https://github.com/sentrei/sentrei/compare/v1.18.0...v1.19.0) (2020-08-31)
+
+### Features
+
+- 🎸 ini app tab icon component ([b8cd142](https://github.com/sentrei/sentrei/commit/b8cd142203ff4b90c453e4e01c5783e0f13d933a))
+- 🎸 ini app user tab component ([75d0a94](https://github.com/sentrei/sentrei/commit/75d0a94e70df297e459417f0b19f834502fcaf30))
+- 🎸 ini grid settings ([3a04f6a](https://github.com/sentrei/sentrei/commit/3a04f6a058d61984ac36ee7db3ad372ef2ee7ff5))
+- 🎸 ini grid settings component group ([9175e0b](https://github.com/sentrei/sentrei/commit/9175e0bb024da211b21658b4ded1e7a083d6827c))
+- 🎸 ini space invite ([d558ddc](https://github.com/sentrei/sentrei/commit/d558ddca4ccd7115c60d77cf4247778b34d948d5))
+- 🎸 refactor ui components ([06dfe28](https://github.com/sentrei/sentrei/commit/06dfe28debbdd90ed11f3c671e9229143d8bd7b6))
+
+### Performance Improvements
+
+- ⚡️ refactor react warning complaints ([2466644](https://github.com/sentrei/sentrei/commit/2466644dfb5dbe622236df16b93755231ee8e469))
+
 # [1.18.0](https://github.com/sentrei/sentrei/compare/v1.17.0...v1.18.0) (2020-08-30)
 
 ### Features

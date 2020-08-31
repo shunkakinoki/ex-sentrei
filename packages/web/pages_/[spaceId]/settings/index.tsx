@@ -6,14 +6,18 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
+import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const SpaceEdit = dynamic(() => import("@sentrei/ui/components/SpaceEdit"), {
-  ssr: false,
-});
+const SpaceSettings = dynamic(
+  () => import("@sentrei/ui/components/SpaceSettings"),
+  {
+    ssr: false,
+  },
+);
 
-const SettingsPage: NextPage = () => {
+const SpaceSettingsPage: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -26,7 +30,9 @@ const SettingsPage: NextPage = () => {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
-        <SkeletonForm />
+        <GridSettings skeleton tabSpaceKey="general" type="space">
+          <SkeletonForm />
+        </GridSettings>
       </>
     );
   }
@@ -48,7 +54,7 @@ const SettingsPage: NextPage = () => {
         />
       )}
       {user && (
-        <SpaceEdit
+        <SpaceSettings
           spaceId={String(query.spaceId)}
           profile={profile}
           user={user}
@@ -58,4 +64,4 @@ const SettingsPage: NextPage = () => {
   );
 };
 
-export default SettingsPage;
+export default SpaceSettingsPage;
