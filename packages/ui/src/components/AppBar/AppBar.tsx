@@ -100,8 +100,10 @@ export default function AppBar({
               href={spaceId ? "/[spaceId]" : "/dashboard"}
               as={spaceId ? `/${spaceId}` : "/dashboard"}
             >
-              {spaceId || userId ? (
-                <Typography display="inline">{spaceId || userId}</Typography>
+              {spaceId || (userId && profile) ? (
+                <Typography display="inline">
+                  {spaceId || profile?.username || userId}
+                </Typography>
               ) : (
                 <Skeleton width={90} />
               )}
