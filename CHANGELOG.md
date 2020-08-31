@@ -1,3 +1,10 @@
+# [1.21.0-beta.5](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.4...v1.21.0-beta.5) (2020-08-31)
+
+### Features
+
+- 🎸 refactor namespace submit ([720c227](https://github.com/sentrei/sentrei/commit/720c227178ba7e9de37dee8e9175dbc1f64a4439))
+- 🎸 refactor remainding space id to namespace id ([8aeb2fb](https://github.com/sentrei/sentrei/commit/8aeb2fb8e1e4d8a99aa88c234322bff50477b101))
+
 # [1.21.0-beta.4](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.3...v1.21.0-beta.4) (2020-08-31)
 
 ### Bug Fixes
