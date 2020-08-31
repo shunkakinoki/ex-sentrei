@@ -5197,7 +5197,7 @@
     regenerator-runtime "^0.13.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-viewport@*":
+"@storybook/addon-viewport@*", "@storybook/addon-viewport@^6.0.20":
   version "6.0.20"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.0.20.tgz#62e0bc08db11efd8547053c54998c7aace1a0f1c"
   integrity sha512-QyRSA9UFIZHra69xY3mf0xUsAix+SLASD3VTkPsIq8BM8VtdlHw/STqDD3m5OCTKrlsuDJ1CAMeimjp6jWriXw==
@@ -5213,23 +5213,6 @@
     memoizerific "^1.11.3"
     prop-types "^15.7.2"
     regenerator-runtime "^0.13.3"
-
-"@storybook/addon-viewport@^5.3.18":
-  version "5.3.21"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-5.3.21.tgz#bb9dc937b21300bf6b611cdeceaf7e2365aeb99d"
-  integrity sha512-Vb8+yvSU5m4sMCqM/6n3ZD8v6N/9xzElMlT7bYL+l9YecbvbgPVrN7xuNrVFKWMTHyEbkgoVPLtCwjK/Jbuvqw==
-  dependencies:
-    "@storybook/addons" "5.3.21"
-    "@storybook/api" "5.3.21"
-    "@storybook/client-logger" "5.3.21"
-    "@storybook/components" "5.3.21"
-    "@storybook/core-events" "5.3.21"
-    "@storybook/theming" "5.3.21"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    memoizerific "^1.11.3"
-    prop-types "^15.7.2"
-    util-deprecate "^1.0.2"
 
 "@storybook/addons@5.3.21", "@storybook/addons@^5.2.0", "@storybook/addons@^5.3.18":
   version "5.3.21"
@@ -28107,15 +28090,10 @@ regenerator-runtime@^0.12.0:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
   integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
 
-regenerator-runtime@^0.13.2, regenerator-runtime@^0.13.3:
+regenerator-runtime@^0.13.2, regenerator-runtime@^0.13.3, regenerator-runtime@^0.13.4:
   version "0.13.7"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
   integrity sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==
-
-regenerator-runtime@^0.13.4:
-  version "0.13.5"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
-  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
 
 regenerator-transform@^0.14.2:
   version "0.14.5"
