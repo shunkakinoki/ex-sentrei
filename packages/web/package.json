@@ -42,9 +42,9 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@next/bundle-analyzer": "^9.5.2",
-    "@sentrei/common": "^1.15.0-beta.1",
-    "@sentrei/types": "^1.15.0-beta.1",
-    "@sentrei/ui": "^1.15.0-beta.1",
+    "@sentrei/common": "^1.21.0-beta.1",
+    "@sentrei/types": "^1.21.0-beta.1",
+    "@sentrei/ui": "^1.21.0-beta.1",
     "@sentry/webpack-plugin": "^1.12.0",
     "@types/react": "^16.9.41",
     "@zeit/next-sass": "^1.0.1",

@@ -50,6 +50,7 @@
         "@typescript-eslint/restrict-template-expressions": 0,
         "react/display-name": 0,
         "react/jsx-props-no-spreading": 0,
+        "react/require-default-props": 0,
         "no-nested-ternary": 0,
         "spaced-comment": 1,
         "import/no-extraneous-dependencies": [
