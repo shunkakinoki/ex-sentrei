@@ -8,10 +8,10 @@ import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
-  spaceId: string;
+  namespaceId: string;
 }
 
-const SpaceDeleteForm = ({spaceId}: Props): JSX.Element => {
+const SpaceDeleteForm = ({namespaceId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -19,7 +19,7 @@ const SpaceDeleteForm = ({spaceId}: Props): JSX.Element => {
   const onSubmit = async (): Promise<void> => {
     snackbar("info", t("common:snackbar.deleting"));
     try {
-      await deleteSpace(spaceId)?.then(() => {
+      await deleteSpace(namespaceId)?.then(() => {
         snackbar("success");
         backdrop("loading");
       });
@@ -29,7 +29,7 @@ const SpaceDeleteForm = ({spaceId}: Props): JSX.Element => {
     }
   };
 
-  return <DeleteForm id={spaceId} onSubmit={onSubmit} />;
+  return <DeleteForm id={namespaceId} onSubmit={onSubmit} />;
 };
 
 export default SpaceDeleteForm;

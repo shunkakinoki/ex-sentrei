@@ -1,8 +1,6 @@
 import {serializeActivity} from "@sentrei/common/serializers/Activity";
-import {db, timestamp} from "@sentrei/common/utils/firebase";
+import {db} from "@sentrei/common/utils/firebase";
 import Activity from "@sentrei/types/models/Activity";
-import Metadata from "@sentrei/types/models/Metadata";
-import Profile from "@sentrei/types/models/Profile";
 import ActivityQuery from "@sentrei/types/services/ActivityQuery";
 
 const activityConverter: firebase.firestore.FirestoreDataConverter<Activity.Get> = {
@@ -54,29 +52,4 @@ export const getActivitiesSnapshot = async (
 ): Promise<Activity.Snapshot[]> => {
   const ref = await activitiesQuery(query).get();
   return ref.docs.map(snap => ({...snap.data(), snap}));
-};
-
-export const getActivity = async (id: string): Promise<Activity.Get | null> => {
-  const snap = await db
-    .doc(`activity/${id}`)
-    .withConverter(activityConverter)
-    .get();
-
-  return snap.data() || null;
-};
-
-export const deleteActivity = async (
-  activity: Activity.Get,
-  profile: Profile.Response,
-  uid: string,
-): Promise<void> => {
-  const update: Metadata.Update = {
-    updatedAt: timestamp,
-    updatedBy: profile,
-    updatedByUid: uid,
-  };
-
-  const ref = db.doc(activity.itemPath);
-  await ref.update(update);
-  return ref.delete();
 };

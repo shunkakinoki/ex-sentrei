@@ -10,7 +10,7 @@ Shun
 
 Kakinoki
 
-### Username (Visible on the Pioneer Tournament leaderboard)
+### Namespace (Visible on the Pioneer Tournament leaderboard)
 
 shunkakinoki
 

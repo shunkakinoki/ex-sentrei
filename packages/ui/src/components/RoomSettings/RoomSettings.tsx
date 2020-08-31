@@ -11,7 +11,7 @@ import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 export interface Props {
   profile: Profile.Get;
   roomId: string;
-  spaceId: string;
+  namespaceId: string;
   user: User.Get;
 }
 

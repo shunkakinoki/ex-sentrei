@@ -21,7 +21,7 @@ const Support: NextPage = () => {
   }
 
   if (user) {
-    Router.pushI18n(`/[spaceId/support`, `/${user.uid}/support`);
+    Router.pushI18n(`/[namespaceId/support`, `/${user.uid}/support`);
   }
 
   return (

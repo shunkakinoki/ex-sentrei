@@ -27,12 +27,12 @@ const StyledTabs = withStyles(() => ({
 ));
 
 export interface Props {
-  spaceId?: string;
+  namespaceId?: string;
   skeleton?: boolean;
   tabKey: SettingsSpaceTabKey;
 }
 export default function GridSettingsSpaceTab({
-  spaceId,
+  namespaceId,
   skeleton = false,
   tabKey,
 }: Props): JSX.Element {
@@ -52,29 +52,29 @@ export default function GridSettingsSpaceTab({
       value={value}
     >
       <GridTabIcon
-        href="/[spaceId]/settings"
-        as={`/${spaceId}/settings`}
+        href="/[namespaceId]/settings"
+        as={`/${namespaceId}/settings`}
         label={t("common:common.general")}
         selected={value === 0}
         skeleton={skeleton}
       />
       <GridTabIcon
-        href="/[spaceId]/settings/billing"
-        as={`/${spaceId}/settings/billing`}
+        href="/[namespaceId]/settings/billing"
+        as={`/${namespaceId}/settings/billing`}
         label={t("common:common.billing")}
         selected={value === 1}
         skeleton={skeleton}
       />
       <GridTabIcon
-        href="/[spaceId]/settings/invite"
-        as={`/${spaceId}/settings/invite`}
+        href="/[namespaceId]/settings/invite"
+        as={`/${namespaceId}/settings/invite`}
         label={t("common:common.invite")}
         selected={value === 2}
         skeleton={skeleton}
       />
       <GridTabIcon
-        href="/[spaceId]/settings/quit"
-        as={`/${spaceId}/settings/quit`}
+        href="/[namespaceId]/settings/quit"
+        as={`/${namespaceId}/settings/quit`}
         label={t("common:common.quit")}
         selected={value === 3}
         skeleton={skeleton}

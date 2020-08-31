@@ -17,14 +17,14 @@ export interface Props {
     | ((event: {}, reason: "backdropClick" | "escapeKeyDown") => void)
     | undefined;
   roomId: string;
-  spaceId: string;
+  namespaceId: string;
 }
 
 export default function RoomMenu({
   anchorEl,
   open,
   onClose,
-  spaceId,
+  namespaceId,
   roomId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
@@ -47,8 +47,8 @@ export default function RoomMenu({
       onClose={onClose}
     >
       <MuiMenuItem
-        href="/[spaceId]/room/[roomId]/edit"
-        as={`/${spaceId}/room/${roomId}/edit`}
+        href="/[namespaceId]/room/[roomId]/edit"
+        as={`/${namespaceId}/room/${roomId}/edit`}
       >
         <ListItemIcon>
           <EditAttributesIcon fontSize="small" />
@@ -56,8 +56,8 @@ export default function RoomMenu({
         <ListItemText primary={t("room:room.editRoom")} />
       </MuiMenuItem>
       <MuiMenuItem
-        href="/[spaceId]/room/[roomId]/quit"
-        as={`/${spaceId}/room/${roomId}/quit`}
+        href="/[namespaceId]/room/[roomId]/quit"
+        as={`/${namespaceId}/room/${roomId}/quit`}
       >
         <ListItemIcon>
           <ExitToAppIcon fontSize="small" />
@@ -65,8 +65,8 @@ export default function RoomMenu({
         <ListItemText primary={t("room:room.quitRoom")} />
       </MuiMenuItem>
       <MuiMenuItem
-        href="/[spaceId]/room/[roomId]/delete"
-        as={`/${spaceId}/room/${roomId}/delete`}
+        href="/[namespaceId]/room/[roomId]/delete"
+        as={`/${namespaceId}/room/${roomId}/delete`}
       >
         <ListItemIcon>
           <DeleteIcon fontSize="small" />
@@ -74,8 +74,8 @@ export default function RoomMenu({
         <ListItemText primary={t("room:room.deleteRoom")} />
       </MuiMenuItem>
       <MuiMenuItem
-        href="/[spaceId]/room/[roomId]/settings"
-        as={`/${spaceId}/room/${roomId}/settings`}
+        href="/[namespaceId]/room/[roomId]/settings"
+        as={`/${namespaceId}/room/${roomId}/settings`}
       >
         <ListItemIcon>
           <SettingsIcon fontSize="small" />

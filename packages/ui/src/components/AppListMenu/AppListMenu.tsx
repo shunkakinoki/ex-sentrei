@@ -62,7 +62,7 @@ export default function AppListMenu({
       </MenuItem>
       {spaces &&
         spaces.map(space => (
-          <MuiMenuItem key={space.id} href="/[spaceId]" as={`/${space.id}`}>
+          <MuiMenuItem key={space.id} href="/[namespaceId]" as={`/${space.id}`}>
             <ListItemIcon>
               {space.photo ? (
                 <Avatar src={space.photo} />

@@ -47,9 +47,9 @@ const Authentication = (): null => {
     setProfile({
       uid: user.uid,
       name: user.name,
+      namespaceId: user.namespaceId,
       photo: user.photo,
       photoHash: user.photoHash,
-      username: user.username,
     });
   }, [setProfile, user]);
 

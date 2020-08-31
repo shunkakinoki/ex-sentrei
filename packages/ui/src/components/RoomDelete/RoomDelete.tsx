@@ -11,10 +11,10 @@ import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
   roomId: string;
-  spaceId: string;
+  namespaceId: string;
 }
 
-export default function RoomDelete({roomId, spaceId}: Props): JSX.Element {
+export default function RoomDelete({roomId, namespaceId}: Props): JSX.Element {
   const {t} = useTranslation();
 
   const [room, setRoom] = React.useState<Room.Get | null | undefined>();
@@ -38,7 +38,7 @@ export default function RoomDelete({roomId, spaceId}: Props): JSX.Element {
         title={t("room:room.deleteRoom")}
         size="md"
       />
-      <RoomDeleteForm roomId={roomId} spaceId={spaceId} />
+      <RoomDeleteForm roomId={roomId} namespaceId={namespaceId} />
     </>
   );
 }

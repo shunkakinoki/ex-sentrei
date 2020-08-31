@@ -10,7 +10,7 @@ export default function SentreiAppHeader({
   notificationCount,
   profile,
   skeleton,
-  spaceId,
+  namespaceId,
   tabUserKey,
   tabSpaceKey,
   type,
@@ -22,7 +22,7 @@ export default function SentreiAppHeader({
       notificationCount={notificationCount}
       profile={profile}
       skeleton={skeleton}
-      spaceId={spaceId}
+      namespaceId={namespaceId}
       tabSpaceKey={tabSpaceKey}
       tabUserKey={tabUserKey}
       type={type}

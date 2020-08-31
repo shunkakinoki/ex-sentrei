@@ -16,7 +16,7 @@ interface Props extends MuiGridTabIconProps {
   // eslint-disable-next-line react/require-default-props
   skeleton?: boolean;
   // eslint-disable-next-line react/require-default-props
-  spaceId?: string;
+  namespaceId?: string;
 }
 
 export default function GridTabIcon({

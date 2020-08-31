@@ -60,7 +60,7 @@ export default function SpaceMemberList({members}: Props): JSX.Element {
                 <ProfileCard member={member} />
               </TableCell>
               <TableCell align="left">{member.name}</TableCell>
-              <TableCell align="center">{member.username}</TableCell>
+              <TableCell align="center">{member.namespaceId}</TableCell>
               <TableCell align="right">{member.score}</TableCell>
             </TableRow>
           ))}

@@ -9,9 +9,9 @@ declare namespace Space {
   export type EditableFields = {
     description: string | null;
     name: string;
+    namespaceId: string;
     photo: string | null;
     photoHash: string | null;
-    namespace: string;
   };
 
   interface Fields extends EditableFields {

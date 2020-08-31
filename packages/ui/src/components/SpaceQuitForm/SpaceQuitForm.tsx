@@ -2,7 +2,7 @@ import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import {quitSpace} from "@sentrei/common/firebase/spaces";
+import {deleteMember} from "@sentrei/common/firebase/members";
 import QuitForm from "@sentrei/ui/components/QuitForm";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -20,7 +20,7 @@ const SpaceQuitForm = ({spaceId, userId}: Props): JSX.Element => {
   const onSubmit = async (): Promise<void> => {
     snackbar("info", t("common:snackbar.quiting"));
     try {
-      await quitSpace(spaceId, userId)?.then(() => {
+      await deleteMember(spaceId, userId)?.then(() => {
         snackbar("success");
         backdrop("loading");
       });

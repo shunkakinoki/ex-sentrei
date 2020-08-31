@@ -31,6 +31,11 @@ export const InvitesQuery = ({
   return ref;
 };
 
+export const getInvites = async (query: InviteQuery): Promise<Invite.Get[]> => {
+  const ref = await InvitesQuery(query).get();
+  return ref.docs.map(doc => doc.data());
+};
+
 export const getInvite = async (
   spaceId: string,
   inviteId: string,
@@ -41,11 +46,6 @@ export const getInvite = async (
     .get();
 
   return snap.data() || null;
-};
-
-export const getInvites = async (query: InviteQuery): Promise<Invite.Get[]> => {
-  const ref = await InvitesQuery(query).get();
-  return ref.docs.map(doc => doc.data());
 };
 
 export const getInvitesLive = (

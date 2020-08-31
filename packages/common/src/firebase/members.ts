@@ -51,7 +51,7 @@ export const getMembersLive = (
     });
 };
 
-export const getSpaceMember = async (
+export const getMember = async (
   spaceId: string,
   userId: string,
 ): Promise<Member.Get | null> => {
@@ -63,7 +63,14 @@ export const getSpaceMember = async (
   return snap.data() || null;
 };
 
-export const validateSpaceMember = async (
+export const getMembersSnapshot = async (
+  query: MemberQuery,
+): Promise<Member.Snapshot[]> => {
+  const ref = await MembersQuery(query).get();
+  return ref.docs.map(snap => ({...snap.data(), snap}));
+};
+
+export const validateMember = async (
   spaceId: string,
   userId: string,
 ): Promise<boolean> => {
@@ -75,14 +82,7 @@ export const validateSpaceMember = async (
   }
 };
 
-export const getMembersSnapshot = async (
-  query: MemberQuery,
-): Promise<Member.Snapshot[]> => {
-  const ref = await MembersQuery(query).get();
-  return ref.docs.map(snap => ({...snap.data(), snap}));
-};
-
-export const inviteMember = (
+export const createMember = (
   spaceId: string,
   userId: string,
   member: Member.Create,

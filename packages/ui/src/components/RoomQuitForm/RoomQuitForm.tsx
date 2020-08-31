@@ -10,10 +10,10 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 interface Props {
   roomId: string;
   userId: string;
-  spaceId: string;
+  namespaceId: string;
 }
 
-const RoomQuitForm = ({roomId, userId, spaceId}: Props): JSX.Element => {
+const RoomQuitForm = ({roomId, userId, namespaceId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -24,7 +24,7 @@ const RoomQuitForm = ({roomId, userId, spaceId}: Props): JSX.Element => {
       await quitRoom(roomId, userId)?.then(() => {
         snackbar("success", t("common:snackbar.quitted"));
         backdrop("loading");
-        Router.pushI18n("/[spaceId]", `/${spaceId}`);
+        Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
       });
     } catch (err) {
       snackbar("error", err.message);

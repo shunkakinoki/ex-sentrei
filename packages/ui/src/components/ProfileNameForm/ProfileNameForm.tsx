@@ -37,12 +37,9 @@ const ProfileNameForm = ({profile}: Props): JSX.Element => {
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.editing"));
     try {
-      await updateProfile(
-        {
-          name: data.name,
-        },
-        profile.uid,
-      )?.then(() => {
+      await updateProfile(profile.uid, {
+        name: data.name,
+      })?.then(() => {
         snackbar("success");
       });
     } catch (err) {

@@ -11,12 +11,14 @@ import SpaceSettingsForm from "@sentrei/ui/components/SpaceSettingsForm";
 
 export interface Props {
   profile: Profile.Get;
+  namespaceId: string;
   spaceId: string;
   user: User.Get;
 }
 
 export default function SpaceSettings({
   profile,
+  namespaceId,
   spaceId,
   user,
 }: Props): JSX.Element {
@@ -39,7 +41,7 @@ export default function SpaceSettings({
   }
 
   return (
-    <GridSettings spaceId={spaceId} tabSpaceKey="general" type="space">
+    <GridSettings namespaceId={namespaceId} tabSpaceKey="general" type="space">
       <SpaceSettingsForm profile={profile} user={user} space={space} />
     </GridSettings>
   );

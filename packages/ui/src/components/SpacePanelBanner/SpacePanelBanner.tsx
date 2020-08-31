@@ -19,7 +19,7 @@ export interface Props {
   photo?: string | null;
   name: string;
   score: number;
-  spaceId: string;
+  namespaceId: string;
   tier: Space.Tiers;
 }
 
@@ -28,7 +28,7 @@ export default function SpacePanelBanner({
   photo,
   name,
   score,
-  spaceId,
+  namespaceId,
   tier,
 }: Props): JSX.Element {
   const classes = SpacePanelBannerStyles();
@@ -67,8 +67,8 @@ export default function SpacePanelBanner({
               <Grid item xs={1} />
               <Grid item xs={1}>
                 <MuiButtonBase
-                  href="/[spaceId]/settings/billing"
-                  as={`${spaceId}/settings/billing`}
+                  href="/[namespaceId]/settings/billing"
+                  as={`${namespaceId}/settings/billing`}
                 >
                   <Chip
                     clickable
@@ -87,7 +87,7 @@ export default function SpacePanelBanner({
                   <SpacePanelBannerSection
                     count={duration}
                     section="analytics"
-                    spaceId={spaceId}
+                    namespaceId={namespaceId}
                     title={t("common:common.duration")}
                   />
                 </Box>
@@ -100,7 +100,7 @@ export default function SpacePanelBanner({
                   <SpacePanelBannerSection
                     count={score}
                     section="leaderboard"
-                    spaceId={spaceId}
+                    namespaceId={namespaceId}
                     title={t("common:common.score")}
                   />
                 </Box>

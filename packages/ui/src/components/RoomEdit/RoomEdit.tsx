@@ -19,7 +19,7 @@ import TabBoard from "@sentrei/ui/components/TabBoard";
 export interface Props {
   profile: Profile.Get;
   roomId: string;
-  spaceId: string;
+  namespaceId: string;
   user: User.Get;
 }
 
