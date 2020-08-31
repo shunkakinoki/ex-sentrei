@@ -20,6 +20,12 @@
   "name": {
     "nameRequired": "名称为必填项"
   },
+  "namespace": {
+    "namespaceAlreadyUsed": "用户名已被使用",
+    "namespaceInvalid": "无效的用户名",
+    "namespaceNotExist": "用户名不存在",
+    "namespaceRequired": "用户名为必填项"
+  },
   "password": {
     "match": "密码必须匹配",
     "valid": "请输入有效密码"
@@ -30,11 +36,5 @@
   },
   "type": {
     "typeRequired": "类型为必填项"
-  },
-  "namespace": {
-    "namespaceAlreadyUsed": "用户名已被使用",
-    "namespaceInvalid": "无效的用户名",
-    "namespaceNotExist": "用户名不存在",
-    "namespaceRequired": "用户名为必填项"
   }
 }
