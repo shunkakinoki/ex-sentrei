@@ -3,7 +3,6 @@ import React from "react";
 import {
   AudioTrack as IAudioTrack,
   LocalTrackPublication,
-  Participant,
   RemoteTrackPublication,
   Track,
 } from "twilio-video";
@@ -16,7 +15,6 @@ import {IVideoTrack} from "@sentrei/video/types";
 
 interface PublicationProps {
   publication: LocalTrackPublication | RemoteTrackPublication;
-  participant: Participant;
   isLocal: boolean;
   disableAudio?: boolean;
   videoPriority?: Track.Priority | null;
