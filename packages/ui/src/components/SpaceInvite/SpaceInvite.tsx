@@ -14,6 +14,7 @@ import Profile from "@sentrei/types/models/Profile";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
+import GridSettings from "@sentrei/ui/components/GridSettings";
 import InviteEmailForm from "@sentrei/ui/components/InviteEmailForm";
 import InviteLinkForm from "@sentrei/ui/components/InviteLinkForm";
 import InviteList from "@sentrei/ui/components/InviteList";
@@ -27,7 +28,7 @@ export interface Props {
   user: User.Get;
 }
 
-export default function InviteScreen({
+export default function SpaceInvite({
   profile,
   user,
   spaceId,
@@ -53,7 +54,11 @@ export default function InviteScreen({
   }, [spaceId]);
 
   if (space === undefined) {
-    return <SkeletonForm />;
+    return (
+      <GridSettings skeleton tabSpaceKey="invite" type="space">
+        <SkeletonForm />
+      </GridSettings>
+    );
   }
 
   if (!space) {
@@ -61,7 +66,7 @@ export default function InviteScreen({
   }
 
   return (
-    <>
+    <GridSettings spaceId={spaceId} tabSpaceKey="invite" type="space">
       <FormSection icon={<SettingsIcon />} title={t("common:common.invite")} />
       <TabBoard
         size="sm"
@@ -89,6 +94,6 @@ export default function InviteScreen({
           <InviteUsernameForm profile={profile} user={user} spaceId={spaceId} />
         }
       />
-    </>
+    </GridSettings>
   );
 }

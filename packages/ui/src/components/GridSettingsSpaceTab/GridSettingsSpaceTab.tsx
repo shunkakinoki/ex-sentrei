@@ -30,7 +30,6 @@ export default function GridSettingsSpaceTab({
 
   return (
     <Tabs
-      centered
       orientation="vertical"
       aria-label="spaceSettingsButton"
       indicatorColor="primary"
