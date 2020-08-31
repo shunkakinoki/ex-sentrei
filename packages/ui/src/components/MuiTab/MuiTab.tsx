@@ -6,10 +6,10 @@ import Link from "next-translate/Link";
 import {LinkProps} from "next/link";
 import * as React from "react";
 
-export type TabLinkProps = Omit<TabProps, "href" | "classes"> &
+export type MuiTabProps = Omit<TabProps, "href" | "classes"> &
   Pick<LinkProps, "href" | "as" | "prefetch">;
 
-const MuiTab = React.forwardRef<TabLinkProps, any>(
+const MuiTab = React.forwardRef<MuiTabProps, any>(
   ({href, as, prefetch, ...props}, ref) => (
     <Link href={href} as={as} prefetch={prefetch} passHref>
       <Tab ref={ref} {...props} />
