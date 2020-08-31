@@ -10,7 +10,7 @@ export interface Props {
   namespaceId: string;
 }
 
-export default function SpaceNone({namespaceId}: Props): JSX.Element {
+export default function RoomNone({namespaceId}: Props): JSX.Element {
   const {t} = useTranslation();
 
   return (

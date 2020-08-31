@@ -76,7 +76,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
           <Grid item xs={2}>
             <Box pl={2}>
               <CopyToClipboard
-                text={`${window.location.origin}/${space.id}`}
+                text={`${window.location.origin}/${space.namespaceId}`}
                 onCopy={(): void =>
                   snackbar("success", t("common:snackbar.clipboard"))
                 }

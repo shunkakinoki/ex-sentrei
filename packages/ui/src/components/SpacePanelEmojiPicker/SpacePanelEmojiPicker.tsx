@@ -9,21 +9,21 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 export interface Props {
   emoji: string;
   profile: Profile.Get;
-  namespaceId: string;
+  spaceId: string;
   userId: string;
 }
 
 export default function SpacePanelEmojiPicker({
   emoji,
   profile,
-  namespaceId,
+  spaceId,
   userId,
 }: Props): JSX.Element {
   const {snackbar} = useSnackbar();
 
   const handleEmoji = async (emojiString: string): Promise<void> => {
     try {
-      await updateMember(namespaceId, userId, {
+      await updateMember(spaceId, userId, {
         emoji: emojiString,
         updatedAt: timestamp,
         updatedBy: profile,

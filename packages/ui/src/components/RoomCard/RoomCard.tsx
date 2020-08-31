@@ -58,7 +58,7 @@ export default function RoomCard({
       <CardActionArea className={classes.placeholder}>
         <Link
           href="/[namespaceId]/room/[roomId]"
-          as={`/${space.id}/room/${room.id}`}
+          as={`/${space.namespaceId}/room/${room.id}`}
         >
           {room.photo ? (
             <CardMedia className={classes.media} image={room.photo} />
@@ -122,7 +122,7 @@ export default function RoomCard({
           open={Boolean(roomAnchorEl)}
           onClose={handleClose}
           roomId={room.id}
-          namespaceId={space.id}
+          namespaceId={space.namespaceId}
         />
         <Box p={1} />
         <div className={classes.container}>
@@ -131,7 +131,7 @@ export default function RoomCard({
             <Grid item xs={3}>
               <MuiButton
                 href="/[namespaceId]/room/[roomId]"
-                as={`/${space.id}/room/${room.id}`}
+                as={`/${space.namespaceId}/room/${room.id}`}
                 fullWidth
                 variant="contained"
                 color="primary"

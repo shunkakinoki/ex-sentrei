@@ -34,7 +34,7 @@ export default function SpaceHomeBoard({
       <SpaceSection title={t("space:rooms.title")} />
       <Container maxWidth="lg" component="main">
         <Grid container alignItems="center" justify="center">
-          {rooms?.length === 0 && <RoomNone namespaceId={space.id} />}
+          {rooms?.length === 0 && <RoomNone namespaceId={space.namespaceId} />}
           {rooms &&
             rooms.map(room => (
               <Grid item key={room.id} xs={12} sm={6} md={4}>
