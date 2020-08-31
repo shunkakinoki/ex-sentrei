@@ -1,35 +1,32 @@
 import {withStyles, Theme, createStyles} from "@material-ui/core/styles";
 import Tab, {TabProps} from "@material-ui/core/Tab";
-import React from "react";
+import * as React from "react";
 
 import MuiTab from "@sentrei/ui/components/MuiTab";
 
-import AppTabIconStyles from "./AppTabIconStyles";
-
-interface MuiAppTabIconProps {
+interface MuiGridTabIconProps {
   href: string;
   // eslint-disable-next-line react/require-default-props
   as?: string;
 }
 
-interface Props extends MuiAppTabIconProps {
+interface Props extends MuiGridTabIconProps {
   label: string;
-  labelIcon: JSX.Element;
   selected: boolean;
-  skeleton: boolean;
+  // eslint-disable-next-line react/require-default-props
+  skeleton?: boolean;
+  // eslint-disable-next-line react/require-default-props
+  spaceId?: string;
 }
 
-export default function AppTabIcon({
+export default function GridTabIcon({
   as,
   href,
   label,
-  labelIcon,
   selected = false,
   skeleton = false,
 }: Props): JSX.Element {
-  const classes = AppTabIconStyles();
-
-  const SkeletonAppTabIcon = withStyles((theme: Theme) =>
+  const SkeletonGridTabIcon = withStyles((theme: Theme) =>
     createStyles({
       root: {
         textTransform: "none",
@@ -40,18 +37,9 @@ export default function AppTabIcon({
         color: theme.palette.primary.main,
       },
     }),
-  )((props: TabProps) => (
-    <Tab
-      {...props}
-      label={
-        <div>
-          <span className={classes.labelIcon}>{labelIcon}</span> {label}
-        </div>
-      }
-    />
-  ));
+  )((props: TabProps) => <Tab {...props} label={label} selected={selected} />);
 
-  const MuiAppTabIcon = withStyles((theme: Theme) =>
+  const MuiGridTabIcon = withStyles((theme: Theme) =>
     createStyles({
       root: {
         textTransform: "none",
@@ -72,21 +60,13 @@ export default function AppTabIcon({
         color: theme.palette.primary.main,
       },
     }),
-  )((props: MuiAppTabIconProps) => (
-    <MuiTab
-      {...props}
-      selected={selected}
-      label={
-        <div>
-          <span className={classes.labelIcon}>{labelIcon}</span> {label}
-        </div>
-      }
-    />
+  )((props: MuiGridTabIconProps) => (
+    <MuiTab {...props} selected={selected} label={label} />
   ));
 
   if (skeleton) {
-    return <SkeletonAppTabIcon />;
+    return <SkeletonGridTabIcon />;
   }
 
-  return <MuiAppTabIcon href={href} as={as} />;
+  return <MuiGridTabIcon href={href} as={as} />;
 }
