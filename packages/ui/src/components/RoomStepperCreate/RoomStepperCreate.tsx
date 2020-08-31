@@ -7,7 +7,7 @@ import RoomCreateForm from "@sentrei/types/atom/RoomCreateForm";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import RoomStepperName from "@sentrei/ui/components/RoomStepperName";
-import RoomStepperOther from "@sentrei/ui/components/RoomStepperOther";
+import RoomStepperSubmit from "@sentrei/ui/components/RoomStepperSubmit";
 import RoomStepperType from "@sentrei/ui/components/RoomStepperType";
 import StepperBoard from "@sentrei/ui/components/StepperBoard";
 
@@ -47,7 +47,7 @@ export default function RoomCreate({
         <RoomStepperType atom={stepperState} form={roomCreateForm} />
       }
       stepperPanelThree={
-        <RoomStepperOther
+        <RoomStepperSubmit
           atom={stepperState}
           form={roomCreateForm}
           profile={profile}

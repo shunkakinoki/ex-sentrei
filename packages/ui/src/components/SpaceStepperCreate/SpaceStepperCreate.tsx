@@ -8,7 +8,7 @@ import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import SpaceStepperId from "@sentrei/ui/components/SpaceStepperId";
 import SpaceStepperName from "@sentrei/ui/components/SpaceStepperName";
-import SpaceStepperOther from "@sentrei/ui/components/SpaceStepperOther";
+import SpaceStepperSubmit from "@sentrei/ui/components/SpaceStepperSubmit";
 import StepperBoard from "@sentrei/ui/components/StepperBoard";
 
 export interface Props {
@@ -42,7 +42,7 @@ export default function SpaceCreate({profile, user}: Props): JSX.Element {
         <SpaceStepperName atom={stepperState} form={spaceCreateForm} />
       }
       stepperPanelThree={
-        <SpaceStepperOther
+        <SpaceStepperSubmit
           atom={stepperState}
           form={spaceCreateForm}
           profile={profile}

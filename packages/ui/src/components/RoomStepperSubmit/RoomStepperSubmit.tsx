@@ -7,10 +7,9 @@ import * as React from "react";
 import {useForm} from "react-hook-form";
 import {useRecoilState, RecoilState} from "recoil";
 
-import {validateSpaceMember} from "@sentrei/common/firebase/members";
-import {createSpace} from "@sentrei/common/firebase/spaces";
+import {createRoom} from "@sentrei/common/firebase/rooms";
 import {timestamp} from "@sentrei/common/utils/firebase";
-import SpaceCreateForm from "@sentrei/types/atom/SpaceCreateForm";
+import RoomCreateForm from "@sentrei/types/atom/RoomCreateForm";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import StepperButton from "@sentrei/ui/components/StepperButton";
@@ -19,36 +18,36 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   atom: RecoilState<number>;
-  form: RecoilState<SpaceCreateForm>;
+  form: RecoilState<RoomCreateForm>;
   profile: Profile.Get;
   user: User.Get;
+  namespaceId: string;
 }
 
-const SpaceStepperOther = ({atom, form, profile, user}: Props): JSX.Element => {
+const RoomStepperSubmit = ({
+  atom,
+  form,
+  profile,
+  user,
+  namespaceId,
+}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
 
   const [, setActiveStep] = useRecoilState<number>(atom);
-  const [activeForm, setActiveForm] = useRecoilState<SpaceCreateForm>(form);
+  const [activeForm, setActiveForm] = useRecoilState<RoomCreateForm>(form);
 
   const {handleSubmit} = useForm({
     mode: "onSubmit",
     reValidateMode: "onBlur",
   });
 
-  async function goToSpace(namespaceId: string): Promise<void> {
-    if (await validateSpaceMember(namespaceId, user.uid)) {
-      Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
-    }
-    Router.pushI18n("/dashboard");
-  }
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.creating"));
     try {
-      await createSpace({
+      await createRoom({
         actions: {},
         analytics: {
           duration: 0,
@@ -58,23 +57,24 @@ const SpaceStepperOther = ({atom, form, profile, user}: Props): JSX.Element => {
         createdBy: profile,
         createdByUid: user.uid,
         description: null,
+        emoji: ":sushi:",
         photo: null,
         photoHash: null,
         name: activeForm.name,
-        namespace: activeForm.id,
         stats: {},
-        tier: "free",
+        spaceId: namespaceId,
+        type: activeForm.type,
         updatedAt: timestamp,
         updatedBy: profile,
         updatedByUid: user.uid,
       })?.then(() => {
         snackbar("success");
         backdrop("loading");
-        setActiveForm({id: "", name: ""});
+        setActiveForm({name: "", type: "focus"});
         setActiveStep(0);
         setTimeout(() => {
-          goToSpace(activeForm.id);
-        }, 9000);
+          Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
+        }, 1500);
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -89,4 +89,4 @@ const SpaceStepperOther = ({atom, form, profile, user}: Props): JSX.Element => {
   );
 };
 
-export default SpaceStepperOther;
+export default RoomStepperSubmit;
