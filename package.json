@@ -75,7 +75,7 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "git-cz": "^4.7.0",
+    "git-cz": "^4.7.1",
     "husky": "^4.2.5",
     "json-sort-cli": "^1.15.26",
     "nodemon": "^2.0.4",
