@@ -13,14 +13,14 @@ import SpacePanelStatusStyles from "./SpacePanelStatusStyles";
 export interface Props {
   profile: Profile.Get;
   member: Member.Get;
-  namespaceId: string;
+  spaceId: string;
   user: User.Get;
 }
 
 export default function SpacePanelStatus({
   member,
   profile,
-  namespaceId,
+  spaceId,
   user,
 }: Props): JSX.Element {
   const classes = SpacePanelStatusStyles();
@@ -30,14 +30,14 @@ export default function SpacePanelStatus({
       <SpacePanelEmojiPicker
         profile={profile}
         emoji={member.emoji}
-        namespaceId={namespaceId}
+        spaceId={spaceId}
         userId={user.uid}
       />
       <Divider className={classes.divider} orientation="vertical" />
       <SpacePanelDescriptionForm
         profile={profile}
         member={member}
-        namespaceId={namespaceId}
+        spaceId={spaceId}
         userId={user.uid}
       />
     </Paper>

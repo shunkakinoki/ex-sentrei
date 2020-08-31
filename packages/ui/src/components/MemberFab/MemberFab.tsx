@@ -75,7 +75,7 @@ export default function MemberFab({space, members}: Props): JSX.Element {
             <Grid container direction="row">
               <MuiLink
                 href="/[namespaceId]/members"
-                as={`/${space.id}/members`}
+                as={`/${space.namespaceId}/members`}
               >
                 <Typography
                   align="center"
@@ -91,7 +91,10 @@ export default function MemberFab({space, members}: Props): JSX.Element {
                 <SupervisorAccountIcon color="primary" />
               </Badge>
               <Box p={1} />
-              <Link href="/[namespaceId]/invite" as={`/${space.id}/invite`}>
+              <Link
+                href="/[namespaceId]/invite"
+                as={`/${space.namespaceId}/invite`}
+              >
                 <Button color="primary" variant="outlined">
                   {t("common:common.invite")}
                 </Button>

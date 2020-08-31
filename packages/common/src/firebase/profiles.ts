@@ -1,8 +1,5 @@
-/* eslint-disable import/prefer-default-export */
-
 import {serializeProfile} from "@sentrei/common/serializers/Profile";
 import {db} from "@sentrei/common/utils/firebase";
-import Namespace from "@sentrei/types/models/Namespace";
 import Profile from "@sentrei/types/models/Profile";
 
 export const profileConverter: firebase.firestore.FirestoreDataConverter<Profile.Get> = {

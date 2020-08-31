@@ -22,14 +22,14 @@ import SpacePanelDescriptionFormStyles from "./SpacePanelDescriptionFormStyles";
 export interface Props {
   profile: Profile.Get;
   member: Member.Get;
-  namespaceId: string;
+  spaceId: string;
   userId: string;
 }
 
 export default function SpacePanelDescriptionForm({
   member,
   profile,
-  namespaceId,
+  spaceId,
   userId,
 }: Props): JSX.Element {
   const classes = SpacePanelDescriptionFormStyles();
@@ -67,7 +67,7 @@ export default function SpacePanelDescriptionForm({
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.updating"));
     try {
-      await updateMember(namespaceId, userId, {
+      await updateMember(spaceId, userId, {
         description: data.description,
         updatedAt: timestamp,
         updatedBy: profile,
@@ -84,7 +84,7 @@ export default function SpacePanelDescriptionForm({
   const handleClear = async (): Promise<void> => {
     snackbar("info", t("common:snackbar.clearing"));
     try {
-      await updateMember(namespaceId, userId, {
+      await updateMember(spaceId, userId, {
         description: "",
         updatedAt: timestamp,
         updatedBy: profile,

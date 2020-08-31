@@ -41,10 +41,6 @@ const SpaceStepperSubmit = ({
     reValidateMode: "onBlur",
   });
 
-  function goToSpace(): void {
-    Router.pushI18n("/dashboard");
-  }
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.creating"));
@@ -73,9 +69,7 @@ const SpaceStepperSubmit = ({
         backdrop("loading");
         setActiveForm({id: "", name: ""});
         setActiveStep(0);
-        setTimeout(() => {
-          goToSpace();
-        }, 9000);
+        Router.pushI18n("/dashboard");
       });
     } catch (err) {
       snackbar("error", err.message);
