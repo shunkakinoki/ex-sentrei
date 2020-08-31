@@ -14,7 +14,7 @@ export const leaderboardAdminConverter: FirebaseFirestore.FirestoreDataConverter
   },
 };
 
-export const leaderboardAdminQuery = ({
+export const leaderboardQuery = ({
   spaceId,
   last,
   limit = 30,
@@ -32,9 +32,9 @@ export const leaderboardAdminQuery = ({
   return ref;
 };
 
-export const getAdminLeaderboard = async (
+export const getLeaderboard = async (
   query: MembersQuery,
 ): Promise<Member.Get[]> => {
-  const ref = await leaderboardAdminQuery(query).get();
+  const ref = await leaderboardQuery(query).get();
   return ref.docs.map(doc => doc.data());
 };

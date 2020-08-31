@@ -18,12 +18,10 @@ const activityConverter: firebase.firestore.FirestoreDataConverter<Activity.Get>
 const activitiesQuery = ({
   limit = 30,
   last,
-  namespaceId,
+  spaceId,
   itemPath,
 }: ActivityQuery): firebase.firestore.Query<Activity.Get> => {
-  const collection = namespaceId
-    ? `spaces/${namespaceId}/activity`
-    : "activity";
+  const collection = spaceId ? `spaces/${spaceId}/activity` : "activity";
 
   let ref = db
     .collection(collection)

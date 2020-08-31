@@ -13,13 +13,6 @@ const namespaceConverter: FirebaseFirestore.FirestoreDataConverter<Namespace> = 
   },
 };
 
-export const validateNamespace = async (
-  namespaceId: string,
-): Promise<boolean> => {
-  const namespace = await adminDb.doc(`namespaces/${namespaceId}`).get();
-  return !namespace.exists;
-};
-
 export const getNamespace = async (
   namespaceId: string,
 ): Promise<Namespace | null> => {
@@ -29,4 +22,11 @@ export const getNamespace = async (
     .get();
 
   return snap.data() || null;
+};
+
+export const validateNamespace = async (
+  namespaceId: string,
+): Promise<boolean> => {
+  const namespace = await adminDb.doc(`namespaces/${namespaceId}`).get();
+  return !namespace.exists;
 };

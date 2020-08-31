@@ -1,7 +1,5 @@
-import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {serializeSpace} from "@sentrei/common/serializers/Space";
 import {db} from "@sentrei/common/utils/firebase";
-import Namespace from "@sentrei/types/models/Namespace";
 import Space from "@sentrei/types/models/Space";
 import SpaceQuery from "@sentrei/types/services/SpaceQuery";
 
@@ -14,68 +12,6 @@ export const spaceConverter: firebase.firestore.FirestoreDataConverter<Space.Get
   ): Space.Get {
     return serializeSpace(snapshot);
   },
-};
-
-export const getNamespaceSpace = async (
-  namespaceId: string,
-): Promise<Namespace | null> => {
-  const namespace = await getNamespace(namespaceId);
-
-  if (!namespace || namespace.type === "space") {
-    return null;
-  }
-
-  return namespace;
-};
-
-export const createSpace = async (space: Space.Create): Promise<void> => {
-  await db.collection("spaces").add(space);
-};
-
-export const updateSpace = (
-  space: Space.Update,
-  spaceId: string,
-): Promise<void> => {
-  return db.doc(`spaces/${spaceId}`).update(space);
-};
-
-export const deleteSpace = (spaceId: string): Promise<void> => {
-  return db.doc(`spaces/${spaceId}`).delete();
-};
-
-export const quitSpace = (spaceId: string, userId: string): Promise<void> => {
-  return db.doc(`spaces/${spaceId}/members/${userId}`).delete();
-};
-
-export const getSpace = async (
-  namespaceId: string,
-): Promise<Space.Get | null> => {
-  const namespace = await getNamespaceSpace(namespaceId);
-
-  if (!namespace) {
-    return null;
-  }
-
-  const snap = await db
-    .doc(`spaces/${namespace.uid}`)
-    .withConverter(spaceConverter)
-    .get();
-
-  return snap.data() || null;
-};
-
-export const getSpaceLive = async (
-  namespaceId: string,
-  onSnapshot: (snap: Space.Get | null) => void,
-): Promise<firebase.Unsubscribe> => {
-  const namespace = await getNamespaceSpace(namespaceId);
-
-  return db
-    .doc(`spaces/${namespace?.uid}`)
-    .withConverter(spaceConverter)
-    .onSnapshot(snap => {
-      onSnapshot(snap.data() || null);
-    });
 };
 
 export const spacesQuery = ({
@@ -107,4 +43,43 @@ export const getSpacesSnapshot = async (
 ): Promise<Space.Snapshot[]> => {
   const ref = await spacesQuery(query).get();
   return ref.docs.map(snap => ({...snap.data(), snap}));
+};
+
+export const getSpace = async (spaceId: string): Promise<Space.Get | null> => {
+  const snap = await db
+    .doc(`spaces/${spaceId}`)
+    .withConverter(spaceConverter)
+    .get();
+
+  return snap.data() || null;
+};
+
+export const getSpaceLive = (
+  spaceId: string,
+  onSnapshot: (snap: Space.Get | null) => void,
+): firebase.Unsubscribe => {
+  return db
+    .doc(`spaces/${spaceId}`)
+    .withConverter(spaceConverter)
+    .onSnapshot(snap => {
+      onSnapshot(snap.data() || null);
+    });
+};
+
+export const createSpace = async (
+  spaceId: string,
+  space: Space.Create,
+): Promise<void> => {
+  await db.doc(`spaces/${spaceId}`).set(space);
+};
+
+export const updateSpace = (
+  space: Space.Update,
+  spaceId: string,
+): Promise<void> => {
+  return db.doc(`spaces/${spaceId}`).update(space);
+};
+
+export const deleteSpace = (spaceId: string): Promise<void> => {
+  return db.doc(`spaces/${spaceId}`).delete();
 };

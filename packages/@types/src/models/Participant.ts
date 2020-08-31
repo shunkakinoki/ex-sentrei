@@ -5,6 +5,7 @@ import Profile from "@sentrei/types/models/Profile";
 
 declare namespace Particpant {
   interface Fields {
+    roomId: string;
     spaceId: string;
   }
 

@@ -1,6 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 
-import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {serializeProfile} from "@sentrei/common/serializers/Profile";
 import {db} from "@sentrei/common/utils/firebase";
 import Namespace from "@sentrei/types/models/Namespace";
@@ -17,29 +16,11 @@ export const profileConverter: firebase.firestore.FirestoreDataConverter<Profile
   },
 };
 
-export const getNamespaceProfile = async (
-  namespaceId: string,
-): Promise<Namespace | null> => {
-  const namespace = await getNamespace(namespaceId);
-
-  if (!namespace || namespace.type === "user") {
-    return null;
-  }
-
-  return namespace;
-};
-
 export const getProfile = async (
-  namespaceId: string,
+  profileId: string,
 ): Promise<Profile.Get | null> => {
-  const namespace = await getNamespaceProfile(namespaceId);
-
-  if (!namespace) {
-    return null;
-  }
-
   const snap = await db
-    .doc(`profiles/${namespace.uid}`)
+    .doc(`profiles/${profileId}`)
     .withConverter(profileConverter)
     .get();
 
@@ -47,8 +28,8 @@ export const getProfile = async (
 };
 
 export const updateProfile = (
+  profileId: string,
   profile: Profile.Update,
-  uid: string,
 ): Promise<void> => {
-  return db.doc(`profiles/${uid}`).update(profile);
+  return db.doc(`profiles/${profileId}`).update(profile);
 };

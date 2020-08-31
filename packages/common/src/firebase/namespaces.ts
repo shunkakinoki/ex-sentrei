@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 import {serializeNamespace} from "@sentrei/common/serializers/Namespace";
 import {db} from "@sentrei/common/utils/firebase";
 import Namespace from "@sentrei/types/models/Namespace";
