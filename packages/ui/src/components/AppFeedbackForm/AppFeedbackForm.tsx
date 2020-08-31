@@ -12,16 +12,21 @@ import {Emoji} from "emoji-mart";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
+import {atom, useRecoilState, RecoilState} from "recoil";
 import * as Yup from "yup";
 
 import {createFeedback} from "@sentrei/common/firebase/feedback";
-
 import {timestamp} from "@sentrei/common/utils/firebase";
 import Feedback from "@sentrei/types/models/Feedback";
 import Profile from "@sentrei/types/models/Profile";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 import AppFeedbackFormStyles from "./AppFeedbackFormStyles";
+
+const feedbackForm: RecoilState<Feedback.Fields> = atom({
+  key: "feedbackForm",
+  default: {description: "", emoji: null} as Feedback.Fields,
+});
 
 export interface Props {
   handleClick: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
@@ -33,10 +38,12 @@ const AppFeedbackForm = ({handleClick, profile}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
-  const [emojiValue, setEmojiValue] = React.useState<Feedback.Emoji>(null);
+  const [activeForm, setActiveForm] = useRecoilState<Feedback.Fields>(
+    feedbackForm,
+  );
 
   const handleSelect = (value: Feedback.Emoji): void => {
-    setEmojiValue(value);
+    setActiveForm({emoji: value});
   };
 
   const AppFeedbackFormSchema = Yup.object().shape({
@@ -57,12 +64,13 @@ const AppFeedbackForm = ({handleClick, profile}: Props): JSX.Element => {
         createdBy: profile,
         createdByUid: profile.uid,
         description: data.description,
-        emoji: emojiValue,
+        emoji: activeForm.emoji,
         updatedAt: timestamp,
         updatedBy: profile,
         updatedByUid: profile.uid,
       })?.then(() => {
         handleClick(null);
+        setActiveForm({description: "", emoji: null});
         snackbar("success");
       });
     } catch (err) {
@@ -96,7 +104,7 @@ const AppFeedbackForm = ({handleClick, profile}: Props): JSX.Element => {
             }
             name="description"
             control={control}
-            defaultValue=""
+            defaultValue={activeForm.description}
           />
         </Grid>
         <Grid
@@ -109,7 +117,7 @@ const AppFeedbackForm = ({handleClick, profile}: Props): JSX.Element => {
             <IconButton size="small" onClick={(): void => handleSelect(1)}>
               <Avatar
                 className={clsx(classes.large, {
-                  [classes.selected]: emojiValue === 1,
+                  [classes.selected]: activeForm.emoji === 1,
                 })}
               >
                 <Emoji emoji=":hugging_face:" set="twitter" size={30} />
@@ -120,7 +128,7 @@ const AppFeedbackForm = ({handleClick, profile}: Props): JSX.Element => {
             <IconButton size="small" onClick={(): void => handleSelect(2)}>
               <Avatar
                 className={clsx(classes.large, {
-                  [classes.selected]: emojiValue === 2,
+                  [classes.selected]: activeForm.emoji === 2,
                 })}
               >
                 <Emoji emoji=":thinking_face:" set="twitter" size={30} />
@@ -131,7 +139,7 @@ const AppFeedbackForm = ({handleClick, profile}: Props): JSX.Element => {
             <IconButton size="small" onClick={(): void => handleSelect(3)}>
               <Avatar
                 className={clsx(classes.large, {
-                  [classes.selected]: emojiValue === 3,
+                  [classes.selected]: activeForm.emoji === 3,
                 })}
               >
                 <Emoji emoji=":frowning:" set="twitter" size={30} />
