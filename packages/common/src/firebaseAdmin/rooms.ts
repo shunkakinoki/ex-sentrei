@@ -33,12 +33,12 @@ export const roomsQuery = ({
   return ref;
 };
 
-export const getRooms = async (query: RoomQuery): Promise<Room.Get[]> => {
+export const getAdminRooms = async (query: RoomQuery): Promise<Room.Get[]> => {
   const ref = await roomsQuery(query).get();
   return ref.docs.map(doc => doc.data());
 };
 
-export const getRoom = async (
+export const getAdminRoom = async (
   roomId: string | undefined,
 ): Promise<Room.Get | null> => {
   if (!roomId) {

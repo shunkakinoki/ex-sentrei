@@ -13,7 +13,9 @@ export const spaceAdminConverter: FirebaseFirestore.FirestoreDataConverter<Space
   },
 };
 
-export const getSpace = async (spaceId: string): Promise<Space.Get | null> => {
+export const getAdminSpace = async (
+  spaceId: string,
+): Promise<Space.Get | null> => {
   const snap = await adminDb
     .doc(`spaces/${spaceId}`)
     .withConverter(spaceAdminConverter)

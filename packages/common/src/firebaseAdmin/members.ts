@@ -32,7 +32,7 @@ export const membersQuery = ({
   return ref;
 };
 
-export const getMembers = async (
+export const getAdminMembers = async (
   query: MembersQuery,
 ): Promise<Member.Get[]> => {
   const ref = await membersQuery(query).get();

@@ -32,7 +32,7 @@ export const leaderboardQuery = ({
   return ref;
 };
 
-export const getLeaderboard = async (
+export const getAdminLeaderboard = async (
   query: MembersQuery,
 ): Promise<Member.Get[]> => {
   const ref = await leaderboardQuery(query).get();

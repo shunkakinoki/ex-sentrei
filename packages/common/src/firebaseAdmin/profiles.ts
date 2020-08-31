@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 import {serializeAdminProfile} from "@sentrei/common/serializers/Profile";
 import {adminDb} from "@sentrei/common/utils/firebaseAdmin";
 import Profile from "@sentrei/types/models/Profile";
@@ -15,7 +13,7 @@ export const profileConverter: FirebaseFirestore.FirestoreDataConverter<Profile.
   },
 };
 
-export const getProfile = async (
+export const getAdminProfile = async (
   profileId: string,
 ): Promise<Profile.Get | null> => {
   const snap = await adminDb
