@@ -6,29 +6,32 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
+import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const InviteScreen = dynamic(
+const SpaceInvite = dynamic(
   () => {
-    return import("@sentrei/ui/components/InviteScreen");
+    return import("@sentrei/ui/components/SpaceInvite");
   },
   {ssr: false},
 );
 
-const SettingsInvitePage: NextPage = () => {
+const SpaceInvitePage: NextPage = () => {
   const {query} = useRouter();
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("spaceEdit");
+    analytics().setCurrentScreen("spaceInvite");
   }, []);
 
   if (user === undefined || !profile) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
-        <SkeletonForm />
+        <GridSettings skeleton tabSpaceKey="invite" type="space">
+          <SkeletonForm />
+        </GridSettings>
       </>
     );
   }
@@ -50,7 +53,7 @@ const SettingsInvitePage: NextPage = () => {
         />
       )}
       {user && (
-        <InviteScreen
+        <SpaceInvite
           profile={profile}
           user={user}
           spaceId={String(query.spaceId)}
@@ -60,4 +63,4 @@ const SettingsInvitePage: NextPage = () => {
   );
 };
 
-export default SettingsInvitePage;
+export default SpaceInvitePage;

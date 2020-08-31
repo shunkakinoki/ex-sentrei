@@ -1,9 +1,14 @@
 import * as React from "react";
 
-import {AppTabType, AppSpaceTabKey} from "@sentrei/types/models/AppTab";
+import {
+  AppTabType,
+  AppSpaceTabKey,
+  AppUserTabKey,
+} from "@sentrei/types/models/AppTab";
 import Profile from "@sentrei/types/models/Profile";
 import AppBar from "@sentrei/ui/components/AppBar";
 import AppSpaceTab from "@sentrei/ui/components/AppSpaceTab";
+import AppUserTab from "@sentrei/ui/components/AppUserTab";
 
 export interface Props {
   logo: JSX.Element;
@@ -11,6 +16,7 @@ export interface Props {
   notificationCount?: number;
   skeleton?: boolean;
   spaceId?: string;
+  tabUserKey?: AppUserTabKey;
   tabSpaceKey?: AppSpaceTabKey;
   type?: AppTabType;
   userId?: string;
@@ -22,6 +28,7 @@ export default function AppHeader({
   notificationCount,
   skeleton = false,
   spaceId,
+  tabUserKey,
   tabSpaceKey,
   type,
   userId,
@@ -36,10 +43,16 @@ export default function AppHeader({
         notificationCount={notificationCount}
       />
       {type === "space" && skeleton && tabSpaceKey && (
-        <AppSpaceTab skeleton={skeleton} tabKey={tabSpaceKey} />
+        <AppSpaceTab skeleton tabKey={tabSpaceKey} />
       )}
       {type === "space" && !skeleton && spaceId && tabSpaceKey && (
-        <AppSpaceTab spaceId={spaceId} tabKey={tabSpaceKey} />
+        <AppSpaceTab skeleton={false} spaceId={spaceId} tabKey={tabSpaceKey} />
+      )}
+      {type === "user" && skeleton && tabUserKey && (
+        <AppUserTab skeleton tabKey={tabUserKey} />
+      )}
+      {type === "user" && !skeleton && tabUserKey && (
+        <AppUserTab skeleton={false} tabKey={tabUserKey} />
       )}
     </>
   );

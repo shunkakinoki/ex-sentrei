@@ -7,7 +7,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import Section from "@sentrei/ui/components/Section";
+import LandingSection from "@sentrei/ui/components/LandingSection";
 
 import LandingFaqStyles from "./LandingFaqStyles";
 
@@ -17,7 +17,7 @@ export default function LandingFaq(): JSX.Element {
 
   return (
     <>
-      <Section title={t("index:faq.sectionTitle")} subTitle="" />
+      <LandingSection title={t("index:faq.sectionTitle")} subTitle="" />
       <Container maxWidth="md" component="main">
         <Accordion>
           <AccordionSummary

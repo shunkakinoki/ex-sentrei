@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const SectionStyles = makeStyles((theme: Theme) =>
+const LandingSectionStyles = makeStyles((theme: Theme) =>
   createStyles({
     section: {
       padding: theme.spacing(0, 3, 0),
@@ -8,4 +8,4 @@ const SectionStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default SectionStyles;
+export default LandingSectionStyles;

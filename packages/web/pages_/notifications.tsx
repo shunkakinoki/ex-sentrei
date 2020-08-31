@@ -5,8 +5,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Loader from "@sentrei/ui/components/Loader";
-import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
+import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const NotificationScreen = dynamic(
@@ -24,7 +23,12 @@ const Notifications: NextPage = () => {
   }, []);
 
   if (user === undefined || !profile) {
-    return <Loader />;
+    return (
+      <>
+        <SentreiAppHeader skeleton tabUserKey="notifications" type="user" />
+        <SkeletonForm />
+      </>
+    );
   }
 
   if (!user) {
@@ -38,9 +42,11 @@ const Notifications: NextPage = () => {
           notificationCount={Number(user.notificationCount)}
           profile={profile}
           userId={user.uid}
+          tabUserKey="notifications"
+          type="user"
         />
       )}
-      {user ? <NotificationScreen user={user} /> : <SkeletonScreen />}
+      {user && <NotificationScreen user={user} />}
     </>
   );
 };

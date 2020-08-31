@@ -1,6 +1,4 @@
 import Container from "@material-ui/core/Container";
-import {withStyles, Theme, createStyles} from "@material-ui/core/styles";
-import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 import HistoryIcon from "@material-ui/icons/History";
@@ -13,8 +11,7 @@ import useTranslation from "next-translate/useTranslation";
 import React from "react";
 
 import {AppSpaceTabKey} from "@sentrei/types/models/AppTab";
-
-import MuiTab from "@sentrei/ui/components/MuiTab";
+import AppTabIcon from "@sentrei/ui/components/AppTabIcon";
 
 import AppSpaceTabStyles from "./AppSpaceTabStyles";
 
@@ -37,20 +34,6 @@ const TabMap = {
   settings: 6,
 };
 
-interface SkeletonAppTabIconProps {
-  label: string;
-  labelIcon: JSX.Element;
-}
-
-interface MuiAppTabIconProps extends SkeletonAppTabIconProps {
-  href: string;
-  as: string;
-}
-
-interface AppTabIconProps extends MuiAppTabIconProps {
-  skeleton: boolean;
-}
-
 export default function AppSpaceTab({
   skeleton = false,
   spaceId,
@@ -58,160 +41,74 @@ export default function AppSpaceTab({
 }: Props): JSX.Element {
   const classes = AppSpaceTabStyles();
   const {t} = useTranslation();
-
-  const SkeletonAppTabIcon = withStyles((theme: Theme) =>
-    createStyles({
-      root: {
-        textTransform: "none",
-        minWidth: 72,
-        marginRight: theme.spacing(1),
-      },
-      selected: {},
-    }),
-  )((props: SkeletonAppTabIconProps) => (
-    <Tab
-      {...props}
-      label={
-        <div>
-          <span className={classes.labelIcon}>{props.labelIcon}</span>{" "}
-          {props.label}
-        </div>
-      }
-    />
-  ));
-
-  const MuiAppTabIcon = withStyles((theme: Theme) =>
-    createStyles({
-      root: {
-        textTransform: "none",
-        minWidth: 72,
-        marginRight: theme.spacing(1),
-        "&:hover": {
-          color: theme.palette.primary.main,
-          opacity: 1,
-        },
-        "&$selected": {
-          color: theme.palette.primary.main,
-        },
-        "&:focus": {
-          color: theme.palette.primary.main,
-        },
-      },
-      selected: {},
-    }),
-  )((props: MuiAppTabIconProps) => (
-    <MuiTab
-      {...props}
-      label={
-        <div>
-          <span className={classes.labelIcon}>{props.labelIcon}</span>{" "}
-          {props.label}
-        </div>
-      }
-    />
-  ));
+  const value = TabMap[tabKey];
 
   return (
     <div className={classes.root}>
       <Container maxWidth="md">
         <Tabs
-          value={TabMap[tabKey]}
+          value={value}
           aria-label="appTab"
           indicatorColor="primary"
           variant="scrollable"
           scrollButtons="auto"
         >
-          {skeleton ? (
-            <SkeletonAppTabIcon
-              label={t("common:common.home")}
-              labelIcon={<HomeIcon />}
-            />
-          ) : (
-            <MuiAppTabIcon
-              href="/[spaceId]"
-              as={`/${spaceId}`}
-              label={t("common:common.home")}
-              labelIcon={<HomeIcon />}
-            />
-          )}
-          {skeleton ? (
-            <SkeletonAppTabIcon
-              label={t("common:common.rooms")}
-              labelIcon={<MeetingRoomIcon />}
-            />
-          ) : (
-            <MuiAppTabIcon
-              href="/[spaceId]/rooms"
-              as={`/${spaceId}/rooms`}
-              label={t("common:common.rooms")}
-              labelIcon={<MeetingRoomIcon />}
-            />
-          )}
-          {skeleton ? (
-            <SkeletonAppTabIcon
-              label={t("common:common.activity")}
-              labelIcon={<HistoryIcon />}
-            />
-          ) : (
-            <MuiAppTabIcon
-              href="/[spaceId]/activity"
-              as={`/${spaceId}/activity`}
-              label={t("common:common.activity")}
-              labelIcon={<HistoryIcon />}
-            />
-          )}
-          {skeleton ? (
-            <SkeletonAppTabIcon
-              label={t("common:common.analytics")}
-              labelIcon={<PollIcon />}
-            />
-          ) : (
-            <MuiAppTabIcon
-              href="/[spaceId]/analytics"
-              as={`/${spaceId}/analytics`}
-              label={t("common:common.analytics")}
-              labelIcon={<PollIcon />}
-            />
-          )}
-          {skeleton ? (
-            <SkeletonAppTabIcon
-              label={t("common:common.leaderboard")}
-              labelIcon={<FormatListNumberedIcon />}
-            />
-          ) : (
-            <MuiAppTabIcon
-              href="/[spaceId]/leaderboard"
-              as={`/${spaceId}/leaderboard`}
-              label={t("common:common.leaderboard")}
-              labelIcon={<FormatListNumberedIcon />}
-            />
-          )}
-          {skeleton ? (
-            <SkeletonAppTabIcon
-              label={t("common:common.members")}
-              labelIcon={<PeopleIcon />}
-            />
-          ) : (
-            <MuiAppTabIcon
-              href="/[spaceId]/members"
-              as={`/${spaceId}/members`}
-              label={t("common:common.members")}
-              labelIcon={<PeopleIcon />}
-            />
-          )}
-          {skeleton ? (
-            <SkeletonAppTabIcon
-              label={t("common:common.settings")}
-              labelIcon={<SettingsIcon />}
-            />
-          ) : (
-            <MuiAppTabIcon
-              href="/[spaceId]/settings"
-              as={`/${spaceId}/settings`}
-              label={t("common:common.settings")}
-              labelIcon={<SettingsIcon />}
-            />
-          )}
+          <AppTabIcon
+            href="/[spaceId]"
+            as={`/${spaceId}`}
+            label={t("common:common.home")}
+            labelIcon={<HomeIcon />}
+            selected={value === 0}
+            skeleton={skeleton}
+          />
+          <AppTabIcon
+            href="/[spaceId]/rooms"
+            as={`/${spaceId}/rooms`}
+            label={t("common:common.rooms")}
+            labelIcon={<MeetingRoomIcon />}
+            selected={value === 1}
+            skeleton={skeleton}
+          />
+          <AppTabIcon
+            href="/[spaceId]/activity"
+            as={`/${spaceId}/activity`}
+            label={t("common:common.activity")}
+            labelIcon={<HistoryIcon />}
+            selected={value === 2}
+            skeleton={skeleton}
+          />
+          <AppTabIcon
+            href="/[spaceId]/analytics"
+            as={`/${spaceId}/analytics`}
+            label={t("common:common.analytics")}
+            labelIcon={<PollIcon />}
+            selected={value === 3}
+            skeleton={skeleton}
+          />
+          <AppTabIcon
+            href="/[spaceId]/leaderboard"
+            as={`/${spaceId}/leaderboard`}
+            label={t("common:common.leaderboard")}
+            labelIcon={<FormatListNumberedIcon />}
+            selected={value === 4}
+            skeleton={skeleton}
+          />
+          <AppTabIcon
+            href="/[spaceId]/members"
+            as={`/${spaceId}/members`}
+            label={t("common:common.members")}
+            labelIcon={<PeopleIcon />}
+            selected={value === 5}
+            skeleton={skeleton}
+          />
+          <AppTabIcon
+            href="/[spaceId]/settings"
+            as={`/${spaceId}/settings`}
+            label={t("common:common.settings")}
+            labelIcon={<SettingsIcon />}
+            selected={value === 6}
+            skeleton={skeleton}
+          />
         </Tabs>
       </Container>
     </div>

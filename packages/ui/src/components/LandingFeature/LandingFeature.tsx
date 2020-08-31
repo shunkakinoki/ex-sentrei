@@ -4,7 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import FeatureCard from "@sentrei/ui/components/LandingFeatureCard";
-import Section from "@sentrei/ui/components/Section";
+import LandingSection from "@sentrei/ui/components/LandingSection";
 
 import LandingFeatureStyles from "./LandingFeatureStyles";
 
@@ -24,7 +24,7 @@ export default function LandingFeature({
 
   return (
     <>
-      <Section title={t("index:feature.sectionTitle")} subTitle="" />
+      <LandingSection title={t("index:feature.sectionTitle")} subTitle="" />
       <Container maxWidth="md" component="main">
         <Grid
           container

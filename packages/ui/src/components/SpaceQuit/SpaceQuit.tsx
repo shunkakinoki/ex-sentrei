@@ -1,12 +1,10 @@
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import useTranslation from "next-translate/useTranslation";
 import Error from "next/error";
 import * as React from "react";
 
 import {getSpace} from "@sentrei/common/firebase/spaces";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
-import FormSection from "@sentrei/ui/components/FormSection";
+import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SpaceQuitForm from "@sentrei/ui/components/SpaceQuitForm";
 
@@ -16,8 +14,6 @@ export interface Props {
 }
 
 export default function SpaceQuit({spaceId, user}: Props): JSX.Element {
-  const {t} = useTranslation();
-
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
 
   React.useEffect(() => {
@@ -25,7 +21,11 @@ export default function SpaceQuit({spaceId, user}: Props): JSX.Element {
   }, [spaceId]);
 
   if (space === undefined) {
-    return <SkeletonForm />;
+    return (
+      <GridSettings skeleton tabSpaceKey="quit" type="space">
+        <SkeletonForm />
+      </GridSettings>
+    );
   }
 
   if (space === null) {
@@ -33,13 +33,8 @@ export default function SpaceQuit({spaceId, user}: Props): JSX.Element {
   }
 
   return (
-    <>
-      <FormSection
-        icon={<ExitToAppIcon />}
-        title={t("space:space.quitSpace")}
-        size="md"
-      />
+    <GridSettings spaceId={spaceId} tabSpaceKey="quit" type="space">
       <SpaceQuitForm spaceId={spaceId} userId={user.uid} />
-    </>
+    </GridSettings>
   );
 }
