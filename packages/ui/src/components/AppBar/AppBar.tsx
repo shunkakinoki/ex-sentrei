@@ -102,7 +102,7 @@ export default function AppBar({
             >
               {namespaceId || (userId && profile) ? (
                 <Typography display="inline">
-                  {namespaceId || profile?.namespace || userId}
+                  {namespaceId || profile?.namespaceId || userId}
                 </Typography>
               ) : (
                 <Skeleton width={90} />

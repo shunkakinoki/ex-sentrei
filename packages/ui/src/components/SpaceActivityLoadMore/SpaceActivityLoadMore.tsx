@@ -10,7 +10,7 @@ export interface Props {
   lastItem: string | firebase.firestore.DocumentSnapshot;
   length: number;
   limit: number;
-  namespaceId: string;
+  spaceId: string;
   onLoadMore: (posts: Activity.Get[]) => void;
 }
 
@@ -18,7 +18,7 @@ export default function SpaceActivityLoadMore({
   lastItem,
   length,
   limit,
-  namespaceId,
+  spaceId,
   onLoadMore,
 }: Props): JSX.Element {
   return (
@@ -31,7 +31,7 @@ export default function SpaceActivityLoadMore({
           onLoadMore={onLoadMore}
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           request={(last: any): Promise<Activity.Snapshot[]> =>
-            getActivitiesSnapshot({last, limit, namespaceId})
+            getActivitiesSnapshot({last, limit, spaceId})
           }
         />
       </Box>

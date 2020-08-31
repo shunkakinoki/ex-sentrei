@@ -7,7 +7,6 @@ import * as React from "react";
 import {useForm} from "react-hook-form";
 import {useRecoilState, RecoilState} from "recoil";
 
-import {validateSpaceMember} from "@sentrei/common/firebase/members";
 import {createSpace} from "@sentrei/common/firebase/spaces";
 import {timestamp} from "@sentrei/common/utils/firebase";
 import SpaceCreateForm from "@sentrei/types/atom/SpaceCreateForm";
@@ -42,10 +41,7 @@ const SpaceStepperSubmit = ({
     reValidateMode: "onBlur",
   });
 
-  async function goToSpace(namespaceId: string): Promise<void> {
-    if (await validateSpaceMember(namespaceId, user.uid)) {
-      Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
-    }
+  function goToSpace(): void {
     Router.pushI18n("/dashboard");
   }
 
@@ -66,7 +62,7 @@ const SpaceStepperSubmit = ({
         photo: null,
         photoHash: null,
         name: activeForm.name,
-        namespace: activeForm.id,
+        namespaceId: activeForm.id,
         stats: {},
         tier: "free",
         updatedAt: timestamp,
@@ -78,7 +74,7 @@ const SpaceStepperSubmit = ({
         setActiveForm({id: "", name: ""});
         setActiveStep(0);
         setTimeout(() => {
-          goToSpace(activeForm.id);
+          goToSpace();
         }, 9000);
       });
     } catch (err) {

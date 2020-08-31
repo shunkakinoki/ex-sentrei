@@ -27,7 +27,7 @@ function ProfileCard({member}: Props): JSX.Element {
 
   return (
     <Box
-      key={member.namespace}
+      key={member.id}
       aria-owns={open ? "mouse-over-popover" : undefined}
       aria-haspopup="true"
       onMouseEnter={handlePopoverOpen}

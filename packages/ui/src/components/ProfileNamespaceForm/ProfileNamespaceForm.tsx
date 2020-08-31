@@ -87,7 +87,7 @@ const ProfileNamespaceForm = ({profile}: Props): JSX.Element => {
             }
             name="namespace"
             control={control}
-            defaultValue={profile.namespace}
+            defaultValue={profile.namespaceId}
           />
         </Grid>
         <Grid item xs={12}>

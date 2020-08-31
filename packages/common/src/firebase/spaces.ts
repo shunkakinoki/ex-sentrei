@@ -66,11 +66,8 @@ export const getSpaceLive = (
     });
 };
 
-export const createSpace = async (
-  spaceId: string,
-  space: Space.Create,
-): Promise<void> => {
-  await db.doc(`spaces/${spaceId}`).set(space);
+export const createSpace = async (space: Space.Create): Promise<void> => {
+  await db.collection("spaces").add(space);
 };
 
 export const updateSpace = (

@@ -2,17 +2,17 @@ import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import {quitSpace} from "@sentrei/common/firebase/spaces";
+import {deleteMember} from "@sentrei/common/firebase/members";
 import QuitForm from "@sentrei/ui/components/QuitForm";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
-  namespaceId: string;
+  spaceId: string;
   userId: string;
 }
 
-const SpaceQuitForm = ({namespaceId, userId}: Props): JSX.Element => {
+const SpaceQuitForm = ({spaceId, userId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -20,7 +20,7 @@ const SpaceQuitForm = ({namespaceId, userId}: Props): JSX.Element => {
   const onSubmit = async (): Promise<void> => {
     snackbar("info", t("common:snackbar.quiting"));
     try {
-      await quitSpace(namespaceId, userId)?.then(() => {
+      await deleteMember(spaceId, userId)?.then(() => {
         snackbar("success");
         backdrop("loading");
       });
@@ -30,7 +30,7 @@ const SpaceQuitForm = ({namespaceId, userId}: Props): JSX.Element => {
     }
   };
 
-  return <QuitForm id={namespaceId} onSubmit={onSubmit} />;
+  return <QuitForm id={spaceId} onSubmit={onSubmit} />;
 };
 
 export default SpaceQuitForm;

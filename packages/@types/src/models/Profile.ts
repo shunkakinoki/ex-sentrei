@@ -1,9 +1,9 @@
 declare namespace Profile {
   export type Fields = {
     name: string;
+    namespaceId: string;
     photo: string | null;
     photoHash: string | null;
-    namespace: string;
   };
 
   export type Response = Fields;

@@ -10,7 +10,7 @@ import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
-import {inviteMember} from "@sentrei/common/firebase/members";
+import {createMember} from "@sentrei/common/firebase/members";
 import {validateNamespace} from "@sentrei/common/firebase/namespaces";
 import {getProfile} from "@sentrei/common/firebase/profiles";
 import {timestamp} from "@sentrei/common/utils/firebase";
@@ -22,19 +22,15 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   profile: Profile.Get;
-  namespaceId: string;
+  spaceId: string;
   user: User.Get;
 }
 
-const InviteNamespaceForm = ({
-  profile,
-  user,
-  namespaceId,
-}: Props): JSX.Element => {
+const InviteUserForm = ({profile, user, spaceId}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
-  const InviteNamespaceFormSchema = Yup.object().shape({
+  const InviteUserFormSchema = Yup.object().shape({
     namespace: Yup.string()
       .required(t("form:namespace.namespaceRequired"))
       // .matches(
@@ -50,7 +46,7 @@ const InviteNamespaceForm = ({
   const {control, register, errors, handleSubmit} = useForm({
     mode: "onSubmit",
     reValidateMode: "onBlur",
-    resolver: yupResolver(InviteNamespaceFormSchema),
+    resolver: yupResolver(InviteUserFormSchema),
   });
 
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
@@ -68,6 +64,7 @@ const InviteNamespaceForm = ({
           duration: 0,
           emoji: "joy",
           name: memberProfile.name,
+          namespaceId: memberProfile.namespaceId,
           photo: memberProfile.photo,
           photoHash: memberProfile.photoHash,
           score: 0,
@@ -77,9 +74,8 @@ const InviteNamespaceForm = ({
           updatedBy: profile,
           updatedByUid: user.uid,
           uid: memberProfile.uid,
-          namespace: memberProfile.namespace,
         };
-        await inviteMember(namespaceId, memberProfile.uid, member)
+        await createMember(spaceId, memberProfile.uid, member)
           ?.then(() => {
             snackbar("success");
           })
@@ -139,4 +135,4 @@ const InviteNamespaceForm = ({
   );
 };
 
-export default InviteNamespaceForm;
+export default InviteUserForm;

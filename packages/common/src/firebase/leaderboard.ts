@@ -39,3 +39,18 @@ export const getLeaderboard = async (
   const ref = await LeaderboardQuery(query).get();
   return ref.docs.map(doc => doc.data());
 };
+
+export const getLeaderboardLive = (
+  spaceId: string,
+  onSnapshot: (snap: Member.Get[]) => void,
+): firebase.Unsubscribe => {
+  return db
+    .collection(`spaces/${spaceId}/members`)
+    .orderBy("score", "desc")
+    .orderBy("updatedAt", "desc")
+    .withConverter(memberConverter)
+    .onSnapshot(snap => {
+      const data = snap.docs.map(member => member.data());
+      onSnapshot(data);
+    });
+};

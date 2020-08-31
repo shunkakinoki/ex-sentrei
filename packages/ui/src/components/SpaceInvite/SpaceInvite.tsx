@@ -18,13 +18,14 @@ import GridSettings from "@sentrei/ui/components/GridSettings";
 import InviteEmailForm from "@sentrei/ui/components/InviteEmailForm";
 import InviteLinkForm from "@sentrei/ui/components/InviteLinkForm";
 import InviteList from "@sentrei/ui/components/InviteList";
-import InviteNamespaceForm from "@sentrei/ui/components/InviteNamespaceForm";
+import InviteUserForm from "@sentrei/ui/components/InviteUserForm";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
   profile: Profile.Get;
   namespaceId: string;
+  spaceId: string;
   user: User.Get;
 }
 
@@ -32,6 +33,7 @@ export default function SpaceInvite({
   profile,
   user,
   namespaceId,
+  spaceId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
@@ -41,17 +43,17 @@ export default function SpaceInvite({
   >();
 
   React.useEffect(() => {
-    getSpace(namespaceId).then(setSpace);
-  }, [namespaceId]);
+    getSpace(spaceId).then(setSpace);
+  }, [spaceId]);
 
   React.useEffect(() => {
-    const unsubscribe = getInvitesLive(namespaceId, snap => {
+    const unsubscribe = getInvitesLive(spaceId, snap => {
       setInvites(snap);
     });
     return (): void => {
       unsubscribe();
     };
-  }, [namespaceId]);
+  }, [spaceId]);
 
   if (space === undefined) {
     return (
@@ -78,32 +80,20 @@ export default function SpaceInvite({
         tabLabelThree={t("common:common.namespace")}
         tabPanelOne={
           <>
-            <InviteEmailForm
-              profile={profile}
-              user={user}
-              namespaceId={namespaceId}
-            />
+            <InviteEmailForm profile={profile} user={user} spaceId={spaceId} />
             <Box p={1} />
             {invites && <InviteList invites={invites} type="email" />}
           </>
         }
         tabPanelTwo={
           <>
-            <InviteLinkForm
-              profile={profile}
-              user={user}
-              namespaceId={namespaceId}
-            />
+            <InviteLinkForm profile={profile} user={user} spaceId={spaceId} />
             <Box p={1} />
             {invites && <InviteList invites={invites} type="link" />}
           </>
         }
         tabPanelThree={
-          <InviteNamespaceForm
-            profile={profile}
-            user={user}
-            namespaceId={namespaceId}
-          />
+          <InviteUserForm profile={profile} user={user} spaceId={spaceId} />
         }
       />
     </GridSettings>

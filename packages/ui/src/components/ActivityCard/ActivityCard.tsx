@@ -64,7 +64,7 @@ export default function ActivityCard({activity}: Props): JSX.Element {
             <Typography noWrap>
               {t("common:common.id")}
               {": "}
-              {activity.user.namespace}
+              {activity.user.namespaceId}
             </Typography>
           </Grid>
           <Grid item xs={1} sm={2} md={4}>

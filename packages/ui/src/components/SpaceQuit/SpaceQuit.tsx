@@ -34,7 +34,7 @@ export default function SpaceQuit({namespaceId, user}: Props): JSX.Element {
 
   return (
     <GridSettings namespaceId={namespaceId} tabSpaceKey="quit" type="space">
-      <SpaceQuitForm namespaceId={namespaceId} userId={user.uid} />
+      <SpaceQuitForm spaceId={space.id} userId={user.uid} />
     </GridSettings>
   );
 }

@@ -97,7 +97,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
                   ? members
                       .slice(0, 3)
                       .map(member => (
-                        <ProfileCard key={member.namespace} member={member} />
+                        <ProfileCard key={member.namespaceId} member={member} />
                       ))
                   : [...Array(space.stats.members || 0)].map(e => (
                       <Skeleton key={e} variant="circle">
