@@ -1,4 +1,4 @@
-FROM node:14.8.0-alpine as builder
+FROM node:14.9.0-alpine as builder
 
 ENV NODE_ENV=production
 
@@ -18,7 +18,7 @@ WORKDIR /app/packages/web
 RUN yarn run build && \
     yarn cache clean
 
-FROM node:14.8.0-alpine
+FROM node:14.9.0-alpine
 
 WORKDIR /app/packages/web
 COPY --from=builder /app /app
