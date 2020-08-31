@@ -1,3 +1,9 @@
+# [1.21.0-beta.2](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.1...v1.21.0-beta.2) (2020-08-31)
+
+### Performance Improvements
+
+- ⚡️ ini sentrei upgrade ([e90b535](https://github.com/sentrei/sentrei/commit/e90b53509f2874ca24fce114d363dac95ac587f2))
+
 # [1.21.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.20.0...v1.21.0-beta.1) (2020-08-31)
 
 ### Features
