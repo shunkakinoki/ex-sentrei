@@ -10,6 +10,8 @@ declare namespace Space {
     description: string | null;
     name: string;
     photo: string | null;
+    photoHash: string | null;
+    namespace: string;
   };
 
   interface Fields extends EditableFields {
