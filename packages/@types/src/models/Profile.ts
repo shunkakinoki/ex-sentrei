@@ -1,10 +1,13 @@
 declare namespace Profile {
-  export type Fields = {
+  export type EditableFields = {
     name: string;
-    namespaceId: string;
     photo: string | null;
     photoHash: string | null;
   };
+
+  interface Fields extends EditableFields {
+    namespaceId: string;
+  }
 
   export type Response = Fields;
 
