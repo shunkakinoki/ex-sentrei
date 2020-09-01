@@ -1,3 +1,14 @@
+# [1.21.0-beta.6](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.5...v1.21.0-beta.6) (2020-09-01)
+
+### Features
+
+- 🎸 ini stripe price product subscription models ([49481eb](https://github.com/sentrei/sentrei/commit/49481ebf853d1e778350e256420080489621c9d4))
+- 🎸 refactor field namespaceId ([38c64e3](https://github.com/sentrei/sentrei/commit/38c64e3914ee3a0cc504355d1a51f38128d430f1))
+
+### Performance Improvements
+
+- ⚡️ refactor frontier week ([383856c](https://github.com/sentrei/sentrei/commit/383856c2475a698dd582ed0cf16e22ca9d799c1b))
+
 # [1.21.0-beta.5](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.4...v1.21.0-beta.5) (2020-08-31)
 
 ### Features
