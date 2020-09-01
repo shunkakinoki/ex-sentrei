@@ -1,3 +1,9 @@
+## [1.20.1](https://github.com/sentrei/sentrei/compare/v1.20.0...v1.20.1) (2020-09-01)
+
+### Performance Improvements
+
+- ⚡️ upgrade friends credits ([a289d19](https://github.com/sentrei/sentrei/commit/a289d193a4f438e9f9666bddad50e0a7a128091b))
+
 # [1.20.0](https://github.com/sentrei/sentrei/compare/v1.19.0...v1.20.0) (2020-08-31)
 
 ### Features
