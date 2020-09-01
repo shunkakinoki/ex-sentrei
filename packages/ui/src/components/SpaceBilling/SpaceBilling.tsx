@@ -32,9 +32,9 @@ export default function SpaceSettings({
   React.useEffect(() => {
     if (user)
       // TODO: Validate if members is admin
-      accessCustomerPortal(spaceId, window.location.origin)
-        .then((url): void => {
-          handlePortalLink(url);
+      accessCustomerPortal(spaceId, window.location.href)
+        .then((data): void => {
+          handlePortalLink(data.url);
         })
         .catch(err => {
           // eslint-disable-next-line no-console
