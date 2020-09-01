@@ -59,6 +59,7 @@ const SpaceStepperSubmit = ({
         photoHash: null,
         name: activeForm.name,
         namespaceId: activeForm.id,
+        stripeId: "",
         stats: {},
         tier: "free",
         updatedAt: timestamp,
