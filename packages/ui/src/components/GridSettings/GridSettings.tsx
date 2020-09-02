@@ -9,7 +9,7 @@ import {
 import GridSettingsSpaceButton from "@sentrei/ui/components/GridSettingsSpaceButton";
 
 export interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   skeleton?: boolean;
   namespaceId?: string;
   tabSpaceKey?: SettingsSpaceTabKey;

@@ -7,8 +7,6 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {analytics} from "@sentrei/common/utils/firebase";
-import GridSettings from "@sentrei/ui/components/GridSettings";
-import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const SpaceQuit = dynamic(() => import("@sentrei/ui/components/SpaceQuit"), {
@@ -40,9 +38,6 @@ const SpaceQuitPage: NextPage = () => {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
-        <GridSettings skeleton tabSpaceKey="quit" type="space">
-          <SkeletonForm />
-        </GridSettings>
       </>
     );
   }

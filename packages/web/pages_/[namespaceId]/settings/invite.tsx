@@ -7,15 +7,15 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {analytics} from "@sentrei/common/utils/firebase";
-import GridSettings from "@sentrei/ui/components/GridSettings";
-import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const SpaceInvite = dynamic(
   () => {
     return import("@sentrei/ui/components/SpaceInvite");
   },
-  {ssr: false},
+  {
+    ssr: false,
+  },
 );
 
 const SpaceInvitePage: NextPage = () => {
@@ -43,9 +43,6 @@ const SpaceInvitePage: NextPage = () => {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
-        <GridSettings skeleton tabSpaceKey="invite" type="space">
-          <SkeletonForm />
-        </GridSettings>
       </>
     );
   }
