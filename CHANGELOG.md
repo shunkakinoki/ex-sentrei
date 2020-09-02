@@ -1,3 +1,15 @@
+# [1.26.0](https://github.com/sentrei/sentrei/compare/v1.25.0...v1.26.0) (2020-09-02)
+
+### Features
+
+- 🎸 ini namespace valid check function ([8571022](https://github.com/sentrei/sentrei/commit/85710221a159ca742e291ef7e6e8e6469f87c757))
+- 🎸 migrate namespace to username for profile form ([eb461c9](https://github.com/sentrei/sentrei/commit/eb461c9cfd7bcaf0fb81fb00c76d7589e01b2db6))
+
+### Performance Improvements
+
+- ⚡️ full width grid settings space button ([7f1fbfb](https://github.com/sentrei/sentrei/commit/7f1fbfbb8be04c0d7485afa617c6c79c2171bbb0))
+- ⚡️ ini i18n common & form ([77c3452](https://github.com/sentrei/sentrei/commit/77c3452a7afb941b5c4d8cd1c8240d66d576d86c))
+
 # [1.25.0](https://github.com/sentrei/sentrei/compare/v1.24.0...v1.25.0) (2020-09-02)
 
 ### Features
