@@ -9,6 +9,8 @@ declare namespace Profile {
     namespaceId: string;
   }
 
+  export type AdminUpdate = Partial<Fields>;
+
   export type Response = Fields;
 
   export type Update = Partial<Response>;
