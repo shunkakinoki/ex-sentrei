@@ -1,3 +1,14 @@
+# [1.21.0-beta.8](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.7...v1.21.0-beta.8) (2020-09-02)
+
+### Features
+
+- 🎸 ini access customer portal link ([4c5f5c2](https://github.com/sentrei/sentrei/commit/4c5f5c2abb826d8b85c0d72708ea78cc88b0a93a))
+- 🎸 ini space billing customer portal ([422bbd4](https://github.com/sentrei/sentrei/commit/422bbd4dc28518196638f69eda0ba3070f76bac7))
+
+### Performance Improvements
+
+- ⚡️ upgrade friends credits ([a289d19](https://github.com/sentrei/sentrei/commit/a289d193a4f438e9f9666bddad50e0a7a128091b))
+
 # [1.21.0-beta.7](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.6...v1.21.0-beta.7) (2020-09-02)
 
 ### Performance Improvements
