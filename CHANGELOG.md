@@ -1,3 +1,36 @@
+# [1.21.0](https://github.com/sentrei/sentrei/compare/v1.20.1...v1.21.0) (2020-09-02)
+
+### Bug Fixes
+
+- 🐛 remove username model ([1261ee2](https://github.com/sentrei/sentrei/commit/1261ee289256135c919891a750328dd505cacb6a))
+
+### Features
+
+- 🎸 complete refactor space namespace logic ([36209f0](https://github.com/sentrei/sentrei/commit/36209f0ef054e16154fc0c6b9eedbe7f1193ac49))
+- 🎸 complete refactor stepper to submit ([3e34cdf](https://github.com/sentrei/sentrei/commit/3e34cdfb33b81e3808a4aab07e0818d6a9e3b94a))
+- 🎸 completely refactor namespaces in ui, web ([2ebb867](https://github.com/sentrei/sentrei/commit/2ebb8673816540099760150247d272c5f1a957de))
+- 🎸 completely refactored namespaces ([7dd51fc](https://github.com/sentrei/sentrei/commit/7dd51fc800abda8a287bdffcbe8ab64e6d1f68cc))
+- 🎸 ini access customer portal link ([4c5f5c2](https://github.com/sentrei/sentrei/commit/4c5f5c2abb826d8b85c0d72708ea78cc88b0a93a))
+- 🎸 ini common types complete refactor ([a3b05b9](https://github.com/sentrei/sentrei/commit/a3b05b97a789e4524030c8751c72035efde31bb2))
+- 🎸 ini model namespace ([b59d9aa](https://github.com/sentrei/sentrei/commit/b59d9aad20820b5a778ae68903a6a0a8b0b96988))
+- 🎸 ini namespaces refactor ([ca79738](https://github.com/sentrei/sentrei/commit/ca797386d423a6601e2babaccf311be1e355bee5))
+- 🎸 ini space billing customer portal ([422bbd4](https://github.com/sentrei/sentrei/commit/422bbd4dc28518196638f69eda0ba3070f76bac7))
+- 🎸 ini stripe price product subscription models ([49481eb](https://github.com/sentrei/sentrei/commit/49481ebf853d1e778350e256420080489621c9d4))
+- 🎸 migrate username to namespace ([197f62e](https://github.com/sentrei/sentrei/commit/197f62e82271b41c9183b1cb8b68c72798d6175a))
+- 🎸 refactor field namespaceId ([38c64e3](https://github.com/sentrei/sentrei/commit/38c64e3914ee3a0cc504355d1a51f38128d430f1))
+- 🎸 refactor namespace for common firebase and admin ([c8b8086](https://github.com/sentrei/sentrei/commit/c8b80864db0f7fc68ccd6588b5a3dff7218282b3))
+- 🎸 refactor namespace submit ([720c227](https://github.com/sentrei/sentrei/commit/720c227178ba7e9de37dee8e9175dbc1f64a4439))
+- 🎸 refactor remainding space id to namespace id ([8aeb2fb](https://github.com/sentrei/sentrei/commit/8aeb2fb8e1e4d8a99aa88c234322bff50477b101))
+
+### Performance Improvements
+
+- ⚡️ ini admin update for profile model ([17f1b1b](https://github.com/sentrei/sentrei/commit/17f1b1b953676c660818d17c369c88668b739555))
+- ⚡️ ini app header update for namespaceId ([4dbc6d2](https://github.com/sentrei/sentrei/commit/4dbc6d2761454d1172dde9c10baca2d0b22f8a72))
+- ⚡️ ini sentrei upgrade ([e90b535](https://github.com/sentrei/sentrei/commit/e90b53509f2874ca24fce114d363dac95ac587f2))
+- ⚡️ ini sus update ([0dd1dbb](https://github.com/sentrei/sentrei/commit/0dd1dbb817c8123851e141a98dc252fe5c80fd3c))
+- ⚡️ refactor firebase admin function names ([ae91c5b](https://github.com/sentrei/sentrei/commit/ae91c5b725e194038c4f85441c0088e9816ae36c))
+- ⚡️ refactor frontier week ([383856c](https://github.com/sentrei/sentrei/commit/383856c2475a698dd582ed0cf16e22ca9d799c1b))
+
 # [1.21.0-beta.8](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.7...v1.21.0-beta.8) (2020-09-02)
 
 ### Features
