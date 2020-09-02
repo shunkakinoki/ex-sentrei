@@ -11,7 +11,7 @@ import {useForm, Controller} from "react-hook-form";
 import {useRecoilState, RecoilState} from "recoil";
 import * as Yup from "yup";
 
-import {validateSpaceId} from "@sentrei/common/firebase/spaces";
+import {validateNamespace} from "@sentrei/common/firebase/namespaces";
 import SpaceCreateForm from "@sentrei/types/atom/SpaceCreateForm";
 import StepperButton from "@sentrei/ui/components/StepperButton";
 
@@ -28,7 +28,7 @@ const SpaceStepperId = ({atom, form}: Props): JSX.Element => {
       .strict(true)
       .matches(/^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/, t("form:id.idInvalid"))
       .test("id", t("form:id.idAlreadyUsed"), async value => {
-        const result = await validateSpaceId(value || "");
+        const result = await validateNamespace(value || "");
         return result;
       })
       .required(t("form:id.idRequired")),

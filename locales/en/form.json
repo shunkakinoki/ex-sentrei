@@ -20,6 +20,12 @@
   "name": {
     "nameRequired": "Name is required"
   },
+  "namespace": {
+    "namespaceAlreadyUsed": "Namespace is already used",
+    "namespaceInvalid": "Namespace is invalid",
+    "namespaceNotExist": "Namespace doesn't exist",
+    "namespaceRequired": "Namespace is required"
+  },
   "password": {
     "match": "Passwords must match",
     "valid": "Please enter a valid password"
@@ -30,11 +36,5 @@
   },
   "type": {
     "typeRequired": "Type is required"
-  },
-  "username": {
-    "usernameAlreadyUsed": "Username is already used",
-    "usernameInvalid": "Username is invalid",
-    "usernameNotExist": "Username doesn't exist",
-    "usernameRequired": "Username is required"
   }
 }

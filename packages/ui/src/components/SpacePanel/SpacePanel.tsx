@@ -40,13 +40,13 @@ export default function SpacePanel({
               name={space.name}
               duration={member.duration}
               score={member.score}
-              spaceId={space.id}
+              namespaceId={space.namespaceId}
               tier={space.tier}
             />
           </Grid>
           <Grid item xs={false} sm={false} md={1} />
           <Grid item xs={12} sm={6} md={5}>
-            <SpacePanelAction spaceId={space.id} />
+            <SpacePanelAction namespaceId={space.namespaceId} />
           </Grid>
         </Grid>
       </Container>

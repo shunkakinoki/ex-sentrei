@@ -7,21 +7,21 @@ import MuiLink from "@sentrei/ui/components/MuiLink";
 export interface Props {
   count: number;
   section: string;
-  spaceId: string;
+  namespaceId: string;
   title: string;
 }
 
 export default function SpacePanelBannerSection({
   count,
   section,
-  spaceId,
+  namespaceId,
   title,
 }: Props): JSX.Element {
   return (
     <Grid container alignItems="center" justify="flex-start" direction="column">
       <MuiLink
-        href={`/[spaceId]/${section}`}
-        as={`/${spaceId}/${section}`}
+        href={`/[namespaceId]/${section}`}
+        as={`/${namespaceId}/${section}`}
         color="inherit"
       >
         <Typography variant="button" color="textSecondary" gutterBottom>

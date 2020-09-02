@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 import {
@@ -23,13 +24,11 @@ interface PublicationProps {
 }
 
 export default function Publication({
-  // eslint-disable-next-line react/prop-types
   publication,
-  // eslint-disable-next-line react/prop-types
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  participant,
   isLocal,
-  // eslint-disable-next-line react/prop-types
   disableAudio,
-  // eslint-disable-next-line react/prop-types
   videoPriority,
 }: PublicationProps): JSX.Element | null {
   const track = useTrack(publication);

@@ -19,13 +19,13 @@ import TabBoard from "@sentrei/ui/components/TabBoard";
 
 interface Props {
   profile: Profile.Get;
-  spaceId: string;
+  namespaceId: string;
   user: User.Get;
 }
 
 export default function SpaceEdit({
   profile,
-  spaceId,
+  namespaceId,
   user,
 }: Props): JSX.Element {
   const {t} = useTranslation();
@@ -33,8 +33,8 @@ export default function SpaceEdit({
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
 
   React.useEffect(() => {
-    getSpace(spaceId).then(setSpace);
-  }, [spaceId]);
+    getSpace(namespaceId).then(setSpace);
+  }, [namespaceId]);
 
   if (space === undefined) {
     return <SkeletonForm />;
@@ -45,7 +45,7 @@ export default function SpaceEdit({
   }
 
   return (
-    <GridSettings spaceId={spaceId} tabSpaceKey="general" type="space">
+    <GridSettings namespaceId={namespaceId} tabSpaceKey="general" type="space">
       <FormSection
         icon={<SettingsIcon />}
         title={t("space:space.editSpace")}

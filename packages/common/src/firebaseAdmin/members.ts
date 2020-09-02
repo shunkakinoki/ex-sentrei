@@ -14,7 +14,7 @@ export const memberAdminConverter: FirebaseFirestore.FirestoreDataConverter<Memb
   },
 };
 
-export const membersAdminQuery = ({
+export const membersQuery = ({
   spaceId,
   last,
   limit = 10,
@@ -35,6 +35,6 @@ export const membersAdminQuery = ({
 export const getAdminMembers = async (
   query: MembersQuery,
 ): Promise<Member.Get[]> => {
-  const ref = await membersAdminQuery(query).get();
+  const ref = await membersQuery(query).get();
   return ref.docs.map(doc => doc.data());
 };

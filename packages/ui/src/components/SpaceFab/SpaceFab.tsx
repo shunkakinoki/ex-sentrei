@@ -16,11 +16,11 @@ import * as React from "react";
 import SpaceFabStyles from "./SpaceFabStyles";
 
 export interface Props {
-  spaceId?: string;
+  namespaceId?: string;
   type: "dashboard" | "space";
 }
 
-export default function SpaceFab({spaceId, type}: Props): JSX.Element {
+export default function SpaceFab({namespaceId, type}: Props): JSX.Element {
   const classes = SpaceFabStyles();
   const {t} = useTranslation();
 
@@ -62,7 +62,7 @@ export default function SpaceFab({spaceId, type}: Props): JSX.Element {
             tooltipTitle={t("common:common.create")}
             tooltipOpen
             onClick={(): void =>
-              Router.pushI18n("/[spaceId]/create", `/${spaceId}/create`)
+              Router.pushI18n("/[namespaceId]/create", `/${namespaceId}/create`)
             }
           />
         )}
@@ -73,7 +73,7 @@ export default function SpaceFab({spaceId, type}: Props): JSX.Element {
             tooltipTitle={t("common:common.edit")}
             tooltipOpen
             onClick={(): void =>
-              Router.pushI18n("/[spaceId]/edit", `/${spaceId}/edit`)
+              Router.pushI18n("/[namespaceId]/edit", `/${namespaceId}/edit`)
             }
           />
         )}
@@ -84,7 +84,10 @@ export default function SpaceFab({spaceId, type}: Props): JSX.Element {
             tooltipTitle={t("common:common.members")}
             tooltipOpen
             onClick={(): void =>
-              Router.pushI18n("/[spaceId]/members", `/${spaceId}/members`)
+              Router.pushI18n(
+                "/[namespaceId]/members",
+                `/${namespaceId}/members`,
+              )
             }
           />
         )}
@@ -95,7 +98,10 @@ export default function SpaceFab({spaceId, type}: Props): JSX.Element {
             tooltipTitle={t("common:common.settings")}
             tooltipOpen
             onClick={(): void =>
-              Router.pushI18n("/[spaceId]/settings", `/${spaceId}/settings`)
+              Router.pushI18n(
+                "/[namespaceId]/settings",
+                `/${namespaceId}/settings`,
+              )
             }
           />
         )}
@@ -106,7 +112,7 @@ export default function SpaceFab({spaceId, type}: Props): JSX.Element {
             tooltipTitle={t("common:common.quit")}
             tooltipOpen
             onClick={(): void =>
-              Router.pushI18n("/[spaceId]/quit", `/${spaceId}/quit`)
+              Router.pushI18n("/[namespaceId]/quit", `/${namespaceId}/quit`)
             }
           />
         )}

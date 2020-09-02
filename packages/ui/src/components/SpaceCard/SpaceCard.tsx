@@ -51,7 +51,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
   return (
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
-        <Link href="/[spaceId]" as={`/${space.id}`}>
+        <Link href="/[namespaceId]" as={`/${space.namespaceId}`}>
           {space.photo ? (
             <CardMedia className={classes.media} image={space.photo} />
           ) : (
@@ -76,7 +76,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
           <Grid item xs={2}>
             <Box pl={2}>
               <CopyToClipboard
-                text={`${window.location.origin}/${space.id}`}
+                text={`${window.location.origin}/${space.namespaceId}`}
                 onCopy={(): void =>
                   snackbar("success", t("common:snackbar.clipboard"))
                 }
@@ -97,7 +97,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
                   ? members
                       .slice(0, 3)
                       .map(member => (
-                        <ProfileCard key={member.username} member={member} />
+                        <ProfileCard key={member.namespaceId} member={member} />
                       ))
                   : [...Array(space.stats.members || 0)].map(e => (
                       <Skeleton key={e} variant="circle">
@@ -107,7 +107,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
               </AvatarGroup>
             </Grid>
             <Grid item xs={3}>
-              <Link href="/[spaceId]" as={`/${space.id}`}>
+              <Link href="/[namespaceId]" as={`/${space.namespaceId}`}>
                 <Button fullWidth variant="outlined" color="primary">
                   {t("common:common.visit")}
                 </Button>

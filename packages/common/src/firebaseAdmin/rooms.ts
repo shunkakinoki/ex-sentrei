@@ -14,21 +14,6 @@ export const roomConverter: FirebaseFirestore.FirestoreDataConverter<Room.Get> =
   },
 };
 
-export const getRoom = async (
-  roomId: string | undefined,
-): Promise<Room.Get | null> => {
-  if (!roomId) {
-    return null;
-  }
-
-  const snap = await adminDb
-    .doc(`rooms/${roomId}`)
-    .withConverter(roomConverter)
-    .get();
-
-  return snap.data() || null;
-};
-
 export const roomsQuery = ({
   limit = 10,
   last,
@@ -51,4 +36,19 @@ export const roomsQuery = ({
 export const getAdminRooms = async (query: RoomQuery): Promise<Room.Get[]> => {
   const ref = await roomsQuery(query).get();
   return ref.docs.map(doc => doc.data());
+};
+
+export const getAdminRoom = async (
+  roomId: string | undefined,
+): Promise<Room.Get | null> => {
+  if (!roomId) {
+    return null;
+  }
+
+  const snap = await adminDb
+    .doc(`rooms/${roomId}`)
+    .withConverter(roomConverter)
+    .get();
+
+  return snap.data() || null;
 };

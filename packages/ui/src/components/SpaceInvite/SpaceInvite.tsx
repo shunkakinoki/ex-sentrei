@@ -18,12 +18,13 @@ import GridSettings from "@sentrei/ui/components/GridSettings";
 import InviteEmailForm from "@sentrei/ui/components/InviteEmailForm";
 import InviteLinkForm from "@sentrei/ui/components/InviteLinkForm";
 import InviteList from "@sentrei/ui/components/InviteList";
-import InviteUsernameForm from "@sentrei/ui/components/InviteUsernameForm";
+import InviteUserForm from "@sentrei/ui/components/InviteUserForm";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
   profile: Profile.Get;
+  namespaceId: string;
   spaceId: string;
   user: User.Get;
 }
@@ -31,6 +32,7 @@ export interface Props {
 export default function SpaceInvite({
   profile,
   user,
+  namespaceId,
   spaceId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
@@ -66,7 +68,7 @@ export default function SpaceInvite({
   }
 
   return (
-    <GridSettings spaceId={spaceId} tabSpaceKey="invite" type="space">
+    <GridSettings namespaceId={namespaceId} tabSpaceKey="invite" type="space">
       <FormSection icon={<SettingsIcon />} title={t("common:common.invite")} />
       <TabBoard
         size="sm"
@@ -75,7 +77,7 @@ export default function SpaceInvite({
         tabIconThree={<AssignmentIndIcon />}
         tabLabelOne={t("common:common.email")}
         tabLabelTwo={t("common:common.link")}
-        tabLabelThree={t("common:common.username")}
+        tabLabelThree={t("common:common.namespace")}
         tabPanelOne={
           <>
             <InviteEmailForm profile={profile} user={user} spaceId={spaceId} />
@@ -91,7 +93,7 @@ export default function SpaceInvite({
           </>
         }
         tabPanelThree={
-          <InviteUsernameForm profile={profile} user={user} spaceId={spaceId} />
+          <InviteUserForm profile={profile} user={user} spaceId={spaceId} />
         }
       />
     </GridSettings>

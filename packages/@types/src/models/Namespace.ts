@@ -1,4 +1,4 @@
 export default interface Namespace {
-  id: string;
+  uid: string;
   type: "space" | "user";
 }

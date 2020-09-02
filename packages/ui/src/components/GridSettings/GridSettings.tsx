@@ -11,7 +11,7 @@ import GridSettingsSpaceTab from "@sentrei/ui/components/GridSettingsSpaceTab";
 export interface Props {
   children: React.ReactNode;
   skeleton?: boolean;
-  spaceId?: string;
+  namespaceId?: string;
   tabSpaceKey?: SettingsSpaceTabKey;
   type: SettingsTabType;
 }
@@ -19,7 +19,7 @@ export interface Props {
 const GridSettings = ({
   children,
   skeleton = false,
-  spaceId,
+  namespaceId,
   tabSpaceKey,
   type,
 }: Props): JSX.Element => {
@@ -30,10 +30,10 @@ const GridSettings = ({
           {type === "space" && skeleton && tabSpaceKey && (
             <GridSettingsSpaceTab skeleton tabKey={tabSpaceKey} />
           )}
-          {type === "space" && !skeleton && spaceId && tabSpaceKey && (
+          {type === "space" && !skeleton && namespaceId && tabSpaceKey && (
             <GridSettingsSpaceTab
               skeleton={false}
-              spaceId={spaceId}
+              namespaceId={namespaceId}
               tabKey={tabSpaceKey}
             />
           )}

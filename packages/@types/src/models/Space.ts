@@ -10,13 +10,16 @@ declare namespace Space {
     description: string | null;
     name: string;
     photo: string | null;
+    photoHash: string | null;
   };
 
   interface Fields extends EditableFields {
     actions: Actions.Fields;
     analytics: Analytics.Fields;
+    namespaceId: string;
     stats: Stats.Fields;
     tier: Tiers;
+    stripeId: string;
   }
 
   export type AdminUpdate = Partial<Fields>;

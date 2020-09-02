@@ -7,10 +7,10 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 export interface Props {
-  spaceId: string;
+  namespaceId: string;
 }
 
-export default function SpaceNone({spaceId}: Props): JSX.Element {
+export default function RoomNone({namespaceId}: Props): JSX.Element {
   const {t} = useTranslation();
 
   return (
@@ -30,7 +30,7 @@ export default function SpaceNone({spaceId}: Props): JSX.Element {
           variant="outlined"
           color="primary"
           onClick={(): void =>
-            Router.pushI18n("/[spaceId]/create", `/${spaceId}/create`)
+            Router.pushI18n("/[namespaceId]/create", `/${namespaceId}/create`)
           }
         >
           {t("common:common.create")}

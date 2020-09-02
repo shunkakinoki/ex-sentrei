@@ -9,10 +9,10 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
   roomId: string;
-  spaceId: string;
+  namespaceId: string;
 }
 
-const RoomDeleteForm = ({roomId, spaceId}: Props): JSX.Element => {
+const RoomDeleteForm = ({roomId, namespaceId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -23,7 +23,7 @@ const RoomDeleteForm = ({roomId, spaceId}: Props): JSX.Element => {
       await deleteRoom(roomId)?.then(() => {
         snackbar("success");
         backdrop("loading");
-        Router.pushI18n("/[spaceId]", `/${spaceId}`);
+        Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
       });
     } catch (err) {
       snackbar("error", err.message);

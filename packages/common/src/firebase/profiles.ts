@@ -1,6 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
-import {getUsername} from "@sentrei/common/firebase/usernames";
 import {serializeProfile} from "@sentrei/common/serializers/Profile";
 import {db} from "@sentrei/common/utils/firebase";
 import Profile from "@sentrei/types/models/Profile";
@@ -17,30 +14,10 @@ export const profileConverter: firebase.firestore.FirestoreDataConverter<Profile
 };
 
 export const getProfile = async (
-  uid: string | undefined,
+  profileId: string,
 ): Promise<Profile.Get | null> => {
-  if (!uid) {
-    return null;
-  }
   const snap = await db
-    .doc(`profiles/${uid}`)
-    .withConverter(profileConverter)
-    .get();
-
-  return snap.data() || null;
-};
-
-export const getProfileUsername = async (
-  usernameId: string,
-): Promise<Profile.Get | null> => {
-  const username = await getUsername(usernameId);
-
-  if (!username) {
-    return null;
-  }
-
-  const snap = await db
-    .doc(`profiles/${username.uid}`)
+    .doc(`profiles/${profileId}`)
     .withConverter(profileConverter)
     .get();
 
@@ -48,8 +25,8 @@ export const getProfileUsername = async (
 };
 
 export const updateProfile = (
+  profileId: string,
   profile: Profile.Update,
-  uid: string,
 ): Promise<void> => {
-  return db.doc(`profiles/${uid}`).update(profile);
+  return db.doc(`profiles/${profileId}`).update(profile);
 };
