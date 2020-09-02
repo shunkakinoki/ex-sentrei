@@ -1,4 +1,4 @@
-export type AppSpaceTabKey =
+export type AppTabSpaceKey =
   | "home"
   | "rooms"
   | "activity"
@@ -7,7 +7,7 @@ export type AppSpaceTabKey =
   | "members"
   | "settings";
 
-export type AppUserTabKey =
+export type AppTabUserKey =
   | "dashboard"
   | "create"
   | "profile"

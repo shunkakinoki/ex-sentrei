@@ -10,10 +10,10 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
 
-import {AppSpaceTabKey} from "@sentrei/types/models/AppTab";
+import {AppTabSpaceKey} from "@sentrei/types/models/AppTab";
 import AppTabIcon from "@sentrei/ui/components/AppTabIcon";
 
-import AppSpaceTabStyles from "./AppSpaceTabStyles";
+import AppTabSpaceStyles from "./AppTabSpaceStyles";
 
 interface Props {
   // eslint-disable-next-line react/require-default-props
@@ -21,7 +21,7 @@ interface Props {
   // eslint-disable-next-line react/require-default-props
   namespaceId?: string;
   // eslint-disable-next-line react/require-default-props
-  tabKey?: AppSpaceTabKey;
+  tabKey?: AppTabSpaceKey;
 }
 
 const TabMap = {
@@ -34,12 +34,12 @@ const TabMap = {
   settings: 6,
 };
 
-export default function AppSpaceTab({
+export default function AppTabSpace({
   skeleton = false,
   namespaceId,
   tabKey = "home",
 }: Props): JSX.Element {
-  const classes = AppSpaceTabStyles();
+  const classes = AppTabSpaceStyles();
   const {t} = useTranslation();
   const value = TabMap[tabKey];
 

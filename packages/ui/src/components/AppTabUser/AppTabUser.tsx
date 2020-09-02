@@ -8,16 +8,16 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
 
-import {AppUserTabKey} from "@sentrei/types/models/AppTab";
+import {AppTabUserKey} from "@sentrei/types/models/AppTab";
 import AppTabIcon from "@sentrei/ui/components/AppTabIcon";
 
-import AppUserTabStyles from "./AppUserTabStyles";
+import AppTabUserStyles from "./AppTabUserStyles";
 
 interface Props {
   // eslint-disable-next-line react/require-default-props
   skeleton?: boolean;
   // eslint-disable-next-line react/require-default-props
-  tabKey?: AppUserTabKey;
+  tabKey?: AppTabUserKey;
 }
 
 const TabMap = {
@@ -32,7 +32,7 @@ export default function AppUserTab({
   skeleton = false,
   tabKey = "dashboard",
 }: Props): JSX.Element {
-  const classes = AppUserTabStyles();
+  const classes = AppTabUserStyles();
   const {t} = useTranslation();
   const value = TabMap[tabKey];
 
