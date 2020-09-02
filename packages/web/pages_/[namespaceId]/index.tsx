@@ -15,7 +15,6 @@ import Member from "@sentrei/types/models/Member";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
-import StatusSpace from "@sentrei/ui/components/StatusSpace";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const SpaceScreen = dynamic(
@@ -118,7 +117,6 @@ const SpaceId = ({
           type="space"
         />
       )}
-      {user && <StatusSpace userId={user.uid} profile={profile} />}
       {user && (
         <SpaceScreen
           user={user}

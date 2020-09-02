@@ -6,7 +6,6 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
-import StatusSpace from "@sentrei/ui/components/StatusSpace";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const SpaceDashboard = dynamic(
@@ -47,7 +46,6 @@ const Dashboard: NextPage = () => {
           type="user"
         />
       )}
-      {user && <StatusSpace userId={user.uid} profile={profile} />}
       {user && <SpaceDashboard userId={user.uid} />}
     </>
   );

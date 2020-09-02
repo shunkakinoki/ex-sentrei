@@ -9,6 +9,7 @@ import Profile from "@sentrei/types/models/Profile";
 import AppBar from "@sentrei/ui/components/AppBar";
 import AppTabSpace from "@sentrei/ui/components/AppTabSpace";
 import AppTabUser from "@sentrei/ui/components/AppTabUser";
+import StatusSpace from "@sentrei/ui/components/StatusSpace";
 
 export interface Props {
   logo: JSX.Element;
@@ -42,6 +43,7 @@ export default function AppHeader({
         namespaceId={namespaceId}
         notificationCount={notificationCount}
       />
+      {userId && profile && <StatusSpace userId={userId} profile={profile} />}
       {type === "space" && skeleton && tabSpaceKey && (
         <AppTabSpace skeleton tabKey={tabSpaceKey} />
       )}
