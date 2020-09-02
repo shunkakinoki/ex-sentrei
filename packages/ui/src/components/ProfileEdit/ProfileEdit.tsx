@@ -9,7 +9,7 @@ import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
 import ProfileNameForm from "@sentrei/ui/components/ProfileNameForm";
-import ProfileNamespaceForm from "@sentrei/ui/components/ProfileNamespaceForm";
+import ProfileUsernameForm from "@sentrei/ui/components/ProfileUsernameForm";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 interface Props {
@@ -34,10 +34,10 @@ export default function ProfileEdit({profile, user}: Props): JSX.Element {
         tabIconThree={<DescriptionIcon />}
         tabLabelOne={t("common:common.name")}
         tabLabelTwo={t("common:common.photo")}
-        tabLabelThree={t("common:common.namespace")}
+        tabLabelThree={t("common:common.username")}
         tabPanelOne={<ProfileNameForm profile={profile} />}
         tabPanelTwo={<></>}
-        tabPanelThree={<ProfileNamespaceForm profile={profile} user={user} />}
+        tabPanelThree={<ProfileUsernameForm profile={profile} user={user} />}
       />
     </>
   );

@@ -36,5 +36,11 @@
   },
   "type": {
     "typeRequired": "类型为必填项"
+  },
+  "username": {
+    "usernameAlreadyUsed": "用户名已被使用",
+    "usernameInvalid": "无效的用户名",
+    "usernameNotExist": "用户名不存在",
+    "usernameRequired": "用户名为必填项"
   }
 }

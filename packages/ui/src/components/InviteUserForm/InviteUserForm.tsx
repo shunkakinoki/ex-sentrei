@@ -33,10 +33,10 @@ const InviteUserForm = ({profile, user, spaceId}: Props): JSX.Element => {
   const InviteUserFormSchema = Yup.object().shape({
     namespace: Yup.string()
       .required(t("form:namespace.namespaceRequired"))
-      // .matches(
-      //   /^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/,
-      //   t("form:namespace.namespaceInvalid"),
-      // )
+      .matches(
+        /^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/,
+        t("form:namespace.namespaceInvalid"),
+      )
       .test("id", t("form:namespace.namespaceNotExist"), async value => {
         const result = await validateNamespace(value || "");
         return !result;

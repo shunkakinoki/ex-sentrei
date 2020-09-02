@@ -4,6 +4,7 @@ import {yupResolver} from "@hookform/resolvers";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
 import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -12,6 +13,7 @@ import * as Yup from "yup";
 
 import {
   createNamespace,
+  isReservedNamespace,
   validateNamespace,
 } from "@sentrei/common/firebase/namespaces";
 
@@ -25,19 +27,23 @@ export interface Props {
   user: User.Get;
 }
 
-const ProfileNamespaceForm = ({profile}: Props): JSX.Element => {
+const ProfileUsernameForm = ({profile}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
 
-  const ProfileNamespaceFormSchema = Yup.object().shape({
-    namespace: Yup.string()
-      .required(t("form:namespace.namespaceRequired"))
+  const ProfileUsernameFormSchema = Yup.object().shape({
+    username: Yup.string()
+      .required(t("form:username.usernameRequired"))
       .matches(
         /^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/,
-        t("form:namespace.namespaceInvalid"),
+        t("form:username.usernameInvalid"),
       )
-      .test("id", t("form:namespace.namespaceAlreadyUsed"), async value => {
+      .test("id", t("form:username.usernameInvalid"), value => {
+        const result = isReservedNamespace(value || "");
+        return !result;
+      })
+      .test("id", t("form:username.usernameAlreadyUsed"), async value => {
         const result = await validateNamespace(value || "");
         return result;
       }),
@@ -46,13 +52,13 @@ const ProfileNamespaceForm = ({profile}: Props): JSX.Element => {
   const {control, register, errors, handleSubmit} = useForm({
     mode: "onSubmit",
     reValidateMode: "onBlur",
-    resolver: yupResolver(ProfileNamespaceFormSchema),
+    resolver: yupResolver(ProfileUsernameFormSchema),
   });
 
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.editing"));
     try {
-      await createNamespace(data.namespace, profile.uid)?.then(() => {
+      await createNamespace(data.username, profile.uid)?.then(() => {
         snackbar("success");
         backdrop("loading");
         setTimeout(() => {
@@ -68,27 +74,41 @@ const ProfileNamespaceForm = ({profile}: Props): JSX.Element => {
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Controller
-            as={
-              <TextField
-                autoFocus
-                fullWidth
-                id="namespace"
-                label={t("common:common.namespace")}
-                margin="normal"
-                name="namespace"
-                required
-                variant="outlined"
-                error={!!errors.namespace}
-                inputRef={register}
-                helperText={errors.namespace ? errors.namespace.message : ""}
-                type="text"
+          <Grid container direction="row" alignItems="center">
+            <Grid item xs={6} sm={5} md={4}>
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                display="inline"
+                gutterBottom
+              >
+                sentrei.com/
+              </Typography>
+            </Grid>
+            <Grid item xs={6} sm={7} md={8}>
+              <Controller
+                as={
+                  <TextField
+                    autoFocus
+                    fullWidth
+                    id="username"
+                    label={t("common:common.username")}
+                    margin="normal"
+                    name="username"
+                    required
+                    variant="outlined"
+                    error={!!errors.username}
+                    inputRef={register}
+                    helperText={errors.username ? errors.username.message : ""}
+                    type="text"
+                  />
+                }
+                name="username"
+                control={control}
+                defaultValue={profile.namespaceId}
               />
-            }
-            name="namespace"
-            control={control}
-            defaultValue={profile.namespaceId}
-          />
+            </Grid>
+          </Grid>
         </Grid>
         <Grid item xs={12}>
           <Button type="submit" fullWidth variant="contained" color="primary">
@@ -111,4 +131,4 @@ const ProfileNamespaceForm = ({profile}: Props): JSX.Element => {
   );
 };
 
-export default ProfileNamespaceForm;
+export default ProfileUsernameForm;

@@ -36,5 +36,11 @@
   },
   "type": {
     "typeRequired": "Type is required"
+  },
+  "username": {
+    "usernameAlreadyUsed": "Username is already used",
+    "usernameInvalid": "Username is invalid",
+    "usernameNotExist": "Username doesn't exist",
+    "usernameRequired": "Username is required"
   }
 }
