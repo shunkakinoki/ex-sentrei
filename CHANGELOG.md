@@ -1,3 +1,10 @@
+# [1.21.0-beta.7](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.6...v1.21.0-beta.7) (2020-09-02)
+
+### Performance Improvements
+
+- ⚡️ ini admin update for profile model ([17f1b1b](https://github.com/sentrei/sentrei/commit/17f1b1b953676c660818d17c369c88668b739555))
+- ⚡️ ini sus update ([0dd1dbb](https://github.com/sentrei/sentrei/commit/0dd1dbb817c8123851e141a98dc252fe5c80fd3c))
+
 # [1.21.0-beta.6](https://github.com/sentrei/sentrei/compare/v1.21.0-beta.5...v1.21.0-beta.6) (2020-09-01)
 
 ### Features
