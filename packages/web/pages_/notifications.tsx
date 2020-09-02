@@ -22,6 +22,10 @@ const Notifications: NextPage = () => {
     analytics().setCurrentScreen("notifications");
   }, []);
 
+  if (!user && typeof window !== "undefined") {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile) {
     return (
       <>
@@ -29,10 +33,6 @@ const Notifications: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

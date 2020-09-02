@@ -87,6 +87,10 @@ const RoomsPage = ({
     analytics().setCurrentScreen("space");
   }, []);
 
+  if (!user && typeof window !== "undefined") {
+    Router.pushI18n("/");
+  }
+
   if (
     user === undefined ||
     !profile ||
@@ -100,10 +104,6 @@ const RoomsPage = ({
         <SkeletonScreen />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

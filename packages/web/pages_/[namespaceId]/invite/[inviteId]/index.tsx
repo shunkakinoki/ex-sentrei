@@ -1,5 +1,4 @@
 import {NextPage} from "next";
-import Router from "next-translate/Router";
 import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
@@ -45,10 +44,6 @@ const InviteId: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

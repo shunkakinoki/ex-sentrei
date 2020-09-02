@@ -37,16 +37,16 @@ const SpaceBillingPage: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
+  if (!user && typeof window !== "undefined") {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (
