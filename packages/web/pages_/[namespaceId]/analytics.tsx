@@ -31,6 +31,10 @@ const AnalyticsPage: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
+  if (!user && typeof window !== "undefined") {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
@@ -38,10 +42,6 @@ const AnalyticsPage: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

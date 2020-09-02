@@ -7,8 +7,6 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {analytics} from "@sentrei/common/utils/firebase";
-import GridSettings from "@sentrei/ui/components/GridSettings";
-import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const SpaceSettings = dynamic(
@@ -39,19 +37,16 @@ const SpaceSettingsPage: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
+  if (!user && typeof window !== "undefined") {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
-        <GridSettings skeleton tabSpaceKey="general" type="space">
-          <SkeletonForm />
-        </GridSettings>
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

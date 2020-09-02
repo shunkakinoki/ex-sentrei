@@ -17,6 +17,10 @@ const Settings: NextPage = () => {
     analytics().setCurrentScreen("settings");
   }, []);
 
+  if (!user && typeof window !== "undefined") {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile) {
     return (
       <>
@@ -24,10 +28,6 @@ const Settings: NextPage = () => {
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (

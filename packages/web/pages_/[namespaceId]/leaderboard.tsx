@@ -58,6 +58,10 @@ const LeaderboardPage = ({
     analytics().setCurrentScreen("spaceLeaderboard");
   }, []);
 
+  if (!user && typeof window !== "undefined") {
+    Router.pushI18n("/");
+  }
+
   if (user === undefined || !profile || !spaceId || !membersData) {
     return (
       <>
@@ -65,10 +69,6 @@ const LeaderboardPage = ({
         <SkeletonForm />
       </>
     );
-  }
-
-  if (!user) {
-    Router.pushI18n("/");
   }
 
   return (
