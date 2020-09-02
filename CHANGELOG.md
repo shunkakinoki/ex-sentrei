@@ -1,3 +1,19 @@
+# [1.22.0](https://github.com/sentrei/sentrei/compare/v1.21.0...v1.22.0) (2020-09-02)
+
+### Bug Fixes
+
+- 🐛 app header profile picture flickering ([6ad2345](https://github.com/sentrei/sentrei/commit/6ad23450ca5a1b0ca87aa862ed7cfc1e7329c6a8))
+
+### Features
+
+- 🎸 complete refactor grid settings button ([0fc5dbb](https://github.com/sentrei/sentrei/commit/0fc5dbb58b73c99d6577fef55fdabc1f8454fd77))
+- 🎸 refactor app tab header naming ([d2f4711](https://github.com/sentrei/sentrei/commit/d2f4711351ae7d8cbf6263da2f4a2d649fd48982))
+- 🎸 refactor app tab icon style bug ([27da2cf](https://github.com/sentrei/sentrei/commit/27da2cfc20bd51431718ff317e1291e7ea9a19a3))
+
+### Performance Improvements
+
+- ⚡️ refactor nodemon invoke ([9539ce7](https://github.com/sentrei/sentrei/commit/9539ce7d5f82510cdc0ffeb1dcdf5aabc7e819e2))
+
 # [1.21.0](https://github.com/sentrei/sentrei/compare/v1.20.1...v1.21.0) (2020-09-02)
 
 ### Bug Fixes
