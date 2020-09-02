@@ -8,25 +8,14 @@ import * as React from "react";
 import Space from "@sentrei/types/models/Space";
 
 import SpaceCard from "@sentrei/ui/components/SpaceCard";
-import SpaceLoadMore from "@sentrei/ui/components/SpaceLoadMore";
 import SpaceNone from "@sentrei/ui/components/SpaceNone";
 
 export interface Props {
-  spaceShot: Space.Snapshot[];
-  last?: firebase.firestore.DocumentSnapshot;
-  limit?: number;
-  userId?: string;
+  spaces: Space.Get[];
 }
 
-export default function SpaceList({
-  spaceShot,
-  last,
-  limit = 3,
-  userId,
-}: Props): JSX.Element {
+export default function SpaceDashboardList({spaces}: Props): JSX.Element {
   const {t} = useTranslation();
-
-  const [spaces, setSpaces] = React.useState<Space.Get[]>(spaceShot);
 
   if (spaces.length === 0) {
     return <SpaceNone />;
@@ -53,13 +42,6 @@ export default function SpaceList({
           ))}
         </Grid>
       </Container>
-      <SpaceLoadMore
-        lastItem={last || spaces[spaces.length - 1].id}
-        length={spaces.length}
-        limit={limit}
-        userId={userId}
-        onLoadMore={(res: Space.Get[]): void => setSpaces([...spaces, ...res])}
-      />
     </>
   );
 }

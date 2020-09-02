@@ -45,6 +45,19 @@ export const getSpacesSnapshot = async (
   return ref.docs.map(snap => ({...snap.data(), snap}));
 };
 
+export const getSpacesLive = (
+  userId: string,
+  onSnapshot: (snap: Space.Get[]) => void,
+): firebase.Unsubscribe => {
+  return db
+    .collection(`users/${userId}/spaces`)
+    .withConverter(spaceConverter)
+    .onSnapshot(snap => {
+      const data = snap.docs.map(space => space.data());
+      onSnapshot(data);
+    });
+};
+
 export const getSpace = async (spaceId: string): Promise<Space.Get | null> => {
   const snap = await db
     .doc(`spaces/${spaceId}`)
