@@ -1,3 +1,9 @@
+# [1.25.0](https://github.com/sentrei/sentrei/compare/v1.24.0...v1.25.0) (2020-09-02)
+
+### Features
+
+- 🎸 refactor app header status space ([4e2cdb8](https://github.com/sentrei/sentrei/commit/4e2cdb8bbe44c6a119a4cc9db1313ec6c4753bc4))
+
 # [1.24.0](https://github.com/sentrei/sentrei/compare/v1.23.0...v1.24.0) (2020-09-02)
 
 ### Bug Fixes
