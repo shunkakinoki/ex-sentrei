@@ -1,3 +1,9 @@
+# [1.23.0](https://github.com/sentrei/sentrei/compare/v1.22.0...v1.23.0) (2020-09-02)
+
+### Features
+
+- 🎸 complete refactor live space dashboard ([793cfcf](https://github.com/sentrei/sentrei/commit/793cfcf6d9905259552cb2c37cdcf664c31b0fe1))
+
 # [1.22.0](https://github.com/sentrei/sentrei/compare/v1.21.0...v1.22.0) (2020-09-02)
 
 ### Bug Fixes
