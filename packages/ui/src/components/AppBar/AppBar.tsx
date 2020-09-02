@@ -182,7 +182,7 @@ export default function AppBar({
                 className={classes.avatar}
                 component="span"
                 sizes="small"
-                src={profile ? profile.photo || profile.name[0] : undefined}
+                src={profile?.photo ?? undefined}
               />
             </IconButton>
             <AppProfileMenu

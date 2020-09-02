@@ -43,6 +43,7 @@ export default function AppTabIcon({
   )((props: TabProps) => (
     <Tab
       {...props}
+      component="nav"
       selected={selected}
       label={
         <div>
