@@ -4,6 +4,7 @@ const GridSettingsSpaceTabStyles = makeStyles((theme: Theme) =>
   createStyles({
     tabs: {
       marginTop: theme.spacing(6),
+      width: "100%",
     },
   }),
 );
