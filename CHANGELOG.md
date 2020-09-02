@@ -1,3 +1,13 @@
+# [1.24.0](https://github.com/sentrei/sentrei/compare/v1.23.0...v1.24.0) (2020-09-02)
+
+### Bug Fixes
+
+- 🐛 settings flash bug ([aa0e703](https://github.com/sentrei/sentrei/commit/aa0e703ae145490fea500e8c14aabbc2078c7921))
+
+### Features
+
+- 🎸 correct redirect for user namespace ([702e682](https://github.com/sentrei/sentrei/commit/702e682d0dc696efddd32da5b85a2e5d27ef2fe7))
+
 # [1.23.0](https://github.com/sentrei/sentrei/compare/v1.22.0...v1.23.0) (2020-09-02)
 
 ### Features
