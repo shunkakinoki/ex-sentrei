@@ -1,36 +1,34 @@
 import * as React from "react";
 
-import {getSpacesSnapshot} from "@sentrei/common/firebase/spaces";
+import {getSpacesLive} from "@sentrei/common/firebase/spaces";
 import Space from "@sentrei/types/models/Space";
 
-import User from "@sentrei/types/models/User";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
+import SpaceDashboardList from "@sentrei/ui/components/SpaceDashboardList";
 import SpaceFab from "@sentrei/ui/components/SpaceFab";
-import SpaceList from "@sentrei/ui/components/SpaceList";
 
 export interface Props {
-  user: User.Get;
+  userId: string;
 }
 
-export default function SpaceDashboard({user}: Props): JSX.Element {
-  const [spaceShot, setSpaceShot] = React.useState<Space.Snapshot[]>();
+export default function SpaceDashboard({userId}: Props): JSX.Element {
+  const [spaces, setSpaces] = React.useState<Space.Get[]>();
 
   React.useEffect(() => {
-    if (user) {
-      getSpacesSnapshot({userId: user.uid}).then(setSpaceShot);
-    }
-  }, [user]);
+    const unsubscribe = getSpacesLive(userId, snap => {
+      setSpaces(snap);
+    });
+    return (): void => {
+      unsubscribe();
+    };
+  }, [userId]);
 
-  if (!spaceShot) return <SkeletonScreen />;
+  if (!spaces) return <SkeletonScreen />;
 
   return (
     <>
       <SpaceFab type="dashboard" />
-      <SpaceList
-        spaceShot={spaceShot}
-        last={spaceShot[spaceShot.length - 1]?.snap || 0}
-        userId={user.uid}
-      />
+      <SpaceDashboardList spaces={spaces} />
     </>
   );
 }

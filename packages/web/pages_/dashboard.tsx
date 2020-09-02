@@ -48,7 +48,7 @@ const Dashboard: NextPage = () => {
         />
       )}
       {user && <StatusSpace userId={user.uid} profile={profile} />}
-      {user && <SpaceDashboard user={user} />}
+      {user && <SpaceDashboard userId={user.uid} />}
     </>
   );
 };
