@@ -12,6 +12,7 @@ import * as Yup from "yup";
 
 import {
   createNamespace,
+  isReservedNamespace,
   validateNamespace,
 } from "@sentrei/common/firebase/namespaces";
 
@@ -37,6 +38,10 @@ const ProfileNamespaceForm = ({profile}: Props): JSX.Element => {
         /^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/,
         t("form:namespace.namespaceInvalid"),
       )
+      .test("id", t("form:namespace.namespaceInvalid"), value => {
+        const result = isReservedNamespace(value || "");
+        return !result;
+      })
       .test("id", t("form:namespace.namespaceAlreadyUsed"), async value => {
         const result = await validateNamespace(value || "");
         return result;
