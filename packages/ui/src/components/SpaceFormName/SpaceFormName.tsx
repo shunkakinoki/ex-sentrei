@@ -92,19 +92,14 @@ const SpaceFormName = ({
           />
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
-            {t("common:common.edit")}
-          </Button>
-        </Grid>
-        <Grid item xs={12}>
           <Button
-            type="reset"
+            type="submit"
             fullWidth
-            variant="outlined"
+            disabled={disabled}
+            variant="contained"
             color="primary"
-            onClick={(): void => Router.back()}
           >
-            {t("common:common.cancel")}
+            {t("common:common.edit")}
           </Button>
         </Grid>
       </Grid>
