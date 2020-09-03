@@ -24,6 +24,9 @@
     "title": "部屋"
   },
   "settings": {
+    "billing": "課金",
+    "general": "一般的な",
+    "quit": "終了する",
     "title": "スペース設定"
   },
   "space": {
