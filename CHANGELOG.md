@@ -1,3 +1,17 @@
+# [1.32.0](https://github.com/sentrei/sentrei/compare/v1.31.0...v1.32.0) (2020-09-03)
+
+### Features
+
+- 🎸 form board refactor ([98861c1](https://github.com/sentrei/sentrei/commit/98861c1a238fc36fe65f5b0f7e95b28ee4fa86f7))
+- 🎸 ini disabled for room settings ([0c4ddba](https://github.com/sentrei/sentrei/commit/0c4ddbaaa7d41693308f0c0d3a0e70ba1725f71c))
+- 🎸 ini room form role validation ([8551c04](https://github.com/sentrei/sentrei/commit/8551c0435c6dc8444c1ac766033075bc2c8a37b2))
+- 🎸 ini space list ([3cf76e1](https://github.com/sentrei/sentrei/commit/3cf76e13717f78681fa188356cba3363ea966c3d))
+
+### Performance Improvements
+
+- ⚡️ ini room settings board ([042d840](https://github.com/sentrei/sentrei/commit/042d8406cb2ab26ddd41458cab5afd6c867a6056))
+- ⚡️ ini room skeleton grid form ([48e530d](https://github.com/sentrei/sentrei/commit/48e530dd3ff1b5599996d1ec4f3e3fb98396fb1f))
+
 # [1.31.0](https://github.com/sentrei/sentrei/compare/v1.30.0...v1.31.0) (2020-09-03)
 
 ### Features
