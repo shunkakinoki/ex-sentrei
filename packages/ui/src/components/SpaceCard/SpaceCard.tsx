@@ -1,6 +1,5 @@
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
@@ -12,15 +11,15 @@ import ShareIcon from "@material-ui/icons/Share";
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import Skeleton from "@material-ui/lab/Skeleton";
 
-import Link from "next-translate/Link";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 import {getMembers} from "@sentrei/common/firebase/members";
 import Member from "@sentrei/types/models/Member";
-
 import Space from "@sentrei/types/models/Space";
+import MuiAnchor from "@sentrei/ui/components/MuiAnchor";
+import MuiButton from "@sentrei/ui/components/MuiButton";
 import ProfileCard from "@sentrei/ui/components/ProfileCard";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -51,13 +50,13 @@ export default function SpaceCard({space}: Props): JSX.Element {
   return (
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
-        <Link href="/[namespaceId]" as={`/${space.namespaceId}`}>
+        <MuiAnchor href="/[namespaceId]" as={`/${space.namespaceId}`}>
           {space.photo ? (
             <CardMedia className={classes.media} image={space.photo} />
           ) : (
             <Box className={classes.media} />
           )}
-        </Link>
+        </MuiAnchor>
       </CardActionArea>
       <CardContent>
         <Grid container direction="row" justify="space-between">
@@ -107,11 +106,15 @@ export default function SpaceCard({space}: Props): JSX.Element {
               </AvatarGroup>
             </Grid>
             <Grid item xs={3}>
-              <Link href="/[namespaceId]" as={`/${space.namespaceId}`}>
-                <Button fullWidth variant="outlined" color="primary">
-                  {t("common:common.visit")}
-                </Button>
-              </Link>
+              <MuiButton
+                href="/[namespaceId]"
+                as={`/${space.namespaceId}`}
+                fullWidth
+                variant="outlined"
+                color="primary"
+              >
+                {t("common:common.visit")}
+              </MuiButton>
             </Grid>
           </Grid>
         </div>
