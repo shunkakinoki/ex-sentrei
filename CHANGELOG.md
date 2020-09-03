@@ -1,3 +1,14 @@
+# [1.27.0](https://github.com/sentrei/sentrei/compare/v1.26.0...v1.27.0) (2020-09-03)
+
+### Features
+
+- 🎸 complete migrate web components ([e405794](https://github.com/sentrei/sentrei/commit/e405794e661a63639f9ca6816af341638b206d74))
+- 🎸 migrate web components ([39e09f3](https://github.com/sentrei/sentrei/commit/39e09f33062cb82cbb14f6af9f5d84727039c0b3))
+
+### Performance Improvements
+
+- ⚡️ remove sentrei one tap ([5904db6](https://github.com/sentrei/sentrei/commit/5904db6d09301b9b02f5b9fba3558e8aa792d518))
+
 # [1.26.0](https://github.com/sentrei/sentrei/compare/v1.25.0...v1.26.0) (2020-09-02)
 
 ### Features
