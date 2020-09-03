@@ -1,11 +1,9 @@
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import useTranslation from "next-translate/useTranslation";
 import Error from "next/error";
 import * as React from "react";
 
 import {getRoom} from "@sentrei/common/firebase/rooms";
 import Room from "@sentrei/types/models/Room";
-import FormSection from "@sentrei/ui/components/FormSection";
+import GridSettings from "@sentrei/ui/components/GridSettings";
 import RoomFormDelete from "@sentrei/ui/components/RoomFormDelete";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
@@ -15,8 +13,6 @@ export interface Props {
 }
 
 export default function RoomDelete({roomId, namespaceId}: Props): JSX.Element {
-  const {t} = useTranslation();
-
   const [room, setRoom] = React.useState<Room.Get | null | undefined>();
 
   React.useEffect(() => {
@@ -24,7 +20,11 @@ export default function RoomDelete({roomId, namespaceId}: Props): JSX.Element {
   }, [roomId]);
 
   if (room === undefined) {
-    return <SkeletonForm />;
+    return (
+      <GridSettings skeleton tabRoomKey="delete" type="room">
+        <SkeletonForm />
+      </GridSettings>
+    );
   }
 
   if (room === null) {
@@ -32,13 +32,13 @@ export default function RoomDelete({roomId, namespaceId}: Props): JSX.Element {
   }
 
   return (
-    <>
-      <FormSection
-        icon={<DeleteForeverIcon />}
-        title={t("room:room.deleteRoom")}
-        size="md"
-      />
+    <GridSettings
+      namespaceId={namespaceId}
+      roomId={roomId}
+      tabRoomKey="delete"
+      type="room"
+    >
       <RoomFormDelete roomId={roomId} namespaceId={namespaceId} />
-    </>
+    </GridSettings>
   );
 }

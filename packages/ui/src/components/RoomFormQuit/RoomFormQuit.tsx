@@ -1,19 +1,21 @@
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {quitRoom} from "@sentrei/common/firebase/rooms";
+import FormSection from "@sentrei/ui/components/FormSection";
 import QuitForm from "@sentrei/ui/components/QuitForm";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
+  namespaceId: string;
   roomId: string;
   userId: string;
-  namespaceId: string;
 }
 
-const RoomFormQuit = ({roomId, userId, namespaceId}: Props): JSX.Element => {
+const RoomFormQuit = ({namespaceId, roomId, userId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -31,7 +33,16 @@ const RoomFormQuit = ({roomId, userId, namespaceId}: Props): JSX.Element => {
     }
   };
 
-  return <QuitForm id={roomId} onSubmit={onSubmit} type="quit" />;
+  return (
+    <>
+      <FormSection
+        icon={<ExitToAppIcon />}
+        title={t("room:room.quitRoom")}
+        size="md"
+      />
+      <QuitForm id={roomId} onSubmit={onSubmit} type="quit" />;
+    </>
+  );
 };
 
 export default RoomFormQuit;

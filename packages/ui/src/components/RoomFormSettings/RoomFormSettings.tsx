@@ -1,10 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
-import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
+import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
+import DescriptionIcon from "@material-ui/icons/Description";
+import PhotoIcon from "@material-ui/icons/Photo";
 import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -13,6 +9,8 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
+import RoomFormDescription from "@sentrei/ui/components/RoomFormDescription";
+import RoomFormName from "@sentrei/ui/components/RoomFormName";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
@@ -28,20 +26,22 @@ const RoomFormSettings = ({profile, room, user}: Props): JSX.Element => {
     <>
       <FormSection
         icon={<SettingsIcon />}
-        title={t("room:settings.title")}
+        title={t("room:room.editRoom")}
         size="md"
       />
       <TabBoard
         size="sm"
-        tabIconOne={<AccountBalanceIcon />}
-        tabIconTwo={<MeetingRoomIcon />}
-        tabIconThree={<DashboardIcon />}
-        tabLabelOne={t("common:common.billing")}
-        tabLabelTwo={t("common:common.room")}
-        tabLabelThree={t("common:common.space")}
-        tabPanelOne={<Box />}
-        tabPanelTwo={<Box />}
-        tabPanelThree={<Box />}
+        tabIconOne={<DescriptionIcon />}
+        tabIconTwo={<AssignmentIndIcon />}
+        tabIconThree={<PhotoIcon />}
+        tabLabelOne={t("common:common.description")}
+        tabLabelTwo={t("common:common.name")}
+        tabLabelThree={t("common:common.photo")}
+        tabPanelOne={
+          <RoomFormDescription profile={profile} room={room} user={user} />
+        }
+        tabPanelTwo={<RoomFormName profile={profile} room={room} user={user} />}
+        tabPanelThree={<></>}
       />
     </>
   );

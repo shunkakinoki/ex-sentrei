@@ -96,7 +96,7 @@ export default function RoomCard({
           </Grid>
           <Grid item xs={2} sm={1} md={1}>
             <CopyToClipboard
-              text={`${window.location.href}/room/${room.id}`}
+              text={`${window.location.origin}/${space.namespaceId}/${room.id}`}
               onCopy={(): void =>
                 snackbar("success", t("common:snackbar.clipboard"))
               }
