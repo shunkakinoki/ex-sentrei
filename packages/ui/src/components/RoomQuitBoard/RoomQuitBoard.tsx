@@ -4,6 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {quitRoom} from "@sentrei/common/firebase/rooms";
+import Member from "@sentrei/types/models/Member";
 import FormSection from "@sentrei/ui/components/FormSection";
 import QuitForm from "@sentrei/ui/components/QuitForm";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
@@ -11,11 +12,17 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
   namespaceId: string;
+  role: Member.Role;
   roomId: string;
   userId: string;
 }
 
-const RoomQuitBoard = ({namespaceId, roomId, userId}: Props): JSX.Element => {
+const RoomQuitBoard = ({
+  namespaceId,
+  role,
+  roomId,
+  userId,
+}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -40,7 +47,12 @@ const RoomQuitBoard = ({namespaceId, roomId, userId}: Props): JSX.Element => {
         title={t("room:room.quitRoom")}
         size="md"
       />
-      <QuitForm id={roomId} onSubmit={onSubmit} type="quit" />
+      <QuitForm
+        id={roomId}
+        disabled={role !== "admin"}
+        onSubmit={onSubmit}
+        type="quit"
+      />
     </>
   );
 };

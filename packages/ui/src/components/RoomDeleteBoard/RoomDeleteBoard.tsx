@@ -4,17 +4,19 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {deleteRoom} from "@sentrei/common/firebase/rooms";
+import Member from "@sentrei/types/models/Member";
 import DeleteForm from "@sentrei/ui/components/DeleteForm";
 import FormSection from "@sentrei/ui/components/FormSection";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
+  role: Member.Role;
   roomId: string;
   namespaceId: string;
 }
 
-const RoomDeleteForm = ({roomId, namespaceId}: Props): JSX.Element => {
+const RoomDeleteBoard = ({role, roomId, namespaceId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -39,9 +41,14 @@ const RoomDeleteForm = ({roomId, namespaceId}: Props): JSX.Element => {
         title={t("room:room.deleteRoom")}
         size="md"
       />
-      <DeleteForm id={roomId} onSubmit={onSubmit} type="delete" />
+      <DeleteForm
+        id={roomId}
+        disabled={role !== "admin"}
+        onSubmit={onSubmit}
+        type="delete"
+      />
     </>
   );
 };
 
-export default RoomDeleteForm;
+export default RoomDeleteBoard;

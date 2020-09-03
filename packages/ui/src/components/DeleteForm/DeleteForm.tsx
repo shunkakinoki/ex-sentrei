@@ -10,12 +10,18 @@ import {Controller, useForm} from "react-hook-form";
 import * as Yup from "yup";
 
 export interface Props {
+  disabled: boolean;
   id: string;
   type?: "delete" | "id";
   onSubmit: () => Promise<void>;
 }
 
-const DeleteForm = ({id, type = "id", onSubmit}: Props): JSX.Element => {
+const DeleteForm = ({
+  disabled,
+  id,
+  type = "id",
+  onSubmit,
+}: Props): JSX.Element => {
   const {t} = useTranslation();
 
   const DeleteFormSchema = Yup.object().shape({
@@ -47,6 +53,7 @@ const DeleteForm = ({id, type = "id", onSubmit}: Props): JSX.Element => {
                 <TextField
                   autoFocus
                   fullWidth
+                  disabled={disabled}
                   id="delete-id"
                   label={
                     type === "id"
@@ -71,7 +78,13 @@ const DeleteForm = ({id, type = "id", onSubmit}: Props): JSX.Element => {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button type="submit" fullWidth variant="contained" color="primary">
+            <Button
+              type="submit"
+              fullWidth
+              disabled={disabled}
+              variant="contained"
+              color="primary"
+            >
               {t("common:common.delete")}
             </Button>
           </Grid>

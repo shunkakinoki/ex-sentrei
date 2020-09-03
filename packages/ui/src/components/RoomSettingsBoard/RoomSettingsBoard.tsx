@@ -1,5 +1,5 @@
-import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import DescriptionIcon from "@material-ui/icons/Description";
+import EditAttributesIcon from "@material-ui/icons/EditAttributes";
 import PhotoIcon from "@material-ui/icons/Photo";
 import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
@@ -10,7 +10,6 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
-import RoomFormDescription from "@sentrei/ui/components/RoomFormDescription";
 import RoomFormName from "@sentrei/ui/components/RoomFormName";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
@@ -34,20 +33,12 @@ const RoomSettingsBoard = ({role, profile, room, user}: Props): JSX.Element => {
       <TabBoard
         size="sm"
         tabIconOne={<DescriptionIcon />}
-        tabIconTwo={<AssignmentIndIcon />}
-        tabIconThree={<PhotoIcon />}
-        tabLabelOne={t("common:common.description")}
-        tabLabelTwo={t("common:common.name")}
-        tabLabelThree={t("common:common.photo")}
+        tabIconTwo={<PhotoIcon />}
+        tabIconThree={<EditAttributesIcon />}
+        tabLabelOne={t("common:common.name")}
+        tabLabelTwo={t("common:common.photo")}
+        tabLabelThree={t("common:common.type")}
         tabPanelOne={
-          <RoomFormDescription
-            disabled={role !== "admin"}
-            profile={profile}
-            room={room}
-            user={user}
-          />
-        }
-        tabPanelTwo={
           <RoomFormName
             disabled={role !== "admin"}
             profile={profile}
@@ -55,6 +46,7 @@ const RoomSettingsBoard = ({role, profile, room, user}: Props): JSX.Element => {
             user={user}
           />
         }
+        tabPanelTwo={<></>}
         tabPanelThree={<></>}
       />
     </>

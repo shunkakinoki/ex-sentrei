@@ -29,12 +29,7 @@ export default function SpaceQuit({
   }, [spaceId]);
 
   React.useEffect(() => {
-    try {
-      getMember(spaceId, user.uid).then(setMember);
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error(err);
-    }
+    getMember(spaceId, user.uid).then(setMember);
   }, [spaceId, user.uid]);
 
   if (space === undefined) {
