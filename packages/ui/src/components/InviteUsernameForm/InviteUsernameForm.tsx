@@ -26,18 +26,18 @@ export interface Props {
   user: User.Get;
 }
 
-const InviteUserForm = ({profile, user, spaceId}: Props): JSX.Element => {
+const InviteUsernameForm = ({profile, user, spaceId}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
   const InviteUserFormSchema = Yup.object().shape({
-    namespace: Yup.string()
-      .required(t("form:namespace.namespaceRequired"))
+    username: Yup.string()
+      .required(t("form:username.usernameRequired"))
       .matches(
         /^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/,
-        t("form:namespace.namespaceInvalid"),
+        t("form:username.usernameInvalid"),
       )
-      .test("id", t("form:namespace.namespaceNotExist"), async value => {
+      .test("id", t("form:username.usernameNotExist"), async value => {
         const result = await validateNamespace(value || "");
         return !result;
       }),
@@ -52,7 +52,7 @@ const InviteUserForm = ({profile, user, spaceId}: Props): JSX.Element => {
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.inviting"));
     try {
-      const memberProfile = await getProfile(data.namespace).catch(err => {
+      const memberProfile = await getProfile(data.username).catch(err => {
         snackbar("error", err.message);
       });
       if (memberProfile && memberProfile !== null) {
@@ -97,19 +97,19 @@ const InviteUserForm = ({profile, user, spaceId}: Props): JSX.Element => {
               <TextField
                 autoFocus
                 fullWidth
-                id="namespace"
-                label={t("common:common.namespace")}
+                id="username"
+                label={t("common:common.username")}
                 margin="normal"
-                name="namespace"
+                name="username"
                 required
                 variant="outlined"
-                error={!!errors.namespace}
+                error={!!errors.username}
                 inputRef={register}
-                helperText={errors.namespace ? errors.namespace.message : ""}
+                helperText={errors.username ? errors.username.message : ""}
                 type="text"
               />
             }
-            name="namespace"
+            name="username"
             control={control}
             defaultValue=""
           />
@@ -135,4 +135,4 @@ const InviteUserForm = ({profile, user, spaceId}: Props): JSX.Element => {
   );
 };
 
-export default InviteUserForm;
+export default InviteUsernameForm;
