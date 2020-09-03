@@ -21,7 +21,7 @@ export const LeaderboardQuery = ({
 }: MemberQuery): firebase.firestore.Query<Member.Get> => {
   let ref = db
     .collection(`spaces/${spaceId}/members`)
-    .orderBy("score", "desc")
+    .orderBy("score", "asc")
     .orderBy("updatedAt", "desc")
     .withConverter(memberConverter)
     .limit(limit);
@@ -46,7 +46,7 @@ export const getLeaderboardLive = (
 ): firebase.Unsubscribe => {
   return db
     .collection(`spaces/${spaceId}/members`)
-    .orderBy("score", "desc")
+    .orderBy("score", "asc")
     .orderBy("updatedAt", "desc")
     .withConverter(memberConverter)
     .onSnapshot(snap => {
