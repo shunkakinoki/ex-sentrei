@@ -1,3 +1,11 @@
+# [1.31.0](https://github.com/sentrei/sentrei/compare/v1.30.0...v1.31.0) (2020-09-03)
+
+### Features
+
+- 🎸 ini room screen ([0657386](https://github.com/sentrei/sentrei/commit/06573866b8b2fd608aedfd29055cc0d7215c5091))
+- 🎸 ini room screen ([311338a](https://github.com/sentrei/sentrei/commit/311338a8097b3205574b61d4198ed3376447ea1d))
+- 🎸 refactor profile screen ([a858465](https://github.com/sentrei/sentrei/commit/a858465133154d83512a633a0336fd1ee450da0f))
+
 # [1.30.0](https://github.com/sentrei/sentrei/compare/v1.29.0...v1.30.0) (2020-09-03)
 
 ### Features
