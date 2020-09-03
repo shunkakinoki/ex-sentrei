@@ -1,3 +1,14 @@
+# [1.29.0](https://github.com/sentrei/sentrei/compare/v1.28.0...v1.29.0) (2020-09-03)
+
+### Features
+
+- 🎸 complete refactor ui form components ([b549fdb](https://github.com/sentrei/sentrei/commit/b549fdba9aa133c38c3be28c86d742c4175cba78))
+
+### Performance Improvements
+
+- ⚡️ refactor invite namespace to username ([c73faf2](https://github.com/sentrei/sentrei/commit/c73faf2f9e03d8d68dd868d2eb9973c4691704c3))
+- ⚡️ refactor mui button ([c26de3a](https://github.com/sentrei/sentrei/commit/c26de3a3b9628d6d9b9ef592cd757fdbdce16763))
+
 # [1.28.0](https://github.com/sentrei/sentrei/compare/v1.27.0...v1.28.0) (2020-09-03)
 
 ### Features
