@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 import * as React from "react";
 
-import PictureSvg from "@sentrei/ui/components/PictureSvg";
+import Svg from "react-optimized-image";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const src = require("../../../public/images/video.svg");
+import SrcImg from "../../../public/images/video.svg";
 
 export default function VideoPicture(): JSX.Element {
-  return <PictureSvg alt="video" src={src} />;
+  return <Svg alt="logo" src={SrcImg} style={{maxWidth: "100%"}} />;
 }

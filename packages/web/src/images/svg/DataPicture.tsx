@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 import * as React from "react";
 
-import PictureSvg from "@sentrei/ui/components/PictureSvg";
+import Svg from "react-optimized-image";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const src = require("../../../public/images/data.svg");
+import SrcImg from "../../../public/images/data.svg";
 
 export default function DataPicture(): JSX.Element {
-  return <PictureSvg alt="data" src={src} />;
+  return <Svg alt="logo" src={SrcImg} style={{maxWidth: "100%"}} />;
 }
