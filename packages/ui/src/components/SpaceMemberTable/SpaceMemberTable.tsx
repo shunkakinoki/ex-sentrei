@@ -38,7 +38,7 @@ export default function SpaceMemberTable({
           <TableRow>
             <TableCell align="left">{t("common:common.avatar")}</TableCell>
             <TableCell align="left">{t("common:common.name")}</TableCell>
-            <TableCell align="center">{t("common:common.id")}</TableCell>
+            <TableCell align="center">{t("common:common.username")}</TableCell>
             <TableCell align="right">{t("common:common.role")}</TableCell>
             <TableCell align="right">
               {t("common:common.lastUpdated")}
@@ -54,7 +54,7 @@ export default function SpaceMemberTable({
                   <ProfileCard member={member} />
                 </TableCell>
                 <TableCell align="left">{member.name}</TableCell>
-                <TableCell align="center">{member.id}</TableCell>
+                <TableCell align="center">{member.namespaceId}</TableCell>
                 <TableCell align="right">{member.role}</TableCell>
                 <TableCell align="right">{member.updatedAt}</TableCell>
               </StyledTableRow>
@@ -67,7 +67,7 @@ export default function SpaceMemberTable({
                   <ProfileCard member={member} />
                 </TableCell>
                 <TableCell align="left">{member.name}</TableCell>
-                <TableCell align="center">{member.id}</TableCell>
+                <TableCell align="center">{member.namespaceId}</TableCell>
                 <TableCell align="right">{member.role}</TableCell>
                 <TableCell align="right">{member.updatedAt}</TableCell>
               </TableRow>
