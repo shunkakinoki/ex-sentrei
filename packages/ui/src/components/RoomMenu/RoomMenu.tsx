@@ -2,7 +2,6 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import DeleteIcon from "@material-ui/icons/Delete";
-import EditAttributesIcon from "@material-ui/icons/EditAttributes";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
@@ -47,17 +46,17 @@ export default function RoomMenu({
       onClose={onClose}
     >
       <MuiMenuItem
-        href="/[namespaceId]/room/[roomId]/edit"
-        as={`/${namespaceId}/room/${roomId}/edit`}
+        href="/[namespaceId]/[roomId]/settings"
+        as={`/${namespaceId}/${roomId}/settings`}
       >
         <ListItemIcon>
-          <EditAttributesIcon fontSize="small" />
+          <SettingsIcon fontSize="small" />
         </ListItemIcon>
-        <ListItemText primary={t("room:room.editRoom")} />
+        <ListItemText primary={t("room:room.settings")} />
       </MuiMenuItem>
       <MuiMenuItem
-        href="/[namespaceId]/room/[roomId]/quit"
-        as={`/${namespaceId}/room/${roomId}/quit`}
+        href="/[namespaceId]/[roomId]/settings/quit"
+        as={`/${namespaceId}/${roomId}/settings/quit`}
       >
         <ListItemIcon>
           <ExitToAppIcon fontSize="small" />
@@ -65,22 +64,13 @@ export default function RoomMenu({
         <ListItemText primary={t("room:room.quitRoom")} />
       </MuiMenuItem>
       <MuiMenuItem
-        href="/[namespaceId]/room/[roomId]/delete"
-        as={`/${namespaceId}/room/${roomId}/delete`}
+        href="/[namespaceId]/[roomId]/settings/delete"
+        as={`/${namespaceId}/${roomId}/settings/delete`}
       >
         <ListItemIcon>
           <DeleteIcon fontSize="small" />
         </ListItemIcon>
         <ListItemText primary={t("room:room.deleteRoom")} />
-      </MuiMenuItem>
-      <MuiMenuItem
-        href="/[namespaceId]/room/[roomId]/settings"
-        as={`/${namespaceId}/room/${roomId}/settings`}
-      >
-        <ListItemIcon>
-          <SettingsIcon fontSize="small" />
-        </ListItemIcon>
-        <ListItemText primary={t("room:room.settings")} />
       </MuiMenuItem>
     </Menu>
   );

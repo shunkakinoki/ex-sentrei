@@ -7,6 +7,8 @@ export type AppTabSpaceKey =
   | "members"
   | "settings";
 
+export type AppTabRoomKey = "home" | "settings";
+
 export type AppTabUserKey =
   | "dashboard"
   | "create"

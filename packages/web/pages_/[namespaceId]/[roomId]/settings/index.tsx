@@ -1,33 +1,41 @@
 import {NextPage} from "next";
 import Router from "next-translate/Router";
+import dynamic from "next/dynamic";
+import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-
 import {analytics} from "@sentrei/common/utils/firebase";
-
-import ProfileScreen from "@sentrei/ui/components/ProfileScreen";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const Profile: NextPage = () => {
+const RoomSettings = dynamic(
+  () => import("@sentrei/ui/components/RoomSettings"),
+  {
+    ssr: false,
+  },
+);
+
+const Edit: NextPage = () => {
+  const {query} = useRouter();
+
   const {user, profile} = React.useContext(AuthContext);
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("profile");
+    analytics().setCurrentScreen("roomEdit");
   }, []);
-
-  if (!user && typeof window !== "undefined") {
-    Router.pushI18n("/");
-  }
 
   if (user === undefined || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton tabUserKey="profile" type="user" />
+        <SentreiAppHeader skeleton tabRoomKey="settings" type="room" />
         <SkeletonForm />
       </>
     );
+  }
+
+  if (!user) {
+    Router.pushI18n("/");
   }
 
   return (
@@ -36,14 +44,23 @@ const Profile: NextPage = () => {
         <SentreiAppHeader
           notificationCount={Number(user.notificationCount)}
           profile={profile}
+          namespaceId={String(query.namespaceId)}
+          roomId={String(query.roomId)}
           userId={user.uid}
-          tabUserKey="profile"
-          type="user"
+          tabRoomKey="settings"
+          type="room"
         />
       )}
-      {user && <ProfileScreen profile={profile} user={user} />}
+      {user && (
+        <RoomSettings
+          roomId={String(query.roomId)}
+          namespaceId={String(query.namespaceId)}
+          profile={profile}
+          user={user}
+        />
+      )}
     </>
   );
 };
 
-export default Profile;
+export default Edit;

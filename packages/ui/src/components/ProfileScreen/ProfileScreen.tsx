@@ -17,7 +17,7 @@ interface Props {
   user: User.Get;
 }
 
-export default function ProfileEdit({profile, user}: Props): JSX.Element {
+export default function ProfileScreen({profile, user}: Props): JSX.Element {
   const {t} = useTranslation();
 
   return (

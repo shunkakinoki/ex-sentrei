@@ -1,28 +1,24 @@
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import useTranslation from "next-translate/useTranslation";
 import Error from "next/error";
 import * as React from "react";
 
 import {getRoom} from "@sentrei/common/firebase/rooms";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
-import FormSection from "@sentrei/ui/components/FormSection";
+import GridSettings from "@sentrei/ui/components/GridSettings";
 import RoomFormQuit from "@sentrei/ui/components/RoomFormQuit";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
+  namespaceId: string;
   roomId: string;
   user: User.Get;
-  namespaceId: string;
 }
 
 export default function RoomQuit({
+  namespaceId,
   roomId,
   user,
-  namespaceId,
 }: Props): JSX.Element {
-  const {t} = useTranslation();
-
   const [room, setRoom] = React.useState<Room.Get | null | undefined>();
 
   React.useEffect(() => {
@@ -30,7 +26,11 @@ export default function RoomQuit({
   }, [roomId]);
 
   if (room === undefined) {
-    return <SkeletonForm />;
+    return (
+      <GridSettings skeleton tabSpaceKey="quit" type="room">
+        <SkeletonForm />
+      </GridSettings>
+    );
   }
 
   if (room === null) {
@@ -38,17 +38,17 @@ export default function RoomQuit({
   }
 
   return (
-    <>
-      <FormSection
-        icon={<ExitToAppIcon />}
-        title={t("room:room.quitRoom")}
-        size="md"
-      />
+    <GridSettings
+      namespaceId={namespaceId}
+      roomId={roomId}
+      tabRoomKey="quit"
+      type="room"
+    >
       <RoomFormQuit
+        namespaceId={namespaceId}
         roomId={roomId}
         userId={user.uid}
-        namespaceId={namespaceId}
       />
-    </>
+    </GridSettings>
   );
 }

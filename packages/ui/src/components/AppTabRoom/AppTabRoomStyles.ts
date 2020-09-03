@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const AppTabSpaceStyles = makeStyles((theme: Theme) =>
+const AppTabRoomStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       borderBottom: `1px solid ${theme.palette.divider}`,
@@ -17,4 +17,4 @@ const AppTabSpaceStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default AppTabSpaceStyles;
+export default AppTabRoomStyles;
