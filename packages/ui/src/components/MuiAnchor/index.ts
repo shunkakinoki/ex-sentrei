@@ -1,1 +1,1 @@
-export {default} from "./MuiA";
+export {default} from "./MuiAnchor";
