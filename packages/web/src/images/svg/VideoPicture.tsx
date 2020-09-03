@@ -7,5 +7,5 @@ import Svg from "react-optimized-image";
 import SrcImg from "../../../public/images/video.svg";
 
 export default function VideoPicture(): JSX.Element {
-  return <Svg alt="logo" src={SrcImg} style={{maxWidth: "100%"}} />;
+  return <Svg alt="logo" src={SrcImg} className="next-optimized-images" />;
 }
