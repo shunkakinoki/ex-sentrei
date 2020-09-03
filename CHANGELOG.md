@@ -1,3 +1,16 @@
+# [1.28.0](https://github.com/sentrei/sentrei/compare/v1.27.0...v1.28.0) (2020-09-03)
+
+### Features
+
+- 🎸 ini next seo default integration ([68e9a51](https://github.com/sentrei/sentrei/commit/68e9a5103836e176630b475af1028519e0aad5f9))
+- 🎸 ini next-optimized-images global scss class ([1268a01](https://github.com/sentrei/sentrei/commit/1268a0148866ab2387be2817103d03edf9c731bf))
+- 🎸 upgrade next optimized images plugin ([1b270ed](https://github.com/sentrei/sentrei/commit/1b270edfd4a7c236acff051701f1ada8eed48396))
+- 🎸 upgrade svg components ([5f6a18b](https://github.com/sentrei/sentrei/commit/5f6a18ba4bc55bf80b1fe2b40a832f4f37dbbf62))
+
+### Performance Improvements
+
+- ⚡️ ini google fonts ([828d1ae](https://github.com/sentrei/sentrei/commit/828d1ae3a5e6c629de87f0f3f93be8113b7e8cff))
+
 # [1.27.0](https://github.com/sentrei/sentrei/compare/v1.26.0...v1.27.0) (2020-09-03)
 
 ### Features
