@@ -39,7 +39,11 @@ export default function SpaceQuit({
 
   return (
     <GridSettings namespaceId={namespaceId} tabSpaceKey="quit" type="space">
-      <SpaceFormQuit spaceId={spaceId} userId={user.uid} />
+      <SpaceFormQuit
+        namespaceId={namespaceId}
+        spaceId={spaceId}
+        userId={user.uid}
+      />
     </GridSettings>
   );
 }

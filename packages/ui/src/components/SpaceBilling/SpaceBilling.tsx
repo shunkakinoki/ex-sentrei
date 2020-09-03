@@ -1,13 +1,14 @@
 import Error from "next/error";
 import * as React from "react";
 
+import {getMembers} from "@sentrei/common/firebase/members";
 import {getSpace} from "@sentrei/common/firebase/spaces";
-import accessCustomerPortal from "@sentrei/common/services/accessCustomerPortal";
+import Member from "@sentrei/types/models/Member";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import GridSettings from "@sentrei/ui/components/GridSettings";
-import MuiButton from "@sentrei/ui/components/MuiButton";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
+import SpaceBillingBoard from "@sentrei/ui/components/SpaceBillingBoard";
 
 export interface Props {
   namespaceId: string;
@@ -21,26 +22,22 @@ export default function SpaceSettings({
   user,
 }: Props): JSX.Element {
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
-
-  const [portalLink, setPortalLink] = React.useState<string>("");
-  const handlePortalLink = (token: string): void => setPortalLink(token);
+  const [members, setMembers] = React.useState<
+    Member.Get[] | null | undefined
+  >();
 
   React.useEffect(() => {
     getSpace(spaceId).then(setSpace);
   }, [spaceId]);
 
   React.useEffect(() => {
-    if (user)
-      // TODO: Validate if members is admin
-      accessCustomerPortal(spaceId, window.location.href)
-        .then((data): void => {
-          handlePortalLink(data.url);
-        })
-        .catch(err => {
-          // eslint-disable-next-line no-console
-          console.log(err);
-        });
-  }, [user, spaceId]);
+    try {
+      getMembers({spaceId}).then(setMembers);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error(err);
+    }
+  }, [spaceId]);
 
   if (space === undefined) {
     return (
@@ -56,7 +53,10 @@ export default function SpaceSettings({
 
   return (
     <GridSettings namespaceId={namespaceId} tabSpaceKey="billing" type="space">
-      <MuiButton href={portalLink}>{portalLink}</MuiButton>
+      <SpaceBillingBoard
+        role={members?.filter(doc => doc.uid === user.uid)[0].role || "viewer"}
+        spaceId={spaceId}
+      />
     </GridSettings>
   );
 }
