@@ -6,7 +6,7 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 
 import {analytics} from "@sentrei/common/utils/firebase";
 
-import ProfileEdit from "@sentrei/ui/components/ProfileEdit";
+import ProfileScreen from "@sentrei/ui/components/ProfileScreen";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -41,7 +41,7 @@ const Profile: NextPage = () => {
           type="user"
         />
       )}
-      {user && <ProfileEdit profile={profile} user={user} />}
+      {user && <ProfileScreen profile={profile} user={user} />}
     </>
   );
 };
