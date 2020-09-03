@@ -72,7 +72,7 @@ const RoomStepperSubmit = ({
         backdrop("loading");
         setActiveForm({name: "", type: "focus"});
         setActiveStep(0);
-        Router.pushI18n("/dashboard");
+        Router.back();
       });
     } catch (err) {
       snackbar("error", err.message);
