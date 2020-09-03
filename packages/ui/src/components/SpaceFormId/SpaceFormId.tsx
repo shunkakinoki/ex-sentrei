@@ -22,10 +22,11 @@ import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
+  disabled: boolean;
   space: Space.Get;
 }
 
-const SpaceFormId = ({space}: Props): JSX.Element => {
+const SpaceFormId = ({disabled, space}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
@@ -86,6 +87,7 @@ const SpaceFormId = ({space}: Props): JSX.Element => {
                   <TextField
                     autoFocus
                     fullWidth
+                    disabled={disabled}
                     id="id"
                     label={t("common:common.id")}
                     margin="normal"

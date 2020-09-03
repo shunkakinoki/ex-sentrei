@@ -20,12 +20,18 @@ import User from "@sentrei/types/models/User";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
+  disabled: boolean;
   profile: Profile.Get;
   space: Space.Get;
   user: User.Get;
 }
 
-const SpaceFormName = ({profile, space, user}: Props): JSX.Element => {
+const SpaceFormName = ({
+  disabled,
+  profile,
+  space,
+  user,
+}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
@@ -67,6 +73,7 @@ const SpaceFormName = ({profile, space, user}: Props): JSX.Element => {
               <TextField
                 autoFocus
                 fullWidth
+                disabled={disabled}
                 id="space-name"
                 label={t("common:common.name")}
                 margin="normal"

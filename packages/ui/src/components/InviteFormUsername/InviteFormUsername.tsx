@@ -11,7 +11,10 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import {createMember} from "@sentrei/common/firebase/members";
-import {validateNamespace} from "@sentrei/common/firebase/namespaces";
+import {
+  validateNamespace,
+  getNamespace,
+} from "@sentrei/common/firebase/namespaces";
 import {getProfile} from "@sentrei/common/firebase/profiles";
 import {timestamp} from "@sentrei/common/utils/firebase";
 
@@ -52,10 +55,15 @@ const InviteFormUsername = ({profile, user, spaceId}: Props): JSX.Element => {
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
     snackbar("info", t("common:snackbar.inviting"));
     try {
-      const memberProfile = await getProfile(data.username).catch(err => {
+      const namespace = await getNamespace(data.username);
+      if (!namespace || namespace === null) {
+        snackbar("error", "Namepspace not found");
+        throw new Error("Namespace not found");
+      }
+      const memberProfile = await getProfile(namespace.uid).catch(err => {
         snackbar("error", err.message);
       });
-      if (memberProfile && memberProfile !== null) {
+      if (memberProfile) {
         const member: Member.Create = {
           createdAt: timestamp,
           createdBy: profile,
@@ -63,9 +71,9 @@ const InviteFormUsername = ({profile, user, spaceId}: Props): JSX.Element => {
           description: "",
           duration: 0,
           emoji: "joy",
-          name: memberProfile.name,
-          namespaceId: memberProfile.namespaceId,
-          photo: memberProfile.photo,
+          name: memberProfile?.name,
+          namespaceId: memberProfile?.namespaceId,
+          photo: memberProfile?.photo,
           photoHash: memberProfile.photoHash,
           score: 0,
           status: "offline",

@@ -5,6 +5,7 @@ import Metadata from "@sentrei/types/models/Metadata";
 import Profile from "@sentrei/types/models/Profile";
 
 declare namespace Member {
+  export type Role = "admin" | "moderator" | "viewer";
   export type Status = "online" | "offline" | "away";
 
   export type EditableFields = {
@@ -14,7 +15,7 @@ declare namespace Member {
   };
 
   interface Fields extends Analytics.Fields, EditableFields {
-    role: "admin" | "moderator" | "viewer";
+    role: Role;
   }
 
   export type AdminUpdate = Partial<Fields>;
