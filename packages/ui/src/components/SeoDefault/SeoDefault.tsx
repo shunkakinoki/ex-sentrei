@@ -2,7 +2,7 @@ import {DefaultSeo} from "next-seo";
 import * as React from "react";
 
 export interface Props {
-  nofollow: boolean;
+  nofollow?: boolean;
 }
 
 export default function SeoDefault({nofollow = false}: Props): JSX.Element {
