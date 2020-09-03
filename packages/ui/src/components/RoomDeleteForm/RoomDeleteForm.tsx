@@ -1,30 +1,29 @@
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import {quitRoom} from "@sentrei/common/firebase/rooms";
+import {deleteRoom} from "@sentrei/common/firebase/rooms";
+import DeleteForm from "@sentrei/ui/components/DeleteForm";
 import FormSection from "@sentrei/ui/components/FormSection";
-import QuitForm from "@sentrei/ui/components/QuitForm";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
-  namespaceId: string;
   roomId: string;
-  userId: string;
+  namespaceId: string;
 }
 
-const RoomFormQuit = ({namespaceId, roomId, userId}: Props): JSX.Element => {
+const RoomDeleteForm = ({roomId, namespaceId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
 
   const onSubmit = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.quiting"));
+    snackbar("info", t("common:snackbar.deleting"));
     try {
-      await quitRoom(roomId, userId)?.then(() => {
-        snackbar("success", t("common:snackbar.quitted"));
+      await deleteRoom(roomId)?.then(() => {
+        snackbar("success");
         backdrop("loading");
         Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
       });
@@ -36,13 +35,13 @@ const RoomFormQuit = ({namespaceId, roomId, userId}: Props): JSX.Element => {
   return (
     <>
       <FormSection
-        icon={<ExitToAppIcon />}
-        title={t("room:room.quitRoom")}
+        icon={<DeleteForeverIcon />}
+        title={t("room:room.deleteRoom")}
         size="md"
       />
-      <QuitForm id={roomId} onSubmit={onSubmit} type="quit" />;
+      <DeleteForm id={roomId} onSubmit={onSubmit} type="delete" />
     </>
   );
 };
 
-export default RoomFormQuit;
+export default RoomDeleteForm;

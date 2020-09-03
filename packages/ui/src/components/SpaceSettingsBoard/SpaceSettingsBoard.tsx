@@ -29,7 +29,7 @@ export interface Props {
   user: User.Get;
 }
 
-const SpaceFormSettings = ({
+const SpaceSettingsBoard = ({
   role,
   profile,
   space,
@@ -68,4 +68,4 @@ const SpaceFormSettings = ({
   );
 };
 
-export default SpaceFormSettings;
+export default SpaceSettingsBoard;

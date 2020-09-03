@@ -4,7 +4,7 @@ import * as React from "react";
 import {getRoom} from "@sentrei/common/firebase/rooms";
 import Room from "@sentrei/types/models/Room";
 import GridSettings from "@sentrei/ui/components/GridSettings";
-import RoomFormDelete from "@sentrei/ui/components/RoomFormDelete";
+import RoomDeleteForm from "@sentrei/ui/components/RoomDeleteForm";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
@@ -38,7 +38,7 @@ export default function RoomDelete({roomId, namespaceId}: Props): JSX.Element {
       tabRoomKey="delete"
       type="room"
     >
-      <RoomFormDelete roomId={roomId} namespaceId={namespaceId} />
+      <RoomDeleteForm roomId={roomId} namespaceId={namespaceId} />
     </GridSettings>
   );
 }

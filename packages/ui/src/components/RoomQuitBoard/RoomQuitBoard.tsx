@@ -3,26 +3,19 @@ import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import {deleteMember} from "@sentrei/common/firebase/members";
-import Member from "@sentrei/types/models/Member";
+import {quitRoom} from "@sentrei/common/firebase/rooms";
 import FormSection from "@sentrei/ui/components/FormSection";
 import QuitForm from "@sentrei/ui/components/QuitForm";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
-  role: Member.Role;
   namespaceId: string;
-  spaceId: string;
+  roomId: string;
   userId: string;
 }
 
-const SpaceFormQuit = ({
-  role,
-  namespaceId,
-  spaceId,
-  userId,
-}: Props): JSX.Element => {
+const RoomQuitBoard = ({namespaceId, roomId, userId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -30,11 +23,11 @@ const SpaceFormQuit = ({
   const onSubmit = async (): Promise<void> => {
     snackbar("info", t("common:snackbar.quiting"));
     try {
-      await deleteMember(spaceId, userId)?.then(() => {
-        snackbar("success");
+      await quitRoom(roomId, userId)?.then(() => {
+        snackbar("success", t("common:snackbar.quitted"));
         backdrop("loading");
+        Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
       });
-      Router.pushI18n("/dashboard");
     } catch (err) {
       snackbar("error", err.message);
     }
@@ -44,16 +37,12 @@ const SpaceFormQuit = ({
     <>
       <FormSection
         icon={<ExitToAppIcon />}
-        title={t("space:settings.quit")}
+        title={t("room:room.quitRoom")}
         size="md"
       />
-      <QuitForm
-        disabled={role === "admin"}
-        id={namespaceId}
-        onSubmit={onSubmit}
-      />
+      <QuitForm id={roomId} onSubmit={onSubmit} type="quit" />;
     </>
   );
 };
 
-export default SpaceFormQuit;
+export default RoomQuitBoard;
