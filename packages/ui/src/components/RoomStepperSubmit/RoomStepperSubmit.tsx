@@ -72,9 +72,7 @@ const RoomStepperSubmit = ({
         backdrop("loading");
         setActiveForm({name: "", type: "focus"});
         setActiveStep(0);
-        setTimeout(() => {
-          Router.pop();
-        }, 1500);
+        Router.pop();
       });
     } catch (err) {
       snackbar("error", err.message);
