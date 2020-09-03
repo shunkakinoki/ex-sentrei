@@ -6,17 +6,16 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Footer from "@sentrei/ui/components/Footer";
+import LandingScreen from "@sentrei/ui/components/LandingScreen";
 import Loader from "@sentrei/ui/components/Loader";
-import Spacing from "@sentrei/ui/components/Spacing";
-import SentreiBanner from "@sentrei/web/components/SentreiBanner";
-import SentreiFaq from "@sentrei/web/components/SentreiFaq";
-import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import SentreiOneTap from "@sentrei/web/components/SentreiOneTap";
-import SentreiPricing from "@sentrei/web/components/SentreiPricing";
-import SentreiProduct from "@sentrei/web/components/SentreiProduct";
-import SentreiScreen from "@sentrei/web/components/SentreiScreen";
-import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
+import ConnectPicture from "@sentrei/web/images/svg/ConnectPicture";
+import DataPicture from "@sentrei/web/images/svg/DataPicture";
+import FocusPicture from "@sentrei/web/images/svg/FocusPicture";
+import GoalPicture from "@sentrei/web/images/svg/GoalPicture";
+import TimePicture from "@sentrei/web/images/svg/TimePicture";
+import VideoPicture from "@sentrei/web/images/svg/VideoPicture";
 
 const Index: NextPage = () => {
   const {user} = React.useContext(AuthContext);
@@ -41,30 +40,17 @@ const Index: NextPage = () => {
       </Head>
       <SentreiOneTap delay user={user} />
       <SentreiHeader type="landing" />
-      <SentreiBanner />
-      <Spacing />
-      <SentreiScreen />
-      <Spacing />
-      <div id="product">
-        <SentreiProduct />
-      </div>
-      <Spacing />
-      <div id="feature">
-        <SentreiFeature />
-      </div>
-      <Spacing />
-      <div id="testimonial">
-        <SentreiTestimonial />
-      </div>
-      <Spacing />
-      <div id="pricing">
-        <SentreiPricing />
-      </div>
-      <Spacing />
-      <div id="faq">
-        <SentreiFaq />
-      </div>
-      <Spacing />
+      <LandingScreen
+        connectImg={<ConnectPicture />}
+        dataImg={<DataPicture />}
+        videoImg={<VideoPicture />}
+        timeImg={<TimePicture />}
+        focusImg={<FocusPicture />}
+        goalImg={<GoalPicture />}
+        personOneImg={<FocusPicture />}
+        personTwoImg={<GoalPicture />}
+        personThreeImg={<TimePicture />}
+      />
       <Footer metomic />
     </>
   );
