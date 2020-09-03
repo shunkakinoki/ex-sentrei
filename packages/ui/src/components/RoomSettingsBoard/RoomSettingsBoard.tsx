@@ -5,6 +5,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
@@ -14,12 +15,13 @@ import RoomFormName from "@sentrei/ui/components/RoomFormName";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
+  role: Member.Role;
   profile: Profile.Get;
   room: Room.Get;
   user: User.Get;
 }
 
-const RoomSettingsBoard = ({profile, room, user}: Props): JSX.Element => {
+const RoomSettingsBoard = ({role, profile, room, user}: Props): JSX.Element => {
   const {t} = useTranslation();
 
   return (
@@ -38,9 +40,21 @@ const RoomSettingsBoard = ({profile, room, user}: Props): JSX.Element => {
         tabLabelTwo={t("common:common.name")}
         tabLabelThree={t("common:common.photo")}
         tabPanelOne={
-          <RoomFormDescription profile={profile} room={room} user={user} />
+          <RoomFormDescription
+            disabled={role !== "admin"}
+            profile={profile}
+            room={room}
+            user={user}
+          />
         }
-        tabPanelTwo={<RoomFormName profile={profile} room={room} user={user} />}
+        tabPanelTwo={
+          <RoomFormName
+            disabled={role !== "admin"}
+            profile={profile}
+            room={room}
+            user={user}
+          />
+        }
         tabPanelThree={<></>}
       />
     </>

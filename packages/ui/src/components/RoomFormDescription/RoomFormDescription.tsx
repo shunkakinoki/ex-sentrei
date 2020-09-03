@@ -20,12 +20,18 @@ import User from "@sentrei/types/models/User";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
+  disabled: boolean;
   profile: Profile.Get;
   room: Room.Get;
   user: User.Get;
 }
 
-const RoomFormDescription = ({profile, room, user}: Props): JSX.Element => {
+const RoomFormDescription = ({
+  disabled,
+  profile,
+  room,
+  user,
+}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
@@ -67,6 +73,7 @@ const RoomFormDescription = ({profile, room, user}: Props): JSX.Element => {
               <TextField
                 autoFocus
                 fullWidth
+                disabled={disabled}
                 id="room-description"
                 label={t("common:common.description")}
                 margin="normal"
@@ -87,7 +94,13 @@ const RoomFormDescription = ({profile, room, user}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
+          <Button
+            type="submit"
+            fullWidth
+            disabled={disabled}
+            variant="contained"
+            color="primary"
+          >
             {t("common:common.edit")}
           </Button>
         </Grid>

@@ -40,7 +40,7 @@ const RoomQuitBoard = ({namespaceId, roomId, userId}: Props): JSX.Element => {
         title={t("room:room.quitRoom")}
         size="md"
       />
-      <QuitForm id={roomId} onSubmit={onSubmit} type="quit" />;
+      <QuitForm id={roomId} onSubmit={onSubmit} type="quit" />
     </>
   );
 };
