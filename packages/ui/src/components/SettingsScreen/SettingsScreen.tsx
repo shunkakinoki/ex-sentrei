@@ -9,9 +9,9 @@ import * as React from "react";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
-import SettingsNotificationForm from "@sentrei/ui/components/SettingsNotificationForm";
-import SettingsOtherForm from "@sentrei/ui/components/SettingsOtherForm";
-import SettingsPasswordForm from "@sentrei/ui/components/SettingsPasswordForm";
+import SettingsFormNotification from "@sentrei/ui/components/SettingsFormNotification";
+import SettingsFormOther from "@sentrei/ui/components/SettingsFormOther";
+import SettingsFormPassword from "@sentrei/ui/components/SettingsFormPassword";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
@@ -40,7 +40,7 @@ const SettingsScreen = ({profile, user}: Props): JSX.Element => {
         tabPanelOne={
           <Grid container justify="center" direction="row" spacing={3}>
             <Grid item xs={12}>
-              <SettingsNotificationForm
+              <SettingsFormNotification
                 profile={profile}
                 user={user}
                 content="chat"
@@ -48,7 +48,7 @@ const SettingsScreen = ({profile, user}: Props): JSX.Element => {
               />
             </Grid>
             <Grid item xs={12}>
-              <SettingsNotificationForm
+              <SettingsFormNotification
                 profile={profile}
                 user={user}
                 content="invitation"
@@ -56,7 +56,7 @@ const SettingsScreen = ({profile, user}: Props): JSX.Element => {
               />
             </Grid>
             <Grid item xs={12}>
-              <SettingsNotificationForm
+              <SettingsFormNotification
                 profile={profile}
                 user={user}
                 content="update"
@@ -65,8 +65,8 @@ const SettingsScreen = ({profile, user}: Props): JSX.Element => {
             </Grid>
           </Grid>
         }
-        tabPanelTwo={<SettingsPasswordForm />}
-        tabPanelThree={<SettingsOtherForm />}
+        tabPanelTwo={<SettingsFormPassword />}
+        tabPanelThree={<SettingsFormOther />}
       />
     </>
   );

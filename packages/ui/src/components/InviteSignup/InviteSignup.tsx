@@ -3,7 +3,7 @@ import * as React from "react";
 
 import {getInvite} from "@sentrei/common/firebase/invites";
 import Invite from "@sentrei/types/models/Invite";
-import InviteSignupForm from "@sentrei/ui/components/InviteSignupForm";
+import InviteFormSignup from "@sentrei/ui/components/InviteFormSignup";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
@@ -26,5 +26,5 @@ export default function InviteSignup({inviteId, spaceId}: Props): JSX.Element {
     return <Error statusCode={404} />;
   }
 
-  return <InviteSignupForm inviteId={inviteId} spaceId={spaceId} />;
+  return <InviteFormSignup inviteId={inviteId} spaceId={spaceId} />;
 }

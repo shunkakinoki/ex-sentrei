@@ -1,10 +1,10 @@
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
+
+import MuiButton from "@sentrei/ui/components/MuiButton";
 
 export interface Props {
   namespaceId: string;
@@ -25,16 +25,15 @@ export default function RoomNone({namespaceId}: Props): JSX.Element {
           {t("room:room.none")}
         </Typography>
         <Box p={3} />
-        <Button
+        <MuiButton
           fullWidth
+          href="/[namespaceId]/rooms/create"
+          as={`/${namespaceId}/rooms/create`}
           variant="outlined"
           color="primary"
-          onClick={(): void =>
-            Router.pushI18n("/[namespaceId]/create", `/${namespaceId}/create`)
-          }
         >
           {t("common:common.create")}
-        </Button>
+        </MuiButton>
       </Container>
     </Box>
   );

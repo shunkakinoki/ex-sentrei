@@ -8,8 +8,8 @@ import * as React from "react";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
-import ProfileNameForm from "@sentrei/ui/components/ProfileNameForm";
-import ProfileUsernameForm from "@sentrei/ui/components/ProfileUsernameForm";
+import ProfileFormName from "@sentrei/ui/components/ProfileFormName";
+import ProfileFormUsername from "@sentrei/ui/components/ProfileFormUsername";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 interface Props {
@@ -35,9 +35,9 @@ export default function ProfileEdit({profile, user}: Props): JSX.Element {
         tabLabelOne={t("common:common.name")}
         tabLabelTwo={t("common:common.photo")}
         tabLabelThree={t("common:common.username")}
-        tabPanelOne={<ProfileNameForm profile={profile} />}
+        tabPanelOne={<ProfileFormName profile={profile} />}
         tabPanelTwo={<></>}
-        tabPanelThree={<ProfileUsernameForm profile={profile} user={user} />}
+        tabPanelThree={<ProfileFormUsername profile={profile} user={user} />}
       />
     </>
   );

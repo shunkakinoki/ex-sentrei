@@ -7,7 +7,7 @@ import {getRoom} from "@sentrei/common/firebase/rooms";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
-import RoomQuitForm from "@sentrei/ui/components/RoomQuitForm";
+import RoomFormQuit from "@sentrei/ui/components/RoomFormQuit";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
@@ -44,7 +44,7 @@ export default function RoomQuit({
         title={t("room:room.quitRoom")}
         size="md"
       />
-      <RoomQuitForm
+      <RoomFormQuit
         roomId={roomId}
         userId={user.uid}
         namespaceId={namespaceId}

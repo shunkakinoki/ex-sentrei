@@ -12,6 +12,7 @@
     "idAlreadyUsed": "ID is already used",
     "idInvalid": "ID is invalid",
     "idMatch": "ID must match",
+    "idNotExist": "ID doesn't exist",
     "idRequired": "ID is required",
     "pleaseType": "Please type",
     "toDelete": "to Delete",

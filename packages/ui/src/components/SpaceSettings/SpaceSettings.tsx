@@ -7,7 +7,7 @@ import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
-import SpaceSettingsForm from "@sentrei/ui/components/SpaceSettingsForm";
+import SpaceFormSettings from "@sentrei/ui/components/SpaceFormSettings";
 
 export interface Props {
   profile: Profile.Get;
@@ -42,7 +42,7 @@ export default function SpaceSettings({
 
   return (
     <GridSettings namespaceId={namespaceId} tabSpaceKey="general" type="space">
-      <SpaceSettingsForm profile={profile} user={user} space={space} />
+      <SpaceFormSettings profile={profile} user={user} space={space} />
     </GridSettings>
   );
 }

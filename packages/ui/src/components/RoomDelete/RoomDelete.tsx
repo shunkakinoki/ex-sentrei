@@ -6,7 +6,7 @@ import * as React from "react";
 import {getRoom} from "@sentrei/common/firebase/rooms";
 import Room from "@sentrei/types/models/Room";
 import FormSection from "@sentrei/ui/components/FormSection";
-import RoomDeleteForm from "@sentrei/ui/components/RoomDeleteForm";
+import RoomFormDelete from "@sentrei/ui/components/RoomFormDelete";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
@@ -38,7 +38,7 @@ export default function RoomDelete({roomId, namespaceId}: Props): JSX.Element {
         title={t("room:room.deleteRoom")}
         size="md"
       />
-      <RoomDeleteForm roomId={roomId} namespaceId={namespaceId} />
+      <RoomFormDelete roomId={roomId} namespaceId={namespaceId} />
     </>
   );
 }

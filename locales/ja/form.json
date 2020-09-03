@@ -12,6 +12,7 @@
     "idAlreadyUsed": "IDは既に使用されています",
     "idInvalid": "IDが無効です",
     "idMatch": "IDは一致する必要があります",
+    "idNotExist": "IDは存在しません",
     "idRequired": "IDが必要です",
     "pleaseType": "入力してください",
     "toDelete": "削除する",
