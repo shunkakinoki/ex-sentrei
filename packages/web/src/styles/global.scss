@@ -4,3 +4,9 @@
 ::-moz-selection {
   background: #ffb7b7;
 }
+
+.next-optimized-images {
+  max-width: 100%;
+  pointer-events: none;
+  user-select: none;
+}

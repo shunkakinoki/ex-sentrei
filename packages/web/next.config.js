@@ -18,6 +18,7 @@ const withBundleStats = require("next-plugin-bundle-stats")({
   json: true,
 });
 
+// @ts-ignore
 const withOptimizedImages = require("next-optimized-images")({
   inlineImageLimit: -1,
   imagesFolder: "images",

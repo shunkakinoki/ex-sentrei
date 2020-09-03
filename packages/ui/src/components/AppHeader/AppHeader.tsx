@@ -9,6 +9,7 @@ import Profile from "@sentrei/types/models/Profile";
 import AppBar from "@sentrei/ui/components/AppBar";
 import AppTabSpace from "@sentrei/ui/components/AppTabSpace";
 import AppTabUser from "@sentrei/ui/components/AppTabUser";
+import SeoDefault from "@sentrei/ui/components/SeoDefault";
 import StatusSpace from "@sentrei/ui/components/StatusSpace";
 
 export interface Props {
@@ -36,6 +37,7 @@ export default function AppHeader({
 }: Props): JSX.Element {
   return (
     <>
+      <SeoDefault nofollow />
       <AppBar
         logo={logo}
         profile={profile}

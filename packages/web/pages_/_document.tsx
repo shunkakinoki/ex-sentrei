@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import {ServerStyleSheets as MaterialUiServerStyleSheets} from "@material-ui/core/styles";
+import GoogleFonts from "next-google-fonts";
 import NextDocument, {
   DocumentContext,
   Html,
@@ -11,7 +12,8 @@ import NextDocument, {
 import * as React from "react";
 import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 
-import SentreiMeta from "@sentrei/web/components/SentreiMeta";
+import SeoDefault from "@sentrei/ui/components/SeoDefault";
+
 import "@sentrei/common/utils/sentry";
 import "@sentrei/common/utils/registerExceptionHandler";
 
@@ -51,7 +53,23 @@ export default class CustomDocument extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <SentreiMeta />
+          <GoogleFonts href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" />
+          <GoogleFonts href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+          <GoogleFonts href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:300,400,500,700&display=swap" />
+          <SeoDefault />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:300,400,500,700&display=swap"
+          />
+          <link rel="icon" href="/favicon.ico" />
           <script src="https://cdn.jsdelivr.net/npm/first-input-delay@0.1.3/dist/first-input-delay.min.js" />
         </Head>
         <body>
