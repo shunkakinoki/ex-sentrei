@@ -4,18 +4,25 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {deleteMember} from "@sentrei/common/firebase/members";
+import Member from "@sentrei/types/models/Member";
 import FormSection from "@sentrei/ui/components/FormSection";
 import QuitForm from "@sentrei/ui/components/QuitForm";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 interface Props {
+  role: Member.Role;
   namespaceId: string;
   spaceId: string;
   userId: string;
 }
 
-const SpaceFormQuit = ({namespaceId, spaceId, userId}: Props): JSX.Element => {
+const SpaceFormQuit = ({
+  role,
+  namespaceId,
+  spaceId,
+  userId,
+}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -40,7 +47,11 @@ const SpaceFormQuit = ({namespaceId, spaceId, userId}: Props): JSX.Element => {
         title={t("space:settings.quit")}
         size="md"
       />
-      <QuitForm id={namespaceId} onSubmit={onSubmit} />
+      <QuitForm
+        disabled={role === "admin"}
+        id={namespaceId}
+        onSubmit={onSubmit}
+      />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import Error from "next/error";
 import * as React from "react";
 
-import {getMembers} from "@sentrei/common/firebase/members";
+import {getMember} from "@sentrei/common/firebase/members";
 import {getSpace} from "@sentrei/common/firebase/spaces";
 import Member from "@sentrei/types/models/Member";
 import Space from "@sentrei/types/models/Space";
@@ -22,9 +22,7 @@ export default function SpaceSettings({
   user,
 }: Props): JSX.Element {
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
-  const [members, setMembers] = React.useState<
-    Member.Get[] | null | undefined
-  >();
+  const [member, setMember] = React.useState<Member.Get | null | undefined>();
 
   React.useEffect(() => {
     getSpace(spaceId).then(setSpace);
@@ -32,12 +30,12 @@ export default function SpaceSettings({
 
   React.useEffect(() => {
     try {
-      getMembers({spaceId}).then(setMembers);
+      getMember(spaceId, user.uid).then(setMember);
     } catch (err) {
       // eslint-disable-next-line no-console
       console.error(err);
     }
-  }, [spaceId]);
+  }, [spaceId, user.uid]);
 
   if (space === undefined) {
     return (
@@ -53,10 +51,7 @@ export default function SpaceSettings({
 
   return (
     <GridSettings namespaceId={namespaceId} tabSpaceKey="billing" type="space">
-      <SpaceBillingBoard
-        role={members?.filter(doc => doc.uid === user.uid)[0].role || "viewer"}
-        spaceId={spaceId}
-      />
+      <SpaceBillingBoard role={member?.role || "viewer"} spaceId={spaceId} />
     </GridSettings>
   );
 }

@@ -10,12 +10,18 @@ import {Controller, useForm} from "react-hook-form";
 import * as Yup from "yup";
 
 export interface Props {
+  disabled?: boolean;
   id: string;
   type?: "id" | "quit";
   onSubmit: () => Promise<void>;
 }
 
-const QuitForm = ({id, type = "id", onSubmit}: Props): JSX.Element => {
+const QuitForm = ({
+  disabled,
+  id,
+  type = "id",
+  onSubmit,
+}: Props): JSX.Element => {
   const {t} = useTranslation();
 
   const IdFormSchema = Yup.object().shape({
@@ -47,6 +53,7 @@ const QuitForm = ({id, type = "id", onSubmit}: Props): JSX.Element => {
                 <TextField
                   autoFocus
                   fullWidth
+                  disabled={disabled}
                   id="quit-id"
                   label={
                     type === "id"
@@ -71,7 +78,13 @@ const QuitForm = ({id, type = "id", onSubmit}: Props): JSX.Element => {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button type="submit" fullWidth variant="contained" color="primary">
+            <Button
+              type="submit"
+              fullWidth
+              disabled={disabled}
+              variant="contained"
+              color="primary"
+            >
               {t("common:common.quit")}
             </Button>
           </Grid>
