@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import {ServerStyleSheets as MaterialUiServerStyleSheets} from "@material-ui/core/styles";
+import GoogleFonts from "next-google-fonts";
 import NextDocument, {
   DocumentContext,
   Html,
@@ -51,6 +52,9 @@ export default class CustomDocument extends NextDocument {
     return (
       <Html lang="en">
         <Head>
+          <GoogleFonts href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" />
+          <GoogleFonts href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+          <GoogleFonts href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:300,400,500,700&display=swap" />
           <SentreiMeta />
           <script src="https://cdn.jsdelivr.net/npm/first-input-delay@0.1.3/dist/first-input-delay.min.js" />
         </Head>
