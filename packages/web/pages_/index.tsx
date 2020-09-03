@@ -8,8 +8,8 @@ import {analytics} from "@sentrei/common/utils/firebase";
 import Footer from "@sentrei/ui/components/Footer";
 import LandingScreen from "@sentrei/ui/components/LandingScreen";
 import Loader from "@sentrei/ui/components/Loader";
+import OneTap from "@sentrei/ui/components/OneTap";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
-import SentreiOneTap from "@sentrei/web/components/SentreiOneTap";
 import ConnectPicture from "@sentrei/web/images/svg/ConnectPicture";
 import DataPicture from "@sentrei/web/images/svg/DataPicture";
 import FocusPicture from "@sentrei/web/images/svg/FocusPicture";
@@ -38,7 +38,7 @@ const Index: NextPage = () => {
         <title>Sentrei</title>
         <meta name="Description" content="Sentrei landing page" />
       </Head>
-      <SentreiOneTap delay user={user} />
+      <OneTap delay user={user} />
       <SentreiHeader type="landing" />
       <LandingScreen
         connectImg={<ConnectPicture />}
