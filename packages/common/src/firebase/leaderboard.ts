@@ -22,7 +22,6 @@ export const LeaderboardQuery = ({
   let ref = db
     .collection(`spaces/${spaceId}/members`)
     .orderBy("score", "desc")
-    .orderBy("updatedAt", "desc")
     .withConverter(memberConverter)
     .limit(limit);
 
@@ -47,7 +46,6 @@ export const getLeaderboardLive = (
   return db
     .collection(`spaces/${spaceId}/members`)
     .orderBy("score", "desc")
-    .orderBy("updatedAt", "desc")
     .withConverter(memberConverter)
     .onSnapshot(snap => {
       const data = snap.docs.map(member => member.data());

@@ -31,7 +31,7 @@ export default function SpaceMemberList({members}: Props): JSX.Element {
             <TableCell align="left">{t("common:common.ranking")}</TableCell>
             <TableCell align="left">{t("common:common.avatar")}</TableCell>
             <TableCell align="left">{t("common:common.name")}</TableCell>
-            <TableCell align="center">{t("common:common.id")}</TableCell>
+            <TableCell align="center">{t("common:common.username")}</TableCell>
             <TableCell align="right">{t("common:common.score")}</TableCell>
           </TableRow>
         </TableHead>

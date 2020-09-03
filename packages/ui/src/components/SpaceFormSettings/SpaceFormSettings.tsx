@@ -12,6 +12,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
@@ -22,12 +23,18 @@ import SpaceFormName from "@sentrei/ui/components/SpaceFormName";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
+  role: Member.Role;
   profile: Profile.Get;
   space: Space.Get;
   user: User.Get;
 }
 
-const SpaceFormSettings = ({profile, space, user}: Props): JSX.Element => {
+const SpaceFormSettings = ({
+  role,
+  profile,
+  space,
+  user,
+}: Props): JSX.Element => {
   const {t} = useTranslation();
 
   return (
@@ -45,10 +52,17 @@ const SpaceFormSettings = ({profile, space, user}: Props): JSX.Element => {
         tabLabelTwo={t("common:common.photo")}
         tabLabelThree={t("common:common.id")}
         tabPanelOne={
-          <SpaceFormName profile={profile} space={space} user={user} />
+          <SpaceFormName
+            disabled={role !== "admin"}
+            profile={profile}
+            space={space}
+            user={user}
+          />
         }
         tabPanelTwo={<></>}
-        tabPanelThree={<SpaceFormId space={space} />}
+        tabPanelThree={
+          <SpaceFormId disabled={role !== "admin"} space={space} />
+        }
       />
     </>
   );

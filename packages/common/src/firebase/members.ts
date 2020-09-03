@@ -87,7 +87,7 @@ export const createMember = (
   userId: string,
   member: Member.Create,
 ): Promise<void> => {
-  return db.doc(`$spaces/${spaceId}/members/${userId}`).set(member);
+  return db.doc(`spaces/${spaceId}/members/${userId}`).set(member);
 };
 
 export const deleteMember = (

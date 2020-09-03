@@ -8,7 +8,6 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ShareIcon from "@material-ui/icons/Share";
-import Link from "next-translate/Link";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -17,6 +16,7 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
+import MuiAnchor from "@sentrei/ui/components/MuiAnchor";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import RoomCardEmojiPicker from "@sentrei/ui/components/RoomCardEmojiPicker";
 import RoomMenu from "@sentrei/ui/components/RoomMenu";
@@ -56,7 +56,7 @@ export default function RoomCard({
   return (
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
-        <Link
+        <MuiAnchor
           href="/[namespaceId]/room/[roomId]"
           as={`/${space.namespaceId}/room/${room.id}`}
         >
@@ -65,7 +65,7 @@ export default function RoomCard({
           ) : (
             <Box className={classes.media} />
           )}
-        </Link>
+        </MuiAnchor>
       </CardActionArea>
       <CardContent>
         <Grid

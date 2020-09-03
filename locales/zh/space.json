@@ -24,6 +24,9 @@
     "title": "房间数"
   },
   "settings": {
+    "billing": "开票",
+    "general": "一般",
+    "quit": "退出",
     "title": "空间设定"
   },
   "space": {

@@ -17,14 +17,14 @@ import AppStateProvider from "@sentrei/video/state";
 export interface Props {
   user: User.Get;
   profile: Profile.Get;
-  namespaceId: string;
+  spaceId: string;
   roomId: string;
 }
 
 export default function RoomScreen({
   user,
   profile,
-  namespaceId,
+  spaceId,
   roomId,
 }: Props): JSX.Element {
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
@@ -37,8 +37,8 @@ export default function RoomScreen({
   const handleTokenId = (token: string): void => setTokenId(token);
 
   React.useEffect(() => {
-    getSpace(namespaceId).then(setSpace);
-  }, [namespaceId]);
+    getSpace(spaceId).then(setSpace);
+  }, [spaceId]);
 
   React.useEffect(() => {
     getRoom(roomId).then(setRoom);

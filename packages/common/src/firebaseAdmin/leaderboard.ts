@@ -21,7 +21,7 @@ export const leaderboardQuery = ({
 }: MembersQuery): FirebaseFirestore.Query<Member.Get> => {
   let ref = adminDb
     .collection(`spaces/${spaceId}/members`)
-    .orderBy("updatedAt", "desc")
+    .orderBy("score", "desc")
     .withConverter(leaderboardAdminConverter)
     .limit(limit);
 
