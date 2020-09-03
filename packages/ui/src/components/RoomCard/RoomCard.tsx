@@ -57,8 +57,8 @@ export default function RoomCard({
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
         <MuiAnchor
-          href="/[namespaceId]/room/[roomId]"
-          as={`/${space.namespaceId}/room/${room.id}`}
+          href="/[namespaceId]/[roomId]"
+          as={`/${space.namespaceId}/${room.id}`}
         >
           {room.photo ? (
             <CardMedia className={classes.media} image={room.photo} />
@@ -130,8 +130,8 @@ export default function RoomCard({
             <Grid item xs={9} />
             <Grid item xs={3}>
               <MuiButton
-                href="/[namespaceId]/room/[roomId]"
-                as={`/${space.namespaceId}/room/${room.id}`}
+                href="/[namespaceId]/[roomId]"
+                as={`/${space.namespaceId}/${room.id}`}
                 fullWidth
                 variant="contained"
                 color="primary"
