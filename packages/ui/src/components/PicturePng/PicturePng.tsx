@@ -2,6 +2,7 @@
 
 import * as React from "react";
 
+import Img from "react-optimized-image";
 import styled from "styled-components";
 
 export interface Props {
@@ -11,7 +12,7 @@ export interface Props {
   src: any;
 }
 
-const StyledImg = styled.img`
+const StyledImg = styled(Img)`
   max-width: 100%;
   pointer-events: none;
   user-select: none;
@@ -23,11 +24,5 @@ export default function PicturePng({
   height,
   width,
 }: Props): JSX.Element {
-  return (
-    <picture>
-      <source srcSet={src} type="image/webp" />
-      <source srcSet={src} type="image/jpeg" />
-      <StyledImg alt={alt} src={src} height={height} width={width} />
-    </picture>
-  );
+  return <StyledImg src={src} webp />;
 }
