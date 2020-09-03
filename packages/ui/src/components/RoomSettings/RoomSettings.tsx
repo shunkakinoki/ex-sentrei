@@ -6,7 +6,7 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import GridSettings from "@sentrei/ui/components/GridSettings";
-import RoomFormSettings from "@sentrei/ui/components/RoomFormSettings";
+import RoomSettingsBoard from "@sentrei/ui/components/RoomSettingsBoard";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
@@ -47,7 +47,7 @@ export default function RoomSettings({
       tabRoomKey="general"
       type="room"
     >
-      <RoomFormSettings profile={profile} user={user} room={room} />
+      <RoomSettingsBoard profile={profile} user={user} room={room} />
     </GridSettings>
   );
 }

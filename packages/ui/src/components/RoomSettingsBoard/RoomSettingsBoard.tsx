@@ -19,7 +19,7 @@ export interface Props {
   user: User.Get;
 }
 
-const RoomFormSettings = ({profile, room, user}: Props): JSX.Element => {
+const RoomSettingsBoard = ({profile, room, user}: Props): JSX.Element => {
   const {t} = useTranslation();
 
   return (
@@ -47,4 +47,4 @@ const RoomFormSettings = ({profile, room, user}: Props): JSX.Element => {
   );
 };
 
-export default RoomFormSettings;
+export default RoomSettingsBoard;
