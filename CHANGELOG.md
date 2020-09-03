@@ -1,3 +1,22 @@
+# [1.30.0](https://github.com/sentrei/sentrei/compare/v1.29.0...v1.30.0) (2020-09-03)
+
+### Features
+
+- 🎸 complete ini space billing board ([3aebc3c](https://github.com/sentrei/sentrei/commit/3aebc3ccb22741020082bc80fee3090c17c14867))
+- 🎸 ini get member for space setting ([f326d6f](https://github.com/sentrei/sentrei/commit/f326d6fd4d5e4088320d0f714bd0870f5ea27d7c))
+- 🎸 ini mui anchor for space room card ([180e1b4](https://github.com/sentrei/sentrei/commit/180e1b40cbddc2644b2ef0fae4020ca85ac4b69c))
+- 🎸 refactor admin permissions for space settings ([ecdecf8](https://github.com/sentrei/sentrei/commit/ecdecf8533d34e57353cd43249b75dc2f53e2948))
+- 🎸 reini room screen ([74a5d1f](https://github.com/sentrei/sentrei/commit/74a5d1f878f5f2fbb8d57e7ef7eb095202549160))
+
+### Performance Improvements
+
+- ⚡️ ini disabled space form general ([538378f](https://github.com/sentrei/sentrei/commit/538378f63ad368bcca69d6cbf123448a42a0c49b))
+- ⚡️ ini router back room submitt ([6a60158](https://github.com/sentrei/sentrei/commit/6a60158088e0dcfcdefe8d69cb8553d37e6f3596))
+- ⚡️ leaderboard ascending order ([5ed9a53](https://github.com/sentrei/sentrei/commit/5ed9a534767a69ab502c764014e999fc60c19737))
+- ⚡️ leaderboard order by score desc only ([ad67e27](https://github.com/sentrei/sentrei/commit/ad67e2781b1ad4c9083da0bb055302ca6801b5ac))
+- ⚡️ refactor i18n space & common ([99c96f5](https://github.com/sentrei/sentrei/commit/99c96f5a0d0d8b2aae27fd6073f9a7ef84dbd09c))
+- ⚡️ refactor id to namespace username ([dc3747f](https://github.com/sentrei/sentrei/commit/dc3747f730b0f51879fa74ed372c57215614e11f))
+
 # [1.29.0](https://github.com/sentrei/sentrei/compare/v1.28.0...v1.29.0) (2020-09-03)
 
 ### Features
