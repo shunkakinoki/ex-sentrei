@@ -9,7 +9,7 @@ import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
-import SpaceFormSettings from "@sentrei/ui/components/SpaceFormSettings";
+import SpaceSettingsBoard from "@sentrei/ui/components/SpaceSettingsBoard";
 
 export interface Props {
   profile: Profile.Get;
@@ -32,12 +32,7 @@ export default function SpaceSettings({
   }, [spaceId]);
 
   React.useEffect(() => {
-    try {
-      getMember(spaceId, user.uid).then(setMember);
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error(err);
-    }
+    getMember(spaceId, user.uid).then(setMember);
   }, [spaceId, user.uid]);
 
   if (space === undefined) {
@@ -54,7 +49,7 @@ export default function SpaceSettings({
 
   return (
     <GridSettings namespaceId={namespaceId} tabSpaceKey="general" type="space">
-      <SpaceFormSettings
+      <SpaceSettingsBoard
         role={member?.role || "viewer"}
         profile={profile}
         user={user}

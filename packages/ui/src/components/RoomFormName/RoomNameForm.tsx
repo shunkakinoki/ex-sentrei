@@ -13,19 +13,19 @@ import * as Yup from "yup";
 import {updateRoom} from "@sentrei/common/firebase/rooms";
 
 import {timestamp} from "@sentrei/common/utils/firebase";
-
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
+  disabled: boolean;
   profile: Profile.Get;
   room: Room.Get;
   user: User.Get;
 }
 
-const RoomNameForm = ({profile, room, user}: Props): JSX.Element => {
+const RoomNameForm = ({disabled, profile, room, user}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
@@ -67,6 +67,7 @@ const RoomNameForm = ({profile, room, user}: Props): JSX.Element => {
               <TextField
                 autoFocus
                 fullWidth
+                disabled={disabled}
                 id="room-name"
                 label={t("common:common.name")}
                 margin="normal"
@@ -85,7 +86,13 @@ const RoomNameForm = ({profile, room, user}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
+          <Button
+            type="submit"
+            fullWidth
+            disabled={disabled}
+            variant="contained"
+            color="primary"
+          >
             {t("common:common.edit")}
           </Button>
         </Grid>

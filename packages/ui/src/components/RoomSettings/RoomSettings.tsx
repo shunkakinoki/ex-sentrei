@@ -1,12 +1,14 @@
 import Error from "next/error";
 import * as React from "react";
 
+import {getMember} from "@sentrei/common/firebase/members";
 import {getRoom} from "@sentrei/common/firebase/rooms";
+import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import GridSettings from "@sentrei/ui/components/GridSettings";
-import RoomFormSettings from "@sentrei/ui/components/RoomFormSettings";
+import RoomSettingsBoard from "@sentrei/ui/components/RoomSettingsBoard";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
@@ -14,6 +16,7 @@ export interface Props {
   roomId: string;
   namespaceId: string;
   user: User.Get;
+  spaceId: string;
 }
 
 export default function RoomSettings({
@@ -21,16 +24,22 @@ export default function RoomSettings({
   roomId,
   namespaceId,
   user,
+  spaceId,
 }: Props): JSX.Element {
   const [room, setRoom] = React.useState<Room.Get | null | undefined>();
+  const [member, setMember] = React.useState<Member.Get | null | undefined>();
 
   React.useEffect(() => {
     getRoom(roomId).then(setRoom);
   }, [roomId]);
 
+  React.useEffect(() => {
+    getMember(spaceId, user.uid).then(setMember);
+  }, [spaceId, user.uid]);
+
   if (room === undefined) {
     return (
-      <GridSettings skeleton tabSpaceKey="general" type="room">
+      <GridSettings skeleton tabRoomKey="general" type="room">
         <SkeletonForm />
       </GridSettings>
     );
@@ -47,7 +56,12 @@ export default function RoomSettings({
       tabRoomKey="general"
       type="room"
     >
-      <RoomFormSettings profile={profile} user={user} room={room} />
+      <RoomSettingsBoard
+        role={member?.role || "viewer"}
+        profile={profile}
+        user={user}
+        room={room}
+      />
     </GridSettings>
   );
 }

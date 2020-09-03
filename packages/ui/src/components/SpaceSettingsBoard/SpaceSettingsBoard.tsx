@@ -1,12 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
-import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
-import DashboardIcon from "@material-ui/icons/Dashboard";
 import DescriptionIcon from "@material-ui/icons/Description";
-import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import PhotoIcon from "@material-ui/icons/Photo";
 import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
@@ -17,7 +10,6 @@ import Profile from "@sentrei/types/models/Profile";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
-import SpaceFormDescription from "@sentrei/ui/components/SpaceFormDescription";
 import SpaceFormId from "@sentrei/ui/components/SpaceFormId";
 import SpaceFormName from "@sentrei/ui/components/SpaceFormName";
 import TabBoard from "@sentrei/ui/components/TabBoard";
@@ -29,7 +21,7 @@ export interface Props {
   user: User.Get;
 }
 
-const SpaceFormSettings = ({
+const SpaceSettingsBoard = ({
   role,
   profile,
   space,
@@ -68,4 +60,4 @@ const SpaceFormSettings = ({
   );
 };
 
-export default SpaceFormSettings;
+export default SpaceSettingsBoard;

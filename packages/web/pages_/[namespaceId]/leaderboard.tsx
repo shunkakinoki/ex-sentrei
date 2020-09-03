@@ -8,7 +8,7 @@ import {getAdminLeaderboard} from "@sentrei/common/firebaseAdmin/leaderboard";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Member from "@sentrei/types/models/Member";
-import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
+import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceLeaderboard from "@sentrei/ui/components/SpaceLeaderboard";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -66,7 +66,7 @@ const LeaderboardPage = ({
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
-        <SkeletonForm />
+        <SkeletonList />
       </>
     );
   }

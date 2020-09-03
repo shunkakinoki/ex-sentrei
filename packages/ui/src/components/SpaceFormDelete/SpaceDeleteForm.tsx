@@ -29,7 +29,7 @@ const SpaceDeleteForm = ({namespaceId}: Props): JSX.Element => {
     }
   };
 
-  return <DeleteForm id={namespaceId} onSubmit={onSubmit} />;
+  return <DeleteForm disabled id={namespaceId} onSubmit={onSubmit} />;
 };
 
 export default SpaceDeleteForm;
