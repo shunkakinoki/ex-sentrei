@@ -118,6 +118,17 @@ const SpaceFormId = ({disabled, space}: Props): JSX.Element => {
             {t("common:common.edit")}
           </Button>
         </Grid>
+        <Grid item xs={12}>
+          <Button
+            type="reset"
+            fullWidth
+            variant="outlined"
+            color="primary"
+            onClick={(): void => Router.back()}
+          >
+            {t("common:common.cancel")}
+          </Button>
+        </Grid>
       </Grid>
     </form>
   );
