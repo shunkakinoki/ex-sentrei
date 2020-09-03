@@ -8,7 +8,7 @@ import {getAdminMembers} from "@sentrei/common/firebaseAdmin/members";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Member from "@sentrei/types/models/Member";
-import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
+import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceMember from "@sentrei/ui/components/SpaceMember";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -66,7 +66,7 @@ const MembersPage = ({
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="members" type="space" />
-        <SkeletonForm />
+        <SkeletonList />
       </>
     );
   }

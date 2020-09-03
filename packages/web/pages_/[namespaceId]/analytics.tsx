@@ -6,7 +6,7 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {analytics} from "@sentrei/common/utils/firebase";
-import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
+import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceAnalytics from "@sentrei/ui/components/SpaceAnalytics";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -39,7 +39,7 @@ const AnalyticsPage: NextPage = () => {
     return (
       <>
         <SentreiAppHeader skeleton tabSpaceKey="analytics" type="space" />
-        <SkeletonForm />
+        <SkeletonList />
       </>
     );
   }
