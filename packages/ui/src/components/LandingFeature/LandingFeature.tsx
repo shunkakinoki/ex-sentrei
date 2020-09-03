@@ -9,15 +9,15 @@ import LandingSection from "@sentrei/ui/components/LandingSection";
 import LandingFeatureStyles from "./LandingFeatureStyles";
 
 export interface Props {
-  imgOne: JSX.Element;
-  imgTwo: JSX.Element;
-  imgThree: JSX.Element;
+  timeImg: JSX.Element;
+  focusImg: JSX.Element;
+  goalImg: JSX.Element;
 }
 
 export default function LandingFeature({
-  imgOne,
-  imgTwo,
-  imgThree,
+  timeImg,
+  focusImg,
+  goalImg,
 }: Props): JSX.Element {
   const classes = LandingFeatureStyles();
   const {t} = useTranslation();
@@ -36,21 +36,21 @@ export default function LandingFeature({
         >
           <Grid item xs={12} sm={4}>
             <FeatureCard
-              img={imgOne}
+              img={timeImg}
               title={t("index:feature.titleOne")}
               subTitle={t("index:feature.subTitleOne")}
             />
           </Grid>
           <Grid item xs={12} sm={4}>
             <FeatureCard
-              img={imgTwo}
+              img={focusImg}
               title={t("index:feature.titleTwo")}
               subTitle={t("index:feature.subTitleTwo")}
             />
           </Grid>
           <Grid item xs={12} sm={4}>
             <FeatureCard
-              img={imgThree}
+              img={goalImg}
               title={t("index:feature.titleThree")}
               subTitle={t("index:feature.subTitleThree")}
             />
