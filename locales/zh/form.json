@@ -12,6 +12,7 @@
     "idAlreadyUsed": "ID已被使用",
     "idInvalid": "ID无效",
     "idMatch": "ID必须匹配",
+    "idNotExist": "ID不存在",
     "idRequired": "ID为必填项",
     "pleaseType": "请输入",
     "toDelete": "删除",

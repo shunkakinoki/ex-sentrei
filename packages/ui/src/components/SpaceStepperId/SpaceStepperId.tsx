@@ -28,16 +28,13 @@ const SpaceStepperId = ({atom, form}: Props): JSX.Element => {
 
   const SpaceStepperIdSchema = Yup.object().shape({
     id: Yup.string()
-      .required(t("form:namespace.namespaceRequired"))
-      .matches(
-        /^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/,
-        t("form:namespace.namespaceInvalid"),
-      )
-      .test("id", t("form:namespace.namespaceInvalid"), value => {
+      .required(t("form:id.idRequired"))
+      .matches(/^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/, t("form:id.idInvalid"))
+      .test("id", t("form:id.idInvalid"), value => {
         const result = isReservedNamespace(value || "");
         return !result;
       })
-      .test("id", t("form:namespace.namespaceAlreadyUsed"), async value => {
+      .test("id", t("form:id.idAlreadyUsed"), async value => {
         const result = await validateNamespace(value || "");
         return result;
       }),
