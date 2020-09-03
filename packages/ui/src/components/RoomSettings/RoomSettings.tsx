@@ -34,17 +34,12 @@ export default function RoomSettings({
   }, [roomId]);
 
   React.useEffect(() => {
-    try {
-      getMember(spaceId, user.uid).then(setMember);
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error(err);
-    }
+    getMember(spaceId, user.uid).then(setMember);
   }, [spaceId, user.uid]);
 
   if (room === undefined) {
     return (
-      <GridSettings skeleton tabSpaceKey="general" type="room">
+      <GridSettings skeleton tabRoomKey="general" type="room">
         <SkeletonForm />
       </GridSettings>
     );
