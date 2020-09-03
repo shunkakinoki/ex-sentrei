@@ -24,6 +24,9 @@
     "title": "Rooms"
   },
   "settings": {
+    "billing": "Billing",
+    "general": "General",
+    "quit": "Quit",
     "title": "Space Settings"
   },
   "space": {

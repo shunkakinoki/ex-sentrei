@@ -7,7 +7,7 @@ import {getSpace} from "@sentrei/common/firebase/spaces";
 import Space from "@sentrei/types/models/Space";
 import FormSection from "@sentrei/ui/components/FormSection";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
-import SpaceDeleteForm from "@sentrei/ui/components/SpaceDeleteForm";
+import SpaceFormDelete from "@sentrei/ui/components/SpaceFormDelete";
 
 interface Props {
   namespaceId: string;
@@ -37,7 +37,7 @@ export default function SpaceEdit({namespaceId}: Props): JSX.Element {
         title={t("space:space.deleteSpace")}
         size="md"
       />
-      <SpaceDeleteForm namespaceId={namespaceId} />
+      <SpaceFormDelete namespaceId={namespaceId} />
     </>
   );
 }

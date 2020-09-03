@@ -15,10 +15,10 @@ import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
 import GridSettings from "@sentrei/ui/components/GridSettings";
-import InviteEmailForm from "@sentrei/ui/components/InviteEmailForm";
-import InviteLinkForm from "@sentrei/ui/components/InviteLinkForm";
+import InviteFormEmail from "@sentrei/ui/components/InviteFormEmail";
+import InviteFormLink from "@sentrei/ui/components/InviteFormLink";
+import InviteFormUsername from "@sentrei/ui/components/InviteFormUsername";
 import InviteList from "@sentrei/ui/components/InviteList";
-import InviteUsernameForm from "@sentrei/ui/components/InviteUsernameForm";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
@@ -77,23 +77,23 @@ export default function SpaceInvite({
         tabIconThree={<AssignmentIndIcon />}
         tabLabelOne={t("common:common.email")}
         tabLabelTwo={t("common:common.link")}
-        tabLabelThree={t("common:common.namespace")}
+        tabLabelThree={t("common:common.username")}
         tabPanelOne={
           <>
-            <InviteEmailForm profile={profile} user={user} spaceId={spaceId} />
+            <InviteFormEmail profile={profile} user={user} spaceId={spaceId} />
             <Box p={1} />
             {invites && <InviteList invites={invites} type="email" />}
           </>
         }
         tabPanelTwo={
           <>
-            <InviteLinkForm profile={profile} user={user} spaceId={spaceId} />
+            <InviteFormLink profile={profile} user={user} spaceId={spaceId} />
             <Box p={1} />
             {invites && <InviteList invites={invites} type="link" />}
           </>
         }
         tabPanelThree={
-          <InviteUsernameForm profile={profile} user={user} spaceId={spaceId} />
+          <InviteFormUsername profile={profile} user={user} spaceId={spaceId} />
         }
       />
     </GridSettings>

@@ -5,7 +5,7 @@ import {getRoom} from "@sentrei/common/firebase/rooms";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
-import RoomSettingsForm from "@sentrei/ui/components/RoomSettingsForm";
+import RoomFormSettings from "@sentrei/ui/components/RoomFormSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
@@ -34,5 +34,5 @@ export default function RoomSettings({
     return <Error statusCode={404} />;
   }
 
-  return <RoomSettingsForm profile={profile} user={user} room={room} />;
+  return <RoomFormSettings profile={profile} user={user} room={room} />;
 }

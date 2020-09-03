@@ -3,7 +3,7 @@ import Popover from "@material-ui/core/Popover";
 import * as React from "react";
 
 import Profile from "@sentrei/types/models/Profile";
-import AppFeedbackForm from "@sentrei/ui/components/AppFeedbackForm";
+import AppFormFeedback from "@sentrei/ui/components/AppFormFeedback";
 
 import AppFeedbackStyles from "./AppFeedbackStyles";
 
@@ -41,7 +41,7 @@ export default function AppListMenu({
       }}
     >
       <Box className={classes.popover}>
-        <AppFeedbackForm handleClick={handleClick} profile={profile} />
+        <AppFormFeedback handleClick={handleClick} profile={profile} />
       </Box>
     </Popover>
   );

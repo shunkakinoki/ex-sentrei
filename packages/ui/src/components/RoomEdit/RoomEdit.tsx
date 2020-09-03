@@ -11,8 +11,8 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
-import RoomDescriptionForm from "@sentrei/ui/components/RoomDescriptionForm";
-import RoomNameForm from "@sentrei/ui/components/RoomNameForm";
+import RoomFormDescription from "@sentrei/ui/components/RoomFormDescription";
+import RoomFormName from "@sentrei/ui/components/RoomFormName";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
@@ -56,9 +56,9 @@ export default function RoomEdit({profile, roomId, user}: Props): JSX.Element {
         tabLabelTwo={t("common:common.name")}
         tabLabelThree={t("common:common.photo")}
         tabPanelOne={
-          <RoomDescriptionForm profile={profile} room={room} user={user} />
+          <RoomFormDescription profile={profile} room={room} user={user} />
         }
-        tabPanelTwo={<RoomNameForm profile={profile} room={room} user={user} />}
+        tabPanelTwo={<RoomFormName profile={profile} room={room} user={user} />}
         tabPanelThree={<></>}
       />
     </>

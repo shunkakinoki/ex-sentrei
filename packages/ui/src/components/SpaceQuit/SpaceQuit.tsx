@@ -6,7 +6,7 @@ import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
-import SpaceQuitForm from "@sentrei/ui/components/SpaceQuitForm";
+import SpaceFormQuit from "@sentrei/ui/components/SpaceFormQuit";
 
 export interface Props {
   namespaceId: string;
@@ -39,7 +39,7 @@ export default function SpaceQuit({
 
   return (
     <GridSettings namespaceId={namespaceId} tabSpaceKey="quit" type="space">
-      <SpaceQuitForm spaceId={spaceId} userId={user.uid} />
+      <SpaceFormQuit spaceId={spaceId} userId={user.uid} />
     </GridSettings>
   );
 }
