@@ -18,6 +18,7 @@ import HeaderScrollButton from "@sentrei/ui/components/HeaderScrollButton";
 import Logo from "@sentrei/ui/components/Logo";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import PaperCups from "@sentrei/ui/components/PaperCups";
+import SeoDefault from "@sentrei/ui/components/SeoDefault";
 
 import HeaderStyles from "./HeaderStyles";
 
@@ -77,6 +78,7 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
 
   return (
     <>
+      <SeoDefault />
       <PaperCups />
       <div className={classes.grow}>
         <AppBar position="fixed" className={appBarClasses}>

@@ -1,6 +1,5 @@
 import {NextPage} from "next";
 import Router from "next-translate/Router";
-import Head from "next/head";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
@@ -34,10 +33,6 @@ const Index: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Sentrei</title>
-        <meta name="Description" content="Sentrei landing page" />
-      </Head>
       <OneTap delay user={user} />
       <SentreiHeader type="landing" />
       <LandingScreen

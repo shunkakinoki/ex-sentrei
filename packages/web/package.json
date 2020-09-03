@@ -62,6 +62,7 @@
     "next-images": "^1.4.1",
     "next-optimized-images": "^3.0.0-canary.10",
     "next-plugin-bundle-stats": "^2.2.0",
+    "next-seo": "^4.7.3",
     "next-translate": "^0.17.2-canary.6",
     "node-sass": "^4.14.0",
     "optimized-images-loader": "^0.4.0",
