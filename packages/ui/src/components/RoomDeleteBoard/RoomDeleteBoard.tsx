@@ -5,7 +5,7 @@ import * as React from "react";
 
 import {deleteRoom} from "@sentrei/common/firebase/rooms";
 import Member from "@sentrei/types/models/Member";
-import DeleteForm from "@sentrei/ui/components/DeleteForm";
+import FormDelete from "@sentrei/ui/components/FormDelete";
 import FormSection from "@sentrei/ui/components/FormSection";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -41,7 +41,7 @@ const RoomDeleteBoard = ({role, roomId, namespaceId}: Props): JSX.Element => {
         title={t("room:room.deleteRoom")}
         size="md"
       />
-      <DeleteForm
+      <FormDelete
         id={roomId}
         disabled={role !== "admin"}
         onSubmit={onSubmit}

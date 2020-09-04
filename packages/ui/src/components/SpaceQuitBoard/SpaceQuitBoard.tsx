@@ -5,8 +5,8 @@ import * as React from "react";
 
 import {deleteMember} from "@sentrei/common/firebase/members";
 import Member from "@sentrei/types/models/Member";
+import FormQuit from "@sentrei/ui/components/FormQuit";
 import FormSection from "@sentrei/ui/components/FormSection";
-import QuitForm from "@sentrei/ui/components/QuitForm";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -47,7 +47,7 @@ const SpaceQuitBoard = ({
         title={t("space:settings.quit")}
         size="md"
       />
-      <QuitForm
+      <FormQuit
         disabled={role === "admin"}
         id={namespaceId}
         onSubmit={onSubmit}

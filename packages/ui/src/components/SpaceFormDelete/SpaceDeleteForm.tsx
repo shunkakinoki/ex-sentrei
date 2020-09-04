@@ -3,7 +3,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {deleteSpace} from "@sentrei/common/firebase/spaces";
-import DeleteForm from "@sentrei/ui/components/DeleteForm";
+import FormDelete from "@sentrei/ui/components/FormDelete";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -29,7 +29,7 @@ const SpaceDeleteForm = ({namespaceId}: Props): JSX.Element => {
     }
   };
 
-  return <DeleteForm disabled id={namespaceId} onSubmit={onSubmit} />;
+  return <FormDelete disabled id={namespaceId} onSubmit={onSubmit} />;
 };
 
 export default SpaceDeleteForm;

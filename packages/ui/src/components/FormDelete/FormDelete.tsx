@@ -16,7 +16,7 @@ export interface Props {
   onSubmit: () => Promise<void>;
 }
 
-const DeleteForm = ({
+const FormDelete = ({
   disabled,
   id,
   type = "id",
@@ -24,13 +24,13 @@ const DeleteForm = ({
 }: Props): JSX.Element => {
   const {t} = useTranslation();
 
-  const DeleteFormSchema = Yup.object().shape({
+  const FormDeleteSchema = Yup.object().shape({
     id: Yup.string()
       .required(t("form:delete.deleteRequired"))
       .oneOf(["DELETE"], t("form:delete.deleteType")),
   });
 
-  const IdFormSchema = Yup.object().shape({
+  const FormIdSchema = Yup.object().shape({
     id: Yup.string()
       .required(t("form:id.idRequired"))
       .oneOf([id], `${t("form:id.idMatch")} ${id}`),
@@ -40,7 +40,7 @@ const DeleteForm = ({
     mode: "onSubmit",
     reValidateMode: "onBlur",
     resolver:
-      type === "id" ? yupResolver(IdFormSchema) : yupResolver(DeleteFormSchema),
+      type === "id" ? yupResolver(FormIdSchema) : yupResolver(FormDeleteSchema),
   });
 
   return (
@@ -105,4 +105,4 @@ const DeleteForm = ({
   );
 };
 
-export default DeleteForm;
+export default FormDelete;
