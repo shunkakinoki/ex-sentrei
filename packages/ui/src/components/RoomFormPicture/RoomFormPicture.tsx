@@ -48,7 +48,8 @@ const RoomFormPicture = ({
     context?.clearRect(0, 0, canvas.width, canvas.height);
     if (context) {
       context.fillStyle = colorValue;
-      context.fillRect(20, 20, 150, 100);
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.filter = "blur(3px)";
       return encode(
         context.getImageData(0, 0, canvas.width, canvas.height).data,
         canvas.width,
