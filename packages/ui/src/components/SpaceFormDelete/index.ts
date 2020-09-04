@@ -1,1 +1,1 @@
-export {default} from "./SpaceDeleteForm";
+export {default} from "./SpaceFormDelete";
