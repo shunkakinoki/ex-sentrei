@@ -13,9 +13,9 @@ import * as React from "react";
 
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
 import HeaderButton from "@sentrei/ui/components/HeaderButton";
+import HeaderLogo from "@sentrei/ui/components/HeaderLogo";
 import HeaderMobileDialog from "@sentrei/ui/components/HeaderMobileDialog";
 import HeaderScrollButton from "@sentrei/ui/components/HeaderScrollButton";
-import Logo from "@sentrei/ui/components/Logo";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import PaperCups from "@sentrei/ui/components/PaperCups";
 import SeoDefault from "@sentrei/ui/components/SeoDefault";
@@ -84,7 +84,7 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
         <AppBar position="fixed" className={appBarClasses}>
           <Toolbar>
             <Grid container alignItems="center" justify="center">
-              <Logo logo={logo} href="/" />
+              <HeaderLogo logo={logo} href="/" />
               <div className={classes.spy}>
                 <Grid item>
                   <Hidden smDown implementation="css">

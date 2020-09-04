@@ -2,22 +2,23 @@ import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ShareIcon from "@material-ui/icons/Share";
+import {isBlurhashValid} from "blurhash";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
+import {Blurhash} from "react-blurhash";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
-import MuiAnchor from "@sentrei/ui/components/MuiAnchor";
 import MuiButton from "@sentrei/ui/components/MuiButton";
+import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
 import RoomCardEmojiPicker from "@sentrei/ui/components/RoomCardEmojiPicker";
 import RoomMenu from "@sentrei/ui/components/RoomMenu";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -55,17 +56,25 @@ export default function RoomCard({
 
   return (
     <Card className={classes.root}>
-      <CardActionArea className={classes.placeholder}>
-        <MuiAnchor
+      <CardActionArea>
+        <MuiButtonBase
           href="/[namespaceId]/[roomId]"
           as={`/${space.namespaceId}/${room.id}`}
         >
-          {room.photo ? (
-            <CardMedia className={classes.media} image={room.photo} />
+          {room.photoHash && isBlurhashValid(room.photoHash) ? (
+            <Blurhash
+              hash={room.photoHash}
+              height={1000}
+              width={3000}
+              resolutionX={32}
+              resolutionY={32}
+              punch={0}
+              className={classes.media}
+            />
           ) : (
             <Box className={classes.media} />
           )}
-        </MuiAnchor>
+        </MuiButtonBase>
       </CardActionArea>
       <CardContent>
         <Grid

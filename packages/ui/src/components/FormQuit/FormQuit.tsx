@@ -16,7 +16,7 @@ export interface Props {
   onSubmit: () => Promise<void>;
 }
 
-const QuitForm = ({
+const FormQuit = ({
   disabled,
   id,
   type = "id",
@@ -24,13 +24,13 @@ const QuitForm = ({
 }: Props): JSX.Element => {
   const {t} = useTranslation();
 
-  const IdFormSchema = Yup.object().shape({
+  const FormIdSchema = Yup.object().shape({
     id: Yup.string()
       .required(t("form:id.idRequired"))
       .oneOf([id], `${t("form:id.idMatch")} ${id}`),
   });
 
-  const QuitFormSchema = Yup.object().shape({
+  const FormQuitSchema = Yup.object().shape({
     id: Yup.string()
       .required(t("form:quit.quitRequired"))
       .oneOf(["QUIT"], t("form:quit.quitType")),
@@ -40,7 +40,7 @@ const QuitForm = ({
     mode: "onSubmit",
     reValidateMode: "onBlur",
     resolver:
-      type === "id" ? yupResolver(IdFormSchema) : yupResolver(QuitFormSchema),
+      type === "id" ? yupResolver(FormIdSchema) : yupResolver(FormQuitSchema),
   });
 
   return (
@@ -105,4 +105,4 @@ const QuitForm = ({
   );
 };
 
-export default QuitForm;
+export default FormQuit;

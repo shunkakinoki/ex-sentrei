@@ -11,6 +11,7 @@ import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
 import RoomFormName from "@sentrei/ui/components/RoomFormName";
+import RoomFormPicture from "@sentrei/ui/components/RoomFormPicture";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
@@ -36,7 +37,7 @@ const RoomSettingsBoard = ({role, profile, room, user}: Props): JSX.Element => {
         tabIconTwo={<PhotoIcon />}
         tabIconThree={<EditAttributesIcon />}
         tabLabelOne={t("common:common.name")}
-        tabLabelTwo={t("common:common.photo")}
+        tabLabelTwo={t("common:common.picture")}
         tabLabelThree={t("common:common.type")}
         tabPanelOne={
           <RoomFormName
@@ -46,7 +47,14 @@ const RoomSettingsBoard = ({role, profile, room, user}: Props): JSX.Element => {
             user={user}
           />
         }
-        tabPanelTwo={<></>}
+        tabPanelTwo={
+          <RoomFormPicture
+            disabled={role !== "admin"}
+            profile={profile}
+            room={room}
+            user={user}
+          />
+        }
         tabPanelThree={<></>}
       />
     </>
