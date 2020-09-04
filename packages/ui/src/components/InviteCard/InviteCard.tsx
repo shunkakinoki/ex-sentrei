@@ -18,10 +18,11 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   invite: Invite.Get;
+  namespaceId: string;
   type: Invite.Methods;
 }
 
-function InviteCard({invite, type}: Props): JSX.Element {
+function InviteCard({invite, namespaceId, type}: Props): JSX.Element {
   const {snackbar} = useSnackbar();
   const {t} = useTranslation();
 
@@ -42,7 +43,7 @@ function InviteCard({invite, type}: Props): JSX.Element {
           {type === "email" && <EmailIcon />}
           {type === "link" && (
             <CopyToClipboard
-              text={`${window.location}/${invite.id}`}
+              text={`${window.location.origin}/${namespaceId}/invite/${invite.id}`}
               onCopy={(): void =>
                 snackbar("success", t("common:snackbar.clipboard"))
               }
@@ -56,7 +57,9 @@ function InviteCard({invite, type}: Props): JSX.Element {
       </ListItemAvatar>
       <ListItemText
         primary={
-          type === "email" ? invite.email : `${window.location}/${invite.id}`
+          type === "email"
+            ? invite.email
+            : `${window.location.origin}/${namespaceId}/invite/${invite.id}`
         }
         secondary={type === "email" ? null : invite.period}
         primaryTypographyProps={{noWrap: true}}

@@ -11,7 +11,7 @@ interface Props {
   namespaceId: string;
 }
 
-const SpaceDeleteForm = ({namespaceId}: Props): JSX.Element => {
+const SpaceFormDelete = ({namespaceId}: Props): JSX.Element => {
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
   const {t} = useTranslation();
@@ -32,4 +32,4 @@ const SpaceDeleteForm = ({namespaceId}: Props): JSX.Element => {
   return <FormDelete disabled id={namespaceId} onSubmit={onSubmit} />;
 };
 
-export default SpaceDeleteForm;
+export default SpaceFormDelete;

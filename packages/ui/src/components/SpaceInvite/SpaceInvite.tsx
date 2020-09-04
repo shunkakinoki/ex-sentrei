@@ -58,6 +58,7 @@ export default function SpaceInvite({
     <GridSettings namespaceId={namespaceId} tabSpaceKey="invite" type="space">
       <SpaceInviteBoard
         profile={profile}
+        namespaceId={namespaceId}
         invites={invites}
         user={user}
         spaceId={spaceId}

@@ -1,3 +1,19 @@
+# [1.34.0](https://github.com/sentrei/sentrei/compare/v1.33.0...v1.34.0) (2020-09-04)
+
+### Features
+
+- 🎸 ini form photo ([cfe7227](https://github.com/sentrei/sentrei/commit/cfe7227747e02a7278eb271f12c6bb3ee8a8c46f))
+- 🎸 ini invite signup board ([9b7a777](https://github.com/sentrei/sentrei/commit/9b7a777954b5ec5dd9db7b810dd8c020333c7052))
+- 🎸 refactor correct space invite card ([ff1e5fd](https://github.com/sentrei/sentrei/commit/ff1e5fde63b89c0c4615589bdba6b0afc4e0ef10))
+- 🎸 refactor room styles ([71b5a1f](https://github.com/sentrei/sentrei/commit/71b5a1f1e75ef3276047ed3d37dbff58f9f9a9a4))
+
+### Performance Improvements
+
+- ⚡️ ini i18n common ([b15906f](https://github.com/sentrei/sentrei/commit/b15906fd6b026429446e8309b1b201f1d3d96851))
+- ⚡️ ini redirect for space signup ([7f161f0](https://github.com/sentrei/sentrei/commit/7f161f0f1ff3a345b8423ed804606ab45dd1a04c))
+- ⚡️ refactor naming form delete ([437d931](https://github.com/sentrei/sentrei/commit/437d931959337b9773504f032c3f0e8f64553ab3))
+- ⚡️ type rect for space form photo ([40a7344](https://github.com/sentrei/sentrei/commit/40a73440195afc85d962212340868ee794b23552))
+
 # [1.33.0](https://github.com/sentrei/sentrei/compare/v1.32.0...v1.33.0) (2020-09-04)
 
 ### Features

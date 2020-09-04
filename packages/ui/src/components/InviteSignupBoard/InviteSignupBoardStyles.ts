@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const InviteFormSignupStyles = makeStyles((theme: Theme) =>
+const InviteSignupBoardStyles = makeStyles((theme: Theme) =>
   createStyles({
     avatar: {
       margin: theme.spacing(1),
@@ -17,7 +17,6 @@ const InviteFormSignupStyles = makeStyles((theme: Theme) =>
       marginTop: theme.spacing(1),
     },
     paper: {
-      marginTop: theme.spacing(8),
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -28,4 +27,4 @@ const InviteFormSignupStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default InviteFormSignupStyles;
+export default InviteSignupBoardStyles;
