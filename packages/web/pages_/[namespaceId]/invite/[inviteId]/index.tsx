@@ -8,7 +8,7 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {analytics} from "@sentrei/common/utils/firebase";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
-import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
+import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const InviteSignup = dynamic(
   () => {
@@ -20,7 +20,8 @@ const InviteSignup = dynamic(
 const InviteId: NextPage = () => {
   const {query} = useRouter();
 
-  const {user, profile} = React.useContext(AuthContext);
+  const {user} = React.useContext(AuthContext);
+
   const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
 
   React.useEffect(() => {
@@ -38,10 +39,10 @@ const InviteId: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (user === undefined || !profile || !spaceId) {
+  if (user === undefined || !spaceId) {
     return (
       <>
-        <SentreiAppHeader skeleton />
+        <SentreiHeader />
         <SkeletonForm />
       </>
     );
@@ -52,16 +53,13 @@ const InviteId: NextPage = () => {
 
   return (
     <>
-      {user && (
-        <SentreiAppHeader
-          notificationCount={Number(user.notificationCount)}
-          profile={profile}
-          userId={user.uid}
+      <SentreiHeader />
+      {!user && (
+        <InviteSignup
+          inviteId={String(query.inviteId)}
           namespaceId={String(query.namespaceId)}
+          spaceId={spaceId}
         />
-      )}
-      {user && (
-        <InviteSignup inviteId={String(query.inviteId)} spaceId={spaceId} />
       )}
     </>
   );

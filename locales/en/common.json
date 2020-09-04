@@ -29,6 +29,8 @@
     "home": "Home",
     "id": "ID",
     "invite": "Invite",
+    "inviteTo": "You've been invited to ",
+    "inviteFrom": "Invite from ",
     "language": "Language",
     "lastUpdated": "Last Updated",
     "leaderboard": "Leaderboard",
