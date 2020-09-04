@@ -19,6 +19,7 @@ import TabBoard from "@sentrei/ui/components/TabBoard";
 export interface Props {
   profile: Profile.Get;
   invites: Invite.Get[] | null | undefined;
+  namespaceId: string;
   spaceId: string;
   user: User.Get;
 }
@@ -26,6 +27,7 @@ export interface Props {
 export default function SpaceInviteBoard({
   profile,
   invites,
+  namespaceId,
   user,
   spaceId,
 }: Props): JSX.Element {
@@ -46,14 +48,26 @@ export default function SpaceInviteBoard({
           <>
             <InviteFormEmail profile={profile} user={user} spaceId={spaceId} />
             <Box p={1} />
-            {invites && <InviteList invites={invites} type="email" />}
+            {invites && (
+              <InviteList
+                namespaceId={namespaceId}
+                invites={invites}
+                type="email"
+              />
+            )}
           </>
         }
         tabPanelTwo={
           <>
             <InviteFormLink profile={profile} user={user} spaceId={spaceId} />
             <Box p={1} />
-            {invites && <InviteList invites={invites} type="link" />}
+            {invites && (
+              <InviteList
+                namespaceId={namespaceId}
+                invites={invites}
+                type="link"
+              />
+            )}
           </>
         }
         tabPanelThree={

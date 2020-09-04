@@ -56,7 +56,7 @@ export default function RoomCard({
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea className={classes.placeholder}>
         <MuiButtonBase
           href="/[namespaceId]/[roomId]"
           as={`/${space.namespaceId}/${room.id}`}

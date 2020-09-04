@@ -12,6 +12,7 @@ import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
 import SpaceFormId from "@sentrei/ui/components/SpaceFormId";
 import SpaceFormName from "@sentrei/ui/components/SpaceFormName";
+import SpaceFormPhoto from "@sentrei/ui/components/SpaceFormPhoto";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
@@ -51,7 +52,7 @@ const SpaceSettingsBoard = ({
             user={user}
           />
         }
-        tabPanelTwo={<></>}
+        tabPanelTwo={<SpaceFormPhoto disabled profile={profile} />}
         tabPanelThree={
           <SpaceFormId disabled={role !== "admin"} space={space} />
         }

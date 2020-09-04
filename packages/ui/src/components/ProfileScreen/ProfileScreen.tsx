@@ -9,6 +9,7 @@ import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
 import ProfileFormName from "@sentrei/ui/components/ProfileFormName";
+import ProfileFormPhoto from "@sentrei/ui/components/ProfileFormPhoto";
 import ProfileFormUsername from "@sentrei/ui/components/ProfileFormUsername";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
@@ -36,7 +37,7 @@ export default function ProfileScreen({profile, user}: Props): JSX.Element {
         tabLabelTwo={t("common:common.photo")}
         tabLabelThree={t("common:common.username")}
         tabPanelOne={<ProfileFormName profile={profile} />}
-        tabPanelTwo={<></>}
+        tabPanelTwo={<ProfileFormPhoto disabled profile={profile} />}
         tabPanelThree={<ProfileFormUsername profile={profile} user={user} />}
       />
     </>

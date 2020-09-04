@@ -9,7 +9,7 @@
     "/": ["footer", "header", "index", "papercups"],
     "/[namespaceId]/activity": ["space"],
     "/[namespaceId]/analytics": ["space"],
-    "/[namespaceId]/invite/[inviteId]": ["auth", "space"],
+    "/[namespaceId]/invite/[inviteId]": ["auth", "header", "space"],
     "/[namespaceId]/leaderboard": ["space"],
     "/[namespaceId]/members": ["space"],
     "/[namespaceId]/[roomId]": ["space", "video"],
