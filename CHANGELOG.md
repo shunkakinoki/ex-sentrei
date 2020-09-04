@@ -1,3 +1,15 @@
+# [1.33.0](https://github.com/sentrei/sentrei/compare/v1.32.0...v1.33.0) (2020-09-04)
+
+### Features
+
+- 🎸 form ui components rename ([88a4b89](https://github.com/sentrei/sentrei/commit/88a4b8900e5e2a2aac029c8d9e205922e8032f7c))
+- 🎸 ini header logo ([bfb838b](https://github.com/sentrei/sentrei/commit/bfb838b5bccc8c7ed1fc416b5e81d0c53eefb79a))
+- 🎸 ini landing spacing ([73acc89](https://github.com/sentrei/sentrei/commit/73acc89763cf5a43bbb8c7872466b91d1fe9eb8e))
+- 🎸 ini room form picture ([1b048ab](https://github.com/sentrei/sentrei/commit/1b048ab22672645755831d9adf03f7a33b2d5f9a))
+- 🎸 refactor hash for room form picture ([f5ebb0c](https://github.com/sentrei/sentrei/commit/f5ebb0c72027a0f21f65b4c0a2dbeb0698a06d42))
+- 🎸 refactor room form settings ([759c402](https://github.com/sentrei/sentrei/commit/759c4020fd148842cb195d89b313e3dbe9976752))
+- 🎸 remove unused divider particle protip ([3cbb184](https://github.com/sentrei/sentrei/commit/3cbb1844b2e2351a58e738cbbc335da4591d77e1))
+
 # [1.32.0](https://github.com/sentrei/sentrei/compare/v1.31.0...v1.32.0) (2020-09-03)
 
 ### Features
