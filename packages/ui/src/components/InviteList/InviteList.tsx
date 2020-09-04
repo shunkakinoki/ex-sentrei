@@ -7,11 +7,16 @@ import InviteCard from "@sentrei/ui/components/InviteCard";
 export interface Props {
   invites: Invite.Get[];
   type: Invite.Methods;
+  namespaceId: string;
   last?: firebase.firestore.DocumentSnapshot;
   limit?: number;
 }
 
-export default function InviteList({invites, type}: Props): JSX.Element {
+export default function InviteList({
+  namespaceId,
+  invites,
+  type,
+}: Props): JSX.Element {
   const emailInvites = invites.filter(invite => invite.method === "email");
   const linkInvites = invites.filter(invite => invite.method === "link");
 
@@ -19,11 +24,21 @@ export default function InviteList({invites, type}: Props): JSX.Element {
     <List>
       {type === "email" &&
         emailInvites.map(invite => (
-          <InviteCard key={invite.id} invite={invite} type="email" />
+          <InviteCard
+            key={invite.id}
+            namespaceId={namespaceId}
+            invite={invite}
+            type="email"
+          />
         ))}
       {type === "link" &&
         linkInvites.map(invite => (
-          <InviteCard key={invite.id} invite={invite} type="link" />
+          <InviteCard
+            key={invite.id}
+            namespaceId={namespaceId}
+            invite={invite}
+            type="link"
+          />
         ))}
     </List>
   );
