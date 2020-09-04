@@ -9,10 +9,10 @@ import LandingPricing from "@sentrei/ui/components/LandingPricing";
 import LandingProduct, {
   Props as LandingProductProps,
 } from "@sentrei/ui/components/LandingProduct";
+import LandingSpacing from "@sentrei/ui/components/LandingSpacing";
 import LandingTestimonial, {
   Props as LandingTestimonialProps,
 } from "@sentrei/ui/components/LandingTestimonial";
-import Spacing from "@sentrei/ui/components/Spacing";
 
 export type Props = LandingProductProps &
   LandingFeatureProps &
@@ -32,7 +32,7 @@ export default function LandingScreen({
   return (
     <>
       <LandingBanner />
-      <Spacing />
+      <LandingSpacing />
       <div id="product">
         <LandingProduct
           connectImg={connectImg}
@@ -40,7 +40,7 @@ export default function LandingScreen({
           videoImg={videoImg}
         />
       </div>
-      <Spacing />
+      <LandingSpacing />
       <div id="feature">
         <LandingFeature
           timeImg={timeImg}
@@ -48,7 +48,7 @@ export default function LandingScreen({
           goalImg={goalImg}
         />
       </div>
-      <Spacing />
+      <LandingSpacing />
       <div id="testimonial">
         <LandingTestimonial
           personOneImg={personOneImg}
@@ -56,15 +56,15 @@ export default function LandingScreen({
           personThreeImg={personThreeImg}
         />
       </div>
-      <Spacing />
+      <LandingSpacing />
       <div id="pricing">
         <LandingPricing />
       </div>
-      <Spacing />
+      <LandingSpacing />
       <div id="faq">
         <LandingFaq />
       </div>
-      <Spacing />
+      <LandingSpacing />
     </>
   );
 }
