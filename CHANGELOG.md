@@ -1,3 +1,9 @@
+# [1.35.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.34.0...v1.35.0-beta.1) (2020-09-04)
+
+### Features
+
+- 🎸 refactor stripe model ([928b9ee](https://github.com/sentrei/sentrei/commit/928b9ee7b09a7d8baf3ab97a032f6ba03e7e22ec))
+
 # [1.34.0](https://github.com/sentrei/sentrei/compare/v1.33.0...v1.34.0) (2020-09-04)
 
 ### Features
