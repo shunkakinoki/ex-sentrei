@@ -25,18 +25,18 @@ export interface Props {
   user: User.Get;
 }
 
-const RoomNameForm = ({disabled, profile, room, user}: Props): JSX.Element => {
+const RoomFormName = ({disabled, profile, room, user}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
-  const RoomNameFormSchema = Yup.object().shape({
+  const RoomFormNameSchema = Yup.object().shape({
     name: Yup.string(),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
     mode: "onSubmit",
     reValidateMode: "onBlur",
-    resolver: yupResolver(RoomNameFormSchema),
+    resolver: yupResolver(RoomFormNameSchema),
   });
 
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
@@ -112,4 +112,4 @@ const RoomNameForm = ({disabled, profile, room, user}: Props): JSX.Element => {
   );
 };
 
-export default RoomNameForm;
+export default RoomFormName;

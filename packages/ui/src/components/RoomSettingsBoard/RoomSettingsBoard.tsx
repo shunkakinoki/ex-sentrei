@@ -36,7 +36,7 @@ const RoomSettingsBoard = ({role, profile, room, user}: Props): JSX.Element => {
         tabIconTwo={<PhotoIcon />}
         tabIconThree={<EditAttributesIcon />}
         tabLabelOne={t("common:common.name")}
-        tabLabelTwo={t("common:common.photo")}
+        tabLabelTwo={t("common:common.picture")}
         tabLabelThree={t("common:common.type")}
         tabPanelOne={
           <RoomFormName
