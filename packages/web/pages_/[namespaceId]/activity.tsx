@@ -34,7 +34,12 @@ const ActivityPage: NextPage = () => {
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="activity" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="activity"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
         <SkeletonList />
       </>
     );

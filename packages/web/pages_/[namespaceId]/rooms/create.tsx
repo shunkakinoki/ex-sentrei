@@ -38,7 +38,12 @@ const CreatePage: NextPage = () => {
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="rooms" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="rooms"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
         <SkeletonForm />
       </>
     );

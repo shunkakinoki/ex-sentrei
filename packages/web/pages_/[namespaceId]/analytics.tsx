@@ -34,7 +34,12 @@ const AnalyticsPage: NextPage = () => {
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="analytics" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="analytics"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
         <SkeletonList />
       </>
     );

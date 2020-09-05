@@ -95,7 +95,12 @@ const SpaceId = ({
   ) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="home" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="home"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
         <SkeletonScreen />
       </>
     );

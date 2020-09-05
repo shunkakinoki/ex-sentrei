@@ -42,7 +42,12 @@ const SpaceInvitePage: NextPage = () => {
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="settings" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="settings"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
       </>
     );
   }

@@ -61,7 +61,12 @@ const LeaderboardPage = ({
   if (user === undefined || !profile || !spaceId || !membersData) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="leaderboard" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="leaderboard"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
         <SkeletonList />
       </>
     );
