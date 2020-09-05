@@ -19,3 +19,15 @@ export const loadSegment = (): void => {
     window.analytics.load(segment_id);
   }
 };
+
+export const pageView = (
+  category?: string,
+  name?: string,
+  properties?: Object,
+  options?: SegmentAnalytics.SegmentOpts,
+  callback?: () => void,
+): void => {
+  if (window.analytics) {
+    window.analytics.page(category, name, properties, options, callback);
+  }
+};

@@ -4,8 +4,8 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getUserLive} from "@sentrei/common/firebase/users";
 import logIPAddress from "@sentrei/common/services/logIPAddress";
-import {pageView} from "@sentrei/common/utils/analytics";
 import {auth, performance} from "@sentrei/common/utils/firebase";
+import {pageView} from "@sentrei/common/utils/segment";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 
 const Authentication = (): null => {
@@ -64,8 +64,8 @@ const Authentication = (): null => {
   }, []);
 
   React.useEffect(() => {
-    const handleRouteChange = (url: string): void => {
-      pageView(url, user?.uid);
+    const handleRouteChange = (): void => {
+      pageView();
     };
 
     Router.events.on("routeChangeComplete", handleRouteChange);
