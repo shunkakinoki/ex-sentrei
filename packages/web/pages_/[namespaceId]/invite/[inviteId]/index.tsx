@@ -38,7 +38,7 @@ const InviteId: NextPage = () => {
   if (user === undefined || !spaceId) {
     return (
       <>
-        <SentreiHeader />
+        <SentreiHeader landingKey="invite" />
         <SkeletonForm />
       </>
     );

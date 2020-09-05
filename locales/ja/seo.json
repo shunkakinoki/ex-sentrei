@@ -1,13 +1,14 @@
 {
   "landing": {
-    "about": "約",
-    "credits": "ありがとうございました。",
-    "landing": "つなぐ。\nフォーカス。\n作業。",
+    "about": "会社について",
+    "credits": "ありがとうございます",
+    "invite": "招待",
+    "landing": "繋がる。没頭。作業。",
     "login": "ログインする",
     "pitch": "ピッチ",
     "pricing": "価格",
     "privacy": "個人情報保護方針",
-    "reset-password": "パスワードを再設定する",
+    "reset-password": "パスワード再設定",
     "signup": "サインアップ",
     "support": "サポート",
     "terms": "規約と条件"
@@ -26,7 +27,7 @@
     "settings": "設定"
   },
   "user": {
-    "create": "作成する",
+    "create": "作成",
     "dashboard": "ダッシュボード",
     "notifications": "お知らせ",
     "profile": "プロフィール",
