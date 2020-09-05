@@ -3,17 +3,13 @@ import Router from "next-translate/Router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import Loader from "@sentrei/ui/components/Loader";
 import SupportScreen from "@sentrei/ui/components/SupportScreen";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const Support: NextPage = () => {
   const {user} = React.useContext(AuthContext);
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("support");
-  }, []);
 
   if (user === undefined) {
     return <Loader />;
@@ -25,7 +21,7 @@ const Support: NextPage = () => {
 
   return (
     <>
-      <SentreiHeader papercups={false} />
+      <SentreiHeader papercups={false} landingKey="support" />
       <SupportScreen />
     </>
   );

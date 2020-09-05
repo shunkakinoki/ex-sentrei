@@ -1,0 +1,36 @@
+{
+  "landing": {
+    "about": "会社について",
+    "credits": "ありがとうございます",
+    "invite": "招待",
+    "landing": "Sentrei - 繋がる。没頭。作業。",
+    "login": "ログインする",
+    "pitch": "ピッチ",
+    "pricing": "価格",
+    "privacy": "個人情報保護方針",
+    "reset-password": "パスワード再設定",
+    "signup": "サインアップ",
+    "support": "サポート",
+    "terms": "規約と条件"
+  },
+  "room": {
+    "home": "ホーム",
+    "settings": "設定"
+  },
+  "space": {
+    "activity": "アクティビティ",
+    "analytics": "分析",
+    "home": "ホーム",
+    "leaderboard": "リーダーボード",
+    "members": "会員",
+    "rooms": "部屋",
+    "settings": "設定"
+  },
+  "user": {
+    "create": "作成",
+    "dashboard": "ダッシュボード",
+    "notifications": "お知らせ",
+    "profile": "プロフィール",
+    "settings": "設定"
+  }
+}

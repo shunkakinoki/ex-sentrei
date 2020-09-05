@@ -6,7 +6,7 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getAdminMembers} from "@sentrei/common/firebaseAdmin/members";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import Member from "@sentrei/types/models/Member";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceMember from "@sentrei/ui/components/SpaceMember";
@@ -54,10 +54,6 @@ const MembersPage = ({
 
   const {user, profile} = React.useContext(AuthContext);
 
-  React.useEffect(() => {
-    analytics().setCurrentScreen("spaceMembers");
-  }, []);
-
   if (!user && typeof window !== "undefined") {
     Router.pushI18n("/");
   }
@@ -65,7 +61,12 @@ const MembersPage = ({
   if (user === undefined || !profile || !spaceId || !membersData) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="members" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="members"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
         <SkeletonList />
       </>
     );

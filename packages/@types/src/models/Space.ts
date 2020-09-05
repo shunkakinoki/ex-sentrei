@@ -20,6 +20,8 @@ declare namespace Space {
     stats: Stats.Fields;
     tier: Tiers;
     stripeId: string;
+    subscriptionId?: string;
+    subscriptionTrial?: boolean;
   }
 
   export type AdminUpdate = Partial<Fields>;

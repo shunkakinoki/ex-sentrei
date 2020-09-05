@@ -6,7 +6,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -19,10 +19,6 @@ const CreatePage: NextPage = () => {
 
   const {user, profile} = React.useContext(AuthContext);
   const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("roomCreate");
-  }, []);
 
   React.useEffect(() => {
     async function setSpace(): Promise<void> {
@@ -42,7 +38,12 @@ const CreatePage: NextPage = () => {
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="rooms" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="rooms"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
         <SkeletonForm />
       </>
     );

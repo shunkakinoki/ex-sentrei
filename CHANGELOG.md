@@ -1,3 +1,61 @@
+# [1.40.0](https://github.com/sentrei/sentrei/compare/v1.39.0...v1.40.0) (2020-09-05)
+
+### Features
+
+- 🎸 ini complete seo ([0c4dcd2](https://github.com/sentrei/sentrei/commit/0c4dcd2712e9e86509b71a1c52f9565015047a9a))
+
+# [1.39.0](https://github.com/sentrei/sentrei/compare/v1.38.0...v1.39.0) (2020-09-05)
+
+### Features
+
+- 🎸 ini vercel monorepo ([eb702c5](https://github.com/sentrei/sentrei/commit/eb702c5cf184eb19b177aca29a436acc9fdae5e1))
+
+### Performance Improvements
+
+- ⚡️ ini vercel json ([0f18c05](https://github.com/sentrei/sentrei/commit/0f18c05d1596d8b6e3b7ca1fd954742e88d3857c))
+
+# [1.38.0](https://github.com/sentrei/sentrei/compare/v1.37.0...v1.38.0) (2020-09-05)
+
+### Features
+
+- 🎸 ini app seo ([8918049](https://github.com/sentrei/sentrei/commit/891804923a287a67551eb58c427b27e067d92b46))
+- 🎸 ini seo landing ([20854cf](https://github.com/sentrei/sentrei/commit/20854cf893bff965c7026689ed3839aab5ce7210))
+
+### Performance Improvements
+
+- ⚡️ ini i18n seo ([91ce179](https://github.com/sentrei/sentrei/commit/91ce1791501c49deb085125862cb1ef1da4f7c71))
+- ⚡️ ini invite seo ([267ed52](https://github.com/sentrei/sentrei/commit/267ed52a84d1329059d476974276e3e1bf746685))
+- ⚡️ ini seo landing ([9b3c891](https://github.com/sentrei/sentrei/commit/9b3c891da5f5d745a298c75e1206e9383b0d0706))
+
+# [1.37.0](https://github.com/sentrei/sentrei/compare/v1.36.0...v1.37.0) (2020-09-05)
+
+### Features
+
+- 🎸 complete refactor type to app bar ([9da52f6](https://github.com/sentrei/sentrei/commit/9da52f6e2b66b77fde52d91fa5087502bd114fcc))
+- 🎸 completely remove firebase analytics ([adff4e1](https://github.com/sentrei/sentrei/commit/adff4e19b7ad6369b478d84c88384a4c49a121c4))
+- 🎸 ini segment methods ([dce05d7](https://github.com/sentrei/sentrei/commit/dce05d7f073c7ad8b34ca1150e81917269de4373))
+- 🎸 ini space screen record group ([a8f19a6](https://github.com/sentrei/sentrei/commit/a8f19a6d3942c75195e00abeada082740cade73b))
+
+### Performance Improvements
+
+- ⚡️ ini track event error function ([b0ad658](https://github.com/sentrei/sentrei/commit/b0ad65860b7a0c5f52cb29e49613124824ed1746))
+- ⚡️ refactor seo default ([3e16ebd](https://github.com/sentrei/sentrei/commit/3e16ebd3cd58b2077b35eda9cfb7ebeff95e1edd))
+
+# [1.36.0](https://github.com/sentrei/sentrei/compare/v1.35.0...v1.36.0) (2020-09-05)
+
+### Features
+
+- 🎸 ini consent segment ([c9873db](https://github.com/sentrei/sentrei/commit/c9873db319d0b88ae01d8244a6e6850ad7e78e4a))
+- 🎸 ini identify user ([de22c7d](https://github.com/sentrei/sentrei/commit/de22c7d64988bd70f191e6bf82ee3a703a3b39db))
+- 🎸 ini segment analytics ([5e6f6c1](https://github.com/sentrei/sentrei/commit/5e6f6c1bc58255bdba9758fca8ff2864733d47db))
+- 🎸 ini segment component ([84ea32d](https://github.com/sentrei/sentrei/commit/84ea32d9dcd3b0746fe198b2d24d69b53447c7cc))
+- 🎸 ini segment component v2 ([e8eeb4e](https://github.com/sentrei/sentrei/commit/e8eeb4edd660324f813f6259513c639b7e8ca2ea))
+
+### Performance Improvements
+
+- ⚡️ ini i18n papercups ([3707951](https://github.com/sentrei/sentrei/commit/370795130eab863864905a6e41d5b541da0d010f))
+- ⚡️ ini pageView segment ([d9ff3c4](https://github.com/sentrei/sentrei/commit/d9ff3c4f0d5c3cbb3b50921579796e7c1eb21996))
+
 # [1.35.0](https://github.com/sentrei/sentrei/compare/v1.34.0...v1.35.0) (2020-09-05)
 
 ### Features

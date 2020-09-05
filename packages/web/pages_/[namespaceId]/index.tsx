@@ -10,7 +10,7 @@ import {getAdminMembers} from "@sentrei/common/firebaseAdmin/members";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 import {getAdminRooms} from "@sentrei/common/firebaseAdmin/rooms";
 import {getAdminSpace} from "@sentrei/common/firebaseAdmin/spaces";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import Member from "@sentrei/types/models/Member";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
@@ -82,10 +82,6 @@ const SpaceId = ({
 
   const {user, profile} = React.useContext(AuthContext);
 
-  React.useEffect(() => {
-    analytics().setCurrentScreen("space");
-  }, []);
-
   if (!user && typeof window !== "undefined") {
     Router.pushI18n("/");
   }
@@ -99,7 +95,12 @@ const SpaceId = ({
   ) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="home" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="home"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
         <SkeletonScreen />
       </>
     );

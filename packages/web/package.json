@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/web",
-  "version": "1.35.0",
+  "version": "1.40.0",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -10,12 +10,14 @@
   "license": "GPL-3.0-only",
   "author": "Shun Kakinoki",
   "scripts": {
-    "^1.35.0-beta.1": "yarn run beta:local && yarn run deploy",
     "alpha": "yarn run alpha:local && yarn run deploy",
     "alpha:local": "yarn run swap:alpha && firebase use alpha",
+    "beta": "yarn run beta:local && yarn run deploy",
     "beta:local": "yarn run swap:beta && firebase use beta",
-    "build": "next-translate && next build",
+    "build": "yarn run typescript && yarn run build:next",
     "build:analyze": "cross-env ANALYZE=true yarn run build",
+    "build:ignored": "cd ../.. && git diff --quiet HEAD^ HEAD ./packages/*/src/",
+    "build:next": "next-translate && next build",
     "build:test": "cross-env NODE_ENV=test yarn run build",
     "coverage": "nyc report --reporter=lcov --reporter=text",
     "cypress": "cypress run --record false",
@@ -42,6 +44,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@next/bundle-analyzer": "^9.5.2",
+    "@segment/snippet": "^4.13.1",
     "@sentrei/common": "^1.35.0-beta.1",
     "@sentrei/types": "^1.35.0-beta.1",
     "@sentrei/ui": "^1.35.0-beta.1",

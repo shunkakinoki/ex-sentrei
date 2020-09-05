@@ -11,7 +11,8 @@ import AppBar from "@sentrei/ui/components/AppBar";
 import AppTabRoom from "@sentrei/ui/components/AppTabRoom";
 import AppTabSpace from "@sentrei/ui/components/AppTabSpace";
 import AppTabUser from "@sentrei/ui/components/AppTabUser";
-import SeoDefault from "@sentrei/ui/components/SeoDefault";
+import Segment from "@sentrei/ui/components/Segment";
+import SeoApp from "@sentrei/ui/components/SeoApp";
 import StatusSpace from "@sentrei/ui/components/StatusSpace";
 
 export interface Props {
@@ -24,7 +25,7 @@ export interface Props {
   tabRoomKey?: AppTabRoomKey;
   tabUserKey?: AppTabUserKey;
   tabSpaceKey?: AppTabSpaceKey;
-  type?: AppTabType;
+  type: AppTabType;
   userId?: string;
 }
 
@@ -43,7 +44,13 @@ export default function AppHeader({
 }: Props): JSX.Element {
   return (
     <>
-      <SeoDefault nofollow />
+      <SeoApp
+        appKey={tabRoomKey || tabUserKey || tabSpaceKey || "home"}
+        profile={profile}
+        namespaceId={namespaceId}
+        type={type}
+      />
+      <Segment />
       <AppBar
         logo={logo}
         profile={profile}
@@ -51,6 +58,7 @@ export default function AppHeader({
         namespaceId={namespaceId}
         roomId={roomId}
         notificationCount={notificationCount}
+        type={type}
       />
       {userId && profile && <StatusSpace userId={userId} profile={profile} />}
       {type === "room" && skeleton && tabRoomKey && (

@@ -3,7 +3,7 @@ import Router from "next-translate/Router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import Footer from "@sentrei/ui/components/Footer";
 import LandingScreen from "@sentrei/ui/components/LandingScreen";
 import Loader from "@sentrei/ui/components/Loader";
@@ -19,10 +19,6 @@ import VideoPicture from "@sentrei/web/images/svg/VideoPicture";
 const Index: NextPage = () => {
   const {user} = React.useContext(AuthContext);
 
-  React.useEffect(() => {
-    analytics().setCurrentScreen("landing");
-  }, []);
-
   if (user === undefined) {
     return <Loader />;
   }
@@ -34,7 +30,7 @@ const Index: NextPage = () => {
   return (
     <>
       <OneTap delay user={user} />
-      <SentreiHeader type="landing" />
+      <SentreiHeader landingKey="landing" type="landing" />
       <LandingScreen
         connectImg={<ConnectPicture />}
         dataImg={<DataPicture />}

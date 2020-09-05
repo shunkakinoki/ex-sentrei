@@ -6,7 +6,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const RoomQuit = dynamic(() => import("@sentrei/ui/components/RoomQuit"), {
@@ -18,10 +18,6 @@ const Quit: NextPage = () => {
 
   const {user, profile} = React.useContext(AuthContext);
   const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("roomQuit");
-  }, []);
 
   React.useEffect(() => {
     async function setSpace(): Promise<void> {
@@ -37,7 +33,12 @@ const Quit: NextPage = () => {
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
-        <SentreiAppHeader skeleton tabRoomKey="settings" type="room" />
+        <SentreiAppHeader
+          skeleton
+          tabRoomKey="settings"
+          type="room"
+          namespaceId={String(query.namespaceId)}
+        />
       </>
     );
   }

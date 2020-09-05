@@ -4,7 +4,6 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 
-import {analytics} from "@sentrei/common/utils/firebase";
 import AuthForm from "@sentrei/ui/components/AuthForm";
 import Loader from "@sentrei/ui/components/Loader";
 import OneTap from "@sentrei/ui/components/OneTap";
@@ -12,10 +11,6 @@ import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const Signup: NextPage = () => {
   const {user} = React.useContext(AuthContext);
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("signup");
-  }, []);
 
   if (user === undefined) {
     return <Loader />;
@@ -27,7 +22,7 @@ const Signup: NextPage = () => {
 
   return (
     <>
-      <SentreiHeader />
+      <SentreiHeader landingKey="signup" />
       <OneTap user={user} />
       <AuthForm type="signup" />;
     </>

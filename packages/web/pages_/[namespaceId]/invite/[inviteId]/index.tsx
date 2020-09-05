@@ -6,7 +6,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
@@ -25,10 +25,6 @@ const InviteId: NextPage = () => {
   const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("inviteSignup");
-  }, []);
-
-  React.useEffect(() => {
     async function setSpace(): Promise<void> {
       const namespace = await getNamespace(String(query.namespaceId));
       if (!namespace || namespace.type === "user") {
@@ -42,7 +38,7 @@ const InviteId: NextPage = () => {
   if (user === undefined || !spaceId) {
     return (
       <>
-        <SentreiHeader />
+        <SentreiHeader landingKey="invite" />
         <SkeletonForm />
       </>
     );
@@ -53,7 +49,7 @@ const InviteId: NextPage = () => {
 
   return (
     <>
-      <SentreiHeader />
+      <SentreiHeader landingKey="invite" />
       {!user && (
         <InviteSignup
           inviteId={String(query.inviteId)}

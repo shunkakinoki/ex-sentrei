@@ -4,6 +4,7 @@ import * as React from "react";
 import {getMembersLive} from "@sentrei/common/firebase/members";
 import {getRoomsLive} from "@sentrei/common/firebase/rooms";
 import {getSpace} from "@sentrei/common/firebase/spaces";
+import {recordGroup} from "@sentrei/common/utils/segment";
 import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
@@ -66,6 +67,16 @@ export default function SpaceScreen({
       unsubscribe();
     };
   }, [spaceId]);
+
+  React.useEffect(() => {
+    if (space) {
+      recordGroup(space.id, {
+        namespaceId: space.namespaceId,
+        tier: space.tier,
+        stripeId: space.stripeId,
+      });
+    }
+  }, [space]);
 
   if (space === undefined || members === undefined || rooms === undefined) {
     return <SkeletonScreen />;
