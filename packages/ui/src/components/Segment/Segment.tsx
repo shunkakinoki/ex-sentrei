@@ -1,4 +1,3 @@
-import NoSsr from "@material-ui/core/NoSsr";
 import Head from "next/head";
 
 import * as React from "react";
@@ -14,10 +13,8 @@ export default function Segment(): JSX.Element {
 
   return (
     <Head>
-      <NoSsr>
-        {/* eslint-disable-next-line react/no-danger */}
-        <script dangerouslySetInnerHTML={{__html: renderSnippet()}} />
-      </NoSsr>
+      {/* eslint-disable-next-line react/no-danger */}
+      <script dangerouslySetInnerHTML={{__html: renderSnippet()}} />
     </Head>
   );
 }
