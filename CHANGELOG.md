@@ -1,3 +1,16 @@
+# [1.38.0](https://github.com/sentrei/sentrei/compare/v1.37.0...v1.38.0) (2020-09-05)
+
+### Features
+
+- 🎸 ini app seo ([8918049](https://github.com/sentrei/sentrei/commit/891804923a287a67551eb58c427b27e067d92b46))
+- 🎸 ini seo landing ([20854cf](https://github.com/sentrei/sentrei/commit/20854cf893bff965c7026689ed3839aab5ce7210))
+
+### Performance Improvements
+
+- ⚡️ ini i18n seo ([91ce179](https://github.com/sentrei/sentrei/commit/91ce1791501c49deb085125862cb1ef1da4f7c71))
+- ⚡️ ini invite seo ([267ed52](https://github.com/sentrei/sentrei/commit/267ed52a84d1329059d476974276e3e1bf746685))
+- ⚡️ ini seo landing ([9b3c891](https://github.com/sentrei/sentrei/commit/9b3c891da5f5d745a298c75e1206e9383b0d0706))
+
 # [1.37.0](https://github.com/sentrei/sentrei/compare/v1.36.0...v1.37.0) (2020-09-05)
 
 ### Features
