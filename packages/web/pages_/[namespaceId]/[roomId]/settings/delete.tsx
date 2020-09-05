@@ -33,7 +33,12 @@ const Delete: NextPage = () => {
   if (user === undefined || !profile || !spaceId) {
     return (
       <>
-        <SentreiAppHeader skeleton tabRoomKey="settings" type="room" />
+        <SentreiAppHeader
+          skeleton
+          tabRoomKey="settings"
+          type="room"
+          namespaceId={String(query.namespaceId)}
+        />
       </>
     );
   }

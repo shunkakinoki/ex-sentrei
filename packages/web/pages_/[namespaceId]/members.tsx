@@ -61,7 +61,12 @@ const MembersPage = ({
   if (user === undefined || !profile || !spaceId || !membersData) {
     return (
       <>
-        <SentreiAppHeader skeleton tabSpaceKey="members" type="space" />
+        <SentreiAppHeader
+          skeleton
+          tabSpaceKey="members"
+          type="space"
+          namespaceId={String(query.namespaceId)}
+        />
         <SkeletonList />
       </>
     );

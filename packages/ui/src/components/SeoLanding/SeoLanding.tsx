@@ -16,7 +16,7 @@ export default function SeoLanding({landingKey}: Props): JSX.Element {
       nofollow
       noindex
       title={t(`seo:landing.${landingKey}`)}
-      titleTemplate="Sentrei - %s"
+      titleTemplate="%s"
     />
   );
 }
