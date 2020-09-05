@@ -36,3 +36,45 @@ export const identifyUser = (
     window.analytics.identify(userId, traits, options, callback);
   }
 };
+
+export const recordGroup = (
+  groupId: string,
+  traits?: Object,
+  options?: SegmentAnalytics.SegmentOpts,
+  callback?: () => void,
+): void => {
+  if (window.analytics) {
+    window.analytics.group(groupId, traits, options, callback);
+  }
+};
+
+export const trackEvent = (
+  event: string,
+  properties?: Object,
+  options?: SegmentAnalytics.SegmentOpts,
+  callback?: () => void,
+): void => {
+  if (window.analytics) {
+    window.analytics.track(event, properties, options, callback);
+  }
+};
+
+export const trackForm = (
+  elements: JQuery | Element[] | Element,
+  event: string | {(elm: Element): string},
+  properties?: Object | {(elm: Element): Object},
+): void => {
+  if (window.analytics) {
+    window.analytics.trackForm(elements, event, properties);
+  }
+};
+
+export const trackLink = (
+  elements: JQuery | Element[] | Element,
+  event: string | {(elm: Element): string},
+  properties?: Object | {(elm: Element): Object},
+): void => {
+  if (window.analytics) {
+    window.analytics.trackLink(elements, event, properties);
+  }
+};
