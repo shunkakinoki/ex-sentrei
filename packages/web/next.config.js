@@ -77,7 +77,7 @@ const nextConfig = {
     SENTREI_VERSION: require("./package.json").version,
     SENTRY_DSN: process.env.SENTRY_DSN,
     SENTRY_ENVIRONMENT:
-      process.env.SENTRY_ENVIRONMENT ??
+      process.env.SENTRY_ENVIRONMENT ||
       new Set(["alpha", "beta", "main"]).has(branch)
         ? branch
         : "dev",
