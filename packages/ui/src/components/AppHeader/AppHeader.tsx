@@ -44,7 +44,6 @@ export default function AppHeader({
 }: Props): JSX.Element {
   return (
     <>
-      <SeoDefault nofollow />
       <Segment />
       <AppBar
         logo={logo}
