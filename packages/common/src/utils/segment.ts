@@ -7,7 +7,9 @@ const segment_id = publicRuntimeConfig.SEGMENT_ID;
 export const renderSnippet = (): string => {
   const opts = {
     apiKey: segment_id,
-    page: true,
+    host: window.location.origin,
+    page: false,
+    load: false,
   };
 
   return snippet.min(opts);
