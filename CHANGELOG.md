@@ -1,3 +1,17 @@
+# [1.37.0](https://github.com/sentrei/sentrei/compare/v1.36.0...v1.37.0) (2020-09-05)
+
+### Features
+
+- 🎸 complete refactor type to app bar ([9da52f6](https://github.com/sentrei/sentrei/commit/9da52f6e2b66b77fde52d91fa5087502bd114fcc))
+- 🎸 completely remove firebase analytics ([adff4e1](https://github.com/sentrei/sentrei/commit/adff4e19b7ad6369b478d84c88384a4c49a121c4))
+- 🎸 ini segment methods ([dce05d7](https://github.com/sentrei/sentrei/commit/dce05d7f073c7ad8b34ca1150e81917269de4373))
+- 🎸 ini space screen record group ([a8f19a6](https://github.com/sentrei/sentrei/commit/a8f19a6d3942c75195e00abeada082740cade73b))
+
+### Performance Improvements
+
+- ⚡️ ini track event error function ([b0ad658](https://github.com/sentrei/sentrei/commit/b0ad65860b7a0c5f52cb29e49613124824ed1746))
+- ⚡️ refactor seo default ([3e16ebd](https://github.com/sentrei/sentrei/commit/3e16ebd3cd58b2077b35eda9cfb7ebeff95e1edd))
+
 # [1.36.0](https://github.com/sentrei/sentrei/compare/v1.35.0...v1.36.0) (2020-09-05)
 
 ### Features
