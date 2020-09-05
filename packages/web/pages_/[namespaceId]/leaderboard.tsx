@@ -6,7 +6,7 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getAdminLeaderboard} from "@sentrei/common/firebaseAdmin/leaderboard";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import Member from "@sentrei/types/models/Member";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceLeaderboard from "@sentrei/ui/components/SpaceLeaderboard";
@@ -53,10 +53,6 @@ const LeaderboardPage = ({
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("spaceLeaderboard");
-  }, []);
 
   if (!user && typeof window !== "undefined") {
     Router.pushI18n("/");

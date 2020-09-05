@@ -4,18 +4,12 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 
-import {analytics} from "@sentrei/common/utils/firebase";
-
 import SettingsScreen from "@sentrei/ui/components/SettingsScreen";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Settings: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("settings");
-  }, []);
 
   if (!user && typeof window !== "undefined") {
     Router.pushI18n("/");

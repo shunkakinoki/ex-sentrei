@@ -6,7 +6,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const SpaceInvite = dynamic(
@@ -23,10 +23,6 @@ const SpaceInvitePage: NextPage = () => {
 
   const {user, profile} = React.useContext(AuthContext);
   const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("spaceInvite");
-  }, []);
 
   React.useEffect(() => {
     async function setSpace(): Promise<void> {
