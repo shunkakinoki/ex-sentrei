@@ -34,7 +34,7 @@ const SupportPage: NextPage = () => {
   if (user === undefined || !profile || !type) {
     return (
       <>
-        <SentreiAppHeader skeleton />
+        <SentreiAppHeader skeleton type="user" />
         <SkeletonForm />
       </>
     );
