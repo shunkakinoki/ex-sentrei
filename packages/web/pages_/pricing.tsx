@@ -8,7 +8,7 @@ import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 const Pricing: NextPage = () => {
   return (
     <>
-      <SentreiHeader />
+      <SentreiHeader landingKey="pricing" />
       <PricingScreen />
       <Footer />
     </>

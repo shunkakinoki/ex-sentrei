@@ -1,4 +1,17 @@
 {
+  "landing": {
+    "about": "About",
+    "credits": "Thank you.",
+    "landing": "Bond. Focus. Work.",
+    "login": "Login",
+    "pitch": "Pitch",
+    "pricing": "Pricing",
+    "privacy": "Privacy Policy",
+    "reset-password": "Reset Password",
+    "signup": "Signup",
+    "support": "Support",
+    "terms": "Terms and Conditions"
+  },
   "room": {
     "home": "Home",
     "settings": "Settings"

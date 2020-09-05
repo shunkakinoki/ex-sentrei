@@ -30,7 +30,7 @@ const Index: NextPage = () => {
   return (
     <>
       <OneTap delay user={user} />
-      <SentreiHeader type="landing" />
+      <SentreiHeader landingKey="landing" type="landing" />
       <LandingScreen
         connectImg={<ConnectPicture />}
         dataImg={<DataPicture />}

@@ -22,7 +22,7 @@ const Signup: NextPage = () => {
 
   return (
     <>
-      <SentreiHeader />
+      <SentreiHeader landingKey="signup" />
       <OneTap user={user} />
       <AuthForm type="signup" />;
     </>

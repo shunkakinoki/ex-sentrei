@@ -8,7 +8,7 @@ import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 const Pitch: NextPage = () => {
   return (
     <>
-      <SentreiHeader />
+      <SentreiHeader landingKey="pitch" />
       <PitchScreen />
       <Footer />
     </>

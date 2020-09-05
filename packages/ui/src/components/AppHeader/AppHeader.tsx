@@ -20,7 +20,7 @@ export interface Props {
   profile?: Profile.Get;
   notificationCount?: number;
   skeleton?: boolean;
-  namespaceId: string;
+  namespaceId?: string;
   roomId?: string;
   tabRoomKey?: AppTabRoomKey;
   tabUserKey?: AppTabUserKey;

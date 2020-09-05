@@ -8,7 +8,7 @@ import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 const ResetPassword: NextPage = () => {
   return (
     <>
-      <SentreiHeader /> <AuthForm type="reset" />;
+      <SentreiHeader landingKey="reset-password" /> <AuthForm type="reset" />;
     </>
   );
 };

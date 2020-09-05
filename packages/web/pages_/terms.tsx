@@ -8,7 +8,7 @@ import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 const Terms: NextPage = () => {
   return (
     <>
-      <SentreiHeader />
+      <SentreiHeader landingKey="terms" />
       <TermsScreen />
       <Footer />
     </>
