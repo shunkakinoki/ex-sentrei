@@ -31,3 +31,14 @@ export const pageView = (
     window.analytics.page(category, name, properties, options, callback);
   }
 };
+
+export const identifyUser = (
+  userId: string,
+  traits?: Object,
+  options?: SegmentAnalytics.SegmentOpts,
+  callback?: () => void,
+): void => {
+  if (window.analytics) {
+    window.analytics.identify(userId, traits, options, callback);
+  }
+};
