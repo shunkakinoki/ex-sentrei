@@ -14,7 +14,7 @@
     "alpha:local": "yarn run swap:alpha && firebase use alpha",
     "beta": "yarn run beta:local && yarn run deploy",
     "beta:local": "yarn run swap:beta && firebase use beta",
-    "build": "yarn run typescript && yarn run build",
+    "build": "yarn run typescript && yarn run build:next",
     "build:analyze": "cross-env ANALYZE=true yarn run build",
     "build:ignored": "cd ../.. && git diff --quiet HEAD^ HEAD ./packages/*/src/",
     "build:next": "next-translate && next build",
