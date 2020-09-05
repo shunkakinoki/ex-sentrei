@@ -12,7 +12,6 @@ import AppTabRoom from "@sentrei/ui/components/AppTabRoom";
 import AppTabSpace from "@sentrei/ui/components/AppTabSpace";
 import AppTabUser from "@sentrei/ui/components/AppTabUser";
 import Segment from "@sentrei/ui/components/Segment";
-import SeoDefault from "@sentrei/ui/components/SeoDefault";
 import StatusSpace from "@sentrei/ui/components/StatusSpace";
 
 export interface Props {
