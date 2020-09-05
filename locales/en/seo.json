@@ -17,19 +17,19 @@
     "settings": "Settings"
   },
   "space": {
-    "home": "Home",
-    "settings": "Settings",
-    "rooms": "Rooms",
     "activity": "Activity",
     "analytics": "Analytics",
+    "home": "Home",
     "leaderboard": "Leaderboard",
-    "members": "Members"
+    "members": "Members",
+    "rooms": "Rooms",
+    "settings": "Settings"
   },
   "user": {
-    "settings": "Settings",
-    "dashboard": "Dashboard",
     "create": "Create",
+    "dashboard": "Dashboard",
+    "notifications": "Notifications",
     "profile": "Profile",
-    "notifications": "Notifications"
+    "settings": "Settings"
   }
 }
