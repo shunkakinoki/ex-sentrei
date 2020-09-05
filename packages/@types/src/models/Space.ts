@@ -21,6 +21,7 @@ declare namespace Space {
     tier: Tiers;
     stripeId: string;
     subscriptionId?: string;
+    subscriptionTrial?: boolean;
   }
 
   export type AdminUpdate = Partial<Fields>;
