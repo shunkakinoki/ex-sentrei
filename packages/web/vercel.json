@@ -5,6 +5,11 @@
   "public": true,
   "scope": "sentrei",
   "trailingSlash": false,
+  "build": {
+    "env": {
+      "FORCE_BUILDER_TAG": "canary"
+    }
+  },
   "github": {
     "enabled": false,
     "autoJobCancelation": false,
