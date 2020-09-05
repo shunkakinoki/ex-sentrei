@@ -24,10 +24,15 @@ import HeaderStyles from "./HeaderStyles";
 
 export interface Props {
   logo: JSX.Element;
+  papercups?: boolean;
   type?: "about" | "default" | "landing";
 }
 
-export default function Header({logo, type = "default"}: Props): JSX.Element {
+export default function Header({
+  logo,
+  papercups = true,
+  type = "default",
+}: Props): JSX.Element {
   const classes = HeaderStyles();
   const {t} = useTranslation();
 
@@ -79,7 +84,7 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
   return (
     <>
       <SeoDefault />
-      <PaperCupsWidget />
+      {papercups && <PaperCupsWidget />}
       <div className={classes.grow}>
         <AppBar position="fixed" className={appBarClasses}>
           <Toolbar>
