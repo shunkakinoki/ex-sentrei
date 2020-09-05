@@ -1,3 +1,10 @@
+# [1.35.0-beta.2](https://github.com/sentrei/sentrei/compare/v1.35.0-beta.1...v1.35.0-beta.2) (2020-09-05)
+
+### Features
+
+- 🎸 ini papercups window ([5e535e6](https://github.com/sentrei/sentrei/commit/5e535e67206cf8b628dc79f4ad55ec4b2800d354))
+- 🎸 ini sentry refactor ([f1ac599](https://github.com/sentrei/sentrei/commit/f1ac59907b6b15e34a691e09abfd600bdcf97081))
+
 # [1.35.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.34.0...v1.35.0-beta.1) (2020-09-04)
 
 ### Features
