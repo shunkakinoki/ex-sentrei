@@ -7,17 +7,15 @@ const segment_id = publicRuntimeConfig.SEGMENT_ID;
 export const renderSnippet = (): string => {
   const opts = {
     apiKey: segment_id,
-    page: false,
-    load: false,
+    page: true,
+    load: true,
   };
 
   return snippet.min(opts);
 };
 
-const segment = (): void => {
+export const loadSegment = (): void => {
   if (window.analytics) {
     window.analytics.load(segment_id);
   }
 };
-
-export default segment;

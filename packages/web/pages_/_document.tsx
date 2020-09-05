@@ -12,7 +12,6 @@ import NextDocument, {
 import * as React from "react";
 import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 
-import {renderSnippet} from "@sentrei/common/utils/segment";
 import SeoDefault from "@sentrei/ui/components/SeoDefault";
 
 import "@sentrei/common/utils/sentry";
@@ -72,8 +71,6 @@ export default class CustomDocument extends NextDocument {
           />
           <link rel="icon" href="/favicon.ico" />
           <script src="https://cdn.jsdelivr.net/npm/first-input-delay@0.1.3/dist/first-input-delay.min.js" />
-          {/* eslint-disable-next-line react/no-danger */}
-          <script dangerouslySetInnerHTML={{__html: renderSnippet()}} />
         </Head>
         <body>
           <Main />
