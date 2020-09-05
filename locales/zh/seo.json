@@ -1,4 +1,17 @@
 {
+  "landing": {
+    "about": "关于",
+    "credits": "谢谢。",
+    "landing": "键。\n焦点。\n工作。",
+    "login": "登录",
+    "pitch": "沥青",
+    "pricing": "价钱",
+    "privacy": "隐私政策",
+    "reset-password": "重设密码",
+    "signup": "注册",
+    "support": "支持",
+    "terms": "条款和条件"
+  },
   "room": {
     "home": "家",
     "settings": "设定值"
