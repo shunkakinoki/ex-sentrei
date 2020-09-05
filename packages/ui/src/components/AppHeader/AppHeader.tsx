@@ -51,6 +51,7 @@ export default function AppHeader({
         namespaceId={namespaceId}
         roomId={roomId}
         notificationCount={notificationCount}
+        type={type}
       />
       {userId && profile && <StatusSpace userId={userId} profile={profile} />}
       {type === "room" && skeleton && tabRoomKey && (
