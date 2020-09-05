@@ -49,7 +49,7 @@ const InviteId: NextPage = () => {
 
   return (
     <>
-      <SentreiHeader />
+      <SentreiHeader landingKey="invite" />
       {!user && (
         <InviteSignup
           inviteId={String(query.inviteId)}
