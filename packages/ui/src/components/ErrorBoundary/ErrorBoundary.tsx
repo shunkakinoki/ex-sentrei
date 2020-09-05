@@ -3,7 +3,7 @@
 import * as Sentry from "@sentry/browser";
 import React, {Component} from "react";
 
-import {analytics} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 
 interface ErrorProps {
   children: React.ReactNode;
@@ -24,9 +24,9 @@ class ErrorBoundary extends Component<ErrorProps, ErrorState> {
   }
 
   componentDidCatch(error: any, errorInfo: any): void {
-    analytics().logEvent("exception", {
-      description: String(errorInfo),
+    trackEvent("exception", {
       error: String(error || error.message),
+      description: String(errorInfo),
     });
     Sentry.withScope(scope => {
       Object.keys(errorInfo).forEach(key => scope.setExtra(key, errorInfo));
