@@ -1,5 +1,6 @@
 import NoSsr from "@material-ui/core/NoSsr";
-import {Head} from "next/document";
+import Head from "next/head";
+
 import * as React from "react";
 
 import {renderSnippet} from "@sentrei/common/utils/segment";
