@@ -13,6 +13,7 @@ import Skeleton from "@material-ui/lab/Skeleton";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import {AppTabType} from "@sentrei/types/models/AppTab";
 import Profile from "@sentrei/types/models/Profile";
 import AppFeedback from "@sentrei/ui/components/AppFeedback";
 import AppListMenu from "@sentrei/ui/components/AppListMenu";
@@ -31,6 +32,7 @@ export interface Props {
   roomId?: string;
   userId?: string;
   namespaceId?: string;
+  type?: AppTabType;
 }
 
 export default function AppBar({
@@ -40,6 +42,7 @@ export default function AppBar({
   roomId,
   userId,
   namespaceId,
+  type,
 }: Props): JSX.Element {
   const classes = AppBarStyles();
   const {t} = useTranslation();
@@ -99,8 +102,16 @@ export default function AppBar({
               <Avatar className={classes.logo}>{logo}</Avatar>
             </MuiButtonBase>
             <MuiButtonBase
-              href={namespaceId ? "/[namespaceId]" : "/dashboard"}
-              as={namespaceId ? `/${namespaceId}` : "/dashboard"}
+              href={
+                type === "space" && namespaceId
+                  ? "/[namespaceId]"
+                  : "/dashboard"
+              }
+              as={
+                type === "space" && namespaceId
+                  ? `/${namespaceId}`
+                  : "/dashboard"
+              }
             >
               {namespaceId || (userId && profile) ? (
                 <Typography display="inline">
@@ -160,8 +171,16 @@ export default function AppBar({
               />
             )}
             <MuiButton
-              href={namespaceId ? "/[namespaceId]/support" : "/support"}
-              as={namespaceId ? `/${namespaceId}/support` : "/support"}
+              href={
+                type === "space" && namespaceId
+                  ? "/[namespaceId]/support"
+                  : "/support"
+              }
+              as={
+                type === "space" && namespaceId
+                  ? `/${namespaceId}/support`
+                  : "/support"
+              }
               className={classes.button}
               size="small"
             >

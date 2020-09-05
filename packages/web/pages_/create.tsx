@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -17,10 +17,6 @@ const SpaceCreate = dynamic(
 
 const Create: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("SpaceForm");
-  }, []);
 
   if (!user && typeof window !== "undefined") {
     Router.pushI18n("/");

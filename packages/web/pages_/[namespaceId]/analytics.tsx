@@ -5,7 +5,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceAnalytics from "@sentrei/ui/components/SpaceAnalytics";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -15,10 +15,6 @@ const AnalyticsPage: NextPage = () => {
 
   const {user, profile} = React.useContext(AuthContext);
   const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("spaceAnalytics");
-  }, []);
 
   React.useEffect(() => {
     async function setSpace(): Promise<void> {

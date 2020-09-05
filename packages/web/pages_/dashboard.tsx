@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-import {analytics} from "@sentrei/common/utils/firebase";
+
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -17,10 +17,6 @@ const SpaceDashboard = dynamic(
 
 const Dashboard: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
-
-  React.useEffect(() => {
-    analytics().setCurrentScreen("dashboard");
-  }, []);
 
   if (!user && typeof window !== "undefined") {
     Router.pushI18n("/");
