@@ -25,7 +25,7 @@ export default function PaperCupsWidget({
   return (
     <ChatWindow
       accountId={accountId}
-      title={t("papercups:papercups.title")}
+      title={t("papercups:papercups.support")}
       subtitle={t("papercups:papercups.subTitle")}
       newMessagePlaceholder={t("papercups:papercups.messagePlaceholder")}
       greeting={t("papercups:papercups.greeting")}
