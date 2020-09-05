@@ -1,3 +1,13 @@
+# [1.39.0](https://github.com/sentrei/sentrei/compare/v1.38.0...v1.39.0) (2020-09-05)
+
+### Features
+
+- 🎸 ini vercel monorepo ([eb702c5](https://github.com/sentrei/sentrei/commit/eb702c5cf184eb19b177aca29a436acc9fdae5e1))
+
+### Performance Improvements
+
+- ⚡️ ini vercel json ([0f18c05](https://github.com/sentrei/sentrei/commit/0f18c05d1596d8b6e3b7ca1fd954742e88d3857c))
+
 # [1.38.0](https://github.com/sentrei/sentrei/compare/v1.37.0...v1.38.0) (2020-09-05)
 
 ### Features
