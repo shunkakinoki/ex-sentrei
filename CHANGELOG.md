@@ -1,3 +1,18 @@
+# [1.36.0](https://github.com/sentrei/sentrei/compare/v1.35.0...v1.36.0) (2020-09-05)
+
+### Features
+
+- 🎸 ini consent segment ([c9873db](https://github.com/sentrei/sentrei/commit/c9873db319d0b88ae01d8244a6e6850ad7e78e4a))
+- 🎸 ini identify user ([de22c7d](https://github.com/sentrei/sentrei/commit/de22c7d64988bd70f191e6bf82ee3a703a3b39db))
+- 🎸 ini segment analytics ([5e6f6c1](https://github.com/sentrei/sentrei/commit/5e6f6c1bc58255bdba9758fca8ff2864733d47db))
+- 🎸 ini segment component ([84ea32d](https://github.com/sentrei/sentrei/commit/84ea32d9dcd3b0746fe198b2d24d69b53447c7cc))
+- 🎸 ini segment component v2 ([e8eeb4e](https://github.com/sentrei/sentrei/commit/e8eeb4edd660324f813f6259513c639b7e8ca2ea))
+
+### Performance Improvements
+
+- ⚡️ ini i18n papercups ([3707951](https://github.com/sentrei/sentrei/commit/370795130eab863864905a6e41d5b541da0d010f))
+- ⚡️ ini pageView segment ([d9ff3c4](https://github.com/sentrei/sentrei/commit/d9ff3c4f0d5c3cbb3b50921579796e7c1eb21996))
+
 # [1.35.0](https://github.com/sentrei/sentrei/compare/v1.34.0...v1.35.0) (2020-09-05)
 
 ### Features
