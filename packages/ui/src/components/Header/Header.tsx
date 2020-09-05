@@ -17,17 +17,22 @@ import HeaderLogo from "@sentrei/ui/components/HeaderLogo";
 import HeaderMobileDialog from "@sentrei/ui/components/HeaderMobileDialog";
 import HeaderScrollButton from "@sentrei/ui/components/HeaderScrollButton";
 import MuiButton from "@sentrei/ui/components/MuiButton";
-import PaperCups from "@sentrei/ui/components/PaperCups";
+import PaperCupsWidget from "@sentrei/ui/components/PaperCupsWidget";
 import SeoDefault from "@sentrei/ui/components/SeoDefault";
 
 import HeaderStyles from "./HeaderStyles";
 
 export interface Props {
   logo: JSX.Element;
+  papercups?: boolean;
   type?: "about" | "default" | "landing";
 }
 
-export default function Header({logo, type = "default"}: Props): JSX.Element {
+export default function Header({
+  logo,
+  papercups = true,
+  type = "default",
+}: Props): JSX.Element {
   const classes = HeaderStyles();
   const {t} = useTranslation();
 
@@ -79,7 +84,7 @@ export default function Header({logo, type = "default"}: Props): JSX.Element {
   return (
     <>
       <SeoDefault />
-      <PaperCups />
+      {papercups && <PaperCupsWidget />}
       <div className={classes.grow}>
         <AppBar position="fixed" className={appBarClasses}>
           <Toolbar>

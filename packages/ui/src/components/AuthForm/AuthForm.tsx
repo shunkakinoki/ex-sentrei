@@ -7,7 +7,6 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Container from "@material-ui/core/Container";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
-import "@sentrei/common/utils/sentry";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";

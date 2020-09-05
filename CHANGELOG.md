@@ -1,3 +1,22 @@
+# [1.35.0-beta.3](https://github.com/sentrei/sentrei/compare/v1.35.0-beta.2...v1.35.0-beta.3) (2020-09-05)
+
+### Features
+
+- 🎸 refactor sentrei support ([c6cd1a3](https://github.com/sentrei/sentrei/commit/c6cd1a3a2fbbcf657f1180814a5de3ab52ae510d))
+
+# [1.35.0-beta.2](https://github.com/sentrei/sentrei/compare/v1.35.0-beta.1...v1.35.0-beta.2) (2020-09-05)
+
+### Features
+
+- 🎸 ini papercups window ([5e535e6](https://github.com/sentrei/sentrei/commit/5e535e67206cf8b628dc79f4ad55ec4b2800d354))
+- 🎸 ini sentry refactor ([f1ac599](https://github.com/sentrei/sentrei/commit/f1ac59907b6b15e34a691e09abfd600bdcf97081))
+
+# [1.35.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.34.0...v1.35.0-beta.1) (2020-09-04)
+
+### Features
+
+- 🎸 refactor stripe model ([928b9ee](https://github.com/sentrei/sentrei/commit/928b9ee7b09a7d8baf3ab97a032f6ba03e7e22ec))
+
 # [1.34.0](https://github.com/sentrei/sentrei/compare/v1.33.0...v1.34.0) (2020-09-04)
 
 ### Features
