@@ -39,7 +39,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@metomic/react": "^0.1.2",
-    "@papercups-io/chat-widget": "^1.0.24",
+    "@papercups-io/chat-widget": "^1.1.0-beta.0",
     "@sentrei/common": "^1.35.0-beta.1",
     "@sentrei/types": "^1.35.0-beta.1",
     "@sentrei/video": "^1.35.0-beta.1",
