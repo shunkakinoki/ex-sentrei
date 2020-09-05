@@ -21,7 +21,7 @@ const Support: NextPage = () => {
 
   return (
     <>
-      <SentreiHeader papercups={false} />
+      <SentreiHeader papercups={false} landingKey="support" />
       <SupportScreen />
     </>
   );

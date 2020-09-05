@@ -8,7 +8,7 @@ import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 const Credits: NextPage = () => {
   return (
     <>
-      <SentreiHeader />
+      <SentreiHeader landingKey="credits" />
       <CreditsScreen />
       <Footer />
     </>

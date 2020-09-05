@@ -7,7 +7,15 @@ type Props = Omit<Original, "logo">;
 
 export default function SentreiHeader({
   papercups,
+  landingKey,
   type = "default",
 }: Props): JSX.Element {
-  return <Header papercups={papercups} type={type} logo={<LogoPicture />} />;
+  return (
+    <Header
+      papercups={papercups}
+      type={type}
+      landingKey={landingKey}
+      logo={<LogoPicture />}
+    />
+  );
 }

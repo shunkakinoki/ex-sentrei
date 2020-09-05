@@ -8,7 +8,7 @@ import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 const Privacy: NextPage = () => {
   return (
     <>
-      <SentreiHeader />
+      <SentreiHeader landingKey="privacy" />
       <PrivacyScreen />
       <Footer />
     </>

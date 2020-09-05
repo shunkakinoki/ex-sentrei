@@ -1,0 +1,36 @@
+{
+  "landing": {
+    "about": "关于",
+    "credits": "谢谢。",
+    "invite": "邀请函",
+    "landing": "键。\n焦点。\n工作。",
+    "login": "登录",
+    "pitch": "沥青",
+    "pricing": "价钱",
+    "privacy": "隐私政策",
+    "reset-password": "重设密码",
+    "signup": "注册",
+    "support": "支持",
+    "terms": "条款和条件"
+  },
+  "room": {
+    "home": "家",
+    "settings": "设定值"
+  },
+  "space": {
+    "activity": "活动",
+    "analytics": "分析工具",
+    "home": "家",
+    "leaderboard": "排行榜",
+    "members": "会员",
+    "rooms": "房间数",
+    "settings": "设定值"
+  },
+  "user": {
+    "create": "创造",
+    "dashboard": "仪表板",
+    "notifications": "通知事项",
+    "profile": "个人资料",
+    "settings": "设定值"
+  }
+}

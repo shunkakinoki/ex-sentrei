@@ -11,6 +11,7 @@ import classNames from "classnames";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import {LandingKey, LandingType} from "@sentrei/types/models/Landing";
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
 import HeaderButton from "@sentrei/ui/components/HeaderButton";
 import HeaderLogo from "@sentrei/ui/components/HeaderLogo";
@@ -18,19 +19,21 @@ import HeaderMobileDialog from "@sentrei/ui/components/HeaderMobileDialog";
 import HeaderScrollButton from "@sentrei/ui/components/HeaderScrollButton";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import PaperCupsWidget from "@sentrei/ui/components/PaperCupsWidget";
-import SeoDefault from "@sentrei/ui/components/SeoDefault";
+import SeoLanding from "@sentrei/ui/components/SeoLanding";
 
 import HeaderStyles from "./HeaderStyles";
 
 export interface Props {
   logo: JSX.Element;
   papercups?: boolean;
-  type?: "about" | "default" | "landing";
+  landingKey: LandingKey;
+  type?: LandingType;
 }
 
 export default function Header({
   logo,
   papercups = true,
+  landingKey,
   type = "default",
 }: Props): JSX.Element {
   const classes = HeaderStyles();
@@ -83,7 +86,7 @@ export default function Header({
 
   return (
     <>
-      <SeoDefault />
+      <SeoLanding landingKey={landingKey} />
       {papercups && <PaperCupsWidget />}
       <div className={classes.grow}>
         <AppBar position="fixed" className={appBarClasses}>
