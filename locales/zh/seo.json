@@ -1,0 +1,22 @@
+{
+  "room": {
+    "home": "家",
+    "settings": "设定值"
+  },
+  "space": {
+    "activity": "活动",
+    "analytics": "分析工具",
+    "home": "家",
+    "leaderboard": "排行榜",
+    "members": "会员",
+    "rooms": "房间数",
+    "settings": "设定值"
+  },
+  "user": {
+    "create": "创造",
+    "dashboard": "仪表板",
+    "notifications": "通知事项",
+    "profile": "个人资料",
+    "settings": "设定值"
+  }
+}

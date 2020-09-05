@@ -1,0 +1,22 @@
+{
+  "room": {
+    "home": "ホーム",
+    "settings": "設定"
+  },
+  "space": {
+    "activity": "アクティビティ",
+    "analytics": "分析",
+    "home": "ホーム",
+    "leaderboard": "リーダーボード",
+    "members": "会員",
+    "rooms": "部屋",
+    "settings": "設定"
+  },
+  "user": {
+    "create": "作成する",
+    "dashboard": "ダッシュボード",
+    "notifications": "お知らせ",
+    "profile": "プロフィール",
+    "settings": "設定"
+  }
+}
