@@ -1,0 +1,22 @@
+{
+  "room": {
+    "home": "Home",
+    "settings": "Settings"
+  },
+  "space": {
+    "home": "Home",
+    "settings": "Settings",
+    "rooms": "Rooms",
+    "activity": "Activity",
+    "analytics": "Analytics",
+    "leaderboard": "Leaderboard",
+    "members": "Members"
+  },
+  "user": {
+    "settings": "Settings",
+    "dashboard": "Dashboard",
+    "create": "Create",
+    "profile": "Profile",
+    "notifications": "Notifications"
+  }
+}

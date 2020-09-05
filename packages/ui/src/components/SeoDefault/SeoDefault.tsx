@@ -4,8 +4,8 @@ import * as React from "react";
 export default function SeoDefault(): JSX.Element {
   return (
     <DefaultSeo
-      description="Bond. Focus. Work. -A dedicated video conferencing tool that helps you get things done-"
       titleTemplate="Sentrei | %s"
+      description="Bond. Focus. Work. -A dedicated video conferencing tool that helps you get things done-"
       openGraph={{
         type: "website",
         locale: "en_US",
