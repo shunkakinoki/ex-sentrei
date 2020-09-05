@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import * as Sentry from "@sentry/browser";
 import React, {Component} from "react";
 

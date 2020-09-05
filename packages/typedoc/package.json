@@ -10,8 +10,8 @@
   "license": "GPL-3.0-only",
   "author": "Shun Kakinoki",
   "scripts": {
+    "^1.35.0-beta.1": "yarn run swap:beta && firebase use beta && yarn run deploy",
     "alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy",
-    "beta": "yarn run swap:beta && firebase use beta && yarn run deploy",
     "build": "typedoc",
     "deploy": "yarn run deploy:typedoc",
     "deploy:typedoc": "firebase deploy --only hosting:typedoc",

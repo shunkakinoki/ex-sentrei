@@ -1,5 +1,5 @@
 import {useTheme} from "@material-ui/core/styles";
-import ChatWidget from "@papercups-io/chat-widget";
+import {ChatWindow} from "@papercups-io/chat-widget";
 
 import useTranslation from "next-translate/useTranslation";
 import getConfig from "next/config";
@@ -12,11 +12,9 @@ export interface Props {
   customerName?: string;
   customerEmail?: string;
   customerUid?: string;
-  defaultIsOpen?: boolean;
 }
 
-export default function PaperCups({
-  defaultIsOpen = false,
+export default function PaperCupsWidget({
   customerName,
   customerEmail,
   customerUid,
@@ -25,14 +23,13 @@ export default function PaperCups({
   const theme = useTheme();
 
   return (
-    <ChatWidget
+    <ChatWindow
       accountId={accountId}
       title={t("papercups:papercups.title")}
       subtitle={t("papercups:papercups.subTitle")}
       newMessagePlaceholder={t("papercups:papercups.messagePlaceholder")}
       greeting={t("papercups:papercups.greeting")}
       primaryColor={theme.palette.primary.main}
-      defaultIsOpen={defaultIsOpen}
       customer={{
         name: customerName || "",
         email: customerEmail || "",

@@ -48,6 +48,10 @@ const aliases = {
   "@sentrei/web": path.join(__dirname, "src"),
 };
 
+const branch = String(process.env.VERCEL_GITHUB_COMMIT_REF).replace(
+  "refs/heads/",
+  "",
+);
 const nextConfig = {
   target: "experimental-serverless-trace",
   trailingSlash: false,
@@ -72,9 +76,13 @@ const nextConfig = {
     PAPERCUPS_ID: process.env.PAPERCUPS_ID,
     SENTREI_VERSION: require("./package.json").version,
     SENTRY_DSN: process.env.SENTRY_DSN,
-    SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
-    SENTRY_RELEASE: process.env.SENTRY_RELEASE,
-    VERCEL_GITHUB_COMMIT_REF: process.env.VERCEL_GITHUB_COMMIT_REF,
+    SENTRY_ENVIRONMENT:
+      process.env.SENTRY_ENVIRONMENT ||
+      new Set(["alpha", "beta", "main"]).has(branch)
+        ? branch
+        : "dev",
+    SENTRY_RELEASE: Number(require("./package.json").version),
+    VERCEL_GITHUB_COMMIT_REF: branch,
   },
   webpack: config => {
     config.node = {
