@@ -1,3 +1,9 @@
+# [1.35.0-beta.3](https://github.com/sentrei/sentrei/compare/v1.35.0-beta.2...v1.35.0-beta.3) (2020-09-05)
+
+### Features
+
+- 🎸 refactor sentrei support ([c6cd1a3](https://github.com/sentrei/sentrei/commit/c6cd1a3a2fbbcf657f1180814a5de3ab52ae510d))
+
 # [1.35.0-beta.2](https://github.com/sentrei/sentrei/compare/v1.35.0-beta.1...v1.35.0-beta.2) (2020-09-05)
 
 ### Features
