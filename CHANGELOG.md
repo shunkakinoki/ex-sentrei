@@ -1,3 +1,9 @@
+# [1.40.0](https://github.com/sentrei/sentrei/compare/v1.39.0...v1.40.0) (2020-09-05)
+
+### Features
+
+- 🎸 ini complete seo ([0c4dcd2](https://github.com/sentrei/sentrei/commit/0c4dcd2712e9e86509b71a1c52f9565015047a9a))
+
 # [1.39.0](https://github.com/sentrei/sentrei/compare/v1.38.0...v1.39.0) (2020-09-05)
 
 ### Features
