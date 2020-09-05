@@ -14,12 +14,6 @@ export const renderSnippet = (): string => {
   return snippet.min(opts);
 };
 
-export const loadSegment = (): void => {
-  if (window.analytics) {
-    window.analytics.load(segment_id);
-  }
-};
-
 export const pageView = (
   category?: string,
   name?: string,
