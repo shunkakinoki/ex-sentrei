@@ -5,24 +5,26 @@ import * as React from "react";
 import accessCheckoutLink from "@sentrei/common/services/accessCheckoutLink";
 import getStripe from "@sentrei/common/utils/getStripe";
 import Member from "@sentrei/types/models/Member";
-import MuiButton from "@sentrei/ui/components/MuiButton";
+import Space from "@sentrei/types/models/Space";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   role: Member.Role;
+  space: Space.Get;
   spaceId: string;
 }
 
-export default function SpaceBillingPortalButton({
+export default function SpaceBillingCheckout({
   role,
+  space,
   spaceId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
   React.useEffect(() => {
-    if (role === "admin")
-      accessCheckoutLink("pro", spaceId, window.location.href)
+    if (role === "admin" && !space?.subscriptionId)
+      accessCheckoutLink("pro", spaceId, window.location.origin)
         .then(
           async (data): Promise<void> => {
             const stripe = await getStripe();
@@ -32,7 +34,7 @@ export default function SpaceBillingPortalButton({
         .catch(err => {
           snackbar("error", err.message);
         });
-  }, [role, spaceId, snackbar]);
+  }, [role, space?.subscriptionId, spaceId, snackbar]);
 
   if (role !== "admin") {
     return (
@@ -43,8 +45,8 @@ export default function SpaceBillingPortalButton({
   }
 
   return (
-    <MuiButton color="primary" variant="contained">
+    <Button disabled color="primary" variant="contained">
       {t("common:common.billingLink")}
-    </MuiButton>
+    </Button>
   );
 }
