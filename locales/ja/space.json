@@ -6,6 +6,23 @@
     "none": "セッションがありません...",
     "title": "分析"
   },
+  "billing": {
+    "alert": "プロプランにアップグレードしましょう！ いつでもキャンセル可能、2週間の無料トライアルが含まれています",
+    "billing": "課金",
+    "price": "価格",
+    "seat": "シート",
+    "sum": "合計",
+    "symbol": "¥",
+    "tier": {
+      "enterprise": "エンタプライズ",
+      "free": "無料プラン",
+      "pro": "プロ プラン",
+      "title": "プラン"
+    },
+    "total": "合計",
+    "upgradeNow": "今すぐアップグレード",
+    "visitCustomerPortal": "カスタマーポータルにアクセス"
+  },
   "dashboard": {
     "create": "一つ作る",
     "none": "スペースがありません...",
