@@ -8,7 +8,9 @@ import TableRow from "@material-ui/core/TableRow";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import {getSubscription} from "@sentrei/common/firebase/subscripitions";
 import Space from "@sentrei/types/models/Space";
+import Subscription from "@sentrei/types/models/Subscription";
 
 export interface Props {
   space: Space.Get;
@@ -16,6 +18,15 @@ export interface Props {
 
 export default function SpaceBillingTable({space}: Props): JSX.Element {
   const {t} = useTranslation();
+  const [subscription, setSubscription] = React.useState<
+    Subscription | null | undefined
+  >();
+
+  React.useEffect(() => {
+    if (space?.subscriptionId) {
+      getSubscription(space?.subscriptionId).then(setSubscription);
+    }
+  }, [space?.subscriptionId]);
 
   return (
     <TableContainer component={Paper}>
@@ -31,14 +42,35 @@ export default function SpaceBillingTable({space}: Props): JSX.Element {
         <TableBody>
           <TableRow>
             <TableCell>{t(`space:billing.tier.${space.tier}`)}</TableCell>
-            <TableCell align="right">{t("space:billing.symbol")}0</TableCell>
-            <TableCell align="right">{space.stats.members}</TableCell>
-            <TableCell align="right">{t("space:billing.symbol")}0</TableCell>
+            <TableCell align="right">
+              {t("space:billing.symbol")}
+              {!space?.subscriptionId && 0}
+              {space?.subscriptionId &&
+                subscription &&
+                subscription.price.unit_amount_decimal}
+            </TableCell>
+            <TableCell align="right">
+              {!space?.subscriptionId && space.stats.members}
+              {space?.subscriptionId && subscription && subscription.quantity}
+            </TableCell>
+            <TableCell align="right">
+              {t("space:billing.symbol")}
+              {!space?.subscriptionId && 0}
+              {space?.subscriptionId &&
+                subscription &&
+                subscription.price.unit_amount_decimal}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell rowSpan={3} />
             <TableCell colSpan={2}>{t("space:billing.total")}</TableCell>
-            <TableCell align="right">{t("space:billing.symbol")}0</TableCell>
+            <TableCell align="right">
+              {t("space:billing.symbol")}
+              {!space?.subscriptionId && 0}
+              {space?.subscriptionId &&
+                subscription &&
+                subscription.price.unit_amount_decimal}{" "}
+            </TableCell>
           </TableRow>
         </TableBody>
       </Table>
