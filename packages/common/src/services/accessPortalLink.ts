@@ -6,7 +6,7 @@ interface GetSanitizedToken extends firebase.functions.HttpsCallableResult {
   readonly data: Stripe.BillingPortal.Session;
 }
 
-const accessCustomerPortal = async (
+const accessPortalLink = async (
   spaceId: string,
   returnUrl: string,
 ): Promise<Stripe.BillingPortal.Session> => {
@@ -18,4 +18,4 @@ const accessCustomerPortal = async (
   return result.data;
 };
 
-export default accessCustomerPortal;
+export default accessPortalLink;

@@ -8,7 +8,7 @@ export interface Props {
   href: undefined | string;
 }
 
-export default function SpaceBillingButton({href}: Props): JSX.Element {
+export default function SpaceBillingPortalButton({href}: Props): JSX.Element {
   const {t} = useTranslation();
 
   if (!href) {
