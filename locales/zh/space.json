@@ -6,6 +6,23 @@
     "none": "您没有会话...",
     "title": "分析工具"
   },
+  "billing": {
+    "alert": "立即升级到专业版计划！\n随时取消，包括2周的免费试用期",
+    "billing": "开票",
+    "price": "价钱",
+    "seat": "座位",
+    "sum": "和",
+    "symbol": "$",
+    "tier": {
+      "enterprise": "企业计划",
+      "free": "免费计划",
+      "pro": "专业计划",
+      "title": "层级"
+    },
+    "total": "总",
+    "upgradeNow": "现在升级",
+    "visitCustomerPortal": "访问客户门户"
+  },
   "dashboard": {
     "create": "创建一个",
     "none": "你没有空格...",

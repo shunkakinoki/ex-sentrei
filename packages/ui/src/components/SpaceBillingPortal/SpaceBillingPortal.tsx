@@ -38,7 +38,7 @@ export default function SpaceBillingPortal({
 
   if (role !== "admin") {
     return (
-      <Button disabled color="inherit" variant="outlined">
+      <Button fullWidth disabled color="inherit" variant="outlined">
         {t("common:common.disabled")}
       </Button>
     );
@@ -46,7 +46,7 @@ export default function SpaceBillingPortal({
 
   if (!space?.subscriptionId) {
     return (
-      <Button disabled color="inherit" variant="outlined">
+      <Button fullWidth disabled color="inherit" variant="outlined">
         {t("common:common.subscriptionNone")}
       </Button>
     );
@@ -54,15 +54,15 @@ export default function SpaceBillingPortal({
 
   if (!portalLink) {
     return (
-      <Button disabled color="inherit" variant="outlined">
+      <Button fullWidth disabled color="inherit" variant="outlined">
         {t("common:common.loading")}
       </Button>
     );
   }
 
   return (
-    <MuiButton href={portalLink} color="primary" variant="contained">
-      {t("common:common.billingLink")}
+    <MuiButton fullWidth href={portalLink} color="primary" variant="contained">
+      {t("space:billing.visitCustomerPortal")}
     </MuiButton>
   );
 }

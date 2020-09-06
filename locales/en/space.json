@@ -6,6 +6,23 @@
     "none": "You have no sessions ...",
     "title": "Analytics"
   },
+  "billing": {
+    "alert": "Upgrade Now to Pro Plan! Cancel Anytime, 2 Weeks of Free Trial Included",
+    "billing": "Billing",
+    "price": "Price",
+    "seat": "Seat",
+    "sum": "Sum",
+    "symbol": "$",
+    "tier": {
+      "enterprise": "Enterprise Plan",
+      "free": "Free Plan",
+      "pro": "Pro Plan",
+      "title": "Tier"
+    },
+    "total": "Total",
+    "upgradeNow": "Upgrade Now",
+    "visitCustomerPortal": "Visit Customer Portal"
+  },
   "dashboard": {
     "create": "Create one",
     "none": "You have no spaces ...",

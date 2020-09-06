@@ -1,6 +1,6 @@
 import Stripe from "stripe";
 
-export interface Subscription {
+export default interface Subscription {
   cancel_at_period_end: boolean;
   created: FirebaseFirestore.Timestamp;
   current_period_start: FirebaseFirestore.Timestamp;
