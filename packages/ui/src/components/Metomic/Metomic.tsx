@@ -5,10 +5,16 @@ import Segment from "@sentrei/ui/components/Segment";
 
 export default function Metomic(): JSX.Element {
   return (
-    <MetomicProvider projectId={process.env.METOMIC_PROJECT_ID}>
-      <ConsentGate micropolicy="sentrei">
-        <Segment />
-      </ConsentGate>
+    <MetomicProvider
+      autoblocking
+      debug
+      projectId={process.env.METOMIC_PROJECT_ID}
+    >
+      <>
+        <ConsentGate micropolicy="sentrei">
+          <Segment />
+        </ConsentGate>
+      </>
     </MetomicProvider>
   );
 }
