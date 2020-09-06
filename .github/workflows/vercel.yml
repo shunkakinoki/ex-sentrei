@@ -1,8 +1,5 @@
 name: Vercel
-on:
-  push:
-    branches:
-      - main
+on: push
 jobs:
   vercel:
     if: github.actor == 'sentrei-bot'
