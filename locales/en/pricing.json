@@ -1,5 +1,15 @@
 {
   "card": {
+    "enterprise": {
+      "buttonText": "Contact us",
+      "description1": "Unlimited time",
+      "description2": "Unlimited users & workspaces",
+      "description3": "Unlimited rooms included",
+      "description4": "Designated success team",
+      "description5": "...and much more!",
+      "price": "Custom",
+      "title": "Enterprise"
+    },
     "free": {
       "buttonText": "Sign up for free",
       "description1": "Unlimited time",
@@ -10,6 +20,8 @@
       "price": "$0",
       "title": "Free"
     },
+    "perUser": "per user",
+    "priceMonth": "/mo",
     "pro": {
       "buttonText": "Get started",
       "description1": "Unlimited time",
@@ -21,18 +33,6 @@
       "subTitle": "Most popular",
       "title": "Pro"
     },
-    "enterprise": {
-      "buttonText": "Contact us",
-      "description1": "Unlimited time",
-      "description2": "Unlimited users & workspaces",
-      "description3": "Unlimited rooms included",
-      "description4": "Designated success team",
-      "description5": "...and much more!",
-      "price": "Custom",
-      "title": "Enterprise"
-    },
-    "perUser": "per user",
-    "priceMonth": "/mo",
     "sectionTitle": "Pricing"
   },
   "pricing": {
