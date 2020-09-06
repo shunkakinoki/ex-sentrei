@@ -1,3 +1,9 @@
+## [1.41.2](https://github.com/sentrei/sentrei/compare/v1.41.1...v1.41.2) (2020-09-06)
+
+### Performance Improvements
+
+- ⚡️ ini vercel json ([85e0cb7](https://github.com/sentrei/sentrei/commit/85e0cb74ca7556cff8d1ce363b8da4b99500d666))
+
 ## [1.41.1](https://github.com/sentrei/sentrei/compare/v1.41.0...v1.41.1) (2020-09-06)
 
 ### Performance Improvements
