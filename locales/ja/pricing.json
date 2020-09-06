@@ -4,7 +4,7 @@
       "buttonText": "お問い合わせ",
       "description1": "時間無制限",
       "description2": "無制限のユーザー",
-      "description3": "専属サポートチーム",
+      "description3": "",
       "price": "カスタム",
       "title": "企業"
     },
@@ -12,7 +12,7 @@
       "buttonText": "無料でスタート",
       "description1": "時間無制限",
       "description2": "10ユーザーを含む",
-      "description3": "ヘルプセンターへのアクセス",
+      "description3": "",
       "price": "0円",
       "title": "自由"
     },
@@ -22,7 +22,7 @@
       "buttonText": "始める",
       "description1": "時間無制限",
       "description2": "無制限のユーザー",
-      "description3": "ヘルプセンターへのアクセス",
+      "description3": "",
       "price": "3,000円",
       "subTitle": "最も人気のある",
       "title": "プロ"

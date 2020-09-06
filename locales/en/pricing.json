@@ -4,7 +4,9 @@
       "buttonText": "Sign up for free",
       "description1": "Unlimited time",
       "description2": "10 users included",
-      "description3": "Help center access",
+      "description3": "3 rooms included",
+      "description4": "Help center access",
+      "description5": "User Configuration",
       "price": "$0",
       "title": "Free"
     },
@@ -12,7 +14,9 @@
       "buttonText": "Get started",
       "description1": "Unlimited time",
       "description2": "Unlimited users",
-      "description3": "Help center access",
+      "description3": "30 rooms included",
+      "description4": "Help center access",
+      "description5": "Advanced User Configuration",
       "price": "$30",
       "subTitle": "Most popular",
       "title": "Pro"
@@ -21,7 +25,9 @@
       "buttonText": "Contact us",
       "description1": "Unlimited time",
       "description2": "Unlimited users & workspaces",
-      "description3": "Designated success team",
+      "description3": "Unlimited rooms included",
+      "description4": "Designated success team",
+      "description5": "...and much more!",
       "price": "Custom",
       "title": "Enterprise"
     },

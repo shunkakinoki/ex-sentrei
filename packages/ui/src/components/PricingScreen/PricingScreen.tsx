@@ -17,13 +17,15 @@ export default function PricingScreen(): JSX.Element {
       <Container maxWidth="lg" component="main">
         <Box p={3}>
           <Grid container spacing={2} alignItems="flex-end">
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={12} md={4}>
               <PricingCard
                 buttonVariant="outlined"
                 buttonText={t("pricing:card.free.buttonText")}
                 description1={t("pricing:card.free.description1")}
                 description2={t("pricing:card.free.description2")}
                 description3={t("pricing:card.free.description3")}
+                description4={t("pricing:card.free.description4")}
+                description5={t("pricing:card.free.description5")}
                 href="/signup"
                 perUser={t("pricing:card.perUser")}
                 price={t("pricing:card.free.price")}
@@ -31,13 +33,15 @@ export default function PricingScreen(): JSX.Element {
                 title={t("pricing:card.free.title")}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={12} md={4}>
               <PricingCard
                 buttonVariant="contained"
                 buttonText={t("pricing:card.pro.buttonText")}
                 description1={t("pricing:card.pro.description1")}
                 description2={t("pricing:card.pro.description2")}
                 description3={t("pricing:card.pro.description3")}
+                description4={t("pricing:card.pro.description4")}
+                description5={t("pricing:card.pro.description5")}
                 href="/signup"
                 perUser={t("pricing:card.perUser")}
                 price={t("pricing:card.pro.price")}
@@ -45,13 +49,15 @@ export default function PricingScreen(): JSX.Element {
                 title={t("pricing:card.pro.title")}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={12} md={4}>
               <PricingCard
                 buttonVariant="outlined"
                 buttonText={t("pricing:card.enterprise.buttonText")}
                 description1={t("pricing:card.enterprise.description1")}
                 description2={t("pricing:card.enterprise.description2")}
                 description3={t("pricing:card.enterprise.description3")}
+                description4={t("pricing:card.enterprise.description4")}
+                description5={t("pricing:card.enterprise.description5")}
                 href="/support"
                 perUser=""
                 price={t("pricing:card.enterprise.price")}
