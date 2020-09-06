@@ -1,5 +1,8 @@
 name: Vercel
-on: push
+on:
+  push:
+    branches:
+      - main
 jobs:
   vercel:
     runs-on: ubuntu-latest
