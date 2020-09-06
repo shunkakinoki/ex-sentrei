@@ -5,25 +5,25 @@ import * as React from "react";
 import accessCheckoutLink from "@sentrei/common/services/accessCheckoutLink";
 import getStripe from "@sentrei/common/utils/getStripe";
 import Member from "@sentrei/types/models/Member";
-import Space from "@sentrei/types/models/Space";
-import SpaceBillingCheckoutTable from "@sentrei/ui/components/SpaceBillingCheckoutTable";
+import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   role: Member.Role;
-  space: Space.Get;
   spaceId: string;
 }
 
 export default function SpaceBillingCheckout({
   role,
-  space,
   spaceId,
 }: Props): JSX.Element {
   const {t, lang} = useTranslation();
+  const {backdrop} = useBackdrop();
   const {snackbar} = useSnackbar();
 
   const handleClick = (): void => {
+    snackbar("info", t("common:snackbar.loading"));
+    backdrop("loading");
     if (role === "admin") {
       accessCheckoutLink(spaceId, lang, window.location.origin)
         .then(
@@ -34,6 +34,7 @@ export default function SpaceBillingCheckout({
         )
         .catch(err => {
           snackbar("error", err.message);
+          backdrop("dismiss");
         });
     }
   };
@@ -47,11 +48,8 @@ export default function SpaceBillingCheckout({
   }
 
   return (
-    <>
-      <SpaceBillingCheckoutTable space={space} />
-      <Button color="primary" variant="contained" onClick={handleClick}>
-        {t("common:common.billingLink")}
-      </Button>
-    </>
+    <Button fullWidth color="primary" variant="contained" onClick={handleClick}>
+      {t("space:billing.upgradeNow")}
+    </Button>
   );
 }
