@@ -34,8 +34,12 @@ export default function SpaceMemberList({
         size="md"
       />
       <Container maxWidth="md" component="main">
-        {!space.subscriptionId && <SpaceBillingAlert />}
-        <Box py={2} />
+        {!space.subscriptionId && (
+          <>
+            <SpaceBillingAlert />
+            <Box py={2} />
+          </>
+        )}
         <SpaceBillingTable space={space} />
         <Box py={3} />
         {!space.subscriptionId ? (

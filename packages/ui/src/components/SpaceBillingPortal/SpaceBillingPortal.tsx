@@ -61,8 +61,8 @@ export default function SpaceBillingPortal({
   }
 
   return (
-    <MuiButton href={portalLink} color="primary" variant="contained">
-      {t("common:common.billingLink")}
+    <MuiButton fullWidth href={portalLink} color="primary" variant="contained">
+      {t("space:billing.visitCustomerPortal")}
     </MuiButton>
   );
 }
