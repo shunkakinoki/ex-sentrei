@@ -1,3 +1,19 @@
+# [1.42.0](https://github.com/sentrei/sentrei/compare/v1.41.2...v1.42.0) (2020-09-06)
+
+### Features
+
+- 🎸 ini billing checkout ([f80df98](https://github.com/sentrei/sentrei/commit/f80df98368ff3fc1f76d673ccfbbc178c3e9c124))
+- 🎸 ini space billing alert & table ([9b9d0b5](https://github.com/sentrei/sentrei/commit/9b9d0b53953fcfca952c8e85ff0584a3dbf72e4f))
+- 🎸 ini space billing checkout table component ([a6aaced](https://github.com/sentrei/sentrei/commit/a6aaceda9e1a4773d8b855ee0e72386414091914))
+
+### Performance Improvements
+
+- ⚡️ ini checkout table i18n ([ababb1b](https://github.com/sentrei/sentrei/commit/ababb1b856fbd2b9c66198084811f7453e182d4d))
+- ⚡️ ini i18n space billing json ([023842e](https://github.com/sentrei/sentrei/commit/023842ea9590e8f305921972b23910031fc465d2))
+- ⚡️ ini usd biilling ([36a4765](https://github.com/sentrei/sentrei/commit/36a4765bd7272bfc58e14778fb9c50a689712c5d))
+- ⚡️ refactor billing button ([b7b2c75](https://github.com/sentrei/sentrei/commit/b7b2c754afb51e9448124effe15818c92afef20d))
+- ⚡️ upgrade space billing table ([f03423e](https://github.com/sentrei/sentrei/commit/f03423e13d07b2c05371bbf99bfae58e1be5597b))
+
 ## [1.41.2](https://github.com/sentrei/sentrei/compare/v1.41.1...v1.41.2) (2020-09-06)
 
 ### Performance Improvements
