@@ -11,50 +11,50 @@ export default function LandingPricing(): JSX.Element {
 
   return (
     <>
-      <LandingSection title={t("index:pricing.sectionTitle")} subTitle="" />
+      <LandingSection title={t("pricing:card.sectionTitle")} subTitle="" />
       <Container maxWidth="md" component="main">
         <Grid container spacing={3} alignItems="flex-end">
           <Grid item xs={12} sm={4}>
             <LandingPricingCard
               buttonVariant="outlined"
-              buttonText={t("index:pricing.buttonTextOne")}
-              description1={t("index:pricing.description1One")}
-              description2={t("index:pricing.description2One")}
-              description3={t("index:pricing.description3One")}
+              buttonText={t("pricing:card.free.buttonText")}
+              description1={t("pricing:card.free.description1")}
+              description2={t("pricing:card.free.description2")}
+              description3={t("pricing:card.free.description3")}
               href="/signup"
-              perUser={t("index:pricing.perUser")}
-              price={t("index:pricing.priceOne")}
-              priceMonth={t("index:pricing.priceMonth")}
-              title={t("index:pricing.titleOne")}
+              perUser={t("pricing:card.perUser")}
+              price={t("pricing:card.free.price")}
+              priceMonth={t("pricing:card.priceMonth")}
+              title={t("pricing:card.free.title")}
             />
           </Grid>
           <Grid item xs={12} sm={4}>
             <LandingPricingCard
               buttonVariant="contained"
-              buttonText={t("index:pricing.buttonTextTwo")}
-              description1={t("index:pricing.description1Two")}
-              description2={t("index:pricing.description2Two")}
-              description3={t("index:pricing.description3Two")}
+              buttonText={t("pricing:card.pro.buttonText")}
+              description1={t("pricing:card.pro.description1")}
+              description2={t("pricing:card.pro.description2")}
+              description3={t("pricing:card.pro.description3")}
               href="/pricing"
-              perUser={t("index:pricing.perUser")}
-              price={t("index:pricing.priceTwo")}
-              priceMonth={t("index:pricing.priceMonth")}
-              title={t("index:pricing.titleTwo")}
-              subTitle={t("index:pricing.subTitleTwo")}
+              perUser={t("pricing:card.perUser")}
+              price={t("pricing:card.pro.price")}
+              priceMonth={t("pricing:card.priceMonth")}
+              title={t("pricing:card.pro.title")}
+              subTitle={t("pricing:card.pro.subTitle")}
             />
           </Grid>
           <Grid item xs={12} sm={4}>
             <LandingPricingCard
               buttonVariant="outlined"
-              buttonText={t("index:pricing.buttonTextThree")}
-              description1={t("index:pricing.description1Three")}
-              description2={t("index:pricing.description2Three")}
-              description3={t("index:pricing.description3Three")}
+              buttonText={t("pricing:card.enterprise.buttonText")}
+              description1={t("pricing:card.enterprise.description1")}
+              description2={t("pricing:card.enterprise.description2")}
+              description3={t("pricing:card.enterprise.description3")}
               href="/support"
-              perUser={t("index:pricing.perUser")}
-              price={t("index:pricing.priceThree")}
-              priceMonth={t("index:pricing.priceMonth")}
-              title={t("index:pricing.titleThree")}
+              perUser=""
+              price={t("pricing:card.enterprise.price")}
+              priceMonth=""
+              title={t("pricing:card.enterprise.title")}
             />
           </Grid>
         </Grid>
