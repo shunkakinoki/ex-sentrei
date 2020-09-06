@@ -23,7 +23,7 @@ declare namespace Space {
     tier: Tiers;
     stripeId: string;
     subscriptionId?: string;
-    subscriptionStatus: Stripe.Subscription.Status;
+    subscriptionStatus?: Stripe.Subscription.Status;
     subscriptionTrial?: boolean;
   }
 
