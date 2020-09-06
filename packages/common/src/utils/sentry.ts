@@ -1,19 +1,25 @@
-import * as Sentry from "@sentry/browser";
+import {RewriteFrames} from "@sentry/integrations";
+import * as Sentry from "@sentry/node";
 import get from "lodash.get";
+import getConfig from "next/config";
 
-import isBrowser from "@sentrei/common/utils/isBrowser";
-
+const config = getConfig();
+const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
 Sentry.init({
   enabled: true,
   dsn: process.env.SENTRY_DSN,
   environment: process.env.SENTRY_ENVIRONMENT,
   release: process.env.SENTRY_RELEASE,
-  beforeSend(event) {
-    if (isBrowser() && event.exception) {
-      Sentry.showReportDialog({eventId: event.event_id});
-    }
-    return event;
-  },
+  integrations: [
+    new RewriteFrames({
+      // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+      iteratee: frame => {
+        // eslint-disable-next-line no-param-reassign
+        frame.filename = frame.filename?.replace(distDir, "app:///_next");
+        return frame;
+      },
+    }),
+  ],
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
