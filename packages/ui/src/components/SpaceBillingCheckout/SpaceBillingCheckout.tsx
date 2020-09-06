@@ -19,12 +19,12 @@ export default function SpaceBillingCheckout({
   space,
   spaceId,
 }: Props): JSX.Element {
-  const {t} = useTranslation();
+  const {t, lang} = useTranslation();
   const {snackbar} = useSnackbar();
 
-  React.useEffect(() => {
-    if (role === "admin" && !space?.subscriptionId)
-      accessCheckoutLink("pro", spaceId, window.location.origin)
+  const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
+    if (role === "admin") {
+      accessCheckoutLink(spaceId, lang, window.location.origin)
         .then(
           async (data): Promise<void> => {
             const stripe = await getStripe();
@@ -34,7 +34,8 @@ export default function SpaceBillingCheckout({
         .catch(err => {
           snackbar("error", err.message);
         });
-  }, [role, space?.subscriptionId, spaceId, snackbar]);
+    }
+  };
 
   if (role !== "admin") {
     return (
@@ -45,7 +46,7 @@ export default function SpaceBillingCheckout({
   }
 
   return (
-    <Button disabled color="primary" variant="contained">
+    <Button disabled color="primary" variant="contained" onClick={handleClick}>
       {t("common:common.billingLink")}
     </Button>
   );
