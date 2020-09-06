@@ -6,6 +6,14 @@
     "none": "You have no sessions ...",
     "title": "Analytics"
   },
+  "billing": {
+    "billing": "Billing",
+    "price": "Price",
+    "seat": "Seat",
+    "sum": "Sum",
+    "tier": "Tier",
+    "total": "Total"
+  },
   "dashboard": {
     "create": "Create one",
     "none": "You have no spaces ...",

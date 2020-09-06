@@ -8,6 +8,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import * as React from "react";
 import Space from "@sentrei/types/models/Space";
+import useTranslation from "next-translate/useTranslation";
 
 export interface Props {
   space: Space.Get;
@@ -45,6 +46,7 @@ function subtotal(items: Row[]) {
 
 export default function SpanningTable({space}: Props) {
   const classes = useStyles();
+  const {t} = useTranslation();
 
   const rows = [createRow("Pro Plan", 30, Number(space.stats.members))];
   const invoiceSubtotal = subtotal(rows);
@@ -59,15 +61,15 @@ export default function SpanningTable({space}: Props) {
         <TableHead>
           <TableRow>
             <TableCell align="center" colSpan={3}>
-              Details
+              {t("space:billing.billing")}
             </TableCell>
-            <TableCell align="right">Price</TableCell>
+            <TableCell align="right"></TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Desc</TableCell>
-            <TableCell align="right">Price</TableCell>
-            <TableCell align="right">Seats</TableCell>
-            <TableCell align="right">Sum</TableCell>
+            <TableCell>{t("space:billing.tier")}</TableCell>
+            <TableCell align="right">{t("space:billing.price")}</TableCell>
+            <TableCell align="right">{t("space:billing.seat")}</TableCell>
+            <TableCell align="right">{t("space:billing.sum")}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -80,7 +82,7 @@ export default function SpanningTable({space}: Props) {
             </TableRow>
           ))}
           <TableRow>
-            <TableCell colSpan={2}>Total</TableCell>
+            <TableCell colSpan={2}>{t("space:billing.total")}</TableCell>
             <TableCell align="right">{ccyFormat(invoiceTotal)}</TableCell>
           </TableRow>
         </TableBody>
