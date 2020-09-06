@@ -1,27 +1,33 @@
 {
   "card": {
-    "buttonTextOne": "免费注册",
-    "buttonTextThree": "联系我们",
-    "buttonTextTwo": "开始吧",
-    "description1One": "无限时间",
-    "description1Three": "无限时间",
-    "description1Two": "无限时间",
-    "description2One": "包括3个用户",
-    "description2Three": "未限制的用户和工作区",
-    "description2Two": "无限的用户",
-    "description3One": "帮助中心访问",
-    "description3Three": "指定成功团队",
-    "description3Two": "帮助中心访问",
+    "enterprise": {
+      "buttonText": "联系我们",
+      "description1": "无限时间",
+      "description2": "无限的用户",
+      "description3": "",
+      "price": "自订",
+      "title": "企业"
+    },
+    "free": {
+      "buttonText": "免费注册",
+      "description1": "无限时间",
+      "description2": "包括10个用户",
+      "description3": "",
+      "price": "$ 0",
+      "title": "自由"
+    },
     "perUser": "每个用户",
     "priceMonth": "/月",
-    "priceOne": "$0",
-    "priceThree": "$45",
-    "priceTwo": "$30",
-    "sectionTitle": "Pricing",
-    "subTitleTwo": "最受欢迎",
-    "titleOne": "自由",
-    "titleThree": "企业",
-    "titleTwo": "对于"
+    "pro": {
+      "buttonText": "开始吧",
+      "description1": "无限时间",
+      "description2": "无限的用户",
+      "description3": "",
+      "price": "$ 30",
+      "subTitle": "最受欢迎",
+      "title": "专业版"
+    },
+    "sectionTitle": "价钱"
   },
   "pricing": {
     "questions": "如有任何疑问，请随时与我们联系",

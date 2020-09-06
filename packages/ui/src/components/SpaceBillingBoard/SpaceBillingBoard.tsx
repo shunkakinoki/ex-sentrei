@@ -32,11 +32,9 @@ export default function SpaceMemberList({
       />
       <Container maxWidth="xs" component="main">
         {!space.subscriptionId && (
-          <SpaceBillingCheckout role={role} spaceId={spaceId} />
+          <SpaceBillingCheckout role={role} space={space} spaceId={spaceId} />
         )}
-        {space.subscriptionId && (
-          <SpaceBillingPortal role={role} spaceId={spaceId} />
-        )}
+        <SpaceBillingPortal role={role} space={space} spaceId={spaceId} />
       </Container>
     </>
   );
