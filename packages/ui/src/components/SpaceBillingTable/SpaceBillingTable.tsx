@@ -43,8 +43,12 @@ export default function SpaceBillingTable({space}: Props): JSX.Element {
           <TableRow>
             <TableCell>{t(`space:billing.tier.${space.tier}`)}</TableCell>
             <TableCell align="right">
-              {t("space:billing.symbol")}
-              {!space?.subscriptionId && 0}
+              {!space?.subscriptionId && t("space:billing.symbol") && 0}
+              {space?.subscriptionId &&
+              subscription &&
+              subscription.price.currency === "usd"
+                ? "$"
+                : "¥"}
               {space?.subscriptionId &&
                 subscription &&
                 Number(subscription.price.unit_amount_decimal) /
@@ -55,8 +59,12 @@ export default function SpaceBillingTable({space}: Props): JSX.Element {
               {space?.subscriptionId && subscription && subscription.quantity}
             </TableCell>
             <TableCell align="right">
-              {t("space:billing.symbol")}
-              {!space?.subscriptionId && 0}
+              {!space?.subscriptionId && t("space:billing.symbol") && 0}
+              {space?.subscriptionId &&
+              subscription &&
+              subscription.price.currency === "usd"
+                ? "$"
+                : "¥"}
               {space?.subscriptionId &&
                 subscription &&
                 Number(subscription.price.unit_amount_decimal) /
@@ -67,8 +75,12 @@ export default function SpaceBillingTable({space}: Props): JSX.Element {
             <TableCell rowSpan={3} />
             <TableCell colSpan={2}>{t("space:billing.total")}</TableCell>
             <TableCell align="right">
-              {t("space:billing.symbol")}
-              {!space?.subscriptionId && 0}
+              {!space?.subscriptionId && t("space:billing.symbol") && 0}
+              {space?.subscriptionId &&
+              subscription &&
+              subscription.price.currency === "usd"
+                ? "$"
+                : "¥"}
               {space?.subscriptionId &&
                 subscription &&
                 (subscription.quantity *
