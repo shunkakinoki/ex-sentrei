@@ -12,6 +12,7 @@ import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import Loader from "@sentrei/ui/components/Loader";
 import VideoScreen from "@sentrei/ui/components/VideoScreen";
+import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 import AppStateProvider from "@sentrei/video/state";
 
 export interface Props {
@@ -27,6 +28,8 @@ export default function RoomScreen({
   spaceId,
   roomId,
 }: Props): JSX.Element {
+  const {snackbar} = useSnackbar();
+
   const [space, setSpace] = React.useState<Space.Get | null | undefined>();
   const [room, setRoom] = React.useState<Room.Get | null | undefined>();
   const [members, setMembers] = React.useState<
@@ -58,11 +61,10 @@ export default function RoomScreen({
           handleTokenId(token);
         })
         .catch(err => {
-          // eslint-disable-next-line no-console
-          console.log(err);
+          snackbar("error", err.message);
         });
     }
-  }, [user, room, members]);
+  }, [user, room, members, snackbar]);
 
   if (space === undefined) {
     return <Loader />;
