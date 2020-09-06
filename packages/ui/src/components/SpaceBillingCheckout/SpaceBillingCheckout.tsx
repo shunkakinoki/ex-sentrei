@@ -7,6 +7,7 @@ import getStripe from "@sentrei/common/utils/getStripe";
 import Member from "@sentrei/types/models/Member";
 import Space from "@sentrei/types/models/Space";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
+import SpaceBillingCheckoutTable from "@sentrei/ui/components/SpaceBillingCheckoutTable";
 
 export interface Props {
   role: Member.Role;
@@ -22,7 +23,7 @@ export default function SpaceBillingCheckout({
   const {t, lang} = useTranslation();
   const {snackbar} = useSnackbar();
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
+  const handleClick = (): void => {
     if (role === "admin") {
       accessCheckoutLink(spaceId, lang, window.location.origin)
         .then(
@@ -46,8 +47,11 @@ export default function SpaceBillingCheckout({
   }
 
   return (
-    <Button disabled color="primary" variant="contained" onClick={handleClick}>
-      {t("common:common.billingLink")}
-    </Button>
+    <>
+      <SpaceBillingCheckoutTable space={space} />
+      <Button color="primary" variant="contained" onClick={handleClick}>
+        {t("common:common.billingLink")}
+      </Button>
+    </>
   );
 }
