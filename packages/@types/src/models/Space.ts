@@ -1,3 +1,5 @@
+import Stripe from "stripe";
+
 import Actions from "@sentrei/types/models/Actions";
 import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
@@ -21,6 +23,7 @@ declare namespace Space {
     tier: Tiers;
     stripeId: string;
     subscriptionId?: string;
+    subscriptionStatus: Stripe.Subscription.Status;
     subscriptionTrial?: boolean;
   }
 
