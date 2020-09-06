@@ -1,27 +1,39 @@
 {
   "card": {
-    "buttonTextOne": "Sign up for free",
-    "buttonTextThree": "Contact us",
-    "buttonTextTwo": "Get started",
-    "description1One": "Unlimited time",
-    "description1Three": "Unlimited time",
-    "description1Two": "Unlimited time",
-    "description2One": "3 users included",
-    "description2Three": "Unlimited users & workspaces",
-    "description2Two": "Unlimited users",
-    "description3One": "Help center access",
-    "description3Three": "Designated success team",
-    "description3Two": "Help center access",
+    "enterprise": {
+      "buttonText": "Contact us",
+      "description1": "Unlimited time",
+      "description2": "Unlimited users & workspaces",
+      "description3": "Unlimited rooms included",
+      "description4": "Designated success team",
+      "description5": "...and much more!",
+      "price": "Custom",
+      "title": "Enterprise"
+    },
+    "free": {
+      "buttonText": "Sign up for free",
+      "description1": "Unlimited time",
+      "description2": "10 users included",
+      "description3": "3 rooms included",
+      "description4": "Help center access",
+      "description5": "User Configuration",
+      "price": "$0",
+      "title": "Free"
+    },
     "perUser": "per user",
     "priceMonth": "/mo",
-    "priceOne": "$0",
-    "priceThree": "$45",
-    "priceTwo": "$30",
-    "sectionTitle": "Pricing",
-    "subTitleTwo": "Most popular",
-    "titleOne": "Free",
-    "titleThree": "Enterprise",
-    "titleTwo": "Pro"
+    "pro": {
+      "buttonText": "Get started",
+      "description1": "Unlimited time",
+      "description2": "Unlimited users",
+      "description3": "30 rooms included",
+      "description4": "Help center access",
+      "description5": "Advanced User Configuration",
+      "price": "$30",
+      "subTitle": "Most popular",
+      "title": "Pro"
+    },
+    "sectionTitle": "Pricing"
   },
   "pricing": {
     "questions": "If you have any questions, please don't hesitate to contact us",

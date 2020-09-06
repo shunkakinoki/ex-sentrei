@@ -15,7 +15,6 @@ export interface Subscription {
     [name: string]: string;
   };
   quantity: number;
-  role: string | null;
   status:
     | "active"
     | "canceled"

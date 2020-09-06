@@ -46,7 +46,11 @@ export default function SpaceSettings({
 
   return (
     <GridSettings namespaceId={namespaceId} tabSpaceKey="billing" type="space">
-      <SpaceBillingBoard role={member?.role || "viewer"} spaceId={spaceId} />
+      <SpaceBillingBoard
+        role={member?.role || "viewer"}
+        space={space}
+        spaceId={spaceId}
+      />
     </GridSettings>
   );
 }

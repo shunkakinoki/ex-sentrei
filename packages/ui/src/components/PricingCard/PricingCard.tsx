@@ -17,9 +17,12 @@ export interface Props {
   action?: string;
   buttonText: string;
   buttonVariant: "text" | "outlined" | "contained";
+  center: boolean;
   description1: string;
   description2: string;
   description3: string;
+  description4: string;
+  description5: string;
   href: string;
   perUser: string;
   price: string;
@@ -32,9 +35,12 @@ export default function PricingCard({
   action,
   buttonText,
   buttonVariant,
+  center,
   description1,
   description2,
   description3,
+  description4,
+  description5,
   href,
   perUser,
   price,
@@ -68,7 +74,13 @@ export default function PricingCard({
           </Typography>
         </div>
 
-        {[description1, description2, description3].map((line: string) => (
+        {[
+          description1,
+          description2,
+          description3,
+          description4,
+          description5,
+        ].map((line: string) => (
           <ListItem key={line}>
             <ListItemIcon>
               <CheckCircleIcon color="primary" />
@@ -76,7 +88,7 @@ export default function PricingCard({
             <ListItemText
               primaryTypographyProps={{
                 noWrap: true,
-                align: "left",
+                align: center ? "center" : "left",
                 component: "p",
                 variant: "subtitle1",
               }}

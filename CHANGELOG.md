@@ -1,3 +1,31 @@
+# [1.41.0-beta.2](https://github.com/sentrei/sentrei/compare/v1.41.0-beta.1...v1.41.0-beta.2) (2020-09-06)
+
+### Features
+
+- 🎸 complete refactor pricing ([ba9008d](https://github.com/sentrei/sentrei/commit/ba9008d660dd0baa0c87c78f4bad885ce38c6198))
+- 🎸 refactor metomic update ([51e48fb](https://github.com/sentrei/sentrei/commit/51e48fb8cf86565a8986ddbc2dc19d71e9048f34))
+- 🎸 refactor pricing description ([f7aa624](https://github.com/sentrei/sentrei/commit/f7aa624549cb1d1c5b56656d94aba549fa3185bc))
+- 🎸 refactor space billing board ([30f3277](https://github.com/sentrei/sentrei/commit/30f3277f925d834a4dc9770e5d2a127cce09ccdf))
+
+### Performance Improvements
+
+- ⚡️ ini match mediaquery for pricing ([fc23593](https://github.com/sentrei/sentrei/commit/fc235933f0dd0f01900f296d61e06e2f221fe512))
+
+# [1.41.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.40.1-beta.1...v1.41.0-beta.1) (2020-09-06)
+
+### Features
+
+- 🎸 ini stripe checkout ([e37fee7](https://github.com/sentrei/sentrei/commit/e37fee70410ff2ae5c4c85b5dfdf3104fd84c1d9))
+- 🎸 refactor space billing ([84f7668](https://github.com/sentrei/sentrei/commit/84f766879794330f8206fb8730bd7a3855421ded))
+- 🎸 refactor space model add subscriptionStatus ([410f156](https://github.com/sentrei/sentrei/commit/410f15647e6033c681504058df05ff06e550d66b))
+
+## [1.40.1-beta.1](https://github.com/sentrei/sentrei/compare/v1.40.0...v1.40.1-beta.1) (2020-09-05)
+
+### Performance Improvements
+
+- ⚡️ ini subscription id ([5be8694](https://github.com/sentrei/sentrei/commit/5be8694b515355c44ab2155695c3d3094df501cb))
+- ⚡️ refactor space stripe ([79efd4a](https://github.com/sentrei/sentrei/commit/79efd4a9eefb7779b277af79cb2241a381faaf69))
+
 # [1.40.0](https://github.com/sentrei/sentrei/compare/v1.39.0...v1.40.0) (2020-09-05)
 
 ### Features
