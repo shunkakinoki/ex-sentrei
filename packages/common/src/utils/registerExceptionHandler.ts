@@ -1,8 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import * as Sentry from "@sentry/browser";
 
-const handleException = function handleException(e: Error): void {
-  Sentry.captureException(e);
+import {trackEvent} from "@sentrei/common/utils/segment";
+
+const handleException = function handleException(err: Error): void {
+  trackEvent("exception", {
+    error: err.name,
+    description: err.message,
+  });
+  Sentry.captureException(err);
 };
 
 const handleRejectedPromise = function handleRejectedPromise(

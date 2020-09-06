@@ -4,7 +4,7 @@ import get from "lodash.get";
 import isBrowser from "@sentrei/common/utils/isBrowser";
 
 Sentry.init({
-  enabled: process.env.NODE_ENV !== "production",
+  enabled: true,
   dsn: process.env.SENTRY_DSN,
   environment: process.env.SENTRY_ENVIRONMENT,
   release: process.env.SENTRY_RELEASE,
@@ -14,11 +14,6 @@ Sentry.init({
     }
     return event;
   },
-});
-
-Sentry.configureScope(scope => {
-  scope.setTag("nodejs", process.version);
-  // scope.setTag("runtimeEngine", isBrowser() ? "browser" : "server");
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
