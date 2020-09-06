@@ -1,3 +1,11 @@
+# [1.41.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.40.1-beta.1...v1.41.0-beta.1) (2020-09-06)
+
+### Features
+
+- 🎸 ini stripe checkout ([e37fee7](https://github.com/sentrei/sentrei/commit/e37fee70410ff2ae5c4c85b5dfdf3104fd84c1d9))
+- 🎸 refactor space billing ([84f7668](https://github.com/sentrei/sentrei/commit/84f766879794330f8206fb8730bd7a3855421ded))
+- 🎸 refactor space model add subscriptionStatus ([410f156](https://github.com/sentrei/sentrei/commit/410f15647e6033c681504058df05ff06e550d66b))
+
 ## [1.40.1-beta.1](https://github.com/sentrei/sentrei/compare/v1.40.0...v1.40.1-beta.1) (2020-09-05)
 
 ### Performance Improvements
