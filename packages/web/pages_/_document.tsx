@@ -14,9 +14,6 @@ import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 
 import SeoDefault from "@sentrei/ui/components/SeoDefault";
 
-import "@sentrei/common/utils/sentry";
-import "@sentrei/common/utils/registerExceptionHandler";
-
 export default class CustomDocument extends NextDocument {
   static async getInitialProps(ctx: DocumentContext): Promise<any> {
     const styledComponentSheet = new StyledComponentSheets();
