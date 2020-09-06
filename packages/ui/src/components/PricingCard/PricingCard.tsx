@@ -17,6 +17,7 @@ export interface Props {
   action?: string;
   buttonText: string;
   buttonVariant: "text" | "outlined" | "contained";
+  center: boolean;
   description1: string;
   description2: string;
   description3: string;
@@ -34,6 +35,7 @@ export default function PricingCard({
   action,
   buttonText,
   buttonVariant,
+  center,
   description1,
   description2,
   description3,
@@ -86,7 +88,7 @@ export default function PricingCard({
             <ListItemText
               primaryTypographyProps={{
                 noWrap: true,
-                align: "left",
+                align: center ? "center" : "left",
                 component: "p",
                 variant: "subtitle1",
               }}

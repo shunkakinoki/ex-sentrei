@@ -2,6 +2,8 @@ import Box from "@material-ui/core/Box";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import {useTheme} from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
@@ -10,17 +12,21 @@ import PricingCard from "@sentrei/ui/components/PricingCard";
 
 export default function PricingScreen(): JSX.Element {
   const {t} = useTranslation();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+
   return (
     <>
       <PricingBanner />
       <Box p={1} />
       <Container maxWidth="lg" component="main">
-        <Box p={3}>
+        <Box p={matches ? 3 : 1}>
           <Grid container spacing={2} alignItems="flex-end">
             <Grid item xs={12} sm={12} md={4}>
               <PricingCard
                 buttonVariant="outlined"
                 buttonText={t("pricing:card.free.buttonText")}
+                center={!matches}
                 description1={t("pricing:card.free.description1")}
                 description2={t("pricing:card.free.description2")}
                 description3={t("pricing:card.free.description3")}
@@ -37,6 +43,7 @@ export default function PricingScreen(): JSX.Element {
               <PricingCard
                 buttonVariant="contained"
                 buttonText={t("pricing:card.pro.buttonText")}
+                center={!matches}
                 description1={t("pricing:card.pro.description1")}
                 description2={t("pricing:card.pro.description2")}
                 description3={t("pricing:card.pro.description3")}
@@ -53,6 +60,7 @@ export default function PricingScreen(): JSX.Element {
               <PricingCard
                 buttonVariant="outlined"
                 buttonText={t("pricing:card.enterprise.buttonText")}
+                center={!matches}
                 description1={t("pricing:card.enterprise.description1")}
                 description2={t("pricing:card.enterprise.description2")}
                 description3={t("pricing:card.enterprise.description3")}
