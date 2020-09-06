@@ -4,7 +4,9 @@
       "buttonText": "联系我们",
       "description1": "无限时间",
       "description2": "无限的用户",
-      "description3": "",
+      "description3": "包括无限的房间",
+      "description4": "指定成功团队",
+      "description5": "...以及更多！",
       "price": "自订",
       "title": "企业"
     },
@@ -12,7 +14,9 @@
       "buttonText": "免费注册",
       "description1": "无限时间",
       "description2": "包括10个用户",
-      "description3": "",
+      "description3": "包括3间房间",
+      "description4": "帮助中心访问",
+      "description5": "用户配置",
       "price": "$ 0",
       "title": "自由"
     },
@@ -22,7 +26,9 @@
       "buttonText": "开始吧",
       "description1": "无限时间",
       "description2": "无限的用户",
-      "description3": "",
+      "description3": "包含30间客房",
+      "description4": "帮助中心访问",
+      "description5": "进阶使用者设定",
       "price": "$ 30",
       "subTitle": "最受欢迎",
       "title": "专业版"

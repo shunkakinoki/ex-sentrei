@@ -4,7 +4,9 @@
       "buttonText": "お問い合わせ",
       "description1": "時間無制限",
       "description2": "無制限のユーザー",
-      "description3": "",
+      "description3": "無制限の部屋が含まれています",
+      "description4": "指定成功チーム",
+      "description5": "...そしてはるかに！",
       "price": "カスタム",
       "title": "企業"
     },
@@ -12,7 +14,9 @@
       "buttonText": "無料でスタート",
       "description1": "時間無制限",
       "description2": "10ユーザーを含む",
-      "description3": "",
+      "description3": "3部屋が含まれています",
+      "description4": "ヘルプセンターへのアクセス",
+      "description5": "ユーザー構成",
       "price": "0円",
       "title": "自由"
     },
@@ -22,7 +26,9 @@
       "buttonText": "始める",
       "description1": "時間無制限",
       "description2": "無制限のユーザー",
-      "description3": "",
+      "description3": "30部屋が含まれています",
+      "description4": "ヘルプセンターへのアクセス",
+      "description5": "高度なユーザー設定",
       "price": "3,000円",
       "subTitle": "最も人気のある",
       "title": "プロ"
