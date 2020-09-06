@@ -41,7 +41,7 @@ export default function SpaceBillingCheckout({
 
   if (role !== "admin") {
     return (
-      <Button disabled color="inherit" variant="outlined">
+      <Button fullWidth disabled color="inherit" variant="outlined">
         {t("common:common.disabled")}
       </Button>
     );
