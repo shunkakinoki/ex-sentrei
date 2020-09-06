@@ -6,6 +6,7 @@ on:
       - "tsconfig.json"
       - "yarn.lock"
       - ".github/workflows/web.yml"
+      - "locales/**"
       - "packages/@types/**"
       - "packages/common/**"
       - "packages/ui/**"
