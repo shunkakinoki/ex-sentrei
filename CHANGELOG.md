@@ -1,3 +1,10 @@
+## [1.40.1-beta.1](https://github.com/sentrei/sentrei/compare/v1.40.0...v1.40.1-beta.1) (2020-09-05)
+
+### Performance Improvements
+
+- ⚡️ ini subscription id ([5be8694](https://github.com/sentrei/sentrei/commit/5be8694b515355c44ab2155695c3d3094df501cb))
+- ⚡️ refactor space stripe ([79efd4a](https://github.com/sentrei/sentrei/commit/79efd4a9eefb7779b277af79cb2241a381faaf69))
+
 # [1.40.0](https://github.com/sentrei/sentrei/compare/v1.39.0...v1.40.0) (2020-09-05)
 
 ### Features
