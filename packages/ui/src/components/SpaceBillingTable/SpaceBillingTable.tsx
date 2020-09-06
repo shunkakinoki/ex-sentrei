@@ -47,7 +47,8 @@ export default function SpaceBillingTable({space}: Props): JSX.Element {
               {!space?.subscriptionId && 0}
               {space?.subscriptionId &&
                 subscription &&
-                subscription.price.unit_amount_decimal}
+                Number(subscription.price.unit_amount_decimal) /
+                  (subscription.price.currency === "usd" ? 100 : 1)}
             </TableCell>
             <TableCell align="right">
               {!space?.subscriptionId && space.stats.members}
@@ -58,7 +59,8 @@ export default function SpaceBillingTable({space}: Props): JSX.Element {
               {!space?.subscriptionId && 0}
               {space?.subscriptionId &&
                 subscription &&
-                subscription.price.unit_amount_decimal}
+                Number(subscription.price.unit_amount_decimal) /
+                  (subscription.price.currency === "usd" ? 100 : 1)}
             </TableCell>
           </TableRow>
           <TableRow>
@@ -69,7 +71,9 @@ export default function SpaceBillingTable({space}: Props): JSX.Element {
               {!space?.subscriptionId && 0}
               {space?.subscriptionId &&
                 subscription &&
-                subscription.price.unit_amount_decimal}{" "}
+                (subscription.quantity *
+                  Number(subscription.price.unit_amount_decimal)) /
+                  (subscription.price.currency === "usd" ? 100 : 1)}
             </TableCell>
           </TableRow>
         </TableBody>
