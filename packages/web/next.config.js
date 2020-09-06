@@ -84,6 +84,7 @@ const nextConfig = {
         ? branch
         : "dev",
     SENTRY_RELEASE: Number(require("./package.json").version),
+    STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
     VERCEL_GITHUB_COMMIT_REF: branch,
   },
   webpack: config => {
