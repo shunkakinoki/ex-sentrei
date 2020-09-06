@@ -2,7 +2,6 @@ name: Vercel
 on: push
 jobs:
   vercel:
-    if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
