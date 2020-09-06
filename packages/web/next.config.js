@@ -2,7 +2,7 @@ const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
-// const withSourceMaps = require("@zeit/next-source-maps")();
+const withSourceMaps = require("@zeit/next-source-maps")();
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
@@ -61,6 +61,7 @@ const nextConfig = {
     SEGMENT_ID: process.env.SEGMENT_ID,
   },
   serverRuntimeConfig: {
+    rootDir: __dirname,
     FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL,
     FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PRIVATE_KEY,
   },
@@ -87,7 +88,7 @@ const nextConfig = {
     STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
     VERCEL_GITHUB_COMMIT_REF: branch,
   },
-  webpack: config => {
+  webpack: (config, options) => {
     config.node = {
       fs: "empty",
       child_process: "empty",
@@ -114,12 +115,17 @@ const nextConfig = {
         }),
       );
     }
+    if (!options.isServer) {
+      config.resolve.alias["@sentry/node"] = "@sentry/browser";
+    }
     if (process.env.SENTRY_DNS) {
       config.plugins.push(
         new SentryWebpackPlugin({
           include: ".next",
           ignore: ["node_modules", "cypress", "test"],
-          urlPrefix: "~/_next",
+          stripPrefix: ["webpack://_N_E/"],
+          urlPrefix: "_next",
+          release: Number(require("./package.json").version),
         }),
       );
     }
@@ -135,7 +141,7 @@ module.exports = withPlugins(
     [withCSS],
     [withOptimizedImages],
     [withSass],
-    // [withSourceMaps], #1462
+    [withSourceMaps],
   ],
   nextConfig,
 );
