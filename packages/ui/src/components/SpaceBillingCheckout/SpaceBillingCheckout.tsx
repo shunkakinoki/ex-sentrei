@@ -6,8 +6,8 @@ import accessCheckoutLink from "@sentrei/common/services/accessCheckoutLink";
 import getStripe from "@sentrei/common/utils/getStripe";
 import Member from "@sentrei/types/models/Member";
 import Space from "@sentrei/types/models/Space";
-import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 import SpaceBillingCheckoutTable from "@sentrei/ui/components/SpaceBillingCheckoutTable";
+import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   role: Member.Role;
