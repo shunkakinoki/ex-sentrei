@@ -45,7 +45,6 @@ const Create: NextPage = () => {
         tabUserKey="create"
         type="user"
       />
-      )
       <SpaceCreate profile={profile} user={user} />
     </>
   );

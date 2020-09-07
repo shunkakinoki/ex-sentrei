@@ -38,7 +38,6 @@ const Settings: NextPage = () => {
         tabUserKey="settings"
         type="user"
       />
-      )
       <SettingsScreen user={user} profile={profile} />
     </>
   );

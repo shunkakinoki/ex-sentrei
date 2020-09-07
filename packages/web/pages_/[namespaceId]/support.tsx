@@ -63,7 +63,6 @@ const SupportPage: NextPage = () => {
         namespaceId={String(query.namespaceId)}
         type={type}
       />
-      )
       <SupportScreen email={user.email} name={profile.name} userId={user.uid} />
     </>
   );

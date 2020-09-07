@@ -44,7 +44,6 @@ const Notifications: NextPage = () => {
         tabUserKey="notifications"
         type="user"
       />
-      )
       <NotificationScreen user={user} />
     </>
   );
