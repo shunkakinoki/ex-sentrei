@@ -14,7 +14,6 @@ module.exports = {
         url: "https://github.com/sentrei",
       },
     ],
-    languages: ["en", "ja"],
   },
   plugins: [
     {
@@ -40,16 +39,6 @@ module.exports = {
         theme_color: "#fff",
         display: "standalone",
         icon: "src/assets/favicon.png",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-i18n",
-      options: {
-        langKeyForNull: "en",
-        langKeyDefault: "en",
-        useLangKeyLayout: true,
-        prefixDefault: true,
-        pagesPaths: ["/content"],
       },
     },
   ],
