@@ -11,7 +11,8 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import {auth} from "@sentrei/common/utils/firebase";
+import signout from "@sentrei/common/services/signout";
+
 import MuiMenuItem from "@sentrei/ui/components/MuiMenuItem";
 
 export interface Props {
@@ -69,7 +70,7 @@ export default function AppProfileMenu({
         <ListItemText primary={t("common:common.settings")} />
       </MuiMenuItem>
       <Divider />
-      <MenuItem onClick={(): Promise<void> => auth.signOut()}>
+      <MenuItem onClick={(): Promise<void> => signout()}>
         <ListItemIcon>
           <ExitToAppIcon fontSize="small" />
         </ListItemIcon>
