@@ -1,11 +1,11 @@
-import {NextPage} from "next";
+import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType} from "next";
 
 import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-import {getNamespace} from "@sentrei/common/firebase/namespaces";
+import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
@@ -18,23 +18,39 @@ const InviteSignup = dynamic(
   {ssr: false},
 );
 
-const InviteId: NextPage = () => {
+export interface Props {
+  spaceId: string | null;
+}
+
+// eslint-disable-next-line @typescript-eslint/require-await
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {paths: [], fallback: "unstable_blocking"};
+};
+
+export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
+  const namespaceId = String(params?.namespaceId);
+  const namespace = await getAdminNamespace(namespaceId);
+  if (!namespace || namespace.type === "user") {
+    return {
+      props: {
+        spaceId: null,
+      },
+    };
+  }
+  return {
+    props: {
+      spaceId: JSON.stringify(namespace.uid),
+    },
+    revalidate: 300,
+  };
+};
+
+const InviteId = ({
+  spaceId,
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const {query} = useRouter();
 
   const {user} = React.useContext(AuthContext);
-
-  const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
-
-  React.useEffect(() => {
-    async function setSpace(): Promise<void> {
-      const namespace = await getNamespace(String(query.namespaceId));
-      if (!namespace || namespace.type === "user") {
-        return;
-      }
-      setSpaceId(namespace.uid);
-    }
-    setSpace();
-  }, [query.namespaceId]);
 
   if (user === undefined || spaceId === undefined) {
     return (
@@ -45,7 +61,7 @@ const InviteId: NextPage = () => {
     );
   }
 
-  if (!user || !spaceId) {
+  if (!spaceId) {
     return (
       <>
         <SentreiHeader landingKey="invite" />
@@ -60,7 +76,7 @@ const InviteId: NextPage = () => {
       <InviteSignup
         inviteId={String(query.inviteId)}
         namespaceId={String(query.namespaceId)}
-        spaceId={spaceId}
+        spaceId={JSON.parse(spaceId) as string}
       />
     </>
   );
