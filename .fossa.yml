@@ -15,10 +15,6 @@ analyze:
       type: npm
       target: .
       path: .
-    - name: blog
-      type: npm
-      target: packages/blog
-      path: packages/blog
     - name: common
       type: npm
       target: packages/common

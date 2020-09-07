@@ -2,8 +2,6 @@ pull_request_rules:
   - name: sentrei
     conditions:
       - label=ready-to-merge
-      - label!=packages/blog
-      - label!=packages/fastlane
       - label!=packages/pioneer
       - label!=packages/typedoc
       - label!=packages/ui

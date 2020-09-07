@@ -3,57 +3,6 @@ on:
   repository_dispatch:
     types: [deploy-cmd]
 jobs:
-  blog:
-    if: github.event.client_payload.event_name == 'blog'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: chrnorm/deployment-action@releases/v1
-        id: deployment
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.event.client_payload.branch }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
-          environment: "Blog ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.client_payload.branch }}
-      - uses: actions/setup-node@v2.1.1
-        with:
-          node-version: "14.4.0"
-      - id: yarn-cache-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - id: cache
-        uses: actions/cache@v2.1.1
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-            ${{ steps.yarn-cache-path.outputs.dir }}
-          key: |
-            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-v1-${{ runner.os }}-
-      - run: |
-          yarn install --frozen-lockfile
-      - working-directory: packages/blog
-        run: |
-          yarn run ${{ github.event.client_payload.task }}
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - if: success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
-      - if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
   pioneer:
     if: github.event.client_payload.event_name == 'pioneer'
     runs-on: ubuntu-latest

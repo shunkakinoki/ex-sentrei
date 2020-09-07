@@ -43,7 +43,6 @@
 <!-- prettier-ignore-start -->
 | Project | Link | Package | Version |
 | ------- | ---- | ------- | ------- |
-| Blog | https://blog.sentrei.com | [`packages/blog`](packages/blog) | [![version](https://img.shields.io/npm/v/@sentrei/blog/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/blog) |
 | Pioneer | https://pioneer.sentrei.com | [`packages/pioneer`](packages/pioneer) | [![version](https://img.shields.io/npm/v/@sentrei/pioneer/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/sentrei) |
 | Sentrei | https://sentrei.com | [`sentrei`](package.json) | [![version](https://img.shields.io/npm/v/sentrei/latest.svg?color=success)](https://www.npmjs.com/package/sentrei) |
 <!-- prettier-ignore-end -->
@@ -57,14 +56,6 @@
 | Types | [`packages/types`](packages/@types) | [![version](https://img.shields.io/npm/v/@sentrei/types/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/types) |
 | UI | [`packages/ui`](packages/ui) | [![version](https://img.shields.io/npm/v/@sentrei/ui/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/ui) |
 | Video | [`packages/video`](packages/video) | [![version](https://img.shields.io/npm/v/@sentrei/video/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/video) |
-<!-- prettier-ignore-end -->
-
-### Figma 💅
-
-<!-- prettier-ignore-start -->
-| Version | Const | Mobile | Web |
-| ------- | ----- | ------ | --- |
-| main | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) |
 <!-- prettier-ignore-end -->
 
 ### Web 🌐
