@@ -17,7 +17,7 @@ const SpaceFormPhoto = ({disabled = false, profile}: Props): JSX.Element => {
   const {t} = useTranslation();
 
   const onSubmit = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.deleting"));
+    snackbar("info", t("snackbar:snackbar.deleting"));
     try {
       await Router.pushI18n("/dashboard");
     } catch (err) {

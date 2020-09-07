@@ -28,10 +28,10 @@ const RoomQuitBoard = ({
   const {t} = useTranslation();
 
   const onSubmit = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.quiting"));
+    snackbar("info", t("snackbar:snackbar.quiting"));
     try {
       await quitRoom(roomId, userId)?.then(() => {
-        snackbar("success", t("common:snackbar.quitted"));
+        snackbar("success", t("snackbar:snackbar.quitted"));
         backdrop("loading");
         Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
       });

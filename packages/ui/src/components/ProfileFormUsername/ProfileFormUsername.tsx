@@ -56,7 +56,7 @@ const ProfileFormUsername = ({profile}: Props): JSX.Element => {
   });
 
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
-    snackbar("info", t("common:snackbar.editing"));
+    snackbar("info", t("snackbar:snackbar.editing"));
     try {
       await createNamespace(data.username, profile.uid, "user")?.then(() => {
         snackbar("success");

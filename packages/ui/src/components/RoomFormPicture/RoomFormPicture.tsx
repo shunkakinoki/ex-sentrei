@@ -62,7 +62,7 @@ const RoomFormPicture = ({
   };
 
   const onSubmit = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.editing"));
+    snackbar("info", t("snackbar:snackbar.editing"));
     try {
       const hash = encodeColorHash(color);
       await updateRoom(

@@ -22,7 +22,7 @@ const RoomDeleteBoard = ({role, roomId, namespaceId}: Props): JSX.Element => {
   const {t} = useTranslation();
 
   const onSubmit = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.deleting"));
+    snackbar("info", t("snackbar:snackbar.deleting"));
     try {
       await deleteRoom(roomId)?.then(() => {
         snackbar("success");

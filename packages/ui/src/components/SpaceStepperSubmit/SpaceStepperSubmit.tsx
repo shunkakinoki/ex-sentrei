@@ -43,7 +43,7 @@ const SpaceStepperSubmit = ({
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
-    snackbar("info", t("common:snackbar.creating"));
+    snackbar("info", t("snackbar:snackbar.creating"));
     try {
       await createSpace({
         actions: {},

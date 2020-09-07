@@ -45,7 +45,7 @@ function InviteCard({invite, namespaceId, type}: Props): JSX.Element {
             <CopyToClipboard
               text={`${window.location.origin}/${namespaceId}/invite/${invite.id}`}
               onCopy={(): void =>
-                snackbar("success", t("common:snackbar.clipboard"))
+                snackbar("success", t("snackbar:snackbar.clipboard"))
               }
             >
               <IconButton aria-label="share">

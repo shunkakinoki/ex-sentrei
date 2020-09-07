@@ -1,0 +1,19 @@
+{
+  "snackbar": {
+    "cleared": "已清除！",
+    "clearing": "清除中...",
+    "clipboard": "复制到剪贴板的链接！",
+    "created": "已创建！",
+    "creating": "正在建立...",
+    "deleted": "已删除！",
+    "deleting": "删除中...",
+    "edited": "编辑！",
+    "editing": "编辑中...",
+    "inviting": "邀请中...",
+    "loading": "载入中...",
+    "quiting": "退出...",
+    "quitted": "退出！",
+    "updated": "更新 ！",
+    "updating": "正在更新..."
+  }
+}

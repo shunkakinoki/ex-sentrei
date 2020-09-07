@@ -32,7 +32,7 @@ const InviteFormLink = ({profile, user, spaceId}: Props): JSX.Element => {
   };
 
   const handleSubmit = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.editing"));
+    snackbar("info", t("snackbar:snackbar.editing"));
     try {
       await createInvite(spaceId, {
         createdAt: timestamp,

@@ -65,7 +65,7 @@ export default function SpacePanelDescriptionForm({
   }, [watchInput, member.description]);
 
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
-    snackbar("info", t("common:snackbar.updating"));
+    snackbar("info", t("snackbar:snackbar.updating"));
     try {
       await updateMember(spaceId, userId, {
         description: data.description,
@@ -75,14 +75,14 @@ export default function SpacePanelDescriptionForm({
       });
       setEmpty(false);
       setProgress(false);
-      snackbar("success", t("common:snackbar.updated"));
+      snackbar("success", t("snackbar:snackbar.updated"));
     } catch (err) {
       snackbar("error", err.message);
     }
   };
 
   const handleClear = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.clearing"));
+    snackbar("info", t("snackbar:snackbar.clearing"));
     try {
       await updateMember(spaceId, userId, {
         description: "",
@@ -93,7 +93,7 @@ export default function SpacePanelDescriptionForm({
       setEmpty(true);
       setProgress(false);
       reset();
-      snackbar("success", t("common:snackbar.cleared"));
+      snackbar("success", t("snackbar:snackbar.cleared"));
     } catch (err) {
       snackbar("error", err.message);
     }
