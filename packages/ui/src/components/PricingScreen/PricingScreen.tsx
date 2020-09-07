@@ -20,7 +20,7 @@ export default function PricingScreen(): JSX.Element {
       <PricingBanner />
       <Box p={1} />
       <Container maxWidth="lg" component="main">
-        <Box p={matches ? 3 : 1}>
+        <Box p={matches ? 3 : 0}>
           <Grid container spacing={2} alignItems="flex-end">
             <Grid item xs={12} sm={12} md={4}>
               <PricingCard
