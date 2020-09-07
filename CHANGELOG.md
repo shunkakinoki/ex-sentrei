@@ -1,3 +1,13 @@
+# [1.47.0](https://github.com/sentrei/sentrei/compare/v1.46.0...v1.47.0) (2020-09-07)
+
+### Features
+
+- 🎸 upgrade pricing section ([0266d76](https://github.com/sentrei/sentrei/commit/0266d766b18141b312413aaaf517499632241df8))
+
+### Performance Improvements
+
+- ⚡️ ini pioneer update ([ef72e21](https://github.com/sentrei/sentrei/commit/ef72e21a006b57a2bf87b4952412e8f6c5fee4f9))
+
 # [1.46.0](https://github.com/sentrei/sentrei/compare/v1.45.0...v1.46.0) (2020-09-07)
 
 ### Features
