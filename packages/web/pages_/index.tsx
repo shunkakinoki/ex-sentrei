@@ -6,7 +6,6 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 
 import Footer from "@sentrei/ui/components/Footer";
 import LandingScreen from "@sentrei/ui/components/LandingScreen";
-import Loader from "@sentrei/ui/components/Loader";
 import OneTap from "@sentrei/ui/components/OneTap";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import ConnectPicture from "@sentrei/web/images/svg/ConnectPicture";
@@ -18,10 +17,6 @@ import VideoPicture from "@sentrei/web/images/svg/VideoPicture";
 
 const Index: NextPage = () => {
   const {user} = React.useContext(AuthContext);
-
-  if (user === undefined) {
-    return <Loader />;
-  }
 
   if (user) {
     Router.pushI18n("/dashboard");
