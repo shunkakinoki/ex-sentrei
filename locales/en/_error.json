@@ -1,3 +1,5 @@
 {
-  "title": "Sentrei"
+  "error": {
+    "pageNotFound": "Page Not Found"
+  }
 }

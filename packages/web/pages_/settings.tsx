@@ -1,9 +1,9 @@
 import {NextPage} from "next";
-import Router from "next-translate/Router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import SettingsScreen from "@sentrei/ui/components/SettingsScreen";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -11,17 +11,20 @@ import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 const Settings: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
-  if (!user && typeof window !== "undefined") {
-    setTimeout(() => {
-      Router.pushI18n("/");
-    }, 3000);
-  }
-
-  if (user === undefined || !profile) {
+  if (user === undefined) {
     return (
       <>
         <SentreiAppHeader skeleton tabUserKey="settings" type="user" />
         <SkeletonForm />
+      </>
+    );
+  }
+
+  if (!user || !profile) {
+    return (
+      <>
+        <SentreiAppHeader skeleton tabUserKey="settings" type="user" />
+        <HomeScreen />
       </>
     );
   }
