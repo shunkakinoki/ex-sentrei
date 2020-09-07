@@ -6,6 +6,8 @@
     "avatar": "アバター",
     "back": "バック",
     "billing": "課金",
+    "billingGoTo": "請求に移動",
+    "billingUpgrade": "アップグレードプラン",
     "cancel": "キャンセル",
     "create": "作成する",
     "createRoom": "部屋を作成",

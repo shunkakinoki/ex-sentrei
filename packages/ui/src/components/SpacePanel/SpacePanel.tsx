@@ -46,7 +46,7 @@ export default function SpacePanel({
           </Grid>
           <Grid item xs={false} sm={false} md={1} />
           <Grid item xs={12} sm={6} md={5}>
-            <SpacePanelAction namespaceId={space.namespaceId} />
+            <SpacePanelAction space={space} namespaceId={space.namespaceId} />
           </Grid>
         </Grid>
       </Container>

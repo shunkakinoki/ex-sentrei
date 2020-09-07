@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -19,7 +18,9 @@ const Dashboard: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
   if (!user && typeof window !== "undefined") {
-    Router.pushI18n("/");
+    setTimeout(() => {
+      Router.pushI18n("/");
+    }, 3000);
   }
 
   if (user === undefined || !profile) {

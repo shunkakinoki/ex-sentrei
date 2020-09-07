@@ -1,0 +1,13 @@
+{
+  "billing": {
+    "free": {
+      "memberLimit": "Free Plan only supports to 10 Members.",
+      "roomLimit": "Free Plan only supports to 3 Rooms.",
+      "upgrade": "Upgrade now to Pro Plan with 2-Week Free Trial included!"
+    },
+    "pro": {
+      "roomLimit": "Free Plan only supports to 15 Rooms.",
+      "upgrade": "Upgrade to Enterprise Plan to best suit your needs!"
+    }
+  }
+}

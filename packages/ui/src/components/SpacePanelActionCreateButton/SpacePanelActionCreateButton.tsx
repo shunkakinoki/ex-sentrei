@@ -1,49 +1,33 @@
+import Button from "@material-ui/core/Button";
+import CreateIcon from "@material-ui/icons/Create";
 import useTranslation from "next-translate/useTranslation";
-import Error from "next/error";
 import * as React from "react";
 
 import {FreeTier, ProTier} from "@sentrei/common/const/tiers";
-import {getSpace} from "@sentrei/common/firebase/spaces";
-import Profile from "@sentrei/types/models/Profile";
 import Space from "@sentrei/types/models/Space";
-import User from "@sentrei/types/models/User";
 import BillingDialog from "@sentrei/ui/components/BillingDialog";
-import RoomCreateBoard from "@sentrei/ui/components/RoomCreateBoard";
-import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
+import MuiButton from "@sentrei/ui/components/MuiButton";
 
 export interface Props {
-  profile: Profile.Get;
   namespaceId: string;
-  spaceId: string;
-  user: User.Get;
+  space: Space.Get;
 }
 
-export default function RoomCreate({
-  profile,
+export default function SpacePanelActionCreateButton({
   namespaceId,
-  spaceId,
-  user,
+  space,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
-  const [space, setSpace] = React.useState<Space.Get | null | undefined>();
-  const [, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = (): void => {
+    setOpen(true);
+  };
 
   const handleClose = (): void => {
     setOpen(false);
   };
-
-  React.useEffect(() => {
-    getSpace(spaceId).then(setSpace);
-  }, [spaceId]);
-
-  if (space === undefined) {
-    return <SkeletonForm />;
-  }
-
-  if (space === null) {
-    return <Error statusCode={404} />;
-  }
 
   if (
     (space.tier === "free" && space.roomCount > FreeTier.roomCount) ||
@@ -52,7 +36,7 @@ export default function RoomCreate({
     return (
       <>
         <BillingDialog
-          open
+          open={open}
           message={
             space.tier === "free"
               ? t("billing:billing.free.roomLimit")
@@ -66,10 +50,29 @@ export default function RoomCreate({
           namespaceId={namespaceId}
           handleClose={handleClose}
         />
-        <SkeletonForm />
+        <Button
+          fullWidth
+          color="primary"
+          variant="contained"
+          startIcon={<CreateIcon />}
+          onClick={handleOpen}
+        >
+          {t("common:common.createRoom")}
+        </Button>
       </>
     );
   }
 
-  return <RoomCreateBoard profile={profile} user={user} spaceId={spaceId} />;
+  return (
+    <MuiButton
+      href="/[namespaceId]/rooms/create"
+      as={`/${namespaceId}/rooms/create`}
+      fullWidth
+      color="primary"
+      variant="contained"
+      startIcon={<CreateIcon />}
+    >
+      {t("common:common.createRoom")}
+    </MuiButton>
+  );
 }

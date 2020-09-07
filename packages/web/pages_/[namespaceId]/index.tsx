@@ -83,7 +83,9 @@ const SpaceId = ({
   const {user, profile} = React.useContext(AuthContext);
 
   if (!user && typeof window !== "undefined") {
-    Router.pushI18n("/");
+    setTimeout(() => {
+      Router.pushI18n("/");
+    }, 3000);
   }
 
   if (

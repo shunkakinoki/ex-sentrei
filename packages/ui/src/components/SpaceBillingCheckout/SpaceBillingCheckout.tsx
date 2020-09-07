@@ -25,7 +25,7 @@ export default function SpaceBillingCheckout({
     snackbar("info", t("snackbar:snackbar.loading"));
     backdrop("loading");
     if (role === "admin") {
-      accessCheckoutLink(spaceId, lang, window.location.origin)
+      accessCheckoutLink(spaceId, lang, window.location.href)
         .then(
           async (data): Promise<void> => {
             const stripe = await getStripe();

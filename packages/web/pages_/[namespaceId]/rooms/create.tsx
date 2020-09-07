@@ -32,7 +32,9 @@ const CreatePage: NextPage = () => {
   }, [query.namespaceId]);
 
   if (!user && typeof window !== "undefined") {
-    Router.pushI18n("/");
+    setTimeout(() => {
+      Router.pushI18n("/");
+    }, 3000);
   }
 
   if (user === undefined || !profile || !spaceId) {
@@ -61,7 +63,14 @@ const CreatePage: NextPage = () => {
           type="space"
         />
       )}
-      {user && <RoomCreate spaceId={spaceId} profile={profile} user={user} />}
+      {user && (
+        <RoomCreate
+          spaceId={spaceId}
+          namespaceId={String(query.namespaceId)}
+          profile={profile}
+          user={user}
+        />
+      )}
     </>
   );
 };
