@@ -1,11 +1,12 @@
 import {NextPage} from "next";
-import Router from "next-translate/Router";
+
 import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
@@ -35,7 +36,7 @@ const InviteId: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (user === undefined || !spaceId) {
+  if (user === undefined) {
     return (
       <>
         <SentreiHeader landingKey="invite" />
@@ -43,20 +44,24 @@ const InviteId: NextPage = () => {
       </>
     );
   }
-  if (user && typeof window !== "undefined") {
-    Router.pushI18n("/dashboard");
+
+  if (!user || !spaceId) {
+    return (
+      <>
+        <SentreiHeader landingKey="invite" />
+        <HomeScreen />
+      </>
+    );
   }
 
   return (
     <>
       <SentreiHeader landingKey="invite" />
-      {!user && (
-        <InviteSignup
-          inviteId={String(query.inviteId)}
-          namespaceId={String(query.namespaceId)}
-          spaceId={spaceId}
-        />
-      )}
+      <InviteSignup
+        inviteId={String(query.inviteId)}
+        namespaceId={String(query.namespaceId)}
+        spaceId={spaceId}
+      />
     </>
   );
 };

@@ -1,11 +1,12 @@
 import {NextPage} from "next";
-import Router from "next-translate/Router";
+
 import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -35,13 +36,7 @@ const SpaceInvitePage: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (!user && typeof window !== "undefined") {
-    setTimeout(() => {
-      Router.pushI18n("/");
-    }, 3000);
-  }
-
-  if (user === undefined || !profile || !spaceId) {
+  if (user === undefined) {
     return (
       <>
         <SentreiAppHeader
@@ -54,26 +49,36 @@ const SpaceInvitePage: NextPage = () => {
     );
   }
 
-  return (
-    <>
-      {user && (
+  if (!user || !profile || !spaceId) {
+    return (
+      <>
         <SentreiAppHeader
-          notificationCount={Number(user.notificationCount)}
-          profile={profile}
-          userId={user.uid}
-          namespaceId={String(query.namespaceId)}
+          skeleton
           tabSpaceKey="settings"
           type="space"
-        />
-      )}
-      {user && (
-        <SpaceInvite
           namespaceId={String(query.namespaceId)}
-          spaceId={spaceId}
-          profile={profile}
-          user={user}
         />
-      )}
+        <HomeScreen />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <SentreiAppHeader
+        notificationCount={Number(user.notificationCount)}
+        profile={profile}
+        userId={user.uid}
+        namespaceId={String(query.namespaceId)}
+        tabSpaceKey="settings"
+        type="space"
+      />
+      <SpaceInvite
+        namespaceId={String(query.namespaceId)}
+        spaceId={spaceId}
+        profile={profile}
+        user={user}
+      />
     </>
   );
 };

@@ -1,9 +1,9 @@
 import {NextPage} from "next";
-import Router from "next-translate/Router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import ProfileScreen from "@sentrei/ui/components/ProfileScreen";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -11,13 +11,7 @@ import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 const Profile: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
-  if (!user && typeof window !== "undefined") {
-    setTimeout(() => {
-      Router.pushI18n("/");
-    }, 3000);
-  }
-
-  if (user === undefined || !profile) {
+  if (user === undefined) {
     return (
       <>
         <SentreiAppHeader skeleton tabUserKey="profile" type="user" />
@@ -26,18 +20,26 @@ const Profile: NextPage = () => {
     );
   }
 
+  if (!user || !profile) {
+    return (
+      <>
+        <SentreiAppHeader skeleton tabUserKey="profile" type="user" />
+        <HomeScreen />
+      </>
+    );
+  }
+
   return (
     <>
-      {user && (
-        <SentreiAppHeader
-          notificationCount={Number(user.notificationCount)}
-          profile={profile}
-          userId={user.uid}
-          tabUserKey="profile"
-          type="user"
-        />
-      )}
-      {user && <ProfileScreen profile={profile} user={user} />}
+      <SentreiAppHeader
+        notificationCount={Number(user.notificationCount)}
+        profile={profile}
+        userId={user.uid}
+        tabUserKey="profile"
+        type="user"
+      />
+      )
+      <ProfileScreen profile={profile} user={user} />
     </>
   );
 };

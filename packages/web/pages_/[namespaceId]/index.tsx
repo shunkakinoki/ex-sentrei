@@ -1,5 +1,4 @@
 import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType} from "next";
-import Router from "next-translate/Router";
 
 import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
@@ -14,6 +13,7 @@ import {getAdminSpace} from "@sentrei/common/firebaseAdmin/spaces";
 import Member from "@sentrei/types/models/Member";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -82,19 +82,7 @@ const SpaceId = ({
 
   const {user, profile} = React.useContext(AuthContext);
 
-  if (!user && typeof window !== "undefined") {
-    setTimeout(() => {
-      Router.pushI18n("/");
-    }, 3000);
-  }
-
-  if (
-    user === undefined ||
-    !profile ||
-    !spaceId ||
-    !spaceData ||
-    !membersData
-  ) {
+  if (user === undefined) {
     return (
       <>
         <SentreiAppHeader
@@ -108,33 +96,43 @@ const SpaceId = ({
     );
   }
 
-  return (
-    <>
-      {user && (
+  if (!user || !profile || !spaceId || !spaceData || !membersData) {
+    return (
+      <>
         <SentreiAppHeader
-          notificationCount={Number(user.notificationCount)}
-          profile={profile}
-          userId={user.uid}
-          namespaceId={String(query.namespaceId)}
+          skeleton
           tabSpaceKey="home"
           type="space"
+          namespaceId={String(query.namespaceId)}
         />
-      )}
-      {user && (
-        <SpaceScreen
-          user={user}
-          profile={profile}
-          memberData={
-            (JSON.parse(membersData) as Member.Get[]).filter(
-              doc => doc.uid === profile.uid,
-            )[0] as Member.Get
-          }
-          membersData={JSON.parse(membersData) as Member.Get[]}
-          roomsData={roomsData ? (JSON.parse(roomsData) as Room.Get[]) : null}
-          spaceData={JSON.parse(spaceData) as Space.Get}
-          spaceId={JSON.parse(spaceId) as string}
-        />
-      )}
+        <HomeScreen />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <SentreiAppHeader
+        notificationCount={Number(user.notificationCount)}
+        profile={profile}
+        userId={user.uid}
+        namespaceId={String(query.namespaceId)}
+        tabSpaceKey="home"
+        type="space"
+      />
+      <SpaceScreen
+        user={user}
+        profile={profile}
+        memberData={
+          (JSON.parse(membersData) as Member.Get[]).filter(
+            doc => doc.uid === profile.uid,
+          )[0] as Member.Get
+        }
+        membersData={JSON.parse(membersData) as Member.Get[]}
+        roomsData={roomsData ? (JSON.parse(roomsData) as Room.Get[]) : null}
+        spaceData={JSON.parse(spaceData) as Space.Get}
+        spaceId={JSON.parse(spaceId) as string}
+      />
     </>
   );
 };

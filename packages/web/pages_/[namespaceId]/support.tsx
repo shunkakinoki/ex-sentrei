@@ -1,5 +1,4 @@
 import {NextPage} from "next";
-import Router from "next-translate/Router";
 import {useRouter} from "next/router";
 import * as React from "react";
 
@@ -7,6 +6,7 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {NamespaceType} from "@sentrei/types/models/Namespace";
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SupportScreen from "@sentrei/ui/components/SupportScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -27,13 +27,8 @@ const SupportPage: NextPage = () => {
     }
     setNamespaceType();
   }, [query.namespaceId]);
-  if (!user && typeof window !== "undefined") {
-    setTimeout(() => {
-      Router.pushI18n("/");
-    }, 3000);
-  }
 
-  if (user === undefined || !profile || !type) {
+  if (user === undefined) {
     return (
       <>
         <SentreiAppHeader
@@ -46,24 +41,30 @@ const SupportPage: NextPage = () => {
     );
   }
 
+  if (!user || !profile || !type) {
+    return (
+      <>
+        <SentreiAppHeader
+          skeleton
+          type="user"
+          namespaceId={String(query.namespaceId)}
+        />
+        <HomeScreen />
+      </>
+    );
+  }
+
   return (
     <>
-      {user && (
-        <SentreiAppHeader
-          notificationCount={Number(user.notificationCount)}
-          profile={profile}
-          userId={user.uid}
-          namespaceId={String(query.namespaceId)}
-          type={type}
-        />
-      )}
-      {user && (
-        <SupportScreen
-          email={user.email}
-          name={profile.name}
-          userId={user.uid}
-        />
-      )}
+      <SentreiAppHeader
+        notificationCount={Number(user.notificationCount)}
+        profile={profile}
+        userId={user.uid}
+        namespaceId={String(query.namespaceId)}
+        type={type}
+      />
+      )
+      <SupportScreen email={user.email} name={profile.name} userId={user.uid} />
     </>
   );
 };

@@ -1,5 +1,5 @@
 import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType} from "next";
-import Router from "next-translate/Router";
+
 import {useRouter} from "next/router";
 import * as React from "react";
 
@@ -8,6 +8,7 @@ import {getAdminLeaderboard} from "@sentrei/common/firebaseAdmin/leaderboard";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 
 import Member from "@sentrei/types/models/Member";
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceLeaderboard from "@sentrei/ui/components/SpaceLeaderboard";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -54,13 +55,7 @@ const LeaderboardPage = ({
 
   const {user, profile} = React.useContext(AuthContext);
 
-  if (!user && typeof window !== "undefined") {
-    setTimeout(() => {
-      Router.pushI18n("/");
-    }, 3000);
-  }
-
-  if (user === undefined || !profile || !spaceId || !membersData) {
+  if (user === undefined) {
     return (
       <>
         <SentreiAppHeader
@@ -74,18 +69,30 @@ const LeaderboardPage = ({
     );
   }
 
-  return (
-    <>
-      {user && (
+  if (!user || !profile || !spaceId || !membersData) {
+    return (
+      <>
         <SentreiAppHeader
-          notificationCount={Number(user.notificationCount)}
-          profile={profile}
-          userId={user.uid}
-          namespaceId={String(query.namespaceId)}
+          skeleton
           tabSpaceKey="leaderboard"
           type="space"
+          namespaceId={String(query.namespaceId)}
         />
-      )}
+        <HomeScreen />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <SentreiAppHeader
+        notificationCount={Number(user.notificationCount)}
+        profile={profile}
+        userId={user.uid}
+        namespaceId={String(query.namespaceId)}
+        tabSpaceKey="leaderboard"
+        type="space"
+      />
       <SpaceLeaderboard
         spaceId={JSON.parse(spaceId) as string}
         membersData={JSON.parse(membersData) as Member.Get[]}
