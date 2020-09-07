@@ -44,7 +44,6 @@ const Dashboard: NextPage = () => {
         tabUserKey="dashboard"
         type="user"
       />
-      )
       <SpaceDashboard userId={user.uid} />
     </>
   );
