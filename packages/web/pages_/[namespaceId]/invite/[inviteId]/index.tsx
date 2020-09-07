@@ -45,7 +45,7 @@ const InviteId: NextPage = () => {
     );
   }
 
-  if (!user || !spaceId) {
+  if (!user) {
     return (
       <>
         <SentreiHeader landingKey="invite" />
