@@ -4,8 +4,6 @@ github:
   - .github/**/*
 infrastructure:
   - infrastructure/**/*
-packages/blog:
-  - packages/blog/**/*
 packages/common:
   - packages/@types/**/*
   - packages/common/**/*

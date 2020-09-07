@@ -2,9 +2,6 @@
 .env.preview
 .env.production
 
-# Blog related.
-**/blog/public
-
 # Dvc related.
 **/.dvc/config.local
 **/.dvc/updater
