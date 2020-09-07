@@ -1,4 +1,3 @@
-import Router from "next-translate/Router";
 import dynamic from "next/dynamic";
 
 import {useRouter} from "next/router";
@@ -6,6 +5,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
 import Loader from "@sentrei/ui/components/Loader";
 
@@ -38,19 +38,17 @@ const RoomId = (): JSX.Element => {
   }
 
   if (!user) {
-    Router.pushI18n("/");
+    return <HomeScreen />;
   }
 
   return (
     <>
-      {user && (
-        <RoomScreen
-          user={user}
-          profile={profile}
-          spaceId={spaceId}
-          roomId={String(query.roomId)}
-        />
-      )}
+      <RoomScreen
+        user={user}
+        profile={profile}
+        spaceId={spaceId}
+        roomId={String(query.roomId)}
+      />
     </>
   );
 };

@@ -42,7 +42,7 @@ export default function RoomQuit({
     );
   }
 
-  if (room === null) {
+  if (!room) {
     return <Error statusCode={404} />;
   }
 

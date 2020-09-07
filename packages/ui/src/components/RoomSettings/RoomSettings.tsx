@@ -45,7 +45,7 @@ export default function RoomSettings({
     );
   }
 
-  if (room === null) {
+  if (!room) {
     return <Error statusCode={404} />;
   }
 

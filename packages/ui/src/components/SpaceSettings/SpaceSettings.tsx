@@ -43,7 +43,7 @@ export default function SpaceSettings({
     );
   }
 
-  if (space === null) {
+  if (!space) {
     return <Error statusCode={404} />;
   }
 

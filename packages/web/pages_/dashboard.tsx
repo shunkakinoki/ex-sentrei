@@ -1,9 +1,9 @@
 import {NextPage} from "next";
-import Router from "next-translate/Router";
 import dynamic from "next/dynamic";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -17,13 +17,7 @@ const SpaceDashboard = dynamic(
 const Dashboard: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
-  if (!user && typeof window !== "undefined") {
-    setTimeout(() => {
-      Router.pushI18n("/");
-    }, 3000);
-  }
-
-  if (user === undefined || !profile) {
+  if (user === undefined || profile === undefined) {
     return (
       <>
         <SentreiAppHeader skeleton tabUserKey="dashboard" type="user" />
@@ -32,18 +26,25 @@ const Dashboard: NextPage = () => {
     );
   }
 
+  if (!user || !profile) {
+    return (
+      <>
+        <SentreiAppHeader skeleton tabUserKey="dashboard" type="user" />
+        <HomeScreen />
+      </>
+    );
+  }
+
   return (
     <>
-      {user && (
-        <SentreiAppHeader
-          notificationCount={Number(user.notificationCount)}
-          profile={profile}
-          userId={user.uid}
-          tabUserKey="dashboard"
-          type="user"
-        />
-      )}
-      {user && <SpaceDashboard userId={user.uid} />}
+      <SentreiAppHeader
+        notificationCount={Number(user.notificationCount)}
+        profile={profile}
+        userId={user.uid}
+        tabUserKey="dashboard"
+        type="user"
+      />
+      <SpaceDashboard userId={user.uid} />
     </>
   );
 };

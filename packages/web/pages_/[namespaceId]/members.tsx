@@ -1,5 +1,4 @@
 import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType} from "next";
-import Router from "next-translate/Router";
 import {useRouter} from "next/router";
 import * as React from "react";
 
@@ -8,6 +7,7 @@ import {getAdminMembers} from "@sentrei/common/firebaseAdmin/members";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 
 import Member from "@sentrei/types/models/Member";
+import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceMember from "@sentrei/ui/components/SpaceMember";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -54,13 +54,12 @@ const MembersPage = ({
 
   const {user, profile} = React.useContext(AuthContext);
 
-  if (!user && typeof window !== "undefined") {
-    setTimeout(() => {
-      Router.pushI18n("/");
-    }, 3000);
-  }
-
-  if (user === undefined || !profile || !spaceId || !membersData) {
+  if (
+    user === undefined ||
+    profile === undefined ||
+    spaceId === undefined ||
+    membersData === undefined
+  ) {
     return (
       <>
         <SentreiAppHeader
@@ -74,25 +73,35 @@ const MembersPage = ({
     );
   }
 
-  return (
-    <>
-      {user && (
+  if (!user || !profile || !spaceId || !membersData) {
+    return (
+      <>
         <SentreiAppHeader
-          notificationCount={Number(user.notificationCount)}
-          profile={profile}
-          userId={user.uid}
-          namespaceId={String(query.namespaceId)}
+          skeleton
           tabSpaceKey="members"
           type="space"
+          namespaceId={String(query.namespaceId)}
         />
-      )}
-      {user && (
-        <SpaceMember
-          spaceId={JSON.parse(spaceId) as string}
-          membersData={JSON.parse(membersData) as Member.Get[]}
-          userId={user.uid}
-        />
-      )}
+        <HomeScreen />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <SentreiAppHeader
+        notificationCount={Number(user.notificationCount)}
+        profile={profile}
+        userId={user.uid}
+        namespaceId={String(query.namespaceId)}
+        tabSpaceKey="members"
+        type="space"
+      />
+      <SpaceMember
+        spaceId={JSON.parse(spaceId) as string}
+        membersData={JSON.parse(membersData) as Member.Get[]}
+        userId={user.uid}
+      />
     </>
   );
 };

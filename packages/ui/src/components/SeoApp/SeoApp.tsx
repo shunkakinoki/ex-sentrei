@@ -30,7 +30,7 @@ export default function SeoApp({
       nofollow
       noindex
       title={t(`seo:${type}.${appKey}`)}
-      titleTemplate={`${namespaceId || profile?.name}: %s`}
+      titleTemplate={`${namespaceId || profile?.name || "Sentrei"} - %s`}
     />
   );
 }
