@@ -1,3 +1,14 @@
+# [1.51.0](https://github.com/sentrei/sentrei/compare/v1.50.0...v1.51.0) (2020-09-07)
+
+### Features
+
+- 🎸 ini proper redirect ([e95b6d5](https://github.com/sentrei/sentrei/commit/e95b6d5e895f09a7548e8c4c01373e8a175ff96e))
+- 🎸 record string string ([ba01f27](https://github.com/sentrei/sentrei/commit/ba01f27e14f49c6914f32fca3ded5000570c6eab))
+
+### Performance Improvements
+
+- ⚡️ remove custom 404 ([dcdcf49](https://github.com/sentrei/sentrei/commit/dcdcf4940ea146f26e8ac65ee093335bd9419032))
+
 # [1.50.0](https://github.com/sentrei/sentrei/compare/v1.49.0...v1.50.0) (2020-09-07)
 
 ### Features
