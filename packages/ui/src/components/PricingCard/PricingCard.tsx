@@ -23,6 +23,7 @@ export interface Props {
   description3: string;
   description4: string;
   description5: string;
+  description6: string;
   href: string;
   perUser: string;
   price: string;
@@ -41,6 +42,7 @@ export default function PricingCard({
   description3,
   description4,
   description5,
+  description6,
   href,
   perUser,
   price,
@@ -80,6 +82,7 @@ export default function PricingCard({
           description3,
           description4,
           description5,
+          description6,
         ].map((line: string) => (
           <ListItem key={line}>
             <ListItemIcon>

@@ -17,7 +17,7 @@
       "description3": "包括3间房间",
       "description4": "帮助中心访问",
       "description5": "用户配置",
-      "price": "$ 0",
+      "price": "¥0",
       "title": "自由"
     },
     "perUser": "每个用户",
@@ -26,10 +26,10 @@
       "buttonText": "开始吧",
       "description1": "无限时间",
       "description2": "无限的用户",
-      "description3": "包含30间客房",
+      "description3": "包含15间客房",
       "description4": "帮助中心访问",
       "description5": "进阶使用者设定",
-      "price": "$ 30",
+      "price": "¥200",
       "subTitle": "最受欢迎",
       "title": "专业版"
     },

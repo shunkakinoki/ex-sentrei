@@ -32,6 +32,7 @@ export default function PricingScreen(): JSX.Element {
                 description3={t("pricing:card.free.description3")}
                 description4={t("pricing:card.free.description4")}
                 description5={t("pricing:card.free.description5")}
+                description6={t("pricing:card.free.description6")}
                 href="/signup"
                 perUser={t("pricing:card.perUser")}
                 price={t("pricing:card.free.price")}
@@ -49,6 +50,7 @@ export default function PricingScreen(): JSX.Element {
                 description3={t("pricing:card.pro.description3")}
                 description4={t("pricing:card.pro.description4")}
                 description5={t("pricing:card.pro.description5")}
+                description6={t("pricing:card.pro.description6")}
                 href="/signup"
                 perUser={t("pricing:card.perUser")}
                 price={t("pricing:card.pro.price")}
@@ -66,6 +68,7 @@ export default function PricingScreen(): JSX.Element {
                 description3={t("pricing:card.enterprise.description3")}
                 description4={t("pricing:card.enterprise.description4")}
                 description5={t("pricing:card.enterprise.description5")}
+                description6={t("pricing:card.enterprise.description6")}
                 href="/support"
                 perUser=""
                 price={t("pricing:card.enterprise.price")}
