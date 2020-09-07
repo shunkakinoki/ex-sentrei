@@ -4,7 +4,7 @@ const invokeMemberSpace = async (
   spaceId: string,
   inviteId: string,
 ): Promise<firebase.functions.HttpsCallableResult> => {
-  const service = functions.httpsCallable("v1-twilio-issueRoomToken");
+  const service = functions.httpsCallable("v1-invites-createMmeberSpace");
   return service({spaceId, inviteId});
 };
 
