@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {yupResolver} from "@hookform/resolvers";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
@@ -56,7 +54,7 @@ const AppFormFeedback = ({handleClick, profile}: Props): JSX.Element => {
     resolver: yupResolver(AppFormFeedbackSchema),
   });
 
-  const onSubmit = async (data: Record<string, any>): Promise<void> => {
+  const onSubmit = async (data: Record<string, string>): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.creating"));
     try {
       await createFeedback({

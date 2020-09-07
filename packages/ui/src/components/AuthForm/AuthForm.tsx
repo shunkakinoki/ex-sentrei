@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {yupResolver} from "@hookform/resolvers";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -78,7 +76,7 @@ export default function AuthForm({type}: Props): JSX.Element {
       .catch(err => snackbar("error", err.message));
   };
 
-  const onSubmit = async (data: Record<string, any>): Promise<void> => {
+  const onSubmit = async (data: Record<string, string>): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.loading"));
 
     switch (type) {

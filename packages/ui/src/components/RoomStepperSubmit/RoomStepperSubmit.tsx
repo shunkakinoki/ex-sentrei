@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import Box from "@material-ui/core/Box";
 import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
@@ -44,7 +42,7 @@ const RoomStepperSubmit = ({
   });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const onSubmit = async (data: Record<string, any>): Promise<void> => {
+  const onSubmit = async (data: Record<string, string>): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.creating"));
     try {
       await createRoom({

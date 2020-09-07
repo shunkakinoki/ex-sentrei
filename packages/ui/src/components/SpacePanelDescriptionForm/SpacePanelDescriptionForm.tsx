@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {yupResolver} from "@hookform/resolvers";
 import Box from "@material-ui/core/Box";
 import IconButton from "@material-ui/core/IconButton";
@@ -64,7 +62,7 @@ export default function SpacePanelDescriptionForm({
     }
   }, [watchInput, member.description]);
 
-  const onSubmit = async (data: Record<string, any>): Promise<void> => {
+  const onSubmit = async (data: Record<string, string>): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.updating"));
     try {
       await updateMember(spaceId, userId, {

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {yupResolver} from "@hookform/resolvers";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
@@ -40,7 +38,7 @@ const SpaceFormDescription = ({profile, space, user}: Props): JSX.Element => {
     resolver: yupResolver(SpaceFormDescriptionSchema),
   });
 
-  const onSubmit = async (data: Record<string, any>): Promise<void> => {
+  const onSubmit = async (data: Record<string, string>): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.editing"));
     try {
       await updateSpace(

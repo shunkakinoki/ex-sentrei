@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {yupResolver} from "@hookform/resolvers";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
@@ -73,7 +71,7 @@ export default function InviteSignupBoard({
       .catch(err => snackbar("error", err.message));
   };
 
-  const onSubmit = (data: Record<string, any>): void => {
+  const onSubmit = (data: Record<string, string>): void => {
     snackbar("info", t("snackbar:snackbar.loading"));
     try {
       signup(data.email, data.password, lang)
