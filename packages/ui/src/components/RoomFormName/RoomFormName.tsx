@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {yupResolver} from "@hookform/resolvers";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
@@ -39,7 +37,7 @@ const RoomFormName = ({disabled, profile, room, user}: Props): JSX.Element => {
     resolver: yupResolver(RoomFormNameSchema),
   });
 
-  const onSubmit = async (data: Record<string, any>): Promise<void> => {
+  const onSubmit = async (data: Record<string, string>): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.editing"));
     try {
       await updateRoom(

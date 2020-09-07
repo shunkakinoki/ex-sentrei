@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {yupResolver} from "@hookform/resolvers";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
@@ -13,7 +11,6 @@ import Typography from "@material-ui/core/Typography";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
-import {useRouter} from "next/router";
 import * as React from "react";
 import "firebase/auth";
 import {useForm, Controller} from "react-hook-form";
@@ -46,7 +43,6 @@ export default function InviteSignupBoard({
   const {backdrop} = useBackdrop();
   const {snackbar} = useSnackbar();
   const {t, lang} = useTranslation();
-  const {query} = useRouter();
 
   const InviteSignupBoardSchema = Yup.object().shape({
     email: Yup.string()
@@ -68,15 +64,14 @@ export default function InviteSignupBoard({
         auth.onAuthStateChanged(() => {
           invokeMemberSpace(spaceId, invite.id);
         });
-        if (query.redirect) {
-          Router.pushI18n(String(query.redirect));
-        }
+        setTimeout(() => {
+          Router.pushI18n("/dashboard");
+        }, 3000);
       })
       .catch(err => snackbar("error", err.message));
   };
 
-  // eslint-disable-next-line @typescript-eslint/require-await
-  const onSubmit = async (data: Record<string, any>): Promise<void> => {
+  const onSubmit = (data: Record<string, string>): void => {
     snackbar("info", t("snackbar:snackbar.loading"));
     try {
       signup(data.email, data.password, lang)
@@ -85,9 +80,9 @@ export default function InviteSignupBoard({
           auth.onAuthStateChanged(() => {
             invokeMemberSpace(spaceId, invite.id);
           });
-          if (query.redirect) {
-            Router.pushI18n(String(query.redirect));
-          }
+          setTimeout(() => {
+            Router.pushI18n("/dashboard");
+          }, 3000);
         })
         .catch(err => {
           snackbar("error", err.message);

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {yupResolver} from "@hookform/resolvers";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -35,7 +33,7 @@ const SpaceStepperName = ({atom, form}: Props): JSX.Element => {
     resolver: yupResolver(SpaceStepperIdSchema),
   });
 
-  const onSubmit = (data: Record<string, any>): void => {
+  const onSubmit = (data: Record<string, string>): void => {
     setActiveForm({id: activeForm.id, name: data.name});
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
