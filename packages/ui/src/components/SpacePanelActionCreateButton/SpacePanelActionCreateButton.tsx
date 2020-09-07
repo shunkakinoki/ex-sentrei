@@ -30,8 +30,8 @@ export default function SpacePanelActionCreateButton({
   };
 
   if (
-    (space.tier === "free" && !(space.roomCount > FreeTier.roomCount)) ||
-    (space.tier === "pro" && !(space.roomCount > ProTier.roomCount))
+    (space.tier === "free" && space.roomCount >= FreeTier.roomCount) ||
+    (space.tier === "pro" && space.roomCount >= ProTier.roomCount)
   ) {
     return (
       <>
@@ -43,7 +43,7 @@ export default function SpacePanelActionCreateButton({
         <Button
           fullWidth
           color="primary"
-          variant="outlined"
+          variant="contained"
           startIcon={<CreateIcon />}
           onClick={handleOpen}
         >
