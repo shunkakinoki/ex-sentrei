@@ -1,3 +1,9 @@
+# [1.44.0](https://github.com/sentrei/sentrei/compare/v1.43.0...v1.44.0) (2020-09-07)
+
+### Features
+
+- 🎸 upgrade package json ([61efdc7](https://github.com/sentrei/sentrei/commit/61efdc7a2ec66f945191f7d9ac7a83a4f04b5d80))
+
 # [1.43.0](https://github.com/sentrei/sentrei/compare/v1.42.0...v1.43.0) (2020-09-07)
 
 ### Features
