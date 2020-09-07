@@ -19,10 +19,11 @@ import "firebase/auth";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
+import invokeMemberSpace from "@sentrei/common/services/invokeMemberSpace";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
+import {auth} from "@sentrei/common/utils/firebase";
 import Invite from "@sentrei/types/models/Invite";
-
 import MuiLink from "@sentrei/ui/components/MuiLink";
 
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
@@ -39,7 +40,6 @@ export interface Props {
 export default function InviteSignupBoard({
   invite,
   namespaceId,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   spaceId,
 }: Props): JSX.Element {
   const classes = InviteSignupBoardStyles();
@@ -65,6 +65,9 @@ export default function InviteSignupBoard({
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
+        auth.onAuthStateChanged(() => {
+          invokeMemberSpace(spaceId, invite.id);
+        });
         if (query.redirect) {
           Router.pushI18n(String(query.redirect));
         }
@@ -79,6 +82,9 @@ export default function InviteSignupBoard({
       signup(data.email, data.password, lang)
         .then(() => {
           backdrop("loading");
+          auth.onAuthStateChanged(() => {
+            invokeMemberSpace(spaceId, invite.id);
+          });
           if (query.redirect) {
             Router.pushI18n(String(query.redirect));
           }
