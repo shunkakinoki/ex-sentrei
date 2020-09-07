@@ -1,3 +1,14 @@
+# [1.49.0](https://github.com/sentrei/sentrei/compare/v1.48.0...v1.49.0) (2020-09-07)
+
+### Features
+
+- 🎸 complete room space not null logic ([5e04797](https://github.com/sentrei/sentrei/commit/5e04797386a197694a58453bf40a08bfdbd75514))
+- 🎸 ini 404 page ([f19d0e4](https://github.com/sentrei/sentrei/commit/f19d0e4cb0f631e7b6fbf07d908d4217e3f14a6b))
+- 🎸 ini home screen ([b51ac09](https://github.com/sentrei/sentrei/commit/b51ac0983a543f699cf9a027f9e5f46686626aee))
+- 🎸 ini signout service ([f0354bc](https://github.com/sentrei/sentrei/commit/f0354bc53dc0d7003f92a477f3ade6c1fc6b73b9))
+- 🎸 refactor entire next js loading logic ([47366b9](https://github.com/sentrei/sentrei/commit/47366b9108ff19006b0c73df2ddd2d8158a7f313))
+- 🎸 refactor loading logic for data and profile ([dfc2d1e](https://github.com/sentrei/sentrei/commit/dfc2d1ec341d4e68681d0889b45b3485f8196df5))
+
 # [1.48.0](https://github.com/sentrei/sentrei/compare/v1.47.0...v1.48.0) (2020-09-07)
 
 ### Features
