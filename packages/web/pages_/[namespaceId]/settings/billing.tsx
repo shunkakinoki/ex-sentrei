@@ -34,7 +34,9 @@ const SpaceBillingPage: NextPage = () => {
   }, [query.namespaceId]);
 
   if (!user && typeof window !== "undefined") {
-    Router.pushI18n("/");
+    setTimeout(() => {
+      Router.pushI18n("/");
+    }, 3000);
   }
 
   if (user === undefined || !profile || !spaceId) {
