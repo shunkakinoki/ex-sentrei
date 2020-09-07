@@ -36,7 +36,7 @@ const InviteId: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (user === undefined || !spaceId) {
+  if (user === undefined || spaceId === undefined) {
     return (
       <>
         <SentreiHeader landingKey="invite" />
@@ -45,7 +45,7 @@ const InviteId: NextPage = () => {
     );
   }
 
-  if (!user) {
+  if (!user || !spaceId) {
     return (
       <>
         <SentreiHeader landingKey="invite" />
