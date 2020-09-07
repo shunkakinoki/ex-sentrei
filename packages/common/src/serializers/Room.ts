@@ -1,10 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import serializeFirebaseDate from "@sentrei/common/serializers/Date";
-import Actions from "@sentrei/types/models/Actions";
-import Analytics from "@sentrei/types/models/Analytics";
 import Room from "@sentrei/types/models/Room";
-import Stats from "@sentrei/types/models/Stats";
 
 export const serializeRoom = (
   snap: firebase.firestore.DocumentSnapshot<Room.Response>,
@@ -14,9 +11,7 @@ export const serializeRoom = (
   return {
     ...data,
     id: snap.id,
-    actions: data.actions as Actions.Get,
-    analytics: data.analytics as Analytics.Get,
-    stats: data.stats as Stats.NumberFields,
+    participantCount: data.participantCount as number,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };
@@ -30,9 +25,7 @@ export const serializeAdminRoom = (
   return {
     ...data,
     id: snap.id,
-    actions: data.actions as Actions.Get,
-    analytics: data.analytics as Analytics.Get,
-    stats: data.stats as Stats.Get,
+    participantCount: data.participantCount as number,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
   };

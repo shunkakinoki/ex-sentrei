@@ -1,9 +1,6 @@
 import Stripe from "stripe";
 
-import Actions from "@sentrei/types/models/Actions";
-import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
-import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Space {
   export type Tiers = "free" | "pro" | "enterprise";
@@ -16,15 +13,14 @@ declare namespace Space {
   };
 
   interface Fields extends EditableFields {
-    actions: Actions.Fields;
-    analytics: Analytics.Fields;
+    memberCount: FirebaseFirestore.FieldValue | number;
     namespaceId: string;
-    stats: Stats.Fields;
-    tier: Tiers;
+    roomCount: FirebaseFirestore.FieldValue | number;
     stripeId: string;
     subscriptionId?: string;
     subscriptionStatus?: Stripe.Subscription.Status;
     subscriptionTrial?: boolean;
+    tier: Tiers;
   }
 
   export type AdminUpdate = Partial<Fields>;
@@ -37,9 +33,8 @@ declare namespace Space {
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
-    actions: Actions.NumberFields;
-    analytics: Analytics.Get;
-    stats: Stats.NumberFields;
+    memberCount: number;
+    roomCount: number;
   }
 
   export interface Snapshot extends Get {

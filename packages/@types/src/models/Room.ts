@@ -1,7 +1,4 @@
-import Actions from "@sentrei/types/models/Actions";
-import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
-import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Room {
   export type Types = "breakout" | "focus";
@@ -15,9 +12,7 @@ declare namespace Room {
   };
 
   interface Fields extends EditableFields {
-    actions: Actions.Fields;
-    analytics: Analytics.Fields;
-    stats: Stats.Fields;
+    participantCount: FirebaseFirestore.FieldValue | number;
     spaceId: string;
     type: Types;
   }
@@ -32,9 +27,7 @@ declare namespace Room {
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
-    actions: Actions.Get;
-    analytics: Analytics.Get;
-    stats: Stats.NumberFields;
+    participantCount: number;
   }
 
   export interface Snapshot extends Get {

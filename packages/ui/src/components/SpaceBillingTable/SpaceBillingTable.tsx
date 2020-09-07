@@ -55,7 +55,7 @@ export default function SpaceBillingTable({space}: Props): JSX.Element {
                   (subscription.price.currency === "usd" ? 100 : 1)}
             </TableCell>
             <TableCell align="right">
-              {!space?.subscriptionId && space.stats.members}
+              {!space?.subscriptionId && space.memberCount}
               {space?.subscriptionId && subscription && subscription.quantity}
             </TableCell>
             <TableCell align="right">
