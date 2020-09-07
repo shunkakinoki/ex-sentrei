@@ -46,21 +46,17 @@ const SpaceStepperSubmit = ({
     snackbar("info", t("snackbar:snackbar.creating"));
     try {
       await createSpace({
-        actions: {},
-        analytics: {
-          duration: 0,
-          score: 0,
-        },
         createdAt: timestamp,
         createdBy: profile,
         createdByUid: user.uid,
         description: null,
         photo: null,
         photoHash: null,
+        memberCount: 0,
         name: activeForm.name,
         namespaceId: activeForm.id,
+        roomCount: 0,
         stripeId: "",
-        stats: {},
         tier: "free",
         updatedAt: timestamp,
         updatedBy: profile,

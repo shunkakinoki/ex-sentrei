@@ -48,20 +48,15 @@ const RoomStepperSubmit = ({
     snackbar("info", t("snackbar:snackbar.creating"));
     try {
       await createRoom({
-        actions: {},
-        analytics: {
-          duration: 0,
-          score: 0,
-        },
         createdAt: timestamp,
         createdBy: profile,
         createdByUid: user.uid,
         description: null,
         emoji: ":sushi:",
+        participantCount: 0,
         photo: null,
         photoHash: null,
         name: activeForm.name,
-        stats: {},
         spaceId,
         type: activeForm.type,
         updatedAt: timestamp,
