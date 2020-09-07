@@ -1,3 +1,21 @@
+# [1.48.0](https://github.com/sentrei/sentrei/compare/v1.47.0...v1.48.0) (2020-09-07)
+
+### Features
+
+- 🎸 correct initiation threshold ([832681f](https://github.com/sentrei/sentrei/commit/832681f6e5a161b3cab96f7827dc86b782eb8ccf))
+- 🎸 ini billing dialog ([c70285c](https://github.com/sentrei/sentrei/commit/c70285cc637d5fd4fa16a6e01b27f0712c481195))
+- 🎸 ini billing dialog ([3e6d5ec](https://github.com/sentrei/sentrei/commit/3e6d5ecb73f11141f43331cb1911a5d3f96ef391))
+- 🎸 ini billing dialog for space invite ([eb59784](https://github.com/sentrei/sentrei/commit/eb597843cea2e7aa1268bc8b172c375eec03e5b1))
+- 🎸 ini billing dialog room create ([fd53ef3](https://github.com/sentrei/sentrei/commit/fd53ef317b9661911d8b2e4854fb81763dadb6df))
+- 🎸 ini timeout redirect for router ([7ff70ae](https://github.com/sentrei/sentrei/commit/7ff70ae255fa82ea2a7648023840fff2befe311e))
+- 🎸 refactor loader component ([df9430e](https://github.com/sentrei/sentrei/commit/df9430e92d2d7dc57dea92ee4bbd4d26ee0a31ff))
+
+### Performance Improvements
+
+- ⚡️ correct tier limit ([a41069f](https://github.com/sentrei/sentrei/commit/a41069ffc8cde97c551b87f21f115809a6329b6b))
+- ⚡️ ini i18n json for billing common pricing ([b0e52dc](https://github.com/sentrei/sentrei/commit/b0e52dcce8aff710e501f75801ff3282075139ce))
+- ⚡️ refactor correct currency ordering left ([8240d34](https://github.com/sentrei/sentrei/commit/8240d34320c4e6ad8b22e5dc7b8ef2b9a44686a4))
+
 # [1.47.0](https://github.com/sentrei/sentrei/compare/v1.46.0...v1.47.0) (2020-09-07)
 
 ### Features
