@@ -46,8 +46,8 @@ export default function RoomCreate({
   }
 
   if (
-    (space.tier === "free" && space.roomCount >= FreeTier.roomCount) ||
-    (space.tier === "pro" && space.roomCount >= ProTier.roomCount)
+    (space.tier === "free" && space.roomCount > FreeTier.roomCount) ||
+    (space.tier === "pro" && space.roomCount > ProTier.roomCount)
   ) {
     return (
       <>

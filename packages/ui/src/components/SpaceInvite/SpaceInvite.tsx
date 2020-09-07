@@ -64,7 +64,7 @@ export default function SpaceInvite({
     return <Error statusCode={404} />;
   }
 
-  if (space.tier === "free" && space.memberCount < FreeTier.memberCount) {
+  if (space.tier === "free" && space.memberCount > FreeTier.memberCount) {
     return (
       <GridSettings namespaceId={namespaceId} tabSpaceKey="invite" type="space">
         <BillingDialog
