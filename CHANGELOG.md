@@ -1,3 +1,13 @@
+# [1.43.0](https://github.com/sentrei/sentrei/compare/v1.42.0...v1.43.0) (2020-09-07)
+
+### Features
+
+- 🎸 ini i18n snackbar ([d3e14fe](https://github.com/sentrei/sentrei/commit/d3e14fe9d93845c3b397eb73f23274b3848366fb))
+
+### Performance Improvements
+
+- ⚡️ refactor pricing screen mobile padding ([bc9e2f1](https://github.com/sentrei/sentrei/commit/bc9e2f186a7aac9d58cf80aa4798ff91f763192a))
+
 # [1.42.0](https://github.com/sentrei/sentrei/compare/v1.41.2...v1.42.0) (2020-09-06)
 
 ### Features
