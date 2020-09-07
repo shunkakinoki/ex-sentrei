@@ -28,11 +28,11 @@ export default function HomeScreen(): JSX.Element {
       <Typography variant="h5" align="center" color="textSecondary">
         {t("_error:error.pageNotFound")}
       </Typography>
-      <Box py={6} />
+      <Box py={3} />
       <Grid container justify="center">
         <Grid item xs={12} sm={8} md={6}>
           <Box p={1}>
-            <MuiButton fullWidth href="/" color="primary" variant="contained">
+            <MuiButton fullWidth href="/" color="primary" variant="outlined">
               {t("common:common.goHome")}
             </MuiButton>
           </Box>
