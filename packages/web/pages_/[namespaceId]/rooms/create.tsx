@@ -61,7 +61,14 @@ const CreatePage: NextPage = () => {
           type="space"
         />
       )}
-      {user && <RoomCreate spaceId={spaceId} profile={profile} user={user} />}
+      {user && (
+        <RoomCreate
+          spaceId={spaceId}
+          namespaceId={String(query.namespaceId)}
+          profile={profile}
+          user={user}
+        />
+      )}
     </>
   );
 };
