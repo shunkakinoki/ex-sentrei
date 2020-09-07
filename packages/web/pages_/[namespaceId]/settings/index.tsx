@@ -34,7 +34,7 @@ const SpaceSettingsPage: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (user === undefined) {
+  if (user === undefined || profile === undefined || spaceId === undefined) {
     return (
       <>
         <SentreiAppHeader

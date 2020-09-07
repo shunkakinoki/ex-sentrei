@@ -18,7 +18,7 @@ const SpaceCreate = dynamic(
 const Create: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
-  if (user === undefined) {
+  if (user === undefined || profile === undefined) {
     return (
       <>
         <SentreiAppHeader skeleton tabUserKey="create" type="user" />

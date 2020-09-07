@@ -28,7 +28,7 @@ const SupportPage: NextPage = () => {
     setNamespaceType();
   }, [query.namespaceId]);
 
-  if (user === undefined) {
+  if (user === undefined || profile === undefined || type === undefined) {
     return (
       <>
         <SentreiAppHeader

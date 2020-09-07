@@ -82,7 +82,13 @@ const RoomsPage = ({
 
   const {user, profile} = React.useContext(AuthContext);
 
-  if (user === undefined) {
+  if (
+    user === undefined ||
+    profile === undefined ||
+    spaceId === undefined ||
+    spaceData === undefined ||
+    membersData === undefined
+  ) {
     return (
       <>
         <SentreiAppHeader

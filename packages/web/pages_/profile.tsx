@@ -11,7 +11,7 @@ import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 const Profile: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
-  if (user === undefined) {
+  if (user === undefined || profile === undefined) {
     return (
       <>
         <SentreiAppHeader skeleton tabUserKey="profile" type="user" />

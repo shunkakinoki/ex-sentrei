@@ -17,7 +17,7 @@ const NotificationScreen = dynamic(
 const Notifications: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
-  if (user === undefined) {
+  if (user === undefined || profile === undefined) {
     return (
       <>
         <SentreiAppHeader skeleton tabUserKey="notifications" type="user" />
