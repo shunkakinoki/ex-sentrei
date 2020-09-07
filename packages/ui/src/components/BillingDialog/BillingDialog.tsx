@@ -1,10 +1,9 @@
-import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import {useTheme} from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -12,11 +11,15 @@ import * as React from "react";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 
 export interface Props {
+  message: string;
+  upgrade: string;
   namespaceId: string;
   open: boolean;
   handleClose: () => void;
 }
 export default function BillingDialog({
+  message,
+  upgrade,
   namespaceId,
   open,
   handleClose,
@@ -35,25 +38,22 @@ export default function BillingDialog({
         aria-describedby="billing-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          Use Googles location service?
+          {t("common:common.billingUpgrade")}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="billing-dialog-description">
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
+          <Typography gutterBottom>{message}</Typography>
+          <Typography gutterBottom>{upgrade}</Typography>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            {t("common:common.cancel")}
-          </Button>
           <MuiButton
             href="/[namespaceId]/settings/billing"
             as={`${namespaceId}/settings/billing`}
+            fullWidth
             color="primary"
+            variant="contained"
             autoFocus
           >
-            {t("common:common.billing")}
+            {t("common:common.billingGoTo")}
           </MuiButton>
         </DialogActions>
       </Dialog>

@@ -26,7 +26,7 @@ export default function SpacePanelActionInviteButton({
   };
 
   const handleClose = (): void => {
-    setOpen(true);
+    setOpen(false);
   };
 
   if (space.tier === "free" && space.memberCount >= FreeTier.memberCount) {
@@ -34,6 +34,8 @@ export default function SpacePanelActionInviteButton({
       <>
         <BillingDialog
           open={open}
+          message={t("billing:billing.free.memberLimit")}
+          upgrade={t("billing:billing.free.upgrade")}
           namespaceId={namespaceId}
           handleClose={handleClose}
         />

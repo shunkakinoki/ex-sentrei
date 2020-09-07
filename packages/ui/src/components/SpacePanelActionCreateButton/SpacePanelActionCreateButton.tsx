@@ -26,7 +26,7 @@ export default function SpacePanelActionCreateButton({
   };
 
   const handleClose = (): void => {
-    setOpen(true);
+    setOpen(false);
   };
 
   if (
@@ -37,6 +37,16 @@ export default function SpacePanelActionCreateButton({
       <>
         <BillingDialog
           open={open}
+          message={
+            space.tier === "free"
+              ? t("billing:billing.free.roomLimit")
+              : t("billing:billing.pro.roomLimit")
+          }
+          upgrade={
+            space.tier === "free"
+              ? t("billing:billing.free.upgrade")
+              : t("billing:billing.pro.upgrade")
+          }
           namespaceId={namespaceId}
           handleClose={handleClose}
         />

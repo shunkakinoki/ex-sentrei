@@ -6,6 +6,8 @@
     "avatar": "Avatar",
     "back": "Back",
     "billing": "Billing",
+    "billingUpgrade": "Upgrade Plan",
+    "billingGoTo": "Go to Billing",
     "cancel": "Cancel",
     "create": "Create",
     "createRoom": "Create Room",
