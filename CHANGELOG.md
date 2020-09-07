@@ -1,3 +1,10 @@
+# [1.45.0](https://github.com/sentrei/sentrei/compare/v1.44.0...v1.45.0) (2020-09-07)
+
+### Features
+
+- 🎸 completely remove blog ([afec05d](https://github.com/sentrei/sentrei/commit/afec05dd039a1e76eea706847bbe5f2c13a8836a))
+- 🎸 upgrade yarn blog ([5b03601](https://github.com/sentrei/sentrei/commit/5b0360111cbe7a524181aa2882b24a9e25c0d0c3))
+
 # [1.44.0](https://github.com/sentrei/sentrei/compare/v1.43.0...v1.44.0) (2020-09-07)
 
 ### Features
