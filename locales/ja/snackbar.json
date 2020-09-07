@@ -1,0 +1,19 @@
+{
+  "snackbar": {
+    "cleared": "クリア！",
+    "clearing": "クリアしています...",
+    "clipboard": "クリップボードへのリンクをコピーしました！",
+    "created": "作成した ！",
+    "creating": "作成...",
+    "deleted": "削除しました！",
+    "deleting": "削除しています...",
+    "edited": "編集しました！",
+    "editing": "編集...",
+    "inviting": "招待しています...",
+    "loading": "読み込んでいます...",
+    "quiting": "終了しています...",
+    "quitted": "やめた！",
+    "updated": "更新しました ！",
+    "updating": "更新しています..."
+  }
+}

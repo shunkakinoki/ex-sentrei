@@ -28,7 +28,7 @@ const SpaceQuitBoard = ({
   const {t} = useTranslation();
 
   const onSubmit = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.quiting"));
+    snackbar("info", t("snackbar:snackbar.quiting"));
     try {
       await deleteMember(spaceId, userId)?.then(() => {
         snackbar("success");

@@ -23,7 +23,7 @@ export default function LandingBanner(): JSX.Element {
   const {push, query} = useRouter();
 
   const google = (): void => {
-    snackbar("info", t("common:snackbar.loading"));
+    snackbar("info", t("snackbar:snackbar.loading"));
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");

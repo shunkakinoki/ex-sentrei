@@ -22,7 +22,7 @@ export default function SpaceBillingCheckout({
   const {snackbar} = useSnackbar();
 
   const handleClick = (): void => {
-    snackbar("info", t("common:snackbar.loading"));
+    snackbar("info", t("snackbar:snackbar.loading"));
     backdrop("loading");
     if (role === "admin") {
       accessCheckoutLink(spaceId, lang, window.location.origin)

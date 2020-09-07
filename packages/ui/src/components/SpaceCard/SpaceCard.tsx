@@ -77,7 +77,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
               <CopyToClipboard
                 text={`${window.location.origin}/${space.namespaceId}`}
                 onCopy={(): void =>
-                  snackbar("success", t("common:snackbar.clipboard"))
+                  snackbar("success", t("snackbar:snackbar.clipboard"))
                 }
               >
                 <IconButton aria-label="share">

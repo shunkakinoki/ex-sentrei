@@ -57,7 +57,7 @@ const AppFormFeedback = ({handleClick, profile}: Props): JSX.Element => {
   });
 
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
-    snackbar("info", t("common:snackbar.creating"));
+    snackbar("info", t("snackbar:snackbar.creating"));
     try {
       await createFeedback({
         createdAt: timestamp,

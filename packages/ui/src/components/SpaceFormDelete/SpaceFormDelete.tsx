@@ -17,7 +17,7 @@ const SpaceFormDelete = ({namespaceId}: Props): JSX.Element => {
   const {t} = useTranslation();
 
   const onSubmit = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.deleting"));
+    snackbar("info", t("snackbar:snackbar.deleting"));
     try {
       await deleteSpace(namespaceId)?.then(() => {
         snackbar("success");

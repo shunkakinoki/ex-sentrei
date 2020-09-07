@@ -32,7 +32,7 @@ export default function NotificationCard({
   const [display, setDisplay] = React.useState<boolean>(true);
 
   const handleDelete = async (): Promise<void> => {
-    snackbar("info", t("common:snackbar.deleting"));
+    snackbar("info", t("snackbar:snackbar.deleting"));
     try {
       await deleteNotification(userId, notification.id)?.then(() => {
         snackbar("success");

@@ -61,7 +61,7 @@ export default function InviteSignupBoard({
   });
 
   const google = (): void => {
-    snackbar("info", t("common:snackbar.loading"));
+    snackbar("info", t("snackbar:snackbar.loading"));
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
@@ -74,7 +74,7 @@ export default function InviteSignupBoard({
 
   // eslint-disable-next-line @typescript-eslint/require-await
   const onSubmit = async (data: Record<string, any>): Promise<void> => {
-    snackbar("info", t("common:snackbar.loading"));
+    snackbar("info", t("snackbar:snackbar.loading"));
     try {
       signup(data.email, data.password, lang)
         .then(() => {

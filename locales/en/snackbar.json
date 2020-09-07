@@ -1,0 +1,19 @@
+{
+  "snackbar": {
+    "cleared": "Cleared !",
+    "clearing": "Clearing...",
+    "clipboard": "Copied link to clipboard !",
+    "created": "Created !",
+    "creating": "Creating...",
+    "deleted": "Deleted !",
+    "deleting": "Deleting...",
+    "edited": "Edited !",
+    "editing": "Editing...",
+    "inviting": "Inviting...",
+    "loading": "Loading...",
+    "quiting": "Quiting...",
+    "quitted": "Quitted !",
+    "updated": "Updated !",
+    "updating": "Updating..."
+  }
+}
