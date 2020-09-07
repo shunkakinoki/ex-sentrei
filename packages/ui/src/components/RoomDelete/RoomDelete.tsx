@@ -41,7 +41,7 @@ export default function RoomDelete({
     );
   }
 
-  if (room === null) {
+  if (!room) {
     return <Error statusCode={404} />;
   }
 

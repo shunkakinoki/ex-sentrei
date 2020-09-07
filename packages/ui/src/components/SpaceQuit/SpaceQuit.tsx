@@ -40,7 +40,7 @@ export default function SpaceQuit({
     );
   }
 
-  if (space === null) {
+  if (!space) {
     return <Error statusCode={404} />;
   }
 
