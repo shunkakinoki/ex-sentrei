@@ -1,3 +1,9 @@
+# [1.46.0](https://github.com/sentrei/sentrei/compare/v1.45.0...v1.46.0) (2020-09-07)
+
+### Features
+
+- 🎸 complete refactor model ([3963cf1](https://github.com/sentrei/sentrei/commit/3963cf1565da5d39c611d1e81f0194db4a688a71))
+
 # [1.45.0](https://github.com/sentrei/sentrei/compare/v1.44.0...v1.45.0) (2020-09-07)
 
 ### Features
