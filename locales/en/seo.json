@@ -1,5 +1,6 @@
 {
   "landing": {
+    "404": "404 - Not Found",
     "about": "About",
     "credits": "Thank you.",
     "invite": "Invitation",
@@ -11,8 +12,7 @@
     "reset-password": "Reset Password",
     "signup": "Signup",
     "support": "Support",
-    "terms": "Terms and Conditions",
-    "404": "404 - Not Found"
+    "terms": "Terms and Conditions"
   },
   "room": {
     "home": "Home",
