@@ -1,3 +1,14 @@
+# [1.50.0](https://github.com/sentrei/sentrei/compare/v1.49.0...v1.50.0) (2020-09-07)
+
+### Features
+
+- 🎸 ini get static props for inviteId ([df28198](https://github.com/sentrei/sentrei/commit/df28198490ecbce3a9939ad1f87902addca7dd92))
+
+### Performance Improvements
+
+- ⚡️ ini const emoji ([744e9f5](https://github.com/sentrei/sentrei/commit/744e9f5635d6c0c6c1a645e60a8e97a616adf224))
+- ⚡️ remove spaceId for loading invite signup ([ee43af8](https://github.com/sentrei/sentrei/commit/ee43af8d182607f93b6d7fe0b7fa41d931b49968))
+
 # [1.49.0](https://github.com/sentrei/sentrei/compare/v1.48.0...v1.49.0) (2020-09-07)
 
 ### Features
