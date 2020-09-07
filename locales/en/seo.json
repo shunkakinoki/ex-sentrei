@@ -11,7 +11,8 @@
     "reset-password": "Reset Password",
     "signup": "Signup",
     "support": "Support",
-    "terms": "Terms and Conditions"
+    "terms": "Terms and Conditions",
+    "404": "404 - Not Found"
   },
   "room": {
     "home": "Home",

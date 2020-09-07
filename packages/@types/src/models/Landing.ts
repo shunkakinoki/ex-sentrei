@@ -10,6 +10,7 @@ export type LandingKey =
   | "reset-password"
   | "signup"
   | "support"
-  | "terms";
+  | "terms"
+  | "404";
 
 export type LandingType = "about" | "default" | "landing";
