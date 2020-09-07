@@ -1,0 +1,13 @@
+{
+  "billing": {
+    "free": {
+      "memberLimit": "免费计划仅支持10个会员。",
+      "roomLimit": "免费计划仅支持3个房间。",
+      "upgrade": "立即升级到Pro Plan，包括2周免费试用！"
+    },
+    "pro": {
+      "roomLimit": "免费计划仅支持15个房间。",
+      "upgrade": "升级到企业计划以最适合您的需求！"
+    }
+  }
+}

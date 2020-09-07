@@ -6,6 +6,8 @@
     "avatar": "头像",
     "back": "背部",
     "billing": "开票",
+    "billingGoTo": "前往帐单",
+    "billingUpgrade": "升级计划",
     "cancel": "取消",
     "create": "创造",
     "createRoom": "创建房间",
