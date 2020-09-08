@@ -1,3 +1,9 @@
+# [1.54.0](https://github.com/sentrei/sentrei/compare/v1.53.0...v1.54.0) (2020-09-08)
+
+### Features
+
+- 🎸 ini mixpanel analytics ([fb98858](https://github.com/sentrei/sentrei/commit/fb98858b21012426dfd521ecd2915c8601f58bca))
+
 # [1.53.0](https://github.com/sentrei/sentrei/compare/v1.52.1...v1.53.0) (2020-09-08)
 
 ### Features
