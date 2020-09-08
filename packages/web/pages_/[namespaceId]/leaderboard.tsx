@@ -57,7 +57,6 @@ const LeaderboardPage = ({
 
   if (
     user === undefined ||
-    profile === undefined ||
     spaceId === undefined ||
     membersData === undefined
   ) {
@@ -65,6 +64,7 @@ const LeaderboardPage = ({
       <>
         <SentreiAppHeader
           skeleton
+          profile={profile ?? undefined}
           tabSpaceKey="leaderboard"
           type="space"
           namespaceId={String(query.namespaceId)}
