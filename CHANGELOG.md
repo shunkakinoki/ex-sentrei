@@ -1,3 +1,11 @@
+# [1.53.0](https://github.com/sentrei/sentrei/compare/v1.52.1...v1.53.0) (2020-09-08)
+
+### Features
+
+- 🎸 improve next seo index follow ([301d169](https://github.com/sentrei/sentrei/commit/301d169cb0d94b25c65bf02a5f87e9784fae851b))
+- 🎸 ini auth screen ([0a12c88](https://github.com/sentrei/sentrei/commit/0a12c888889ec4dd0e642e9924a0e1776d7fab11))
+- 🎸 refactor auth form ([d6cab38](https://github.com/sentrei/sentrei/commit/d6cab383c9451393614e15a8b9fc7516c6b10a1b))
+
 ## [1.52.1](https://github.com/sentrei/sentrei/compare/v1.52.0...v1.52.1) (2020-09-08)
 
 ### Bug Fixes
