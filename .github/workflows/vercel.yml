@@ -62,14 +62,6 @@ jobs:
           state: "failure"
           deployment_id: ${{ steps.production.outputs.deployment_id }}
           target_url: https://sentrei.com
-      - if: github.ref == 'refs/heads/main'
-        uses: chrnorm/deployment-action@releases/v1
-        id: production
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.branch }}
-          target_url: https://sentrei.com
-          environment: "Vercel preview"
       - if: github.ref != 'refs/heads/main'
         id: branch
         run: |
