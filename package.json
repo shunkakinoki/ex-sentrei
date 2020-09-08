@@ -39,7 +39,7 @@
     "publish:lerna": "lerna publish from-package --yes --dist-tag ${DIST_TAG}",
     "release": "semantic-release",
     "release-test": "semantic-release -d",
-    "sentry": "lerna run sentry --stream --parallel",
+    "sentry:release": "lerna run sentry:release --stream --scope={@sentrei/web}",
     "sort-package-json:check": "sort-package-json 'package.json' 'packages/*/package.json' --check",
     "sort-package-json:fix": "sort-package-json 'package.json' 'packages/*/package.json'",
     "test": "yarn run depcheck && yarn run lint && yarn run release-test",
