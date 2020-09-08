@@ -32,7 +32,7 @@
     "main": "yarn run main:local && yarn run deploy",
     "main:local": "yarn run swap:main && firebase use main",
     "relative-ci": "relative-ci-agent",
-    "sentry": "sentry-cli releases new -p sentrei ${SENTRY_RELEASE} && sentry-cli releases set-commits --auto ${SENTRY_RELEASE} && sentry-cli releases finalize ${SENTRY_RELEASE} && sentry-cli releases deploys ${SENTRY_RELEASE} new -e ${SENTRY_ENVIRONMENT}",
+    "sentry:release": "sentry-cli releases new -p sentrei ${SENTRY_RELEASE} && sentry-cli releases set-commits --auto ${SENTRY_RELEASE} && sentry-cli releases finalize ${SENTRY_RELEASE} && sentry-cli releases deploys ${SENTRY_RELEASE} new -e ${SENTRY_ENVIRONMENT}",
     "start": "next start",
     "swap:alpha": "cp alpha.firebase.json firebase.json",
     "swap:beta": "cp beta.firebase.json firebase.json",
