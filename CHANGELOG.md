@@ -1,3 +1,14 @@
+# [1.56.0](https://github.com/sentrei/sentrei/compare/v1.55.0...v1.56.0) (2020-09-08)
+
+### Features
+
+- 🎸 ini sentry release ([7b2c37c](https://github.com/sentrei/sentrei/commit/7b2c37ca97ab798853ac4a921cbb6d3ee20e77d5))
+- 🎸 upgrade depcheck config ([6a6cd94](https://github.com/sentrei/sentrei/commit/6a6cd9408fc6b27a159a15a831a22498d5347ab0))
+
+### Performance Improvements
+
+- ⚡️ ini sentry node ([77d6352](https://github.com/sentrei/sentrei/commit/77d63528dc5e388a8ba5f7c75e52bff8ce3abd33))
+
 # [1.55.0](https://github.com/sentrei/sentrei/compare/v1.54.0...v1.55.0) (2020-09-08)
 
 ### Features
