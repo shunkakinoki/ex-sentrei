@@ -47,6 +47,7 @@ const Authentication = (): null => {
       avatar: user.photo,
       name: user.name,
       email: user.email,
+      userId: user.uid,
       username: user.namespaceId,
     });
 

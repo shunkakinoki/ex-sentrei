@@ -73,6 +73,7 @@ export default function SpaceScreen({
       recordGroup(space.id, {
         namespaceId: space.namespaceId,
         tier: space.tier,
+        spaceId: space.id,
         stripeId: space.stripeId,
       });
     }
