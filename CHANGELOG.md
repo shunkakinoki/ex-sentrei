@@ -1,3 +1,9 @@
+## [1.51.1](https://github.com/sentrei/sentrei/compare/v1.51.0...v1.51.1) (2020-09-08)
+
+### Performance Improvements
+
+- ⚡️ refactor free tier member count ([4e5cc19](https://github.com/sentrei/sentrei/commit/4e5cc19c9937abfaac57d8fa8c3fad7ab0f6a950))
+
 # [1.51.0](https://github.com/sentrei/sentrei/compare/v1.50.0...v1.51.0) (2020-09-07)
 
 ### Features
