@@ -1,3 +1,9 @@
+# [1.55.0](https://github.com/sentrei/sentrei/compare/v1.54.0...v1.55.0) (2020-09-08)
+
+### Features
+
+- 🎸 ini profile appheader ([b0611bf](https://github.com/sentrei/sentrei/commit/b0611bfcd68b1a7274f8dc85ec5d7f129bf84a7b))
+
 # [1.54.0](https://github.com/sentrei/sentrei/compare/v1.53.0...v1.54.0) (2020-09-08)
 
 ### Features
