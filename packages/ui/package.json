@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/ui",
-  "version": "1.52.0",
+  "version": "1.52.1-beta.2",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -40,9 +40,9 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@metomic/react": "^0.1.2",
     "@papercups-io/chat-widget": "^1.1.0-beta.0",
-    "@sentrei/common": "^1.41.2",
-    "@sentrei/types": "^1.41.2",
-    "@sentrei/video": "^1.41.2",
+    "@sentrei/common": "^1.52.1-beta.1",
+    "@sentrei/types": "^1.52.1-beta.1",
+    "@sentrei/video": "^1.52.1-beta.1",
     "@sentry/browser": "^5.21.1",
     "@stripe/stripe-js": "^1.9.0",
     "@types/classnames": "^2.2.10",
