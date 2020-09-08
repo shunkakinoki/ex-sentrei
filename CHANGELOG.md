@@ -1,3 +1,13 @@
+## [1.52.1-beta.1](https://github.com/sentrei/sentrei/compare/v1.52.0...v1.52.1-beta.1) (2020-09-08)
+
+### Bug Fixes
+
+- 🐛 remove unnecessary semicolon ([5c83a22](https://github.com/sentrei/sentrei/commit/5c83a22c20828d9053abd85aea3c2024f7026316))
+
+### Performance Improvements
+
+- ⚡️ ini vercel update ([d529f6b](https://github.com/sentrei/sentrei/commit/d529f6b4f284e981237b306ab43d670b0348bb41))
+
 # [1.52.0](https://github.com/sentrei/sentrei/compare/v1.51.2...v1.52.0) (2020-09-08)
 
 ### Features
