@@ -1,57 +1,18 @@
-const path = require("path");
 const withPlugins = require("next-compose-plugins");
-const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
-// const withSourceMaps = require("@zeit/next-source-maps")();
+const withSourceMaps = require("@zeit/next-source-maps")();
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
-const {StatsWriterPlugin} = require("webpack-stats-plugin");
 
-// @ts-ignore
-const {SentryWebpackPlugin} = require("@sentry/webpack-plugin");
-
-const withBundleStats = require("next-plugin-bundle-stats")({
-  baseline: true,
-  compare: false,
-  json: true,
-});
-
-// @ts-ignore
-const withOptimizedImages = require("next-optimized-images")({
-  inlineImageLimit: -1,
-  imagesFolder: "images",
-  imagesName: "[name]-[hash].[ext]",
-  handleImages: ["jpeg", "png", "ico", "svg", "webp"],
-  optimizeImages: true,
-  optimizeImagesInDev: true,
-  defaultImageLoader: "img-loader",
-  mozjpeg: {
-    quality: 80,
-  },
-  optipng: {
-    optimizationLevel: 3,
-  },
-  pngquant: false,
-  svgo: {},
-  webp: {
-    preset: "default",
-    quality: 75,
-  },
-});
-
-const aliases = {
-  "@assets": path.join(__dirname, "assets"),
-  "@sentrei/common": path.join(__dirname, "../common"),
-  "@sentrei/ui": path.join(__dirname, "../ui"),
-  "@sentrei/web": path.join(__dirname, "src"),
-};
+const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 
 const branch = String(process.env.VERCEL_GITHUB_COMMIT_REF).replace(
   "refs/heads/",
   "",
 );
+
 const nextConfig = {
   target: "experimental-serverless-trace",
   trailingSlash: false,
@@ -61,6 +22,7 @@ const nextConfig = {
     SEGMENT_ID: process.env.SEGMENT_ID,
   },
   serverRuntimeConfig: {
+    rootDir: __dirname,
     FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL,
     FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PRIVATE_KEY,
   },
@@ -87,55 +49,25 @@ const nextConfig = {
     STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
     VERCEL_GITHUB_COMMIT_REF: branch,
   },
-  webpack: config => {
-    config.node = {
-      fs: "empty",
-      child_process: "empty",
-      net: "empty",
-      dns: "empty",
-      tls: "empty",
-    };
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      ...aliases,
-    };
-    config.resolve.modules.push(path.resolve("./"));
-    if (process.env.NODE_ENV !== "production") {
-      config.plugins.push(
-        new StatsWriterPlugin({
-          filename: "webpack-stats.json",
-          stats: {
-            context: "./src",
-            assets: true,
-            entrypoints: true,
-            chunks: true,
-            modules: true,
-          },
-        }),
-      );
+  webpack: (config, options) => {
+    if (!options.isServer) {
+      config.resolve.alias["@sentry/node"] = "@sentry/browser";
     }
-    if (process.env.SENTRY_DNS) {
-      config.plugins.push(
-        new SentryWebpackPlugin({
-          include: ".next",
-          ignore: ["node_modules", "cypress", "test"],
-          urlPrefix: "~/_next",
-        }),
-      );
-    }
-    config.resolve.symlinks = true;
+    config.plugins.push(
+      // @ts-ignore
+      new SentryWebpackPlugin({
+        include: ".next",
+        ignore: ["node_modules"],
+        stripPrefix: ["webpack://_N_E/"],
+        urlPrefix: `~/_next`,
+      }),
+    );
+
     return config;
   },
 };
 
 module.exports = withPlugins(
-  [
-    [withBundleAnalyzer],
-    [withBundleStats],
-    [withCSS],
-    [withOptimizedImages],
-    [withSass],
-    // [withSourceMaps], #1462
-  ],
+  [[withBundleAnalyzer, withSass, withSourceMaps]],
   nextConfig,
 );
