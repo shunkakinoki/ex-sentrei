@@ -14,7 +14,9 @@ export default function FooterCopyright(): JSX.Element {
       </Typography>
       <Typography variant="body2" color="textSecondary" align="center">
         Environment:{" "}
-        {process.env.VERCEL_GITHUB_COMMIT_REF ?? process.env.SENTRY_ENVIRONMENT}
+        {process.env.SENTRY_ENVIRONMENT === "dev"
+          ? process.env.SENTRY_ENVIRONMENT
+          : process.env.VERCEL_GITHUB_COMMIT_REF}
         <br />
         Version: v{process.env.SENTREI_VERSION}
       </Typography>

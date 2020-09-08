@@ -34,7 +34,6 @@ const BRANCH = String(process.env.VERCEL_GITHUB_COMMIT_REF).replace(
   "refs/heads/",
   "",
 );
-const VERSION = Number(require("./package.json").version);
 
 const nextConfig = {
   target: "experimental-serverless-trace",
@@ -61,14 +60,14 @@ const nextConfig = {
     METOMIC_PROJECT_ID: process.env.METOMIC_PROJECT_ID,
     PAPERCUPS_ID: process.env.PAPERCUPS_ID,
     SEGMENT_ID: process.env.SEGMENT_ID,
-    SENTREI_VERSION: VERSION,
+    SENTREI_VERSION: require("./package.json").version,
     SENTRY_DSN: process.env.SENTRY_DSN,
     SENTRY_ENVIRONMENT:
       process.env.SENTRY_ENVIRONMENT ||
       new Set(["alpha", "beta", "main"]).has(BRANCH)
         ? BRANCH
         : "dev",
-    SENTRY_RELEASE: VERSION,
+    SENTRY_RELEASE: require("./package.json").version,
     STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
     VERCEL_GITHUB_COMMIT_REF: BRANCH,
   },
@@ -80,7 +79,7 @@ const nextConfig = {
         ignore: ["node_modules"],
         stripPrefix: ["webpack://_N_E/"],
         urlPrefix: `~/_next`,
-        release: VERSION,
+        release: require("./package.json").version,
       }),
     );
     return config;
