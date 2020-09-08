@@ -76,12 +76,12 @@ jobs:
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - if: github.ref != 'refs/heads/main'
         uses: chrnorm/deployment-action@releases/v1
-        id: production
+        id: preview
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.branch }}
           target_url: https://${{ steps.branch.outputs.branch }}.sentrei.com
-          environment: "Vercel production"
+          environment: "Vercel preview"
       - if: github.ref != 'refs/heads/main'
         timeout-minutes: 300
         uses: amondnet/vercel-action@v19.0.1+3
@@ -97,12 +97,12 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "success"
-          deployment_id: ${{ steps.production.outputs.deployment_id }}
+          deployment_id: ${{ steps.preview.outputs.deployment_id }}
           target_url: https://${{ steps.branch.outputs.branch }}.sentrei.com
       - if: failure() && github.ref != 'refs/heads/main'
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "failure"
-          deployment_id: ${{ steps.production.outputs.deployment_id }}
+          deployment_id: ${{ steps.preview.outputs.deployment_id }}
           target_url: https://${{ steps.branch.outputs.branch }}.sentrei.com
