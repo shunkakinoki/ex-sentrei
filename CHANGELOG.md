@@ -1,3 +1,11 @@
+## [1.52.1-beta.2](https://github.com/sentrei/sentrei/compare/v1.52.1-beta.1...v1.52.1-beta.2) (2020-09-08)
+
+### Performance Improvements
+
+- ⚡️ ini deployment environment ([4b67c2a](https://github.com/sentrei/sentrei/commit/4b67c2aeabb7c9f6c0c947baaa24bfbed5ed559a))
+- ⚡️ ini preview vercel ([ecc54ef](https://github.com/sentrei/sentrei/commit/ecc54efbe4abcb58ed2d1befec4a57bd34831420))
+- ⚡️ refactor package upgrade ([1b4a2c4](https://github.com/sentrei/sentrei/commit/1b4a2c48083c4c52581a8572c3446e7fca2f20ce))
+
 ## [1.52.1-beta.1](https://github.com/sentrei/sentrei/compare/v1.52.0...v1.52.1-beta.1) (2020-09-08)
 
 ### Bug Fixes
