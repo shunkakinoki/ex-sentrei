@@ -5,12 +5,11 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
+
 import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import {useRouter} from "next/router";
 import * as React from "react";
-import "firebase/auth";
 import {useForm, Controller} from "react-hook-form";
 
 import * as Yup from "yup";
@@ -20,8 +19,9 @@ import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 
 import {auth} from "@sentrei/common/utils/firebase";
-import MuiLink from "@sentrei/ui/components/MuiLink";
-
+import AuthFormGoogleButton from "@sentrei/ui/components/AuthFormGoogleButton";
+import AuthFormLoginGrid from "@sentrei/ui/components/AuthFormLoginGrid";
+import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -128,23 +128,12 @@ export default function AuthForm({type}: Props): JSX.Element {
     <Grid container spacing={3}>
       <Box p={1} />
       {type !== "reset" && (
-        <Button
+        <AuthFormGoogleButton
           onClick={(): void => google()}
-          color="primary"
-          variant="outlined"
-          className={classes.button}
-        >
-          <img
-            width="20px"
-            alt="Google sign-in"
-            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-            className={classes.google}
-          />
-          <Typography>
-            {type === "login" && t("auth:login.google")}
-            {type === "signup" && t("auth:signup.google")}
-          </Typography>
-        </Button>
+          title={
+            type === "login" ? t("auth:login.google") : t("auth:signup.google")
+          }
+        />
       )}
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -215,39 +204,8 @@ export default function AuthForm({type}: Props): JSX.Element {
           {type === "signup" && t("auth:signup.button")}
         </Button>
       </form>
-      {type === "login" && (
-        <Grid container>
-          <Grid item xs>
-            <MuiLink href="/reset-password" variant="body2">
-              {t("auth:login.forgotPassword")}
-            </MuiLink>
-          </Grid>
-          <Grid item>
-            <MuiLink href="/signup" variant="body2">
-              {t("auth:login.dontHaveSignup")}
-            </MuiLink>
-          </Grid>
-        </Grid>
-      )}
-      {type === "signup" && (
-        <>
-          <Grid container justify="center">
-            <Grid item>
-              <MuiLink href="/login" variant="body2">
-                {t("auth:signup.alreadyHaveLogin")}
-              </MuiLink>
-            </Grid>
-          </Grid>
-          <Box p={1} />
-          <Grid container justify="center">
-            <Grid item>
-              <MuiLink href="/terms" variant="body2">
-                {t("auth:signup.byAgreeTerms")}
-              </MuiLink>
-            </Grid>
-          </Grid>
-        </>
-      )}
+      {type === "login" && <AuthFormLoginGrid />}
+      {type === "signup" && <AuthFormSignupGrid />}
     </Grid>
   );
 }

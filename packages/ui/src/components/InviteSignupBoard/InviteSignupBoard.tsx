@@ -21,7 +21,7 @@ import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 import {auth} from "@sentrei/common/utils/firebase";
 import Invite from "@sentrei/types/models/Invite";
-import MuiLink from "@sentrei/ui/components/MuiLink";
+import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
 
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -203,21 +203,7 @@ export default function InviteSignupBoard({
             {t("auth:signup.button")}
           </Button>
         </form>
-        <Grid container justify="center">
-          <Grid item>
-            <MuiLink href="/login" variant="body2">
-              {t("auth:signup.alreadyHaveLogin")}
-            </MuiLink>
-          </Grid>
-        </Grid>
-        <Box p={1} />
-        <Grid container justify="center">
-          <Grid item>
-            <MuiLink href="/terms" variant="body2">
-              {t("auth:signup.byAgreeTerms")}
-            </MuiLink>
-          </Grid>
-        </Grid>
+        <AuthFormSignupGrid />
       </Grid>
     </Container>
   );
