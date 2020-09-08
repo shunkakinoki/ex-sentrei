@@ -2,9 +2,12 @@ name: Vercel
 on:
   push:
     branches:
+      - alpha
+      - beta
       - main
 jobs:
   vercel:
+    if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,14 +31,16 @@ jobs:
           yarn install --frozen-lockfile
       - run: |
           yarn run typescript
-      - uses: chrnorm/deployment-action@releases/v1
+      - if: github.ref == 'refs/heads/main'
+        uses: chrnorm/deployment-action@releases/v1
         id: production
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.branch }}
           target_url: https://sentrei.com
           environment: "Vercel production"
-      - timeout-minutes: 300
+      - if: github.ref == 'refs/heads/main'
+        timeout-minutes: 300
         uses: amondnet/vercel-action@v19.0.1+3
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
@@ -43,17 +48,61 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: "--prod"
-      - if: success()
+      - if: success() && github.ref == 'refs/heads/main'
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "success"
           deployment_id: ${{ steps.production.outputs.deployment_id }}
           target_url: https://sentrei.com
-      - if: failure()
+      - if: failure() && github.ref == 'refs/heads/main'
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "failure"
           deployment_id: ${{ steps.production.outputs.deployment_id }}
           target_url: https://sentrei.com
+      - if: github.ref == 'refs/heads/main'
+        uses: chrnorm/deployment-action@releases/v1
+        id: production
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.branch }}
+          target_url: https://sentrei.com
+          environment: "Vercel preview"
+      - if: github.ref != 'refs/heads/main'
+        id: branch
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      - if: github.ref != 'refs/heads/main'
+        uses: chrnorm/deployment-action@releases/v1
+        id: production
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.branch }}
+          target_url: https://${{ steps.branch.outputs.branch }}.sentrei.com
+          environment: "Vercel production"
+      - if: github.ref != 'refs/heads/main'
+        timeout-minutes: 300
+        uses: amondnet/vercel-action@v19.0.1+3
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          alias-domains: |
+            ${{ steps.branch.outputs.branch }}.sentrei.com
+      - if: success() && github.ref != 'refs/heads/main'
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.production.outputs.deployment_id }}
+          target_url: https://${{ steps.branch.outputs.branch }}.sentrei.com
+      - if: failure() && github.ref != 'refs/heads/main'
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.production.outputs.deployment_id }}
+          target_url: https://${{ steps.branch.outputs.branch }}.sentrei.com

@@ -19,7 +19,7 @@ const Signup: NextPage = () => {
     <>
       <SentreiHeader landingKey="signup" />
       <OneTap user={user} />
-      <AuthForm type="signup" />;
+      <AuthForm type="signup" />
     </>
   );
 };

@@ -23,14 +23,14 @@ class ErrorBoundary extends Component<ErrorProps, ErrorState> {
     return {hasError: true};
   }
 
-  componentDidCatch(error: any, errorInfo: any): void {
+  componentDidCatch(err: any, errInfo: any): void {
     trackEvent("exception", {
-      error: String(error || error.message),
-      description: String(errorInfo),
+      error: err,
+      description: errInfo,
     });
     Sentry.withScope(scope => {
-      Object.keys(errorInfo).forEach(key => scope.setExtra(key, errorInfo));
-      Sentry.captureException(error);
+      Object.keys(errInfo).forEach(key => scope.setExtra(key, errInfo));
+      Sentry.captureException(err);
     });
   }
 

@@ -6,7 +6,7 @@ import Segment from "@sentrei/ui/components/Segment";
 export default function Metomic(): JSX.Element {
   return (
     <MetomicProvider
-      autoblocking
+      autoblocking={false}
       debug
       projectId={process.env.METOMIC_PROJECT_ID}
     >

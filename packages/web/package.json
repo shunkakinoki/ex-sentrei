@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/web",
-  "version": "1.51.0",
+  "version": "1.52.0",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -48,10 +48,12 @@
     "@sentrei/common": "^1.41.2",
     "@sentrei/types": "^1.41.2",
     "@sentrei/ui": "^1.41.2",
-    "@sentry/webpack-plugin": "^1.12.0",
+    "@sentry/browser": "^5.15.5",
+    "@sentry/integrations": "5.20.1",
+    "@sentry/node": "^5.15.5",
+    "@sentry/webpack-plugin": "^1.11.1",
     "@types/react": "^16.9.49",
-    "@zeit/next-sass": "^1.0.1",
-    "@zeit/next-source-maps": "^0.0.3",
+    "@zeit/next-source-maps": "0.0.4-canary.1",
     "babel-plugin-styled-components": "^1.11.1",
     "next": "^9.5.3",
     "next-compose-plugins": "^2.2.0",

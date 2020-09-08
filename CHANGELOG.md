@@ -1,3 +1,29 @@
+# [1.52.0](https://github.com/sentrei/sentrei/compare/v1.51.2...v1.52.0) (2020-09-08)
+
+### Features
+
+- 🎸 complete refactor common utils sentry ([040d40f](https://github.com/sentrei/sentrei/commit/040d40f7f2f50608b30ba9a2868e7d1130a04a4a))
+- 🎸 ini custom error ([c0c09c3](https://github.com/sentrei/sentrei/commit/c0c09c3934ddce80bdf941cafab11646c49bea5c))
+- 🎸 ini error segment track event ([bddb03f](https://github.com/sentrei/sentrei/commit/bddb03f2ad7bcabd5bfa6c707192ae8805612ab4))
+- 🎸 ini sentry log ([6af6eed](https://github.com/sentrei/sentrei/commit/6af6eedb47a2191818aa5676c06266645a22a620))
+
+### Performance Improvements
+
+- ⚡️ ini with optimized images ([ee073ea](https://github.com/sentrei/sentrei/commit/ee073ea3ee21bb84892cf5c27e8b1385a86ae512))
+- ⚡️ refactor sentry node to browser ([46e84f0](https://github.com/sentrei/sentrei/commit/46e84f0f8be68770efc1261c72a320679616ce06))
+
+## [1.51.2](https://github.com/sentrei/sentrei/compare/v1.51.1...v1.51.2) (2020-09-08)
+
+### Bug Fixes
+
+- 🐛 correct count billing ([6ed1df4](https://github.com/sentrei/sentrei/commit/6ed1df4ed59d8fb18cf389a49eb223cb5696b621))
+
+## [1.51.1](https://github.com/sentrei/sentrei/compare/v1.51.0...v1.51.1) (2020-09-08)
+
+### Performance Improvements
+
+- ⚡️ refactor free tier member count ([4e5cc19](https://github.com/sentrei/sentrei/commit/4e5cc19c9937abfaac57d8fa8c3fad7ab0f6a950))
+
 # [1.51.0](https://github.com/sentrei/sentrei/compare/v1.50.0...v1.51.0) (2020-09-07)
 
 ### Features

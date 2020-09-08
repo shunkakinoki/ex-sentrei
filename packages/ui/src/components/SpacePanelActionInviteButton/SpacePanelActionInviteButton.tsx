@@ -29,7 +29,7 @@ export default function SpacePanelActionInviteButton({
     setOpen(false);
   };
 
-  if (space.tier === "free" && space.memberCount > FreeTier.memberCount) {
+  if (space.tier === "free" && space.memberCount >= FreeTier.memberCount) {
     return (
       <>
         <BillingDialog

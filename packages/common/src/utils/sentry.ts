@@ -1,10 +1,14 @@
 import * as Sentry from "@sentry/browser";
+import {RewriteFrames} from "@sentry/integrations";
 import get from "lodash.get";
+import getConfig from "next/config";
 
 import isBrowser from "@sentrei/common/utils/isBrowser";
 
+const config = getConfig();
+const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
 Sentry.init({
-  enabled: process.env.NODE_ENV !== "production",
+  enabled: true,
   dsn: process.env.SENTRY_DSN,
   environment: process.env.SENTRY_ENVIRONMENT,
   release: process.env.SENTRY_RELEASE,
@@ -14,6 +18,15 @@ Sentry.init({
     }
     return event;
   },
+  integrations: [
+    new RewriteFrames({
+      iteratee: (frame: Sentry.StackFrame): Sentry.StackFrame => {
+        // eslint-disable-next-line no-param-reassign
+        frame.filename = frame?.filename?.replace(distDir, "app:///_next");
+        return frame;
+      },
+    }),
+  ],
 });
 
 Sentry.configureScope(scope => {

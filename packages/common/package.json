@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/common",
-  "version": "1.51.0",
+  "version": "1.52.0",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "@segment/snippet": "^4.13.1",
     "@sentrei/types": "^1.41.2",
     "@sentry/browser": "^5.21.1",
+    "@sentry/integrations": "5.20.1",
     "@stripe/stripe-js": "^1.9.0",
     "@types/lodash.get": "^4.4.6",
     "@types/nprogress": "^0.2.0",
