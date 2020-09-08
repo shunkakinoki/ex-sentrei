@@ -26,23 +26,23 @@ import "@sentrei/common/utils/nprogress";
 import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
 
-const config = getConfig();
-const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
-Sentry.init({
-  enabled: true,
-  integrations: [
-    new RewriteFrames({
-      iteratee: (frame: Sentry.StackFrame): Sentry.StackFrame => {
-        if (frame.filename) {
+if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
+  const config = getConfig();
+  const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
+  Sentry.init({
+    enabled: process.env.NODE_ENV === "production",
+    integrations: [
+      new RewriteFrames({
+        iteratee: (frame: Sentry.StackFrame): Sentry.StackFrame => {
           // eslint-disable-next-line no-param-reassign
-          frame.filename = frame.filename.replace(distDir, "app:///_next");
-        }
-        return frame;
-      },
-    }),
-  ],
-  dsn: process.env.SENTRY_DSN,
-});
+          frame.filename = frame?.filename?.replace(distDir, "app:///_next");
+          return frame;
+        },
+      }),
+    ],
+    dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+  });
+}
 
 const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
   const [user, setUser] = React.useState<User.Get | null | undefined>(
