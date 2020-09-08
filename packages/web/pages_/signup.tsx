@@ -4,7 +4,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 
-import AuthForm from "@sentrei/ui/components/AuthForm";
+import AuthScreen from "@sentrei/ui/components/AuthScreen";
 import OneTap from "@sentrei/ui/components/OneTap";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
@@ -19,7 +19,7 @@ const Signup: NextPage = () => {
     <>
       <SentreiHeader landingKey="signup" />
       <OneTap user={user} />
-      <AuthForm type="signup" />
+      <AuthScreen type="signup" />
     </>
   );
 };
