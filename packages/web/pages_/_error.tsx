@@ -3,6 +3,8 @@ import {NextPageContext} from "next";
 import NextError, {ErrorProps} from "next/error";
 import * as React from "react";
 
+import {trackEvent} from "@sentrei/common/utils/segment";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PromiseValue<T extends Promise<any>> = T extends Promise<infer R> ? R : T;
 
@@ -24,6 +26,12 @@ const getInitialProps = async (
     return {statusCode: 404};
   }
   if (err) {
+    trackEvent("exception", {
+      error: err.name,
+      description: err.message,
+      statusCode: err.statusCode,
+      stack: err.stack,
+    });
     Sentry.captureException(err);
     await Sentry.flush(2000);
     return errorInitialProps;
@@ -47,6 +55,12 @@ const CustomError = (
     !("hasGetInitialPropsRun" in ctx && ctx.hasGetInitialPropsRun) &&
     ctx.err
   ) {
+    trackEvent("exception", {
+      error: ctx.err.name,
+      description: ctx.err.message,
+      statusCode: ctx.err.statusCode,
+      stack: ctx.err.stack,
+    });
     Sentry.captureException(ctx.err);
   }
 
