@@ -1,14 +1,14 @@
 import {NextPage} from "next";
 import * as React from "react";
 
-import AuthForm from "@sentrei/ui/components/AuthForm";
+import AuthScreen from "@sentrei/ui/components/AuthScreen";
 
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const ResetPassword: NextPage = () => {
   return (
     <>
-      <SentreiHeader landingKey="reset-password" /> <AuthForm type="reset" />
+      <SentreiHeader landingKey="reset-password" /> <AuthScreen type="reset" />
     </>
   );
 };
