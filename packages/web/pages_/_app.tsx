@@ -18,6 +18,7 @@ import User from "@sentrei/types/models/User";
 import Authentication from "@sentrei/ui/components/Authentication";
 import Backdrop from "@sentrei/ui/components/Backdrop";
 import Snackbar from "@sentrei/ui/components/Snackbar";
+
 import "@sentrei/common/utils/nprogress";
 import "@sentrei/common/utils/sentry";
 import "@sentrei/web/styles/global.scss";
