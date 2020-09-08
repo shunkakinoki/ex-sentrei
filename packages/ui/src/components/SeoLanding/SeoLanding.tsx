@@ -13,8 +13,8 @@ export default function SeoLanding({landingKey}: Props): JSX.Element {
 
   return (
     <NextSeo
-      nofollow
-      noindex
+      noindex={false}
+      nofollow={false}
       title={t(`seo:landing.${landingKey}`)}
       titleTemplate="%s"
     />
