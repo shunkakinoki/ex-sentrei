@@ -1,4 +1,4 @@
-import * as Sentry from "@sentry/node";
+import * as Sentry from "@sentry/browser";
 import {NextPageContext} from "next";
 import NextError, {ErrorProps} from "next/error";
 import * as React from "react";
