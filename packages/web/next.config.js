@@ -1,5 +1,4 @@
 const withPlugins = require("next-compose-plugins");
-const withSass = require("@zeit/next-sass");
 const withSourceMaps = require("@zeit/next-source-maps")();
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
@@ -8,10 +7,34 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 
-const branch = String(process.env.VERCEL_GITHUB_COMMIT_REF).replace(
+// @ts-ignore
+const withOptimizedImages = require("next-optimized-images")({
+  inlineImageLimit: -1,
+  imagesFolder: "images",
+  imagesName: "[name]-[hash].[ext]",
+  handleImages: ["jpeg", "png", "ico", "svg", "webp"],
+  optimizeImages: true,
+  optimizeImagesInDev: true,
+  defaultImageLoader: "img-loader",
+  mozjpeg: {
+    quality: 80,
+  },
+  optipng: {
+    optimizationLevel: 3,
+  },
+  pngquant: false,
+  svgo: {},
+  webp: {
+    preset: "default",
+    quality: 75,
+  },
+});
+
+const BRANCH = String(process.env.VERCEL_GITHUB_COMMIT_REF).replace(
   "refs/heads/",
   "",
 );
+const VERSION = Number(require("./package.json").version);
 
 const nextConfig = {
   target: "experimental-serverless-trace",
@@ -38,16 +61,16 @@ const nextConfig = {
     METOMIC_PROJECT_ID: process.env.METOMIC_PROJECT_ID,
     PAPERCUPS_ID: process.env.PAPERCUPS_ID,
     SEGMENT_ID: process.env.SEGMENT_ID,
-    SENTREI_VERSION: require("./package.json").version,
+    SENTREI_VERSION: VERSION,
     SENTRY_DSN: process.env.SENTRY_DSN,
     SENTRY_ENVIRONMENT:
       process.env.SENTRY_ENVIRONMENT ||
-      new Set(["alpha", "beta", "main"]).has(branch)
-        ? branch
+      new Set(["alpha", "beta", "main"]).has(BRANCH)
+        ? BRANCH
         : "dev",
-    SENTRY_RELEASE: Number(require("./package.json").version),
+    SENTRY_RELEASE: VERSION,
     STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
-    VERCEL_GITHUB_COMMIT_REF: branch,
+    VERCEL_GITHUB_COMMIT_REF: BRANCH,
   },
   webpack: (config, options) => {
     if (!options.isServer) {
@@ -68,6 +91,6 @@ const nextConfig = {
 };
 
 module.exports = withPlugins(
-  [[withBundleAnalyzer, withSass, withSourceMaps]],
+  [withBundleAnalyzer, withSourceMaps, [withOptimizedImages]],
   nextConfig,
 );
