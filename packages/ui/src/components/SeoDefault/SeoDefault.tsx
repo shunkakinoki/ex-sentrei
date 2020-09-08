@@ -11,6 +11,14 @@ export default function SeoDefault(): JSX.Element {
         locale: "en_US",
         url: "https://sentrei.com",
         site_name: "sentrei.com",
+        images: [
+          {
+            url: "https://www.sentrei.com/logo.png",
+            width: 500,
+            height: 500,
+            alt: "Sentrei Logo Image",
+          },
+        ],
       }}
       twitter={{
         handle: "@sentrei_com",

@@ -1,5 +1,5 @@
 export const FreeTier = {
-  memberCount: 3,
+  memberCount: 10,
   roomCount: 3,
 };
 
