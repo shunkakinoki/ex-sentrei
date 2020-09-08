@@ -1,3 +1,9 @@
+## [1.51.2](https://github.com/sentrei/sentrei/compare/v1.51.1...v1.51.2) (2020-09-08)
+
+### Bug Fixes
+
+- 🐛 correct count billing ([6ed1df4](https://github.com/sentrei/sentrei/commit/6ed1df4ed59d8fb18cf389a49eb223cb5696b621))
+
 ## [1.51.1](https://github.com/sentrei/sentrei/compare/v1.51.0...v1.51.1) (2020-09-08)
 
 ### Performance Improvements
