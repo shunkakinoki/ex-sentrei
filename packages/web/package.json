@@ -44,7 +44,6 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@next/bundle-analyzer": "^9.5.2",
-    "@segment/snippet": "^4.13.1",
     "@sentrei/common": "^1.52.1-beta.1",
     "@sentrei/types": "^1.52.1-beta.1",
     "@sentrei/ui": "^1.52.1-beta.1",
@@ -68,8 +67,7 @@
     "react-optimized-image": "^0.4.1",
     "recoil": "^0.0.10",
     "styled-components": "^5.2.0",
-    "use-dark-mode": "^2.3.1",
-    "webpack-stats-plugin": "^0.3.2"
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.1",
@@ -81,8 +79,7 @@
     "babel-plugin-istanbul": "^6.0.0",
     "cross-env": "^7.0.2",
     "cypress": "^5.1.0",
-    "start-server-and-test": "^1.11.3",
-    "ts-loader": "^8.0.3"
+    "start-server-and-test": "^1.11.3"
   },
   "publishConfig": {
     "access": "public"

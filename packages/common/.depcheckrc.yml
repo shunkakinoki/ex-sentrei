@@ -1,3 +1,3 @@
-ignores: []
+ignores: ["@types/segment-analytics"]
 ignore-path: .gitignore
 skip-missing: true
