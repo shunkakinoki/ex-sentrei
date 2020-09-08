@@ -1,6 +1,5 @@
 const withPlugins = require("next-compose-plugins");
 const withSourceMaps = require("@zeit/next-source-maps")();
-
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -71,7 +70,10 @@ const nextConfig = {
     STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
     VERCEL_GITHUB_COMMIT_REF: BRANCH,
   },
-  webpack: config => {
+  webpack: (config, options) => {
+    if (!options.isServer) {
+      config.resolve.alias["@sentry/browser"] = "@sentry/node";
+    }
     config.plugins.push(
       // @ts-ignore
       new SentryWebpackPlugin({
