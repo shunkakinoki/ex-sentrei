@@ -1,3 +1,9 @@
+## [1.56.1](https://github.com/sentrei/sentrei/compare/v1.56.0...v1.56.1) (2020-09-08)
+
+### Bug Fixes
+
+- 🐛 sentry release ([59d8c31](https://github.com/sentrei/sentrei/commit/59d8c31919679bc481b89a36632de1d8092832d5))
+
 # [1.56.0](https://github.com/sentrei/sentrei/compare/v1.55.0...v1.56.0) (2020-09-08)
 
 ### Features
