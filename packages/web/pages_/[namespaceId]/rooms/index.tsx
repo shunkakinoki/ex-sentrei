@@ -84,7 +84,6 @@ const RoomsPage = ({
 
   if (
     user === undefined ||
-    profile === undefined ||
     spaceId === undefined ||
     spaceData === undefined ||
     membersData === undefined
@@ -93,6 +92,7 @@ const RoomsPage = ({
       <>
         <SentreiAppHeader
           skeleton
+          profile={profile ?? undefined}
           tabSpaceKey="rooms"
           type="space"
           namespaceId={String(query.namespaceId)}

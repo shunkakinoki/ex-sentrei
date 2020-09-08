@@ -56,7 +56,6 @@ const MembersPage = ({
 
   if (
     user === undefined ||
-    profile === undefined ||
     spaceId === undefined ||
     membersData === undefined
   ) {
@@ -64,6 +63,7 @@ const MembersPage = ({
       <>
         <SentreiAppHeader
           skeleton
+          profile={profile ?? undefined}
           tabSpaceKey="members"
           type="space"
           namespaceId={String(query.namespaceId)}

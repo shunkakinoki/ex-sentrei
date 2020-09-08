@@ -31,11 +31,12 @@ const Quit: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (user === undefined || profile === undefined || spaceId === undefined) {
+  if (user === undefined || spaceId === undefined) {
     return (
       <>
         <SentreiAppHeader
           skeleton
+          profile={profile ?? undefined}
           tabRoomKey="settings"
           type="room"
           namespaceId={String(query.namespaceId)}

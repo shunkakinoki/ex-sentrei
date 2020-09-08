@@ -34,11 +34,12 @@ const SpaceBillingPage: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (user === undefined || profile === undefined || spaceId === undefined) {
+  if (user === undefined || spaceId === undefined) {
     return (
       <>
         <SentreiAppHeader
           skeleton
+          profile={profile ?? undefined}
           tabSpaceKey="settings"
           type="space"
           namespaceId={String(query.namespaceId)}

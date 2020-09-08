@@ -17,10 +17,15 @@ const NotificationScreen = dynamic(
 const Notifications: NextPage = () => {
   const {user, profile} = React.useContext(AuthContext);
 
-  if (user === undefined || profile === undefined) {
+  if (user === undefined) {
     return (
       <>
-        <SentreiAppHeader skeleton tabUserKey="notifications" type="user" />
+        <SentreiAppHeader
+          skeleton
+          profile={profile ?? undefined}
+          tabUserKey="notifications"
+          type="user"
+        />
         <SkeletonForm />
       </>
     );
