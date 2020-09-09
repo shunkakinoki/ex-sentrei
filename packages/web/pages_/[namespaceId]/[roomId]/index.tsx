@@ -11,7 +11,7 @@ import Loader from "@sentrei/ui/components/Loader";
 
 const RoomScreen = dynamic(
   () => {
-    return import("@sentrei/ui/components/RoomScreen");
+    return import("@sentrei/video/RoomScreen");
   },
   {ssr: false},
 );
