@@ -1,22 +1,21 @@
 import {Typography} from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 
+import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
 import Toolbar from "@material-ui/core/Toolbar";
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, FormEvent, useState} from "react";
 
+import LocalAudioLevelIndicator from "@sentrei/video/components/MenuBar/DeviceSelector/LocalAudioLevelIndicator";
+import FlipCameraButton from "@sentrei/video/components/MenuBar/FlipCameraButton";
+import Menu from "@sentrei/video/components/MenuBar/Menu";
+import ToggleFullscreenButton from "@sentrei/video/components/MenuBar/ToggleFullScreenButton";
 import useRoomState from "@sentrei/video/hooks/useRoomState";
 import useVideoContext from "@sentrei/video/hooks/useVideoContext";
-
 import {useAppState} from "@sentrei/video/state";
-
-import LocalAudioLevelIndicator from "./DeviceSelector/LocalAudioLevelIndicator";
-import FlipCameraButton from "./FlipCameraButton";
-import Menu from "./Menu";
-import ToggleFullscreenButton from "./ToggleFullScreenButton";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -62,24 +61,41 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function MenuBar(): JSX.Element {
   const classes = useStyles();
-  const {profile, isFetching} = useAppState();
-  const {isConnecting} = useVideoContext();
+  const {user, getToken, isFetching} = useAppState();
+  const {isConnecting, connect, isAcquiringLocalTracks} = useVideoContext();
   const roomState = useRoomState();
 
-  const [name, setName] = useState<string>(profile?.name || "");
-  const [roomName] = useState<string>("");
+  const [name, setName] = useState<string>(user?.displayName || "");
+  const [roomName, setRoomName] = useState<string>("");
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setName(event.target.value);
+  };
+
+  const handleRoomNameChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    setRoomName(event.target.value);
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    // If this app is deployed as a twilio function, don't change the URL because routing isn't supported.
+    if (!window.location.origin.includes("twil.io")) {
+      window.history.replaceState(
+        null,
+        "",
+        window.encodeURI(`/room/${roomName}${window.location.search || ""}`),
+      );
+    }
+    getToken(name, roomName).then(token => connect(token));
   };
 
   return (
     <AppBar className={classes.container} position="static">
       <Toolbar className={classes.toolbar}>
         {roomState === "disconnected" ? (
-          <form className={classes.form}>
+          <form className={classes.form} onSubmit={handleSubmit}>
             {window.location.search.includes("customIdentity=true") ||
-            !profile?.name ? (
+            !user?.displayName ? (
               <TextField
                 id="menu-name"
                 label="Name"
@@ -90,9 +106,32 @@ export default function MenuBar(): JSX.Element {
               />
             ) : (
               <Typography className={classes.displayName} variant="body1">
-                {profile.name}
+                {user.displayName}
               </Typography>
             )}
+            <TextField
+              id="menu-room"
+              label="Room"
+              className={classes.textField}
+              value={roomName}
+              onChange={handleRoomNameChange}
+              margin="dense"
+            />
+            <Button
+              className={classes.joinButton}
+              type="submit"
+              color="primary"
+              variant="contained"
+              disabled={
+                isAcquiringLocalTracks ||
+                isConnecting ||
+                !name ||
+                !roomName ||
+                isFetching
+              }
+            >
+              Join Room
+            </Button>
             {(isConnecting || isFetching) && (
               <CircularProgress className={classes.loadingSpinner} />
             )}

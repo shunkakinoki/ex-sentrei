@@ -11,7 +11,7 @@ import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 import {useAppState} from "@sentrei/video/state";
 
 export default function Menu(): JSX.Element {
-  const {profile} = useAppState();
+  const {user, signOut} = useAppState();
   const {room, localTracks} = useVideoContext();
 
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -23,8 +23,9 @@ export default function Menu(): JSX.Element {
   const handleSignOut = useCallback(() => {
     room.disconnect?.();
     localTracks.forEach(track => track.stop());
-    window.history.back();
-  }, [room, localTracks]);
+    signOut?.();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [room.disconnect, localTracks, signOut]);
 
   return (
     <div ref={anchorRef}>
@@ -32,19 +33,19 @@ export default function Menu(): JSX.Element {
         color="inherit"
         onClick={(): void => setMenuOpen(state => !state)}
       >
-        {profile ? <UserAvatar profile={profile} /> : <MoreIcon />}
+        {user ? <UserAvatar user={user} /> : <MoreIcon />}
       </IconButton>
       <MenuContainer
         open={menuOpen}
         onClose={(): void => setMenuOpen(state => !state)}
         anchorEl={anchorRef.current}
       >
-        {profile?.name && <MenuItem disabled>{profile.name}</MenuItem>}
+        {user?.displayName && <MenuItem disabled>{user.displayName}</MenuItem>}
         <MenuItem onClick={(): void => setAboutOpen(true)}>About</MenuItem>
         <MenuItem onClick={(): void => setSettingsOpen(true)}>
           Settings
         </MenuItem>
-        {profile && <MenuItem onClick={handleSignOut}>End Session</MenuItem>}
+        {user && <MenuItem onClick={handleSignOut}>Logout</MenuItem>}
       </MenuContainer>
       <AboutDialog
         open={aboutOpen}
