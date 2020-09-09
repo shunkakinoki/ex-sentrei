@@ -1,3 +1,9 @@
+## [1.56.2](https://github.com/sentrei/sentrei/compare/v1.56.1...v1.56.2) (2020-09-09)
+
+### Performance Improvements
+
+- ⚡️ ini trace rate ([62a564c](https://github.com/sentrei/sentrei/commit/62a564cb26f1328f12d575869d4ba3427a2b4e6a))
+
 ## [1.56.1](https://github.com/sentrei/sentrei/compare/v1.56.0...v1.56.1) (2020-09-08)
 
 ### Bug Fixes
