@@ -14,6 +14,7 @@ export default function useScreenShareParticipant(): Participant | undefined {
     Participant
   >();
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (room.state === "connected") {
       const updateScreenShareParticipant = (): void => {
