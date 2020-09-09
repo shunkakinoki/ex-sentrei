@@ -1,17 +1,17 @@
+import React, {useState, useRef, useCallback} from "react";
+import AboutDialog from "../AboutDialog/AboutDialog";
 import IconButton from "@material-ui/core/IconButton";
 import MenuContainer from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MoreIcon from "@material-ui/icons/MoreVert";
-import React, {useState, useRef, useCallback} from "react";
+import SettingsDialog from "../SettingsDialog/SettingsDialog";
+import UserAvatar from "../UserAvatar/UserAvatar";
 
-import AboutDialog from "@sentrei/video/components/MenuBar/AboutDialog";
-import SettingsDialog from "@sentrei/video/components/MenuBar/SettingsDialog";
-import UserAvatar from "@sentrei/video/components/MenuBar/UserAvatar";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
-import {useAppState} from "@sentrei/video/state";
+import {useAppState} from "../../../state";
+import useVideoContext from "../../../hooks/useVideoContext/useVideoContext";
 
-export default function Menu(): JSX.Element {
-  const {profile} = useAppState();
+export default function Menu() {
+  const {user, signOut} = useAppState();
   const {room, localTracks} = useVideoContext();
 
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -23,39 +23,34 @@ export default function Menu(): JSX.Element {
   const handleSignOut = useCallback(() => {
     room.disconnect?.();
     localTracks.forEach(track => track.stop());
-    window.history.back();
-  }, [room, localTracks]);
+    signOut?.();
+  }, [room.disconnect, localTracks, signOut]);
 
   return (
     <div ref={anchorRef}>
-      <IconButton
-        color="inherit"
-        onClick={(): void => setMenuOpen(state => !state)}
-      >
-        {profile ? <UserAvatar profile={profile} /> : <MoreIcon />}
+      <IconButton color="inherit" onClick={() => setMenuOpen(state => !state)}>
+        {user ? <UserAvatar user={user} /> : <MoreIcon />}
       </IconButton>
       <MenuContainer
         open={menuOpen}
-        onClose={(): void => setMenuOpen(state => !state)}
+        onClose={() => setMenuOpen(state => !state)}
         anchorEl={anchorRef.current}
       >
-        {profile?.name && <MenuItem disabled>{profile.name}</MenuItem>}
-        <MenuItem onClick={(): void => setAboutOpen(true)}>About</MenuItem>
-        <MenuItem onClick={(): void => setSettingsOpen(true)}>
-          Settings
-        </MenuItem>
-        {profile && <MenuItem onClick={handleSignOut}>End Session</MenuItem>}
+        {user?.displayName && <MenuItem disabled>{user.displayName}</MenuItem>}
+        <MenuItem onClick={() => setAboutOpen(true)}>About</MenuItem>
+        <MenuItem onClick={() => setSettingsOpen(true)}>Settings</MenuItem>
+        {user && <MenuItem onClick={handleSignOut}>Logout</MenuItem>}
       </MenuContainer>
       <AboutDialog
         open={aboutOpen}
-        onClose={(): void => {
+        onClose={() => {
           setAboutOpen(false);
           setMenuOpen(false);
         }}
       />
       <SettingsDialog
         open={settingsOpen}
-        onClose={(): void => {
+        onClose={() => {
           setSettingsOpen(false);
           setMenuOpen(false);
         }}

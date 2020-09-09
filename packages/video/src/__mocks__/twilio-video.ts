@@ -1,12 +1,8 @@
-/* eslint-disable max-classes-per-file */
-
 import {EventEmitter} from "events";
 
 class MockRoom extends EventEmitter {
   state = "connected";
-
   disconnect = jest.fn();
-
   localParticipant = {
     publishTrack: jest.fn(),
   };
@@ -16,7 +12,6 @@ const mockRoom = new MockRoom();
 
 class MockTrack extends EventEmitter {
   kind = "";
-
   stop = jest.fn();
 
   constructor(kind: string) {

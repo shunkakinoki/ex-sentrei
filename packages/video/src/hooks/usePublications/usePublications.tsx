@@ -7,9 +7,7 @@ import {
 
 type TrackPublication = LocalTrackPublication | RemoteTrackPublication;
 
-export default function usePublications(
-  participant: Participant,
-): TrackPublication[] {
+export default function usePublications(participant: Participant) {
   const [publications, setPublications] = useState<TrackPublication[]>([]);
 
   useEffect(() => {
@@ -18,16 +16,16 @@ export default function usePublications(
       Array.from(participant.tracks.values()) as TrackPublication[],
     );
 
-    const publicationAdded = (publication: TrackPublication): void =>
+    const publicationAdded = (publication: TrackPublication) =>
       setPublications(prevPublications => [...prevPublications, publication]);
-    const publicationRemoved = (publication: TrackPublication): void =>
+    const publicationRemoved = (publication: TrackPublication) =>
       setPublications(prevPublications =>
         prevPublications.filter(p => p !== publication),
       );
 
     participant.on("trackPublished", publicationAdded);
     participant.on("trackUnpublished", publicationRemoved);
-    return (): void => {
+    return () => {
       participant.off("trackPublished", publicationAdded);
       participant.off("trackUnpublished", publicationRemoved);
     };

@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import {
   Button,
   Dialog,
@@ -7,10 +8,8 @@ import {
   Theme,
 } from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
-import React, {useState} from "react";
-
-import ConnectionOptions from "@sentrei/video/components/MenuBar/ConnectionOptions";
-import DeviceSelector from "@sentrei/video/components/MenuBar/DeviceSelector";
+import ConnectionOptions from "../ConnectionOptions/ConnectionOptions";
+import {DeviceSelector} from "../DeviceSelector/DeviceSelector";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -41,11 +40,11 @@ export default function SettingsDialog({
 }: {
   open: boolean;
   onClose: () => void;
-}): JSX.Element {
+}) {
   const classes = useStyles();
   const [selectedTab, setSelectedTab] = useState(0);
 
-  const handleChange = (_: React.ChangeEvent<{}>, newValue: number): void => {
+  const handleChange = (_: React.ChangeEvent<{}>, newValue: number) => {
     setSelectedTab(newValue);
   };
 

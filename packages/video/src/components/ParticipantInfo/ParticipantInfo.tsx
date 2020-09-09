@@ -1,9 +1,6 @@
-import {createStyles, makeStyles} from "@material-ui/core/styles";
-
-import ScreenShare from "@material-ui/icons/ScreenShare";
-import VideocamOff from "@material-ui/icons/VideocamOff";
-import clsx from "clsx";
 import React from "react";
+import clsx from "clsx";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {
   LocalAudioTrack,
   LocalVideoTrack,
@@ -12,20 +9,20 @@ import {
   RemoteVideoTrack,
 } from "twilio-video";
 
-import SentreiTheme from "@sentrei/types/containers/SentreiTheme";
+import AudioLevelIndicator from "../AudioLevelIndicator/AudioLevelIndicator";
+import BandwidthWarning from "../BandwidthWarning/BandwidthWarning";
+import NetworkQualityLevel from "../NewtorkQualityLevel/NetworkQualityLevel";
+import ParticipantConnectionIndicator from "./ParticipantConnectionIndicator/ParticipantConnectionIndicator";
+import PinIcon from "./PinIcon/PinIcon";
+import ScreenShare from "@material-ui/icons/ScreenShare";
+import VideocamOff from "@material-ui/icons/VideocamOff";
 
-import AudioLevelIndicator from "@sentrei/video/components/AudioLevelIndicator";
-import BandwidthWarning from "@sentrei/video/components/BandwidthWarning";
-import NetworkQualityLevel from "@sentrei/video/components/NetworkQualityLevel";
-import useIsTrackSwitchedOff from "@sentrei/video/hooks/useIsTrackSwitchedOff";
-import useParticipantNetworkQualityLevel from "@sentrei/video/hooks/useParticipantNetworkQualityLevel";
-import usePublications from "@sentrei/video/hooks/usePublications";
-import useTrack from "@sentrei/video/hooks/useTrack";
+import useParticipantNetworkQualityLevel from "../../hooks/useParticipantNetworkQualityLevel/useParticipantNetworkQualityLevel";
+import usePublications from "../../hooks/usePublications/usePublications";
+import useIsTrackSwitchedOff from "../../hooks/useIsTrackSwitchedOff/useIsTrackSwitchedOff";
+import useTrack from "../../hooks/useTrack/useTrack";
 
-import ParticipantConnectionIndicator from "./ParticipantConnectionIndicator";
-import PinIcon from "./PinIcon";
-
-const useStyles = makeStyles((theme: SentreiTheme) =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       position: "relative",
@@ -93,7 +90,7 @@ export default function ParticipantInfo({
   onClick,
   isSelected,
   children,
-}: ParticipantInfoProps): JSX.Element {
+}: ParticipantInfoProps) {
   const publications = usePublications(participant);
 
   const audioPublication = publications.find(p => p.kind === "audio");
@@ -119,7 +116,6 @@ export default function ParticipantInfo({
   const classes = useStyles();
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
       className={clsx(classes.container, {
         [classes.isVideoSwitchedOff]: isVideoSwitchedOff,

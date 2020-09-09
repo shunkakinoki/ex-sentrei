@@ -13,19 +13,18 @@ type TrackType =
   | RemoteVideoTrack
   | undefined;
 
-export default function useIsTrackEnabled(track: TrackType): boolean {
+export default function useIsTrackEnabled(track: TrackType) {
   const [isEnabled, setIsEnabled] = useState(track ? track.isEnabled : false);
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     setIsEnabled(track ? track.isEnabled : false);
 
     if (track) {
-      const setEnabled = (): void => setIsEnabled(true);
-      const setDisabled = (): void => setIsEnabled(false);
+      const setEnabled = () => setIsEnabled(true);
+      const setDisabled = () => setIsEnabled(false);
       track.on("enabled", setEnabled);
       track.on("disabled", setDisabled);
-      return (): void => {
+      return () => {
         track.off("enabled", setEnabled);
         track.off("disabled", setDisabled);
       };

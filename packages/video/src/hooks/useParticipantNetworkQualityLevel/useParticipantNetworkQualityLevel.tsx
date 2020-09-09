@@ -3,22 +3,21 @@ import {Participant} from "twilio-video";
 
 export default function useParticipantNetworkQualityLevel(
   participant: Participant,
-): number | null {
+) {
   const [networkQualityLevel, setNetworkQualityLevel] = useState(
     participant.networkQualityLevel,
   );
 
   useEffect(() => {
-    const handleNewtorkQualityLevelChange = (
-      newNetworkQualityLevel: number,
-    ): void => setNetworkQualityLevel(newNetworkQualityLevel);
+    const handleNewtorkQualityLevelChange = (newNetworkQualityLevel: number) =>
+      setNetworkQualityLevel(newNetworkQualityLevel);
 
     setNetworkQualityLevel(participant.networkQualityLevel);
     participant.on(
       "networkQualityLevelChanged",
       handleNewtorkQualityLevelChange,
     );
-    return (): void => {
+    return () => {
       participant.off(
         "networkQualityLevelChanged",
         handleNewtorkQualityLevelChange,

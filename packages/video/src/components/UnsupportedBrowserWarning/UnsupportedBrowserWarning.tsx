@@ -1,7 +1,7 @@
-import {Container, Link, Typography, Paper, Grid} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
 import React from "react";
 import Video from "twilio-video";
+import {Container, Link, Typography, Paper, Grid} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   container: {
@@ -15,11 +15,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function UnsupportedBrowserWarning({
-  children,
-}: {
-  children: React.ReactElement;
-}): JSX.Element {
+export default function ({children}: {children: React.ReactElement}) {
   const classes = useStyles();
 
   if (!Video.isSupported) {

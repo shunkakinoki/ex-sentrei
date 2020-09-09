@@ -1,14 +1,14 @@
-import Fab from "@material-ui/core/Fab";
+import React from "react";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-import Tooltip from "@material-ui/core/Tooltip";
+import Fab from "@material-ui/core/Fab";
 import ScreenShare from "@material-ui/icons/ScreenShare";
 import StopScreenShare from "@material-ui/icons/StopScreenShare";
-import React from "react";
+import Tooltip from "@material-ui/core/Tooltip";
 
-import useScreenShareParticipant from "@sentrei/video/hooks/useScreenShareParticipant";
-import useScreenShareToggle from "@sentrei/video/hooks/useScreenShareToggle";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import useScreenShareToggle from "../../../hooks/useScreenShareToggle/useScreenShareToggle";
+import useScreenShareParticipant from "../../../hooks/useScreenShareParticipant/useScreenShareParticipant";
+import useVideoContext from "../../../hooks/useVideoContext/useVideoContext";
 
 export const SCREEN_SHARE_TEXT = "Share Screen";
 export const STOP_SCREEN_SHARE_TEXT = "Stop Sharing Screen";
@@ -29,10 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function ToggleScreenShareButton(props: {
-  // eslint-disable-next-line react/require-default-props
-  disabled?: boolean;
-}): JSX.Element {
+export default function ToggleScreenShareButton(props: {disabled?: boolean}) {
   const classes = useStyles();
   const [isScreenShared, toggleScreenShare] = useScreenShareToggle();
   const screenShareParticipant = useScreenShareParticipant();
@@ -42,7 +39,6 @@ export default function ToggleScreenShareButton(props: {
   const isScreenShareSupported =
     navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia;
   const isDisabled =
-    // eslint-disable-next-line react/destructuring-assignment
     props.disabled || disableScreenShareButton || !isScreenShareSupported;
 
   let tooltipMessage = SCREEN_SHARE_TEXT;

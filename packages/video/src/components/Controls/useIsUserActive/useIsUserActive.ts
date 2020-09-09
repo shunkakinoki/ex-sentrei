@@ -1,7 +1,7 @@
-import throttle from "lodash.throttle";
 import {useEffect, useRef, useState} from "react";
+import throttle from "lodash.throttle";
 
-export default function useIsUserActive(): boolean {
+export default function useIsUserActive() {
   const [isUserActive, setIsUserActive] = useState(true);
   const timeoutIDRef = useRef(0);
 
@@ -18,7 +18,7 @@ export default function useIsUserActive(): boolean {
     window.addEventListener("mousemove", handleUserActivity);
     window.addEventListener("click", handleUserActivity);
     window.addEventListener("keydown", handleUserActivity);
-    return (): void => {
+    return () => {
       window.removeEventListener("mousemove", handleUserActivity);
       window.removeEventListener("click", handleUserActivity);
       window.removeEventListener("keydown", handleUserActivity);

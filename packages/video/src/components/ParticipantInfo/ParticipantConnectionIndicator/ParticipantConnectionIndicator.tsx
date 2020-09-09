@@ -1,10 +1,9 @@
-import {Tooltip} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
-import clsx from "clsx";
 import React from "react";
+import clsx from "clsx";
+import {makeStyles} from "@material-ui/core/styles";
 import {Participant} from "twilio-video";
-
-import useParticipantIsReconnecting from "@sentrei/video/hooks/useParticipantIsReconnecting";
+import useParticipantIsReconnecting from "../../../hooks/useParticipantIsReconnecting/useParticipantIsReconnecting";
+import {Tooltip} from "@material-ui/core";
 
 const useStyles = makeStyles({
   indicator: {
@@ -24,7 +23,7 @@ export default function ParticipantConnectionIndicator({
   participant,
 }: {
   participant: Participant;
-}): JSX.Element {
+}) {
   const isReconnecting = useParticipantIsReconnecting(participant);
   const classes = useStyles();
   return (
@@ -39,7 +38,7 @@ export default function ParticipantConnectionIndicator({
         className={clsx(classes.indicator, {
           [classes.isReconnecting]: isReconnecting,
         })}
-      />
+      ></span>
     </Tooltip>
   );
 }

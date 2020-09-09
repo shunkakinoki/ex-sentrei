@@ -1,24 +1,20 @@
 import {useState, useEffect} from "react";
+import {ensureMediaPermissions} from "../../../../utils";
 
-import {ensureMediaPermissions} from "@sentrei/video/utils";
-
-export function useDevices(): MediaDeviceInfo[] {
+export function useDevices() {
   const [devices, setDevices] = useState<MediaDeviceInfo[]>([]);
 
   useEffect(() => {
-    const getDevices = (): Promise<void> =>
+    const getDevices = () =>
       ensureMediaPermissions().then(() =>
         navigator.mediaDevices
           .enumerateDevices()
-          // eslint-disable-next-line no-shadow
           .then(devices => setDevices(devices)),
       );
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     navigator.mediaDevices.addEventListener("devicechange", getDevices);
     getDevices();
 
-    return (): void => {
-      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    return () => {
       navigator.mediaDevices.removeEventListener("devicechange", getDevices);
     };
   }, []);
@@ -26,17 +22,17 @@ export function useDevices(): MediaDeviceInfo[] {
   return devices;
 }
 
-export function useAudioInputDevices(): MediaDeviceInfo[] {
+export function useAudioInputDevices() {
   const devices = useDevices();
   return devices.filter(device => device.kind === "audioinput");
 }
 
-export function useVideoInputDevices(): MediaDeviceInfo[] {
+export function useVideoInputDevices() {
   const devices = useDevices();
   return devices.filter(device => device.kind === "videoinput");
 }
 
-export function useAudioOutputDevices(): MediaDeviceInfo[] {
+export function useAudioOutputDevices() {
   const devices = useDevices();
   return devices.filter(device => device.kind === "audiooutput");
 }

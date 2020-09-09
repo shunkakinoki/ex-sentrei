@@ -1,7 +1,7 @@
+import React from "react";
 import {styled} from "@material-ui/core";
 
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
-import React from "react";
 
 const BandwidthWarningContainer = styled("div")({
   position: "absolute",
@@ -18,7 +18,7 @@ const Warning = styled("h3")({
   margin: "0.6em 0",
 });
 
-export default function BandwidthWarning(): JSX.Element {
+export default function BandwidthWarning() {
   return (
     <BandwidthWarningContainer>
       <div>

@@ -71,9 +71,7 @@ export const RenderDimensions: RenderDimension[] = [
   },
 ];
 
-export function getResolution(
-  value?: RenderDimensionValue,
-): VideoTrack.Dimensions | undefined {
+export function getResolution(value?: RenderDimensionValue) {
   if (typeof value === "undefined") {
     return undefined;
   }

@@ -1,13 +1,12 @@
 import {useEffect, useRef} from "react";
 import {AudioTrack as IAudioTrack} from "twilio-video";
-
-import {useAppState} from "@sentrei/video/state";
+import {useAppState} from "../../state";
 
 interface AudioTrackProps {
   track: IAudioTrack;
 }
 
-export default function AudioTrack({track}: AudioTrackProps): null {
+export default function AudioTrack({track}: AudioTrackProps) {
   const {activeSinkId} = useAppState();
   const audioEl = useRef<HTMLAudioElement>();
 
@@ -15,7 +14,7 @@ export default function AudioTrack({track}: AudioTrackProps): null {
     audioEl.current = track.attach();
     audioEl.current.setAttribute("data-cy-audio-track-name", track.name);
     document.body.appendChild(audioEl.current);
-    return (): void => track.detach().forEach(el => el.remove());
+    return () => track.detach().forEach(el => el.remove());
   }, [track]);
 
   useEffect(() => {

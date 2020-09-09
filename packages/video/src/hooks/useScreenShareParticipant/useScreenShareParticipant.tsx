@@ -1,23 +1,21 @@
 import {useEffect, useState} from "react";
+import useVideoContext from "../useVideoContext/useVideoContext";
 
 import {Participant, TrackPublication} from "twilio-video";
-
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 
 /*
   Returns the participant that is sharing their screen (if any). This hook assumes that only one participant
   can share their screen at a time.
 */
-export default function useScreenShareParticipant(): Participant | undefined {
+export default function useScreenShareParticipant() {
   const {room} = useVideoContext();
   const [screenShareParticipant, setScreenShareParticipant] = useState<
     Participant
   >();
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (room.state === "connected") {
-      const updateScreenShareParticipant = (): void => {
+      const updateScreenShareParticipant = () => {
         setScreenShareParticipant(
           Array.from<Participant>(room.participants.values())
             // the screenshare participant could be the localParticipant
@@ -42,7 +40,7 @@ export default function useScreenShareParticipant(): Participant | undefined {
         "trackUnpublished",
         updateScreenShareParticipant,
       );
-      return (): void => {
+      return () => {
         room.off("trackPublished", updateScreenShareParticipant);
         room.off("trackUnpublished", updateScreenShareParticipant);
         room.off("participantDisconnected", updateScreenShareParticipant);

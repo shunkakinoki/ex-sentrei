@@ -1,11 +1,10 @@
-import {FormControl, MenuItem, Typography, Select} from "@material-ui/core";
-
-import {makeStyles} from "@material-ui/core/styles";
 import React from "react";
-
-import {useAudioInputDevices} from "@sentrei/video/components/MenuBar/DeviceSelector/deviceHooks";
-import LocalAudioLevelIndicator from "@sentrei/video/components/MenuBar/DeviceSelector/LocalAudioLevelIndicator";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import {FormControl, MenuItem, Typography, Select} from "@material-ui/core";
+import LocalAudioLevelIndicator from "../LocalAudioLevelIndicator/LocalAudioLevelIndicator";
+import {makeStyles} from "@material-ui/core/styles";
+import {useAudioInputDevices} from "../deviceHooks/deviceHooks";
+import useMediaStreamTrack from "../../../../hooks/useMediaStreamTrack/useMediaStreamTrack";
+import useVideoContext from "../../../../hooks/useVideoContext/useVideoContext";
 
 const useStyles = makeStyles({
   container: {
@@ -15,32 +14,17 @@ const useStyles = makeStyles({
   },
 });
 
-export default function AudioInputList(): JSX.Element {
+export default function AudioInputList() {
   const classes = useStyles();
   const audioInputDevices = useAudioInputDevices();
-  const {
-    room: {localParticipant},
-    localTracks,
-    getLocalAudioTrack,
-  } = useVideoContext();
+  const {localTracks} = useVideoContext();
 
   const localAudioTrack = localTracks.find(track => track.kind === "audio");
-  const localAudioInputDeviceId = localAudioTrack?.mediaStreamTrack.getSettings()
-    .deviceId;
+  const mediaStreamTrack = useMediaStreamTrack(localAudioTrack);
+  const localAudioInputDeviceId = mediaStreamTrack?.getSettings().deviceId;
 
-  function replaceTrack(newDeviceId: string): void {
-    localAudioTrack?.stop();
-    getLocalAudioTrack(newDeviceId).then(newTrack => {
-      if (localAudioTrack) {
-        const localTrackPublication = localParticipant?.unpublishTrack(
-          localAudioTrack,
-        );
-        // TODO: remove when SDK implements this event. See: https://issues.corp.twilio.com/browse/JSDK-2592
-        localParticipant?.emit("trackUnpublished", localTrackPublication);
-      }
-
-      localParticipant?.publishTrack(newTrack);
-    });
+  function replaceTrack(newDeviceId: string) {
+    localAudioTrack?.restart({deviceId: {exact: newDeviceId}});
   }
 
   return (
@@ -50,12 +34,7 @@ export default function AudioInputList(): JSX.Element {
           <FormControl fullWidth>
             <Typography variant="h6">Audio Input:</Typography>
             <Select
-              onChange={(
-                e: React.ChangeEvent<{
-                  name?: string | undefined;
-                  value: unknown;
-                }>,
-              ): void => replaceTrack(e.target.value as string)}
+              onChange={e => replaceTrack(e.target.value as string)}
               value={localAudioInputDeviceId || ""}
             >
               {audioInputDevices.map(device => (
