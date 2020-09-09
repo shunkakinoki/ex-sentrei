@@ -29,8 +29,7 @@ module.exports = {
   snapshotSerializers: ["enzyme-to-json/serializer"],
   globals: {
     "ts-jest": {
-      importHelpers: true,
-      tsConfig: "<rootDir>/tsconfig.test.json",
+      diagnostics: false,
     },
   },
 };
