@@ -96,6 +96,23 @@
           "version": "detect"
         }
       }
+    },
+    {
+      "files": ["packages/video/src/**"],
+      "rules": {
+        "max-classes-per-file": 0,
+        "no-plusplus": 0,
+        "no-shadow": 0,
+        "import/prefer-default-export": 0,
+        "react/destructuring-assignment": 0,
+        "react-hooks/exhaustive-deps": 0,
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/prefer-regexp-exec": 0,
+        "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/no-misused-promises": 0,
+        "@typescript-eslint/no-non-null-assertion": 0,
+        "@typescript-eslint/require-await": 0
+      }
     }
   ],
   "rules": {
