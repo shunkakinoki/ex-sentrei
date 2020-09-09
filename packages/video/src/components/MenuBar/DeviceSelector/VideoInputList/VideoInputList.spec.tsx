@@ -7,7 +7,7 @@ import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 
 import VideoInputList from "./VideoInputList";
 
-jest.mock("@sentrei/video/hooks/useVideoContext");
+jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext");
 jest.mock("@sentrei/video/components/MenuBar/DeviceSelector/deviceHooks");
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25,9 +25,8 @@ const mockLocalTrack = {
   kind: "video",
   mediaStreamTrack: {
     label: "mock local video track",
-    getSettings: (): {
-      deviceId: string;
-    } => ({deviceId: "234"}),
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+    getSettings: () => ({deviceId: "234"}),
   },
 };
 

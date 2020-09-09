@@ -1,13 +1,13 @@
 import {ConnectOptions} from "twilio-video";
 
+import {useAppState} from "@sentrei/video/state";
 import {getResolution} from "@sentrei/video/state/settings/renderDimensions";
-import {Settings} from "@sentrei/video/state/settings/settingsReducer";
 
 import {isMobile, removeUndefineds} from "..";
 
-export default function generateConnectionOptions(
-  settings: Settings,
-): ConnectOptions {
+export default function useConnectionOptions(): ConnectOptions {
+  const {roomType, settings} = useAppState();
+
   // See: https://media.twiliocdn.com/sdk/js/video/releases/2.0.0/docs/global.html#ConnectOptions
   // for available connection options.
   const connectionOptions: ConnectOptions = {
@@ -35,9 +35,11 @@ export default function generateConnectionOptions(
 
     // VP8 simulcast enables the media server in a Small Group or Group Room
     // to adapt your encoded video quality for each RemoteParticipant based on
-    // their individual bandwidth constraints. This has no effect if you are
-    // using Peer-to-Peer Rooms.
-    preferredVideoCodecs: [{codec: "VP8", simulcast: true}],
+    // their individual bandwidth constraints. Simulcast should be disabled if
+    // you are using Peer-to-Peer Rooms.
+    preferredVideoCodecs: [
+      {codec: "VP8", simulcast: roomType !== "peer-to-peer"},
+    ],
   };
 
   // For mobile browsers, limit the maximum incoming video bitrate to 2.5 Mbps.

@@ -1,5 +1,4 @@
-/* eslint-disable prefer-promise-reject-errors */
-/* eslint-disable react/prop-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import {act, renderHook} from "@testing-library/react-hooks";
 import React from "react";
@@ -16,7 +15,7 @@ const wrapper: React.FC = ({children}) => (
 
 describe("the useAppState hook", () => {
   beforeEach(jest.clearAllMocks);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-return-assign
+  // eslint-disable-next-line no-return-assign
   beforeEach(() => (process.env = {} as any));
 
   it("should set an error", () => {
@@ -51,12 +50,5 @@ describe("the useAppState hook", () => {
         headers: {_headers: {}},
       },
     );
-  });
-
-  describe("with auth disabled", () => {
-    // eslint-disable-next-line @typescript-eslint/require-await
-    it("should not use any auth hooks", async () => {
-      renderHook(useAppState, {wrapper});
-    });
   });
 });

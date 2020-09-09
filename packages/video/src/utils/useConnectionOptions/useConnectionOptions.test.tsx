@@ -1,8 +1,13 @@
+import {useAppState} from "@sentrei/video/state";
 import {Settings} from "@sentrei/video/state/settings/settingsReducer";
 
-import generateConnectionOptions from "./generateConnectionOptions";
+import useConnectionOptions from "./useConnectionOptions";
 
-describe("the generateConnectionOptions function", () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const mockUseAppState = useAppState as jest.Mock<any>;
+jest.mock("@sentrei/video/state");
+
+describe("the useConnectionOptions function", () => {
   it("should remove any undefined values from settings", () => {
     const settings: Settings = {
       trackSwitchOffMode: undefined,
@@ -28,7 +33,8 @@ describe("the generateConnectionOptions function", () => {
       preferredVideoCodecs: [{codec: "VP8", simulcast: true}],
     };
 
-    expect(generateConnectionOptions(settings)).toEqual(result);
+    mockUseAppState.mockImplementationOnce(() => ({settings}));
+    expect(useConnectionOptions()).toEqual(result);
   });
 
   it("should correctly generate settings", () => {
@@ -71,6 +77,28 @@ describe("the generateConnectionOptions function", () => {
       preferredVideoCodecs: [{codec: "VP8", simulcast: true}],
     };
 
-    expect(generateConnectionOptions(settings)).toEqual(result);
+    mockUseAppState.mockImplementationOnce(() => ({settings}));
+    expect(useConnectionOptions()).toEqual(result);
+  });
+
+  it("should disable simulcast when the room type is peer to peer", () => {
+    const settings: Settings = {
+      trackSwitchOffMode: "detected",
+      dominantSpeakerPriority: "high",
+      bandwidthProfileMode: "collaboration",
+      maxTracks: "100",
+      maxAudioBitrate: "0",
+      renderDimensionLow: "low",
+      renderDimensionStandard: "960p",
+      renderDimensionHigh: "wide1080p",
+    };
+
+    mockUseAppState.mockImplementationOnce(() => ({
+      settings,
+      roomType: "peer-to-peer",
+    }));
+    expect(useConnectionOptions()).toMatchObject({
+      preferredVideoCodecs: [{codec: "VP8", simulcast: false}],
+    });
   });
 });

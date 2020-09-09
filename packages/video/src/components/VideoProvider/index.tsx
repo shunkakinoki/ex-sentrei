@@ -10,7 +10,6 @@ import {
 
 import {Callback, ErrorCallback} from "@sentrei/video/types";
 
-// eslint-disable-next-line import/no-cycle
 import AttachVisibilityHandler from "./AttachVisibilityHandler";
 import useHandleOnDisconnect from "./useHandleOnDisconnect";
 import useHandleRoomDisconnectionErrors from "./useHandleRoomDisconnectionErrors";
@@ -45,10 +44,8 @@ export interface IVideoContext {
 export const VideoContext = createContext<IVideoContext>(null!);
 
 interface VideoProviderProps {
-  // eslint-disable-next-line react/require-default-props
   options?: ConnectOptions;
   onError: ErrorCallback;
-  // eslint-disable-next-line react/require-default-props
   onDisconnect?: Callback;
   children: ReactNode;
 }

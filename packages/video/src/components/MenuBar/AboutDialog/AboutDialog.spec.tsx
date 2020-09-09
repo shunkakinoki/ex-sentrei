@@ -1,9 +1,16 @@
 import {render} from "@testing-library/react";
 import React from "react";
 
+import {useAppState} from "@sentrei/video/state";
+
 import AboutDialog from "./AboutDialog";
 
 jest.mock("twilio-video", () => ({version: "1.2", isSupported: true}));
+jest.mock("@sentrei/video/state");
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const mockUseAppState = useAppState as jest.Mock<any>;
+mockUseAppState.mockImplementation(() => ({roomType: undefined}));
 
 describe("the AboutDialog component", () => {
   it("should display Video.isSupported", () => {
@@ -14,6 +21,17 @@ describe("the AboutDialog component", () => {
   it("should display the SDK version", () => {
     const {getByText} = render(<AboutDialog open onClose={(): void => {}} />);
     expect(getByText("SDK Version: 1.2")).toBeTruthy();
+  });
+
+  it("should not display the room type when it is unknown", () => {
+    const {queryByText} = render(<AboutDialog open onClose={(): void => {}} />);
+    expect(queryByText("Room Type:")).not.toBeTruthy();
+  });
+
+  it("should display the room type", () => {
+    mockUseAppState.mockImplementationOnce(() => ({roomType: "group-small"}));
+    const {getByText} = render(<AboutDialog open onClose={(): void => {}} />);
+    expect(getByText("Room Type: group-small")).toBeTruthy();
   });
 
   describe("when running locally", () => {

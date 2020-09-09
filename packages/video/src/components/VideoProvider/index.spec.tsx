@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import {renderHook} from "@testing-library/react-hooks";
 import React from "react";
 import {Room, TwilioError} from "twilio-video";
@@ -10,7 +8,7 @@ import useHandleOnDisconnect from "./useHandleOnDisconnect";
 import useHandleRoomDisconnectionErrors from "./useHandleRoomDisconnectionErrors";
 import useHandleTrackPublicationFailed from "./useHandleTrackPublicationFailed";
 import useLocalTracks from "./useLocalTracks";
-import useRoom from "./useRoom";
+import useRoom from "./useRoom/useRoom";
 
 import {EventEmitter} from "events";
 

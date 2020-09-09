@@ -1,30 +1,33 @@
-/* eslint-disable react/destructuring-assignment */
-
 import React, {createContext, useContext, useReducer, useState} from "react";
+
 import {TwilioError} from "twilio-video";
 
-import Profile from "@sentrei/types/models/Profile";
 import {
   settingsReducer,
   initialSettings,
   Settings,
   SettingsAction,
 } from "@sentrei/video/state/settings/settingsReducer";
-// import useFirebaseAuth from "@sentrei/video/state/useFirebaseAuth";
-// import usePasscodeAuth from "@sentrei/video/state/usePasscodeAuth";
+import {RoomType} from "@sentrei/video/types";
 
 export interface StateContextType {
   error: TwilioError | null;
   setError(error: TwilioError | null): void;
   getToken(name: string, room: string, passcode?: string): Promise<string>;
-  profile: Profile.Get | null;
-  setProfile(profile: Profile.Get): Promise<void>;
+  user?: null | {
+    displayName: undefined;
+    photoURL: undefined;
+    passcode?: string;
+  };
+  signIn?(passcode?: string): Promise<void>;
+  signOut?(): Promise<void>;
   isAuthReady?: boolean;
   isFetching: boolean;
   activeSinkId: string;
   setActiveSinkId(sinkId: string): void;
   settings: Settings;
   dispatchSetting: React.Dispatch<SettingsAction>;
+  roomType?: RoomType;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -43,7 +46,6 @@ export default function AppStateProvider(
   props: React.PropsWithChildren<{}>,
 ): JSX.Element {
   const [error, setError] = useState<TwilioError | null>(null);
-  const [profile, setProfile] = useState<Profile.Get | null>(null);
   const [isFetching, setIsFetching] = useState(false);
   const [activeSinkId, setActiveSinkId] = useState("default");
   const [settings, dispatchSetting] = useReducer(
@@ -54,8 +56,6 @@ export default function AppStateProvider(
   let contextValue = {
     error,
     setError,
-    profile,
-    setProfile,
     isFetching,
     activeSinkId,
     setActiveSinkId,
@@ -68,14 +68,9 @@ export default function AppStateProvider(
     getToken: async (identity, roomName): Promise<string> => {
       const headers = new window.Headers();
       const endpoint = process.env.REACT_APP_TOKEN_ENDPOINT || "/token";
-      const params = new window.URLSearchParams({
-        identity,
-        roomName,
-      });
+      const params = new window.URLSearchParams({identity, roomName});
 
-      return fetch(`${endpoint}?${params}`, {
-        headers,
-      }).then(res => res.text());
+      return fetch(`${endpoint}?${params}`, {headers}).then(res => res.text());
     },
   };
 
@@ -96,6 +91,7 @@ export default function AppStateProvider(
 
   return (
     <StateContext.Provider value={{...contextValue, getToken}}>
+      {/* eslint-disable-next-line react/destructuring-assignment */}
       {props.children}
     </StateContext.Provider>
   );

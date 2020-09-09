@@ -1,14 +1,14 @@
 import {useEffect, useState} from "react";
 import {LocalTrackPublication, RemoteTrackPublication} from "twilio-video";
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export default function useTrack(
   publication: LocalTrackPublication | RemoteTrackPublication | undefined,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): any {
+) {
   const [track, setTrack] = useState(publication && publication.track);
 
   // eslint-disable-next-line consistent-return
-  useEffect(() => {
+  useEffect((): (() => void) | undefined => {
     // Reset the track when the 'publication' variable changes.
     setTrack(publication && publication.track);
 

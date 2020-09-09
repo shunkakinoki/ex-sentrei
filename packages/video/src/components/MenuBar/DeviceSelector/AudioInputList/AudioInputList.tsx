@@ -5,6 +5,7 @@ import React from "react";
 
 import {useAudioInputDevices} from "@sentrei/video/components/MenuBar/DeviceSelector/deviceHooks";
 import LocalAudioLevelIndicator from "@sentrei/video/components/MenuBar/DeviceSelector/LocalAudioLevelIndicator";
+import useMediaStreamTrack from "@sentrei/video/hooks/useMediaStreamTrack";
 import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 
 const useStyles = makeStyles({
@@ -18,29 +19,14 @@ const useStyles = makeStyles({
 export default function AudioInputList(): JSX.Element {
   const classes = useStyles();
   const audioInputDevices = useAudioInputDevices();
-  const {
-    room: {localParticipant},
-    localTracks,
-    getLocalAudioTrack,
-  } = useVideoContext();
+  const {localTracks} = useVideoContext();
 
   const localAudioTrack = localTracks.find(track => track.kind === "audio");
-  const localAudioInputDeviceId = localAudioTrack?.mediaStreamTrack.getSettings()
-    .deviceId;
+  const mediaStreamTrack = useMediaStreamTrack(localAudioTrack);
+  const localAudioInputDeviceId = mediaStreamTrack?.getSettings().deviceId;
 
   function replaceTrack(newDeviceId: string): void {
-    localAudioTrack?.stop();
-    getLocalAudioTrack(newDeviceId).then(newTrack => {
-      if (localAudioTrack) {
-        const localTrackPublication = localParticipant?.unpublishTrack(
-          localAudioTrack,
-        );
-        // TODO: remove when SDK implements this event. See: https://issues.corp.twilio.com/browse/JSDK-2592
-        localParticipant?.emit("trackUnpublished", localTrackPublication);
-      }
-
-      localParticipant?.publishTrack(newTrack);
-    });
+    localAudioTrack?.restart({deviceId: {exact: newDeviceId}});
   }
 
   return (
@@ -50,12 +36,8 @@ export default function AudioInputList(): JSX.Element {
           <FormControl fullWidth>
             <Typography variant="h6">Audio Input:</Typography>
             <Select
-              onChange={(
-                e: React.ChangeEvent<{
-                  name?: string | undefined;
-                  value: unknown;
-                }>,
-              ): void => replaceTrack(e.target.value as string)}
+              // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+              onChange={e => replaceTrack(e.target.value as string)}
               value={localAudioInputDeviceId || ""}
             >
               {audioInputDevices.map(device => (

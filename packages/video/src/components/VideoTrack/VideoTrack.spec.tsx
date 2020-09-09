@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-
 import {render} from "@testing-library/react";
 import React from "react";
 
 import VideoTrack from "./VideoTrack";
+
+jest.mock("@senrei/video/hooks/useMediaStreamTrack");
 
 describe("the VideoTrack component", () => {
   const mockTrack = {
@@ -34,6 +34,7 @@ describe("the VideoTrack component", () => {
 
   it("should flip the video horizontally if the track is local", () => {
     const {container} = render(<VideoTrack track={mockTrack} isLocal />);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     expect(container.querySelector("video")!.style.transform).toEqual(
       "rotateY(180deg)",
     );
@@ -43,15 +44,18 @@ describe("the VideoTrack component", () => {
     const mockTrack2 = {
       ...mockTrack,
       mediaStreamTrack: {
-        getSettings: (): {facingMode: string} => ({facingMode: "environment"}),
+        // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+        getSettings: () => ({facingMode: "environment"}),
       },
     };
     const {container} = render(<VideoTrack track={mockTrack2} isLocal />);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     expect(container.querySelector("video")!.style.transform).toEqual("");
   });
 
   it("should not flip the video horizontally if the track is not local", () => {
     const {container} = render(<VideoTrack track={mockTrack} />);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     expect(container.querySelector("video")!.style.transform).toEqual("");
   });
 

@@ -25,11 +25,6 @@ function MockRoom(): any {
   return mockRoom;
 }
 
-mockUseVideoContext.mockImplementation(() => ({
-  room: MockRoom(),
-  onError: (): void => {},
-}));
-
 describe("the useScreenShareParticipant hook", () => {
   it("return undefined when there are no participants sharing their screen", () => {
     const {result} = renderHook(useScreenShareParticipant);

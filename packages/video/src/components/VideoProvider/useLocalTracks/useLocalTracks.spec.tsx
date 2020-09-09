@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-
 import {act, renderHook} from "@testing-library/react-hooks";
 
 import Video from "twilio-video";
@@ -44,6 +42,7 @@ describe("the useLocalTracks hook", () => {
       const initialVideoTrack = result.current.localTracks.find(
         track => track.kind === "video",
       );
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       expect(initialVideoTrack!.stop).not.toHaveBeenCalled();
       expect(initialVideoTrack).toBeTruthy();
 
@@ -54,6 +53,7 @@ describe("the useLocalTracks hook", () => {
       expect(
         result.current.localTracks.some(track => track.kind === "video"),
       ).toBe(false);
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       expect(initialVideoTrack!.stop).toHaveBeenCalled();
     });
   });
