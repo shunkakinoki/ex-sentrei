@@ -1,14 +1,14 @@
 import {useEffect, useState} from "react";
 import {RemoteParticipant} from "twilio-video";
 
-import useDominantSpeaker from "@sentrei/video/hooks/useDominantSpeaker";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import useDominantSpeaker from "../useDominantSpeaker/useDominantSpeaker";
+import useVideoContext from "../useVideoContext/useVideoContext";
 
 export default function useParticipants(): RemoteParticipant[] {
   const {room} = useVideoContext();
   const dominantSpeaker = useDominantSpeaker();
   const [participants, setParticipants] = useState(
-    Array.from(room.participants.values()),
+    Array.from(room.participants?.values() || []),
   );
 
   // When the dominant speaker changes, they are moved to the front of the participants array.
@@ -26,6 +26,8 @@ export default function useParticipants(): RemoteParticipant[] {
   }, [dominantSpeaker]);
 
   useEffect(() => {
+    setParticipants(Array.from(room.participants?.values() || []));
+
     const participantConnected = (participant: RemoteParticipant): void =>
       setParticipants(prevParticipants => [...prevParticipants, participant]);
     const participantDisconnected = (participant: RemoteParticipant): void =>
