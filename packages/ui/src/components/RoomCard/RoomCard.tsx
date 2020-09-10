@@ -139,8 +139,8 @@ export default function RoomCard({
             <Grid item xs={9} />
             <Grid item xs={3}>
               <MuiButton
-                href="/[namespaceId]/[roomId]"
-                as={`/${space.namespaceId}/${room.id}`}
+                href="/[namespaceId]/[roomId]/app"
+                as={`/${space.namespaceId}/${room.id}/app`}
                 fullWidth
                 variant="contained"
                 color="primary"

@@ -8,7 +8,7 @@ import AppStateProvider, {useAppState} from "./index";
 window.fetch = jest.fn(() => Promise.resolve({text: () => "mockVideoToken"}));
 
 const wrapper: React.FC = ({children}) => (
-  <AppStateProvider>{children}</AppStateProvider>
+  <AppStateProvider roomId="">{children}</AppStateProvider>
 );
 
 describe("the useAppState hook", () => {

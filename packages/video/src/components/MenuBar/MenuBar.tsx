@@ -8,13 +8,14 @@ import TextField from "@material-ui/core/TextField";
 import ToggleFullscreenButton from "./ToggleFullScreenButton/ToggleFullScreenButton";
 import Toolbar from "@material-ui/core/Toolbar";
 import Menu from "./Menu/Menu";
-
+import issueRoomToken from "@sentrei/common/services/issueRoomToken";
 import {useAppState} from "@sentrei/video/state";
 import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 import {Typography} from "@material-ui/core";
 import FlipCameraButton from "./FlipCameraButton/FlipCameraButton";
 import LocalAudioLevelIndicator from "./DeviceSelector/LocalAudioLevelIndicator/LocalAudioLevelIndicator";
+import {StateContextType} from "@sentrei/video/state";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -60,12 +61,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function MenuBar() {
   const classes = useStyles();
-  const {user, getToken, isFetching} = useAppState();
+  const {user, roomId, getToken, isFetching} = useAppState();
   const {isConnecting, connect, isAcquiringLocalTracks} = useVideoContext();
   const roomState = useRoomState();
 
   const [name, setName] = useState<string>(user?.displayName || "");
-  const [roomName, setRoomName] = useState<string>("");
+  const [roomName, setRoomName] = useState<string>(roomId);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -77,15 +78,9 @@ export default function MenuBar() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // If this app is deployed as a twilio function, don't change the URL because routing isn't supported.
-    if (!window.location.origin.includes("twil.io")) {
-      window.history.replaceState(
-        null,
-        "",
-        window.encodeURI(`/room/${roomName}${window.location.search || ""}`),
-      );
-    }
-    getToken(name, roomName).then(token => connect(token));
+    issueRoomToken(roomName).then(token => {
+      connect(token);
+    });
   };
 
   return (
@@ -109,6 +104,7 @@ export default function MenuBar() {
               </Typography>
             )}
             <TextField
+              disabled
               id="menu-room"
               label="Room"
               className={classes.textField}
