@@ -15,7 +15,9 @@ const Support: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
-  const [type, setType] = React.useState<NamespaceType | null | undefined>();
+  const [type, setType] = React.useState<NamespaceType | null | undefined>(
+    "user",
+  );
 
   React.useEffect(() => {
     async function setNamespaceType(): Promise<void> {
@@ -28,7 +30,7 @@ const Support: NextPage = () => {
     setNamespaceType();
   }, [query.namespaceId]);
 
-  if (user === undefined || type === undefined) {
+  if (user === undefined) {
     return (
       <>
         <SentreiAppHeader

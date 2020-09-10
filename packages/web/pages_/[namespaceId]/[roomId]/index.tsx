@@ -2,7 +2,9 @@ import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
+import {getMembers} from "@sentrei/common/firebase/members";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
+import Member from "@sentrei/types/models/Member";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -12,6 +14,9 @@ const RoomId = (): JSX.Element => {
 
   const {user, profile} = React.useContext(AuthContext);
   const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
+  const [members, setMembers] = React.useState<
+    Member.Get[] | null | undefined
+  >();
 
   React.useEffect(() => {
     async function setSpace(): Promise<void> {
@@ -24,7 +29,13 @@ const RoomId = (): JSX.Element => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (user === undefined || !spaceId) {
+  React.useEffect(() => {
+    if (spaceId) {
+      getMembers({spaceId}).then(setMembers);
+    }
+  }, [spaceId]);
+
+  if (user === undefined || spaceId === undefined || members === undefined) {
     return (
       <>
         <SentreiAppHeader
@@ -33,12 +44,13 @@ const RoomId = (): JSX.Element => {
           tabRoomKey="home"
           type="room"
           namespaceId={String(query.namespaceId)}
+          roomId={String(query.roomId)}
         />
       </>
     );
   }
 
-  if (!user || !profile) {
+  if (!user || !profile || !spaceId || !members) {
     return (
       <>
         <SentreiAppHeader
@@ -46,6 +58,7 @@ const RoomId = (): JSX.Element => {
           tabRoomKey="home"
           type="room"
           namespaceId={String(query.namespaceId)}
+          roomId={String(query.roomId)}
         />
         <HomeScreen />
       </>

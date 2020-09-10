@@ -43,6 +43,7 @@ const Settings: NextPage = () => {
           tabRoomKey="settings"
           type="room"
           namespaceId={String(query.namespaceId)}
+          roomId={String(query.roomId)}
         />
       </>
     );
@@ -56,6 +57,7 @@ const Settings: NextPage = () => {
           tabRoomKey="settings"
           type="room"
           namespaceId={String(query.namespaceId)}
+          roomId={String(query.roomId)}
         />
         <HomeScreen />
       </>

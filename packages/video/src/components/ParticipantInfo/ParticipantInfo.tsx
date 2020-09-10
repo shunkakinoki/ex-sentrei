@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 import {
   LocalAudioTrack,
   LocalVideoTrack,
@@ -8,6 +8,7 @@ import {
   RemoteAudioTrack,
   RemoteVideoTrack,
 } from "twilio-video";
+import SentreiTheme from "@sentrei/types/containers/SentreiTheme";
 
 import AudioLevelIndicator from "@sentrei/video/components/AudioLevelIndicator/AudioLevelIndicator";
 import BandwidthWarning from "@sentrei/video/components/BandwidthWarning/BandwidthWarning";
@@ -22,7 +23,7 @@ import usePublications from "@sentrei/video/hooks/usePublications/usePublication
 import useIsTrackSwitchedOff from "@sentrei/video/hooks/useIsTrackSwitchedOff/useIsTrackSwitchedOff";
 import useTrack from "@sentrei/video/hooks/useTrack/useTrack";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme: SentreiTheme) =>
   createStyles({
     container: {
       position: "relative",
