@@ -7,7 +7,7 @@ import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import Loader from "@sentrei/ui/components/Loader";
 
-const SentreiVideoApp = dynamic(() => import("@sentrei/video"), {
+const SentreiVideoApp = dynamic(() => import("@sentrei/video/VideoApp"), {
   ssr: false,
 });
 
