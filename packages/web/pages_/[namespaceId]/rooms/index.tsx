@@ -72,7 +72,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   };
 };
 
-const RoomsPage = ({
+const Rooms = ({
   spaceId,
   spaceData,
   membersData,
@@ -138,4 +138,4 @@ const RoomsPage = ({
   );
 };
 
-export default RoomsPage;
+export default Rooms;

@@ -11,7 +11,7 @@ import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceAnalytics from "@sentrei/ui/components/SpaceAnalytics";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const AnalyticsPage: NextPage = () => {
+const Analytics: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -72,4 +72,4 @@ const AnalyticsPage: NextPage = () => {
   );
 };
 
-export default AnalyticsPage;
+export default Analytics;
