@@ -1,7 +1,7 @@
 import React from "react";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 import clsx from "clsx";
-
+import SentreiTheme from "@sentrei/types/containers/SentreiTheme";
 import EndCallButton from "./EndCallButton/EndCallButton";
 import ToggleAudioButton from "./ToggleAudioButton/ToggleAudioButton";
 import ToggleVideoButton from "./ToggleVideoButton/ToggleVideoButton";
@@ -10,7 +10,7 @@ import ToggleScreenShareButton from "./ToogleScreenShareButton/ToggleScreenShare
 import useIsUserActive from "./useIsUserActive/useIsUserActive";
 import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme: SentreiTheme) =>
   createStyles({
     container: {
       display: "flex",
