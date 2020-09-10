@@ -1,7 +1,7 @@
 import React from "react";
 
 import App from "@sentrei/video/App";
-import {useAppState} from "@sentrei/video/state";
+import AppStateProvider, {useAppState} from "@sentrei/video/state";
 import ErrorDialog from "@sentrei/video/components/ErrorDialog/ErrorDialog";
 import "@sentrei/video/types";
 import {VideoProvider} from "@sentrei/video/components/VideoProvider";
@@ -13,12 +13,14 @@ const VideoApp = () => {
   const connectionOptions = useConnectionOptions();
 
   return (
-    <UnsupportedBrowserWarning>
-      <VideoProvider options={connectionOptions} onError={setError}>
-        <ErrorDialog dismissError={() => setError(null)} error={error} />
-        <App />
-      </VideoProvider>
-    </UnsupportedBrowserWarning>
+    <AppStateProvider>
+      <UnsupportedBrowserWarning>
+        <VideoProvider options={connectionOptions} onError={setError}>
+          <ErrorDialog dismissError={() => setError(null)} error={error} />
+          <App />
+        </VideoProvider>
+      </UnsupportedBrowserWarning>
+    </AppStateProvider>
   );
 };
 
