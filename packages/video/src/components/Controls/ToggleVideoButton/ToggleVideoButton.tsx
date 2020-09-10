@@ -6,7 +6,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Videocam from "@material-ui/icons/Videocam";
 import VideocamOff from "@material-ui/icons/VideocamOff";
 
-import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle";
+import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle/useLocalVideoToggle";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
