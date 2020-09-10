@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
 import ConnectionOptions from "@sentrei/video/components/MenuBar/ConnectionOptions/ConnectionOptions";
-import {DeviceSelector} from "@sentrei/video/components/MenuBar/DeviceSelector/DeviceSelector";
+import DeviceSelector from "@sentrei/video/components/MenuBar/DeviceSelector/DeviceSelector";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

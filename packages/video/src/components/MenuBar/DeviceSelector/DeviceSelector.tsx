@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   },
 });
 
-export function DeviceSelector({
+export default function DeviceSelector({
   className,
   hidden,
 }: {

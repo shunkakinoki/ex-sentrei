@@ -1,1 +1,1 @@
-export {DeviceSelector as default} from "./DeviceSelector";
+export {default} from "./DeviceSelector";
