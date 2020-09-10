@@ -1,7 +1,7 @@
 import {isMobile} from "@sentrei/video/utils";
 import {useEffect, useRef} from "react";
-import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle/useLocalVideoToggle";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
+import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 
 /*
   This component adds a visibilitychange handler to the document when

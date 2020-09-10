@@ -8,14 +8,14 @@ import {
   TwilioError,
 } from "twilio-video";
 import {Callback, ErrorCallback} from "@sentrei/video/types";
-import {SelectedParticipantProvider} from "./useSelectedParticipant/useSelectedParticipant";
+import {SelectedParticipantProvider} from "./useSelectedParticipant";
 
-import AttachVisibilityHandler from "./AttachVisibilityHandler/AttachVisibilityHandler";
-import useHandleRoomDisconnectionErrors from "./useHandleRoomDisconnectionErrors/useHandleRoomDisconnectionErrors";
-import useHandleOnDisconnect from "./useHandleOnDisconnect/useHandleOnDisconnect";
-import useHandleTrackPublicationFailed from "./useHandleTrackPublicationFailed/useHandleTrackPublicationFailed";
-import useLocalTracks from "./useLocalTracks/useLocalTracks";
-import useRoom from "./useRoom/useRoom";
+import AttachVisibilityHandler from "./AttachVisibilityHandler";
+import useHandleRoomDisconnectionErrors from "./useHandleRoomDisconnectionErrors";
+import useHandleOnDisconnect from "./useHandleOnDisconnect";
+import useHandleTrackPublicationFailed from "./useHandleTrackPublicationFailed";
+import useLocalTracks from "./useLocalTracks";
+import useRoom from "./useRoom";
 
 /*
  *  The hooks used by the VideoProvider component are different than the hooks found in the 'hooks/' directory. The hooks

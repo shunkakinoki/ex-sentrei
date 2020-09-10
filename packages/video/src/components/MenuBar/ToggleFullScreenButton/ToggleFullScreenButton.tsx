@@ -5,7 +5,7 @@ import fscreen from "fscreen";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
 import IconButton from "@material-ui/core/IconButton";
 
-import useFullScreenToggle from "@sentrei/video/hooks/useFullScreenToggle/useFullScreenToggle";
+import useFullScreenToggle from "@sentrei/video/hooks/useFullScreenToggle";
 
 export default function ToggleFullscreenButton() {
   const [isFullScreen, toggleFullScreen] = useFullScreenToggle();

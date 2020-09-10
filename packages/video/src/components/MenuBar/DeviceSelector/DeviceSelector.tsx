@@ -1,10 +1,10 @@
 import React from "react";
 
-import AudioInputList from "./AudioInputList/AudioInputList";
-import AudioOutputList from "./AudioOutputList/AudioOutputList";
+import AudioInputList from "./AudioInputList";
+import AudioOutputList from "./AudioOutputList";
 import {DialogContent} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import VideoInputList from "./VideoInputList/VideoInputList";
+import VideoInputList from "./VideoInputList";
 
 const useStyles = makeStyles({
   listSection: {

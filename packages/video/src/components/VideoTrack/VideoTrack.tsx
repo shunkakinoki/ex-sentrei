@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from "react";
 import {IVideoTrack} from "@sentrei/video/types";
 import {styled} from "@material-ui/core/styles";
 import {Track} from "twilio-video";
-import useMediaStreamTrack from "@sentrei/video/hooks/useMediaStreamTrack/useMediaStreamTrack";
+import useMediaStreamTrack from "@sentrei/video/hooks/useMediaStreamTrack";
 
 const Video = styled("video")({
   width: "100%",

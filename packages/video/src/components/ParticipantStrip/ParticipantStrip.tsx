@@ -1,9 +1,9 @@
 import React from "react";
-import Participant from "@sentrei/video/components/Participant/Participant";
+import Participant from "@sentrei/video/components/Participant";
 import {styled} from "@material-ui/core/styles";
-import useParticipants from "@sentrei/video/hooks/useParticipants/useParticipants";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
-import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant/useSelectedParticipant";
+import useParticipants from "@sentrei/video/hooks/useParticipants";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant";
 
 const Container = styled("aside")(({theme}) => ({
   padding: "0.5em",

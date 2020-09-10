@@ -1,10 +1,10 @@
 import {act, renderHook} from "@testing-library/react-hooks";
 import useLocalVideoToggle from "./useLocalVideoToggle";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 import {EventEmitter} from "events";
 import {LocalParticipant} from "twilio-video";
 
-jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext");
+jest.mock("@sentrei/video/hooks/useVideoContext");
 const mockUseVideoContext = useVideoContext as jest.Mock<any>;
 
 function getMockTrack(name: string, deviceId?: string) {

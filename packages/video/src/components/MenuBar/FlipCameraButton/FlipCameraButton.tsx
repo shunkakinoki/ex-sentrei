@@ -3,8 +3,8 @@ import {DEFAULT_VIDEO_CONSTRAINTS} from "@sentrei/video/constants";
 import FlipCameraIosIcon from "@material-ui/icons/FlipCameraIos";
 import {IconButton} from "@material-ui/core";
 import {LocalVideoTrack} from "twilio-video";
-import useMediaStreamTrack from "@sentrei/video/hooks/useMediaStreamTrack/useMediaStreamTrack";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
+import useMediaStreamTrack from "@sentrei/video/hooks/useMediaStreamTrack";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 
 export default function FlipCameraButton() {
   const {localTracks} = useVideoContext();

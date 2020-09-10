@@ -3,10 +3,10 @@ import clsx from "clsx";
 import {makeStyles} from "@material-ui/core/styles";
 import {LocalVideoTrack, Participant, RemoteVideoTrack} from "twilio-video";
 
-import BandwidthWarning from "@sentrei/video/components/BandwidthWarning/BandwidthWarning";
-import useIsTrackSwitchedOff from "@sentrei/video/hooks/useIsTrackSwitchedOff/useIsTrackSwitchedOff";
-import usePublications from "@sentrei/video/hooks/usePublications/usePublications";
-import useTrack from "@sentrei/video/hooks/useTrack/useTrack";
+import BandwidthWarning from "@sentrei/video/components/BandwidthWarning";
+import useIsTrackSwitchedOff from "@sentrei/video/hooks/useIsTrackSwitchedOff";
+import usePublications from "@sentrei/video/hooks/usePublications";
+import useTrack from "@sentrei/video/hooks/useTrack";
 import VideocamOff from "@material-ui/icons/VideocamOff";
 
 const useStyles = makeStyles({

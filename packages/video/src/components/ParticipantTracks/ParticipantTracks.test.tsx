@@ -1,16 +1,16 @@
 import React from "react";
 import ParticipantTracks from "./ParticipantTracks";
-import usePublications from "@sentrei/video/hooks/usePublications/usePublications";
+import usePublications from "@sentrei/video/hooks/usePublications";
 import {shallow} from "enzyme";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 
-jest.mock("@sentrei/video/hooks/usePublications/usePublications", () =>
+jest.mock("@sentrei/video/hooks/usePublications", () =>
   jest.fn(() => [
     {trackSid: 0, kind: "video", trackName: ""},
     {trackSid: 1, kind: "audio", trackName: ""},
   ]),
 );
-jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext");
+jest.mock("@sentrei/video/hooks/useVideoContext");
 
 const mockUsePublications = usePublications as jest.Mock<any>;
 const mockUseVideoContext = useVideoContext as jest.Mock<any>;

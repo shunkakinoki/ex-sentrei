@@ -2,13 +2,11 @@ import EventEmitter from "events";
 import React from "react";
 import ParticipantStrip from "./ParticipantStrip";
 import {shallow} from "enzyme";
-import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant/useSelectedParticipant";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
+import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 
-jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext");
-jest.mock(
-  "@sentrei/video/components/VideoProvider/useSelectedParticipant/useSelectedParticipant",
-);
+jest.mock("@sentrei/video/hooks/useVideoContext");
+jest.mock("@sentrei/video/components/VideoProvider/useSelectedParticipant");
 const mockedVideoContext = useVideoContext as jest.Mock<any>;
 const mockUseSelectedParticipant = useSelectedParticipant as jest.Mock<any>;
 

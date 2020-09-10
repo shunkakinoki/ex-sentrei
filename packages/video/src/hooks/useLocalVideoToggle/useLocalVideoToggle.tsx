@@ -1,6 +1,6 @@
 import {LocalVideoTrack} from "twilio-video";
 import {useCallback, useRef, useState} from "react";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 
 export default function useLocalVideoToggle() {
   const {

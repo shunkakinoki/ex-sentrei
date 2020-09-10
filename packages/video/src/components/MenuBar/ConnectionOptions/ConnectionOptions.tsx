@@ -16,7 +16,7 @@ import {
 } from "@sentrei/video/state/settings/settingsReducer";
 import {RenderDimensions} from "@sentrei/video/state/settings/renderDimensions";
 import {useAppState} from "@sentrei/video/state";
-import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
+import useRoomState from "@sentrei/video/hooks/useRoomState";
 
 const useStyles = makeStyles({
   formControl: {

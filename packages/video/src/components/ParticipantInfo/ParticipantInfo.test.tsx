@@ -1,16 +1,15 @@
 import React from "react";
 import ParticipantInfo from "./ParticipantInfo";
-import PinIcon from "./PinIcon/PinIcon";
+import PinIcon from "./PinIcon";
 import {shallow} from "enzyme";
-import usePublications from "@sentrei/video/hooks/usePublications/usePublications";
-import useIsTrackSwitchedOff from "@sentrei/video/hooks/useIsTrackSwitchedOff/useIsTrackSwitchedOff";
+import usePublications from "@sentrei/video/hooks/usePublications";
+import useIsTrackSwitchedOff from "@sentrei/video/hooks/useIsTrackSwitchedOff";
 
-jest.mock(
-  "@sentrei/video/hooks/useParticipantNetworkQualityLevel/useParticipantNetworkQualityLevel",
-  () => () => 4,
+jest.mock("@sentrei/video/hooks/useParticipantNetworkQualityLevel", () => () =>
+  4,
 );
-jest.mock("@sentrei/video/hooks/usePublications/usePublications");
-jest.mock("@sentrei/video/hooks/useIsTrackSwitchedOff/useIsTrackSwitchedOff");
+jest.mock("@sentrei/video/hooks/usePublications");
+jest.mock("@sentrei/video/hooks/useIsTrackSwitchedOff");
 
 const mockUsePublications = usePublications as jest.Mock<any>;
 const mockUseIsTrackSwitchedOff = useIsTrackSwitchedOff as jest.Mock<any>;

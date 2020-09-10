@@ -1,9 +1,9 @@
 import React from "react";
 import Publication from "./Publication";
 import {shallow} from "enzyme";
-import useTrack from "@sentrei/video/hooks/useTrack/useTrack";
+import useTrack from "@sentrei/video/hooks/useTrack";
 
-jest.mock("@sentrei/video/hooks/useTrack/useTrack");
+jest.mock("@sentrei/video/hooks/useTrack");
 const mockUseTrack = useTrack as jest.Mock<any>;
 
 describe("the Publication component", () => {

@@ -8,8 +8,8 @@ import {
   Theme,
 } from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
-import ConnectionOptions from "@sentrei/video/components/MenuBar/ConnectionOptions/ConnectionOptions";
-import DeviceSelector from "@sentrei/video/components/MenuBar/DeviceSelector/DeviceSelector";
+import ConnectionOptions from "@sentrei/video/components/MenuBar/ConnectionOptions";
+import DeviceSelector from "@sentrei/video/components/MenuBar/DeviceSelector";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

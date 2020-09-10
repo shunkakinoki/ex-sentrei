@@ -2,11 +2,9 @@ import React from "react";
 import {shallow} from "enzyme";
 import Tooltip from "@material-ui/core/Tooltip";
 import ParticipantConnectionIndicator from "./ParticipantConnectionIndicator";
-import useParticipantIsReconnecting from "@sentrei/video/hooks/useParticipantIsReconnecting/useParticipantIsReconnecting";
+import useParticipantIsReconnecting from "@sentrei/video/hooks/useParticipantIsReconnecting";
 
-jest.mock(
-  "@sentrei/video/hooks/useParticipantIsReconnecting/useParticipantIsReconnecting",
-);
+jest.mock("@sentrei/video/hooks/useParticipantIsReconnecting");
 
 const mockUseParticipantIsReconnecting = useParticipantIsReconnecting as jest.Mock<
   boolean
