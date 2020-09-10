@@ -1,9 +1,9 @@
-import MainParticipantInfo from "@sentrei/video/components/MainParticipantInfo";
-import ParticipantTracks from "@sentrei/video/components/ParticipantTracks";
+import MainParticipantInfo from "@sentrei/video/components/MainParticipantInfo/MainParticipantInfo";
+import ParticipantTracks from "@sentrei/video/components/ParticipantTracks/ParticipantTracks";
 import React from "react";
-import useMainSpeaker from "@sentrei/video/hooks/useMainSpeaker";
-import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant";
-import useScreenShareParticipant from "@sentrei/video/hooks/useScreenShareParticipant";
+import useMainSpeaker from "@sentrei/video/hooks/useMainSpeaker/useMainSpeaker";
+import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant/useSelectedParticipant";
+import useScreenShareParticipant from "@sentrei/video/hooks/useScreenShareParticipant/useScreenShareParticipant";
 
 export default function MainParticipant() {
   const mainParticipant = useMainSpeaker();

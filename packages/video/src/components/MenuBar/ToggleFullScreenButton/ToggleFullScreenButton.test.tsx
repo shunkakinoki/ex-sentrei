@@ -1,11 +1,11 @@
 import React from "react";
 import {shallow} from "enzyme";
 import {render, fireEvent} from "@testing-library/react";
-import useFullScreenToggle from "@sentrei/video/hooks/useFullScreenToggle";
+import useFullScreenToggle from "@sentrei/video/hooks/useFullScreenToggle/useFullScreenToggle";
 
 import ToggleFullscreenButton from "./ToggleFullScreenButton";
 
-jest.mock("@sentrei/video/hooks/useFullScreenToggle");
+jest.mock("@sentrei/video/hooks/useFullScreenToggle/useFullScreenToggle");
 const mockeduseFullScreenToggle = useFullScreenToggle as jest.Mock;
 
 describe("Full screen button", () => {

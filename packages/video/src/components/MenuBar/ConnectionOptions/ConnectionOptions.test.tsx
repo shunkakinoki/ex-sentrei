@@ -4,9 +4,9 @@ import {initialSettings} from "@sentrei/video/state/settings/settingsReducer";
 import {Select, TextField} from "@material-ui/core";
 import {shallow} from "enzyme";
 import {useAppState} from "@sentrei/video/state";
-import useRoomState from "@sentrei/video/hooks/useRoomState";
+import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 
-jest.mock("@sentrei/video/hooks/useRoomState");
+jest.mock("@sentrei/video/hooks/useRoomState/useRoomState");
 jest.mock("@sentrei/video/state");
 
 const mockUseAppState = useAppState as jest.Mock<any>;

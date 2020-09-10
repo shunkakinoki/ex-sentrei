@@ -1,11 +1,11 @@
 import React from "react";
 import {fireEvent, render} from "@testing-library/react";
 import FlipCameraButton from "./FlipCameraButton";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 import {DEFAULT_VIDEO_CONSTRAINTS} from "@sentrei/video/constants";
 
-jest.mock("@sentrei/video/hooks/useMediaStreamTrack");
-jest.mock("@sentrei/video/hooks/useVideoContext");
+jest.mock("@sentrei/video/hooks/useMediaStreamTrack/useMediaStreamTrack");
+jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext");
 const mockUserVideoContext = useVideoContext as jest.Mock<any>;
 
 const mockStreamSettings = {facingMode: "user"};

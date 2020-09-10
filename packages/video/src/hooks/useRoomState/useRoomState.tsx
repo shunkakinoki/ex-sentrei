@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
 type RoomStateType = "disconnected" | "connected" | "reconnecting";
 

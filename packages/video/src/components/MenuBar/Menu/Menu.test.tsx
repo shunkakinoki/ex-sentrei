@@ -2,13 +2,13 @@ import React from "react";
 import {shallow} from "enzyme";
 import Menu from "./Menu";
 import MoreIcon from "@material-ui/icons/MoreVert";
-import UserAvatar from "@sentrei/video/components/MenuBar/UserAvatar";
+import UserAvatar from "@sentrei/video/components/MenuBar/UserAvatar/UserAvatar";
 import {useAppState} from "@sentrei/video/state";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 import {MenuItem} from "@material-ui/core";
 
 jest.mock("@sentrei/video/state");
-jest.mock("@sentrei/video/hooks/useVideoContext");
+jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext");
 
 const mockUseAppState = useAppState as jest.Mock<any>;
 const mockUseVideoContext = useVideoContext as jest.Mock<any>;

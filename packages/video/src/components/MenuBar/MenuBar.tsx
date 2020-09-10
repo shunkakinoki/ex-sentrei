@@ -5,16 +5,16 @@ import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import TextField from "@material-ui/core/TextField";
-import ToggleFullscreenButton from "./ToggleFullScreenButton";
+import ToggleFullscreenButton from "./ToggleFullScreenButton/ToggleFullScreenButton";
 import Toolbar from "@material-ui/core/Toolbar";
-import Menu from "./Menu";
+import Menu from "./Menu/Menu";
 
 import {useAppState} from "@sentrei/video/state";
-import useRoomState from "@sentrei/video/hooks/useRoomState";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 import {Typography} from "@material-ui/core";
-import FlipCameraButton from "./FlipCameraButton";
-import LocalAudioLevelIndicator from "./DeviceSelector/LocalAudioLevelIndicator";
+import FlipCameraButton from "./FlipCameraButton/FlipCameraButton";
+import LocalAudioLevelIndicator from "./DeviceSelector/LocalAudioLevelIndicator/LocalAudioLevelIndicator";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

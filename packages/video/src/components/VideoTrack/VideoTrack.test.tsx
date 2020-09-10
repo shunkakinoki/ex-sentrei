@@ -2,7 +2,7 @@ import React from "react";
 import {render} from "@testing-library/react";
 import VideoTrack from "./VideoTrack";
 
-jest.mock("@sentrei/video/hooks/useMediaStreamTrack");
+jest.mock("@sentrei/video/hooks/useMediaStreamTrack/useMediaStreamTrack");
 
 describe("the VideoTrack component", () => {
   const mockTrack = {

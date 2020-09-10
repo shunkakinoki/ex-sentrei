@@ -1,10 +1,10 @@
 import React from "react";
 import {shallow} from "enzyme";
-import useLocalAudioToggle from "@sentrei/video/hooks/useLocalAudioToggle";
+import useLocalAudioToggle from "@sentrei/video/hooks/useLocalAudioToggle/useLocalAudioToggle";
 
 import ToggleAudioButton from "./ToggleAudioButton";
 
-jest.mock("@sentrei/video/hooks/useLocalAudioToggle");
+jest.mock("@sentrei/video/hooks/useLocalAudioToggle/useLocalAudioToggle");
 
 const mockUseLocalAudioToggle = useLocalAudioToggle as jest.Mock<any>;
 

@@ -1,9 +1,9 @@
 import {EventEmitter} from "events";
 import React from "react";
 import {shallow} from "enzyme";
-import useScreenShareParticipant from "@sentrei/video/hooks/useScreenShareParticipant";
-import useScreenShareToggle from "@sentrei/video/hooks/useScreenShareToggle";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import useScreenShareParticipant from "@sentrei/video/hooks/useScreenShareParticipant/useScreenShareParticipant";
+import useScreenShareToggle from "@sentrei/video/hooks/useScreenShareToggle/useScreenShareToggle";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
 import ToggleScreenShareButton, {
   SCREEN_SHARE_TEXT,
@@ -12,9 +12,11 @@ import ToggleScreenShareButton, {
   SHARE_NOT_SUPPORTED_TEXT,
 } from "./ToggleScreenShareButton";
 
-jest.mock("@sentrei/video/hooks/useScreenShareToggle");
-jest.mock("@sentrei/video/hooks/useScreenShareParticipant");
-jest.mock("@sentrei/video/hooks/useVideoContext");
+jest.mock("@sentrei/video/hooks/useScreenShareToggle/useScreenShareToggle");
+jest.mock(
+  "@sentrei/video/hooks/useScreenShareParticipant/useScreenShareParticipant",
+);
+jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext");
 
 const mockUseScreenShareToggle = useScreenShareToggle as jest.Mock<any>;
 const mockUseScreenShareParticipant = useScreenShareParticipant as jest.Mock<

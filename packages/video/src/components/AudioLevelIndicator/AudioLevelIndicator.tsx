@@ -2,8 +2,8 @@ import React, {useEffect, useRef, useState} from "react";
 import {AudioTrack, LocalAudioTrack, RemoteAudioTrack} from "twilio-video";
 import {interval} from "d3-timer";
 import MicOff from "@material-ui/icons/MicOff";
-import useIsTrackEnabled from "@sentrei/video/hooks/useIsTrackEnabled";
-import useMediaStreamTrack from "@sentrei/video/hooks/useMediaStreamTrack";
+import useIsTrackEnabled from "@sentrei/video/hooks/useIsTrackEnabled/useIsTrackEnabled";
+import useMediaStreamTrack from "@sentrei/video/hooks/useMediaStreamTrack/useMediaStreamTrack";
 
 let clipId = 0;
 const getUniqueClipId = () => clipId++;

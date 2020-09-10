@@ -1,14 +1,18 @@
 import React from "react";
 import MainParticipant from "./MainParticipant";
-import ParticipantTracks from "@sentrei/video/components/ParticipantTracks";
+import ParticipantTracks from "@sentrei/video/components/ParticipantTracks/ParticipantTracks";
 import {shallow} from "enzyme";
-import useMainSpeaker from "@sentrei/video/hooks/useMainSpeaker";
-import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant";
-import useScreenShareParticipant from "@sentrei/video/hooks/useScreenShareParticipant";
+import useMainSpeaker from "@sentrei/video/hooks/useMainSpeaker/useMainSpeaker";
+import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant/useSelectedParticipant";
+import useScreenShareParticipant from "@sentrei/video/hooks/useScreenShareParticipant/useScreenShareParticipant";
 
-jest.mock("@sentrei/video/hooks/useMainSpeaker");
-jest.mock("@sentrei/video/components/VideoProvider/useSelectedParticipant");
-jest.mock("@sentrei/video/hooks/useScreenShareParticipant");
+jest.mock("@sentrei/video/hooks/useMainSpeaker/useMainSpeaker");
+jest.mock(
+  "@sentrei/video/components/VideoProvider/useSelectedParticipant/useSelectedParticipant",
+);
+jest.mock(
+  "@sentrei/video/hooks/useScreenShareParticipant/useScreenShareParticipant",
+);
 
 const mockUseMainSpeaker = useMainSpeaker as jest.Mock<any>;
 const mockUseSelectedParticipant = useSelectedParticipant as jest.Mock<any>;

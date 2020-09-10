@@ -1,14 +1,14 @@
 import React from "react";
 import {styled} from "@material-ui/core/styles";
 
-import Controls from "@sentrei/video/components/Controls";
-import LocalVideoPreview from "@sentrei/video/components/LocalVideoPreview";
-import MenuBar from "@sentrei/video/components/MenuBar";
-import ReconnectingNotification from "@sentrei/video/components/ReconnectingNotification";
-import Room from "@sentrei/video/components/Room";
+import Controls from "@sentrei/video/components/Controls/Controls";
+import LocalVideoPreview from "@sentrei/video/components/LocalVideoPreview/LocalVideoPreview";
+import MenuBar from "@sentrei/video/components/MenuBar/MenuBar";
+import ReconnectingNotification from "@sentrei/video/components/ReconnectingNotification/ReconnectingNotification";
+import Room from "@sentrei/video/components/Room/Room";
 
-import useHeight from "@sentrei/video/hooks/useHeight";
-import useRoomState from "@sentrei/video/hooks/useRoomState";
+import useHeight from "@sentrei/video/hooks/useHeight/useHeight";
+import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 
 const Container = styled("div")({
   display: "grid",

@@ -4,7 +4,7 @@ import {shallow} from "enzyme";
 import EndCallButton from "./EndCallButton";
 
 const mockRoom: any = {disconnect: jest.fn()};
-jest.mock("@sentrei/video/hooks/useVideoContext", () => () => ({
+jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext", () => () => ({
   room: mockRoom,
 }));
 

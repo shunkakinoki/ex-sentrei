@@ -1,14 +1,14 @@
 import React, {useState, useRef, useCallback} from "react";
-import AboutDialog from "@sentrei/video/components/MenuBar/AboutDialog";
+import AboutDialog from "@sentrei/video/components/MenuBar/AboutDialog/AboutDialog";
 import IconButton from "@material-ui/core/IconButton";
 import MenuContainer from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MoreIcon from "@material-ui/icons/MoreVert";
-import SettingsDialog from "@sentrei/video/components/MenuBar/SettingsDialog";
-import UserAvatar from "@sentrei/video/components/MenuBar/UserAvatar";
+import SettingsDialog from "@sentrei/video/components/MenuBar/SettingsDialog/SettingsDialog";
+import UserAvatar from "@sentrei/video/components/MenuBar/UserAvatar/UserAvatar";
 
 import {useAppState} from "@sentrei/video/state";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
 export default function Menu() {
   const {user, signOut} = useAppState();

@@ -1,13 +1,13 @@
 import React from "react";
 import AttachVisibilityHandler from "./AttachVisibilityHandler";
-import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle";
+import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle/useLocalVideoToggle";
 import {render} from "@testing-library/react";
 import * as utils from "@sentrei/video/utils";
 
-jest.mock("@sentrei/video/hooks/useVideoContext", () => () => ({
+jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext", () => () => ({
   room: {},
 }));
-jest.mock("@sentrei/video/hooks/useLocalVideoToggle");
+jest.mock("@sentrei/video/hooks/useLocalVideoToggle/useLocalVideoToggle");
 
 const mockUseLocalVideoToggle = useLocalVideoToggle as jest.Mock<any>;
 const mockToggleVideoEnabled = jest.fn();
