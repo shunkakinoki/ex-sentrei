@@ -1,9 +1,13 @@
 const userEmojiArray = [":joy:", ":hushed:", ":neutral_face:"];
 
-const userRandomIndex = Math.floor(Math.random() * userEmojiArray.length);
-export const userEmoji = userEmojiArray[userRandomIndex];
+export const userEmoji = (): string => {
+  const userRandomIndex = Math.floor(Math.random() * userEmojiArray.length);
+  return userEmojiArray[userRandomIndex];
+};
 
 const roomEmojiArray = [":sushi:", ":ice_cream:", ":ramen:"];
 
-const roomRandomIndex = Math.floor(Math.random() * roomEmojiArray.length);
-export const roomEmoji = roomEmojiArray[roomRandomIndex];
+export const roomEmoji = (): string => {
+  const roomRandomIndex = Math.floor(Math.random() * roomEmojiArray.length);
+  return roomEmojiArray[roomRandomIndex];
+};

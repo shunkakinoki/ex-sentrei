@@ -51,7 +51,7 @@ const RoomStepperSubmit = ({
         createdBy: profile,
         createdByUid: user.uid,
         description: null,
-        emoji: roomEmoji,
+        emoji: roomEmoji(),
         participantCount: 0,
         photo: null,
         photoHash: null,
