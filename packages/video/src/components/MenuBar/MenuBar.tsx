@@ -10,7 +10,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Menu from "./Menu/Menu";
 
 import {useAppState} from "../../state";
-import {useParams} from "react-router-dom";
 import useRoomState from "../../hooks/useRoomState/useRoomState";
 import useVideoContext from "../../hooks/useVideoContext/useVideoContext";
 import {Typography} from "@material-ui/core";
@@ -61,19 +60,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function MenuBar() {
   const classes = useStyles();
-  const {URLRoomName} = useParams();
   const {user, getToken, isFetching} = useAppState();
   const {isConnecting, connect, isAcquiringLocalTracks} = useVideoContext();
   const roomState = useRoomState();
 
   const [name, setName] = useState<string>(user?.displayName || "");
   const [roomName, setRoomName] = useState<string>("");
-
-  useEffect(() => {
-    if (URLRoomName) {
-      setRoomName(URLRoomName);
-    }
-  }, [URLRoomName]);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);

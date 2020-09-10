@@ -27,6 +27,7 @@ export default function UserAvatar({user}: {user: StateContextType["user"]}) {
     <Avatar src={photoURL} />
   ) : (
     <Avatar className={classes.red}>
+      {/* @ts-ignore */}
       {displayName ? getInitials(displayName) : <Person />}
     </Avatar>
   );

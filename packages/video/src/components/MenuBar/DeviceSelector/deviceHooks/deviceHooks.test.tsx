@@ -15,8 +15,8 @@ describe("the useDevices hook", () => {
   afterEach(jest.clearAllMocks);
 
   it("should correctly return a list of devices", async () => {
-    // @ts-ignore
     navigator.mediaDevices.enumerateDevices = () =>
+      // @ts-ignore
       Promise.resolve(mockDevices);
     const {result, waitForNextUpdate} = renderHook(deviceHooks.useDevices);
     await waitForNextUpdate();
@@ -24,8 +24,8 @@ describe("the useDevices hook", () => {
   });
 
   it('should respond to "devicechange" events', async () => {
-    // @ts-ignore
     navigator.mediaDevices.enumerateDevices = () =>
+      // @ts-ignore
       Promise.resolve(mockDevices);
     const {result, waitForNextUpdate} = renderHook(deviceHooks.useDevices);
     await waitForNextUpdate();
@@ -34,8 +34,8 @@ describe("the useDevices hook", () => {
       expect.any(Function),
     );
     act(() => {
-      // @ts-ignore
       navigator.mediaDevices.enumerateDevices = () =>
+        // @ts-ignore
         Promise.resolve([{deviceId: 2, label: "2"}]);
       mockAddEventListener.mock.calls[0][1]();
     });
