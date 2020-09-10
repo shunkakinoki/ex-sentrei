@@ -1,12 +1,15 @@
+import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
-
 import Loader from "@sentrei/ui/components/Loader";
-import VideoApp from "@sentrei/video";
+
+const SentreiVideoApp = dynamic(() => import("@sentrei/video"), {
+  ssr: false,
+});
 
 const App = (): JSX.Element => {
   const {query} = useRouter();
@@ -33,11 +36,7 @@ const App = (): JSX.Element => {
     return <HomeScreen />;
   }
 
-  return (
-    <>
-      <VideoApp />
-    </>
-  );
+  return <SentreiVideoApp />;
 };
 
 export default App;
