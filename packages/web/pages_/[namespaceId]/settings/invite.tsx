@@ -19,7 +19,7 @@ const SpaceInvite = dynamic(
   },
 );
 
-const SpaceInvitePage: NextPage = () => {
+const Invite: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -84,4 +84,4 @@ const SpaceInvitePage: NextPage = () => {
   );
 };
 
-export default SpaceInvitePage;
+export default Invite;

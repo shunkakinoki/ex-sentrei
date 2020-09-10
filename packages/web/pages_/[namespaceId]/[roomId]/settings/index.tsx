@@ -17,7 +17,7 @@ const RoomSettings = dynamic(
   },
 );
 
-const RoomIdSettings: NextPage = () => {
+const Settings: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -84,4 +84,4 @@ const RoomIdSettings: NextPage = () => {
   );
 };
 
-export default RoomIdSettings;
+export default Settings;
