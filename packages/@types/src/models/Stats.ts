@@ -43,7 +43,7 @@ export const roomSpaceCollection: RoomSpaceCollection[] = [
 
 export type Collection = RootCollection | RoomSpaceCollection;
 
-export const Collection: Collection[] = [
+export const collection: Collection[] = [
   ...rootCollection,
   ...roomSpaceCollection,
 ];

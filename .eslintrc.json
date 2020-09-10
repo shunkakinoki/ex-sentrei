@@ -96,6 +96,50 @@
           "version": "detect"
         }
       }
+    },
+    {
+      "files": ["packages/video/src/**"],
+      "rules": {
+        "consistent-return": 0,
+        "func-names": 0,
+        "global-require": 0,
+        "guard-for-in": 0,
+        "max-classes-per-file": 0,
+        "no-console": 0,
+        "no-plusplus": 0,
+        "no-restricted-syntax": 0,
+        "no-return-assign": 0,
+        "no-shadow": 0,
+        "prefer-const": 0,
+        "prefer-destructuring": 0,
+        "prefer-promise-reject-errors": 0,
+        "prefer-template": 0,
+        "import/newline-after-import": 0,
+        "import/no-cycle": 0,
+        "import/no-duplicates": 0,
+        "import/order": 0,
+        "import/prefer-default-export": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
+        "react/destructuring-assignment": 0,
+        "react/jsx-boolean-value": 0,
+        "react/jsx-curly-brace-presence": 0,
+        "react/no-unused-prop-types": 0,
+        "react/prop-types": 0,
+        "react/self-closing-comp": 0,
+        "react-hooks/exhaustive-deps": 0,
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/prefer-regexp-exec": 0,
+        "@typescript-eslint/lines-between-class-members": 0,
+        "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/no-misused-promises": 0,
+        "@typescript-eslint/no-non-null-assertion": 0,
+        "@typescript-eslint/no-unused-expressions": 0,
+        "@typescript-eslint/no-unused-vars": 0,
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/restrict-plus-operands": 0,
+        "@typescript-eslint/require-await": 0
+      }
     }
   ],
   "rules": {
