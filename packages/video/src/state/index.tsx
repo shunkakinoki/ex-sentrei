@@ -6,7 +6,7 @@ import {
   initialSettings,
   Settings,
   SettingsAction,
-} from "./settings/settingsReducer";
+} from "@sentrei/video/state/settings/settingsReducer";
 
 export interface StateContextType {
   error: TwilioError | null;

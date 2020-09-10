@@ -1,12 +1,12 @@
 import React from "react";
 
-import App from "./App";
-import {useAppState} from "./state";
-import ErrorDialog from "./components/ErrorDialog/ErrorDialog";
-import "./types";
-import {VideoProvider} from "./components/VideoProvider";
-import useConnectionOptions from "./utils/useConnectionOptions/useConnectionOptions";
-import UnsupportedBrowserWarning from "./components/UnsupportedBrowserWarning/UnsupportedBrowserWarning";
+import App from "@sentrei/video/App";
+import {useAppState} from "@sentrei/video/state";
+import ErrorDialog from "@sentrei/video/components/ErrorDialog/ErrorDialog";
+import "@sentrei/video/types";
+import {VideoProvider} from "@sentrei/video/components/VideoProvider";
+import useConnectionOptions from "@sentrei/video/utils/useConnectionOptions/useConnectionOptions";
+import UnsupportedBrowserWarning from "@sentrei/video/components/UnsupportedBrowserWarning/UnsupportedBrowserWarning";
 
 const VideoApp = () => {
   const {error, setError} = useAppState();
