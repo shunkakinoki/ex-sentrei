@@ -1,3 +1,10 @@
+# [1.59.0](https://github.com/sentrei/sentrei/compare/v1.58.0...v1.59.0) (2020-09-10)
+
+### Features
+
+- 🎸 complete refactor path ([6a0f8bb](https://github.com/sentrei/sentrei/commit/6a0f8bb4597f1581f7068408a0ca4a757aea90c5))
+- 🎸 complete rename network quality level ([149229c](https://github.com/sentrei/sentrei/commit/149229cd8c2d246a6a091d8579d4865deced0453))
+
 # [1.58.0](https://github.com/sentrei/sentrei/compare/v1.57.0...v1.58.0) (2020-09-10)
 
 ### Features
