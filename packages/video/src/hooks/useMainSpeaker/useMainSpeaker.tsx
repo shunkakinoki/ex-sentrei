@@ -1,8 +1,8 @@
-import useVideoContext from "../useVideoContext/useVideoContext";
-import useDominantSpeaker from "../useDominantSpeaker/useDominantSpeaker";
-import useParticipants from "../useParticipants/useParticipants";
-import useScreenShareParticipant from "../useScreenShareParticipant/useScreenShareParticipant";
-import useSelectedParticipant from "../../components/VideoProvider/useSelectedParticipant/useSelectedParticipant";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
+import useDominantSpeaker from "@sentrei/video/hooks/useDominantSpeaker/useDominantSpeaker";
+import useParticipants from "@sentrei/video/hooks/useParticipants/useParticipants";
+import useScreenShareParticipant from "@sentrei/video/hooks/useScreenShareParticipant/useScreenShareParticipant";
+import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant/useSelectedParticipant";
 
 export default function useMainSpeaker() {
   const [selectedParticipant] = useSelectedParticipant();

@@ -2,9 +2,9 @@ import {act, renderHook} from "@testing-library/react-hooks";
 import EventEmitter from "events";
 import {Room} from "twilio-video";
 import useRoomState from "./useRoomState";
-import useVideoContext from "../useVideoContext/useVideoContext";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
-jest.mock("../useVideoContext/useVideoContext");
+jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext");
 
 const mockedVideoContext = useVideoContext as jest.Mock<any>;
 

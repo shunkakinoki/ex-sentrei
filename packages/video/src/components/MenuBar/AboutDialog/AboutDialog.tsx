@@ -7,7 +7,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 import Video from "twilio-video";
-import {useAppState} from "../../../state";
+import {useAppState} from "@sentrei/video/state";
 
 interface AboutDialogProps {
   open: boolean;

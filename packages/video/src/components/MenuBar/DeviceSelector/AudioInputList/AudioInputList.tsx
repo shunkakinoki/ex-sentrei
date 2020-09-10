@@ -1,10 +1,10 @@
 import React from "react";
 import {FormControl, MenuItem, Typography, Select} from "@material-ui/core";
-import LocalAudioLevelIndicator from "../LocalAudioLevelIndicator/LocalAudioLevelIndicator";
+import LocalAudioLevelIndicator from "@sentrei/video/components/MenuBar/DeviceSelector/LocalAudioLevelIndicator/LocalAudioLevelIndicator";
 import {makeStyles} from "@material-ui/core/styles";
-import {useAudioInputDevices} from "../deviceHooks/deviceHooks";
-import useMediaStreamTrack from "../../../../hooks/useMediaStreamTrack/useMediaStreamTrack";
-import useVideoContext from "../../../../hooks/useVideoContext/useVideoContext";
+import {useAudioInputDevices} from "@sentrei/video/components/MenuBar/DeviceSelector/deviceHooks/deviceHooks";
+import useMediaStreamTrack from "@sentrei/video/hooks/useMediaStreamTrack/useMediaStreamTrack";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
 const useStyles = makeStyles({
   container: {

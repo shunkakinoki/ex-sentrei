@@ -7,7 +7,7 @@ import {
   Room,
   TwilioError,
 } from "twilio-video";
-import {Callback, ErrorCallback} from "../../types";
+import {Callback, ErrorCallback} from "@sentrei/video/types";
 import {SelectedParticipantProvider} from "./useSelectedParticipant/useSelectedParticipant";
 
 import AttachVisibilityHandler from "./AttachVisibilityHandler/AttachVisibilityHandler";
@@ -95,7 +95,7 @@ export function VideoProvider({
       <SelectedParticipantProvider room={room}>
         {children}
       </SelectedParticipantProvider>
-      {/* 
+      {/*
         The AttachVisibilityHandler component is using the useLocalVideoToggle hook
         which must be used within the VideoContext Provider.
       */}

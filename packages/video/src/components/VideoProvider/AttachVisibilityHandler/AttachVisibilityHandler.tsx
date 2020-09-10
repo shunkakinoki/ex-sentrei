@@ -1,9 +1,9 @@
-import {isMobile} from "../../../utils";
+import {isMobile} from "@sentrei/video/utils";
 import {useEffect, useRef} from "react";
-import useLocalVideoToggle from "../../../hooks/useLocalVideoToggle/useLocalVideoToggle";
-import useVideoContext from "../../../hooks/useVideoContext/useVideoContext";
+import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle/useLocalVideoToggle";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
-/* 
+/*
   This component adds a visibilitychange handler to the document when
   the user is using a mobile device. When the handler detects that
   the browser has been backgrounded, it unpublishes the users local

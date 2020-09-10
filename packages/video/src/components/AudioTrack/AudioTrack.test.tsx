@@ -1,7 +1,7 @@
 import React from "react";
 import {render} from "@testing-library/react";
 import AudioTrack from "./AudioTrack";
-import {useAppState} from "../../state";
+import {useAppState} from "@sentrei/video/state";
 
 const audioEl = document.createElement("audio");
 audioEl.setSinkId = jest.fn();
@@ -11,7 +11,7 @@ const mockTrack = {
   detach: jest.fn(() => [audioEl]),
 } as any;
 
-jest.mock("../../state");
+jest.mock("@sentrei/video/state");
 const mockUseAppState = useAppState as jest.Mock<any>;
 
 mockUseAppState.mockImplementation(() => ({activeSinkId: ""}));

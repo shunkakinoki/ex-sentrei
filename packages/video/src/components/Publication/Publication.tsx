@@ -1,9 +1,9 @@
 import React from "react";
-import useTrack from "../../hooks/useTrack/useTrack";
-import AudioTrack from "../AudioTrack/AudioTrack";
-import VideoTrack from "../VideoTrack/VideoTrack";
+import useTrack from "@sentrei/video/hooks/useTrack/useTrack";
+import AudioTrack from "@sentrei/video/components/AudioTrack/AudioTrack";
+import VideoTrack from "@sentrei/video/components/VideoTrack/VideoTrack";
 
-import {IVideoTrack} from "../../types";
+import {IVideoTrack} from "@sentrei/video/types";
 import {
   AudioTrack as IAudioTrack,
   LocalTrackPublication,

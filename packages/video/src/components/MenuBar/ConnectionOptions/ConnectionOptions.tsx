@@ -10,10 +10,13 @@ import {
   Typography,
 } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import {inputLabels, Settings} from "../../../state/settings/settingsReducer";
-import {RenderDimensions} from "../../../state/settings/renderDimensions";
-import {useAppState} from "../../../state";
-import useRoomState from "../../../hooks/useRoomState/useRoomState";
+import {
+  inputLabels,
+  Settings,
+} from "@sentrei/video/state/settings/settingsReducer";
+import {RenderDimensions} from "@sentrei/video/state/settings/renderDimensions";
+import {useAppState} from "@sentrei/video/state";
+import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 
 const useStyles = makeStyles({
   formControl: {

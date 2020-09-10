@@ -1,6 +1,6 @@
 import {useEffect, useRef} from "react";
 import {AudioTrack as IAudioTrack} from "twilio-video";
-import {useAppState} from "../../state";
+import {useAppState} from "@sentrei/video/state";
 
 interface AudioTrackProps {
   track: IAudioTrack;

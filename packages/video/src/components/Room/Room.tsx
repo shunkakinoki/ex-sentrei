@@ -1,7 +1,7 @@
 import React from "react";
-import ParticipantStrip from "../ParticipantStrip/ParticipantStrip";
+import ParticipantStrip from "@sentrei/video/components/ParticipantStrip/ParticipantStrip";
 import {styled} from "@material-ui/core/styles";
-import MainParticipant from "../MainParticipant/MainParticipant";
+import MainParticipant from "@sentrei/video/components/MainParticipant/MainParticipant";
 
 const Container = styled("div")(({theme}) => ({
   position: "relative",

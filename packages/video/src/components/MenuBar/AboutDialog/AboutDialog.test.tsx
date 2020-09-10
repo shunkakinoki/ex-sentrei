@@ -1,10 +1,10 @@
 import React from "react";
 import AboutDialog from "./AboutDialog";
 import {render} from "@testing-library/react";
-import {useAppState} from "../../../state";
+import {useAppState} from "@sentrei/video/state";
 
 jest.mock("twilio-video", () => ({version: "1.2", isSupported: true}));
-jest.mock("../../../state");
+jest.mock("@sentrei/video/state");
 
 const mockUseAppState = useAppState as jest.Mock<any>;
 mockUseAppState.mockImplementation(() => ({roomType: undefined}));

@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {Room} from "twilio-video";
-import {Callback} from "../../../types";
+import {Callback} from "@sentrei/video/types";
 
 export default function useHandleOnDisconnect(
   room: Room,

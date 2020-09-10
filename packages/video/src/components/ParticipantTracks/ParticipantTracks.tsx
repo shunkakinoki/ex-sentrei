@@ -1,8 +1,8 @@
 import React from "react";
 import {Participant, Track} from "twilio-video";
-import Publication from "../Publication/Publication";
-import usePublications from "../../hooks/usePublications/usePublications";
-import useVideoContext from "../../hooks/useVideoContext/useVideoContext";
+import Publication from "@sentrei/video/components/Publication/Publication";
+import usePublications from "@sentrei/video/hooks/usePublications/usePublications";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
 interface ParticipantTracksProps {
   participant: Participant;

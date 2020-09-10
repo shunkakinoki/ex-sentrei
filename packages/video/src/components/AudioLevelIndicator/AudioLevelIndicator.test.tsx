@@ -3,9 +3,9 @@ import {shallow} from "enzyme";
 
 import AudioLevelIndicator from "./AudioLevelIndicator";
 import MicOff from "@material-ui/icons/MicOff";
-import useIsTrackEnabled from "../../hooks/useIsTrackEnabled/useIsTrackEnabled";
+import useIsTrackEnabled from "@sentrei/video/hooks/useIsTrackEnabled/useIsTrackEnabled";
 
-jest.mock("../../hooks/useIsTrackEnabled/useIsTrackEnabled");
+jest.mock("@sentrei/video/hooks/useIsTrackEnabled/useIsTrackEnabled");
 
 const mockUseIsTrackEnabled = useIsTrackEnabled as jest.Mock<boolean>;
 

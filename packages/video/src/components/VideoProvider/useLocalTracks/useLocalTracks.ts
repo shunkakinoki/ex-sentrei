@@ -1,4 +1,4 @@
-import {DEFAULT_VIDEO_CONSTRAINTS} from "../../../constants";
+import {DEFAULT_VIDEO_CONSTRAINTS} from "@sentrei/video/constants";
 import {useCallback, useEffect, useState} from "react";
 import Video, {
   LocalVideoTrack,

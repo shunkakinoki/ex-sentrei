@@ -1,9 +1,9 @@
-import MainParticipantInfo from "../MainParticipantInfo/MainParticipantInfo";
-import ParticipantTracks from "../ParticipantTracks/ParticipantTracks";
+import MainParticipantInfo from "@sentrei/video/components/MainParticipantInfo/MainParticipantInfo";
+import ParticipantTracks from "@sentrei/video/components/ParticipantTracks/ParticipantTracks";
 import React from "react";
-import useMainSpeaker from "../../hooks/useMainSpeaker/useMainSpeaker";
-import useSelectedParticipant from "../VideoProvider/useSelectedParticipant/useSelectedParticipant";
-import useScreenShareParticipant from "../../hooks/useScreenShareParticipant/useScreenShareParticipant";
+import useMainSpeaker from "@sentrei/video/hooks/useMainSpeaker/useMainSpeaker";
+import useSelectedParticipant from "@sentrei/video/components/VideoProvider/useSelectedParticipant/useSelectedParticipant";
+import useScreenShareParticipant from "@sentrei/video/hooks/useScreenShareParticipant/useScreenShareParticipant";
 
 export default function MainParticipant() {
   const mainParticipant = useMainSpeaker();
@@ -17,7 +17,7 @@ export default function MainParticipant() {
       : null;
 
   return (
-    /* audio is disabled for this participant component because this participant's audio 
+    /* audio is disabled for this participant component because this participant's audio
        is already being rendered in the <ParticipantStrip /> component.  */
     <MainParticipantInfo participant={mainParticipant}>
       <ParticipantTracks

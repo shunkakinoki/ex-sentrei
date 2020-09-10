@@ -1,4 +1,4 @@
-import {isMobile} from "../../utils";
+import {isMobile} from "@sentrei/video/utils";
 import {RenderDimensionValue} from "./renderDimensions";
 import {Track, VideoBandwidthProfileOptions} from "twilio-video";
 

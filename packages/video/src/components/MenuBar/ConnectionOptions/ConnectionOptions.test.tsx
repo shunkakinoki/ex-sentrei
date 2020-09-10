@@ -1,13 +1,13 @@
 import React from "react";
 import ConnectionOptions from "./ConnectionOptions";
-import {initialSettings} from "../../../state/settings/settingsReducer";
+import {initialSettings} from "@sentrei/video/state/settings/settingsReducer";
 import {Select, TextField} from "@material-ui/core";
 import {shallow} from "enzyme";
-import {useAppState} from "../../../state";
-import useRoomState from "../../../hooks/useRoomState/useRoomState";
+import {useAppState} from "@sentrei/video/state";
+import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 
-jest.mock("../../../hooks/useRoomState/useRoomState");
-jest.mock("../../../state");
+jest.mock("@sentrei/video/hooks/useRoomState/useRoomState");
+jest.mock("@sentrei/video/state");
 
 const mockUseAppState = useAppState as jest.Mock<any>;
 const mockUseRoomState = useRoomState as jest.Mock<any>;

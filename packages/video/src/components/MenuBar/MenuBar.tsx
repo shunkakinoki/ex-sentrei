@@ -9,9 +9,9 @@ import ToggleFullscreenButton from "./ToggleFullScreenButton/ToggleFullScreenBut
 import Toolbar from "@material-ui/core/Toolbar";
 import Menu from "./Menu/Menu";
 
-import {useAppState} from "../../state";
-import useRoomState from "../../hooks/useRoomState/useRoomState";
-import useVideoContext from "../../hooks/useVideoContext/useVideoContext";
+import {useAppState} from "@sentrei/video/state";
+import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 import {Typography} from "@material-ui/core";
 import FlipCameraButton from "./FlipCameraButton/FlipCameraButton";
 import LocalAudioLevelIndicator from "./DeviceSelector/LocalAudioLevelIndicator/LocalAudioLevelIndicator";

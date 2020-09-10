@@ -2,11 +2,13 @@ import React from "react";
 import AudioInputList from "./AudioInputList";
 import {Select, Typography} from "@material-ui/core";
 import {shallow} from "enzyme";
-import {useAudioInputDevices} from "../deviceHooks/deviceHooks";
-import useVideoContext from "../../../../hooks/useVideoContext/useVideoContext";
+import {useAudioInputDevices} from "@sentrei/video/components/MenuBar/DeviceSelector/deviceHooks/deviceHooks";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
-jest.mock("../../../../hooks/useVideoContext/useVideoContext");
-jest.mock("../deviceHooks/deviceHooks");
+jest.mock("@sentrei/video/hooks/useVideoContext/useVideoContext");
+jest.mock(
+  "@sentrei/video/components/MenuBar/DeviceSelector/deviceHooks/deviceHooks",
+);
 
 const mockUseVideoContext = useVideoContext as jest.Mock<any>;
 const mockUseAudioInputDevices = useAudioInputDevices as jest.Mock<any>;

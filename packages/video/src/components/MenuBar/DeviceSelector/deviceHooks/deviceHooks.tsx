@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {ensureMediaPermissions} from "../../../../utils";
+import {ensureMediaPermissions} from "@sentrei/video/utils";
 
 export function useDevices() {
   const [devices, setDevices] = useState<MediaDeviceInfo[]>([]);
