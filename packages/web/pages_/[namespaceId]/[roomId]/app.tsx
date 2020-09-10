@@ -5,8 +5,8 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
+import Loader from "@sentrei/ui/components/Loader";
 import VideoApp from "@sentrei/video";
-import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const App = (): JSX.Element => {
   const {query} = useRouter();
@@ -26,31 +26,11 @@ const App = (): JSX.Element => {
   }, [query.namespaceId]);
 
   if (user === undefined || !spaceId) {
-    return (
-      <>
-        <SentreiAppHeader
-          skeleton
-          profile={profile ?? undefined}
-          tabRoomKey="home"
-          type="room"
-          namespaceId={String(query.namespaceId)}
-        />
-      </>
-    );
+    return <Loader />;
   }
 
   if (!user || !profile) {
-    return (
-      <>
-        <SentreiAppHeader
-          skeleton
-          tabRoomKey="home"
-          type="room"
-          namespaceId={String(query.namespaceId)}
-        />
-        <HomeScreen />
-      </>
-    );
+    return <HomeScreen />;
   }
 
   return (
