@@ -26,7 +26,7 @@ export default function SpaceBillingTable({space}: Props): JSX.Element {
     if (space?.subscriptionId) {
       getSubscription(space?.subscriptionId).then(setSubscription);
     }
-  }, [space?.subscriptionId]);
+  }, [space.subscriptionId]);
 
   return (
     <TableContainer component={Paper}>

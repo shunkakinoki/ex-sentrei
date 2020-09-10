@@ -1,5 +1,3 @@
-import dynamic from "next/dynamic";
-
 import {useRouter} from "next/router";
 import * as React from "react";
 
@@ -7,14 +5,7 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
-import Loader from "@sentrei/ui/components/Loader";
-
-const RoomScreen = dynamic(
-  () => {
-    return import("@sentrei/ui/components/RoomScreen");
-  },
-  {ssr: false},
-);
+import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const RoomId = (): JSX.Element => {
   const {query} = useRouter();
@@ -33,21 +24,44 @@ const RoomId = (): JSX.Element => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (user === undefined || !profile || !spaceId) {
-    return <Loader />;
+  if (user === undefined || !spaceId) {
+    return (
+      <>
+        <SentreiAppHeader
+          skeleton
+          profile={profile ?? undefined}
+          tabRoomKey="home"
+          type="room"
+          namespaceId={String(query.namespaceId)}
+        />
+      </>
+    );
   }
 
-  if (!user) {
-    return <HomeScreen />;
+  if (!user || !profile) {
+    return (
+      <>
+        <SentreiAppHeader
+          skeleton
+          tabRoomKey="home"
+          type="room"
+          namespaceId={String(query.namespaceId)}
+        />
+        <HomeScreen />
+      </>
+    );
   }
 
   return (
     <>
-      <RoomScreen
-        user={user}
+      <SentreiAppHeader
+        notificationCount={Number(user.notificationCount)}
         profile={profile}
-        spaceId={spaceId}
+        namespaceId={String(query.namespaceId)}
         roomId={String(query.roomId)}
+        userId={user.uid}
+        tabRoomKey="home"
+        type="room"
       />
     </>
   );
