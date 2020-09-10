@@ -1,3 +1,19 @@
+# [1.58.0](https://github.com/sentrei/sentrei/compare/v1.57.0...v1.58.0) (2020-09-10)
+
+### Features
+
+- 🎸 complete refactor tsconfig sentrei video ([6b0f768](https://github.com/sentrei/sentrei/commit/6b0f7680f9893ca62f1bab931e94aabeebdc0e86))
+- 🎸 complete refactor video ([25ea6d6](https://github.com/sentrei/sentrei/commit/25ea6d6e0e0c071eb6ce6092267840302b41ce24))
+- 🎸 refactor sentrei video package upgrade ([06f774f](https://github.com/sentrei/sentrei/commit/06f774fe3d0b0f465b4d32a0d94b49deb9d2cba9))
+- 🎸 upgrade tsconfig path ([1456091](https://github.com/sentrei/sentrei/commit/14560916088a0aa6affd0a612efb4a496e297604))
+
+### Performance Improvements
+
+- ⚡️ ini index ts ([9ca8673](https://github.com/sentrei/sentrei/commit/9ca867306084d9824a4b38cf3686b65e47bc1c74))
+- ⚡️ ini jest update ([c716eb5](https://github.com/sentrei/sentrei/commit/c716eb5e122d03f114e9d52c01e894db7e0283e2))
+- ⚡️ refactor with prettier ([7b0e3c0](https://github.com/sentrei/sentrei/commit/7b0e3c060c4e591025f928785603062bd83d1512))
+- ⚡️ upgrade device selector ([ea78b9f](https://github.com/sentrei/sentrei/commit/ea78b9fad8e91a04ba174aea4e6c61a6162f7b98))
+
 # [1.57.0](https://github.com/sentrei/sentrei/compare/v1.56.2...v1.57.0) (2020-09-10)
 
 ### Features
