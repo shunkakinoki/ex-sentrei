@@ -1,13 +1,9 @@
-import {useEffect, useRef} from "react";
+import { isMobile } from '../../../utils';
+import { useEffect, useRef } from 'react';
+import useLocalVideoToggle from '../../../hooks/useLocalVideoToggle/useLocalVideoToggle';
+import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 
-// eslint-disable-next-line import/no-cycle
-import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle";
-// eslint-disable-next-line import/no-cycle
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
-
-import {isMobile} from "@sentrei/video/utils";
-
-/*
+/* 
   This component adds a visibilitychange handler to the document when
   the user is using a mobile device. When the handler detects that
   the browser has been backgrounded, it unpublishes the users local
@@ -17,17 +13,16 @@ import {isMobile} from "@sentrei/video/utils";
   to show that this user's video track has been turned off.
 */
 
-export default function AttachVisibilityHandler(): null {
-  const {room} = useVideoContext();
+export default function AttachVisibilityHandler() {
+  const { room } = useVideoContext();
   const [isVideoEnabled, toggleVideoEnabled] = useLocalVideoToggle();
   const shouldRepublishVideoOnForeground = useRef(false);
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (isMobile) {
-      const handleVisibilityChange = (): void => {
+      const handleVisibilityChange = () => {
         // We don't need to unpublish the local video track if it has already been unpublished
-        if (document.visibilityState === "hidden" && isVideoEnabled) {
+        if (document.visibilityState === 'hidden' && isVideoEnabled) {
           shouldRepublishVideoOnForeground.current = true;
           toggleVideoEnabled();
 
@@ -38,12 +33,9 @@ export default function AttachVisibilityHandler(): null {
         }
       };
 
-      document.addEventListener("visibilitychange", handleVisibilityChange);
-      return (): void => {
-        document.removeEventListener(
-          "visibilitychange",
-          handleVisibilityChange,
-        );
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+      return () => {
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
       };
     }
   }, [isVideoEnabled, room, toggleVideoEnabled]);

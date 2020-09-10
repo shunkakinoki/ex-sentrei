@@ -1,29 +1,21 @@
-import {DialogContent} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
-import React from "react";
+import React from 'react';
 
-import AudioInputList from "./AudioInputList";
-import AudioOutputList from "./AudioOutputList";
-import VideoInputList from "./VideoInputList";
+import AudioInputList from './AudioInputList/AudioInputList';
+import AudioOutputList from './AudioOutputList/AudioOutputList';
+import { DialogContent } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import VideoInputList from './VideoInputList/VideoInputList';
 
 const useStyles = makeStyles({
   listSection: {
-    margin: "2em 0",
-    "&:first-child": {
-      margin: "1em 0 2em 0",
+    margin: '2em 0',
+    '&:first-child': {
+      margin: '1em 0 2em 0',
     },
   },
 });
 
-export default function DeviceSelector({
-  className,
-  hidden,
-}: {
-  // eslint-disable-next-line react/require-default-props
-  className?: string;
-  // eslint-disable-next-line react/require-default-props
-  hidden?: boolean;
-}): JSX.Element {
+export function DeviceSelector({ className, hidden }: { className?: string; hidden?: boolean }) {
   const classes = useStyles();
 
   return (

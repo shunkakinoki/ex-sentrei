@@ -1,15 +1,12 @@
-import {useEffect, useState} from "react";
-import {RemoteParticipant} from "twilio-video";
+import { useEffect, useState } from 'react';
+import { RemoteParticipant } from 'twilio-video';
+import useDominantSpeaker from '../useDominantSpeaker/useDominantSpeaker';
+import useVideoContext from '../useVideoContext/useVideoContext';
 
-import useDominantSpeaker from "@sentrei/video/hooks/useDominantSpeaker";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
-
-export default function useParticipants(): RemoteParticipant[] {
-  const {room} = useVideoContext();
+export default function useParticipants() {
+  const { room } = useVideoContext();
   const dominantSpeaker = useDominantSpeaker();
-  const [participants, setParticipants] = useState(
-    Array.from(room.participants.values()),
-  );
+  const [participants, setParticipants] = useState(Array.from(room.participants.values()));
 
   // When the dominant speaker changes, they are moved to the front of the participants array.
   // This means that the most recent dominant speakers will always be near the top of the
@@ -18,25 +15,21 @@ export default function useParticipants(): RemoteParticipant[] {
     if (dominantSpeaker) {
       setParticipants(prevParticipants => [
         dominantSpeaker,
-        ...prevParticipants.filter(
-          participant => participant !== dominantSpeaker,
-        ),
+        ...prevParticipants.filter(participant => participant !== dominantSpeaker),
       ]);
     }
   }, [dominantSpeaker]);
 
   useEffect(() => {
-    const participantConnected = (participant: RemoteParticipant): void =>
+    const participantConnected = (participant: RemoteParticipant) =>
       setParticipants(prevParticipants => [...prevParticipants, participant]);
-    const participantDisconnected = (participant: RemoteParticipant): void =>
-      setParticipants(prevParticipants =>
-        prevParticipants.filter(p => p !== participant),
-      );
-    room.on("participantConnected", participantConnected);
-    room.on("participantDisconnected", participantDisconnected);
-    return (): void => {
-      room.off("participantConnected", participantConnected);
-      room.off("participantDisconnected", participantDisconnected);
+    const participantDisconnected = (participant: RemoteParticipant) =>
+      setParticipants(prevParticipants => prevParticipants.filter(p => p !== participant));
+    room.on('participantConnected', participantConnected);
+    room.on('participantDisconnected', participantDisconnected);
+    return () => {
+      room.off('participantConnected', participantConnected);
+      room.off('participantDisconnected', participantDisconnected);
     };
   }, [room]);
 

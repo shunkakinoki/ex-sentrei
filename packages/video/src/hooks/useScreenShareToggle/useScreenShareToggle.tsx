@@ -1,8 +1,6 @@
-import {useState, useCallback, useRef} from "react";
-
-import {LogLevels, Track} from "twilio-video";
-
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import { useState, useCallback, useRef } from 'react';
+import useVideoContext from '../useVideoContext/useVideoContext';
+import { LogLevels, Track } from 'twilio-video';
 
 interface MediaStreamTrackPublishOptions {
   name?: string;
@@ -10,10 +8,9 @@ interface MediaStreamTrackPublishOptions {
   logLevel: LogLevels;
 }
 
-export default function useScreenShareToggle(): readonly [boolean, () => void] {
-  const {room, onError} = useVideoContext();
+export default function useScreenShareToggle() {
+  const { room, onError } = useVideoContext();
   const [isSharing, setIsSharing] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const stopScreenShareRef = useRef<() => void>(null!);
 
   const shareScreen = useCallback(() => {
@@ -34,14 +31,14 @@ export default function useScreenShareToggle(): readonly [boolean, () => void] {
         // set to 'high' via track.setPriority()
         room.localParticipant
           .publishTrack(track, {
-            name: "screen", // Tracks can be named to easily find them later
-            priority: "low", // Priority is set to high by the subscriber when the video track is rendered
+            name: 'screen', // Tracks can be named to easily find them later
+            priority: 'low', // Priority is set to high by the subscriber when the video track is rendered
           } as MediaStreamTrackPublishOptions)
           .then(trackPublication => {
-            stopScreenShareRef.current = (): void => {
+            stopScreenShareRef.current = () => {
               room.localParticipant.unpublishTrack(track);
               // TODO: remove this if the SDK is updated to emit this event
-              room.localParticipant.emit("trackUnpublished", trackPublication);
+              room.localParticipant.emit('trackUnpublished', trackPublication);
               track.stop();
               setIsSharing(false);
             };
@@ -53,14 +50,13 @@ export default function useScreenShareToggle(): readonly [boolean, () => void] {
       })
       .catch(error => {
         // Don't display an error if the user closes the screen share dialog
-        if (error.name !== "AbortError" && error.name !== "NotAllowedError") {
+        if (error.name !== 'AbortError' && error.name !== 'NotAllowedError') {
           onError(error);
         }
       });
   }, [room, onError]);
 
   const toggleScreenShare = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     !isSharing ? shareScreen() : stopScreenShareRef.current();
   }, [isSharing, shareScreen, stopScreenShareRef]);
 

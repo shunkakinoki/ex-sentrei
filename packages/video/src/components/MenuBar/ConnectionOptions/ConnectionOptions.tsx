@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react';
 import {
   DialogContent,
   FormControl,
@@ -7,70 +8,52 @@ import {
   Select,
   TextField,
   Typography,
-} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
-import React, {useCallback} from "react";
-
-import useRoomState from "@sentrei/video/hooks/useRoomState";
-
-import {useAppState} from "@sentrei/video/state";
-import {RenderDimensions} from "@sentrei/video/state/settings/renderDimensions";
-import {
-  inputLabels,
-  Settings,
-} from "@sentrei/video/state/settings/settingsReducer";
+} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { inputLabels, Settings } from '../../../state/settings/settingsReducer';
+import { RenderDimensions } from '../../../state/settings/renderDimensions';
+import { useAppState } from '../../../state';
+import useRoomState from '../../../hooks/useRoomState/useRoomState';
 
 const useStyles = makeStyles({
   formControl: {
-    display: "block",
-    margin: "1.5em 0",
-    "&:first-child": {
-      margin: "0 0 1.5em 0",
+    display: 'block',
+    margin: '1.5em 0',
+    '&:first-child': {
+      margin: '0 0 1.5em 0',
     },
   },
   label: {
-    width: "133%", // Labels have scale(0.75) applied to them, so this effectively makes the width 100%
+    width: '133%', // Labels have scale(0.75) applied to them, so this effectively makes the width 100%
   },
 });
 
-const withDefault = (val?: string): string =>
-  typeof val === "undefined" ? "default" : val;
+const withDefault = (val?: string) => (typeof val === 'undefined' ? 'default' : val);
 
-const RenderDimensionItems = RenderDimensions.map(({label, value}) => (
+const RenderDimensionItems = RenderDimensions.map(({ label, value }) => (
   <MenuItem value={value} key={value}>
     {label}
   </MenuItem>
 ));
 
-export default function ConnectionOptions({
-  className,
-  hidden,
-}: {
-  // eslint-disable-next-line react/require-default-props
-  className?: string;
-  // eslint-disable-next-line react/require-default-props
-  hidden?: boolean;
-}): JSX.Element {
+export default function ConnectionOptions({ className, hidden }: { className?: string; hidden?: boolean }) {
   const classes = useStyles();
-  const {settings, dispatchSetting} = useAppState();
+  const { settings, dispatchSetting } = useAppState();
   const roomState = useRoomState();
-  const isDisabled = roomState !== "disconnected";
+  const isDisabled = roomState !== 'disconnected';
 
   const handleChange = useCallback(
-    (e: React.ChangeEvent<{value: unknown; name?: string}>) => {
-      dispatchSetting({
-        name: e.target.name as keyof Settings,
-        value: e.target.value as string,
-      });
+    (e: React.ChangeEvent<{ value: unknown; name?: string }>) => {
+      dispatchSetting({ name: e.target.name as keyof Settings, value: e.target.value as string });
     },
-    [dispatchSetting],
+    [dispatchSetting]
   );
 
   const handleNumberChange = useCallback(
-    (e: React.ChangeEvent<{value: unknown; name?: string}>) => {
+    (e: React.ChangeEvent<{ value: unknown; name?: string }>) => {
       if (!/[^\d]/.test(e.target.value as string)) handleChange(e);
     },
-    [handleChange],
+    [handleChange]
   );
 
   return (
@@ -85,9 +68,7 @@ export default function ConnectionOptions({
 
         <Grid item sm={6} xs={12}>
           <FormControl className={classes.formControl}>
-            <InputLabel id={inputLabels.dominantSpeakerPriority}>
-              Dominant Speaker Priority:
-            </InputLabel>
+            <InputLabel id={inputLabels.dominantSpeakerPriority}>Dominant Speaker Priority:</InputLabel>
             <Select
               fullWidth
               disabled={isDisabled}
@@ -104,9 +85,7 @@ export default function ConnectionOptions({
           </FormControl>
 
           <FormControl className={classes.formControl}>
-            <InputLabel id={inputLabels.trackSwitchOffMode}>
-              Track Switch Off Mode:
-            </InputLabel>
+            <InputLabel id={inputLabels.trackSwitchOffMode}>Track Switch Off Mode:</InputLabel>
             <Select
               fullWidth
               disabled={isDisabled}
@@ -167,10 +146,7 @@ export default function ConnectionOptions({
         </Grid>
         <Grid item sm={6} xs={12}>
           <FormControl fullWidth className={classes.formControl}>
-            <InputLabel
-              id={inputLabels.renderDimensionLow}
-              className={classes.label}
-            >
+            <InputLabel id={inputLabels.renderDimensionLow} className={classes.label}>
               Render Dimension (Low Priority):
             </InputLabel>
             <Select
@@ -186,10 +162,7 @@ export default function ConnectionOptions({
           </FormControl>
 
           <FormControl fullWidth className={classes.formControl}>
-            <InputLabel
-              id={inputLabels.renderDimensionStandard}
-              className={classes.label}
-            >
+            <InputLabel id={inputLabels.renderDimensionStandard} className={classes.label}>
               Render Dimension (Standard Priority):
             </InputLabel>
             <Select
@@ -205,10 +178,7 @@ export default function ConnectionOptions({
           </FormControl>
 
           <FormControl fullWidth className={classes.formControl}>
-            <InputLabel
-              id={inputLabels.renderDimensionHigh}
-              className={classes.label}
-            >
+            <InputLabel id={inputLabels.renderDimensionHigh} className={classes.label}>
               Render Dimension (High Priority):
             </InputLabel>
             <Select

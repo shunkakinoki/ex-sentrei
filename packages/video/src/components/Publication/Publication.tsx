@@ -1,19 +1,16 @@
-/* eslint-disable react/prop-types */
-import React from "react";
+import React from 'react';
+import useTrack from '../../hooks/useTrack/useTrack';
+import AudioTrack from '../AudioTrack/AudioTrack';
+import VideoTrack from '../VideoTrack/VideoTrack';
 
+import { IVideoTrack } from '../../types';
 import {
   AudioTrack as IAudioTrack,
   LocalTrackPublication,
   Participant,
   RemoteTrackPublication,
   Track,
-} from "twilio-video";
-
-import AudioTrack from "@sentrei/video/components/AudioTrack";
-import VideoTrack from "@sentrei/video/components/VideoTrack";
-import useTrack from "@sentrei/video/hooks/useTrack";
-
-import {IVideoTrack} from "@sentrei/video/types";
+} from 'twilio-video';
 
 interface PublicationProps {
   publication: LocalTrackPublication | RemoteTrackPublication;
@@ -23,28 +20,21 @@ interface PublicationProps {
   videoPriority?: Track.Priority | null;
 }
 
-export default function Publication({
-  publication,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  participant,
-  isLocal,
-  disableAudio,
-  videoPriority,
-}: PublicationProps): JSX.Element | null {
+export default function Publication({ publication, isLocal, disableAudio, videoPriority }: PublicationProps) {
   const track = useTrack(publication);
 
   if (!track) return null;
 
   switch (track.kind) {
-    case "video":
+    case 'video':
       return (
         <VideoTrack
           track={track as IVideoTrack}
           priority={videoPriority}
-          isLocal={track.name.includes("camera") && isLocal}
+          isLocal={track.name.includes('camera') && isLocal}
         />
       );
-    case "audio":
+    case 'audio':
       return disableAudio ? null : <AudioTrack track={track as IAudioTrack} />;
     default:
       return null;

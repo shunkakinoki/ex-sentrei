@@ -1,30 +1,19 @@
-import {FormControl, MenuItem, Typography, Select} from "@material-ui/core";
-import React from "react";
+import React from 'react';
+import { FormControl, MenuItem, Typography, Select } from '@material-ui/core';
+import { useAppState } from '../../../../state';
+import { useAudioOutputDevices } from '../deviceHooks/deviceHooks';
 
-import {useAudioOutputDevices} from "@sentrei/video/components/MenuBar/DeviceSelector/deviceHooks";
-import {useAppState} from "@sentrei/video/state";
-
-export default function AudioOutputList(): JSX.Element {
+export default function AudioOutputList() {
   const audioOutputDevices = useAudioOutputDevices();
-  const {activeSinkId, setActiveSinkId} = useAppState();
-  const activeOutputLabel = audioOutputDevices.find(
-    device => device.deviceId === activeSinkId,
-  )?.label;
+  const { activeSinkId, setActiveSinkId } = useAppState();
+  const activeOutputLabel = audioOutputDevices.find(device => device.deviceId === activeSinkId)?.label;
 
   return (
     <div className="inputSelect">
       {audioOutputDevices.length > 1 ? (
         <FormControl fullWidth>
           <Typography variant="h6">Audio Output:</Typography>
-          <Select
-            onChange={(
-              e: React.ChangeEvent<{
-                name?: string | undefined;
-                value: unknown;
-              }>,
-            ): void => setActiveSinkId(e.target.value as string)}
-            value={activeSinkId}
-          >
+          <Select onChange={e => setActiveSinkId(e.target.value as string)} value={activeSinkId}>
             {audioOutputDevices.map(device => (
               <MenuItem value={device.deviceId} key={device.deviceId}>
                 {device.label}
@@ -35,9 +24,7 @@ export default function AudioOutputList(): JSX.Element {
       ) : (
         <>
           <Typography variant="h6">Audio Output:</Typography>
-          <Typography>
-            {activeOutputLabel || "System Default Audio Output"}
-          </Typography>
+          <Typography>{activeOutputLabel || 'System Default Audio Output'}</Typography>
         </>
       )}
     </div>

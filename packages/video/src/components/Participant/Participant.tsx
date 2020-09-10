@@ -1,15 +1,11 @@
-import React from "react";
-
-import {Participant as IParticipant} from "twilio-video";
-
-import ParticipantInfo from "@sentrei/video/components/ParticipantInfo";
-import ParticipantTracks from "@sentrei/video/components/ParticipantTracks";
+import React from 'react';
+import ParticipantInfo from '../ParticipantInfo/ParticipantInfo';
+import ParticipantTracks from '../ParticipantTracks/ParticipantTracks';
+import { Participant as IParticipant } from 'twilio-video';
 
 interface ParticipantProps {
   participant: IParticipant;
-  // eslint-disable-next-line react/require-default-props
   disableAudio?: boolean;
-  // eslint-disable-next-line react/require-default-props
   enableScreenShare?: boolean;
   onClick: () => void;
   isSelected: boolean;
@@ -21,18 +17,10 @@ export default function Participant({
   enableScreenShare,
   onClick,
   isSelected,
-}: ParticipantProps): JSX.Element {
+}: ParticipantProps) {
   return (
-    <ParticipantInfo
-      participant={participant}
-      onClick={onClick}
-      isSelected={isSelected}
-    >
-      <ParticipantTracks
-        participant={participant}
-        disableAudio={disableAudio}
-        enableScreenShare={enableScreenShare}
-      />
+    <ParticipantInfo participant={participant} onClick={onClick} isSelected={isSelected}>
+      <ParticipantTracks participant={participant} disableAudio={disableAudio} enableScreenShare={enableScreenShare} />
     </ParticipantInfo>
   );
 }

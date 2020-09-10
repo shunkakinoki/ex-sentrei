@@ -1,4 +1,4 @@
-import React, {createContext, ReactNode} from "react";
+import React, { createContext, ReactNode } from 'react';
 import {
   CreateLocalTrackOptions,
   ConnectOptions,
@@ -6,18 +6,16 @@ import {
   LocalVideoTrack,
   Room,
   TwilioError,
-} from "twilio-video";
+} from 'twilio-video';
+import { Callback, ErrorCallback } from '../../types';
+import { SelectedParticipantProvider } from './useSelectedParticipant/useSelectedParticipant';
 
-import {Callback, ErrorCallback} from "@sentrei/video/types";
-
-// eslint-disable-next-line import/no-cycle
-import AttachVisibilityHandler from "./AttachVisibilityHandler";
-import useHandleOnDisconnect from "./useHandleOnDisconnect";
-import useHandleRoomDisconnectionErrors from "./useHandleRoomDisconnectionErrors";
-import useHandleTrackPublicationFailed from "./useHandleTrackPublicationFailed";
-import useLocalTracks from "./useLocalTracks";
-import useRoom from "./useRoom";
-import {SelectedParticipantProvider} from "./useSelectedParticipant";
+import AttachVisibilityHandler from './AttachVisibilityHandler/AttachVisibilityHandler';
+import useHandleRoomDisconnectionErrors from './useHandleRoomDisconnectionErrors/useHandleRoomDisconnectionErrors';
+import useHandleOnDisconnect from './useHandleOnDisconnect/useHandleOnDisconnect';
+import useHandleTrackPublicationFailed from './useHandleTrackPublicationFailed/useHandleTrackPublicationFailed';
+import useLocalTracks from './useLocalTracks/useLocalTracks';
+import useRoom from './useRoom/useRoom';
 
 /*
  *  The hooks used by the VideoProvider component are different than the hooks found in the 'hooks/' directory. The hooks
@@ -33,34 +31,23 @@ export interface IVideoContext {
   connect: (token: string) => Promise<void>;
   onError: ErrorCallback;
   onDisconnect: Callback;
-  getLocalVideoTrack: (
-    newOptions?: CreateLocalTrackOptions,
-  ) => Promise<LocalVideoTrack>;
+  getLocalVideoTrack: (newOptions?: CreateLocalTrackOptions) => Promise<LocalVideoTrack>;
   getLocalAudioTrack: (deviceId?: string) => Promise<LocalAudioTrack>;
   isAcquiringLocalTracks: boolean;
   removeLocalVideoTrack: () => void;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const VideoContext = createContext<IVideoContext>(null!);
 
 interface VideoProviderProps {
-  // eslint-disable-next-line react/require-default-props
   options?: ConnectOptions;
   onError: ErrorCallback;
-  // eslint-disable-next-line react/require-default-props
   onDisconnect?: Callback;
   children: ReactNode;
 }
 
-export function VideoProvider({
-  options,
-  children,
-  onError = (): void => {},
-  onDisconnect = (): void => {},
-}: VideoProviderProps): JSX.Element {
-  const onErrorCallback = (error: TwilioError): void => {
-    // eslint-disable-next-line no-console
+export function VideoProvider({ options, children, onError = () => {}, onDisconnect = () => {} }: VideoProviderProps) {
+  const onErrorCallback = (error: TwilioError) => {
     console.log(`ERROR: ${error.message}`, error);
     onError(error);
   };
@@ -72,11 +59,7 @@ export function VideoProvider({
     isAcquiringLocalTracks,
     removeLocalVideoTrack,
   } = useLocalTracks();
-  const {room, isConnecting, connect} = useRoom(
-    localTracks,
-    onErrorCallback,
-    options,
-  );
+  const { room, isConnecting, connect } = useRoom(localTracks, onErrorCallback, options);
 
   // Register onError and onDisconnect callback functions.
   useHandleRoomDisconnectionErrors(room, onError);
@@ -98,10 +81,8 @@ export function VideoProvider({
         removeLocalVideoTrack,
       }}
     >
-      <SelectedParticipantProvider room={room}>
-        {children}
-      </SelectedParticipantProvider>
-      {/*
+      <SelectedParticipantProvider room={room}>{children}</SelectedParticipantProvider>
+      {/* 
         The AttachVisibilityHandler component is using the useLocalVideoToggle hook
         which must be used within the VideoContext Provider.
       */}

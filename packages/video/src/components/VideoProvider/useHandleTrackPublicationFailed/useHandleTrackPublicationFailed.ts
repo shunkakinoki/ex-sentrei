@@ -1,19 +1,15 @@
-import {useEffect} from "react";
-import {Room} from "twilio-video";
+import { Room } from 'twilio-video';
+import { useEffect } from 'react';
 
-import {Callback} from "@sentrei/video/types";
+import { Callback } from '../../../types';
 
-export default function useHandleTrackPublicationFailed(
-  room: Room,
-  onError: Callback,
-): void {
-  const {localParticipant} = room;
-  // eslint-disable-next-line consistent-return
+export default function useHandleTrackPublicationFailed(room: Room, onError: Callback) {
+  const { localParticipant } = room;
   useEffect(() => {
     if (localParticipant) {
-      localParticipant.on("trackPublicationFailed", onError);
-      return (): void => {
-        localParticipant.off("trackPublicationFailed", onError);
+      localParticipant.on('trackPublicationFailed', onError);
+      return () => {
+        localParticipant.off('trackPublicationFailed', onError);
       };
     }
   }, [localParticipant, onError]);

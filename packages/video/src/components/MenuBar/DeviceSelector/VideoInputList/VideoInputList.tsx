@@ -1,46 +1,33 @@
-import {FormControl, MenuItem, Typography, Select} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
-import React from "react";
-import {LocalVideoTrack} from "twilio-video";
-
-import {useVideoInputDevices} from "@sentrei/video/components/MenuBar/DeviceSelector/deviceHooks";
-import VideoTrack from "@sentrei/video/components/VideoTrack";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
+import React from 'react';
+import { DEFAULT_VIDEO_CONSTRAINTS } from '../../../../constants';
+import { FormControl, MenuItem, Typography, Select } from '@material-ui/core';
+import { LocalVideoTrack } from 'twilio-video';
+import { makeStyles } from '@material-ui/core/styles';
+import VideoTrack from '../../../VideoTrack/VideoTrack';
+import useMediaStreamTrack from '../../../../hooks/useMediaStreamTrack/useMediaStreamTrack';
+import useVideoContext from '../../../../hooks/useVideoContext/useVideoContext';
+import { useVideoInputDevices } from '../deviceHooks/deviceHooks';
 
 const useStyles = makeStyles({
   preview: {
-    width: "150px",
-    margin: "0.5em 0",
+    width: '150px',
+    margin: '0.5em 0',
   },
 });
 
-export default function VideoInputList(): JSX.Element {
+export default function VideoInputList() {
   const classes = useStyles();
   const videoInputDevices = useVideoInputDevices();
-  const {
-    room: {localParticipant},
-    localTracks,
-    getLocalVideoTrack,
-  } = useVideoContext();
+  const { localTracks } = useVideoContext();
 
-  const localVideoTrack = localTracks.find(
-    track => track.kind === "video",
-  ) as LocalVideoTrack;
-  const localVideoInputDeviceId = localVideoTrack?.mediaStreamTrack.getSettings()
-    .deviceId;
+  const localVideoTrack = localTracks.find(track => track.kind === 'video') as LocalVideoTrack;
+  const mediaStreamTrack = useMediaStreamTrack(localVideoTrack);
+  const localVideoInputDeviceId = mediaStreamTrack?.getSettings().deviceId;
 
-  function replaceTrack(newDeviceId: string): void {
-    localVideoTrack?.stop();
-    getLocalVideoTrack({deviceId: {exact: newDeviceId}}).then(newTrack => {
-      if (localVideoTrack) {
-        const localTrackPublication = localParticipant?.unpublishTrack(
-          localVideoTrack,
-        );
-        // TODO: remove when SDK implements this event. See: https://issues.corp.twilio.com/browse/JSDK-2592
-        localParticipant?.emit("trackUnpublished", localTrackPublication);
-      }
-
-      localParticipant?.publishTrack(newTrack);
+  function replaceTrack(newDeviceId: string) {
+    localVideoTrack.restart({
+      ...(DEFAULT_VIDEO_CONSTRAINTS as {}),
+      deviceId: { exact: newDeviceId },
     });
   }
 
@@ -49,15 +36,7 @@ export default function VideoInputList(): JSX.Element {
       {videoInputDevices.length > 1 ? (
         <FormControl>
           <Typography variant="h6">Video Input:</Typography>
-          <Select
-            onChange={(
-              e: React.ChangeEvent<{
-                name?: string | undefined;
-                value: unknown;
-              }>,
-            ): void => replaceTrack(e.target.value as string)}
-            value={localVideoInputDeviceId || ""}
-          >
+          <Select onChange={e => replaceTrack(e.target.value as string)} value={localVideoInputDeviceId || ''}>
             {videoInputDevices.map(device => (
               <MenuItem value={device.deviceId} key={device.deviceId}>
                 {device.label}
@@ -68,9 +47,7 @@ export default function VideoInputList(): JSX.Element {
       ) : (
         <>
           <Typography variant="h6">Video Input:</Typography>
-          <Typography>
-            {localVideoTrack?.mediaStreamTrack.label || "No Local Video"}
-          </Typography>
+          <Typography>{localVideoTrack?.mediaStreamTrack.label || 'No Local Video'}</Typography>
         </>
       )}
       {localVideoTrack && (
