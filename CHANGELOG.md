@@ -1,3 +1,17 @@
+# [1.62.0](https://github.com/sentrei/sentrei/compare/v1.61.0...v1.62.0) (2020-09-10)
+
+### Features
+
+- 🎸 ini room service ([d5899d6](https://github.com/sentrei/sentrei/commit/d5899d632de1fd02080d98b5ae208e17c2bb9556))
+- 🎸 ini roomId app header ([c5b4eb1](https://github.com/sentrei/sentrei/commit/c5b4eb1d8e1f4c62acc093040a151ce55564f383))
+- 🎸 ini video theme ([9ea9389](https://github.com/sentrei/sentrei/commit/9ea938979262c19fbbcf24e72f223fbc24bbf15c))
+- 🎸 refactor support app bar dashboard link ([09860b2](https://github.com/sentrei/sentrei/commit/09860b295f9a48ef740eee00913181254fd61808))
+
+### Performance Improvements
+
+- ⚡️ ini support profile namespaceId ([d260d90](https://github.com/sentrei/sentrei/commit/d260d9054196576c50b9d5a133d1e6c4e4b01b48))
+- ⚡️ refactor video theme ([550ff99](https://github.com/sentrei/sentrei/commit/550ff999db5d4e0c9ddb17fe1db1440e9962037c))
+
 # [1.61.0](https://github.com/sentrei/sentrei/compare/v1.60.0...v1.61.0) (2020-09-10)
 
 ### Features
