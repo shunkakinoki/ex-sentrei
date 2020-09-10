@@ -7,17 +7,15 @@ import {
   Room,
   TwilioError,
 } from "twilio-video";
-
 import {Callback, ErrorCallback} from "@sentrei/video/types";
+import {SelectedParticipantProvider} from "./useSelectedParticipant/useSelectedParticipant";
 
-// eslint-disable-next-line import/no-cycle
-import AttachVisibilityHandler from "./AttachVisibilityHandler";
-import useHandleOnDisconnect from "./useHandleOnDisconnect";
-import useHandleRoomDisconnectionErrors from "./useHandleRoomDisconnectionErrors";
-import useHandleTrackPublicationFailed from "./useHandleTrackPublicationFailed";
-import useLocalTracks from "./useLocalTracks";
-import useRoom from "./useRoom";
-import {SelectedParticipantProvider} from "./useSelectedParticipant";
+import AttachVisibilityHandler from "./AttachVisibilityHandler/AttachVisibilityHandler";
+import useHandleRoomDisconnectionErrors from "./useHandleRoomDisconnectionErrors/useHandleRoomDisconnectionErrors";
+import useHandleOnDisconnect from "./useHandleOnDisconnect/useHandleOnDisconnect";
+import useHandleTrackPublicationFailed from "./useHandleTrackPublicationFailed/useHandleTrackPublicationFailed";
+import useLocalTracks from "./useLocalTracks/useLocalTracks";
+import useRoom from "./useRoom/useRoom";
 
 /*
  *  The hooks used by the VideoProvider component are different than the hooks found in the 'hooks/' directory. The hooks
@@ -41,14 +39,11 @@ export interface IVideoContext {
   removeLocalVideoTrack: () => void;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const VideoContext = createContext<IVideoContext>(null!);
 
 interface VideoProviderProps {
-  // eslint-disable-next-line react/require-default-props
   options?: ConnectOptions;
   onError: ErrorCallback;
-  // eslint-disable-next-line react/require-default-props
   onDisconnect?: Callback;
   children: ReactNode;
 }
@@ -56,11 +51,10 @@ interface VideoProviderProps {
 export function VideoProvider({
   options,
   children,
-  onError = (): void => {},
-  onDisconnect = (): void => {},
-}: VideoProviderProps): JSX.Element {
-  const onErrorCallback = (error: TwilioError): void => {
-    // eslint-disable-next-line no-console
+  onError = () => {},
+  onDisconnect = () => {},
+}: VideoProviderProps) {
+  const onErrorCallback = (error: TwilioError) => {
     console.log(`ERROR: ${error.message}`, error);
     onError(error);
   };

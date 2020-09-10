@@ -1,3 +1,4 @@
+import React, {useCallback} from "react";
 import {
   DialogContent,
   FormControl,
@@ -9,16 +10,13 @@ import {
   Typography,
 } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import React, {useCallback} from "react";
-
-import useRoomState from "@sentrei/video/hooks/useRoomState";
-
-import {useAppState} from "@sentrei/video/state";
-import {RenderDimensions} from "@sentrei/video/state/settings/renderDimensions";
 import {
   inputLabels,
   Settings,
 } from "@sentrei/video/state/settings/settingsReducer";
+import {RenderDimensions} from "@sentrei/video/state/settings/renderDimensions";
+import {useAppState} from "@sentrei/video/state";
+import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 
 const useStyles = makeStyles({
   formControl: {
@@ -33,7 +31,7 @@ const useStyles = makeStyles({
   },
 });
 
-const withDefault = (val?: string): string =>
+const withDefault = (val?: string) =>
   typeof val === "undefined" ? "default" : val;
 
 const RenderDimensionItems = RenderDimensions.map(({label, value}) => (
@@ -46,11 +44,9 @@ export default function ConnectionOptions({
   className,
   hidden,
 }: {
-  // eslint-disable-next-line react/require-default-props
   className?: string;
-  // eslint-disable-next-line react/require-default-props
   hidden?: boolean;
-}): JSX.Element {
+}) {
   const classes = useStyles();
   const {settings, dispatchSetting} = useAppState();
   const roomState = useRoomState();

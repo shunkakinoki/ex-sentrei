@@ -1,22 +1,21 @@
-import fscreen from "fscreen";
 import {useCallback, useState, useEffect} from "react";
+import fscreen from "fscreen";
 
-export default function useFullScreenToggle(): readonly [Boolean, () => void] {
+export default function useFullScreenToggle() {
   const [isFullScreen, setIsFullScreen] = useState<Boolean>(
     !!fscreen.fullscreenElement,
   );
 
   useEffect(() => {
-    const onFullScreenChange = (): void =>
+    const onFullScreenChange = () =>
       setIsFullScreen(!!fscreen.fullscreenElement);
     fscreen.addEventListener("fullscreenchange", onFullScreenChange);
-    return (): void => {
+    return () => {
       fscreen.removeEventListener("fullscreenchange", onFullScreenChange);
     };
   }, []);
 
   const toggleFullScreen = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     isFullScreen
       ? fscreen.exitFullscreen()
       : fscreen.requestFullscreen(document.documentElement);

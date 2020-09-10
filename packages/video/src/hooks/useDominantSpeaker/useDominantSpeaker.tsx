@@ -1,10 +1,8 @@
 import {useEffect, useState} from "react";
-
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 import {RemoteParticipant} from "twilio-video";
 
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
-
-export default function useDominantSpeaker(): RemoteParticipant | null {
+export default function useDominantSpeaker() {
   const {room} = useVideoContext();
   const [dominantSpeaker, setDominantSpeaker] = useState(room.dominantSpeaker);
 
@@ -15,7 +13,7 @@ export default function useDominantSpeaker(): RemoteParticipant | null {
     // and continue to display the previous dominant speaker as the main participant.
     const handleDominantSpeakerChanged = (
       newDominantSpeaker: RemoteParticipant,
-    ): void => {
+    ) => {
       if (newDominantSpeaker !== null) {
         setDominantSpeaker(newDominantSpeaker);
       }
@@ -23,9 +21,7 @@ export default function useDominantSpeaker(): RemoteParticipant | null {
 
     // Since 'null' values are ignored, we will need to listen for the 'participantDisconnected'
     // event, so we can set the dominantSpeaker to 'null' when they disconnect.
-    const handleParticipantDisconnected = (
-      participant: RemoteParticipant,
-    ): void => {
+    const handleParticipantDisconnected = (participant: RemoteParticipant) => {
       setDominantSpeaker(prevDominantSpeaker => {
         return prevDominantSpeaker === participant ? null : prevDominantSpeaker;
       });
@@ -33,7 +29,7 @@ export default function useDominantSpeaker(): RemoteParticipant | null {
 
     room.on("dominantSpeakerChanged", handleDominantSpeakerChanged);
     room.on("participantDisconnected", handleParticipantDisconnected);
-    return (): void => {
+    return () => {
       room.off("dominantSpeakerChanged", handleDominantSpeakerChanged);
       room.off("participantDisconnected", handleParticipantDisconnected);
     };

@@ -1,10 +1,9 @@
 import {useEffect, useState} from "react";
 import {RemoteParticipant} from "twilio-video";
+import useDominantSpeaker from "@sentrei/video/hooks/useDominantSpeaker/useDominantSpeaker";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
-import useDominantSpeaker from "@sentrei/video/hooks/useDominantSpeaker";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
-
-export default function useParticipants(): RemoteParticipant[] {
+export default function useParticipants() {
   const {room} = useVideoContext();
   const dominantSpeaker = useDominantSpeaker();
   const [participants, setParticipants] = useState(
@@ -26,15 +25,15 @@ export default function useParticipants(): RemoteParticipant[] {
   }, [dominantSpeaker]);
 
   useEffect(() => {
-    const participantConnected = (participant: RemoteParticipant): void =>
+    const participantConnected = (participant: RemoteParticipant) =>
       setParticipants(prevParticipants => [...prevParticipants, participant]);
-    const participantDisconnected = (participant: RemoteParticipant): void =>
+    const participantDisconnected = (participant: RemoteParticipant) =>
       setParticipants(prevParticipants =>
         prevParticipants.filter(p => p !== participant),
       );
     room.on("participantConnected", participantConnected);
     room.on("participantDisconnected", participantDisconnected);
-    return (): void => {
+    return () => {
       room.off("participantConnected", participantConnected);
       room.off("participantDisconnected", participantDisconnected);
     };

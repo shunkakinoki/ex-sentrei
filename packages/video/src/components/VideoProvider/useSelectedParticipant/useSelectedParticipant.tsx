@@ -8,13 +8,9 @@ type selectedParticipantContextType = [
 
 export const selectedParticipantContext = createContext<
   selectedParticipantContextType
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 >(null!);
 
-export default function useSelectedParticipant(): readonly [
-  Participant | null,
-  (participant: Participant) => void,
-] {
+export default function useSelectedParticipant() {
   const [selectedParticipant, setSelectedParticipant] = useContext(
     selectedParticipantContext,
   );
@@ -29,20 +25,20 @@ type SelectedParticipantProviderProps = {
 export function SelectedParticipantProvider({
   room,
   children,
-}: SelectedParticipantProviderProps): JSX.Element {
+}: SelectedParticipantProviderProps) {
   const [
     selectedParticipant,
     _setSelectedParticipant,
   ] = useState<Participant | null>(null);
-  const setSelectedParticipant = (participant: Participant): void =>
+  const setSelectedParticipant = (participant: Participant) =>
     _setSelectedParticipant(prevParticipant =>
       prevParticipant === participant ? null : participant,
     );
 
   useEffect(() => {
-    const onDisconnect = (): void => _setSelectedParticipant(null);
+    const onDisconnect = () => _setSelectedParticipant(null);
     room.on("disconnected", onDisconnect);
-    return (): void => {
+    return () => {
       room.off("disconnected", onDisconnect);
     };
   }, [room]);

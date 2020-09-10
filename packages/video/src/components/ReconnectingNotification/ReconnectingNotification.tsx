@@ -1,10 +1,11 @@
-import {SnackbarContent} from "@material-ui/core";
-import Snackbar from "@material-ui/core/Snackbar";
-import {makeStyles} from "@material-ui/core/styles";
-import InfoIcon from "@material-ui/icons/Info";
 import React from "react";
+import {makeStyles} from "@material-ui/core/styles";
 
-import useRoomState from "@sentrei/video/hooks/useRoomState";
+import InfoIcon from "@material-ui/icons/Info";
+import Snackbar from "@material-ui/core/Snackbar";
+import {SnackbarContent} from "@material-ui/core";
+
+import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 
 const useStyles = makeStyles({
   snackbar: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ReconnectingNotification(): JSX.Element {
+export default function ReconnectingNotification() {
   const classes = useStyles();
   const roomState = useRoomState();
 

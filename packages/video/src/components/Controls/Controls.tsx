@@ -1,18 +1,16 @@
-import {createStyles, makeStyles} from "@material-ui/core/styles";
-import clsx from "clsx";
 import React from "react";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import clsx from "clsx";
 
-import SentreiTheme from "@sentrei/types/containers/SentreiTheme";
-import useRoomState from "@sentrei/video/hooks/useRoomState";
+import EndCallButton from "./EndCallButton/EndCallButton";
+import ToggleAudioButton from "./ToggleAudioButton/ToggleAudioButton";
+import ToggleVideoButton from "./ToggleVideoButton/ToggleVideoButton";
+import ToggleScreenShareButton from "./ToogleScreenShareButton/ToggleScreenShareButton";
 
-import EndCallButton from "./EndCallButton";
-import ToggleAudioButton from "./ToggleAudioButton";
-import ToggleVideoButton from "./ToggleVideoButton";
-import ToggleScreenShareButton from "./ToogleScreenShareButton";
+import useIsUserActive from "./useIsUserActive/useIsUserActive";
+import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 
-import useIsUserActive from "./useIsUserActive";
-
-const useStyles = makeStyles((theme: SentreiTheme) =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       display: "flex",
@@ -32,14 +30,13 @@ const useStyles = makeStyles((theme: SentreiTheme) =>
         transform: "translate(50%, 0px)",
       },
       [theme.breakpoints.down("xs")]: {
-        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         bottom: `${theme.sidebarMobileHeight + 3}px`,
       },
     },
   }),
 );
 
-export default function Controls(): JSX.Element {
+export default function Controls() {
   const classes = useStyles();
   const roomState = useRoomState();
   const isReconnecting = roomState === "reconnecting";

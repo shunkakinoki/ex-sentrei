@@ -1,8 +1,6 @@
-import {Track, VideoBandwidthProfileOptions} from "twilio-video";
-
 import {isMobile} from "@sentrei/video/utils";
-
 import {RenderDimensionValue} from "./renderDimensions";
+import {Track, VideoBandwidthProfileOptions} from "twilio-video";
 
 export interface Settings {
   trackSwitchOffMode: VideoBandwidthProfileOptions["trackSwitchOffMode"];
@@ -36,26 +34,14 @@ export const initialSettings: Settings = {
 // This inputLabels object is used by ConnectionOptions.tsx. It is used to populate the id, name, and label props
 // of the various input elements. Using a typed object like this (instead of strings) eliminates the possibility
 // of there being a typo.
-export const inputLabels = ((): {
-  trackSwitchOffMode: string;
-  dominantSpeakerPriority: string;
-  bandwidthProfileMode: string;
-  maxTracks: string;
-  maxAudioBitrate: string;
-  renderDimensionLow: string;
-  renderDimensionStandard: string;
-  renderDimensionHigh: string;
-} => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const inputLabels = (() => {
   const target: any = {};
-  // eslint-disable-next-line guard-for-in, no-restricted-syntax
   for (const setting in initialSettings) {
     target[setting] = setting as SettingsKeys;
   }
   return target as {[key in SettingsKeys]: string};
 })();
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function settingsReducer(state: Settings, action: SettingsAction) {
   return {
     ...state,

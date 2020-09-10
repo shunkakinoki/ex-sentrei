@@ -1,10 +1,8 @@
-import {useCallback, useEffect, useRef, useState} from "react";
-import Video, {ConnectOptions, LocalTrack, Room} from "twilio-video";
-
 import {Callback} from "@sentrei/video/types";
-import {isMobile} from "@sentrei/video/utils";
-
 import EventEmitter from "events";
+import {isMobile} from "@sentrei/video/utils";
+import Video, {ConnectOptions, LocalTrack, Room} from "twilio-video";
+import {useCallback, useEffect, useRef, useState} from "react";
 
 // @ts-ignore
 window.TwilioVideo = Video;
@@ -13,15 +11,11 @@ export default function useRoom(
   localTracks: LocalTrack[],
   onError: Callback,
   options?: ConnectOptions,
-): {
-  room: Video.Room;
-  isConnecting: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  connect: (token: any) => Promise<void>;
-} {
+) {
   const [room, setRoom] = useState<Room>(new EventEmitter() as Room);
   const [isConnecting, setIsConnecting] = useState(false);
   const localTracksRef = useRef<LocalTrack[]>([]);
+  const optionsRef = useRef(options);
 
   useEffect(() => {
     // It can take a moment for Video.connect to connect to a room. During this time, the user may have enabled or disabled their
@@ -30,13 +24,19 @@ export default function useRoom(
     localTracksRef.current = localTracks;
   }, [localTracks]);
 
+  useEffect(() => {
+    // This allows the connect function to always access the most recent version of the options object. This allows us to
+    // reliably use the connect function at any time.
+    optionsRef.current = options;
+  }, [options]);
+
   const connect = useCallback(
     token => {
       setIsConnecting(true);
-      return Video.connect(token, {...options, tracks: []}).then(
+      return Video.connect(token, {...optionsRef.current, tracks: []}).then(
         newRoom => {
           setRoom(newRoom);
-          const disconnect = (): Video.Room => newRoom.disconnect();
+          const disconnect = () => newRoom.disconnect();
 
           newRoom.once("disconnected", () => {
             // Reset the room only after all other `disconnected` listeners have been called.
@@ -51,7 +51,6 @@ export default function useRoom(
           // @ts-ignore
           window.twilioRoom = newRoom;
 
-          // eslint-disable-next-line @typescript-eslint/no-misused-promises
           localTracksRef.current.forEach(track =>
             // Tracks can be supplied as arguments to the Video.connect() function and they will automatically be published.
             // However, tracks must be published manually in order to set the priority on them.
@@ -79,7 +78,7 @@ export default function useRoom(
         },
       );
     },
-    [options, onError],
+    [onError],
   );
 
   return {room, isConnecting, connect};

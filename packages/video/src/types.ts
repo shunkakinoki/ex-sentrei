@@ -30,7 +30,6 @@ declare module "twilio-video" {
 
 declare global {
   interface Window {
-    // @ts-ignore
     visualViewport?: {
       scale: number;
     };
@@ -45,9 +44,10 @@ declare global {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Callback = (...args: any[]) => void;
 
 export type ErrorCallback = (error: TwilioError) => void;
 
 export type IVideoTrack = LocalVideoTrack | RemoteVideoTrack;
+
+export type RoomType = "group" | "group-small" | "peer-to-peer";

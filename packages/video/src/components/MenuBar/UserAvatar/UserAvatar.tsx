@@ -1,8 +1,7 @@
-import Avatar from "@material-ui/core/Avatar";
-import Person from "@material-ui/icons/Person";
-import makeStyles from "@material-ui/styles/makeStyles";
 import React from "react";
-
+import Avatar from "@material-ui/core/Avatar";
+import makeStyles from "@material-ui/styles/makeStyles";
+import Person from "@material-ui/icons/Person";
 import {StateContextType} from "@sentrei/video/state";
 
 const useStyles = makeStyles({
@@ -12,7 +11,7 @@ const useStyles = makeStyles({
   },
 });
 
-export function getInitials(name: string): string {
+export function getInitials(name: string) {
   return name
     .split(" ")
     .map(text => text[0])
@@ -20,21 +19,16 @@ export function getInitials(name: string): string {
     .toUpperCase();
 }
 
-export default function UserAvatar({
-  // eslint-disable-next-line react/prop-types
-  profile,
-}: {
-  profile: StateContextType["profile"];
-}): JSX.Element {
+export default function UserAvatar({user}: {user: StateContextType["user"]}) {
   const classes = useStyles();
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const {name, photo} = profile!;
+  const {displayName, photoURL} = user!;
 
-  return photo ? (
-    <Avatar src={photo} />
+  return photoURL ? (
+    <Avatar src={photoURL} />
   ) : (
     <Avatar className={classes.red}>
-      {name ? getInitials(name) : <Person />}
+      {/* @ts-ignore */}
+      {displayName ? getInitials(displayName) : <Person />}
     </Avatar>
   );
 }

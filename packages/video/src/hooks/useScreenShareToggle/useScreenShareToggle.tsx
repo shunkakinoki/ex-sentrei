@@ -1,8 +1,6 @@
 import {useState, useCallback, useRef} from "react";
-
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 import {LogLevels, Track} from "twilio-video";
-
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
 
 interface MediaStreamTrackPublishOptions {
   name?: string;
@@ -10,10 +8,9 @@ interface MediaStreamTrackPublishOptions {
   logLevel: LogLevels;
 }
 
-export default function useScreenShareToggle(): readonly [boolean, () => void] {
+export default function useScreenShareToggle() {
   const {room, onError} = useVideoContext();
   const [isSharing, setIsSharing] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const stopScreenShareRef = useRef<() => void>(null!);
 
   const shareScreen = useCallback(() => {
@@ -38,7 +35,7 @@ export default function useScreenShareToggle(): readonly [boolean, () => void] {
             priority: "low", // Priority is set to high by the subscriber when the video track is rendered
           } as MediaStreamTrackPublishOptions)
           .then(trackPublication => {
-            stopScreenShareRef.current = (): void => {
+            stopScreenShareRef.current = () => {
               room.localParticipant.unpublishTrack(track);
               // TODO: remove this if the SDK is updated to emit this event
               room.localParticipant.emit("trackUnpublished", trackPublication);
@@ -60,7 +57,6 @@ export default function useScreenShareToggle(): readonly [boolean, () => void] {
   }, [room, onError]);
 
   const toggleScreenShare = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     !isSharing ? shareScreen() : stopScreenShareRef.current();
   }, [isSharing, shareScreen, stopScreenShareRef]);
 

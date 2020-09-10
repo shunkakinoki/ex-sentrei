@@ -1,6 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import useTrack from "@sentrei/video/hooks/useTrack/useTrack";
+import AudioTrack from "@sentrei/video/components/AudioTrack/AudioTrack";
+import VideoTrack from "@sentrei/video/components/VideoTrack/VideoTrack";
 
+import {IVideoTrack} from "@sentrei/video/types";
 import {
   AudioTrack as IAudioTrack,
   LocalTrackPublication,
@@ -8,12 +11,6 @@ import {
   RemoteTrackPublication,
   Track,
 } from "twilio-video";
-
-import AudioTrack from "@sentrei/video/components/AudioTrack";
-import VideoTrack from "@sentrei/video/components/VideoTrack";
-import useTrack from "@sentrei/video/hooks/useTrack";
-
-import {IVideoTrack} from "@sentrei/video/types";
 
 interface PublicationProps {
   publication: LocalTrackPublication | RemoteTrackPublication;
@@ -25,12 +22,10 @@ interface PublicationProps {
 
 export default function Publication({
   publication,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  participant,
   isLocal,
   disableAudio,
   videoPriority,
-}: PublicationProps): JSX.Element | null {
+}: PublicationProps) {
   const track = useTrack(publication);
 
   if (!track) return null;

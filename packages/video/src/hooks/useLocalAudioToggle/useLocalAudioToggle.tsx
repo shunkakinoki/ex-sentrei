@@ -1,10 +1,9 @@
-import {useCallback} from "react";
 import {LocalAudioTrack} from "twilio-video";
+import {useCallback} from "react";
+import useIsTrackEnabled from "@sentrei/video/hooks/useIsTrackEnabled/useIsTrackEnabled";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
-import useIsTrackEnabled from "@sentrei/video/hooks/useIsTrackEnabled";
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
-
-export default function useLocalAudioToggle(): readonly [boolean, () => void] {
+export default function useLocalAudioToggle() {
   const {localTracks} = useVideoContext();
   const audioTrack = localTracks.find(
     track => track.kind === "audio",
@@ -13,7 +12,6 @@ export default function useLocalAudioToggle(): readonly [boolean, () => void] {
 
   const toggleAudioEnabled = useCallback(() => {
     if (audioTrack) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       audioTrack.isEnabled ? audioTrack.disable() : audioTrack.enable();
     }
   }, [audioTrack]);

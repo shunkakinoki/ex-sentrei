@@ -1,11 +1,7 @@
-import {useEffect, useRef} from "react";
-
-// eslint-disable-next-line import/no-cycle
-import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle";
-// eslint-disable-next-line import/no-cycle
-import useVideoContext from "@sentrei/video/hooks/useVideoContext";
-
 import {isMobile} from "@sentrei/video/utils";
+import {useEffect, useRef} from "react";
+import useLocalVideoToggle from "@sentrei/video/hooks/useLocalVideoToggle/useLocalVideoToggle";
+import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
 
 /*
   This component adds a visibilitychange handler to the document when
@@ -17,15 +13,14 @@ import {isMobile} from "@sentrei/video/utils";
   to show that this user's video track has been turned off.
 */
 
-export default function AttachVisibilityHandler(): null {
+export default function AttachVisibilityHandler() {
   const {room} = useVideoContext();
   const [isVideoEnabled, toggleVideoEnabled] = useLocalVideoToggle();
   const shouldRepublishVideoOnForeground = useRef(false);
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (isMobile) {
-      const handleVisibilityChange = (): void => {
+      const handleVisibilityChange = () => {
         // We don't need to unpublish the local video track if it has already been unpublished
         if (document.visibilityState === "hidden" && isVideoEnabled) {
           shouldRepublishVideoOnForeground.current = true;
@@ -39,7 +34,7 @@ export default function AttachVisibilityHandler(): null {
       };
 
       document.addEventListener("visibilitychange", handleVisibilityChange);
-      return (): void => {
+      return () => {
         document.removeEventListener(
           "visibilitychange",
           handleVisibilityChange,
