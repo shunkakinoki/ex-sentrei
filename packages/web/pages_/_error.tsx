@@ -26,7 +26,7 @@ const getInitialProps = async (
     return {statusCode: 404};
   }
   if (err) {
-    trackEvent("exception", {
+    trackEvent("Exception", {
       error: err.name,
       description: err.message,
       statusCode: err.statusCode,
