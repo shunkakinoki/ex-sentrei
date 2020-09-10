@@ -1,3 +1,16 @@
+# [1.60.0](https://github.com/sentrei/sentrei/compare/v1.59.0...v1.60.0) (2020-09-10)
+
+### Features
+
+- 🎸 ini video app ([e57c8fb](https://github.com/sentrei/sentrei/commit/e57c8fb8cc56b7e9baeb2a028760566f34cc9f98))
+
+### Performance Improvements
+
+- ⚡️ ini app state provider to app root page ([d837d55](https://github.com/sentrei/sentrei/commit/d837d55d3b0f886d5b98e0d40d327cf16e91d7cb))
+- ⚡️ refactor page names ([4baf69a](https://github.com/sentrei/sentrei/commit/4baf69aef5f85e1e54eb2ab51f0bde95812dc034))
+- ⚡️ refactor pages naming ([21f3811](https://github.com/sentrei/sentrei/commit/21f3811b28829ec5886094cdfd279510e61bd312))
+- ⚡️ remove sentrei app header from app ([02d6379](https://github.com/sentrei/sentrei/commit/02d63795d7e4bbe855100fea4a11cc2aa15bd779))
+
 # [1.59.0](https://github.com/sentrei/sentrei/compare/v1.58.0...v1.59.0) (2020-09-10)
 
 ### Features
