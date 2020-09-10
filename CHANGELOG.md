@@ -1,3 +1,15 @@
+# [1.57.0](https://github.com/sentrei/sentrei/compare/v1.56.2...v1.57.0) (2020-09-10)
+
+### Features
+
+- 🎸 refactor ui video packages deps ([e5da8a8](https://github.com/sentrei/sentrei/commit/e5da8a8c54e495db70826e08ce23d7160d266fb6))
+- 🎸 upgrade package json ([1e4fbd4](https://github.com/sentrei/sentrei/commit/1e4fbd4bdab8fc979c7a252fbeb76ced4a7aa0f2))
+
+### Performance Improvements
+
+- ⚡️ chore for root package json ([f0a4d82](https://github.com/sentrei/sentrei/commit/f0a4d8296434b7dcb19b35c7d783fb1d1cb73aa8))
+- ⚡️ tweak package json ([a2ba048](https://github.com/sentrei/sentrei/commit/a2ba0482fdd5d3bd0bef49585d2b4cd52b04c293))
+
 ## [1.56.2](https://github.com/sentrei/sentrei/compare/v1.56.1...v1.56.2) (2020-09-09)
 
 ### Performance Improvements
