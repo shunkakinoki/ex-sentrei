@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   };
 };
 
-const LeaderboardPage = ({
+const Leaderboard = ({
   spaceId,
   membersData,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
@@ -106,4 +106,4 @@ const LeaderboardPage = ({
   );
 };
 
-export default LeaderboardPage;
+export default Leaderboard;

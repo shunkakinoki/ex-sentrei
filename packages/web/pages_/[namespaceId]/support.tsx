@@ -11,7 +11,7 @@ import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SupportScreen from "@sentrei/ui/components/SupportScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const SupportPage: NextPage = () => {
+const Support: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -69,4 +69,4 @@ const SupportPage: NextPage = () => {
   );
 };
 
-export default SupportPage;
+export default Support;

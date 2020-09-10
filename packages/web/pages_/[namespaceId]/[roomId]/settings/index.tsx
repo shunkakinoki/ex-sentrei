@@ -17,7 +17,7 @@ const RoomSettings = dynamic(
   },
 );
 
-const Edit: NextPage = () => {
+const Settings: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -84,4 +84,4 @@ const Edit: NextPage = () => {
   );
 };
 
-export default Edit;
+export default Settings;

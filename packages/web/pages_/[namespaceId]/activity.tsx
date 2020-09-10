@@ -11,7 +11,7 @@ import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceActivity from "@sentrei/ui/components/SpaceActivity";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const ActivityPage: NextPage = () => {
+const Activity: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -72,4 +72,4 @@ const ActivityPage: NextPage = () => {
   );
 };
 
-export default ActivityPage;
+export default Activity;

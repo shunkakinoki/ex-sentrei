@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   };
 };
 
-const MembersPage = ({
+const Members = ({
   spaceId,
   membersData,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
@@ -106,4 +106,4 @@ const MembersPage = ({
   );
 };
 
-export default MembersPage;
+export default Members;

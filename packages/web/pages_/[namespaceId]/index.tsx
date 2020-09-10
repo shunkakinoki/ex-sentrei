@@ -72,7 +72,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   };
 };
 
-const SpaceId = ({
+const NamespaceId = ({
   spaceId,
   spaceData,
   membersData,
@@ -143,4 +143,4 @@ const SpaceId = ({
   );
 };
 
-export default SpaceId;
+export default NamespaceId;

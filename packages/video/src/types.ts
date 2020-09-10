@@ -30,6 +30,7 @@ declare module "twilio-video" {
 
 declare global {
   interface Window {
+    // @ts-ignore
     visualViewport?: {
       scale: number;
     };

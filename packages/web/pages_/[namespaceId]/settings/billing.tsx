@@ -17,7 +17,7 @@ const SpaceBilling = dynamic(
   },
 );
 
-const SpaceBillingPage: NextPage = () => {
+const Billing: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -81,4 +81,4 @@ const SpaceBillingPage: NextPage = () => {
   );
 };
 
-export default SpaceBillingPage;
+export default Billing;

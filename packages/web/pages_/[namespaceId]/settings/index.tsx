@@ -17,7 +17,7 @@ const SpaceSettings = dynamic(
   },
 );
 
-const SpaceSettingsPage: NextPage = () => {
+const Settings: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -82,4 +82,4 @@ const SpaceSettingsPage: NextPage = () => {
   );
 };
 
-export default SpaceSettingsPage;
+export default Settings;
