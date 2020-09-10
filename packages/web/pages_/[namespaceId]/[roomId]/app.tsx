@@ -38,7 +38,7 @@ const App = (): JSX.Element => {
   }
 
   return (
-    <AppStateProvider>
+    <AppStateProvider roomId={String(query.roomId)}>
       <SentreiVideoApp />
     </AppStateProvider>
   );

@@ -12,6 +12,7 @@ export interface StateContextType {
   error: TwilioError | null;
   setError(error: TwilioError | null): void;
   getToken(name: string, room: string, passcode?: string): Promise<string>;
+  roomId: string;
   user?: null | {
     displayName: undefined;
     photoURL: undefined;
@@ -39,7 +40,9 @@ export const StateContext = createContext<StateContextType>(null!);
   included in the bundle that is produced (due to tree-shaking). Thus, in this instance, it
   is ok to call hooks inside if() statements.
 */
-export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
+export default function AppStateProvider(
+  props: React.PropsWithChildren<{roomId: string}>,
+) {
   const [error, setError] = useState<TwilioError | null>(null);
   const [isFetching, setIsFetching] = useState(false);
   const [activeSinkId, setActiveSinkId] = useState("default");
@@ -50,6 +53,7 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
 
   let contextValue = {
     error,
+    roomId: props.roomId,
     setError,
     isFetching,
     activeSinkId,
