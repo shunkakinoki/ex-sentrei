@@ -6,7 +6,7 @@ const FormPhotoStyles = makeStyles((theme: Theme) =>
       position: "relative",
       width: "100%",
       height: theme.spacing(10),
-      background: "#333",
+      background: theme.palette.grey[300],
       [theme.breakpoints.up("sm")]: {
         height: theme.spacing(30),
       },
