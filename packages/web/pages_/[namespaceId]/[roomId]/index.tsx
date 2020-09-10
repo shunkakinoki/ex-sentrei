@@ -4,6 +4,7 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import App from "@sentrei/video/App";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -63,6 +64,7 @@ const RoomId = (): JSX.Element => {
         tabRoomKey="home"
         type="room"
       />
+      <App />
     </>
   );
 };
