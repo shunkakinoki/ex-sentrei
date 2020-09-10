@@ -24,7 +24,7 @@ class ErrorBoundary extends Component<ErrorProps, ErrorState> {
   }
 
   componentDidCatch(err: any, errInfo: any): void {
-    trackEvent("exception", {
+    trackEvent("Exception", {
       error: err,
       description: errInfo,
     });
