@@ -5,18 +5,18 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
-  testRegex: "(/__tests__/.*|(\\.|/)(spec))\\.tsx?$",
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
   testPathIgnorePatterns: [
     "<rootDir>/.next/",
     "<rootDir>/node_modules/",
-    "<rootDir>/src/__tests__/setupTests.ts",
+    "<rootDir>/src/setupTests.ts",
   ],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
     "@sentrei/common/(.*)": "<rootDir>/../common/src/$1",
     "@sentrei/video/(.*)": "<rootDir>/src/$1",
   },
-  setupFiles: ["<rootDir>/src/__tests__/setupTests.ts"],
+  setupFiles: ["<rootDir>/src/setupTests.ts"],
   collectCoverage: true,
   verbose: true,
   collectCoverageFrom: [
