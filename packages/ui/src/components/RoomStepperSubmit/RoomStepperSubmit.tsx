@@ -5,6 +5,7 @@ import * as React from "react";
 import {useForm} from "react-hook-form";
 import {useRecoilState, RecoilState} from "recoil";
 
+import {roomEmoji} from "@sentrei/common/const/emoji";
 import {createRoom} from "@sentrei/common/firebase/rooms";
 import {timestamp} from "@sentrei/common/utils/firebase";
 import RoomCreateForm from "@sentrei/types/atom/RoomCreateForm";
@@ -50,7 +51,7 @@ const RoomStepperSubmit = ({
         createdBy: profile,
         createdByUid: user.uid,
         description: null,
-        emoji: ":sushi:",
+        emoji: roomEmoji,
         participantCount: 0,
         photo: null,
         photoHash: null,
