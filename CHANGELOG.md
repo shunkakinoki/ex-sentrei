@@ -1,3 +1,13 @@
+# [1.61.0](https://github.com/sentrei/sentrei/compare/v1.60.0...v1.61.0) (2020-09-10)
+
+### Features
+
+- 🎸 ini roomId app ([6db4608](https://github.com/sentrei/sentrei/commit/6db460872e2b2d5433b0d5ee2cce656bbd66f624))
+
+### Performance Improvements
+
+- ⚡️ ini app link ([2e0668d](https://github.com/sentrei/sentrei/commit/2e0668d2b37dda4b6fae741ea1027536307bd705))
+
 # [1.60.0](https://github.com/sentrei/sentrei/compare/v1.59.0...v1.60.0) (2020-09-10)
 
 ### Features
