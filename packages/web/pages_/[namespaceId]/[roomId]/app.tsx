@@ -6,6 +6,7 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import Loader from "@sentrei/ui/components/Loader";
+import AppStateProvider from "@sentrei/video/state";
 
 const SentreiVideoApp = dynamic(() => import("@sentrei/video/VideoApp"), {
   ssr: false,
@@ -36,7 +37,11 @@ const App = (): JSX.Element => {
     return <HomeScreen />;
   }
 
-  return <SentreiVideoApp />;
+  return (
+    <AppStateProvider>
+      <SentreiVideoApp />
+    </AppStateProvider>
+  );
 };
 
 export default App;
