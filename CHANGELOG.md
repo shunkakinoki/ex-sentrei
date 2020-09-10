@@ -1,3 +1,15 @@
+# [1.63.0](https://github.com/sentrei/sentrei/compare/v1.62.0...v1.63.0) (2020-09-10)
+
+### Features
+
+- 🎸 refactor const color ([cb127ae](https://github.com/sentrei/sentrei/commit/cb127ae30215aedd9abe5226cb5742dc1238a08c))
+
+### Performance Improvements
+
+- ⚡️ ini const emoji ([5f621fa](https://github.com/sentrei/sentrei/commit/5f621fa7ea4f63e4beb00ebda81f88599411ea08))
+- ⚡️ ini emoji function ([c605444](https://github.com/sentrei/sentrei/commit/c605444409bd4624ae359262def47ae602304cb5))
+- ⚡️ remove src index ([268ed2d](https://github.com/sentrei/sentrei/commit/268ed2d689bec68f78a5cc64622b8a35761c9dd8))
+
 # [1.62.0](https://github.com/sentrei/sentrei/compare/v1.61.0...v1.62.0) (2020-09-10)
 
 ### Features
