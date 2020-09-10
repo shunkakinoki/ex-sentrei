@@ -49,7 +49,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.4",
     "fscreen": "^1.0.2",
-    "is-plain-object": "^5.0.0",
+    "is-plain-object": "^4.1.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash.throttle": "^4.1.1",
     "react": "^16.13.1",
