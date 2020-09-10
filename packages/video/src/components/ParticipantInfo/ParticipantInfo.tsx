@@ -9,18 +9,18 @@ import {
   RemoteVideoTrack,
 } from "twilio-video";
 
-import AudioLevelIndicator from "@sentrei/video/components/AudioLevelIndicator";
-import BandwidthWarning from "@sentrei/video/components/BandwidthWarning";
-import NetworkQualityLevel from "@sentrei/video/components/NetworkQualityLevel";
-import ParticipantConnectionIndicator from "./ParticipantConnectionIndicator";
-import PinIcon from "./PinIcon";
+import AudioLevelIndicator from "@sentrei/video/components/AudioLevelIndicator/AudioLevelIndicator";
+import BandwidthWarning from "@sentrei/video/components/BandwidthWarning/BandwidthWarning";
+import NetworkQualityLevel from "@sentrei/video/components/NetworkQualityLevel/NetworkQualityLevel";
+import ParticipantConnectionIndicator from "./ParticipantConnectionIndicator/ParticipantConnectionIndicator";
+import PinIcon from "./PinIcon/PinIcon";
 import ScreenShare from "@material-ui/icons/ScreenShare";
 import VideocamOff from "@material-ui/icons/VideocamOff";
 
-import useParticipantNetworkQualityLevel from "@sentrei/video/hooks/useParticipantNetworkQualityLevel";
-import usePublications from "@sentrei/video/hooks/usePublications";
-import useIsTrackSwitchedOff from "@sentrei/video/hooks/useIsTrackSwitchedOff";
-import useTrack from "@sentrei/video/hooks/useTrack";
+import useParticipantNetworkQualityLevel from "@sentrei/video/hooks/useParticipantNetworkQualityLevel/useParticipantNetworkQualityLevel";
+import usePublications from "@sentrei/video/hooks/usePublications/usePublications";
+import useIsTrackSwitchedOff from "@sentrei/video/hooks/useIsTrackSwitchedOff/useIsTrackSwitchedOff";
+import useTrack from "@sentrei/video/hooks/useTrack/useTrack";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
