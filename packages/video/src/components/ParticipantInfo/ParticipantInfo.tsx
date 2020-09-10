@@ -11,7 +11,7 @@ import {
 
 import AudioLevelIndicator from "@sentrei/video/components/AudioLevelIndicator/AudioLevelIndicator";
 import BandwidthWarning from "@sentrei/video/components/BandwidthWarning/BandwidthWarning";
-import NetworkQualityLevel from "@sentrei/video/components/NewtorkQualityLevel/NetworkQualityLevel";
+import NetworkQualityLevel from "@sentrei/video/components/NetworkQualityLevel/NetworkQualityLevel";
 import ParticipantConnectionIndicator from "./ParticipantConnectionIndicator/ParticipantConnectionIndicator";
 import PinIcon from "./PinIcon/PinIcon";
 import ScreenShare from "@material-ui/icons/ScreenShare";
