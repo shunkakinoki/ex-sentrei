@@ -17,8 +17,6 @@ const LightTheme = createMuiTheme({
       "sans-serif",
     ].join(","),
   },
-  sidebarWidth: 260,
-  sidebarMobileHeight: 90,
 } as SentreiTheme);
 
 export default responsiveFontSizes(LightTheme);

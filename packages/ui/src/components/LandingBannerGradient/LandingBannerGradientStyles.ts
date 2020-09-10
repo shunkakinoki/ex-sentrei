@@ -1,5 +1,11 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
+import {
+  GradientTop,
+  GradientMiddle,
+  GradientBottom,
+} from "@sentrei/common/const/color";
+
 const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
@@ -28,7 +34,7 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
     },
     top: {
       animation: `$top 8s infinite`,
-      backgroundImage: "linear-gradient(90deg, #ef008f, #6ec3f4)",
+      backgroundImage: `linear-gradient(90deg, ${GradientTop}, ${GradientMiddle})`,
     },
     "@keyframes top": {
       "0%, 16.667%, 100%": {
@@ -40,7 +46,7 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
     },
     center: {
       animation: `$center 8s infinite`,
-      backgroundImage: "linear-gradient(90deg, #6ec3f4, #7038ff)",
+      backgroundImage: `linear-gradient(90deg, ${GradientMiddle}, ${GradientBottom})`,
     },
     "@keyframes center": {
       "0%, 16.667%, 66.667%, 100%": {
@@ -52,7 +58,7 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
     },
     bottom: {
       animation: `$bottom 8s infinite`,
-      backgroundImage: "linear-gradient(90deg, #7038ff, #c9c9c9)",
+      backgroundImage: `linear-gradient(90deg, ${GradientBottom}, ${GradientTop})`,
     },
     "@keyframes bottom": {
       "0%, 50%, 100%": {

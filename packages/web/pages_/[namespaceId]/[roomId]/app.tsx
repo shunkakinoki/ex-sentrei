@@ -49,7 +49,7 @@ const App = (): JSX.Element => {
     return <Loader />;
   }
 
-  if (!user || !profile || !spaceId || members) {
+  if (!user || !profile || !spaceId || !members) {
     return <HomeScreen />;
   }
 
