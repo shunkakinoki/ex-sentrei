@@ -180,13 +180,13 @@ export default function AppBar({
             )}
             <MuiButton
               href={
-                type === "space" && namespaceId
+                namespaceId || profile?.namespaceId
                   ? "/[namespaceId]/support"
                   : "/support"
               }
               as={
-                type === "space" && namespaceId
-                  ? `/${namespaceId}/support`
+                namespaceId || profile?.namespaceId
+                  ? `/${namespaceId ?? profile?.namespaceId}/support`
                   : "/support"
               }
               className={classes.button}
