@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useReducer, useState} from "react";
-import {RoomType} from "../types";
+import {RoomType} from "@sentrei/video/types";
 import {TwilioError} from "twilio-video";
 import {
   settingsReducer,
