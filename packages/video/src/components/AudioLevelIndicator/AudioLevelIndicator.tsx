@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { AudioTrack, LocalAudioTrack, RemoteAudioTrack } from 'twilio-video';
-import { interval } from 'd3-timer';
-import MicOff from '@material-ui/icons/MicOff';
-import useIsTrackEnabled from '../../hooks/useIsTrackEnabled/useIsTrackEnabled';
-import useMediaStreamTrack from '../../hooks/useMediaStreamTrack/useMediaStreamTrack';
+import React, {useEffect, useRef, useState} from "react";
+import {AudioTrack, LocalAudioTrack, RemoteAudioTrack} from "twilio-video";
+import {interval} from "d3-timer";
+import MicOff from "@material-ui/icons/MicOff";
+import useIsTrackEnabled from "../../hooks/useIsTrackEnabled/useIsTrackEnabled";
+import useMediaStreamTrack from "../../hooks/useMediaStreamTrack/useMediaStreamTrack";
 
 let clipId = 0;
 const getUniqueClipId = () => clipId++;
@@ -36,7 +36,9 @@ function AudioLevelIndicator({
   const SIZE = size || 24;
   const SVGRectRef = useRef<SVGRectElement>(null);
   const [analyser, setAnalyser] = useState<AnalyserNode>();
-  const isTrackEnabled = useIsTrackEnabled(audioTrack as LocalAudioTrack | RemoteAudioTrack);
+  const isTrackEnabled = useIsTrackEnabled(
+    audioTrack as LocalAudioTrack | RemoteAudioTrack,
+  );
   const mediaStreamTrack = useMediaStreamTrack(audioTrack);
 
   useEffect(() => {
@@ -50,8 +52,9 @@ function AudioLevelIndicator({
       // we stop the cloned track that is stored in 'newMediaStream'. It is important that we stop
       // all tracks when they are not in use. Browsers like Firefox don't let you create a new stream
       // from a new audio device while the active audio device still has active tracks.
-      const stopAllMediaStreamTracks = () => newMediaStream.getTracks().forEach(track => track.stop());
-      audioTrack.on('stopped', stopAllMediaStreamTracks);
+      const stopAllMediaStreamTracks = () =>
+        newMediaStream.getTracks().forEach(track => track.stop());
+      audioTrack.on("stopped", stopAllMediaStreamTracks);
 
       const reinitializeAnalyser = () => {
         stopAllMediaStreamTracks();
@@ -64,12 +67,12 @@ function AudioLevelIndicator({
       // Here we reinitialize the AnalyserNode on focus to avoid an issue in Safari
       // where the analysers stop functioning when the user switches to a new tab
       // and switches back to the app.
-      window.addEventListener('focus', reinitializeAnalyser);
+      window.addEventListener("focus", reinitializeAnalyser);
 
       return () => {
         stopAllMediaStreamTracks();
-        window.removeEventListener('focus', reinitializeAnalyser);
-        audioTrack.off('stopped', stopAllMediaStreamTracks);
+        window.removeEventListener("focus", reinitializeAnalyser);
+        audioTrack.off("stopped", stopAllMediaStreamTracks);
       };
     }
   }, [isTrackEnabled, mediaStreamTrack, audioTrack]);
@@ -89,13 +92,16 @@ function AudioLevelIndicator({
           values += sampleArray[i];
         }
 
-        const volume = Math.min(21, Math.max(0, Math.log10(values / length / 3) * 14));
+        const volume = Math.min(
+          21,
+          Math.max(0, Math.log10(values / length / 3) * 14),
+        );
 
-        SVGClipElement?.setAttribute('y', String(21 - volume));
+        SVGClipElement?.setAttribute("y", String(21 - volume));
       }, 50);
 
       return () => {
-        SVGClipElement.setAttribute('y', '21');
+        SVGClipElement.setAttribute("y", "21");
         timer.stop();
       };
     }
@@ -105,14 +111,20 @@ function AudioLevelIndicator({
   const clipPathId = `audio-level-clip-${getUniqueClipId()}`;
 
   return isTrackEnabled ? (
-    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" height={`${SIZE}px`} width={`${SIZE}px`}>
+    <svg
+      focusable="false"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      height={`${SIZE}px`}
+      width={`${SIZE}px`}
+    >
       <defs>
         <clipPath id={clipPathId}>
           <rect ref={SVGRectRef} x="0" y="21" width="24" height="24" />
         </clipPath>
       </defs>
       <path
-        fill={background || 'rgba(255, 255, 255, 0.1)'}
+        fill={background || "rgba(255, 255, 255, 0.1)"}
         d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"
       ></path>
       <path
@@ -125,7 +137,7 @@ function AudioLevelIndicator({
     <MicOff
       height={`${SIZE}px`}
       width={`${SIZE}px`}
-      style={{ width: 'initial', height: 'initial' }}
+      style={{width: "initial", height: "initial"}}
       data-cy-audio-mute-icon
     />
   );

@@ -1,7 +1,10 @@
-import isPlainObject from 'is-plain-object';
+import isPlainObject from "is-plain-object";
 
 export const isMobile = (() => {
-  if (typeof navigator === 'undefined' || typeof navigator.userAgent !== 'string') {
+  if (
+    typeof navigator === "undefined" ||
+    typeof navigator.userAgent !== "string"
+  ) {
     return false;
   }
   return /Mobile/.test(navigator.userAgent);
@@ -13,12 +16,16 @@ export const isMobile = (() => {
 export function ensureMediaPermissions() {
   return navigator.mediaDevices
     .enumerateDevices()
-    .then(devices => devices.every(device => !(device.deviceId && device.label)))
+    .then(devices =>
+      devices.every(device => !(device.deviceId && device.label)),
+    )
     .then(shouldAskForMediaPermissions => {
       if (shouldAskForMediaPermissions) {
         return navigator.mediaDevices
-          .getUserMedia({ audio: true, video: true })
-          .then(mediaStream => mediaStream.getTracks().forEach(track => track.stop()));
+          .getUserMedia({audio: true, video: true})
+          .then(mediaStream =>
+            mediaStream.getTracks().forEach(track => track.stop()),
+          );
       }
     });
 }
@@ -27,11 +34,11 @@ export function ensureMediaPermissions() {
 export function removeUndefineds<T>(obj: T): T {
   if (!isPlainObject(obj)) return obj;
 
-  const target: { [name: string]: any } = {};
+  const target: {[name: string]: any} = {};
 
   for (const key in obj) {
     const val = obj[key];
-    if (typeof val !== 'undefined') {
+    if (typeof val !== "undefined") {
       target[key] = removeUndefineds(val);
     }
   }

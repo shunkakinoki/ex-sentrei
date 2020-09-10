@@ -1,15 +1,15 @@
-import { removeUndefineds } from '.';
+import {removeUndefineds} from ".";
 
-describe('the removeUndefineds function', () => {
-  it('should recursively remove any object keys with a value of undefined', () => {
+describe("the removeUndefineds function", () => {
+  it("should recursively remove any object keys with a value of undefined", () => {
     const data = {
       a: 0,
-      b: '',
+      b: "",
       c: undefined,
       d: null,
       e: {
         a: 0,
-        b: '',
+        b: "",
         c: undefined,
         d: null,
       },
@@ -17,11 +17,11 @@ describe('the removeUndefineds function', () => {
 
     const result = {
       a: 0,
-      b: '',
+      b: "",
       d: null,
       e: {
         a: 0,
-        b: '',
+        b: "",
         d: null,
       },
     };

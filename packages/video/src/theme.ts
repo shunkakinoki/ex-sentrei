@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core';
+import {createMuiTheme} from "@material-ui/core";
 
-declare module '@material-ui/core/styles/createMuiTheme' {
+declare module "@material-ui/core/styles/createMuiTheme" {
   interface Theme {
     sidebarWidth: number;
     sidebarMobileHeight: number;
@@ -15,9 +15,9 @@ declare module '@material-ui/core/styles/createMuiTheme' {
 
 export default createMuiTheme({
   palette: {
-    type: 'dark',
+    type: "dark",
     primary: {
-      main: '#F22F46',
+      main: "#F22F46",
     },
   },
   sidebarWidth: 260,

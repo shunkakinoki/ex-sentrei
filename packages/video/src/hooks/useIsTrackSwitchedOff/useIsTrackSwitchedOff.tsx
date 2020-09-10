@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { LocalVideoTrack, RemoteVideoTrack } from 'twilio-video';
+import {useState, useEffect} from "react";
+import {LocalVideoTrack, RemoteVideoTrack} from "twilio-video";
 
 type TrackType = RemoteVideoTrack | LocalVideoTrack | undefined | null;
 
@@ -7,7 +7,9 @@ type TrackType = RemoteVideoTrack | LocalVideoTrack | undefined | null;
 // a track. See: https://www.twilio.com/docs/video/tutorials/using-bandwidth-profile-api#understanding-track-switch-offs
 
 export default function useIsTrackSwitchedOff(track: TrackType) {
-  const [isSwitchedOff, setIsSwitchedOff] = useState(track && track.isSwitchedOff);
+  const [isSwitchedOff, setIsSwitchedOff] = useState(
+    track && track.isSwitchedOff,
+  );
 
   useEffect(() => {
     // Reset the value if the 'track' variable changes
@@ -16,11 +18,11 @@ export default function useIsTrackSwitchedOff(track: TrackType) {
     if (track) {
       const handleSwitchedOff = () => setIsSwitchedOff(true);
       const handleSwitchedOn = () => setIsSwitchedOff(false);
-      track.on('switchedOff', handleSwitchedOff);
-      track.on('switchedOn', handleSwitchedOn);
+      track.on("switchedOff", handleSwitchedOff);
+      track.on("switchedOn", handleSwitchedOn);
       return () => {
-        track.off('switchedOff', handleSwitchedOff);
-        track.off('switchedOn', handleSwitchedOn);
+        track.off("switchedOff", handleSwitchedOff);
+        track.off("switchedOn", handleSwitchedOn);
       };
     }
   }, [track]);

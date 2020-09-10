@@ -1,6 +1,6 @@
-import { useState, useCallback, useRef } from 'react';
-import useVideoContext from '../useVideoContext/useVideoContext';
-import { LogLevels, Track } from 'twilio-video';
+import {useState, useCallback, useRef} from "react";
+import useVideoContext from "../useVideoContext/useVideoContext";
+import {LogLevels, Track} from "twilio-video";
 
 interface MediaStreamTrackPublishOptions {
   name?: string;
@@ -9,7 +9,7 @@ interface MediaStreamTrackPublishOptions {
 }
 
 export default function useScreenShareToggle() {
-  const { room, onError } = useVideoContext();
+  const {room, onError} = useVideoContext();
   const [isSharing, setIsSharing] = useState(false);
   const stopScreenShareRef = useRef<() => void>(null!);
 
@@ -31,14 +31,14 @@ export default function useScreenShareToggle() {
         // set to 'high' via track.setPriority()
         room.localParticipant
           .publishTrack(track, {
-            name: 'screen', // Tracks can be named to easily find them later
-            priority: 'low', // Priority is set to high by the subscriber when the video track is rendered
+            name: "screen", // Tracks can be named to easily find them later
+            priority: "low", // Priority is set to high by the subscriber when the video track is rendered
           } as MediaStreamTrackPublishOptions)
           .then(trackPublication => {
             stopScreenShareRef.current = () => {
               room.localParticipant.unpublishTrack(track);
               // TODO: remove this if the SDK is updated to emit this event
-              room.localParticipant.emit('trackUnpublished', trackPublication);
+              room.localParticipant.emit("trackUnpublished", trackPublication);
               track.stop();
               setIsSharing(false);
             };
@@ -50,7 +50,7 @@ export default function useScreenShareToggle() {
       })
       .catch(error => {
         // Don't display an error if the user closes the screen share dialog
-        if (error.name !== 'AbortError' && error.name !== 'NotAllowedError') {
+        if (error.name !== "AbortError" && error.name !== "NotAllowedError") {
           onError(error);
         }
       });

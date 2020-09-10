@@ -1,11 +1,11 @@
-import { isMobile } from '../../utils';
-import { RenderDimensionValue } from './renderDimensions';
-import { Track, VideoBandwidthProfileOptions } from 'twilio-video';
+import {isMobile} from "../../utils";
+import {RenderDimensionValue} from "./renderDimensions";
+import {Track, VideoBandwidthProfileOptions} from "twilio-video";
 
 export interface Settings {
-  trackSwitchOffMode: VideoBandwidthProfileOptions['trackSwitchOffMode'];
+  trackSwitchOffMode: VideoBandwidthProfileOptions["trackSwitchOffMode"];
   dominantSpeakerPriority?: Track.Priority;
-  bandwidthProfileMode: VideoBandwidthProfileOptions['mode'];
+  bandwidthProfileMode: VideoBandwidthProfileOptions["mode"];
   maxTracks: string;
   maxAudioBitrate: string;
   renderDimensionLow?: RenderDimensionValue;
@@ -22,13 +22,13 @@ export interface SettingsAction {
 
 export const initialSettings: Settings = {
   trackSwitchOffMode: undefined,
-  dominantSpeakerPriority: 'standard',
-  bandwidthProfileMode: 'collaboration',
-  maxTracks: isMobile ? '5' : '10',
-  maxAudioBitrate: '16000',
-  renderDimensionLow: 'low',
-  renderDimensionStandard: '960p',
-  renderDimensionHigh: 'wide1080p',
+  dominantSpeakerPriority: "standard",
+  bandwidthProfileMode: "collaboration",
+  maxTracks: isMobile ? "5" : "10",
+  maxAudioBitrate: "16000",
+  renderDimensionLow: "low",
+  renderDimensionStandard: "960p",
+  renderDimensionHigh: "wide1080p",
 };
 
 // This inputLabels object is used by ConnectionOptions.tsx. It is used to populate the id, name, and label props
@@ -39,12 +39,12 @@ export const inputLabels = (() => {
   for (const setting in initialSettings) {
     target[setting] = setting as SettingsKeys;
   }
-  return target as { [key in SettingsKeys]: string };
+  return target as {[key in SettingsKeys]: string};
 })();
 
 export function settingsReducer(state: Settings, action: SettingsAction) {
   return {
     ...state,
-    [action.name]: action.value === 'default' ? undefined : action.value,
+    [action.name]: action.value === "default" ? undefined : action.value,
   };
 }

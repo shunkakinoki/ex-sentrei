@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { AudioTrack, VideoTrack } from 'twilio-video';
+import {useState, useEffect} from "react";
+import {AudioTrack, VideoTrack} from "twilio-video";
 
 /*
  * This hook allows components to reliably use the 'mediaStreamTrack' property of
@@ -9,16 +9,18 @@ import { AudioTrack, VideoTrack } from 'twilio-video';
  * to rerender in response to the mediaStreamTrack changing.
  */
 export default function useMediaStreamTrack(track?: AudioTrack | VideoTrack) {
-  const [mediaStreamTrack, setMediaStreamTrack] = useState(track?.mediaStreamTrack);
+  const [mediaStreamTrack, setMediaStreamTrack] = useState(
+    track?.mediaStreamTrack,
+  );
 
   useEffect(() => {
     setMediaStreamTrack(track?.mediaStreamTrack);
 
     if (track) {
       const handleStarted = () => setMediaStreamTrack(track.mediaStreamTrack);
-      track.on('started', handleStarted);
+      track.on("started", handleStarted);
       return () => {
-        track.off('started', handleStarted);
+        track.off("started", handleStarted);
       };
     }
   }, [track]);

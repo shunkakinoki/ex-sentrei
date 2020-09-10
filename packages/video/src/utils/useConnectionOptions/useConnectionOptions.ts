@@ -1,10 +1,10 @@
-import { ConnectOptions } from 'twilio-video';
-import { isMobile, removeUndefineds } from '..';
-import { getResolution } from '../../state/settings/renderDimensions';
-import { useAppState } from '../../state';
+import {ConnectOptions} from "twilio-video";
+import {isMobile, removeUndefineds} from "..";
+import {getResolution} from "../../state/settings/renderDimensions";
+import {useAppState} from "../../state";
 
 export default function useConnectionOptions() {
-  const { roomType, settings } = useAppState();
+  const {roomType, settings} = useAppState();
 
   // See: https://media.twiliocdn.com/sdk/js/video/releases/2.0.0/docs/global.html#ConnectOptions
   // for available connection options.
@@ -26,7 +26,7 @@ export default function useConnectionOptions() {
       },
     },
     dominantSpeaker: true,
-    networkQuality: { local: 1, remote: 1 },
+    networkQuality: {local: 1, remote: 1},
 
     // Comment this line if you are playing music.
     maxAudioBitrate: Number(settings.maxAudioBitrate),
@@ -35,7 +35,9 @@ export default function useConnectionOptions() {
     // to adapt your encoded video quality for each RemoteParticipant based on
     // their individual bandwidth constraints. Simulcast should be disabled if
     // you are using Peer-to-Peer Rooms.
-    preferredVideoCodecs: [{ codec: 'VP8', simulcast: roomType !== 'peer-to-peer' }],
+    preferredVideoCodecs: [
+      {codec: "VP8", simulcast: roomType !== "peer-to-peer"},
+    ],
   };
 
   // For mobile browsers, limit the maximum incoming video bitrate to 2.5 Mbps.

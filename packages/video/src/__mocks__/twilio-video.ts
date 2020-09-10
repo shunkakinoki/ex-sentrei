@@ -1,7 +1,7 @@
-import { EventEmitter } from 'events';
+import {EventEmitter} from "events";
 
 class MockRoom extends EventEmitter {
-  state = 'connected';
+  state = "connected";
   disconnect = jest.fn();
   localParticipant = {
     publishTrack: jest.fn(),
@@ -11,7 +11,7 @@ class MockRoom extends EventEmitter {
 const mockRoom = new MockRoom();
 
 class MockTrack extends EventEmitter {
-  kind = '';
+  kind = "";
   stop = jest.fn();
 
   constructor(kind: string) {
@@ -22,8 +22,10 @@ class MockTrack extends EventEmitter {
 
 const twilioVideo = {
   connect: jest.fn(() => Promise.resolve(mockRoom)),
-  createLocalTracks: jest.fn(() => Promise.resolve([new MockTrack('video'), new MockTrack('audio')])),
+  createLocalTracks: jest.fn(() =>
+    Promise.resolve([new MockTrack("video"), new MockTrack("audio")]),
+  ),
 };
 
-export { mockRoom };
+export {mockRoom};
 export default twilioVideo;

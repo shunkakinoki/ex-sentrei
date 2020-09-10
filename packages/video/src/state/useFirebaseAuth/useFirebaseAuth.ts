@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
+import {useCallback, useEffect, useState} from "react";
+import * as firebase from "firebase/app";
+import "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -19,14 +19,14 @@ export default function useFirebaseAuth() {
       const headers = new window.Headers();
 
       const idToken = await user!.getIdToken();
-      headers.set('Authorization', idToken);
+      headers.set("Authorization", idToken);
 
-      const endpoint = process.env.REACT_APP_TOKEN_ENDPOINT || '/token';
-      const params = new window.URLSearchParams({ identity, roomName });
+      const endpoint = process.env.REACT_APP_TOKEN_ENDPOINT || "/token";
+      const params = new window.URLSearchParams({identity, roomName});
 
-      return fetch(`${endpoint}?${params}`, { headers }).then(res => res.text());
+      return fetch(`${endpoint}?${params}`, {headers}).then(res => res.text());
     },
-    [user]
+    [user],
   );
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function useFirebaseAuth() {
 
   const signIn = useCallback(() => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/plus.login');
+    provider.addScope("https://www.googleapis.com/auth/plus.login");
 
     return firebase
       .auth()
@@ -58,5 +58,5 @@ export default function useFirebaseAuth() {
       });
   }, []);
 
-  return { user, signIn, signOut, isAuthReady, getToken };
+  return {user, signIn, signOut, isAuthReady, getToken};
 }

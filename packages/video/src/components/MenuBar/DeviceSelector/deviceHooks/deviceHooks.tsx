@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { ensureMediaPermissions } from '../../../../utils';
+import {useState, useEffect} from "react";
+import {ensureMediaPermissions} from "../../../../utils";
 
 export function useDevices() {
   const [devices, setDevices] = useState<MediaDeviceInfo[]>([]);
@@ -7,13 +7,15 @@ export function useDevices() {
   useEffect(() => {
     const getDevices = () =>
       ensureMediaPermissions().then(() =>
-        navigator.mediaDevices.enumerateDevices().then(devices => setDevices(devices))
+        navigator.mediaDevices
+          .enumerateDevices()
+          .then(devices => setDevices(devices)),
       );
-    navigator.mediaDevices.addEventListener('devicechange', getDevices);
+    navigator.mediaDevices.addEventListener("devicechange", getDevices);
     getDevices();
 
     return () => {
-      navigator.mediaDevices.removeEventListener('devicechange', getDevices);
+      navigator.mediaDevices.removeEventListener("devicechange", getDevices);
     };
   }, []);
 
@@ -22,15 +24,15 @@ export function useDevices() {
 
 export function useAudioInputDevices() {
   const devices = useDevices();
-  return devices.filter(device => device.kind === 'audioinput');
+  return devices.filter(device => device.kind === "audioinput");
 }
 
 export function useVideoInputDevices() {
   const devices = useDevices();
-  return devices.filter(device => device.kind === 'videoinput');
+  return devices.filter(device => device.kind === "videoinput");
 }
 
 export function useAudioOutputDevices() {
   const devices = useDevices();
-  return devices.filter(device => device.kind === 'audiooutput');
+  return devices.filter(device => device.kind === "audiooutput");
 }

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Participant, Track } from 'twilio-video';
-import Publication from '../Publication/Publication';
-import usePublications from '../../hooks/usePublications/usePublications';
-import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
+import React from "react";
+import {Participant, Track} from "twilio-video";
+import Publication from "../Publication/Publication";
+import usePublications from "../../hooks/usePublications/usePublications";
+import useVideoContext from "../../hooks/useVideoContext/useVideoContext";
 
 interface ParticipantTracksProps {
   participant: Participant;
@@ -25,16 +25,23 @@ export default function ParticipantTracks({
   enableScreenShare,
   videoPriority,
 }: ParticipantTracksProps) {
-  const { room } = useVideoContext();
+  const {room} = useVideoContext();
   const publications = usePublications(participant);
   const isLocal = participant === room.localParticipant;
 
   let filteredPublications;
 
-  if (enableScreenShare && publications.some(p => p.trackName.includes('screen'))) {
-    filteredPublications = publications.filter(p => !p.trackName.includes('camera'));
+  if (
+    enableScreenShare &&
+    publications.some(p => p.trackName.includes("screen"))
+  ) {
+    filteredPublications = publications.filter(
+      p => !p.trackName.includes("camera"),
+    );
   } else {
-    filteredPublications = publications.filter(p => !p.trackName.includes('screen'));
+    filteredPublications = publications.filter(
+      p => !p.trackName.includes("screen"),
+    );
   }
 
   return (

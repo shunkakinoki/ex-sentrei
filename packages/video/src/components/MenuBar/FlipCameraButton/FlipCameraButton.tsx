@@ -1,15 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { DEFAULT_VIDEO_CONSTRAINTS } from '../../../constants';
-import FlipCameraIosIcon from '@material-ui/icons/FlipCameraIos';
-import { IconButton } from '@material-ui/core';
-import { LocalVideoTrack } from 'twilio-video';
-import useMediaStreamTrack from '../../../hooks/useMediaStreamTrack/useMediaStreamTrack';
-import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
+import React, {useCallback, useEffect, useState} from "react";
+import {DEFAULT_VIDEO_CONSTRAINTS} from "../../../constants";
+import FlipCameraIosIcon from "@material-ui/icons/FlipCameraIos";
+import {IconButton} from "@material-ui/core";
+import {LocalVideoTrack} from "twilio-video";
+import useMediaStreamTrack from "../../../hooks/useMediaStreamTrack/useMediaStreamTrack";
+import useVideoContext from "../../../hooks/useVideoContext/useVideoContext";
 
 export default function FlipCameraButton() {
-  const { localTracks } = useVideoContext();
-  const [supportsFacingMode, setSupportsFacingMode] = useState<Boolean | null>(null);
-  const videoTrack = localTracks.find(track => track.name.includes('camera')) as LocalVideoTrack;
+  const {localTracks} = useVideoContext();
+  const [supportsFacingMode, setSupportsFacingMode] = useState<Boolean | null>(
+    null,
+  );
+  const videoTrack = localTracks.find(track =>
+    track.name.includes("camera"),
+  ) as LocalVideoTrack;
   const mediaStreamTrack = useMediaStreamTrack(videoTrack);
 
   useEffect(() => {
@@ -25,7 +29,10 @@ export default function FlipCameraButton() {
   }, [mediaStreamTrack, supportsFacingMode]);
 
   const toggleFacingMode = useCallback(() => {
-    const newFacingMode = mediaStreamTrack?.getSettings().facingMode === 'user' ? 'environment' : 'user';
+    const newFacingMode =
+      mediaStreamTrack?.getSettings().facingMode === "user"
+        ? "environment"
+        : "user";
     videoTrack.restart({
       ...(DEFAULT_VIDEO_CONSTRAINTS as {}),
       facingMode: newFacingMode,

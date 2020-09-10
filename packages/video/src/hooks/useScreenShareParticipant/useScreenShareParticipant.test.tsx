@@ -1,9 +1,9 @@
-import { act, renderHook } from '@testing-library/react-hooks';
-import { EventEmitter } from 'events';
-import useScreenShareParticipant from './useScreenShareParticipant';
-import useVideoContext from '../useVideoContext/useVideoContext';
+import {act, renderHook} from "@testing-library/react-hooks";
+import {EventEmitter} from "events";
+import useScreenShareParticipant from "./useScreenShareParticipant";
+import useVideoContext from "../useVideoContext/useVideoContext";
 
-jest.mock('../useVideoContext/useVideoContext');
+jest.mock("../useVideoContext/useVideoContext");
 
 const mockUseVideoContext = useVideoContext as jest.Mock<any>;
 
@@ -13,7 +13,7 @@ function MockRoom() {
   mockLocalParticipant.tracks = new Map();
 
   mockRoom.localParticipant = mockLocalParticipant;
-  mockRoom.state = 'connected';
+  mockRoom.state = "connected";
   mockRoom.participants = new Map();
   return mockRoom;
 }
@@ -23,28 +23,28 @@ mockUseVideoContext.mockImplementation(() => ({
   onError: () => {},
 }));
 
-describe('the useScreenShareParticipant hook', () => {
-  it('return undefined when there are no participants sharing their screen', () => {
-    const { result } = renderHook(useScreenShareParticipant);
+describe("the useScreenShareParticipant hook", () => {
+  it("return undefined when there are no participants sharing their screen", () => {
+    const {result} = renderHook(useScreenShareParticipant);
     expect(result.current).toEqual(undefined);
   });
 
-  it('should return the localParticipant when they are sharing their screen', () => {
+  it("should return the localParticipant when they are sharing their screen", () => {
     const mockRoom = MockRoom();
-    mockRoom.localParticipant.tracks = new Map([[0, { trackName: 'screen' }]]);
+    mockRoom.localParticipant.tracks = new Map([[0, {trackName: "screen"}]]);
     mockUseVideoContext.mockImplementation(() => ({
       room: mockRoom,
       onError: () => {},
     }));
 
-    const { result } = renderHook(useScreenShareParticipant);
+    const {result} = renderHook(useScreenShareParticipant);
     expect(result.current).toEqual(mockRoom.localParticipant);
   });
 
-  it('should return a remoteParticipant when they are sharing their screen', () => {
+  it("should return a remoteParticipant when they are sharing their screen", () => {
     const mockRoom = MockRoom();
     const mockParticipant = {
-      tracks: new Map([[0, { trackName: 'screen' }]]),
+      tracks: new Map([[0, {trackName: "screen"}]]),
     };
     mockRoom.participants = new Map([[0, mockParticipant]]);
     mockUseVideoContext.mockImplementation(() => ({
@@ -52,7 +52,7 @@ describe('the useScreenShareParticipant hook', () => {
       onError: () => {},
     }));
 
-    const { result } = renderHook(useScreenShareParticipant);
+    const {result} = renderHook(useScreenShareParticipant);
     expect(result.current).toEqual(mockParticipant);
   });
 
@@ -63,19 +63,19 @@ describe('the useScreenShareParticipant hook', () => {
       onError: () => {},
     }));
 
-    const { result } = renderHook(useScreenShareParticipant);
+    const {result} = renderHook(useScreenShareParticipant);
     expect(result.current).toEqual(undefined);
 
     act(() => {
-      mockRoom.localParticipant.tracks = new Map([[0, { trackName: 'screen' }]]);
-      mockRoom.localParticipant.emit('trackPublished');
+      mockRoom.localParticipant.tracks = new Map([[0, {trackName: "screen"}]]);
+      mockRoom.localParticipant.emit("trackPublished");
     });
 
     expect(result.current).toEqual(mockRoom.localParticipant);
 
     act(() => {
       mockRoom.localParticipant.tracks = new Map([]);
-      mockRoom.localParticipant.emit('trackUnpublished');
+      mockRoom.localParticipant.emit("trackUnpublished");
     });
 
     expect(result.current).toEqual(undefined);
@@ -84,26 +84,26 @@ describe('the useScreenShareParticipant hook', () => {
   it('should respond to "trackPublished" and "trackUnpublished" events emitted from the room', () => {
     const mockRoom = MockRoom();
     const mockParticipant = {
-      tracks: new Map([[0, { trackName: 'screen' }]]),
+      tracks: new Map([[0, {trackName: "screen"}]]),
     };
     mockUseVideoContext.mockImplementation(() => ({
       room: mockRoom,
       onError: () => {},
     }));
 
-    const { result } = renderHook(useScreenShareParticipant);
+    const {result} = renderHook(useScreenShareParticipant);
     expect(result.current).toEqual(undefined);
 
     act(() => {
       mockRoom.participants = new Map([[0, mockParticipant]]);
-      mockRoom.emit('trackPublished');
+      mockRoom.emit("trackPublished");
     });
 
     expect(result.current).toEqual(mockParticipant);
 
     act(() => {
       mockRoom.participants = new Map([]);
-      mockRoom.emit('trackUnpublished');
+      mockRoom.emit("trackUnpublished");
     });
 
     expect(result.current).toEqual(undefined);
@@ -112,7 +112,7 @@ describe('the useScreenShareParticipant hook', () => {
   it('should respond to "participantDisconnected" events emitted from the room', () => {
     const mockRoom = MockRoom();
     const mockParticipant = {
-      tracks: new Map([[0, { trackName: 'screen' }]]),
+      tracks: new Map([[0, {trackName: "screen"}]]),
     };
     mockRoom.participants = new Map([[0, mockParticipant]]);
 
@@ -120,18 +120,18 @@ describe('the useScreenShareParticipant hook', () => {
       room: mockRoom,
     }));
 
-    const { result } = renderHook(useScreenShareParticipant);
+    const {result} = renderHook(useScreenShareParticipant);
     expect(result.current).toEqual(mockParticipant);
 
     act(() => {
       mockRoom.participants = new Map();
-      mockRoom.emit('participantDisconnected');
+      mockRoom.emit("participantDisconnected");
     });
 
     expect(result.current).toEqual(undefined);
   });
 
-  it('should clean up all listeners when unmounted', () => {
+  it("should clean up all listeners when unmounted", () => {
     const mockRoom = MockRoom();
 
     mockUseVideoContext.mockImplementation(() => ({
@@ -139,20 +139,20 @@ describe('the useScreenShareParticipant hook', () => {
       onError: () => {},
     }));
 
-    const { unmount } = renderHook(useScreenShareParticipant);
+    const {unmount} = renderHook(useScreenShareParticipant);
 
-    expect(mockRoom.listenerCount('trackPublished')).toBe(1);
-    expect(mockRoom.listenerCount('trackUnpublished')).toBe(1);
-    expect(mockRoom.listenerCount('participantDisconnected')).toBe(1);
-    expect(mockRoom.localParticipant.listenerCount('trackPublished')).toBe(1);
-    expect(mockRoom.localParticipant.listenerCount('trackUnpublished')).toBe(1);
+    expect(mockRoom.listenerCount("trackPublished")).toBe(1);
+    expect(mockRoom.listenerCount("trackUnpublished")).toBe(1);
+    expect(mockRoom.listenerCount("participantDisconnected")).toBe(1);
+    expect(mockRoom.localParticipant.listenerCount("trackPublished")).toBe(1);
+    expect(mockRoom.localParticipant.listenerCount("trackUnpublished")).toBe(1);
 
     unmount();
 
-    expect(mockRoom.listenerCount('trackPublished')).toBe(0);
-    expect(mockRoom.listenerCount('trackUnpublished')).toBe(0);
-    expect(mockRoom.listenerCount('participantDisconnected')).toBe(0);
-    expect(mockRoom.localParticipant.listenerCount('trackPublished')).toBe(0);
-    expect(mockRoom.localParticipant.listenerCount('trackUnpublished')).toBe(0);
+    expect(mockRoom.listenerCount("trackPublished")).toBe(0);
+    expect(mockRoom.listenerCount("trackUnpublished")).toBe(0);
+    expect(mockRoom.listenerCount("participantDisconnected")).toBe(0);
+    expect(mockRoom.localParticipant.listenerCount("trackPublished")).toBe(0);
+    expect(mockRoom.localParticipant.listenerCount("trackUnpublished")).toBe(0);
   });
 });
