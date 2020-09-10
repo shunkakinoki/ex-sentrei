@@ -96,8 +96,16 @@ export default function AppBar({
         <Toolbar>
           <Breadcrumbs aria-label="breadcrumb">
             <MuiButtonBase
-              href={namespaceId ? "/[namespaceId]" : "/dashboard"}
-              as={namespaceId ? `/${namespaceId}` : "dashboard"}
+              href={
+                type === "space" && namespaceId
+                  ? "/[namespaceId]"
+                  : "/dashboard"
+              }
+              as={
+                type === "space" && namespaceId
+                  ? `/${namespaceId}`
+                  : "/dashboard"
+              }
             >
               <Avatar className={classes.logo}>{logo}</Avatar>
             </MuiButtonBase>
