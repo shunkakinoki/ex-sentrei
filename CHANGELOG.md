@@ -1,3 +1,27 @@
+# [1.64.0](https://github.com/sentrei/sentrei/compare/v1.63.0...v1.64.0) (2020-09-11)
+
+### Features
+
+- 🎸 complete refactor event ([5cb32fb](https://github.com/sentrei/sentrei/commit/5cb32fb60f1ff308bf980f6f3d3443f4313b116d))
+- 🎸 complete refactor event logic onSubmit ([6b66c1a](https://github.com/sentrei/sentrei/commit/6b66c1afbf9af15e6ca93e69518f24414ba4e3c7))
+- 🎸 complete refactor event stepper button ([5e97510](https://github.com/sentrei/sentrei/commit/5e975102d1fdc52aae1bbd65cfdf4198c9083a56))
+- 🎸 complete refactor form button submit ([e2f065e](https://github.com/sentrei/sentrei/commit/e2f065eaa4cca97b5f7a8efd038270e2b1138abf))
+- 🎸 ini billing checkout form button submit ([8878636](https://github.com/sentrei/sentrei/commit/88786367b4fc8fae7073058107a6e50b10f28e8e))
+- 🎸 ini event form photo ([a7f838e](https://github.com/sentrei/sentrei/commit/a7f838e1fab33cbbe0fa22b95841ff6f3fbb7209))
+- 🎸 ini form button ([94ae97c](https://github.com/sentrei/sentrei/commit/94ae97c3d768e0aa8cd354ece001c70f2dc687a2))
+- 🎸 ini form button cancel ([53ec5e4](https://github.com/sentrei/sentrei/commit/53ec5e4efd8e5a4963459740fd211bb50c39e987))
+- 🎸 ini form button disabled ([f449ec7](https://github.com/sentrei/sentrei/commit/f449ec75e56830c3f9624912b4474919f92ce2b7))
+- 🎸 ini stripe form button submit ([7d17bc2](https://github.com/sentrei/sentrei/commit/7d17bc26c05d112931c18cee26481e2b10626133))
+- 🎸 refactor event form delete and quit ([5f44392](https://github.com/sentrei/sentrei/commit/5f443929da65db5fc91163c0597cfed96d6eabed))
+
+### Performance Improvements
+
+- ⚡️ ini auth google button for invite ([ab156f3](https://github.com/sentrei/sentrei/commit/ab156f3c4e1104482282550958114a0165ea6eb9))
+- ⚡️ ini event form load more ([8e097dc](https://github.com/sentrei/sentrei/commit/8e097dccabff5f64cb68327cddcec207ce1ba4f1))
+- ⚡️ refactor auth form google button ([2004c92](https://github.com/sentrei/sentrei/commit/2004c929e0fac251d233b0c34fbf4e240f65e8fc))
+- ⚡️ refactor auth form login grid ([74504c7](https://github.com/sentrei/sentrei/commit/74504c717bc9eaaa806c1f3d57790e6287d7bb82))
+- ⚡️ refactor event track ([6e14130](https://github.com/sentrei/sentrei/commit/6e1413084ccf9f0c82fb83cc0fe3f23aba08972e))
+
 # [1.63.0](https://github.com/sentrei/sentrei/compare/v1.62.0...v1.63.0) (2020-09-10)
 
 ### Features
