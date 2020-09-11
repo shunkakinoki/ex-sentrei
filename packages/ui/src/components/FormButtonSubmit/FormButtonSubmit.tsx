@@ -8,6 +8,7 @@ export interface Props {
   children: React.ReactNode;
   startIcon?: React.ReactNode;
   disabled?: boolean;
+  variant?: "text" | "contained" | "outlined";
   onClick?: (() => void) | undefined;
   event: string;
 }
@@ -16,6 +17,7 @@ export default function FormButtonSubmit({
   children,
   startIcon,
   disabled = false,
+  variant = "contained",
   onClick,
   event,
 }: Props): JSX.Element {
@@ -30,8 +32,8 @@ export default function FormButtonSubmit({
     <Button
       type="submit"
       fullWidth
-      variant="contained"
       color="primary"
+      variant={variant}
       disabled={disabled}
       startIcon={startIcon}
       onClick={handleClick}

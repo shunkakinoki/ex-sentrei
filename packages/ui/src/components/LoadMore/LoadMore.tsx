@@ -5,6 +5,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {db} from "@sentrei/common/utils/firebase";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 import LoadMoreStyles from "./LoadMoreStyles";
@@ -73,9 +74,13 @@ function LoadMore<T>({
         </div>
       )}
       {shouldLoadMore && lastItem && (
-        <Button fullWidth variant="outlined" color="primary" onClick={loadMore}>
+        <FormButtonSubmit
+          event="Load More"
+          variant="outlined"
+          onClick={loadMore}
+        >
           {t("common:common.loadMore")}
-        </Button>
+        </FormButtonSubmit>
       )}
     </>
   );
