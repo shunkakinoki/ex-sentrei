@@ -2,6 +2,7 @@ import * as React from "react";
 
 import {updateRoom} from "@sentrei/common/firebase/rooms";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Profile from "@sentrei/types/models/Profile";
 import EmojiPicker from "@sentrei/ui/components/EmojiPicker";
 
@@ -32,7 +33,9 @@ export default function RoomCardEmojiPicker({
           updatedByUid: userId,
         },
         roomId,
-      );
+      ).then(() => {
+        trackEvent("Update Room Emoji");
+      });
     } catch (err) {
       snackbar("error", err.message);
     }

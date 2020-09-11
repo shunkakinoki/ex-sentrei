@@ -13,6 +13,8 @@ import * as React from "react";
 import {Blurhash} from "react-blurhash";
 import CopyToClipboard from "react-copy-to-clipboard";
 
+import {trackEvent} from "@sentrei/common/utils/segment";
+
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
@@ -106,9 +108,10 @@ export default function RoomCard({
           <Grid item xs={2} sm={1} md={1}>
             <CopyToClipboard
               text={`${window.location.origin}/${space.namespaceId}/${room.id}`}
-              onCopy={(): void =>
-                snackbar("success", t("snackbar:snackbar.clipboard"))
-              }
+              onCopy={(): void => {
+                snackbar("success", t("snackbar:snackbar.clip;board"));
+                trackEvent("Copy Clipboard Room");
+              }}
             >
               <IconButton aria-label="share">
                 <ShareIcon />

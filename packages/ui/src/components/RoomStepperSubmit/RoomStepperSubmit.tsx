@@ -14,6 +14,7 @@ import User from "@sentrei/types/models/User";
 import StepperButton from "@sentrei/ui/components/StepperButton";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
+import {trackEvent} from "@sentrei/common/utils/segment";
 
 export interface Props {
   atom: RecoilState<number>;
@@ -63,6 +64,7 @@ const RoomStepperSubmit = ({
         updatedByUid: user.uid,
       })?.then(() => {
         snackbar("success");
+        trackEvent("Create Room");
         backdrop("loading");
         setActiveForm({name: "", type: "focus"});
         setActiveStep(0);

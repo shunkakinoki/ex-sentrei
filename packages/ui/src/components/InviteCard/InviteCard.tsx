@@ -13,6 +13,7 @@ import * as React from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 import {deleteInvite} from "@sentrei/common/firebase/invites";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Invite from "@sentrei/types/models/Invite";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -31,6 +32,7 @@ function InviteCard({invite, namespaceId, type}: Props): JSX.Element {
     try {
       deleteInvite(invite.spaceId, invite.id);
       snackbar("success");
+      trackEvent("Delete Invite");
     } catch (err) {
       snackbar("error", err);
     }
@@ -44,9 +46,10 @@ function InviteCard({invite, namespaceId, type}: Props): JSX.Element {
           {type === "link" && (
             <CopyToClipboard
               text={`${window.location.origin}/${namespaceId}/invite/${invite.id}`}
-              onCopy={(): void =>
-                snackbar("success", t("snackbar:snackbar.clipboard"))
-              }
+              onCopy={(): void => {
+                snackbar("success", t("snackbar:snackbar.clipboard"));
+                trackEvent("Copy Clipboard Invite");
+              }}
             >
               <IconButton aria-label="share">
                 <LinkIcon />

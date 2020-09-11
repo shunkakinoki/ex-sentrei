@@ -14,6 +14,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {deleteNotification} from "@sentrei/common/firebase/notifications";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Notification from "@sentrei/types/models/Notification";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -36,6 +37,7 @@ export default function NotificationCard({
     try {
       await deleteNotification(userId, notification.id)?.then(() => {
         snackbar("success");
+        trackEvent("Delete Notification");
         setDisplay(false);
       });
     } catch (err) {

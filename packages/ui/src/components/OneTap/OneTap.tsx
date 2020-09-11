@@ -3,6 +3,7 @@ import * as React from "react";
 
 import oneTap from "@sentrei/common/services/oneTap";
 import firebase from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import User from "@sentrei/types/models/User";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -24,7 +25,10 @@ const OneTap = ({delay = false, user}: Props): JSX.Element => {
     await firebase
       .auth()
       .signInWithCredential(FirebaseCredential)
-      .then(() => backdrop("loading"))
+      .then(() => {
+        backdrop("loading");
+        trackEvent("Sign In", {provider: "onetap"});
+      })
       .catch(err => snackbar("error", err.message));
   };
 
