@@ -4,7 +4,7 @@ import * as React from "react";
 
 import MuiLink from "@sentrei/ui/components/MuiLink";
 
-export default function AuthFormSignupGrid(): JSX.Element {
+export default function AuthFormLoginGrid(): JSX.Element {
   const {t} = useTranslation();
 
   return (
