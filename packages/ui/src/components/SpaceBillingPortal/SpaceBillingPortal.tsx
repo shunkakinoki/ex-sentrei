@@ -1,3 +1,4 @@
+import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
@@ -5,7 +6,7 @@ import accessPortalLink from "@sentrei/common/services/accessPortalLink";
 import Member from "@sentrei/types/models/Member";
 import Space from "@sentrei/types/models/Space";
 import FormButtonDisabled from "@sentrei/ui/components/FormButtonDisabled";
-import MuiButton from "@sentrei/ui/components/MuiButton";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
@@ -23,6 +24,10 @@ export default function SpaceBillingPortal({
   const {snackbar} = useSnackbar();
 
   const [portalLink, setPortalLink] = React.useState<string>();
+
+  const handleClick = (): void => {
+    Router.pushI18n(portalLink);
+  };
 
   React.useEffect(() => {
     if (role === "admin" && space?.subscriptionId)
@@ -56,8 +61,8 @@ export default function SpaceBillingPortal({
   }
 
   return (
-    <MuiButton fullWidth href={portalLink} color="primary" variant="contained">
+    <FormButtonSubmit event="Visit Customer Portal" onClick={handleClick}>
       {t("space:billing.visitCustomerPortal")}
-    </MuiButton>
+    </FormButtonSubmit>
   );
 }

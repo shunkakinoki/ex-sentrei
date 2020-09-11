@@ -63,7 +63,7 @@ export default function SpaceBillingCheckout({
   }
 
   return (
-    <FormButtonSubmit event="Access Stripe Checkout" onClick={handleClick}>
+    <FormButtonSubmit event="Visit Stripe Checkout" onClick={handleClick}>
       {t("space:billing.upgradeNow")}
     </FormButtonSubmit>
   );
