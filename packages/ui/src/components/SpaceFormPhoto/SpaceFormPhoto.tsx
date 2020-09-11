@@ -25,7 +25,14 @@ const SpaceFormPhoto = ({disabled = false, profile}: Props): JSX.Element => {
     }
   };
 
-  return <FormPhoto disabled={disabled} type="rect" onSubmit={onSubmit} />;
+  return (
+    <FormPhoto
+      disabled={disabled}
+      event="Edit Space Photo"
+      type="rect"
+      onSubmit={onSubmit}
+    />
+  );
 };
 
 export default SpaceFormPhoto;

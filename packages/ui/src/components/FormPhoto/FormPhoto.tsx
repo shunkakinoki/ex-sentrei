@@ -11,16 +11,18 @@ import Cropper from "react-easy-crop";
 import {useForm} from "react-hook-form";
 
 import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 
 import FormPhotoStyles from "./FormPhotoStyles";
 
 export interface Props {
   disabled: boolean;
+  event: string;
   type: "rect" | "round";
   onSubmit: () => Promise<void>;
 }
 
-const FormPhoto = ({disabled, type, onSubmit}: Props): JSX.Element => {
+const FormPhoto = ({disabled, event, type, onSubmit}: Props): JSX.Element => {
   const classes = FormPhotoStyles();
   const {t} = useTranslation();
 
@@ -86,15 +88,9 @@ const FormPhoto = ({disabled, type, onSubmit}: Props): JSX.Element => {
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Button
-              type="submit"
-              fullWidth
-              disabled={disabled}
-              variant="contained"
-              color="primary"
-            >
+            <FormButtonSubmit disabled={disabled} event={event}>
               {t("common:common.update")}
-            </Button>
+            </FormButtonSubmit>
           </Grid>
           <Grid item xs={12}>
             <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

@@ -25,7 +25,14 @@ const ProfileFormPhoto = ({disabled = false, profile}: Props): JSX.Element => {
     }
   };
 
-  return <FormPhoto disabled={disabled} type="round" onSubmit={onSubmit} />;
+  return (
+    <FormPhoto
+      disabled={disabled}
+      event="Edit Profile Photo"
+      type="round"
+      onSubmit={onSubmit}
+    />
+  );
 };
 
 export default ProfileFormPhoto;
