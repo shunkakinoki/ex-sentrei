@@ -23,7 +23,7 @@ export default function AuthFormGoogleButton({
       className={classes.button}
     >
       <img
-        width="20px"
+        width="15px"
         alt="Google sign-in"
         src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
         className={classes.google}
