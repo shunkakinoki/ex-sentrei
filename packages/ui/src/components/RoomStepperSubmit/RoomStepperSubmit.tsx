@@ -76,7 +76,7 @@ const RoomStepperSubmit = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
       <Box p={1} />
-      <StepperButton atom={atom} last={2} />
+      <StepperButton atom={atom} />
     </form>
   );
 };

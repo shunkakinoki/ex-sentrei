@@ -57,7 +57,7 @@ const RoomStepperType = ({atom, form}: Props): JSX.Element => {
           </FormControl>
         </Grid>
       </Box>
-      <StepperButton atom={atom} last={2} />
+      <StepperButton atom={atom} />
     </form>
   );
 };

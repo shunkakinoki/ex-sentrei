@@ -10,7 +10,7 @@ export interface Props {
   disabled?: boolean;
   variant?: "text" | "contained" | "outlined";
   onClick?: (() => void) | undefined;
-  event: string;
+  event?: string;
 }
 
 export default function FormButtonSubmit({
@@ -25,7 +25,9 @@ export default function FormButtonSubmit({
     if (onClick) {
       onClick();
     }
-    trackEvent(event);
+    if (event) {
+      trackEvent(event);
+    }
   };
 
   return (
