@@ -1,11 +1,13 @@
-import Button from "@material-ui/core/Button";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
+
+import Stripe from "stripe";
 
 import accessCheckoutLink from "@sentrei/common/services/accessCheckoutLink";
 import getStripe from "@sentrei/common/utils/getStripe";
 import Member from "@sentrei/types/models/Member";
-import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
+import FormButtonDisabled from "@sentrei/ui/components/FormButtonDisabled";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -22,31 +24,47 @@ export default function SpaceBillingCheckout({
   const {backdrop} = useBackdrop();
   const {snackbar} = useSnackbar();
 
-  const handleClick = (): void => {
-    snackbar("info", t("snackbar:snackbar.loading"));
-    backdrop("loading");
-    if (role === "admin") {
+  const [session, setSession] = React.useState<Stripe.Checkout.Session>();
+
+  React.useEffect(() => {
+    if (role === "admin")
       accessCheckoutLink(spaceId, lang, window.location.href)
-        .then(
-          async (data): Promise<void> => {
-            const stripe = await getStripe();
-            stripe?.redirectToCheckout({sessionId: data.id});
-          },
-        )
+        .then((data): void => {
+          setSession(data);
+        })
         .catch(err => {
           snackbar("error", err.message);
-          backdrop("dismiss");
         });
+  }, [role, spaceId, lang, snackbar]);
+
+  const handleClick = async (): Promise<void> => {
+    snackbar("info", t("snackbar:snackbar.loading"));
+    backdrop("loading");
+    try {
+      const stripe = await getStripe();
+      if (session) {
+        stripe?.redirectToCheckout({sessionId: session.id});
+      }
+    } catch (err) {
+      snackbar("error", err.message);
     }
   };
 
   if (role !== "admin") {
-    return <FormButtonCancel>{t("common:common.disabled")}</FormButtonCancel>;
+    return (
+      <FormButtonDisabled>{t("common:common.disabled")}</FormButtonDisabled>
+    );
+  }
+
+  if (!session) {
+    return (
+      <FormButtonDisabled>{t("common:common.loading")}</FormButtonDisabled>
+    );
   }
 
   return (
-    <Button fullWidth color="primary" variant="contained" onClick={handleClick}>
+    <FormButtonSubmit event="Access Stripe Checkout" onClick={handleClick}>
       {t("space:billing.upgradeNow")}
-    </Button>
+    </FormButtonSubmit>
   );
 }

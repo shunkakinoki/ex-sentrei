@@ -23,13 +23,12 @@ export default function SpaceBillingPortal({
   const {snackbar} = useSnackbar();
 
   const [portalLink, setPortalLink] = React.useState<string>();
-  const handlePortalLink = (link: string): void => setPortalLink(link);
 
   React.useEffect(() => {
     if (role === "admin" && space?.subscriptionId)
       accessPortalLink(spaceId, window.location.href)
         .then((data): void => {
-          handlePortalLink(data.url);
+          setPortalLink(data.url);
         })
         .catch(err => {
           snackbar("error", err.message);
