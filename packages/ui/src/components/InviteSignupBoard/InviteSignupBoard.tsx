@@ -1,7 +1,6 @@
 import {yupResolver} from "@hookform/resolvers";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import Container from "@material-ui/core/Container";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -21,6 +20,7 @@ import signup from "@sentrei/common/services/signup";
 import {auth} from "@sentrei/common/utils/firebase";
 import {trackEvent} from "@sentrei/common/utils/segment";
 import Invite from "@sentrei/types/models/Invite";
+import AuthFormGoogleButton from "@sentrei/ui/components/AuthFormGoogleButton";
 import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 
@@ -129,20 +129,10 @@ export default function InviteSignupBoard({
       </Container>
       <Grid container spacing={3}>
         <Box p={1} />
-        <Button
+        <AuthFormGoogleButton
           onClick={(): void => google()}
-          color="primary"
-          variant="outlined"
-          className={classes.button}
-        >
-          <img
-            width="20px"
-            alt="Google sign-in"
-            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-            className={classes.google}
-          />
-          <Typography>{t("auth:signup.google")}</Typography>
-        </Button>
+          title={t("auth:signup.google")}
+        />
         <form
           onSubmit={handleSubmit(onSubmit)}
           className={classes.form}
@@ -198,6 +188,7 @@ export default function InviteSignupBoard({
           />
           <FormButtonSubmit>{t("auth:signup.button")}</FormButtonSubmit>
         </form>
+        <Box p={1} />
         <AuthFormSignupGrid />
       </Grid>
     </Container>

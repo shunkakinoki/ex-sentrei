@@ -201,7 +201,7 @@ export default function AuthForm({type}: Props): JSX.Element {
           {type === "signup" && t("auth:signup.button")}
         </FormButtonSubmit>
       </form>
-      <Box p={3} />
+      <Box p={1} />
       {type === "login" && <AuthFormLoginGrid />}
       {type === "signup" && <AuthFormSignupGrid />}
     </Grid>
