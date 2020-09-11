@@ -1,3 +1,13 @@
+# [1.65.0](https://github.com/sentrei/sentrei/compare/v1.64.0...v1.65.0) (2020-09-11)
+
+### Features
+
+- 🎸 ini onetap invite ([5824157](https://github.com/sentrei/sentrei/commit/58241574b87a063f44bff20747da176cbd1d698e))
+
+### Performance Improvements
+
+- ⚡️ ini delay onetap for invite ([89c4e63](https://github.com/sentrei/sentrei/commit/89c4e6396895a88326f4e9716a95483417a03e72))
+
 # [1.64.0](https://github.com/sentrei/sentrei/compare/v1.63.0...v1.64.0) (2020-09-11)
 
 ### Features
