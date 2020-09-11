@@ -48,8 +48,8 @@ export default function InviteSignupBoard({
   const InviteSignupBoardSchema = Yup.object().shape({
     email: Yup.string()
       .required(t("form:email.required"))
-      .email(t("form.email.valid")),
-    password: Yup.string().required(t("form.password.valid")),
+      .email(t("form:email.valid")),
+    password: Yup.string().required(t("form:password.valid")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({

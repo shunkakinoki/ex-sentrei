@@ -20,7 +20,7 @@ const SettingsFormPassword = (): JSX.Element => {
 
   const PasswordFormSchema = Yup.object().shape({
     passwordNew: Yup.string().required(t("form:password.valid")),
-    passwordOld: Yup.string().required(t("form.password.valid")),
+    passwordOld: Yup.string().required(t("form:password.valid")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({

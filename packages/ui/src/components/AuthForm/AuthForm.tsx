@@ -40,15 +40,15 @@ export default function AuthForm({type}: Props): JSX.Element {
 
   const AuthFormSchema = Yup.object().shape({
     email: Yup.string()
-      .required(t("form.email.required"))
-      .email(t("form.email.valid")),
-    password: Yup.string().required(t("form.password.valid")),
+      .required(t("form:email.required"))
+      .email(t("form:email.valid")),
+    password: Yup.string().required(t("form:password.valid")),
   });
 
   const ResetFormSchema = Yup.object().shape({
     email: Yup.string()
-      .required(t("form.email.required"))
-      .email(t("form.email.valid")),
+      .required(t("form:email.required"))
+      .email(t("form:email.valid")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
@@ -80,7 +80,7 @@ export default function AuthForm({type}: Props): JSX.Element {
           await auth.sendPasswordResetEmail(data.email).catch(err => {
             snackbar("error", err.message);
           });
-          snackbar("success", t("form.email.check"));
+          snackbar("success", t("form:email.check"));
           trackEvent("Send Reset Email");
         } catch (err) {
           snackbar("error", err.message);
