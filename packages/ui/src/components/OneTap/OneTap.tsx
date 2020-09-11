@@ -1,8 +1,9 @@
 import Head from "next/head";
 import * as React from "react";
 
+import invokeMemberSpace from "@sentrei/common/services/invokeMemberSpace";
 import oneTap from "@sentrei/common/services/oneTap";
-import firebase from "@sentrei/common/utils/firebase";
+import firebase, {auth} from "@sentrei/common/utils/firebase";
 import {trackEvent} from "@sentrei/common/utils/segment";
 import User from "@sentrei/types/models/User";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
@@ -11,9 +12,16 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 export interface Props {
   user: User.Get | undefined | null;
   delay?: boolean;
+  inviteId?: string;
+  spaceId?: string;
 }
 
-const OneTap = ({delay = false, user}: Props): JSX.Element => {
+const OneTap = ({
+  delay = false,
+  user,
+  inviteId,
+  spaceId,
+}: Props): JSX.Element => {
   const {backdrop} = useBackdrop();
   const {snackbar} = useSnackbar();
 
@@ -28,6 +36,11 @@ const OneTap = ({delay = false, user}: Props): JSX.Element => {
       .then(() => {
         backdrop("loading");
         trackEvent("Sign In", {provider: "onetap"});
+        if (inviteId && spaceId) {
+          auth.onAuthStateChanged(() => {
+            invokeMemberSpace(spaceId, inviteId);
+          });
+        }
       })
       .catch(err => snackbar("error", err.message));
   };

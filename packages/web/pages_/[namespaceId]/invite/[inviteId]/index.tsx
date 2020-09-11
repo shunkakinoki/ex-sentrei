@@ -7,7 +7,7 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
-
+import OneTap from "@sentrei/ui/components/OneTap";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
@@ -72,7 +72,12 @@ const InviteId = ({
 
   return (
     <>
-      <SentreiHeader landingKey="invite" />
+      <OneTap
+        user={user}
+        inviteId={String(query.inviteId)}
+        spaceId={JSON.parse(spaceId) as string}
+      />
+      <SentreiHeader landingKey="invite" papercups={false} />
       <InviteSignup
         inviteId={String(query.inviteId)}
         namespaceId={String(query.namespaceId)}
