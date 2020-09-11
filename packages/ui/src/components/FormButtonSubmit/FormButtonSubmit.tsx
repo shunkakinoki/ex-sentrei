@@ -6,13 +6,15 @@ import {trackEvent} from "@sentrei/common/utils/segment";
 
 export interface Props {
   children: React.ReactNode;
+  startIcon?: React.ReactNode;
   disabled?: boolean;
-  onClick?: () => {};
+  onClick?: (() => void) | undefined;
   event: string;
 }
 
 export default function FormButtonSubmit({
   children,
+  startIcon,
   disabled = false,
   onClick,
   event,
@@ -31,6 +33,7 @@ export default function FormButtonSubmit({
       variant="contained"
       color="primary"
       disabled={disabled}
+      startIcon={startIcon}
       onClick={handleClick}
     >
       {children}

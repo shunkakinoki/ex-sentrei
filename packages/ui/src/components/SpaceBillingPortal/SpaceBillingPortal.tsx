@@ -1,10 +1,10 @@
-import Button from "@material-ui/core/Button";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import accessPortalLink from "@sentrei/common/services/accessPortalLink";
 import Member from "@sentrei/types/models/Member";
 import Space from "@sentrei/types/models/Space";
+import FormButtonDisabled from "@sentrei/ui/components/FormButtonDisabled";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -38,25 +38,21 @@ export default function SpaceBillingPortal({
 
   if (role !== "admin") {
     return (
-      <Button fullWidth disabled color="inherit" variant="outlined">
-        {t("common:common.disabled")}
-      </Button>
+      <FormButtonDisabled>{t("common:common.disabled")}</FormButtonDisabled>
     );
   }
 
   if (!space?.subscriptionId) {
     return (
-      <Button fullWidth disabled color="inherit" variant="outlined">
+      <FormButtonDisabled>
         {t("common:common.subscriptionNone")}
-      </Button>
+      </FormButtonDisabled>
     );
   }
 
   if (!portalLink) {
     return (
-      <Button fullWidth disabled color="inherit" variant="outlined">
-        {t("common:common.loading")}
-      </Button>
+      <FormButtonDisabled>{t("common:common.loading")}</FormButtonDisabled>
     );
   }
 

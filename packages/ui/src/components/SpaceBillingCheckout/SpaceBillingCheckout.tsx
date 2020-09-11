@@ -5,6 +5,7 @@ import * as React from "react";
 import accessCheckoutLink from "@sentrei/common/services/accessCheckoutLink";
 import getStripe from "@sentrei/common/utils/getStripe";
 import Member from "@sentrei/types/models/Member";
+import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -40,11 +41,7 @@ export default function SpaceBillingCheckout({
   };
 
   if (role !== "admin") {
-    return (
-      <Button fullWidth disabled color="inherit" variant="outlined">
-        {t("common:common.disabled")}
-      </Button>
-    );
+    return <FormButtonCancel>{t("common:common.disabled")}</FormButtonCancel>;
   }
 
   return (

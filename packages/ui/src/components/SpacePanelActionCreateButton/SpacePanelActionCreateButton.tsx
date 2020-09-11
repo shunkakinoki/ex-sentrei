@@ -1,4 +1,3 @@
-import Button from "@material-ui/core/Button";
 import CreateIcon from "@material-ui/icons/Create";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -6,6 +5,7 @@ import * as React from "react";
 import {FreeTier, ProTier} from "@sentrei/common/const/tiers";
 import Space from "@sentrei/types/models/Space";
 import BillingDialog from "@sentrei/ui/components/BillingDialog";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 
 export interface Props {
@@ -50,15 +50,13 @@ export default function SpacePanelActionCreateButton({
           namespaceId={namespaceId}
           handleClose={handleClose}
         />
-        <Button
-          fullWidth
-          color="primary"
-          variant="contained"
+        <FormButtonSubmit
+          event="Dialog Billing Room"
           startIcon={<CreateIcon />}
           onClick={handleOpen}
         >
           {t("common:common.createRoom")}
-        </Button>
+        </FormButtonSubmit>
       </>
     );
   }
