@@ -8,13 +8,13 @@ import {useRecoilState, RecoilState} from "recoil";
 import {roomEmoji} from "@sentrei/common/const/emoji";
 import {createRoom} from "@sentrei/common/firebase/rooms";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import RoomCreateForm from "@sentrei/types/atom/RoomCreateForm";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import StepperButton from "@sentrei/ui/components/StepperButton";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
-import {trackEvent} from "@sentrei/common/utils/segment";
 
 export interface Props {
   atom: RecoilState<number>;
