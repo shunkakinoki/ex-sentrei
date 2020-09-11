@@ -4,6 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {deleteRoom} from "@sentrei/common/firebase/rooms";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Member from "@sentrei/types/models/Member";
 import FormDelete from "@sentrei/ui/components/FormDelete";
 import FormSection from "@sentrei/ui/components/FormSection";
@@ -26,6 +27,7 @@ const RoomDeleteBoard = ({role, roomId, namespaceId}: Props): JSX.Element => {
     try {
       await deleteRoom(roomId)?.then(() => {
         snackbar("success");
+        trackEvent("Delete Room");
         backdrop("loading");
         Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
       });
@@ -44,7 +46,6 @@ const RoomDeleteBoard = ({role, roomId, namespaceId}: Props): JSX.Element => {
       <FormDelete
         id={roomId}
         disabled={role !== "admin"}
-        event="Delete Room"
         onSubmit={onSubmit}
         type="delete"
       />

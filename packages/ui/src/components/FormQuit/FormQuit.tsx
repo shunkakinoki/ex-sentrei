@@ -12,7 +12,6 @@ import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 
 export interface Props {
   disabled?: boolean;
-  event: string;
   id: string;
   type?: "id" | "quit";
   onSubmit: () => Promise<void>;
@@ -20,7 +19,6 @@ export interface Props {
 
 const FormQuit = ({
   disabled,
-  event,
   id,
   type = "id",
   onSubmit,
@@ -81,7 +79,7 @@ const FormQuit = ({
             />
           </Grid>
           <Grid item xs={12}>
-            <FormButtonSubmit disabled={disabled} event={event}>
+            <FormButtonSubmit disabled={disabled}>
               {t("common:common.quit")}
             </FormButtonSubmit>
           </Grid>

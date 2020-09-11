@@ -8,6 +8,7 @@ import {useForm} from "react-hook-form";
 
 import {updateRoom} from "@sentrei/common/firebase/rooms";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
@@ -75,6 +76,7 @@ const RoomFormPicture = ({
         room.id,
       )?.then(() => {
         snackbar("success");
+        trackEvent("Edit Room Picture");
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -89,7 +91,7 @@ const RoomFormPicture = ({
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <FormButtonSubmit disabled={disabled} event="Edit Room Picture">
+            <FormButtonSubmit disabled={disabled}>
               {t("common:common.edit")}
             </FormButtonSubmit>
           </Grid>

@@ -5,6 +5,7 @@ import Stripe from "stripe";
 
 import accessCheckoutLink from "@sentrei/common/services/accessCheckoutLink";
 import getStripe from "@sentrei/common/utils/getStripe";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Member from "@sentrei/types/models/Member";
 import FormButtonDisabled from "@sentrei/ui/components/FormButtonDisabled";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
@@ -43,6 +44,8 @@ export default function SpaceBillingCheckout({
     try {
       const stripe = await getStripe();
       if (session) {
+        snackbar("success");
+        trackEvent("Visit Stripe Checkout");
         stripe?.redirectToCheckout({sessionId: session.id});
       }
     } catch (err) {
@@ -63,7 +66,7 @@ export default function SpaceBillingCheckout({
   }
 
   return (
-    <FormButtonSubmit event="Visit Stripe Checkout" onClick={handleClick}>
+    <FormButtonSubmit onClick={handleClick}>
       {t("space:billing.upgradeNow")}
     </FormButtonSubmit>
   );

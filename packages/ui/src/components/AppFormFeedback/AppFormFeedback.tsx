@@ -14,6 +14,7 @@ import * as Yup from "yup";
 
 import {createFeedback} from "@sentrei/common/firebase/feedback";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Feedback from "@sentrei/types/models/Feedback";
 import Profile from "@sentrei/types/models/Profile";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
@@ -68,8 +69,9 @@ const AppFormFeedback = ({handleClick, profile}: Props): JSX.Element => {
         updatedByUid: profile.uid,
       })?.then(() => {
         handleClick(null);
-        setActiveForm({description: "", emoji: null});
         snackbar("success");
+        trackEvent("Create Feedback");
+        setActiveForm({description: "", emoji: null});
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -145,9 +147,7 @@ const AppFormFeedback = ({handleClick, profile}: Props): JSX.Element => {
             </IconButton>
           </Grid>
           <Grid item xs={6}>
-            <FormButtonSubmit event="Create Feedback">
-              {t("common:common.submit")}
-            </FormButtonSubmit>
+            <FormButtonSubmit>{t("common:common.submit")}</FormButtonSubmit>
           </Grid>
         </Grid>
         <Box py={3} />

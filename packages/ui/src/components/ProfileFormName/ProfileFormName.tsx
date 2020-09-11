@@ -7,6 +7,8 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import {updateProfile} from "@sentrei/common/firebase/profiles";
+import {trackEvent} from "@sentrei/common/utils/segment";
+
 import Profile from "@sentrei/types/models/Profile";
 import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
@@ -38,6 +40,7 @@ const ProfileFormName = ({profile}: Props): JSX.Element => {
         name: data.name,
       })?.then(() => {
         snackbar("success");
+        trackEvent("Edit Profile Name");
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -71,9 +74,7 @@ const ProfileFormName = ({profile}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <FormButtonSubmit event="Edit Profile Name">
-            {t("common:common.edit")}
-          </FormButtonSubmit>
+          <FormButtonSubmit>{t("common:common.edit")}</FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

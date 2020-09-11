@@ -13,6 +13,7 @@ import {
   isReservedNamespace,
   validateNamespace,
 } from "@sentrei/common/firebase/namespaces";
+import {trackEvent} from "@sentrei/common/utils/segment";
 
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
@@ -59,6 +60,7 @@ const ProfileFormUsername = ({profile}: Props): JSX.Element => {
     try {
       await createNamespace(data.username, profile.uid, "user")?.then(() => {
         snackbar("success");
+        trackEvent("Edit Profile Username");
         backdrop("loading");
         setTimeout(() => {
           Router.pushI18n("/dashboard");
@@ -110,9 +112,7 @@ const ProfileFormUsername = ({profile}: Props): JSX.Element => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <FormButtonSubmit event="Edit Profile Username">
-            {t("common:common.edit")}
-          </FormButtonSubmit>
+          <FormButtonSubmit>{t("common:common.edit")}</FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

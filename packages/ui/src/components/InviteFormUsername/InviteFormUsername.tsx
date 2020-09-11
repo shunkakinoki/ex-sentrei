@@ -14,6 +14,7 @@ import {
 } from "@sentrei/common/firebase/namespaces";
 import {getProfile} from "@sentrei/common/firebase/profiles";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 
 import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
@@ -85,6 +86,7 @@ const InviteFormUsername = ({profile, user, spaceId}: Props): JSX.Element => {
         await createMember(spaceId, memberProfile.uid, member)
           ?.then(() => {
             snackbar("success");
+            trackEvent("Send Invite Username");
           })
           .catch(err => {
             snackbar("error", err.message);
@@ -122,9 +124,7 @@ const InviteFormUsername = ({profile, user, spaceId}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <FormButtonSubmit event="Send Invite Username">
-            {t("space:invite.invite")}
-          </FormButtonSubmit>
+          <FormButtonSubmit>{t("space:invite.invite")}</FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

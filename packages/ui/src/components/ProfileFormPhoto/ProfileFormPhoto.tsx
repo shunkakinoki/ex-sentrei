@@ -2,6 +2,7 @@ import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Profile from "@sentrei/types/models/Profile";
 import FormPhoto from "@sentrei/ui/components/FormPhoto";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -19,20 +20,15 @@ const ProfileFormPhoto = ({disabled = false, profile}: Props): JSX.Element => {
   const onSubmit = async (): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.deleting"));
     try {
+      snackbar("success");
+      trackEvent("Edit Profile Photo");
       await Router.pushI18n("/dashboard");
     } catch (err) {
       snackbar("error", err.message);
     }
   };
 
-  return (
-    <FormPhoto
-      disabled={disabled}
-      event="Edit Profile Photo"
-      type="round"
-      onSubmit={onSubmit}
-    />
-  );
+  return <FormPhoto disabled={disabled} type="round" onSubmit={onSubmit} />;
 };
 
 export default ProfileFormPhoto;

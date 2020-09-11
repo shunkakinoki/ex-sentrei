@@ -3,6 +3,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {FreeTier} from "@sentrei/common/const/tiers";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Space from "@sentrei/types/models/Space";
 import BillingDialog from "@sentrei/ui/components/BillingDialog";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
@@ -22,10 +23,12 @@ export default function SpacePanelActionInviteButton({
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = (): void => {
+    trackEvent("Open Billing Dialog Invite");
     setOpen(true);
   };
 
   const handleClose = (): void => {
+    trackEvent("Close Billing Dialog Invite");
     setOpen(false);
   };
 
@@ -39,11 +42,7 @@ export default function SpacePanelActionInviteButton({
           namespaceId={namespaceId}
           handleClose={handleClose}
         />
-        <FormButtonSubmit
-          event="Dialog Billing Invite"
-          startIcon={<PersonAddIcon />}
-          onClick={handleOpen}
-        >
+        <FormButtonSubmit startIcon={<PersonAddIcon />} onClick={handleOpen}>
           {t("common:common.invite")}
         </FormButtonSubmit>
       </>

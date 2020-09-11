@@ -3,10 +3,12 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import accessPortalLink from "@sentrei/common/services/accessPortalLink";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Member from "@sentrei/types/models/Member";
 import Space from "@sentrei/types/models/Space";
 import FormButtonDisabled from "@sentrei/ui/components/FormButtonDisabled";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
+import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
@@ -22,10 +24,13 @@ export default function SpaceBillingPortal({
 }: Props): JSX.Element {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
+  const {backdrop} = useBackdrop();
 
   const [portalLink, setPortalLink] = React.useState<string>();
 
   const handleClick = (): void => {
+    backdrop("loading");
+    trackEvent("Visit Customer Portal");
     Router.pushI18n(portalLink);
   };
 
@@ -61,7 +66,7 @@ export default function SpaceBillingPortal({
   }
 
   return (
-    <FormButtonSubmit event="Visit Customer Portal" onClick={handleClick}>
+    <FormButtonSubmit onClick={handleClick}>
       {t("space:billing.visitCustomerPortal")}
     </FormButtonSubmit>
   );

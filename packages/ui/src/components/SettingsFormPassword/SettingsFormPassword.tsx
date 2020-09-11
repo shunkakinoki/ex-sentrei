@@ -8,6 +8,7 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import updatePassword from "@sentrei/common/services/updatePassword";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -32,6 +33,7 @@ const SettingsFormPassword = (): JSX.Element => {
     try {
       await updatePassword(data.passwordOld, data.passwordNew)?.then(() => {
         snackbar("success");
+        trackEvent("Update Password");
         backdrop("loading");
       });
     } catch (err) {
@@ -92,9 +94,7 @@ const SettingsFormPassword = (): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <FormButtonSubmit event="Update Password">
-            {t("common:common.update")}
-          </FormButtonSubmit>
+          <FormButtonSubmit>{t("common:common.update")}</FormButtonSubmit>
         </Grid>
       </Grid>
     </form>

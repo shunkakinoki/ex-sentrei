@@ -7,8 +7,8 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import {updateRoom} from "@sentrei/common/firebase/rooms";
-
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
@@ -50,6 +50,7 @@ const RoomFormName = ({disabled, profile, room, user}: Props): JSX.Element => {
         room.id,
       )?.then(() => {
         snackbar("success");
+        trackEvent("Edit Room Name");
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -84,9 +85,7 @@ const RoomFormName = ({disabled, profile, room, user}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <FormButtonSubmit event="Edit Room Name">
-            {t("common:common.edit")}
-          </FormButtonSubmit>
+          <FormButtonSubmit>{t("common:common.edit")}</FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

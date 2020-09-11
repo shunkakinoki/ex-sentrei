@@ -8,6 +8,7 @@ import * as Yup from "yup";
 
 import {createInvite} from "@sentrei/common/firebase/invites";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
@@ -51,6 +52,7 @@ const InviteFormEmail = ({profile, user, spaceId}: Props): JSX.Element => {
         window: window.location.origin,
       })?.then(() => {
         snackbar("success");
+        trackEvent("Send Invite Email");
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -84,9 +86,7 @@ const InviteFormEmail = ({profile, user, spaceId}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <FormButtonSubmit event="Send Invite Email">
-            {t("common:common.invite")}
-          </FormButtonSubmit>
+          <FormButtonSubmit>{t("common:common.invite")}</FormButtonSubmit>
         </Grid>
       </Grid>
     </form>

@@ -9,6 +9,7 @@ import * as Yup from "yup";
 import {updateSpace} from "@sentrei/common/firebase/spaces";
 
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 
 import Profile from "@sentrei/types/models/Profile";
 import Space from "@sentrei/types/models/Space";
@@ -56,6 +57,7 @@ const SpaceFormName = ({
         space.id,
       )?.then(() => {
         snackbar("success");
+        trackEvent("Edit Space Name");
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -90,9 +92,7 @@ const SpaceFormName = ({
           />
         </Grid>
         <Grid item xs={12}>
-          <FormButtonSubmit event="Edit Space Name">
-            {t("common:common.edit")}
-          </FormButtonSubmit>
+          <FormButtonSubmit>{t("common:common.edit")}</FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

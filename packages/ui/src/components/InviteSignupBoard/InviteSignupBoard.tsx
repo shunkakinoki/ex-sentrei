@@ -12,7 +12,6 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
-import "firebase/auth";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
@@ -20,6 +19,7 @@ import invokeMemberSpace from "@sentrei/common/services/invokeMemberSpace";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 import {auth} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Invite from "@sentrei/types/models/Invite";
 import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
@@ -62,6 +62,7 @@ export default function InviteSignupBoard({
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
+        trackEvent("Sign Up");
         auth.onAuthStateChanged(() => {
           invokeMemberSpace(spaceId, invite.id);
         });
@@ -78,6 +79,7 @@ export default function InviteSignupBoard({
       signup(data.email, data.password, lang)
         .then(() => {
           backdrop("loading");
+          trackEvent("Sign Up");
           auth.onAuthStateChanged(() => {
             invokeMemberSpace(spaceId, invite.id);
           });
@@ -194,9 +196,7 @@ export default function InviteSignupBoard({
             control={<Checkbox value="remember" color="primary" />}
             label={t("auth:auth.rememberMe")}
           />
-          <FormButtonSubmit event="Sign Up">
-            {t("auth:signup.button")}
-          </FormButtonSubmit>
+          <FormButtonSubmit>{t("auth:signup.button")}</FormButtonSubmit>
         </form>
         <AuthFormSignupGrid />
       </Grid>

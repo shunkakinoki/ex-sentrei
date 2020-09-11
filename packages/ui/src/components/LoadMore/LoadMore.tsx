@@ -1,10 +1,10 @@
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {db} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -53,7 +53,7 @@ function LoadMore<T>({
   const loadMore = (): void => {
     if (!lastItem) return;
     setLoading(true);
-
+    trackEvent("Load More");
     request(lastItem)
       .then(res => {
         const last = res[res.length - 1];
@@ -74,11 +74,7 @@ function LoadMore<T>({
         </div>
       )}
       {shouldLoadMore && lastItem && (
-        <FormButtonSubmit
-          event="Load More"
-          variant="outlined"
-          onClick={loadMore}
-        >
+        <FormButtonSubmit variant="outlined" onClick={loadMore}>
           {t("common:common.loadMore")}
         </FormButtonSubmit>
       )}

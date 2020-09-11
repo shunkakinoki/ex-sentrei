@@ -7,6 +7,7 @@ import * as React from "react";
 
 import {createInvite} from "@sentrei/common/firebase/invites";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Invite from "@sentrei/types/models/Invite";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
@@ -44,6 +45,7 @@ const InviteFormLink = ({profile, user, spaceId}: Props): JSX.Element => {
         updatedByUid: user.uid,
       })?.then(() => {
         snackbar("success");
+        trackEvent("Create Invite Link");
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -70,10 +72,7 @@ const InviteFormLink = ({profile, user, spaceId}: Props): JSX.Element => {
         </FormControl>
       </Grid>
       <Grid item xs={12} sm={12} md={8}>
-        <FormButtonSubmit
-          event="Create Invite Link"
-          onClick={(): Promise<void> => handleSubmit()}
-        >
+        <FormButtonSubmit onClick={(): Promise<void> => handleSubmit()}>
           {t("common:common.create")}
         </FormButtonSubmit>
       </Grid>

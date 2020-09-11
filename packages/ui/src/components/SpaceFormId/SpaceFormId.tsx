@@ -13,6 +13,7 @@ import {
   isReservedNamespace,
   validateNamespace,
 } from "@sentrei/common/firebase/namespaces";
+import {trackEvent} from "@sentrei/common/utils/segment";
 
 import Space from "@sentrei/types/models/Space";
 import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
@@ -55,6 +56,7 @@ const SpaceFormId = ({disabled, space}: Props): JSX.Element => {
     try {
       await createNamespace(data.id, space.id, "space")?.then(() => {
         snackbar("success");
+        trackEvent("Edit Space Id");
         backdrop("loading");
         setTimeout(() => {
           Router.pushI18n("/dashboard");
@@ -107,9 +109,7 @@ const SpaceFormId = ({disabled, space}: Props): JSX.Element => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <FormButtonSubmit event="Edit Space Id">
-            {t("common:common.edit")}
-          </FormButtonSubmit>
+          <FormButtonSubmit>{t("common:common.edit")}</FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

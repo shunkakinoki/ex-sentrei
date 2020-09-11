@@ -3,6 +3,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {FreeTier, ProTier} from "@sentrei/common/const/tiers";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Space from "@sentrei/types/models/Space";
 import BillingDialog from "@sentrei/ui/components/BillingDialog";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
@@ -22,10 +23,12 @@ export default function SpacePanelActionCreateButton({
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = (): void => {
+    trackEvent("Open Billing Dialog Room");
     setOpen(true);
   };
 
   const handleClose = (): void => {
+    trackEvent("Close Billing Dialog Room");
     setOpen(false);
   };
 
@@ -50,11 +53,7 @@ export default function SpacePanelActionCreateButton({
           namespaceId={namespaceId}
           handleClose={handleClose}
         />
-        <FormButtonSubmit
-          event="Dialog Billing Room"
-          startIcon={<CreateIcon />}
-          onClick={handleOpen}
-        >
+        <FormButtonSubmit startIcon={<CreateIcon />} onClick={handleOpen}>
           {t("common:common.createRoom")}
         </FormButtonSubmit>
       </>

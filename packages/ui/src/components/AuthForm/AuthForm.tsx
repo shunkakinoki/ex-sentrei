@@ -17,6 +17,7 @@ import signin from "@sentrei/common/services/signin";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 import {auth} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import AuthFormGoogleButton from "@sentrei/ui/components/AuthFormGoogleButton";
 import AuthFormLoginGrid from "@sentrei/ui/components/AuthFormLoginGrid";
 import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
@@ -80,6 +81,7 @@ export default function AuthForm({type}: Props): JSX.Element {
             snackbar("error", err.message);
           });
           snackbar("success", t("form.email.check"));
+          trackEvent("Send Reset Email");
         } catch (err) {
           snackbar("error", err.message);
         }
@@ -91,6 +93,7 @@ export default function AuthForm({type}: Props): JSX.Element {
             .then(() => {
               backdrop("loading");
               if (query.redirect) {
+                trackEvent("Log In");
                 Router.pushI18n(String(query.redirect));
               }
             })
@@ -108,6 +111,7 @@ export default function AuthForm({type}: Props): JSX.Element {
             .then(() => {
               backdrop("loading");
               if (query.redirect) {
+                trackEvent("Sign Up");
                 Router.pushI18n(String(query.redirect));
               }
             })
@@ -191,22 +195,13 @@ export default function AuthForm({type}: Props): JSX.Element {
             label={t("auth:auth.rememberMe")}
           />
         ) : null}
-        <FormButtonSubmit
-          event={
-            type === "login"
-              ? "Log In"
-              : type === "signup"
-              ? "Sign Up"
-              : type === "reset"
-              ? "Send Reset Email"
-              : "Unknown"
-          }
-        >
+        <FormButtonSubmit>
           {type === "reset" && t("auth:resetPassword.button")}
           {type === "login" && t("auth:login.button")}
           {type === "signup" && t("auth:signup.button")}
         </FormButtonSubmit>
       </form>
+      <Box p={3} />
       {type === "login" && <AuthFormLoginGrid />}
       {type === "signup" && <AuthFormSignupGrid />}
     </Grid>

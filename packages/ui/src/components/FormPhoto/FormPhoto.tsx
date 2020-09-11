@@ -17,12 +17,11 @@ import FormPhotoStyles from "./FormPhotoStyles";
 
 export interface Props {
   disabled: boolean;
-  event: string;
   type: "rect" | "round";
   onSubmit: () => Promise<void>;
 }
 
-const FormPhoto = ({disabled, event, type, onSubmit}: Props): JSX.Element => {
+const FormPhoto = ({disabled, type, onSubmit}: Props): JSX.Element => {
   const classes = FormPhotoStyles();
   const {t} = useTranslation();
 
@@ -88,7 +87,7 @@ const FormPhoto = ({disabled, event, type, onSubmit}: Props): JSX.Element => {
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <FormButtonSubmit disabled={disabled} event={event}>
+            <FormButtonSubmit disabled={disabled}>
               {t("common:common.update")}
             </FormButtonSubmit>
           </Grid>
