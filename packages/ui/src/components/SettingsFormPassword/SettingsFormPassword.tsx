@@ -1,5 +1,4 @@
 import {yupResolver} from "@hookform/resolvers";
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import useTranslation from "next-translate/useTranslation";
@@ -9,6 +8,8 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import updatePassword from "@sentrei/common/services/updatePassword";
+import {trackEvent} from "@sentrei/common/utils/segment";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -19,7 +20,7 @@ const SettingsFormPassword = (): JSX.Element => {
 
   const PasswordFormSchema = Yup.object().shape({
     passwordNew: Yup.string().required(t("form:password.valid")),
-    passwordOld: Yup.string().required(t("form.password.valid")),
+    passwordOld: Yup.string().required(t("form:password.valid")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
@@ -32,6 +33,7 @@ const SettingsFormPassword = (): JSX.Element => {
     try {
       await updatePassword(data.passwordOld, data.passwordNew)?.then(() => {
         snackbar("success");
+        trackEvent("Update Password");
         backdrop("loading");
       });
     } catch (err) {
@@ -92,9 +94,7 @@ const SettingsFormPassword = (): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
-            {t("common:common.update")}
-          </Button>
+          <FormButtonSubmit>{t("common:common.update")}</FormButtonSubmit>
         </Grid>
       </Grid>
     </form>

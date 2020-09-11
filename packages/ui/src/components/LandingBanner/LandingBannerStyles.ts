@@ -2,9 +2,6 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const LandingBannerStyles = makeStyles((theme: Theme) =>
   createStyles({
-    google: {
-      marginRight: "1em",
-    },
     item: {
       display: "flex",
       flexDirection: "column",

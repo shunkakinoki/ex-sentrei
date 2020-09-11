@@ -2,6 +2,7 @@ import * as React from "react";
 
 import {updateMember} from "@sentrei/common/firebase/members";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Profile from "@sentrei/types/models/Profile";
 import EmojiPicker from "@sentrei/ui/components/EmojiPicker";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -28,6 +29,8 @@ export default function SpacePanelEmojiPicker({
         updatedAt: timestamp,
         updatedBy: profile,
         updatedByUid: userId,
+      }).then(() => {
+        trackEvent("Update Member Emoji");
       });
     } catch (err) {
       snackbar("error", err.message);

@@ -1,7 +1,6 @@
 import {yupResolver} from "@hookform/resolvers";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import Container from "@material-ui/core/Container";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -12,7 +11,6 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
-import "firebase/auth";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
@@ -20,8 +18,12 @@ import invokeMemberSpace from "@sentrei/common/services/invokeMemberSpace";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 import {auth} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
+
 import Invite from "@sentrei/types/models/Invite";
+import AuthFormGoogleButton from "@sentrei/ui/components/AuthFormGoogleButton";
 import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -47,8 +49,8 @@ export default function InviteSignupBoard({
   const InviteSignupBoardSchema = Yup.object().shape({
     email: Yup.string()
       .required(t("form:email.required"))
-      .email(t("form.email.valid")),
-    password: Yup.string().required(t("form.password.valid")),
+      .email(t("form:email.valid")),
+    password: Yup.string().required(t("form:password.valid")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
@@ -61,6 +63,7 @@ export default function InviteSignupBoard({
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
+        trackEvent("Sign Up", {provider: "google"});
         auth.onAuthStateChanged(() => {
           invokeMemberSpace(spaceId, invite.id);
         });
@@ -77,6 +80,7 @@ export default function InviteSignupBoard({
       signup(data.email, data.password, lang)
         .then(() => {
           backdrop("loading");
+          trackEvent("Sign Up", {provider: "email"});
           auth.onAuthStateChanged(() => {
             invokeMemberSpace(spaceId, invite.id);
           });
@@ -126,20 +130,10 @@ export default function InviteSignupBoard({
       </Container>
       <Grid container spacing={3}>
         <Box p={1} />
-        <Button
+        <AuthFormGoogleButton
           onClick={(): void => google()}
-          color="primary"
-          variant="outlined"
-          className={classes.button}
-        >
-          <img
-            width="20px"
-            alt="Google sign-in"
-            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-            className={classes.google}
-          />
-          <Typography>{t("auth:signup.google")}</Typography>
-        </Button>
+          title={t("auth:signup.google")}
+        />
         <form
           onSubmit={handleSubmit(onSubmit)}
           className={classes.form}
@@ -193,16 +187,9 @@ export default function InviteSignupBoard({
             control={<Checkbox value="remember" color="primary" />}
             label={t("auth:auth.rememberMe")}
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            {t("auth:signup.button")}
-          </Button>
+          <FormButtonSubmit>{t("auth:signup.button")}</FormButtonSubmit>
         </form>
+        <Box p={1} />
         <AuthFormSignupGrid />
       </Grid>
     </Container>

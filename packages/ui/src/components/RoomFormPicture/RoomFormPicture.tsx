@@ -1,19 +1,19 @@
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import {encode} from "blurhash";
-import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import {CirclePicker, ColorResult} from "react-color";
 import {useForm} from "react-hook-form";
 
 import {updateRoom} from "@sentrei/common/firebase/rooms";
-
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
+import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
@@ -76,6 +76,7 @@ const RoomFormPicture = ({
         room.id,
       )?.then(() => {
         snackbar("success");
+        trackEvent("Edit Room Picture");
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -90,26 +91,12 @@ const RoomFormPicture = ({
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Button
-              type="submit"
-              fullWidth
-              disabled={disabled}
-              variant="contained"
-              color="primary"
-            >
+            <FormButtonSubmit disabled={disabled}>
               {t("common:common.edit")}
-            </Button>
+            </FormButtonSubmit>
           </Grid>
           <Grid item xs={12}>
-            <Button
-              type="reset"
-              fullWidth
-              variant="outlined"
-              color="primary"
-              onClick={(): void => Router.back()}
-            >
-              {t("common:common.cancel")}
-            </Button>
+            <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>
           </Grid>
         </Grid>
       </form>

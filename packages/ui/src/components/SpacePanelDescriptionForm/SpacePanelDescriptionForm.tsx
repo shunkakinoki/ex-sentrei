@@ -11,6 +11,7 @@ import * as Yup from "yup";
 
 import {updateMember} from "@sentrei/common/firebase/members";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -74,6 +75,7 @@ export default function SpacePanelDescriptionForm({
       setEmpty(false);
       setProgress(false);
       snackbar("success", t("snackbar:snackbar.updated"));
+      trackEvent("Update Member Description");
     } catch (err) {
       snackbar("error", err.message);
     }
@@ -92,6 +94,7 @@ export default function SpacePanelDescriptionForm({
       setProgress(false);
       reset();
       snackbar("success", t("snackbar:snackbar.cleared"));
+      trackEvent("Clear Member Description");
     } catch (err) {
       snackbar("error", err.message);
     }

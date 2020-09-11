@@ -4,6 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {quitRoom} from "@sentrei/common/firebase/rooms";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Member from "@sentrei/types/models/Member";
 import FormQuit from "@sentrei/ui/components/FormQuit";
 import FormSection from "@sentrei/ui/components/FormSection";
@@ -32,6 +33,7 @@ const RoomQuitBoard = ({
     try {
       await quitRoom(roomId, userId)?.then(() => {
         snackbar("success", t("snackbar:snackbar.quitted"));
+        trackEvent("Quit Room");
         backdrop("loading");
         Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
       });

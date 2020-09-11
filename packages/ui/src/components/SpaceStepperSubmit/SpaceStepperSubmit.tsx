@@ -7,6 +7,7 @@ import {useRecoilState, RecoilState} from "recoil";
 
 import {createSpace} from "@sentrei/common/firebase/spaces";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import SpaceCreateForm from "@sentrei/types/atom/SpaceCreateForm";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
@@ -61,6 +62,7 @@ const SpaceStepperSubmit = ({
         updatedByUid: user.uid,
       })?.then(() => {
         snackbar("success");
+        trackEvent("Create Space");
         backdrop("loading");
         setActiveForm({id: "", name: ""});
         setActiveStep(0);
@@ -74,7 +76,7 @@ const SpaceStepperSubmit = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
       <Box p={1} />
-      <StepperButton atom={atom} last={2} />
+      <StepperButton atom={atom} />
     </form>
   );
 };

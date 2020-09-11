@@ -1,5 +1,4 @@
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -9,6 +8,8 @@ import {useRouter} from "next/router";
 import * as React from "react";
 
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
+import {trackEvent} from "@sentrei/common/utils/segment";
+import AuthFormGoogleButton from "@sentrei/ui/components/AuthFormGoogleButton";
 import LandingBannerGradient from "@sentrei/ui/components/LandingBannerGradient";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
@@ -27,7 +28,10 @@ export default function LandingBanner(): JSX.Element {
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
-        if (query.redirect) push(String(query.redirect));
+        trackEvent("Sign In", {provider: "google"});
+        if (query.redirect) {
+          push(String(query.redirect));
+        }
       })
       .catch(err => snackbar("error", err.message));
   };
@@ -87,20 +91,10 @@ export default function LandingBanner(): JSX.Element {
         </Grid>
         <Grid item xs={12} md={6}>
           <div className={classes.item}>
-            <Button
+            <AuthFormGoogleButton
               onClick={(): void => google()}
-              color="primary"
-              variant="outlined"
-              className={classes.button}
-            >
-              <img
-                width="15px"
-                alt="google-sign-in"
-                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-                className={classes.google}
-              />
-              <Typography noWrap>{t("index:banner.googleText")}</Typography>
-            </Button>
+              title={t("index:banner.googleText")}
+            />
           </div>
         </Grid>
       </Grid>

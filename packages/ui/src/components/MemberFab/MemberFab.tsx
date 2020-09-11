@@ -1,7 +1,6 @@
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Fab from "@material-ui/core/Fab";
 import Grid from "@material-ui/core/Grid";
 import Popover from "@material-ui/core/Popover";
@@ -9,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import Skeleton from "@material-ui/lab/Skeleton";
-import Link from "next-translate/Link";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
@@ -90,15 +88,6 @@ export default function MemberFab({space, members}: Props): JSX.Element {
               <Badge badgeContent={space.memberCount || 0} color="primary">
                 <SupervisorAccountIcon color="primary" />
               </Badge>
-              <Box p={1} />
-              <Link
-                href="/[namespaceId]/invite"
-                as={`/${space.namespaceId}/invite`}
-              >
-                <Button color="primary" variant="outlined">
-                  {t("common:common.invite")}
-                </Button>
-              </Link>
             </Grid>
             <Box p={1} />
             <Grid container direction="row">

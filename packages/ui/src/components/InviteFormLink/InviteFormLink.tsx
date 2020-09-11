@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import Button from "@material-ui/core/Button";
 import FormControl from "@material-ui/core/FormControl";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -10,9 +7,11 @@ import * as React from "react";
 
 import {createInvite} from "@sentrei/common/firebase/invites";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Invite from "@sentrei/types/models/Invite";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
@@ -46,6 +45,7 @@ const InviteFormLink = ({profile, user, spaceId}: Props): JSX.Element => {
         updatedByUid: user.uid,
       })?.then(() => {
         snackbar("success");
+        trackEvent("Create Invite Link");
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -72,14 +72,9 @@ const InviteFormLink = ({profile, user, spaceId}: Props): JSX.Element => {
         </FormControl>
       </Grid>
       <Grid item xs={12} sm={12} md={8}>
-        <Button
-          fullWidth
-          color="primary"
-          variant="contained"
-          onClick={(): Promise<void> => handleSubmit()}
-        >
+        <FormButtonSubmit onClick={(): Promise<void> => handleSubmit()}>
           {t("common:common.create")}
-        </Button>
+        </FormButtonSubmit>
       </Grid>
     </Grid>
   );

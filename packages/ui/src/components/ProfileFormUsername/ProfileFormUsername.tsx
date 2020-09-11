@@ -1,5 +1,4 @@
 import {yupResolver} from "@hookform/resolvers";
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
@@ -14,9 +13,12 @@ import {
   isReservedNamespace,
   validateNamespace,
 } from "@sentrei/common/firebase/namespaces";
+import {trackEvent} from "@sentrei/common/utils/segment";
 
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
+import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -58,6 +60,7 @@ const ProfileFormUsername = ({profile}: Props): JSX.Element => {
     try {
       await createNamespace(data.username, profile.uid, "user")?.then(() => {
         snackbar("success");
+        trackEvent("Edit Profile Username");
         backdrop("loading");
         setTimeout(() => {
           Router.pushI18n("/dashboard");
@@ -109,20 +112,10 @@ const ProfileFormUsername = ({profile}: Props): JSX.Element => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
-            {t("common:common.edit")}
-          </Button>
+          <FormButtonSubmit>{t("common:common.edit")}</FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
-          <Button
-            type="reset"
-            fullWidth
-            variant="outlined"
-            color="primary"
-            onClick={(): void => Router.back()}
-          >
-            {t("common:common.cancel")}
-          </Button>
+          <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>
         </Grid>
       </Grid>
     </form>

@@ -16,6 +16,7 @@ import * as React from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 import {getMembers} from "@sentrei/common/firebase/members";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Member from "@sentrei/types/models/Member";
 import Space from "@sentrei/types/models/Space";
 import MuiAnchor from "@sentrei/ui/components/MuiAnchor";
@@ -76,9 +77,10 @@ export default function SpaceCard({space}: Props): JSX.Element {
             <Box pl={2}>
               <CopyToClipboard
                 text={`${window.location.origin}/${space.namespaceId}`}
-                onCopy={(): void =>
-                  snackbar("success", t("snackbar:snackbar.clipboard"))
-                }
+                onCopy={(): void => {
+                  snackbar("success", t("snackbar:snackbar.clipboar;d"));
+                  trackEvent("Copy Clipboard Space");
+                }}
               >
                 <IconButton aria-label="share">
                   <ShareIcon />

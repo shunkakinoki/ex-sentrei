@@ -1,5 +1,4 @@
 import {yupResolver} from "@hookform/resolvers";
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import useTranslation from "next-translate/useTranslation";
@@ -9,8 +8,10 @@ import * as Yup from "yup";
 
 import {createInvite} from "@sentrei/common/firebase/invites";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
@@ -25,8 +26,8 @@ const InviteFormEmail = ({profile, user, spaceId}: Props): JSX.Element => {
 
   const InviteFormEmailSchema = Yup.object().shape({
     email: Yup.string()
-      .required(t("form.email.required"))
-      .email(t("form.email.valid")),
+      .required(t("form:email.required"))
+      .email(t("form:email.valid")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
@@ -51,6 +52,7 @@ const InviteFormEmail = ({profile, user, spaceId}: Props): JSX.Element => {
         window: window.location.origin,
       })?.then(() => {
         snackbar("success");
+        trackEvent("Send Invite Email");
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -84,9 +86,7 @@ const InviteFormEmail = ({profile, user, spaceId}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
-            {t("common:common.invite")}
-          </Button>
+          <FormButtonSubmit>{t("common:common.invite")}</FormButtonSubmit>
         </Grid>
       </Grid>
     </form>

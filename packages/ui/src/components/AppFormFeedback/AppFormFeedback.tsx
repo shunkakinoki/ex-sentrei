@@ -1,7 +1,6 @@
 import {yupResolver} from "@hookform/resolvers";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import TextField from "@material-ui/core/TextField";
@@ -15,8 +14,10 @@ import * as Yup from "yup";
 
 import {createFeedback} from "@sentrei/common/firebase/feedback";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Feedback from "@sentrei/types/models/Feedback";
 import Profile from "@sentrei/types/models/Profile";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 import AppFormFeedbackStyles from "./AppFormFeedbackStyles";
@@ -68,8 +69,9 @@ const AppFormFeedback = ({handleClick, profile}: Props): JSX.Element => {
         updatedByUid: profile.uid,
       })?.then(() => {
         handleClick(null);
-        setActiveForm({description: "", emoji: null});
         snackbar("success");
+        trackEvent("Create Feedback");
+        setActiveForm({description: "", emoji: null});
       });
     } catch (err) {
       snackbar("error", err.message);
@@ -145,9 +147,7 @@ const AppFormFeedback = ({handleClick, profile}: Props): JSX.Element => {
             </IconButton>
           </Grid>
           <Grid item xs={6}>
-            <Button type="submit" fullWidth variant="contained" color="primary">
-              {t("common:common.submit")}
-            </Button>
+            <FormButtonSubmit>{t("common:common.submit")}</FormButtonSubmit>
           </Grid>
         </Grid>
         <Box py={3} />

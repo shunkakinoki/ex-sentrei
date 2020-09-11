@@ -1,6 +1,5 @@
 import {yupResolver} from "@hookform/resolvers";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
@@ -17,11 +16,12 @@ import * as Yup from "yup";
 import signin from "@sentrei/common/services/signin";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
-
 import {auth} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import AuthFormGoogleButton from "@sentrei/ui/components/AuthFormGoogleButton";
 import AuthFormLoginGrid from "@sentrei/ui/components/AuthFormLoginGrid";
 import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -40,15 +40,15 @@ export default function AuthForm({type}: Props): JSX.Element {
 
   const AuthFormSchema = Yup.object().shape({
     email: Yup.string()
-      .required(t("form.email.required"))
-      .email(t("form.email.valid")),
-    password: Yup.string().required(t("form.password.valid")),
+      .required(t("form:email.required"))
+      .email(t("form:email.valid")),
+    password: Yup.string().required(t("form:password.valid")),
   });
 
   const ResetFormSchema = Yup.object().shape({
     email: Yup.string()
-      .required(t("form.email.required"))
-      .email(t("form.email.valid")),
+      .required(t("form:email.required"))
+      .email(t("form:email.valid")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
@@ -64,6 +64,7 @@ export default function AuthForm({type}: Props): JSX.Element {
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
+        trackEvent("Sign In", {provider: "google"});
         if (query.redirect) {
           Router.pushI18n(String(query.redirect));
         }
@@ -80,7 +81,8 @@ export default function AuthForm({type}: Props): JSX.Element {
           await auth.sendPasswordResetEmail(data.email).catch(err => {
             snackbar("error", err.message);
           });
-          snackbar("success", t("form.email.check"));
+          snackbar("success", t("form:email.check"));
+          trackEvent("Send Reset Email");
         } catch (err) {
           snackbar("error", err.message);
         }
@@ -91,6 +93,7 @@ export default function AuthForm({type}: Props): JSX.Element {
           signin(data.email, data.password, lang)
             .then(() => {
               backdrop("loading");
+              trackEvent("Log In", {provider: "email"});
               if (query.redirect) {
                 Router.pushI18n(String(query.redirect));
               }
@@ -108,6 +111,7 @@ export default function AuthForm({type}: Props): JSX.Element {
           signup(data.email, data.password, lang)
             .then(() => {
               backdrop("loading");
+              trackEvent("Sign Up", {provider: "email"});
               if (query.redirect) {
                 Router.pushI18n(String(query.redirect));
               }
@@ -192,18 +196,13 @@ export default function AuthForm({type}: Props): JSX.Element {
             label={t("auth:auth.rememberMe")}
           />
         ) : null}
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          color="primary"
-          className={classes.submit}
-        >
+        <FormButtonSubmit>
           {type === "reset" && t("auth:resetPassword.button")}
           {type === "login" && t("auth:login.button")}
           {type === "signup" && t("auth:signup.button")}
-        </Button>
+        </FormButtonSubmit>
       </form>
+      <Box p={1} />
       {type === "login" && <AuthFormLoginGrid />}
       {type === "signup" && <AuthFormSignupGrid />}
     </Grid>

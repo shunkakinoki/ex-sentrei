@@ -9,6 +9,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {updateNotificationSettings} from "@sentrei/common/firebase/users";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import Notification from "@sentrei/types/models/Notification";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
@@ -42,7 +43,10 @@ const SettingsFormNotification = ({
     setActive(newArr);
 
     try {
-      updateNotificationSettings(user.uid, content, newArr);
+      updateNotificationSettings(user.uid, content, newArr).then(() => {
+        snackbar("success");
+        trackEvent("Update Settings Notification");
+      });
     } catch (err) {
       snackbar("error", err);
     }

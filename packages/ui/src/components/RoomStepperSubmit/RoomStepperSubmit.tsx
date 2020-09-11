@@ -8,6 +8,7 @@ import {useRecoilState, RecoilState} from "recoil";
 import {roomEmoji} from "@sentrei/common/const/emoji";
 import {createRoom} from "@sentrei/common/firebase/rooms";
 import {timestamp} from "@sentrei/common/utils/firebase";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import RoomCreateForm from "@sentrei/types/atom/RoomCreateForm";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
@@ -63,6 +64,7 @@ const RoomStepperSubmit = ({
         updatedByUid: user.uid,
       })?.then(() => {
         snackbar("success");
+        trackEvent("Create Room");
         backdrop("loading");
         setActiveForm({name: "", type: "focus"});
         setActiveStep(0);
@@ -76,7 +78,7 @@ const RoomStepperSubmit = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
       <Box p={1} />
-      <StepperButton atom={atom} last={2} />
+      <StepperButton atom={atom} />
     </form>
   );
 };
