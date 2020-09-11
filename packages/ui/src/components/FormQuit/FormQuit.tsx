@@ -3,11 +3,12 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import {Controller, useForm} from "react-hook-form";
 import * as Yup from "yup";
+
+import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
 
 export interface Props {
   disabled?: boolean;
@@ -89,15 +90,7 @@ const FormQuit = ({
             </Button>
           </Grid>
           <Grid item xs={12}>
-            <Button
-              type="reset"
-              fullWidth
-              variant="outlined"
-              color="primary"
-              onClick={(): void => Router.back()}
-            >
-              {t("common:common.cancel")}
-            </Button>
+            <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>
           </Grid>
         </Grid>
       </form>

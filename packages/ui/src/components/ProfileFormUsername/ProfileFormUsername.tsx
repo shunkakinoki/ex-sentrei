@@ -1,5 +1,4 @@
 import {yupResolver} from "@hookform/resolvers";
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
@@ -17,6 +16,7 @@ import {
 
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
+import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
 import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -115,15 +115,7 @@ const ProfileFormUsername = ({profile}: Props): JSX.Element => {
           </FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
-          <Button
-            type="reset"
-            fullWidth
-            variant="outlined"
-            color="primary"
-            onClick={(): void => Router.back()}
-          >
-            {t("common:common.cancel")}
-          </Button>
+          <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>
         </Grid>
       </Grid>
     </form>

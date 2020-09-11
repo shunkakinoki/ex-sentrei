@@ -5,11 +5,12 @@ import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import Cropper from "react-easy-crop";
 import {useForm} from "react-hook-form";
+
+import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
 
 import FormPhotoStyles from "./FormPhotoStyles";
 
@@ -96,15 +97,7 @@ const FormPhoto = ({disabled, type, onSubmit}: Props): JSX.Element => {
             </Button>
           </Grid>
           <Grid item xs={12}>
-            <Button
-              type="reset"
-              fullWidth
-              variant="outlined"
-              color="primary"
-              onClick={(): void => Router.back()}
-            >
-              {t("common:common.cancel")}
-            </Button>
+            <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>
           </Grid>
         </Grid>
       </form>
