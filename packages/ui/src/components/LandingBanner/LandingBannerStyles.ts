@@ -9,6 +9,10 @@ const LandingBannerStyles = makeStyles((theme: Theme) =>
       paddingLeft: theme.spacing(1),
       paddingRight: theme.spacing(1),
     },
+    button: {
+      margin: theme.spacing(1),
+      width: "100%",
+    },
     text: {
       whiteSpace: "pre-line",
     },
