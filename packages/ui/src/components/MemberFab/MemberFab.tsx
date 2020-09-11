@@ -90,15 +90,6 @@ export default function MemberFab({space, members}: Props): JSX.Element {
               <Badge badgeContent={space.memberCount || 0} color="primary">
                 <SupervisorAccountIcon color="primary" />
               </Badge>
-              <Box p={1} />
-              <Link
-                href="/[namespaceId]/invite"
-                as={`/${space.namespaceId}/invite`}
-              >
-                <Button color="primary" variant="outlined">
-                  {t("common:common.invite")}
-                </Button>
-              </Link>
             </Grid>
             <Box p={1} />
             <Grid container direction="row">
