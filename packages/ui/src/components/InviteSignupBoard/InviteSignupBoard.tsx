@@ -19,6 +19,7 @@ import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 import {auth} from "@sentrei/common/utils/firebase";
 import {trackEvent} from "@sentrei/common/utils/segment";
+
 import Invite from "@sentrei/types/models/Invite";
 import AuthFormGoogleButton from "@sentrei/ui/components/AuthFormGoogleButton";
 import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
@@ -62,7 +63,7 @@ export default function InviteSignupBoard({
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
-        trackEvent("Sign Up");
+        trackEvent("Sign Up", {provider: "google"});
         auth.onAuthStateChanged(() => {
           invokeMemberSpace(spaceId, invite.id);
         });
@@ -79,7 +80,7 @@ export default function InviteSignupBoard({
       signup(data.email, data.password, lang)
         .then(() => {
           backdrop("loading");
-          trackEvent("Sign Up");
+          trackEvent("Sign Up", {provider: "email"});
           auth.onAuthStateChanged(() => {
             invokeMemberSpace(spaceId, invite.id);
           });

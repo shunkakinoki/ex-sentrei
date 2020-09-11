@@ -8,6 +8,7 @@ import {useRouter} from "next/router";
 import * as React from "react";
 
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import AuthFormGoogleButton from "@sentrei/ui/components/AuthFormGoogleButton";
 import LandingBannerGradient from "@sentrei/ui/components/LandingBannerGradient";
 import MuiButton from "@sentrei/ui/components/MuiButton";
@@ -27,7 +28,10 @@ export default function LandingBanner(): JSX.Element {
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
-        if (query.redirect) push(String(query.redirect));
+        trackEvent("Sign In", {provider: "google"});
+        if (query.redirect) {
+          push(String(query.redirect));
+        }
       })
       .catch(err => snackbar("error", err.message));
   };

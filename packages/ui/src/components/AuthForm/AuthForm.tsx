@@ -64,6 +64,7 @@ export default function AuthForm({type}: Props): JSX.Element {
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
+        trackEvent("Sign In", {provider: "google"});
         if (query.redirect) {
           Router.pushI18n(String(query.redirect));
         }
@@ -92,8 +93,8 @@ export default function AuthForm({type}: Props): JSX.Element {
           signin(data.email, data.password, lang)
             .then(() => {
               backdrop("loading");
+              trackEvent("Log In", {provider: "email"});
               if (query.redirect) {
-                trackEvent("Log In");
                 Router.pushI18n(String(query.redirect));
               }
             })
@@ -110,8 +111,8 @@ export default function AuthForm({type}: Props): JSX.Element {
           signup(data.email, data.password, lang)
             .then(() => {
               backdrop("loading");
+              trackEvent("Sign Up", {provider: "email"});
               if (query.redirect) {
-                trackEvent("Sign Up");
                 Router.pushI18n(String(query.redirect));
               }
             })
