@@ -50,6 +50,7 @@ const RoomQuitBoard = ({
       <FormQuit
         id={roomId}
         disabled={role !== "admin"}
+        event="Quit Room"
         onSubmit={onSubmit}
         type="quit"
       />

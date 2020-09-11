@@ -1,5 +1,4 @@
 import {yupResolver} from "@hookform/resolvers";
-import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
@@ -9,9 +8,11 @@ import {Controller, useForm} from "react-hook-form";
 import * as Yup from "yup";
 
 import FormButtonCancel from "@sentrei/ui/components/FormButtonCancel";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 
 export interface Props {
   disabled?: boolean;
+  event: string;
   id: string;
   type?: "id" | "quit";
   onSubmit: () => Promise<void>;
@@ -19,6 +20,7 @@ export interface Props {
 
 const FormQuit = ({
   disabled,
+  event,
   id,
   type = "id",
   onSubmit,
@@ -79,15 +81,9 @@ const FormQuit = ({
             />
           </Grid>
           <Grid item xs={12}>
-            <Button
-              type="submit"
-              fullWidth
-              disabled={disabled}
-              variant="contained"
-              color="primary"
-            >
+            <FormButtonSubmit disabled={disabled} event={event}>
               {t("common:common.quit")}
-            </Button>
+            </FormButtonSubmit>
           </Grid>
           <Grid item xs={12}>
             <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

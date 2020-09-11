@@ -49,6 +49,7 @@ const SpaceQuitBoard = ({
       />
       <FormQuit
         disabled={role === "admin"}
+        event="Quit Space"
         id={namespaceId}
         onSubmit={onSubmit}
       />

@@ -44,6 +44,7 @@ const RoomDeleteBoard = ({role, roomId, namespaceId}: Props): JSX.Element => {
       <FormDelete
         id={roomId}
         disabled={role !== "admin"}
+        event="Delete Room"
         onSubmit={onSubmit}
         type="delete"
       />
