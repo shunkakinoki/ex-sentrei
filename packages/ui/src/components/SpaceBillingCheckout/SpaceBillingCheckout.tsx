@@ -44,7 +44,6 @@ export default function SpaceBillingCheckout({
     try {
       const stripe = await getStripe();
       if (session) {
-        snackbar("success");
         trackEvent("Visit Stripe Checkout");
         stripe?.redirectToCheckout({sessionId: session.id});
       }

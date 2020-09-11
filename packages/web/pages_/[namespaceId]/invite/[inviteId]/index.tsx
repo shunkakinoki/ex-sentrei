@@ -1,5 +1,5 @@
 import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType} from "next";
-
+import Router from "next-translate/Router";
 import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
@@ -50,6 +50,10 @@ const InviteId = ({
   const {query} = useRouter();
 
   const {user} = React.useContext(AuthContext);
+
+  if (user) {
+    Router.pushI18n("/dashboard");
+  }
 
   if (user === undefined || spaceId === undefined) {
     return (

@@ -109,7 +109,7 @@ export default function RoomCard({
             <CopyToClipboard
               text={`${window.location.origin}/${space.namespaceId}/${room.id}`}
               onCopy={(): void => {
-                snackbar("success", t("snackbar:snackbar.clip;board"));
+                snackbar("success", t("snackbar:snackbar.clipboard"));
                 trackEvent("Copy Clipboard Room");
               }}
             >
