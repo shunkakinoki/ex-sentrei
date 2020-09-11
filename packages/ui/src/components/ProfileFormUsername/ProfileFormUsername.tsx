@@ -17,6 +17,7 @@ import {
 
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -109,9 +110,9 @@ const ProfileFormUsername = ({profile}: Props): JSX.Element => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
+          <FormButtonSubmit event="Edit Profile Username">
             {t("common:common.edit")}
-          </Button>
+          </FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <Button

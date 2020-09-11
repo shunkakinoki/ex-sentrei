@@ -20,6 +20,7 @@ import {timestamp} from "@sentrei/common/utils/firebase";
 import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
@@ -122,9 +123,9 @@ const InviteFormUsername = ({profile, user, spaceId}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
+          <FormButtonSubmit event="Send Invite Username">
             {t("space:invite.invite")}
-          </Button>
+          </FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <Button

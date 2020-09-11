@@ -9,11 +9,11 @@ import {CirclePicker, ColorResult} from "react-color";
 import {useForm} from "react-hook-form";
 
 import {updateRoom} from "@sentrei/common/firebase/rooms";
-
 import {timestamp} from "@sentrei/common/utils/firebase";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
@@ -90,15 +90,9 @@ const RoomFormPicture = ({
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Button
-              type="submit"
-              fullWidth
-              disabled={disabled}
-              variant="contained"
-              color="primary"
-            >
+            <FormButtonSubmit disabled={disabled} event="Edit Room Picture">
               {t("common:common.edit")}
-            </Button>
+            </FormButtonSubmit>
           </Grid>
           <Grid item xs={12}>
             <Button

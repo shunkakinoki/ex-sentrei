@@ -14,6 +14,7 @@ import {timestamp} from "@sentrei/common/utils/firebase";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
@@ -84,15 +85,9 @@ const RoomFormName = ({disabled, profile, room, user}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button
-            type="submit"
-            fullWidth
-            disabled={disabled}
-            variant="contained"
-            color="primary"
-          >
+          <FormButtonSubmit event="Edit Room Name">
             {t("common:common.edit")}
-          </Button>
+          </FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <Button

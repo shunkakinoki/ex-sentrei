@@ -16,6 +16,7 @@ import {
 } from "@sentrei/common/firebase/namespaces";
 
 import Space from "@sentrei/types/models/Space";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -106,15 +107,9 @@ const SpaceFormId = ({disabled, space}: Props): JSX.Element => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Button
-            type="submit"
-            fullWidth
-            disabled={disabled}
-            variant="contained"
-            color="primary"
-          >
+          <FormButtonSubmit event="Edit Space Id">
             {t("common:common.edit")}
-          </Button>
+          </FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <Button

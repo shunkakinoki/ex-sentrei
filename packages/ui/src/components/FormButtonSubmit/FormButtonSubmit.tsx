@@ -5,15 +5,22 @@ import * as React from "react";
 import {trackEvent} from "@sentrei/common/utils/segment";
 
 export interface Props {
-  children: string;
+  children: React.ReactNode;
+  disabled?: boolean;
+  onClick?: () => {};
   event: string;
 }
 
 export default function FormButtonSubmit({
   children,
+  disabled = false,
+  onClick,
   event,
 }: Props): JSX.Element {
   const handleClick = (): void => {
+    if (onClick) {
+      onClick();
+    }
     trackEvent(event);
   };
 
@@ -23,6 +30,7 @@ export default function FormButtonSubmit({
       fullWidth
       variant="contained"
       color="primary"
+      disabled={disabled}
       onClick={handleClick}
     >
       {children}

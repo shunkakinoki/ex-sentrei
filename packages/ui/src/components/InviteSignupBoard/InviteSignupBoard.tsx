@@ -22,6 +22,7 @@ import signup from "@sentrei/common/services/signup";
 import {auth} from "@sentrei/common/utils/firebase";
 import Invite from "@sentrei/types/models/Invite";
 import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -193,15 +194,9 @@ export default function InviteSignupBoard({
             control={<Checkbox value="remember" color="primary" />}
             label={t("auth:auth.rememberMe")}
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
+          <FormButtonSubmit event="Sign Up">
             {t("auth:signup.button")}
-          </Button>
+          </FormButtonSubmit>
         </form>
         <AuthFormSignupGrid />
       </Grid>

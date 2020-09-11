@@ -9,8 +9,8 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import {updateProfile} from "@sentrei/common/firebase/profiles";
-
 import Profile from "@sentrei/types/models/Profile";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -72,9 +72,9 @@ const ProfileFormName = ({profile}: Props): JSX.Element => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
+          <FormButtonSubmit event="Edit Profile Name">
             {t("common:common.edit")}
-          </Button>
+          </FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <Button

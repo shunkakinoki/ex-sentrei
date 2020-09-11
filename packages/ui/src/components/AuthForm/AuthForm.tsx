@@ -1,6 +1,5 @@
 import {yupResolver} from "@hookform/resolvers";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
@@ -17,11 +16,11 @@ import * as Yup from "yup";
 import signin from "@sentrei/common/services/signin";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
-
 import {auth} from "@sentrei/common/utils/firebase";
 import AuthFormGoogleButton from "@sentrei/ui/components/AuthFormGoogleButton";
 import AuthFormLoginGrid from "@sentrei/ui/components/AuthFormLoginGrid";
 import AuthFormSignupGrid from "@sentrei/ui/components/AuthFormSignupGrid";
+import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -192,17 +191,21 @@ export default function AuthForm({type}: Props): JSX.Element {
             label={t("auth:auth.rememberMe")}
           />
         ) : null}
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          color="primary"
-          className={classes.submit}
+        <FormButtonSubmit
+          event={
+            type === "login"
+              ? "Log In"
+              : type === "signup"
+              ? "Sign Up"
+              : type === "reset"
+              ? "Send Reset Email"
+              : "Unknown"
+          }
         >
           {type === "reset" && t("auth:resetPassword.button")}
           {type === "login" && t("auth:login.button")}
           {type === "signup" && t("auth:signup.button")}
-        </Button>
+        </FormButtonSubmit>
       </form>
       {type === "login" && <AuthFormLoginGrid />}
       {type === "signup" && <AuthFormSignupGrid />}
