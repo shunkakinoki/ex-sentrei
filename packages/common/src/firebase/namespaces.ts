@@ -1,7 +1,7 @@
 import reservedNames from "@sentrei/common/const/reservedNamespaces";
 import {serializeNamespace} from "@sentrei/common/serializers/Namespace";
 import {db} from "@sentrei/common/utils/firebase";
-import Namespace, {NamespaceType} from "@sentrei/types/models/Namespace";
+import Namespace, {NamespaceModel} from "@sentrei/types/models/Namespace";
 
 const namespaceConverter: firebase.firestore.FirestoreDataConverter<Namespace> = {
   toFirestore(data: Namespace) {
@@ -42,7 +42,7 @@ export const getNamespace = async (
 export const createNamespace = (
   namespaceId: string,
   uid: string,
-  type: NamespaceType,
+  model: NamespaceModel,
 ): Promise<void> => {
-  return db.doc(`namespaces/${namespaceId}`).set(<Namespace>{uid, type});
+  return db.doc(`namespaces/${namespaceId}`).set(<Namespace>{uid, model});
 };

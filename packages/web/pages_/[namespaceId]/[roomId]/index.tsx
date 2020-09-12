@@ -21,7 +21,7 @@ const RoomId = (): JSX.Element => {
   React.useEffect(() => {
     async function setSpace(): Promise<void> {
       const namespace = await getNamespace(String(query.namespaceId));
-      if (!namespace || namespace.type === "user") {
+      if (!namespace || namespace.model === "user") {
         return;
       }
       setSpaceId(namespace.uid);

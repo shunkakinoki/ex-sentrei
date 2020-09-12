@@ -25,7 +25,7 @@ const Support: NextPage = () => {
       if (!namespace) {
         return;
       }
-      setType(namespace.type);
+      setType(namespace.model);
     }
     setNamespaceType();
   }, [query.namespaceId]);

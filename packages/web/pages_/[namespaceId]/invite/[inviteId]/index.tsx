@@ -29,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   const namespaceId = String(params?.namespaceId);
   const namespace = await getAdminNamespace(namespaceId);
-  if (!namespace || namespace.type === "user") {
+  if (!namespace || namespace.model === "user") {
     return {
       props: {
         spaceId: null,
