@@ -1,6 +1,6 @@
 import Metadata from "@sentrei/types/models/Metadata";
 
-declare namespace Analytics {
+declare namespace Metrics {
   export type Fields = {
     duration: FirebaseFirestore.FieldValue | number;
     score: FirebaseFirestore.FieldValue | number;
@@ -32,4 +32,4 @@ declare namespace Analytics {
   }
 }
 
-export default Analytics;
+export default Metrics;
