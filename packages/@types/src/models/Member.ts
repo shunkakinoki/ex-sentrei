@@ -1,7 +1,7 @@
 import firebase from "firebase";
 
-import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
+import Metrics from "@sentrei/types/models/Metrics";
 import Profile from "@sentrei/types/models/Profile";
 
 declare namespace Member {
@@ -14,7 +14,7 @@ declare namespace Member {
     status: Status;
   };
 
-  interface Fields extends Analytics.Fields, EditableFields {
+  interface Fields extends Metrics.Fields, EditableFields {
     role: Role;
   }
 

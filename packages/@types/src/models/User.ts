@@ -1,4 +1,4 @@
-import Analytics from "@sentrei/types/models/Analytics";
+import Metrics from "@sentrei/types/models/Metrics";
 import Profile from "@sentrei/types/models/Profile";
 
 declare namespace User {
@@ -12,7 +12,7 @@ declare namespace User {
     update: NotificationType[];
   }
 
-  export interface Fields extends Analytics.Fields, Profile.Fields {
+  export interface Fields extends Metrics.Fields, Profile.Fields {
     email: string | null;
     mode?: Mode;
     language?: Language;
