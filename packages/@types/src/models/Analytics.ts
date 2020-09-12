@@ -20,6 +20,8 @@ declare namespace Analytics {
 
   export interface Response extends Fields, Metadata.Response {}
 
+  export interface Update extends Fields, Metadata.Update {}
+
   export interface Get extends Fields, Metadata.Get {
     id: string;
   }
