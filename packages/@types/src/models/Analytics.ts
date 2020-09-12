@@ -3,10 +3,12 @@ import Metrics from "@sentrei/types/models/Metrics";
 import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Analytics {
-  export type Types = "latest" | "hour" | "day" | "week";
+  export type Time = "latest" | "hour" | "day" | "week";
+  export type Type = "root" | "space" | "user";
 
   interface InitialFields {
-    type: Types;
+    time: Time;
+    type: Type;
   }
 
   interface Fields extends InitialFields {
