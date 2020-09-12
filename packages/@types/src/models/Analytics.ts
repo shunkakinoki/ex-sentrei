@@ -12,8 +12,8 @@ declare namespace Analytics {
 
   interface Fields extends InitialFields {
     actions: Actions.NumberFields;
-    stats: Stats.NumberFields;
     metrics: Metrics.NumberFields;
+    stats: Stats.NumberFields;
   }
 
   export interface Create extends Fields, Metadata.Create {}
