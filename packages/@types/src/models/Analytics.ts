@@ -15,6 +15,10 @@ declare namespace Analytics {
     stats?: Stats.NumberFields;
   }
 
+  export interface Create extends Fields {
+    updatedAt: firebase.firestore.FieldValue;
+  }
+
   export interface Response extends Omit<Fields, "type"> {
     updatedAt: firebase.firestore.Timestamp;
   }
