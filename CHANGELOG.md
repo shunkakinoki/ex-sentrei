@@ -1,3 +1,15 @@
+# [1.69.0](https://github.com/sentrei/sentrei/compare/v1.68.0...v1.69.0) (2020-09-12)
+
+### Features
+
+- 🎸 ini revamp metrics model ([016af5c](https://github.com/sentrei/sentrei/commit/016af5c0eab2b105a39d5716f526be83a2c8c1e6))
+- 🎸 refactor user notification settings ([f7da075](https://github.com/sentrei/sentrei/commit/f7da0753f3cf404d80c7f68615f14302eb809d04))
+
+### Performance Improvements
+
+- ⚡️ ini scoreActions const ([35e7ea8](https://github.com/sentrei/sentrei/commit/35e7ea8cb1948015d9c9b9e3ccc59bde472d7568))
+- ⚡️ refactor user model ([31a46e6](https://github.com/sentrei/sentrei/commit/31a46e6504599eed4c0db0210971269a7b42f552))
+
 # [1.68.0](https://github.com/sentrei/sentrei/compare/v1.67.1...v1.68.0) (2020-09-12)
 
 ### Features
