@@ -1,4 +1,5 @@
 import Metadata from "@sentrei/types/models/Metadata";
+import Room from "@sentrei/types/models/Room";
 
 declare namespace Session {
   export type Types = "member" | "room";
@@ -7,7 +8,7 @@ declare namespace Session {
     duration: FirebaseFirestore.FieldValue | number;
     roomId: string;
     spaceId: string;
-    type: Types;
+    type: Room.Types;
   }
 
   export interface Create extends Fields, Metadata.Create {}
