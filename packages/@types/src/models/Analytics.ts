@@ -12,6 +12,8 @@ declare namespace Analytics {
     type: Types;
   }
 
+  export type AdminUpdate = Partial<Fields>;
+
   export type Create = Fields;
 
   export type Response = Fields;
