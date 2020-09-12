@@ -8,7 +8,7 @@ declare namespace User {
 
   export interface NotificationSettings {
     chat: NotificationType[];
-    invitation: NotificationType[];
+    general: NotificationType[];
     update: NotificationType[];
   }
 
@@ -26,8 +26,9 @@ declare namespace User {
 
   export interface Get extends Response {
     uid: string;
-    duration: number;
-    score: number;
+    record?: number;
+    duration?: number;
+    score?: number;
   }
 
   export interface Snapshot extends Get {

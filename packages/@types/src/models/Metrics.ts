@@ -2,15 +2,15 @@ import Metadata from "@sentrei/types/models/Metadata";
 
 declare namespace Metrics {
   export type Fields = {
-    duration: FirebaseFirestore.FieldValue | number;
-    record: FirebaseFirestore.FieldValue | number;
-    score: FirebaseFirestore.FieldValue | number;
+    duration?: FirebaseFirestore.FieldValue | number;
+    record?: FirebaseFirestore.FieldValue | number;
+    score?: FirebaseFirestore.FieldValue | number;
   };
 
   export type NumberFields = {
-    duration: number;
-    record: number;
-    score: number;
+    duration?: number;
+    record?: number;
+    score?: number;
   };
 
   export type Response = Fields;
@@ -25,9 +25,9 @@ declare namespace Metrics {
 
   export interface Get extends Response {
     id: string;
-    duration: number;
-    record: number;
-    score: number;
+    duration?: number;
+    record?: number;
+    score?: number;
   }
 
   export interface Snapshot extends Get {
