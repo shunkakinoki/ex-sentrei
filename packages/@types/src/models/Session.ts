@@ -7,6 +7,7 @@ declare namespace Session {
   interface Fields {
     duration: FirebaseFirestore.FieldValue | number;
     roomId: string;
+    roomSid: string;
     spaceId: string;
     type: Room.Types;
   }
