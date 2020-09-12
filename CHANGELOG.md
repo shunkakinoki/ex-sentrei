@@ -1,3 +1,16 @@
+# [1.67.0](https://github.com/sentrei/sentrei/compare/v1.66.0...v1.67.0) (2020-09-12)
+
+### Features
+
+- 🎸 ini analytics metadata ([1062ee9](https://github.com/sentrei/sentrei/commit/1062ee9d9eed8c5d4d9e0208a96f3ab01e2c8267))
+- 🎸 ini form events ([e0303ad](https://github.com/sentrei/sentrei/commit/e0303add058624a4ca9f0819220ab683a4a019b9))
+- 🎸 ini user update for button ([5f11963](https://github.com/sentrei/sentrei/commit/5f1196353df4f201340c08c5ffbb672bf3f99089))
+- 🎸 rename intlform to language button ([f4aadb3](https://github.com/sentrei/sentrei/commit/f4aadb3ce5018c5c971a910d42ab80719253a10a))
+
+### Performance Improvements
+
+- ⚡️ ini analytics update ([76fd6c8](https://github.com/sentrei/sentrei/commit/76fd6c88ad8e6847bc9011577a0ba4d9885745db))
+
 # [1.66.0](https://github.com/sentrei/sentrei/compare/v1.65.0...v1.66.0) (2020-09-12)
 
 ### Bug Fixes
