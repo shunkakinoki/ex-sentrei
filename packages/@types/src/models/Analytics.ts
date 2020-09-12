@@ -3,16 +3,22 @@ import Metrics from "@sentrei/types/models/Metrics";
 import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Analytics {
-  export type Types = "hour" | "day" | "week";
+  export type Time = "latest" | "hour" | "day" | "week";
+  export type Type = "member" | "root" | "space" | "user";
 
   interface InitialFields {
-    type: Types;
+    time: Time;
+    type: Type;
   }
 
   interface Fields extends InitialFields {
-    actions: Actions.NumberFields;
-    metrics: Metrics.NumberFields;
+    actions?: Actions.NumberFields;
+    metrics?: Metrics.NumberFields;
     stats?: Stats.NumberFields;
+  }
+
+  export interface Create extends Fields {
+    updatedAt: firebase.firestore.FieldValue;
   }
 
   export interface Response extends Omit<Fields, "type"> {
