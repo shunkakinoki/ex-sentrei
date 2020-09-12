@@ -1,5 +1,4 @@
 import Actions from "@sentrei/types/models/Actions";
-import Metadata from "@sentrei/types/models/Metadata";
 import Metrics from "@sentrei/types/models/Metrics";
 import Stats from "@sentrei/types/models/Stats";
 
@@ -16,14 +15,17 @@ declare namespace Analytics {
     stats: Stats.NumberFields;
   }
 
-  export interface Create extends Fields, Metadata.Create {}
+  export interface Response extends Omit<Fields, "type"> {
+    updatedAt: firebase.firestore.Timestamp;
+  }
 
-  export interface Response extends Fields, Metadata.Response {}
+  export interface Update extends Omit<Fields, "type"> {
+    updatedAt: firebase.firestore.FieldValue;
+  }
 
-  export interface Update extends Fields, Metadata.Update {}
-
-  export interface Get extends Fields, Metadata.Get {
+  export interface Get extends Omit<Fields, "type"> {
     id: string;
+    updatedAt: string;
   }
 
   export interface Snapshot extends Get {
