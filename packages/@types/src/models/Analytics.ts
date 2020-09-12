@@ -4,7 +4,7 @@ import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Analytics {
   export type Time = "latest" | "hour" | "day" | "week";
-  export type Type = "root" | "space" | "user";
+  export type Type = "member" | "root" | "space" | "user";
 
   interface InitialFields {
     time: Time;
