@@ -14,7 +14,7 @@ function DarkModeButton(): JSX.Element {
   const {value: isDark, toggle: toggleDarkMode} = useDarkMode(false);
 
   const handleClick = (): void => {
-    const mode = isDark ? "dark" : "light";
+    const mode = !isDark ? "dark" : "light";
     toggleDarkMode();
     if (user) {
       updateUser({mode}, user.uid);
