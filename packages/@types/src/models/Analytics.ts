@@ -3,15 +3,15 @@ import Metrics from "@sentrei/types/models/Metrics";
 import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Analytics {
-  export type Types = "hour" | "day" | "week";
+  export type Types = "latest" | "hour" | "day" | "week";
 
   interface InitialFields {
     type: Types;
   }
 
   interface Fields extends InitialFields {
-    actions: Actions.NumberFields;
-    metrics: Metrics.NumberFields;
+    actions?: Actions.NumberFields;
+    metrics?: Metrics.NumberFields;
     stats?: Stats.NumberFields;
   }
 
