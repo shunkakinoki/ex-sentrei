@@ -10,7 +10,7 @@ import {trackEvent} from "@sentrei/common/utils/segment";
 
 import User from "@sentrei/types/models/User";
 
-export default function IntlForm(): JSX.Element {
+export default function LanguageButton(): JSX.Element {
   const router = useRouter();
   const {lang} = useTranslation();
 

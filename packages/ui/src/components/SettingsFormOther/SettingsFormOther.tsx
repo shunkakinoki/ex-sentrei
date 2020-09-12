@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import IntlForm from "@sentrei/ui/components/IntlForm";
+import LanguageButton from "@sentrei/ui/components/LanguageButton";
 
 const SettingsFormOther = (): JSX.Element => {
   const {t} = useTranslation();
@@ -17,7 +17,7 @@ const SettingsFormOther = (): JSX.Element => {
             {t("common:common.language")}
           </Typography>
         </Box>
-        <IntlForm />
+        <LanguageButton />
       </Grid>
     </Grid>
   );
