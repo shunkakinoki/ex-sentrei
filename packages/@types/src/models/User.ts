@@ -26,9 +26,9 @@ declare namespace User {
 
   export interface Get extends Response {
     uid: string;
-    record?: number;
-    duration?: number;
-    score?: number;
+    record: number;
+    duration: number;
+    score: number;
   }
 
   export interface Snapshot extends Get {

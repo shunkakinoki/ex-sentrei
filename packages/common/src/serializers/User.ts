@@ -10,8 +10,9 @@ export const serializeUser = (
   return {
     ...data,
     uid: snap.id,
-    duration: data.duration as number,
-    score: data.score as number,
+    duration: (data?.duration as number) || 0,
+    record: (data?.record as number) || 0,
+    score: (data?.score as number) || 0,
   };
 };
 
@@ -23,7 +24,8 @@ export const serializeAdminUser = (
   return {
     ...data,
     uid: snap.id,
-    duration: data.duration as number,
-    score: data.score as number,
+    duration: (data?.duration as number) || 0,
+    record: (data?.record as number) || 0,
+    score: (data?.score as number) || 0,
   };
 };
