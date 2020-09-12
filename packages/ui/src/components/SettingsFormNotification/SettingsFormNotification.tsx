@@ -53,7 +53,9 @@ const SettingsFormNotification = ({
   };
 
   React.useEffect(() => {
-    if (user) setActive(user.notificationSettings[content]);
+    if (user) {
+      setActive(user.notificationSettings[content]);
+    }
   }, [content, user]);
 
   return (

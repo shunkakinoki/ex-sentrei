@@ -44,15 +44,15 @@ const SettingsScreen = ({profile, user}: Props): JSX.Element => {
                 profile={profile}
                 user={user}
                 content="chat"
-                label="Chat"
+                label={t("common:common.chat")}
               />
             </Grid>
             <Grid item xs={12}>
               <SettingsFormNotification
                 profile={profile}
                 user={user}
-                content="invitation"
-                label="Invitation"
+                content="general"
+                label={t("common:common.general")}
               />
             </Grid>
             <Grid item xs={12}>
@@ -60,7 +60,7 @@ const SettingsScreen = ({profile, user}: Props): JSX.Element => {
                 profile={profile}
                 user={user}
                 content="update"
-                label="Update"
+                label={t("common:common.update")}
               />
             </Grid>
           </Grid>
