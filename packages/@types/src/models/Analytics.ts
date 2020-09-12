@@ -1,30 +1,23 @@
-import Metadata from "@sentrei/types/models/Metadata";
+import Actions from "@sentrei/types/models/Actions";
+import Metrics from "@sentrei/types/models/Metrics";
+import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Analytics {
-  export type Fields = {
-    duration: FirebaseFirestore.FieldValue | number;
-    score: FirebaseFirestore.FieldValue | number;
-  };
+  export type Types = "hour" | "day" | "week";
 
-  export type NumberFields = {
-    duration: number;
-    score: number;
-  };
+  interface Fields {
+    actions: Actions.NumberFields;
+    stats: Stats.NumberFields;
+    metrics: Metrics.NumberFields;
+    type: Types;
+  }
+
+  export type Create = Fields;
 
   export type Response = Fields;
 
-  export type NumberResponse = NumberFields;
-
-  export interface Create extends Partial<Fields>, Metadata.Create {}
-
-  export interface Request extends Fields, Metadata.Get {}
-
-  export type Update = Partial<Response>;
-
-  export interface Get extends Response {
+  export interface Get extends Fields {
     id: string;
-    duration: number;
-    score: number;
   }
 
   export interface Snapshot extends Get {
