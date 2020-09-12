@@ -12,7 +12,7 @@ declare namespace Analytics {
   interface Fields extends InitialFields {
     actions: Actions.NumberFields;
     metrics: Metrics.NumberFields;
-    stats: Stats.NumberFields;
+    stats?: Stats.NumberFields;
   }
 
   export interface Response extends Omit<Fields, "type"> {

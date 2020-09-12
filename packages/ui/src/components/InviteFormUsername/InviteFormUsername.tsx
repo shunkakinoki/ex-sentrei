@@ -75,6 +75,7 @@ const InviteFormUsername = ({profile, user, spaceId}: Props): JSX.Element => {
           namespaceId: memberProfile?.namespaceId,
           photo: memberProfile?.photo,
           photoHash: memberProfile.photoHash,
+          record: 0,
           score: 0,
           status: "offline",
           role: "viewer",
