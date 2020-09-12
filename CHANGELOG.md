@@ -1,3 +1,14 @@
+# [1.66.0](https://github.com/sentrei/sentrei/compare/v1.65.0...v1.66.0) (2020-09-12)
+
+### Bug Fixes
+
+- 🐛 small bug fixes ([3028e8b](https://github.com/sentrei/sentrei/commit/3028e8b0b112202c36e605d05cbd0cc30197f2a4))
+
+### Features
+
+- 🎸 ini analytics model ([147956d](https://github.com/sentrei/sentrei/commit/147956de231bd3321ddbd1ebba5f630a9fe1641d))
+- 🎸 rename analytics to metrics ([1bdbe1a](https://github.com/sentrei/sentrei/commit/1bdbe1a77c79f4b78954e8516bb9164b9db8aa85))
+
 # [1.65.0](https://github.com/sentrei/sentrei/compare/v1.64.0...v1.65.0) (2020-09-11)
 
 ### Features
