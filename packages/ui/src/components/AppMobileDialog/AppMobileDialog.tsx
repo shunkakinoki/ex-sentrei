@@ -15,7 +15,7 @@ import * as React from "react";
 
 import signout from "@sentrei/common/services/signout";
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
-import IntlForm from "@sentrei/ui/components/IntlForm";
+import LanguageButton from "@sentrei/ui/components/LanguageButton";
 import MuiMenuItem from "@sentrei/ui/components/MuiMenuItem";
 
 export interface Props {
@@ -93,7 +93,7 @@ export default function AppMobileDialog({
         <ListItemText primary={t("common:common.language")} />
       </MenuItem>
       <ListItem>
-        <IntlForm />
+        <LanguageButton />
       </ListItem>
     </Menu>
   );

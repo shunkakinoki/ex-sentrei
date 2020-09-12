@@ -1,22 +1,28 @@
 import Actions from "@sentrei/types/models/Actions";
+import Metadata from "@sentrei/types/models/Metadata";
 import Metrics from "@sentrei/types/models/Metrics";
 import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Analytics {
   export type Types = "hour" | "day" | "week";
 
-  interface Fields {
-    actions: Actions.NumberFields;
-    stats: Stats.NumberFields;
-    metrics: Metrics.NumberFields;
+  interface InitialFields {
     type: Types;
   }
 
-  export type Create = Fields;
+  interface Fields extends InitialFields {
+    actions: Actions.NumberFields;
+    metrics: Metrics.NumberFields;
+    stats: Stats.NumberFields;
+  }
 
-  export type Response = Fields;
+  export interface Create extends Fields, Metadata.Create {}
 
-  export interface Get extends Fields {
+  export interface Response extends Fields, Metadata.Response {}
+
+  export interface Update extends Fields, Metadata.Update {}
+
+  export interface Get extends Fields, Metadata.Get {
     id: string;
   }
 

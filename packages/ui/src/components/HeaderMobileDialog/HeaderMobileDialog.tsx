@@ -14,7 +14,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
-import IntlForm from "@sentrei/ui/components/IntlForm";
+import LanguageButton from "@sentrei/ui/components/LanguageButton";
 import MuiMenuItem from "@sentrei/ui/components/MuiMenuItem";
 
 export interface Props {
@@ -94,7 +94,7 @@ export default function HeaderMobileDialog({
         <ListItemText primary={t("common:common.language")} />
       </MenuItem>
       <ListItem>
-        <IntlForm />
+        <LanguageButton />
       </ListItem>
     </Menu>
   );

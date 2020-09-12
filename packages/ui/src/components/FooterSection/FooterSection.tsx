@@ -13,7 +13,7 @@ import linkedin from "react-useanimations/lib/linkedin";
 import twitter from "react-useanimations/lib/twitter";
 
 import metomic from "@sentrei/common/services/metomic";
-import IntlForm from "@sentrei/ui/components/IntlForm";
+import LanguageButton from "@sentrei/ui/components/LanguageButton";
 import MuiLink from "@sentrei/ui/components/MuiLink";
 
 export default function FooterSection(): JSX.Element {
@@ -68,7 +68,7 @@ export default function FooterSection(): JSX.Element {
         <Typography variant="h6" gutterBottom>
           {t("footer:footer.preferences")}
         </Typography>
-        <IntlForm />
+        <LanguageButton />
       </Grid>
       <Grid item xs={12} sm={3} md={2}>
         <Typography variant="h6" gutterBottom>
