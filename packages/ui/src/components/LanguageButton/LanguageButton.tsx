@@ -6,13 +6,16 @@ import useTranslation from "next-translate/useTranslation";
 import {useRouter} from "next/router";
 import * as React from "react";
 
+import AuthContext from "@sentrei/common/context/AuthContext";
+import {updateUser} from "@sentrei/common/firebase/users";
 import {trackEvent} from "@sentrei/common/utils/segment";
-
 import User from "@sentrei/types/models/User";
 
 export default function LanguageButton(): JSX.Element {
   const router = useRouter();
   const {lang} = useTranslation();
+
+  const {user} = React.useContext(AuthContext);
 
   const [period] = React.useState<User.Language>(lang as User.Language);
 
@@ -31,11 +34,15 @@ export default function LanguageButton(): JSX.Element {
   };
 
   const handleChange = (event: React.ChangeEvent<{value: unknown}>): void => {
+    const language = event.target.value as User.Language;
     if ((event.target.value as User.Language) !== lang) {
       Router.pushI18n({
         url: pathnameNoLang(),
         options: {lang: event.target.value},
       });
+    }
+    if (user) {
+      updateUser({language}, user.uid);
     }
     trackEvent("Change Language", {lang: event.target.value as User.Language});
   };

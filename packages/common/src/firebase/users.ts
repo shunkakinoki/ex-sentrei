@@ -35,6 +35,13 @@ export const getUserLive = (
     });
 };
 
+export const updateUser = (
+  user: User.Update,
+  userId: string,
+): Promise<void> => {
+  return db.doc(`users//${userId}`).update(user);
+};
+
 export const updateNotificationSettings = (
   userId: string,
   field: Notification.Type,
