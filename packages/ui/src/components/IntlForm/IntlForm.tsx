@@ -6,6 +6,8 @@ import useTranslation from "next-translate/useTranslation";
 import {useRouter} from "next/router";
 import * as React from "react";
 
+import {trackEvent} from "@sentrei/common/utils/segment";
+
 import User from "@sentrei/types/models/User";
 
 export default function IntlForm(): JSX.Element {
@@ -35,6 +37,7 @@ export default function IntlForm(): JSX.Element {
         options: {lang: event.target.value},
       });
     }
+    trackEvent("Change Language", {lang: event.target.value as User.Language});
   };
 
   return (
