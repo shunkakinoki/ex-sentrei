@@ -1,3 +1,10 @@
+# [1.68.0](https://github.com/sentrei/sentrei/compare/v1.67.1...v1.68.0) (2020-09-12)
+
+### Features
+
+- 🎸 ini record field ([8bf5c7a](https://github.com/sentrei/sentrei/commit/8bf5c7ad4121351ed2ab59b7495c96b076749b47))
+- 🎸 refactor analyics model ([516c7bd](https://github.com/sentrei/sentrei/commit/516c7bd36d7cc2f2901d9227ef6d83843d4bd80d))
+
 ## [1.67.1](https://github.com/sentrei/sentrei/compare/v1.67.0...v1.67.1) (2020-09-12)
 
 ### Performance Improvements
