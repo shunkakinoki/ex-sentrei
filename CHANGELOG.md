@@ -1,3 +1,10 @@
+## [1.71.3](https://github.com/sentrei/sentrei/compare/v1.71.2...v1.71.3) (2020-09-13)
+
+### Performance Improvements
+
+- ⚡️ ini analytics room ([823a937](https://github.com/sentrei/sentrei/commit/823a937fa79a0cb46e6a0a95f4c61cc0d18e68eb))
+- ⚡️ refactor stats model ([12460aa](https://github.com/sentrei/sentrei/commit/12460aa8c8de34eef6a68fcc8a1619935ecc3d7d))
+
 ## [1.71.2](https://github.com/sentrei/sentrei/compare/v1.71.1...v1.71.2) (2020-09-13)
 
 ### Performance Improvements
