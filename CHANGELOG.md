@@ -1,3 +1,14 @@
+# [1.71.0](https://github.com/sentrei/sentrei/compare/v1.70.0...v1.71.0) (2020-09-13)
+
+### Features
+
+- 🎸 migrate type2model ([97d06a9](https://github.com/sentrei/sentrei/commit/97d06a91020df1aef2b5297259489402fd3b55e6))
+- 🎸 refactor field type w/ model ([30513c7](https://github.com/sentrei/sentrei/commit/30513c7cb185231ed8842e66a8a3a8c81df52009))
+
+### Performance Improvements
+
+- ⚡️ refactor session roomSid ([c9bf9ae](https://github.com/sentrei/sentrei/commit/c9bf9ae71ffc4f94403719ce4a25b7688a289cda))
+
 # [1.70.0](https://github.com/sentrei/sentrei/compare/v1.69.0...v1.70.0) (2020-09-12)
 
 ### Features
