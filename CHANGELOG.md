@@ -1,3 +1,12 @@
+## [1.71.2](https://github.com/sentrei/sentrei/compare/v1.71.1...v1.71.2) (2020-09-13)
+
+### Performance Improvements
+
+- ⚡️ ini roomId activity ([9f85e1f](https://github.com/sentrei/sentrei/commit/9f85e1f4c8b44c895fd94529ffd486a0b9efb627))
+- ⚡️ refactor analytics time to period ([03ea2db](https://github.com/sentrei/sentrei/commit/03ea2db21375d96dd3eed563b45399c6523c3e6d))
+- ⚡️ refactor metrics duration ([ad8e281](https://github.com/sentrei/sentrei/commit/ad8e28118baf16a0f1249bccbb1f6334d122a0f9))
+- ⚡️ refactor metrics model ([2f3c34d](https://github.com/sentrei/sentrei/commit/2f3c34da2c365bd8514ce3420ae32817b43ef77e))
+
 ## [1.71.1](https://github.com/sentrei/sentrei/compare/v1.71.0...v1.71.1) (2020-09-13)
 
 ### Performance Improvements
