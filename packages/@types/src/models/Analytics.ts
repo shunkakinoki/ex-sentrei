@@ -3,7 +3,7 @@ import Metrics from "@sentrei/types/models/Metrics";
 import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Analytics {
-  export type Models = "member" | "root" | "space" | "user";
+  export type Models = "root" | "member" | "room" | "space" | "user";
   export type Period = "latest" | "hour" | "day" | "week";
 
   interface InitialFields {
