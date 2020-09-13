@@ -1,37 +1,56 @@
 export type RootCollection =
+  | "activity"
   | "analytics"
   | "feedback"
-  | "profiles"
-  | "notifications"
-  | "spaces"
   | "namespaces"
+  | "notifications"
+  | "profiles"
+  | "rooms"
+  | "sessions"
+  | "spaces"
   | "users";
 
 export const rootCollection: RootCollection[] = [
+  "activity",
   "analytics",
   "feedback",
-  "profiles",
-  "notifications",
-  "spaces",
   "namespaces",
+  "notifications",
+  "profiles",
+  "rooms",
+  "sessions",
+  "spaces",
   "users",
 ];
 
-export type RoomCollection = "analytics" | "participants" | "sessions";
+export type RoomCollection =
+  | "activity"
+  | "analytics"
+  | "participants"
+  | "sessions";
 
 export const roomCollection: RoomCollection[] = [
+  "activity",
   "analytics",
   "participants",
   "sessions",
 ];
 
-export type SpaceCollection = "activity" | "invites" | "members" | "rooms";
+export type SpaceCollection =
+  | "activity"
+  | "analytics"
+  | "invites"
+  | "members"
+  | "rooms"
+  | "sessions";
 
 export const spaceCollection: SpaceCollection[] = [
   "activity",
+  "analytics",
   "invites",
   "members",
   "rooms",
+  "sessions",
 ];
 
 export type RoomSpaceCollection = RoomCollection | SpaceCollection;
