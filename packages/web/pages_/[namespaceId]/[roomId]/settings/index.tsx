@@ -41,7 +41,7 @@ const Settings: NextPage = () => {
           skeleton
           profile={profile ?? undefined}
           tabRoomKey="settings"
-          type="room"
+          model="room"
           namespaceId={String(query.namespaceId)}
           roomId={String(query.roomId)}
         />
@@ -55,7 +55,7 @@ const Settings: NextPage = () => {
         <SentreiAppHeader
           skeleton
           tabRoomKey="settings"
-          type="room"
+          model="room"
           namespaceId={String(query.namespaceId)}
           roomId={String(query.roomId)}
         />
@@ -73,7 +73,7 @@ const Settings: NextPage = () => {
         roomId={String(query.roomId)}
         userId={user.uid}
         tabRoomKey="settings"
-        type="room"
+        model="room"
       />
       <RoomSettings
         roomId={String(query.roomId)}

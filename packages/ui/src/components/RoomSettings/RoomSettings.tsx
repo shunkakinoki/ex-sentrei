@@ -39,7 +39,7 @@ export default function RoomSettings({
 
   if (room === undefined) {
     return (
-      <GridSettings skeleton tabRoomKey="general" type="room">
+      <GridSettings skeleton tabRoomKey="general" model="room">
         <SkeletonForm />
       </GridSettings>
     );
@@ -54,7 +54,7 @@ export default function RoomSettings({
       namespaceId={namespaceId}
       roomId={roomId}
       tabRoomKey="general"
-      type="room"
+      model="room"
     >
       <RoomSettingsBoard
         role={member?.role || "viewer"}

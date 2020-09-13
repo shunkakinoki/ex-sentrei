@@ -19,7 +19,7 @@ const Login: NextPage = () => {
     <>
       <SentreiHeader landingKey="login" />
       <OneTap user={user} />
-      <AuthScreen type="login" />
+      <AuthScreen model="login" />
     </>
   );
 };

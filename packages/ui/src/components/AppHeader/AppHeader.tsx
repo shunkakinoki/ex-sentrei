@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import {
-  AppTabType,
+  AppTabModel,
   AppTabRoomKey,
   AppTabSpaceKey,
   AppTabUserKey,
@@ -25,7 +25,7 @@ export interface Props {
   tabRoomKey?: AppTabRoomKey;
   tabUserKey?: AppTabUserKey;
   tabSpaceKey?: AppTabSpaceKey;
-  type: AppTabType;
+  model: AppTabModel;
   userId?: string;
 }
 
@@ -39,7 +39,7 @@ export default function AppHeader({
   tabRoomKey,
   tabUserKey,
   tabSpaceKey,
-  type,
+  model,
   userId,
 }: Props): JSX.Element {
   return (
@@ -48,7 +48,7 @@ export default function AppHeader({
         appKey={tabRoomKey || tabUserKey || tabSpaceKey || "home"}
         profile={profile}
         namespaceId={namespaceId}
-        type={type}
+        model={model}
       />
       <Segment />
       <AppBar
@@ -58,13 +58,13 @@ export default function AppHeader({
         namespaceId={namespaceId}
         roomId={roomId}
         notificationCount={notificationCount}
-        type={type}
+        model={model}
       />
       {userId && profile && <StatusSpace userId={userId} profile={profile} />}
-      {type === "room" && skeleton && tabRoomKey && (
+      {model === "room" && skeleton && tabRoomKey && (
         <AppTabRoom skeleton tabKey={tabRoomKey} />
       )}
-      {type === "room" && !skeleton && namespaceId && roomId && tabRoomKey && (
+      {model === "room" && !skeleton && namespaceId && roomId && tabRoomKey && (
         <AppTabRoom
           skeleton={false}
           namespaceId={namespaceId}
@@ -72,20 +72,20 @@ export default function AppHeader({
           tabKey={tabRoomKey}
         />
       )}
-      {type === "space" && skeleton && tabSpaceKey && (
+      {model === "space" && skeleton && tabSpaceKey && (
         <AppTabSpace skeleton tabKey={tabSpaceKey} />
       )}
-      {type === "space" && !skeleton && namespaceId && tabSpaceKey && (
+      {model === "space" && !skeleton && namespaceId && tabSpaceKey && (
         <AppTabSpace
           skeleton={false}
           namespaceId={namespaceId}
           tabKey={tabSpaceKey}
         />
       )}
-      {type === "user" && skeleton && tabUserKey && (
+      {model === "user" && skeleton && tabUserKey && (
         <AppTabUser skeleton tabKey={tabUserKey} />
       )}
-      {type === "user" && !skeleton && tabUserKey && (
+      {model === "user" && !skeleton && tabUserKey && (
         <AppTabUser skeleton={false} tabKey={tabUserKey} />
       )}
     </>

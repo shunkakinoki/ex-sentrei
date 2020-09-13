@@ -43,7 +43,7 @@ const Invite: NextPage = () => {
           skeleton
           profile={profile ?? undefined}
           tabSpaceKey="settings"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
       </>
@@ -56,7 +56,7 @@ const Invite: NextPage = () => {
         <SentreiAppHeader
           skeleton
           tabSpaceKey="settings"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
         <HomeScreen />
@@ -72,7 +72,7 @@ const Invite: NextPage = () => {
         userId={user.uid}
         namespaceId={String(query.namespaceId)}
         tabSpaceKey="settings"
-        type="space"
+        model="space"
       />
       <SpaceInvite
         namespaceId={String(query.namespaceId)}

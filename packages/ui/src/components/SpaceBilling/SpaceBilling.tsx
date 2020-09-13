@@ -34,7 +34,7 @@ export default function SpaceSettings({
 
   if (space === undefined) {
     return (
-      <GridSettings skeleton tabSpaceKey="billing" type="space">
+      <GridSettings skeleton tabSpaceKey="billing" model="space">
         <SkeletonForm />
       </GridSettings>
     );
@@ -45,7 +45,7 @@ export default function SpaceSettings({
   }
 
   return (
-    <GridSettings namespaceId={namespaceId} tabSpaceKey="billing" type="space">
+    <GridSettings namespaceId={namespaceId} tabSpaceKey="billing" model="space">
       <SpaceBillingBoard
         role={member?.role || "viewer"}
         space={space}

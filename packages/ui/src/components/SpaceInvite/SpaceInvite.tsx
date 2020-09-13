@@ -54,7 +54,7 @@ export default function SpaceInvite({
 
   if (space === undefined) {
     return (
-      <GridSettings skeleton tabSpaceKey="invite" type="space">
+      <GridSettings skeleton tabSpaceKey="invite" model="space">
         <SkeletonForm />
       </GridSettings>
     );
@@ -66,7 +66,11 @@ export default function SpaceInvite({
 
   if (space.tier === "free" && space.memberCount >= FreeTier.memberCount) {
     return (
-      <GridSettings namespaceId={namespaceId} tabSpaceKey="invite" type="space">
+      <GridSettings
+        namespaceId={namespaceId}
+        tabSpaceKey="invite"
+        model="space"
+      >
         <BillingDialog
           open
           message={t("billing:billing.free.memberLimit")}
@@ -79,7 +83,7 @@ export default function SpaceInvite({
   }
 
   return (
-    <GridSettings namespaceId={namespaceId} tabSpaceKey="invite" type="space">
+    <GridSettings namespaceId={namespaceId} tabSpaceKey="invite" model="space">
       <SpaceInviteBoard
         profile={profile}
         namespaceId={namespaceId}

@@ -41,7 +41,7 @@ const Billing: NextPage = () => {
           skeleton
           profile={profile ?? undefined}
           tabSpaceKey="settings"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
       </>
@@ -54,7 +54,7 @@ const Billing: NextPage = () => {
         <SentreiAppHeader
           skeleton
           tabSpaceKey="settings"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
         <HomeScreen />
@@ -70,7 +70,7 @@ const Billing: NextPage = () => {
         userId={user.uid}
         namespaceId={String(query.namespaceId)}
         tabSpaceKey="settings"
-        type="space"
+        model="space"
       />
       <SpaceBilling
         namespaceId={String(query.namespaceId)}

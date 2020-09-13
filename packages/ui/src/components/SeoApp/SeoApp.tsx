@@ -3,7 +3,7 @@ import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import {
-  AppTabType,
+  AppTabModel,
   AppTabRoomKey,
   AppTabSpaceKey,
   AppTabUserKey,
@@ -14,14 +14,14 @@ export interface Props {
   profile?: Profile.Get;
   namespaceId?: string;
   appKey: AppTabRoomKey | AppTabUserKey | AppTabSpaceKey;
-  type: AppTabType;
+  model: AppTabModel;
 }
 
 export default function SeoApp({
   profile,
   namespaceId,
   appKey,
-  type,
+  model,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
@@ -29,7 +29,7 @@ export default function SeoApp({
     <NextSeo
       nofollow
       noindex
-      title={t(`seo:${type}.${appKey}`)}
+      title={t(`seo:${model}.${appKey}`)}
       titleTemplate={`${namespaceId || profile?.name || "Sentrei"} - %s`}
     />
   );

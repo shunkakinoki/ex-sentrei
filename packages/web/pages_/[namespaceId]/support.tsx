@@ -36,7 +36,7 @@ const Support: NextPage = () => {
         <SentreiAppHeader
           skeleton
           profile={profile ?? undefined}
-          type="user"
+          model="user"
           namespaceId={String(query.namespaceId)}
         />
         <SkeletonForm />
@@ -49,7 +49,7 @@ const Support: NextPage = () => {
       <>
         <SentreiAppHeader
           skeleton
-          type="user"
+          model="user"
           namespaceId={String(query.namespaceId)}
         />
         <HomeScreen />

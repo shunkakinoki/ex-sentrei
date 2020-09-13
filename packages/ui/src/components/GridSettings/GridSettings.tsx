@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import * as React from "react";
 
 import {
-  SettingsTabType,
+  SettingsTabModel,
   SettingsRoomTabKey,
   SettingsSpaceTabKey,
 } from "@sentrei/types/models/SettingsTab";
@@ -17,7 +17,7 @@ export interface Props {
   roomId?: string;
   tabRoomKey?: SettingsRoomTabKey;
   tabSpaceKey?: SettingsSpaceTabKey;
-  type: SettingsTabType;
+  model: SettingsTabModel;
 }
 
 const GridSettings = ({
@@ -27,16 +27,16 @@ const GridSettings = ({
   roomId,
   tabRoomKey,
   tabSpaceKey,
-  type,
+  model,
 }: Props): JSX.Element => {
   return (
     <Container maxWidth="md">
       <Grid container justify="center" direction="row" spacing={1}>
         <Grid item xs={12} sm={3} md={2}>
-          {type === "room" && skeleton && tabRoomKey && (
+          {model === "room" && skeleton && tabRoomKey && (
             <GridSettingsRoomButton skeleton tabKey={tabRoomKey} />
           )}
-          {type === "room" &&
+          {model === "room" &&
             !skeleton &&
             namespaceId &&
             roomId &&
@@ -48,10 +48,10 @@ const GridSettings = ({
                 tabKey={tabRoomKey}
               />
             )}
-          {type === "space" && skeleton && tabSpaceKey && (
+          {model === "space" && skeleton && tabSpaceKey && (
             <GridSettingsSpaceButton skeleton tabKey={tabSpaceKey} />
           )}
-          {type === "space" && !skeleton && namespaceId && tabSpaceKey && (
+          {model === "space" && !skeleton && namespaceId && tabSpaceKey && (
             <GridSettingsSpaceButton
               skeleton={false}
               namespaceId={namespaceId}

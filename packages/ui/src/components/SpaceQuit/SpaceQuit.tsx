@@ -34,7 +34,7 @@ export default function SpaceQuit({
 
   if (space === undefined) {
     return (
-      <GridSettings skeleton tabSpaceKey="quit" type="space">
+      <GridSettings skeleton tabSpaceKey="quit" model="space">
         <SkeletonForm />
       </GridSettings>
     );
@@ -45,7 +45,7 @@ export default function SpaceQuit({
   }
 
   return (
-    <GridSettings namespaceId={namespaceId} tabSpaceKey="quit" type="space">
+    <GridSettings namespaceId={namespaceId} tabSpaceKey="quit" model="space">
       <SpaceQuitBoard
         role={member?.role || "viewer"}
         namespaceId={namespaceId}
