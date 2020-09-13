@@ -17,10 +17,10 @@ declare namespace Metrics {
   export type NumberFields = {
     duration?: number;
     member?: {
-      [x in Room.Types]?: number;
+      [x in Room.Types | "duration"]?: number;
     };
     room?: {
-      [x in Room.Types]?: number;
+      [x in Room.Types | "duration"]?: number;
     };
     record?: number;
     score?: number;
@@ -40,10 +40,10 @@ declare namespace Metrics {
     id: string;
     duration?: number;
     member?: {
-      [x in Room.Types]?: number;
+      [x in Room.Types | "duration"]?: number;
     };
     room?: {
-      [x in Room.Types]?: number;
+      [x in Room.Types | "duration"]?: number;
     };
     record?: number;
     score?: number;
