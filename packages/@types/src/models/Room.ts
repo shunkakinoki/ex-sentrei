@@ -13,6 +13,7 @@ declare namespace Room {
 
   interface Fields extends EditableFields {
     participantCount: FirebaseFirestore.FieldValue | number;
+    nameroomId: string;
     spaceId: string;
     type: Types;
   }

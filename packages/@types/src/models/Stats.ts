@@ -41,6 +41,7 @@ export type SpaceCollection =
   | "analytics"
   | "invites"
   | "members"
+  | "namerooms"
   | "rooms"
   | "sessions";
 
@@ -49,6 +50,7 @@ export const spaceCollection: SpaceCollection[] = [
   "analytics",
   "invites",
   "members",
+  "namerooms",
   "rooms",
   "sessions",
 ];
