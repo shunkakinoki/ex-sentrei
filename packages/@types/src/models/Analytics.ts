@@ -21,15 +21,15 @@ declare namespace Analytics {
     updatedAt: firebase.firestore.FieldValue;
   }
 
-  export interface Response extends Omit<Fields, "type"> {
+  export interface Response extends Omit<Fields, "time"> {
     updatedAt: firebase.firestore.Timestamp;
   }
 
-  export interface Update extends Omit<Fields, "type"> {
+  export interface Update extends Omit<Fields, "time"> {
     updatedAt: firebase.firestore.FieldValue;
   }
 
-  export interface Get extends Omit<Fields, "type"> {
+  export interface Get extends Omit<Fields, "time"> {
     id: string;
     updatedAt: string;
   }
