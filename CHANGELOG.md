@@ -1,3 +1,10 @@
+# [1.72.0](https://github.com/sentrei/sentrei/compare/v1.71.3...v1.72.0) (2020-09-13)
+
+### Features
+
+- 🎸 complete refactor stats ([209eb60](https://github.com/sentrei/sentrei/commit/209eb604fb71e82e10e4c08fca4ac9d6924e7373))
+- 🎸 refactor metrics model ([0756df2](https://github.com/sentrei/sentrei/commit/0756df20e32bbd33077de152d8d3b60540d7a66e))
+
 ## [1.71.3](https://github.com/sentrei/sentrei/compare/v1.71.2...v1.71.3) (2020-09-13)
 
 ### Performance Improvements
