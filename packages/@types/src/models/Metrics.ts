@@ -5,10 +5,10 @@ declare namespace Metrics {
   export type Fields = {
     duration?: FirebaseFirestore.FieldValue | number;
     durationMember?: {
-      [x in Room.Types]?: FirebaseFirestore.FieldValue | number;
+      [x in Room.Types | "duration"]?: FirebaseFirestore.FieldValue | number;
     };
     durationRoom?: {
-      [x in Room.Types]?: FirebaseFirestore.FieldValue | number;
+      [x in Room.Types | "duration"]?: FirebaseFirestore.FieldValue | number;
     };
     record?: FirebaseFirestore.FieldValue | number;
     score?: FirebaseFirestore.FieldValue | number;
