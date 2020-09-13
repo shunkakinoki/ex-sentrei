@@ -1,3 +1,14 @@
+# [1.73.0](https://github.com/sentrei/sentrei/compare/v1.72.0...v1.73.0) (2020-09-13)
+
+### Features
+
+- 🎸 refactor room types ([2663d58](https://github.com/sentrei/sentrei/commit/2663d589526c9cafaaf8a12f54fdde0020430716))
+
+### Performance Improvements
+
+- ⚡️ refacotr metrics model ([997020a](https://github.com/sentrei/sentrei/commit/997020a7b4782a06078618e06dff0a5673517758))
+- ⚡️ refactor participant model ([783f9fb](https://github.com/sentrei/sentrei/commit/783f9fbb1a670c029fd21ad6b0e86956f5c6d348))
+
 # [1.72.0](https://github.com/sentrei/sentrei/compare/v1.71.3...v1.72.0) (2020-09-13)
 
 ### Features
