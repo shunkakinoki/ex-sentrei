@@ -4,11 +4,11 @@ import Stats from "@sentrei/types/models/Stats";
 
 declare namespace Analytics {
   export type Models = "member" | "root" | "space" | "user";
-  export type Time = "latest" | "hour" | "day" | "week";
+  export type Period = "latest" | "hour" | "day" | "week";
 
   interface InitialFields {
     model: Models;
-    time: Time;
+    period: Period;
   }
 
   interface Fields extends InitialFields {
