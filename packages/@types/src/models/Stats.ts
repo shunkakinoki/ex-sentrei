@@ -1,4 +1,5 @@
 export type RootCollection =
+  | "analytics"
   | "feedback"
   | "profiles"
   | "notifications"
@@ -7,6 +8,7 @@ export type RootCollection =
   | "users";
 
 export const rootCollection: RootCollection[] = [
+  "analytics",
   "feedback",
   "profiles",
   "notifications",
