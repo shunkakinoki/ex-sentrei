@@ -4,10 +4,10 @@ import Room from "@sentrei/types/models/Room";
 declare namespace Metrics {
   export type Fields = {
     duration?: FirebaseFirestore.FieldValue | number;
-    durationMember?: {
+    member?: {
       [x in Room.Types | "duration"]?: FirebaseFirestore.FieldValue | number;
     };
-    durationRoom?: {
+    room?: {
       [x in Room.Types | "duration"]?: FirebaseFirestore.FieldValue | number;
     };
     record?: FirebaseFirestore.FieldValue | number;
@@ -16,10 +16,10 @@ declare namespace Metrics {
 
   export type NumberFields = {
     duration?: number;
-    durationMember?: {
+    member?: {
       [x in Room.Types]?: number;
     };
-    durationRoom?: {
+    room?: {
       [x in Room.Types]?: number;
     };
     record?: number;
@@ -39,10 +39,10 @@ declare namespace Metrics {
   export interface Get extends Response {
     id: string;
     duration?: number;
-    durationMember?: {
+    member?: {
       [x in Room.Types]?: number;
     };
-    durationRoom?: {
+    room?: {
       [x in Room.Types]?: number;
     };
     record?: number;
