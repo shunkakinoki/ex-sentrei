@@ -1,7 +1,7 @@
 import Metadata from "@sentrei/types/models/Metadata";
 
 declare namespace Room {
-  export type Types = "breakout" | "focus";
+  export type Types = "bond" | "focus" | "work";
 
   export type EditableFields = {
     description: string | null;
