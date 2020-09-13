@@ -6,6 +6,7 @@ declare namespace Session {
 
   interface Fields {
     duration: FirebaseFirestore.FieldValue | number;
+    room: Room.Fields;
     roomId: string;
     roomSid: string;
     spaceId: string;
@@ -15,10 +16,13 @@ declare namespace Session {
 
   export interface Create extends Fields, Metadata.Create {}
 
-  export interface Response extends Fields, Metadata.Response {}
+  export interface Response extends Fields, Metadata.Response {
+    room: Room.Response;
+  }
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
+    room: Room.Get;
   }
 
   export interface Snapshot extends Get {
