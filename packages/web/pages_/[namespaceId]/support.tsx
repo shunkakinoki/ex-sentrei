@@ -5,7 +5,7 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
-import {NamespaceType} from "@sentrei/types/models/Namespace";
+import {NamespaceModel} from "@sentrei/types/models/Namespace";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SupportScreen from "@sentrei/ui/components/SupportScreen";
@@ -15,19 +15,19 @@ const Support: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
-  const [type, setType] = React.useState<NamespaceType | null | undefined>(
+  const [model, setModel] = React.useState<NamespaceModel | null | undefined>(
     "user",
   );
 
   React.useEffect(() => {
-    async function setNamespaceType(): Promise<void> {
+    async function setNamespaceModel(): Promise<void> {
       const namespace = await getNamespace(String(query.namespaceId));
       if (!namespace) {
         return;
       }
-      setType(namespace.model);
+      setModel(namespace.model);
     }
-    setNamespaceType();
+    setNamespaceModel();
   }, [query.namespaceId]);
 
   if (user === undefined) {
@@ -44,7 +44,7 @@ const Support: NextPage = () => {
     );
   }
 
-  if (!user || !profile || !type) {
+  if (!user || !profile || !model) {
     return (
       <>
         <SentreiAppHeader
@@ -64,7 +64,7 @@ const Support: NextPage = () => {
         profile={profile}
         userId={user.uid}
         namespaceId={String(query.namespaceId)}
-        type={type}
+        model={model}
       />
       <SupportScreen email={user.email} name={profile.name} userId={user.uid} />
     </>
