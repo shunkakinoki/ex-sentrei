@@ -23,34 +23,17 @@ export const rootCollection: RootCollection[] = [
   "users",
 ];
 
-export type RoomCollection =
-  | "activity"
-  | "analytics"
-  | "participants"
-  | "sessions";
+export type RoomCollection = "analytics" | "participants";
 
-export const roomCollection: RoomCollection[] = [
-  "activity",
-  "analytics",
-  "participants",
-  "sessions",
-];
+export const roomCollection: RoomCollection[] = ["analytics", "participants"];
 
-export type SpaceCollection =
-  | "activity"
-  | "analytics"
-  | "invites"
-  | "members"
-  | "rooms"
-  | "sessions";
+export type SpaceCollection = "analytics" | "invites" | "members" | "rooms";
 
 export const spaceCollection: SpaceCollection[] = [
-  "activity",
   "analytics",
   "invites",
   "members",
   "rooms",
-  "sessions",
 ];
 
 export type RoomSpaceCollection = RoomCollection | SpaceCollection;
