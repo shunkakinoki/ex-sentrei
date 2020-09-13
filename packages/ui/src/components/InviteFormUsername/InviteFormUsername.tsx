@@ -6,7 +6,7 @@ import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
-import {userEmoji} from "@sentrei/common/const/emoji";
+import {memberEmoji} from "@sentrei/common/const/emoji";
 import {createMember} from "@sentrei/common/firebase/members";
 import {
   validateNamespace,
@@ -70,7 +70,7 @@ const InviteFormUsername = ({profile, user, spaceId}: Props): JSX.Element => {
           createdByUid: user.uid,
           description: "",
           duration: 0,
-          emoji: userEmoji(),
+          emoji: memberEmoji(),
           name: memberProfile?.name,
           namespaceId: memberProfile?.namespaceId,
           photo: memberProfile?.photo,
