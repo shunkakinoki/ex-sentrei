@@ -1,3 +1,9 @@
+## [1.71.1](https://github.com/sentrei/sentrei/compare/v1.71.0...v1.71.1) (2020-09-13)
+
+### Performance Improvements
+
+- ⚡️ refactor time field for analytics ([791857f](https://github.com/sentrei/sentrei/commit/791857fd3fb778279dd5e3a02de4be1ad14b5224))
+
 # [1.71.0](https://github.com/sentrei/sentrei/compare/v1.70.0...v1.71.0) (2020-09-13)
 
 ### Features
