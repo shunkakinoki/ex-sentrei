@@ -15,23 +15,21 @@ export const rootCollection: RootCollection[] = [
   "users",
 ];
 
-export type RoomCollection = "participants";
+export type RoomCollection = "analytics" | "participants" | "sessions";
 
-export const roomCollection: RoomCollection[] = ["participants"];
+export const roomCollection: RoomCollection[] = [
+  "analytics",
+  "participants",
+  "sessions",
+];
 
-export type SpaceCollection =
-  | "activity"
-  | "invites"
-  | "members"
-  | "rooms"
-  | "sessions";
+export type SpaceCollection = "activity" | "invites" | "members" | "rooms";
 
 export const spaceCollection: SpaceCollection[] = [
   "activity",
   "invites",
   "members",
   "rooms",
-  "sessions",
 ];
 
 export type RoomSpaceCollection = RoomCollection | SpaceCollection;
