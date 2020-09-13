@@ -1,3 +1,15 @@
+# [1.70.0](https://github.com/sentrei/sentrei/compare/v1.69.0...v1.70.0) (2020-09-12)
+
+### Features
+
+- 🎸 upgrade metric and session type ([be4c6ff](https://github.com/sentrei/sentrei/commit/be4c6ff120c9b3faac16f73a856fffc391799043))
+
+### Performance Improvements
+
+- ⚡️ ini analytics create ([96fd6f0](https://github.com/sentrei/sentrei/commit/96fd6f095fb95a2b2e907ef8b17dc56bada02706))
+- ⚡️ refactor analytics model ([1bfec74](https://github.com/sentrei/sentrei/commit/1bfec74fa9afd425a7e15002791d16461eefd4f8))
+- ⚡️ refactor analytics type ([0498ce0](https://github.com/sentrei/sentrei/commit/0498ce0b0fa3df9aa0e88acb0f2b466fa52fb85c))
+
 # [1.69.0](https://github.com/sentrei/sentrei/compare/v1.68.0...v1.69.0) (2020-09-12)
 
 ### Features
