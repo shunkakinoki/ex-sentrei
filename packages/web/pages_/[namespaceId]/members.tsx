@@ -25,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
   const namespaceId = String(params?.namespaceId);
   const namespace = await getAdminNamespace(namespaceId);
-  if (!namespace || namespace.type === "user") {
+  if (!namespace || namespace.model === "user") {
     return {
       props: {
         spaceId: null,
@@ -65,7 +65,7 @@ const Members = ({
           skeleton
           profile={profile ?? undefined}
           tabSpaceKey="members"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
         <SkeletonList />
@@ -79,7 +79,7 @@ const Members = ({
         <SentreiAppHeader
           skeleton
           tabSpaceKey="members"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
         <HomeScreen />
@@ -95,7 +95,7 @@ const Members = ({
         userId={user.uid}
         namespaceId={String(query.namespaceId)}
         tabSpaceKey="members"
-        type="space"
+        model="space"
       />
       <SpaceMember
         spaceId={JSON.parse(spaceId) as string}

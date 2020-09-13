@@ -24,7 +24,7 @@ const Dashboard: NextPage = () => {
           skeleton
           profile={profile ?? undefined}
           tabUserKey="dashboard"
-          type="user"
+          model="user"
         />
         <SkeletonScreen />
       </>
@@ -34,7 +34,7 @@ const Dashboard: NextPage = () => {
   if (!user || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton tabUserKey="dashboard" type="user" />
+        <SentreiAppHeader skeleton tabUserKey="dashboard" model="user" />
         <HomeScreen />
       </>
     );
@@ -47,7 +47,7 @@ const Dashboard: NextPage = () => {
         profile={profile}
         userId={user.uid}
         tabUserKey="dashboard"
-        type="user"
+        model="user"
       />
       <SpaceDashboard userId={user.uid} />
     </>

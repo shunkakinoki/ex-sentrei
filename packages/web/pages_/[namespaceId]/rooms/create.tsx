@@ -23,7 +23,7 @@ const Create: NextPage = () => {
   React.useEffect(() => {
     async function setSpace(): Promise<void> {
       const namespace = await getNamespace(String(query.namespaceId));
-      if (!namespace || namespace.type === "user") {
+      if (!namespace || namespace.model === "user") {
         return;
       }
       setSpaceId(namespace.uid);
@@ -38,7 +38,7 @@ const Create: NextPage = () => {
           skeleton
           profile={profile ?? undefined}
           tabSpaceKey="rooms"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
       </>
@@ -51,7 +51,7 @@ const Create: NextPage = () => {
         <SentreiAppHeader
           skeleton
           tabSpaceKey="rooms"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
         <HomeScreen />
@@ -67,7 +67,7 @@ const Create: NextPage = () => {
         userId={user.uid}
         namespaceId={String(query.namespaceId)}
         tabSpaceKey="rooms"
-        type="space"
+        model="space"
       />
       <RoomCreate
         spaceId={spaceId}

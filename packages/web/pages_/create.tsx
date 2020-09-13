@@ -25,7 +25,7 @@ const Create: NextPage = () => {
           skeleton
           profile={profile ?? undefined}
           tabUserKey="create"
-          type="user"
+          model="user"
         />
         <SkeletonForm />
       </>
@@ -35,7 +35,7 @@ const Create: NextPage = () => {
   if (!user || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton tabUserKey="create" type="user" />
+        <SentreiAppHeader skeleton tabUserKey="create" model="user" />
         <HomeScreen />
       </>
     );
@@ -48,7 +48,7 @@ const Create: NextPage = () => {
         profile={profile}
         userId={user.uid}
         tabUserKey="create"
-        type="user"
+        model="user"
       />
       <SpaceCreate profile={profile} user={user} />
     </>

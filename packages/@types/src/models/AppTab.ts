@@ -16,4 +16,4 @@ export type AppTabUserKey =
   | "notifications"
   | "settings";
 
-export type AppTabType = "room" | "space" | "user";
+export type AppTabModel = "room" | "space" | "user";

@@ -24,7 +24,7 @@ const Notifications: NextPage = () => {
           skeleton
           profile={profile ?? undefined}
           tabUserKey="notifications"
-          type="user"
+          model="user"
         />
         <SkeletonForm />
       </>
@@ -34,7 +34,7 @@ const Notifications: NextPage = () => {
   if (!user || !profile) {
     return (
       <>
-        <SentreiAppHeader skeleton tabUserKey="notifications" type="user" />
+        <SentreiAppHeader skeleton tabUserKey="notifications" model="user" />
         <HomeScreen />
       </>
     );
@@ -47,7 +47,7 @@ const Notifications: NextPage = () => {
         profile={profile}
         userId={user.uid}
         tabUserKey="notifications"
-        type="user"
+        model="user"
       />
       <NotificationScreen user={user} />
     </>

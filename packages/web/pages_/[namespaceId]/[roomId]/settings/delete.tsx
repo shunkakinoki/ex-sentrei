@@ -23,7 +23,7 @@ const Delete: NextPage = () => {
   React.useEffect(() => {
     async function setSpace(): Promise<void> {
       const namespace = await getNamespace(String(query.namespaceId));
-      if (!namespace || namespace.type === "user") {
+      if (!namespace || namespace.model === "user") {
         return;
       }
       setSpaceId(namespace.uid);
@@ -38,7 +38,7 @@ const Delete: NextPage = () => {
           skeleton
           profile={profile ?? undefined}
           tabRoomKey="settings"
-          type="room"
+          model="room"
           namespaceId={String(query.namespaceId)}
           roomId={String(query.roomId)}
         />
@@ -52,7 +52,7 @@ const Delete: NextPage = () => {
         <SentreiAppHeader
           skeleton
           tabRoomKey="settings"
-          type="room"
+          model="room"
           namespaceId={String(query.namespaceId)}
           roomId={String(query.roomId)}
         />
@@ -70,7 +70,7 @@ const Delete: NextPage = () => {
         roomId={String(query.roomId)}
         userId={user.uid}
         tabRoomKey="settings"
-        type="room"
+        model="room"
       />
       <RoomDelete
         roomId={String(query.roomId)}

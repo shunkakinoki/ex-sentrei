@@ -36,7 +36,7 @@ export default function RoomQuit({
 
   if (room === undefined) {
     return (
-      <GridSettings skeleton tabRoomKey="quit" type="room">
+      <GridSettings skeleton tabRoomKey="quit" model="room">
         <SkeletonForm />
       </GridSettings>
     );
@@ -51,7 +51,7 @@ export default function RoomQuit({
       namespaceId={namespaceId}
       roomId={roomId}
       tabRoomKey="quit"
-      type="room"
+      model="room"
     >
       <RoomQuitBoard
         role={member?.role || "viewer"}

@@ -15,7 +15,7 @@ export default function SentreiAppHeader({
   tabRoomKey,
   tabUserKey,
   tabSpaceKey,
-  type,
+  model,
   userId,
 }: Props): JSX.Element {
   return (
@@ -29,7 +29,7 @@ export default function SentreiAppHeader({
       tabRoomKey={tabRoomKey}
       tabSpaceKey={tabSpaceKey}
       tabUserKey={tabUserKey}
-      type={type}
+      model={model}
       userId={userId}
     />
   );

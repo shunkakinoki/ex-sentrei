@@ -2,12 +2,14 @@ import Metadata from "@sentrei/types/models/Metadata";
 import Room from "@sentrei/types/models/Room";
 
 declare namespace Session {
-  export type Types = "member" | "room";
+  export type Models = "member" | "room";
 
   interface Fields {
     duration: FirebaseFirestore.FieldValue | number;
     roomId: string;
+    roomSid: string;
     spaceId: string;
+    model: Models;
     type: Room.Types;
   }
 

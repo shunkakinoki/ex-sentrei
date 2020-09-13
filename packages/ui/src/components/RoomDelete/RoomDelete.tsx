@@ -35,7 +35,7 @@ export default function RoomDelete({
 
   if (room === undefined) {
     return (
-      <GridSettings skeleton tabRoomKey="delete" type="room">
+      <GridSettings skeleton tabRoomKey="delete" model="room">
         <SkeletonForm />
       </GridSettings>
     );
@@ -50,7 +50,7 @@ export default function RoomDelete({
       namespaceId={namespaceId}
       roomId={roomId}
       tabRoomKey="delete"
-      type="room"
+      model="room"
     >
       <RoomDeleteBoard
         role={member?.role || "viewer"}

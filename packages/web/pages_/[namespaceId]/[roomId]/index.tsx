@@ -21,7 +21,7 @@ const RoomId = (): JSX.Element => {
   React.useEffect(() => {
     async function setSpace(): Promise<void> {
       const namespace = await getNamespace(String(query.namespaceId));
-      if (!namespace || namespace.type === "user") {
+      if (!namespace || namespace.model === "user") {
         return;
       }
       setSpaceId(namespace.uid);
@@ -42,7 +42,7 @@ const RoomId = (): JSX.Element => {
           skeleton
           profile={profile ?? undefined}
           tabRoomKey="home"
-          type="room"
+          model="room"
           namespaceId={String(query.namespaceId)}
           roomId={String(query.roomId)}
         />
@@ -56,7 +56,7 @@ const RoomId = (): JSX.Element => {
         <SentreiAppHeader
           skeleton
           tabRoomKey="home"
-          type="room"
+          model="room"
           namespaceId={String(query.namespaceId)}
           roomId={String(query.roomId)}
         />
@@ -74,7 +74,7 @@ const RoomId = (): JSX.Element => {
         roomId={String(query.roomId)}
         userId={user.uid}
         tabRoomKey="home"
-        type="room"
+        model="room"
       />
     </>
   );

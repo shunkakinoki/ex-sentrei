@@ -23,7 +23,7 @@ const Quit: NextPage = () => {
   React.useEffect(() => {
     async function setSpace(): Promise<void> {
       const namespace = await getNamespace(String(query.namespaceId));
-      if (!namespace || namespace.type === "user") {
+      if (!namespace || namespace.model === "user") {
         return;
       }
       setSpaceId(namespace.uid);
@@ -38,7 +38,7 @@ const Quit: NextPage = () => {
           skeleton
           profile={profile ?? undefined}
           tabSpaceKey="settings"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
       </>
@@ -51,7 +51,7 @@ const Quit: NextPage = () => {
         <SentreiAppHeader
           skeleton
           tabSpaceKey="settings"
-          type="space"
+          model="space"
           namespaceId={String(query.namespaceId)}
         />
         <HomeScreen />
@@ -67,7 +67,7 @@ const Quit: NextPage = () => {
         userId={user.uid}
         namespaceId={String(query.namespaceId)}
         tabSpaceKey="settings"
-        type="space"
+        model="space"
       />
       <SpaceQuit
         namespaceId={String(query.namespaceId)}
