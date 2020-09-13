@@ -57,6 +57,7 @@ const RoomStepperSubmit = ({
         photo: null,
         photoHash: null,
         name: activeForm.name,
+        nameroomId: user.uid,
         spaceId,
         type: activeForm.type,
         updatedAt: timestamp,
