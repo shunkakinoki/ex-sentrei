@@ -9,6 +9,7 @@ import * as React from "react";
 import {useForm} from "react-hook-form";
 import {useRecoilState, RecoilState} from "recoil";
 
+import {InitialRoomColor} from "@sentrei/common/const/color";
 import {roomEmoji} from "@sentrei/common/const/emoji";
 import {createRoom} from "@sentrei/common/firebase/rooms";
 import {timestamp} from "@sentrei/common/utils/firebase";
@@ -58,14 +59,13 @@ const RoomStepperSubmit = ({
     snackbar("info", t("snackbar:snackbar.creating"));
     try {
       await createRoom({
+        color: InitialRoomColor,
         createdAt: timestamp,
         createdBy: profile,
         createdByUid: user.uid,
         description: null,
         emoji: roomEmoji(),
         participantCount: 0,
-        photo: null,
-        photoHash: null,
         name: activeForm.name,
         nameroomId: activeForm.id,
         spaceId,

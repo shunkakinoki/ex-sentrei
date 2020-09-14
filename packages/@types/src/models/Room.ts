@@ -7,8 +7,7 @@ declare namespace Room {
     description: string | null;
     emoji: string;
     name: string;
-    photo: string | null;
-    photoHash: string | null;
+    color: string;
   };
 
   interface Fields extends EditableFields {

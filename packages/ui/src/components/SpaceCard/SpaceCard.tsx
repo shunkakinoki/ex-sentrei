@@ -3,16 +3,16 @@ import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import ShareIcon from "@material-ui/icons/Share";
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import Skeleton from "@material-ui/lab/Skeleton";
-
+import {isBlurhashValid} from "blurhash";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
+import {Blurhash} from "react-blurhash";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 import {getMembers} from "@sentrei/common/firebase/members";
@@ -52,8 +52,16 @@ export default function SpaceCard({space}: Props): JSX.Element {
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
         <MuiAnchor href="/[namespaceId]" as={`/${space.namespaceId}`}>
-          {space.photo ? (
-            <CardMedia className={classes.media} image={space.photo} />
+          {space.photoHash && isBlurhashValid(space.photoHash) ? (
+            <Blurhash
+              hash={space.photoHash}
+              height={1000}
+              width={3000}
+              resolutionX={32}
+              resolutionY={32}
+              punch={0}
+              className={classes.media}
+            />
           ) : (
             <Box className={classes.media} />
           )}
