@@ -97,12 +97,14 @@ export default function AppBar({
           <Breadcrumbs aria-label="breadcrumb">
             <MuiButtonBase
               href={
-                model === "space" && namespaceId
+                (model === "space" && namespaceId) ||
+                (model === "room" && namespaceId)
                   ? "/[namespaceId]"
                   : "/dashboard"
               }
               as={
-                model === "space" && namespaceId
+                (model === "space" && namespaceId) ||
+                (model === "room" && namespaceId)
                   ? `/${namespaceId}`
                   : "/dashboard"
               }
@@ -111,12 +113,14 @@ export default function AppBar({
             </MuiButtonBase>
             <MuiButtonBase
               href={
-                model === "space" && namespaceId
+                (model === "space" && namespaceId) ||
+                (model === "room" && namespaceId)
                   ? "/[namespaceId]"
                   : "/dashboard"
               }
               as={
-                model === "space" && namespaceId
+                (model === "space" && namespaceId) ||
+                (model === "room" && namespaceId)
                   ? `/${namespaceId}`
                   : "/dashboard"
               }
