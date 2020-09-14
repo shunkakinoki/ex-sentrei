@@ -1,3 +1,13 @@
+## [1.73.1](https://github.com/sentrei/sentrei/compare/v1.73.0...v1.73.1) (2020-09-13)
+
+### Performance Improvements
+
+- ⚡️ complete refactor room stepper submit ([c86aaf7](https://github.com/sentrei/sentrei/commit/c86aaf76f3e3d47a775bef2ee1831928c0de6af1))
+- ⚡️ ini nameroom model ([26661ae](https://github.com/sentrei/sentrei/commit/26661ae2340e00cd21315c473c3fe959bacd29d5))
+- ⚡️ ini participant emoji ([c16558b](https://github.com/sentrei/sentrei/commit/c16558be078fd41e4cd1bb184dcbd0462e4a2742))
+- ⚡️ refactor participant model ([26c8fb4](https://github.com/sentrei/sentrei/commit/26c8fb4b80e6281779462b340d13f1822bdfa246))
+- ⚡️ refactor session model ([c5de456](https://github.com/sentrei/sentrei/commit/c5de456b8615469cd54327efa0fe74b145a472cb))
+
 # [1.73.0](https://github.com/sentrei/sentrei/compare/v1.72.0...v1.73.0) (2020-09-13)
 
 ### Features
