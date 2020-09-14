@@ -14,7 +14,7 @@ export interface Props {
   children?: React.ReactNode;
   skeleton?: boolean;
   namespaceId?: string;
-  roomId?: string;
+  nameroomId?: string;
   tabRoomKey?: SettingsRoomTabKey;
   tabSpaceKey?: SettingsSpaceTabKey;
   model: SettingsTabModel;
@@ -24,7 +24,7 @@ const GridSettings = ({
   children,
   skeleton = false,
   namespaceId,
-  roomId,
+  nameroomId,
   tabRoomKey,
   tabSpaceKey,
   model,
@@ -39,12 +39,12 @@ const GridSettings = ({
           {model === "room" &&
             !skeleton &&
             namespaceId &&
-            roomId &&
+            nameroomId &&
             tabRoomKey && (
               <GridSettingsRoomButton
                 skeleton={false}
                 namespaceId={namespaceId}
-                roomId={roomId}
+                nameroomId={nameroomId}
                 tabKey={tabRoomKey}
               />
             )}

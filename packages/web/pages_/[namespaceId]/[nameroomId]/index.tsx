@@ -9,7 +9,7 @@ import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const RoomId = (): JSX.Element => {
+const NameroomId = (): JSX.Element => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
@@ -44,7 +44,7 @@ const RoomId = (): JSX.Element => {
           tabRoomKey="home"
           model="room"
           namespaceId={String(query.namespaceId)}
-          roomId={String(query.roomId)}
+          nameroomId={String(query.nameroomId)}
         />
       </>
     );
@@ -58,7 +58,7 @@ const RoomId = (): JSX.Element => {
           tabRoomKey="home"
           model="room"
           namespaceId={String(query.namespaceId)}
-          roomId={String(query.roomId)}
+          nameroomId={String(query.nameroomId)}
         />
         <HomeScreen />
       </>
@@ -71,7 +71,7 @@ const RoomId = (): JSX.Element => {
         notificationCount={Number(user.notificationCount)}
         profile={profile}
         namespaceId={String(query.namespaceId)}
-        roomId={String(query.roomId)}
+        nameroomId={String(query.nameroomId)}
         userId={user.uid}
         tabRoomKey="home"
         model="room"
@@ -80,4 +80,4 @@ const RoomId = (): JSX.Element => {
   );
 };
 
-export default RoomId;
+export default NameroomId;

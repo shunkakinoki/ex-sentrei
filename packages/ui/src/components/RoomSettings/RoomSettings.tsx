@@ -14,6 +14,7 @@ import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 export interface Props {
   profile: Profile.Get;
   roomId: string;
+  nameroomId: string;
   namespaceId: string;
   user: User.Get;
   spaceId: string;
@@ -22,6 +23,7 @@ export interface Props {
 export default function RoomSettings({
   profile,
   roomId,
+  nameroomId,
   namespaceId,
   user,
   spaceId,
@@ -52,7 +54,7 @@ export default function RoomSettings({
   return (
     <GridSettings
       namespaceId={namespaceId}
-      roomId={roomId}
+      nameroomId={nameroomId}
       tabRoomKey="general"
       model="room"
     >

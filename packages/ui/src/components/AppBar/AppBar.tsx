@@ -29,9 +29,9 @@ export interface Props {
   logo: JSX.Element;
   profile?: Profile.Get;
   notificationCount?: number;
-  roomId?: string;
-  userId?: string;
+  nameroomId?: string;
   namespaceId?: string;
+  userId?: string;
   model?: AppTabModel;
 }
 
@@ -39,9 +39,9 @@ export default function AppBar({
   logo,
   profile,
   notificationCount,
-  roomId,
-  userId,
+  nameroomId,
   namespaceId,
+  userId,
   model,
 }: Props): JSX.Element {
   const classes = AppBarStyles();
@@ -129,12 +129,12 @@ export default function AppBar({
                 <Skeleton width={90} />
               )}
             </MuiButtonBase>
-            {roomId && (
+            {nameroomId && (
               <MuiButtonBase
-                href="/[namespaceId]/[roomId]"
-                as={`/${namespaceId}/${roomId}`}
+                href="/[namespaceId]/[nameroomId]"
+                as={`/${namespaceId}/${nameroomId}`}
               >
-                <Typography display="inline">{roomId}</Typography>
+                <Typography display="inline">{nameroomId}</Typography>
               </MuiButtonBase>
             )}
             <IconButton
