@@ -1,3 +1,9 @@
+## [1.73.2](https://github.com/sentrei/sentrei/compare/v1.73.1...v1.73.2) (2020-09-14)
+
+### Performance Improvements
+
+- ⚡️ ini participant sid ([7b7fe83](https://github.com/sentrei/sentrei/commit/7b7fe83d486a40f1f1acb9620b4898043453e282))
+
 ## [1.73.1](https://github.com/sentrei/sentrei/compare/v1.73.0...v1.73.1) (2020-09-13)
 
 ### Performance Improvements
