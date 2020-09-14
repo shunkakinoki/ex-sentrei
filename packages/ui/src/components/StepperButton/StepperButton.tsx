@@ -1,4 +1,5 @@
 import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -24,14 +25,22 @@ const StepperButton = ({atom, last = 2}: Props): JSX.Element => {
     <>
       <Grid container direction="row" spacing={1}>
         <Grid item xs={3}>
-          <FormButtonSubmit disabled={activeStep === 0} onClick={handleBack}>
+          <Button
+            disabled={activeStep === 0}
+            fullWidth
+            color="primary"
+            onClick={handleBack}
+            variant="outlined"
+          >
             {t("common:common.back")}
-          </FormButtonSubmit>
+          </Button>
         </Grid>
         <Grid item xs={6} />
         <Grid item xs={3}>
           {activeStep !== last && (
-            <FormButtonSubmit>{t("common:common.next")}</FormButtonSubmit>
+            <Button fullWidth color="primary" type="submit" variant="contained">
+              {t("common:common.next")}
+            </Button>
           )}
         </Grid>
       </Grid>
