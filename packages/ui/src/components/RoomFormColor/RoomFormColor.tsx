@@ -22,12 +22,7 @@ export interface Props {
   user: User.Get;
 }
 
-const RoomFormPicture = ({
-  disabled,
-  profile,
-  room,
-  user,
-}: Props): JSX.Element => {
+const RoomFormColor = ({disabled, profile, room, user}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
@@ -80,4 +75,4 @@ const RoomFormPicture = ({
   );
 };
 
-export default RoomFormPicture;
+export default RoomFormColor;
