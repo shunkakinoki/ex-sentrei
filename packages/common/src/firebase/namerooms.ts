@@ -32,7 +32,7 @@ export const getNameroom = async (
   nameroomId: string,
 ): Promise<Nameroom | null> => {
   const snap = await db
-    .doc(`namerooms/${nameroomId}`)
+    .doc(`spaces/${spaceId}/namerooms/${nameroomId}`)
     .withConverter(nameroomConverter)
     .get();
 
