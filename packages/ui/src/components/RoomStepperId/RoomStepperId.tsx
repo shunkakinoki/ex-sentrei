@@ -34,7 +34,7 @@ const RoomStepperId = ({
       .matches(/^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/, t("form:id.idInvalid"))
       .test("id", t("form:id.idAlreadyUsed"), async value => {
         const result = await validateNameroom(spaceId, value || "");
-        return !result;
+        return result;
       }),
   });
 
