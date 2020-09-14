@@ -11,6 +11,7 @@ declare namespace Particpant {
   };
 
   interface Fields extends EditableFields {
+    participantSid: string;
     room: Room.Fields;
     roomId: string;
     spaceId: string;
