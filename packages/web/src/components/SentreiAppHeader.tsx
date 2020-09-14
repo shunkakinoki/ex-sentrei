@@ -11,7 +11,7 @@ export default function SentreiAppHeader({
   profile,
   skeleton,
   namespaceId,
-  roomId,
+  nameroomId,
   tabRoomKey,
   tabUserKey,
   tabSpaceKey,
@@ -25,7 +25,7 @@ export default function SentreiAppHeader({
       profile={profile}
       skeleton={skeleton}
       namespaceId={namespaceId}
-      roomId={roomId}
+      nameroomId={nameroomId}
       tabRoomKey={tabRoomKey}
       tabSpaceKey={tabSpaceKey}
       tabUserKey={tabUserKey}

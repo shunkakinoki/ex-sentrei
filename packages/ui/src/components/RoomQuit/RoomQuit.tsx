@@ -11,15 +11,17 @@ import RoomQuitBoard from "@sentrei/ui/components/RoomQuitBoard";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
-  namespaceId: string;
   roomId: string;
+  namespaceId: string;
+  nameroomId: string;
   user: User.Get;
   spaceId: string;
 }
 
 export default function RoomQuit({
-  namespaceId,
   roomId,
+  namespaceId,
+  nameroomId,
   user,
   spaceId,
 }: Props): JSX.Element {
@@ -49,7 +51,7 @@ export default function RoomQuit({
   return (
     <GridSettings
       namespaceId={namespaceId}
-      roomId={roomId}
+      nameroomId={nameroomId}
       tabRoomKey="quit"
       model="room"
     >

@@ -10,8 +10,8 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
+import RoomFormColor from "@sentrei/ui/components/RoomFormColor";
 import RoomFormName from "@sentrei/ui/components/RoomFormName";
-import RoomFormPicture from "@sentrei/ui/components/RoomFormPicture";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
@@ -48,7 +48,7 @@ const RoomSettingsBoard = ({role, profile, room, user}: Props): JSX.Element => {
           />
         }
         tabPanelTwo={
-          <RoomFormPicture
+          <RoomFormColor
             disabled={role !== "admin"}
             profile={profile}
             room={room}

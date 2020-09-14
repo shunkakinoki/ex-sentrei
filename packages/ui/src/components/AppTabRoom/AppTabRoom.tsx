@@ -16,7 +16,7 @@ interface Props {
   // eslint-disable-next-line react/require-default-props
   namespaceId?: string;
   // eslint-disable-next-line react/require-default-props
-  roomId?: string;
+  nameroomId?: string;
   // eslint-disable-next-line react/require-default-props
   tabKey?: AppTabRoomKey;
 }
@@ -29,7 +29,7 @@ const TabMap = {
 export default function AppTabRoom({
   skeleton = false,
   namespaceId,
-  roomId,
+  nameroomId,
   tabKey = "home",
 }: Props): JSX.Element {
   const classes = AppTabRoomStyles();
@@ -47,16 +47,16 @@ export default function AppTabRoom({
           scrollButtons="auto"
         >
           <AppTabIcon
-            href="/[namespaceId]/[roomId]"
-            as={`/${namespaceId}/${roomId}`}
+            href="/[namespaceId]/[nameroomId]"
+            as={`/${namespaceId}/${nameroomId}`}
             label={t("common:common.room")}
             labelIcon={<VideocamIcon />}
             selected={value === 0}
             skeleton={skeleton}
           />
           <AppTabIcon
-            href="/[namespaceId]/[roomId]/settings"
-            as={`/${namespaceId}/${roomId}/settings`}
+            href="/[namespaceId]/[nameroomId]/settings"
+            as={`/${namespaceId}/${nameroomId}/settings`}
             label={t("common:common.settings")}
             labelIcon={<SettingsIcon />}
             selected={value === 1}

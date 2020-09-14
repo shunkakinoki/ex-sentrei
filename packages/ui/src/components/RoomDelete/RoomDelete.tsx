@@ -12,6 +12,7 @@ import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
 export interface Props {
   roomId: string;
+  nameroomId: string;
   namespaceId: string;
   user: User.Get;
   spaceId: string;
@@ -19,12 +20,14 @@ export interface Props {
 
 export default function RoomDelete({
   roomId,
+  nameroomId,
   namespaceId,
   user,
   spaceId,
 }: Props): JSX.Element {
   const [room, setRoom] = React.useState<Room.Get | null | undefined>();
   const [member, setMember] = React.useState<Member.Get | null | undefined>();
+
   React.useEffect(() => {
     getRoom(roomId).then(setRoom);
   }, [roomId]);
@@ -48,7 +51,7 @@ export default function RoomDelete({
   return (
     <GridSettings
       namespaceId={namespaceId}
-      roomId={roomId}
+      nameroomId={nameroomId}
       tabRoomKey="delete"
       model="room"
     >

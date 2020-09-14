@@ -16,13 +16,13 @@ const TabMap = {
 
 export interface Props {
   namespaceId?: string;
-  roomId?: string;
+  nameroomId?: string;
   skeleton?: boolean;
   tabKey: SettingsRoomTabKey;
 }
 export default function GridSettingsRoomTab({
   namespaceId,
-  roomId,
+  nameroomId,
   skeleton = false,
   tabKey,
 }: Props): JSX.Element {
@@ -39,24 +39,24 @@ export default function GridSettingsRoomTab({
       className={classes.tabs}
     >
       <GridSettingsButton
-        href="/[namespaceId]/[roomId]/settings"
-        as={`/${namespaceId}/${roomId}/settings`}
+        href="/[namespaceId]/[nameroomId]/settings"
+        as={`/${namespaceId}/${nameroomId}/settings`}
         selected={value === 0}
         skeleton={skeleton}
       >
         {t("common:common.general")}
       </GridSettingsButton>
       <GridSettingsButton
-        href="/[namespaceId]/[roomId]/settings/quit"
-        as={`/${namespaceId}/${roomId}/settings/quit`}
+        href="/[namespaceId]/[nameroomId]/settings/quit"
+        as={`/${namespaceId}/${nameroomId}/settings/quit`}
         selected={value === 1}
         skeleton={skeleton}
       >
         {t("common:common.quit")}
       </GridSettingsButton>
       <GridSettingsButton
-        href="/[namespaceId]/[roomId]/settings/delete"
-        as={`/${namespaceId}/${roomId}/settings/delete`}
+        href="/[namespaceId]/[nameroomId]/settings/delete"
+        as={`/${namespaceId}/${nameroomId}/settings/delete`}
         selected={value === 2}
         skeleton={skeleton}
       >

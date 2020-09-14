@@ -1,6 +1,5 @@
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import {encode} from "blurhash";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import {CirclePicker, ColorResult} from "react-color";
@@ -23,16 +22,11 @@ export interface Props {
   user: User.Get;
 }
 
-const RoomFormPicture = ({
-  disabled,
-  profile,
-  room,
-  user,
-}: Props): JSX.Element => {
+const RoomFormColor = ({disabled, profile, room, user}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
-  const [color, setColor] = React.useState<string>(room.photo || "#f44336");
+  const [color, setColor] = React.useState<string>(room.color);
   const handleChange = (col: ColorResult): void => setColor(col.hex);
 
   const {handleSubmit} = useForm({
@@ -40,35 +34,12 @@ const RoomFormPicture = ({
     reValidateMode: "onBlur",
   });
 
-  const encodeColorHash = (colorValue: string): string => {
-    const canvas = document.createElement("canvas");
-    canvas.width = 300;
-    canvas.height = 300;
-    const context = canvas.getContext("2d");
-    context?.clearRect(0, 0, canvas.width, canvas.height);
-    if (context) {
-      context.fillStyle = colorValue;
-      context.fillRect(0, 0, canvas.width, canvas.height);
-      context.filter = "blur(3px)";
-      return encode(
-        context.getImageData(0, 0, canvas.width, canvas.height).data,
-        canvas.width,
-        canvas.height,
-        3,
-        3,
-      );
-    }
-    return "";
-  };
-
   const onSubmit = async (): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.editing"));
     try {
-      const hash = encodeColorHash(color);
       await updateRoom(
         {
-          photo: color,
-          photoHash: hash,
+          color,
           updatedAt: timestamp,
           updatedBy: profile,
           updatedByUid: user.uid,
@@ -104,4 +75,4 @@ const RoomFormPicture = ({
   );
 };
 
-export default RoomFormPicture;
+export default RoomFormColor;

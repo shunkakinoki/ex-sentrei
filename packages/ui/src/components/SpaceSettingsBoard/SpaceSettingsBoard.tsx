@@ -52,7 +52,9 @@ const SpaceSettingsBoard = ({
             user={user}
           />
         }
-        tabPanelTwo={<SpaceFormPhoto disabled profile={profile} />}
+        tabPanelTwo={
+          <SpaceFormPhoto disabled profile={profile} space={space} />
+        }
         tabPanelThree={
           <SpaceFormId disabled={role !== "admin"} space={space} />
         }

@@ -5,19 +5,21 @@ import {useRouter} from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
+import {getNameroom} from "@sentrei/common/firebase/namerooms";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const RoomQuit = dynamic(() => import("@sentrei/ui/components/RoomQuit"), {
+const RoomDelete = dynamic(() => import("@sentrei/ui/components/RoomDelete"), {
   ssr: false,
 });
 
-const Quit: NextPage = () => {
+const Delete: NextPage = () => {
   const {query} = useRouter();
 
   const {user, profile} = React.useContext(AuthContext);
+  const [roomId, setRoomId] = React.useState<string | null | undefined>();
   const [spaceId, setSpaceId] = React.useState<string | null | undefined>();
 
   React.useEffect(() => {
@@ -31,7 +33,21 @@ const Quit: NextPage = () => {
     setSpace();
   }, [query.namespaceId]);
 
-  if (user === undefined || spaceId === undefined) {
+  React.useEffect(() => {
+    async function setRoom(): Promise<void> {
+      if (!spaceId) {
+        return;
+      }
+      const nameroom = await getNameroom(spaceId, String(query.nameroomId));
+      if (!nameroom) {
+        return;
+      }
+      setRoomId(nameroom.uid);
+    }
+    setRoom();
+  }, [query.nameroomId, spaceId]);
+
+  if (user === undefined || spaceId === undefined || roomId === undefined) {
     return (
       <>
         <SentreiAppHeader
@@ -40,13 +56,13 @@ const Quit: NextPage = () => {
           tabRoomKey="settings"
           model="room"
           namespaceId={String(query.namespaceId)}
-          roomId={String(query.roomId)}
+          nameroomId={String(query.nameroomId)}
         />
       </>
     );
   }
 
-  if (!user || !profile || !spaceId) {
+  if (!user || !profile || !spaceId || !roomId) {
     return (
       <>
         <SentreiAppHeader
@@ -54,7 +70,7 @@ const Quit: NextPage = () => {
           tabRoomKey="settings"
           model="room"
           namespaceId={String(query.namespaceId)}
-          roomId={String(query.roomId)}
+          nameroomId={String(query.nameroomId)}
         />
         <HomeScreen />
       </>
@@ -67,19 +83,20 @@ const Quit: NextPage = () => {
         notificationCount={Number(user.notificationCount)}
         profile={profile}
         namespaceId={String(query.namespaceId)}
-        roomId={String(query.roomId)}
+        nameroomId={String(query.nameroomId)}
         userId={user.uid}
         tabRoomKey="settings"
         model="room"
       />
-      <RoomQuit
+      <RoomDelete
+        roomId={roomId}
         namespaceId={String(query.namespaceId)}
-        roomId={String(query.roomId)}
-        user={user}
+        nameroomId={String(query.nameroomId)}
         spaceId={spaceId}
+        user={user}
       />
     </>
   );
 };
 
-export default Quit;
+export default Delete;

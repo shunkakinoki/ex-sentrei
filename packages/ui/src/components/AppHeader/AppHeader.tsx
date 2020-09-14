@@ -21,7 +21,7 @@ export interface Props {
   notificationCount?: number;
   skeleton?: boolean;
   namespaceId?: string;
-  roomId?: string;
+  nameroomId?: string;
   tabRoomKey?: AppTabRoomKey;
   tabUserKey?: AppTabUserKey;
   tabSpaceKey?: AppTabSpaceKey;
@@ -34,8 +34,8 @@ export default function AppHeader({
   profile,
   notificationCount,
   skeleton = false,
+  nameroomId,
   namespaceId,
-  roomId,
   tabRoomKey,
   tabUserKey,
   tabSpaceKey,
@@ -55,8 +55,8 @@ export default function AppHeader({
         logo={logo}
         profile={profile}
         userId={userId}
+        nameroomId={nameroomId}
         namespaceId={namespaceId}
-        roomId={roomId}
         notificationCount={notificationCount}
         model={model}
       />
@@ -64,14 +64,18 @@ export default function AppHeader({
       {model === "room" && skeleton && tabRoomKey && (
         <AppTabRoom skeleton tabKey={tabRoomKey} />
       )}
-      {model === "room" && !skeleton && namespaceId && roomId && tabRoomKey && (
-        <AppTabRoom
-          skeleton={false}
-          namespaceId={namespaceId}
-          roomId={roomId}
-          tabKey={tabRoomKey}
-        />
-      )}
+      {model === "room" &&
+        !skeleton &&
+        nameroomId &&
+        namespaceId &&
+        tabRoomKey && (
+          <AppTabRoom
+            skeleton={false}
+            nameroomId={nameroomId}
+            namespaceId={namespaceId}
+            tabKey={tabRoomKey}
+          />
+        )}
       {model === "space" && skeleton && tabSpaceKey && (
         <AppTabSpace skeleton tabKey={tabSpaceKey} />
       )}

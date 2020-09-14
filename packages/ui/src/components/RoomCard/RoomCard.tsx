@@ -7,10 +7,8 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ShareIcon from "@material-ui/icons/Share";
-import {isBlurhashValid} from "blurhash";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
-import {Blurhash} from "react-blurhash";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 import {trackEvent} from "@sentrei/common/utils/segment";
@@ -63,19 +61,7 @@ export default function RoomCard({
           href="/[namespaceId]/[roomId]"
           as={`/${space.namespaceId}/${room.id}`}
         >
-          {room.photoHash && isBlurhashValid(room.photoHash) ? (
-            <Blurhash
-              hash={room.photoHash}
-              height={1000}
-              width={3000}
-              resolutionX={32}
-              resolutionY={32}
-              punch={0}
-              className={classes.media}
-            />
-          ) : (
-            <Box className={classes.media} />
-          )}
+          <Box className={classes.media} />
         </MuiButtonBase>
       </CardActionArea>
       <CardContent>

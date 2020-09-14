@@ -71,5 +71,12 @@ export default function RoomCreate({
     );
   }
 
-  return <RoomCreateBoard profile={profile} user={user} spaceId={spaceId} />;
+  return (
+    <RoomCreateBoard
+      profile={profile}
+      user={user}
+      spaceId={spaceId}
+      namespaceId={namespaceId}
+    />
+  );
 }
