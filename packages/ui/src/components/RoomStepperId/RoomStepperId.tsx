@@ -17,19 +17,25 @@ export interface Props {
   atom: RecoilState<number>;
   form: RecoilState<RoomCreateForm>;
   spaceId: string;
+  namespaceId: string;
 }
 
-const RoomStepperId = ({atom, form, spaceId}: Props): JSX.Element => {
+const RoomStepperId = ({
+  atom,
+  form,
+  spaceId,
+  namespaceId,
+}: Props): JSX.Element => {
   const {t} = useTranslation();
 
   const RoomStepperIdSchema = Yup.object().shape({
     id: Yup.string()
       .required(t("form:id.idRequired"))
-      .matches(/^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/, t("form:id.idInvalid"))
-      .test("id", t("form:id.idAlreadyUsed"), async value => {
-        const result = await validateNameroom(spaceId, value || "");
-        return result;
-      }),
+      .matches(/^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/, t("form:id.idInvalid")),
+    // .test("id", t("form:id.idAlreadyUsed"), async value => {
+    //   const result = await validateNameroom(spaceId, value || "");
+    //   return result;
+    // }),
   });
 
   const [, setActiveStep] = useRecoilState<number>(atom);
@@ -43,7 +49,11 @@ const RoomStepperId = ({atom, form, spaceId}: Props): JSX.Element => {
   });
 
   const onSubmit = (data: Record<string, string>): void => {
-    setActiveForm({id: data.id, name: "", type: "focus"});
+    setActiveForm({
+      id: data.id,
+      name: activeForm.name,
+      type: activeForm.type,
+    });
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
 
@@ -51,17 +61,17 @@ const RoomStepperId = ({atom, form, spaceId}: Props): JSX.Element => {
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
       <Box p={3}>
         <Grid container direction="row" alignItems="center">
-          <Grid item xs={6} sm={5} md={4}>
+          <Grid item xs={7} sm={6} md={5}>
             <Typography
-              variant="h5"
+              variant="subtitle1"
               color="textSecondary"
               display="inline"
               gutterBottom
             >
-              sentrei.com/{spaceId}
+              sentrei.com/{namespaceId}/
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={7} md={8}>
+          <Grid item xs={5} sm={6} md={7}>
             <Controller
               as={
                 <TextField

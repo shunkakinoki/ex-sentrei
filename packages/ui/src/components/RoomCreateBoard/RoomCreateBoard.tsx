@@ -17,6 +17,7 @@ export interface Props {
   profile: Profile.Get;
   user: User.Get;
   spaceId: string;
+  namespaceId: string;
 }
 
 const stepperState: RecoilState<number> = atom({
@@ -26,13 +27,14 @@ const stepperState: RecoilState<number> = atom({
 
 const roomCreateForm: RecoilState<RoomCreateForm> = atom({
   key: "roomCreate",
-  default: {name: "", type: "focus"} as RoomCreateForm,
+  default: {id: "", name: "", type: "focus"} as RoomCreateForm,
 });
 
 export default function RoomCreateBoard({
   profile,
   user,
   spaceId,
+  namespaceId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
@@ -44,14 +46,15 @@ export default function RoomCreateBoard({
       />
       <StepperBoard
         atom={stepperState}
-        stepperLabelOne={t("common:common.name")}
-        stepperLabelTwo={t("common:common.type")}
-        stepperLabelThree={t("common:common.other")}
+        stepperLabelOne={t("common:common.id")}
+        stepperLabelTwo={t("common:common.name")}
+        stepperLabelThree={t("common:common.type")}
         stepperPanelOne={
           <RoomStepperId
             atom={stepperState}
             form={roomCreateForm}
             spaceId={spaceId}
+            namespaceId={namespaceId}
           />
         }
         stepperPanelTwo={

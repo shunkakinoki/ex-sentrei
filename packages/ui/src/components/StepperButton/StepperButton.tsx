@@ -38,7 +38,7 @@ const StepperButton = ({atom, last = 2}: Props): JSX.Element => {
         <Grid item xs={6} />
         <Grid item xs={3}>
           {activeStep !== last && (
-            <Button fullWidth color="primary" type="submit" variant="contained">
+            <Button fullWidth type="submit" color="primary" variant="contained">
               {t("common:common.next")}
             </Button>
           )}
