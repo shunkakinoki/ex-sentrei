@@ -8,9 +8,9 @@ import RoomCreateForm from "@sentrei/types/atom/RoomCreateForm";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
+import RoomStepperId from "@sentrei/ui/components/RoomStepperId";
 import RoomStepperName from "@sentrei/ui/components/RoomStepperName";
 import RoomStepperSubmit from "@sentrei/ui/components/RoomStepperSubmit";
-import RoomStepperType from "@sentrei/ui/components/RoomStepperType";
 import StepperBoard from "@sentrei/ui/components/StepperBoard";
 
 export interface Props {
@@ -48,10 +48,14 @@ export default function RoomCreateBoard({
         stepperLabelTwo={t("common:common.type")}
         stepperLabelThree={t("common:common.other")}
         stepperPanelOne={
-          <RoomStepperName atom={stepperState} form={roomCreateForm} />
+          <RoomStepperId
+            atom={stepperState}
+            form={roomCreateForm}
+            spaceId={spaceId}
+          />
         }
         stepperPanelTwo={
-          <RoomStepperType atom={stepperState} form={roomCreateForm} />
+          <RoomStepperName atom={stepperState} form={roomCreateForm} />
         }
         stepperPanelThree={
           <RoomStepperSubmit

@@ -1,4 +1,8 @@
 import Box from "@material-ui/core/Box";
+import FormControl from "@material-ui/core/FormControl";
+import Grid from "@material-ui/core/Grid";
+import MenuItem from "@material-ui/core/MenuItem";
+import TextField from "@material-ui/core/TextField";
 import Router from "next-translate/Router";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -11,6 +15,7 @@ import {timestamp} from "@sentrei/common/utils/firebase";
 import {trackEvent} from "@sentrei/common/utils/segment";
 import RoomCreateForm from "@sentrei/types/atom/RoomCreateForm";
 import Profile from "@sentrei/types/models/Profile";
+import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
 import StepperButton from "@sentrei/ui/components/StepperButton";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
@@ -35,8 +40,13 @@ const RoomStepperSubmit = ({
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
 
+  const [type, setType] = React.useState<Room.Types>("focus");
   const [, setActiveStep] = useRecoilState<number>(atom);
   const [activeForm, setActiveForm] = useRecoilState<RoomCreateForm>(form);
+
+  const handleChange = (event: React.ChangeEvent<{value: unknown}>): void => {
+    setType(event.target.value as Room.Types);
+  };
 
   const {handleSubmit} = useForm({
     mode: "onSubmit",
@@ -57,9 +67,9 @@ const RoomStepperSubmit = ({
         photo: null,
         photoHash: null,
         name: activeForm.name,
-        nameroomId: user.uid,
+        nameroomId: activeForm.id,
         spaceId,
-        type: activeForm.type,
+        type,
         updatedAt: timestamp,
         updatedBy: profile,
         updatedByUid: user.uid,
@@ -67,7 +77,7 @@ const RoomStepperSubmit = ({
         snackbar("success");
         trackEvent("Create Room");
         backdrop("loading");
-        setActiveForm({name: "", type: "focus"});
+        setActiveForm({id: "", name: "", type: "focus"});
         setActiveStep(0);
         Router.back();
       });
@@ -78,7 +88,23 @@ const RoomStepperSubmit = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
-      <Box p={1} />
+      <Box p={3}>
+        <Grid container justify="center" alignItems="center">
+          <FormControl>
+            <TextField
+              fullWidth
+              id="select"
+              select
+              size="medium"
+              variant="outlined"
+              value={type}
+              onChange={handleChange}
+            >
+              <MenuItem value="focus">{t("common:common.focus")}</MenuItem>
+            </TextField>
+          </FormControl>
+        </Grid>
+      </Box>
       <StepperButton atom={atom} />
     </form>
   );
