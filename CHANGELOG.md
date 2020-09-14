@@ -1,3 +1,25 @@
+# [1.74.0](https://github.com/sentrei/sentrei/compare/v1.73.2...v1.74.0) (2020-09-14)
+
+### Features
+
+- 🎸 complete refactor room stepper create ([a18d8aa](https://github.com/sentrei/sentrei/commit/a18d8aa483059a1cbad53114e710460839e57ce1))
+- 🎸 completely refactor stepper button ([4ff5321](https://github.com/sentrei/sentrei/commit/4ff532133a9ca9cad0c1bb844686eae94d8fe9e7))
+- 🎸 ini color for room model ([e9ffb7d](https://github.com/sentrei/sentrei/commit/e9ffb7d91f80de106147b2eed8fa2fd1b28266fb))
+- 🎸 ini room form color ([a4a0949](https://github.com/sentrei/sentrei/commit/a4a094995d3b7b00b3d234d88960488c8d47612e))
+- 🎸 ini room stepper id ([51e62f9](https://github.com/sentrei/sentrei/commit/51e62f9dca75b5b49f5dd165c6bbdb854e2d9963))
+- 🎸 ini room stepper id ([0413c6b](https://github.com/sentrei/sentrei/commit/0413c6b6352f76c2dbf03b8ba41210875e7de9ee))
+- 🎸 migrate roomId to nameroomId ([416d72e](https://github.com/sentrei/sentrei/commit/416d72eea68ca2a27bdda6b3a5ff8be0af6eaf95))
+- 🎸 update roomId for app index pages ([31ad126](https://github.com/sentrei/sentrei/commit/31ad1265372c6597bc2e3901fa254cc79cf04684))
+
+### Performance Improvements
+
+- ⚡️ ini namespaceId for model room ([2fe0b95](https://github.com/sentrei/sentrei/commit/2fe0b95f6a7a8706400bca1d52d44d8e423a8930))
+- ⚡️ ini week pioneer ([309e112](https://github.com/sentrei/sentrei/commit/309e112afd426178e4d8d7df5b3daa4dbcdcdcef))
+- ⚡️ refactor app header component ([9fe9527](https://github.com/sentrei/sentrei/commit/9fe9527b44bd4f1eca17216886bb7cbc2d1c3fbe))
+- ⚡️ refactor namerooms service ([45c5e93](https://github.com/sentrei/sentrei/commit/45c5e9352305bc3a5279011b4f58e6cfadce73b0))
+- ⚡️ refactor namerooms services ([6986f00](https://github.com/sentrei/sentrei/commit/6986f0041a656ae071a6717f643a88b575cf63f1))
+- ⚡️ refactor room for app header ([3de7e97](https://github.com/sentrei/sentrei/commit/3de7e971a0688a340310a8decdf0fc4a6f186a6d))
+
 ## [1.73.2](https://github.com/sentrei/sentrei/compare/v1.73.1...v1.73.2) (2020-09-14)
 
 ### Performance Improvements
