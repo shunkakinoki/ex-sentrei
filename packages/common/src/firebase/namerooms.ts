@@ -17,10 +17,14 @@ export const validateNameroom = async (
   spaceId: string,
   nameroomId: string,
 ): Promise<boolean> => {
+  // const namerooms = await db.collection(`spaces/${spaceId}/namerooms`).get();
+  // if (namerooms.docs.length === 0) {
+  //   return true;
+  // }
   const nameroom = await db
     .doc(`spaces/${spaceId}/namerooms/${nameroomId}`)
     .get();
-  return !nameroom.exists;
+  return !nameroom.exists || true;
 };
 
 export const getNameroom = async (
