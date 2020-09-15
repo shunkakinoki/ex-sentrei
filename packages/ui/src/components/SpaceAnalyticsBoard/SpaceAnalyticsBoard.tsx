@@ -1,9 +1,10 @@
-import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
 import Analytics from "@sentrei/types/models/Analytics";
+import ChartSpark from "@sentrei/ui/components/ChartSpark";
 import SpaceSection from "@sentrei/ui/components/SpaceSection";
 
 export interface Props {
@@ -15,14 +16,50 @@ export default function SpaceAnalyticsBoard({
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
-  const [activities] = React.useState<Analytics.Get[]>(analyticsShot);
+  const [analytics] = React.useState<Analytics.Get[]>(analyticsShot);
 
   return (
     <>
       <SpaceSection title={t("space:analytics.title")} />
-      <Container maxWidth="md" component="main">
-        <Box />
-        {activities[0].id}
+      <Container maxWidth="lg" component="main">
+        <Grid container direction="row" alignItems="center" spacing={2}>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color="#8884d8"
+              dataKey="stats.activity"
+              title={t("common:common.activity")}
+              value={analytics[0].stats?.activity || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color="#8884d8"
+              dataKey="stats.analytics"
+              title={t("common:common.analytics")}
+              value={analytics[0].stats?.analytics || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color="#8884d8"
+              dataKey="stats.rooms"
+              title={t("common:common.rooms")}
+              value={analytics[0].stats?.rooms || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color="#8884d8"
+              dataKey="stats.sessions"
+              title={t("common:common.sessions")}
+              value={analytics[0].stats?.sessions || 0}
+            />
+          </Grid>
+        </Grid>
       </Container>
     </>
   );

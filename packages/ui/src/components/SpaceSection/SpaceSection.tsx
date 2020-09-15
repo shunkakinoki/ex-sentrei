@@ -9,7 +9,7 @@ export interface Props {
 
 export default function SpaceSection({title}: Props): JSX.Element {
   return (
-    <Box mt={3} mb={6}>
+    <Box mt={3} mb={3}>
       <Typography
         variant="h3"
         align="center"
