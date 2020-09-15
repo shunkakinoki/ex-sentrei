@@ -29,7 +29,7 @@ const RoomFormType = ({disabled, profile, room, user}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
-  const [type, setType] = React.useState<Room.Types>("focus");
+  const [type, setType] = React.useState<Room.Types>(room.type);
   const handleChange = (event: React.ChangeEvent<{value: unknown}>): void => {
     setType(event.target.value as Room.Types);
   };
