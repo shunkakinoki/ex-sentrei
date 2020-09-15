@@ -1,3 +1,9 @@
+# [1.76.0](https://github.com/sentrei/sentrei/compare/v1.75.1...v1.76.0) (2020-09-15)
+
+### Features
+
+- 🎸 refactor room session ([b4ab38e](https://github.com/sentrei/sentrei/commit/b4ab38eeab46a207b872aa92e9cf93a4c134c183))
+
 ## [1.75.1](https://github.com/sentrei/sentrei/compare/v1.75.0...v1.75.1) (2020-09-15)
 
 ### Performance Improvements
