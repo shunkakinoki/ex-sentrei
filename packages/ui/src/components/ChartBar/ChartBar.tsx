@@ -52,18 +52,20 @@ export default function ChartBar({color, data}: Props): JSX.Element {
   return (
     <Card>
       <Grid container direction="row" alignItems="center">
-        <Box m={2}>
-          <ResponsiveContainer minWidth={300} minHeight={300}>
-            <BarChart data={barData} barSize={20}>
-              <XAxis dataKey="action" />
-              <Tooltip />
-              <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="member" fill={color} />
-              <Bar dataKey="room" fill={color} />
-              <Bar dataKey="session" fill={color} />
-            </BarChart>
-          </ResponsiveContainer>
-        </Box>
+        <Grid item>
+          <Box m={3} display="flex">
+            <ResponsiveContainer minWidth={350} minHeight={300}>
+              <BarChart data={barData} barSize={20}>
+                <XAxis dataKey="action" />
+                <Tooltip />
+                <CartesianGrid strokeDasharray="3 3" />
+                <Bar dataKey="member" fill={color} />
+                <Bar dataKey="room" fill={color} />
+                <Bar dataKey="session" fill={color} />
+              </BarChart>
+            </ResponsiveContainer>
+          </Box>
+        </Grid>
       </Grid>
     </Card>
   );
