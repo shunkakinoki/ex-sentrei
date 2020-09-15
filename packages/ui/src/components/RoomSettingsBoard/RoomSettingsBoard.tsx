@@ -52,7 +52,7 @@ const RoomSettingsBoard = ({
         tabLabelThree={t("common:common.type")}
         tabPanelOne={
           <RoomFormName
-            disabled={role !== "admin"}
+            disabled={role !== "admin" || room.createdByUid !== user.uid}
             profile={profile}
             room={room}
             user={user}
@@ -60,7 +60,7 @@ const RoomSettingsBoard = ({
         }
         tabPanelTwo={
           <RoomFormId
-            disabled={role !== "admin"}
+            disabled={role !== "admin" || room.createdByUid !== user.uid}
             room={room}
             spaceId={spaceId}
             namespaceId={namespaceId}
@@ -68,7 +68,7 @@ const RoomSettingsBoard = ({
         }
         tabPanelThree={
           <RoomFormType
-            disabled={role !== "admin"}
+            disabled={role !== "admin" || room.createdByUid !== user.uid}
             profile={profile}
             room={room}
             user={user}
