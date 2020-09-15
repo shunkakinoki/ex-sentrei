@@ -15,6 +15,7 @@ declare namespace Room {
     participantCount: FirebaseFirestore.FieldValue | number;
     nameroomId: string;
     spaceId: string;
+    sessionId?: string;
   }
 
   export type AdminUpdate = Partial<Fields>;

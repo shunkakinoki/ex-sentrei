@@ -7,6 +7,7 @@ declare namespace Session {
 
   export type EditableFields = {
     duration?: FirebaseFirestore.FieldValue | number;
+    status: Status;
   };
 
   interface Fields extends EditableFields {
@@ -15,7 +16,6 @@ declare namespace Session {
     roomSid: string;
     spaceId: string;
     model: Models;
-    status: Status;
     type: Room.Types;
   }
 
