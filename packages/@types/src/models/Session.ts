@@ -3,14 +3,16 @@ import Room from "@sentrei/types/models/Room";
 
 declare namespace Session {
   export type Models = "member" | "room";
+  export type Status = "connected" | "disconnected";
 
   interface Fields {
-    duration: FirebaseFirestore.FieldValue | number;
+    duration?: FirebaseFirestore.FieldValue | number;
     room: Room.Fields;
     roomId: string;
     roomSid: string;
     spaceId: string;
     model: Models;
+    status: Status;
     type: Room.Types;
   }
 
