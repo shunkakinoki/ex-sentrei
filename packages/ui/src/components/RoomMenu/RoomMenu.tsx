@@ -2,7 +2,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import DeleteIcon from "@material-ui/icons/Delete";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import PaletteIcon from "@material-ui/icons/Palette";
 import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -55,13 +55,13 @@ export default function RoomMenu({
         <ListItemText primary={t("room:room.settings")} />
       </MuiMenuItem>
       <MuiMenuItem
-        href="/[namespaceId]/[nameroomId]/settings/quit"
-        as={`/${namespaceId}/${nameroomId}/settings/quit`}
+        href="/[namespaceId]/[nameroomId]/settings/color"
+        as={`/${namespaceId}/${nameroomId}/settings/color`}
       >
         <ListItemIcon>
-          <ExitToAppIcon fontSize="small" />
+          <PaletteIcon fontSize="small" />
         </ListItemIcon>
-        <ListItemText primary={t("room:room.quitRoom")} />
+        <ListItemText primary={t("room:room.color")} />
       </MuiMenuItem>
       <MuiMenuItem
         href="/[namespaceId]/[nameroomId]/settings/delete"
