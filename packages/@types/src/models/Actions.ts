@@ -15,8 +15,6 @@ export type ActionsCollection =
   | "deleted_members"
   | "deleted_participants"
   | "deleted_rooms"
-  | "deleted_sessions"
-  | "deleted_rooms"
   | "deleted_spaces";
 
 export const actionsCollection: ActionsCollection[] = [
@@ -34,8 +32,6 @@ export const actionsCollection: ActionsCollection[] = [
   "deleted_invites",
   "deleted_members",
   "deleted_participants",
-  "deleted_rooms",
-  "deleted_sessions",
   "deleted_rooms",
   "deleted_spaces",
 ];
