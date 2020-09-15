@@ -63,7 +63,7 @@ export default function ChartSpark({
                   strokeWidth={3}
                   fill="url(#colorUv)"
                 />
-                <Tooltip cursor={false} />
+                <Tooltip cursor={false} label={title} />
               </AreaChart>
             </ResponsiveContainer>
           </Box>
