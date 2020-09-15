@@ -8,7 +8,10 @@ import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
-import {createNameroom} from "@sentrei/common/firebase/namerooms";
+import {
+  validateNameroom,
+  createNameroom,
+} from "@sentrei/common/firebase/namerooms";
 import {trackEvent} from "@sentrei/common/utils/segment";
 
 import Room from "@sentrei/types/models/Room";
@@ -35,7 +38,13 @@ const RoomFormId = ({
   const {backdrop} = useBackdrop();
 
   const RoomFormIdSchema = Yup.object().shape({
-    id: Yup.string().required(t("form:id.idRequired")),
+    id: Yup.string()
+      .required(t("form:id.idRequired"))
+      .matches(/^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/, t("form:id.idInvalid"))
+      .test("id", t("form:id.idAlreadyUsed"), async value => {
+        const result = await validateNameroom(spaceId, value || "");
+        return result;
+      }),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
