@@ -1,3 +1,29 @@
+# [1.75.0](https://github.com/sentrei/sentrei/compare/v1.74.0...v1.75.0) (2020-09-15)
+
+### Features
+
+- 🎸 ini room color for settings ([b69a61c](https://github.com/sentrei/sentrei/commit/b69a61cf769e77e18ac3da7da5acb6be4afa5ceb))
+- 🎸 ini room form id ([cbbadbc](https://github.com/sentrei/sentrei/commit/cbbadbcabbb1d20c9ec381a320ed31b1b17e97ac))
+- 🎸 ini room form id ([e1006fc](https://github.com/sentrei/sentrei/commit/e1006fca56afe7452623272b8917fdeceed24dd7))
+- 🎸 ini room form type ([3a46d4c](https://github.com/sentrei/sentrei/commit/3a46d4c5bca81513514c68f2bd36e3c1ade9ea26))
+- 🎸 ini room quit board disable ([9d6af08](https://github.com/sentrei/sentrei/commit/9d6af08df8feb52e80439f7bacee88c8a61a08f1))
+- 🎸 ini room screen ([df7874f](https://github.com/sentrei/sentrei/commit/df7874f5a7974cbf95ce21064c0332e0d1c7b4a2))
+- 🎸 migrate home screen to error screen ([3342f54](https://github.com/sentrei/sentrei/commit/3342f549aa750ee8a1556970790d076dfe9a0dd0))
+- 🎸 migrate next error to error screen ([d671240](https://github.com/sentrei/sentrei/commit/d671240aa8914aefdb5ff20daa7772a57bd525bf))
+- 🎸 refactor room card ([9bb2429](https://github.com/sentrei/sentrei/commit/9bb2429767e4a13ebe44ffdf47000839defec83e))
+
+### Performance Improvements
+
+- ⚡️ ini 18n for room ([8edc938](https://github.com/sentrei/sentrei/commit/8edc938aa0b29fc912008e2363e74bf0c0ea7dca))
+- ⚡️ ini form validation for room form id ([1f483d7](https://github.com/sentrei/sentrei/commit/1f483d7db73b3fa031f2a590dc8768e2aa91a26b))
+- ⚡️ ini icon for room color ([08122a8](https://github.com/sentrei/sentrei/commit/08122a8a6bf77b6b8435c9a3802d3b303ffec9e9))
+- ⚡️ ini initial room type for form ([6efa27a](https://github.com/sentrei/sentrei/commit/6efa27a49c8557a44832e905991ce1e872d4568c))
+- ⚡️ ini room validation for forms ([36f6255](https://github.com/sentrei/sentrei/commit/36f62553c19728e8a633c7f0006be6cc3d059fb9))
+- ⚡️ refactor room color role ([35a2913](https://github.com/sentrei/sentrei/commit/35a2913232e1986728e31eeaf9f2885bd76c800a))
+- ⚡️ refactor room menu color ([6e3c401](https://github.com/sentrei/sentrei/commit/6e3c40114d1007231145da63ef6470a100dc07c9))
+- ⚡️ refactor roomId to nameroomId ([4aa3c14](https://github.com/sentrei/sentrei/commit/4aa3c141b19c42270c09b36d4b7646d3cda2d064))
+- ⚡️ refactor session model ([6e67925](https://github.com/sentrei/sentrei/commit/6e67925a85e091e27f78947b354609dc53aa1c2e))
+
 # [1.74.0](https://github.com/sentrei/sentrei/compare/v1.73.2...v1.74.0) (2020-09-14)
 
 ### Features
