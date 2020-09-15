@@ -17,7 +17,7 @@ export default function LandingPricing(): JSX.Element {
           <Grid item xs={12} sm={4}>
             <LandingPricingCard
               buttonVariant="outlined"
-              buttonText={t("pricing:card.free.buttonText")}
+              buttonText={t("pricing:card.free.landingText")}
               description1={t("pricing:card.free.description1")}
               description2={t("pricing:card.free.description2")}
               description3={t("pricing:card.free.description3")}
@@ -31,7 +31,7 @@ export default function LandingPricing(): JSX.Element {
           <Grid item xs={12} sm={4}>
             <LandingPricingCard
               buttonVariant="contained"
-              buttonText={t("pricing:card.pro.buttonText")}
+              buttonText={t("pricing:card.pro.landingText")}
               description1={t("pricing:card.pro.description1")}
               description2={t("pricing:card.pro.description2")}
               description3={t("pricing:card.pro.description3")}
@@ -46,7 +46,7 @@ export default function LandingPricing(): JSX.Element {
           <Grid item xs={12} sm={4}>
             <LandingPricingCard
               buttonVariant="outlined"
-              buttonText={t("pricing:card.enterprise.buttonText")}
+              buttonText={t("pricing:card.enterprise.landingText")}
               description1={t("pricing:card.enterprise.description1")}
               description2={t("pricing:card.enterprise.description2")}
               description3={t("pricing:card.enterprise.description3")}
