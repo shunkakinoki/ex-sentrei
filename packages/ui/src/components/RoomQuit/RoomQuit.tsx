@@ -58,6 +58,7 @@ export default function RoomQuit({
       <RoomQuitBoard
         role={member?.role || "viewer"}
         namespaceId={namespaceId}
+        room={room}
         roomId={roomId}
         userId={user.uid}
       />
