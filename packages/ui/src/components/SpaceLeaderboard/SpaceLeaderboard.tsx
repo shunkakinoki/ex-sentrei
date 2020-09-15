@@ -1,8 +1,8 @@
-import Error from "next/error";
 import * as React from "react";
 
 import {getLeaderboardLive} from "@sentrei/common/firebase/leaderboard";
 import Member from "@sentrei/types/models/Member";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceLeaderboardBoard from "@sentrei/ui/components/SpaceLeaderboardBoard";
 
@@ -33,7 +33,7 @@ export default function SpaceMember({
   }
 
   if (members === null) {
-    return <Error statusCode={404} />;
+    return <ErrorScreen />;
   }
 
   return <SpaceLeaderboardBoard members={members} />;

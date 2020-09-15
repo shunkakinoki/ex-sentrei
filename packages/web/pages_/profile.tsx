@@ -3,7 +3,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import ProfileScreen from "@sentrei/ui/components/ProfileScreen";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -29,7 +29,7 @@ const Profile: NextPage = () => {
     return (
       <>
         <SentreiAppHeader skeleton tabUserKey="profile" model="user" />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }

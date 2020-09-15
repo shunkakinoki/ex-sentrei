@@ -1,5 +1,6 @@
 {
   "room": {
+    "color": "房间颜色",
     "createRoom": "创建房间",
     "deleteRoom": "删除房间",
     "editRoom": "编辑室",

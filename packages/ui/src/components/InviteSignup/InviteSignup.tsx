@@ -1,8 +1,8 @@
-import Error from "next/error";
 import * as React from "react";
 
 import {getInvite} from "@sentrei/common/firebase/invites";
 import Invite from "@sentrei/types/models/Invite";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import InviteSignupBoard from "@sentrei/ui/components/InviteSignupBoard";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
@@ -28,7 +28,7 @@ export default function InviteSignup({
   }
 
   if (invite === null) {
-    return <Error statusCode={404} />;
+    return <ErrorScreen />;
   }
 
   return (

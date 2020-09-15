@@ -7,7 +7,7 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNameroom} from "@sentrei/common/firebase/namerooms";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const RoomQuit = dynamic(() => import("@sentrei/ui/components/RoomQuit"), {
@@ -71,7 +71,7 @@ const Quit: NextPage = () => {
           namespaceId={String(query.namespaceId)}
           nameroomId={String(query.nameroomId)}
         />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }

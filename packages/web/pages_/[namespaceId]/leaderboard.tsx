@@ -8,7 +8,7 @@ import {getAdminLeaderboard} from "@sentrei/common/firebaseAdmin/leaderboard";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 
 import Member from "@sentrei/types/models/Member";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceLeaderboard from "@sentrei/ui/components/SpaceLeaderboard";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -83,7 +83,7 @@ const Leaderboard = ({
           model="space"
           namespaceId={String(query.namespaceId)}
         />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }

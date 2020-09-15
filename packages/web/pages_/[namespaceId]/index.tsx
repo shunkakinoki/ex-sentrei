@@ -13,7 +13,7 @@ import {getAdminSpace} from "@sentrei/common/firebaseAdmin/spaces";
 import Member from "@sentrei/types/models/Member";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -111,7 +111,7 @@ const NamespaceId = ({
           model="space"
           namespaceId={String(query.namespaceId)}
         />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }

@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
 
@@ -6,9 +7,16 @@ import {getMembers} from "@sentrei/common/firebase/members";
 import {getNameroom} from "@sentrei/common/firebase/namerooms";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import Member from "@sentrei/types/models/Member";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
+
+const RoomScreen = dynamic(
+  () => {
+    return import("@sentrei/ui/components/RoomScreen");
+  },
+  {ssr: false},
+);
 
 const NameroomId = (): JSX.Element => {
   const {query} = useRouter();
@@ -81,7 +89,7 @@ const NameroomId = (): JSX.Element => {
           namespaceId={String(query.namespaceId)}
           nameroomId={String(query.nameroomId)}
         />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }
@@ -96,6 +104,12 @@ const NameroomId = (): JSX.Element => {
         userId={user.uid}
         tabRoomKey="home"
         model="room"
+      />
+      <RoomScreen
+        user={user}
+        profile={profile}
+        spaceId={spaceId}
+        roomId={roomId}
       />
     </>
   );

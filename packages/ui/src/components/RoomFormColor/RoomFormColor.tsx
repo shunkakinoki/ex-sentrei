@@ -16,13 +16,12 @@ import FormButtonSubmit from "@sentrei/ui/components/FormButtonSubmit";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
-  disabled: boolean;
   profile: Profile.Get;
   room: Room.Get;
   user: User.Get;
 }
 
-const RoomFormColor = ({disabled, profile, room, user}: Props): JSX.Element => {
+const RoomFormColor = ({profile, room, user}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
 
@@ -56,15 +55,13 @@ const RoomFormColor = ({disabled, profile, room, user}: Props): JSX.Element => {
 
   return (
     <>
-      <Box pb={3} display="flex" justifyContent="center">
+      <Box pb={5} display="flex" justifyContent="center">
         <CirclePicker color={color as string} onChangeComplete={handleChange} />
       </Box>
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <FormButtonSubmit disabled={disabled}>
-              {t("common:common.edit")}
-            </FormButtonSubmit>
+            <FormButtonSubmit>{t("common:common.edit")}</FormButtonSubmit>
           </Grid>
           <Grid item xs={12}>
             <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

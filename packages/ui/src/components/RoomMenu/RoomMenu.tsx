@@ -2,7 +2,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import DeleteIcon from "@material-ui/icons/Delete";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import PaletteIcon from "@material-ui/icons/Palette";
 import SettingsIcon from "@material-ui/icons/Settings";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -15,7 +15,7 @@ export interface Props {
   onClose?:
     | ((event: {}, reason: "backdropClick" | "escapeKeyDown") => void)
     | undefined;
-  roomId: string;
+  nameroomId: string;
   namespaceId: string;
 }
 
@@ -24,7 +24,7 @@ export default function RoomMenu({
   open,
   onClose,
   namespaceId,
-  roomId,
+  nameroomId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
@@ -46,8 +46,17 @@ export default function RoomMenu({
       onClose={onClose}
     >
       <MuiMenuItem
-        href="/[namespaceId]/[roomId]/settings"
-        as={`/${namespaceId}/${roomId}/settings`}
+        href="/[namespaceId]/[nameroomId]/settings/color"
+        as={`/${namespaceId}/${nameroomId}/settings/color`}
+      >
+        <ListItemIcon>
+          <PaletteIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText primary={t("room:room.color")} />
+      </MuiMenuItem>
+      <MuiMenuItem
+        href="/[namespaceId]/[nameroomId]/settings"
+        as={`/${namespaceId}/${nameroomId}/settings`}
       >
         <ListItemIcon>
           <SettingsIcon fontSize="small" />
@@ -55,17 +64,8 @@ export default function RoomMenu({
         <ListItemText primary={t("room:room.settings")} />
       </MuiMenuItem>
       <MuiMenuItem
-        href="/[namespaceId]/[roomId]/settings/quit"
-        as={`/${namespaceId}/${roomId}/settings/quit`}
-      >
-        <ListItemIcon>
-          <ExitToAppIcon fontSize="small" />
-        </ListItemIcon>
-        <ListItemText primary={t("room:room.quitRoom")} />
-      </MuiMenuItem>
-      <MuiMenuItem
-        href="/[namespaceId]/[roomId]/settings/delete"
-        as={`/${namespaceId}/${roomId}/settings/delete`}
+        href="/[namespaceId]/[nameroomId]/settings/delete"
+        as={`/${namespaceId}/${nameroomId}/settings/delete`}
       >
         <ListItemIcon>
           <DeleteIcon fontSize="small" />

@@ -8,8 +8,10 @@
     "billing": "課金",
     "billingGoTo": "請求に移動",
     "billingUpgrade": "アップグレードプラン",
+    "bond": "つなぐ",
     "cancel": "キャンセル",
     "chat": "チャット",
+    "color": "色",
     "create": "作成する",
     "createRoom": "部屋を作成",
     "createSpace": "スペースを作成する",
@@ -83,6 +85,7 @@
     "username": "ユーザー名",
     "visit": "訪問",
     "week": "週間",
+    "work": "作業",
     "workspace": "ワークスペース",
     "writeYourStatus": "あなたのステータスを書いてください..."
   },

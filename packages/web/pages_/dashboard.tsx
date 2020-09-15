@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -35,7 +35,7 @@ const Dashboard: NextPage = () => {
     return (
       <>
         <SentreiAppHeader skeleton tabUserKey="dashboard" model="user" />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }

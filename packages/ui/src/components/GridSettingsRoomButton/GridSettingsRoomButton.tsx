@@ -10,8 +10,9 @@ import GridSettingsRoomButtonStyles from "./GridSettingsRoomButtonStyles";
 
 const TabMap = {
   general: 0,
-  quit: 1,
-  delete: 2,
+  color: 1,
+  quit: 2,
+  delete: 3,
 };
 
 export interface Props {
@@ -47,9 +48,17 @@ export default function GridSettingsRoomTab({
         {t("common:common.general")}
       </GridSettingsButton>
       <GridSettingsButton
+        href="/[namespaceId]/[nameroomId]/settings/color"
+        as={`/${namespaceId}/${nameroomId}/settings/color`}
+        selected={value === 1}
+        skeleton={skeleton}
+      >
+        {t("common:common.color")}
+      </GridSettingsButton>
+      <GridSettingsButton
         href="/[namespaceId]/[nameroomId]/settings/quit"
         as={`/${namespaceId}/${nameroomId}/settings/quit`}
-        selected={value === 1}
+        selected={value === 2}
         skeleton={skeleton}
       >
         {t("common:common.quit")}
@@ -57,7 +66,7 @@ export default function GridSettingsRoomTab({
       <GridSettingsButton
         href="/[namespaceId]/[nameroomId]/settings/delete"
         as={`/${namespaceId}/${nameroomId}/settings/delete`}
-        selected={value === 2}
+        selected={value === 3}
         skeleton={skeleton}
       >
         {t("common:common.delete")}

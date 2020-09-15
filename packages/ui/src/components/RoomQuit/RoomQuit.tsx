@@ -1,4 +1,3 @@
-import Error from "next/error";
 import * as React from "react";
 
 import {getMember} from "@sentrei/common/firebase/members";
@@ -6,6 +5,7 @@ import {getRoom} from "@sentrei/common/firebase/rooms";
 import Member from "@sentrei/types/models/Member";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import GridSettings from "@sentrei/ui/components/GridSettings";
 import RoomQuitBoard from "@sentrei/ui/components/RoomQuitBoard";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
@@ -45,7 +45,7 @@ export default function RoomQuit({
   }
 
   if (!room) {
-    return <Error statusCode={404} />;
+    return <ErrorScreen />;
   }
 
   return (
@@ -58,6 +58,7 @@ export default function RoomQuit({
       <RoomQuitBoard
         role={member?.role || "viewer"}
         namespaceId={namespaceId}
+        room={room}
         roomId={roomId}
         userId={user.uid}
       />

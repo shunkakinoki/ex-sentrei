@@ -36,8 +36,11 @@ export const getNameroom = async (
 };
 
 export const createNameroom = (
+  spaceId: string,
   nameroomId: string,
   uid: string,
 ): Promise<void> => {
-  return db.doc(`namerooms/${nameroomId}`).set(<Nameroom>{uid});
+  return db
+    .doc(`spaces/${spaceId}/namerooms/${nameroomId}`)
+    .set(<Nameroom>{uid});
 };

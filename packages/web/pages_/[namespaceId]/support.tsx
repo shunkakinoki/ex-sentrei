@@ -6,7 +6,7 @@ import AuthContext from "@sentrei/common/context/AuthContext";
 
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import {NamespaceModel} from "@sentrei/types/models/Namespace";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SupportScreen from "@sentrei/ui/components/SupportScreen";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -52,7 +52,7 @@ const Support: NextPage = () => {
           model="user"
           namespaceId={String(query.namespaceId)}
         />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }

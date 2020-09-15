@@ -7,7 +7,7 @@ import {getAdminMembers} from "@sentrei/common/firebaseAdmin/members";
 import {getAdminNamespace} from "@sentrei/common/firebaseAdmin/namespaces";
 
 import Member from "@sentrei/types/models/Member";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceMember from "@sentrei/ui/components/SpaceMember";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
@@ -82,7 +82,7 @@ const Members = ({
           model="space"
           namespaceId={String(query.namespaceId)}
         />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }

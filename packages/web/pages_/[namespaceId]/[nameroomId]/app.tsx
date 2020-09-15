@@ -7,7 +7,7 @@ import {getMembers} from "@sentrei/common/firebase/members";
 import {getNameroom} from "@sentrei/common/firebase/namerooms";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import Member from "@sentrei/types/models/Member";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import Loader from "@sentrei/ui/components/Loader";
 import AppStateProvider from "@sentrei/video/state";
 
@@ -67,7 +67,7 @@ const App = (): JSX.Element => {
   }
 
   if (!user || !profile || !spaceId || !roomId || !members) {
-    return <HomeScreen />;
+    return <ErrorScreen />;
   }
 
   return (

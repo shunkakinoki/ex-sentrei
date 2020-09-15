@@ -8,8 +8,10 @@
     "billing": "Billing",
     "billingGoTo": "Go to Billing",
     "billingUpgrade": "Upgrade Plan",
+    "bond": "Bond",
     "cancel": "Cancel",
     "chat": "Chat",
+    "color": "Color",
     "create": "Create",
     "createRoom": "Create Room",
     "createSpace": "Create a Space",
@@ -83,6 +85,7 @@
     "username": "Username",
     "visit": "Visit",
     "week": "Week",
+    "work": "Work",
     "workspace": "Workspace",
     "writeYourStatus": "Write your status..."
   },
