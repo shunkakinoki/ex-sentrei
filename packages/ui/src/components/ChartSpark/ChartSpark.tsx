@@ -63,7 +63,14 @@ export default function ChartSpark({
                   strokeWidth={3}
                   fill="url(#colorUv)"
                 />
-                <Tooltip cursor={false} label={title} />
+                <Tooltip
+                  cursor={false}
+                  formatter={(
+                    val: string | number | React.ReactText[],
+                  ): (string | number | React.ReactText[])[] => {
+                    return [val, title];
+                  }}
+                />
               </AreaChart>
             </ResponsiveContainer>
           </Box>
