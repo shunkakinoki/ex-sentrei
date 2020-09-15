@@ -1,5 +1,6 @@
 {
   "room": {
+    "color": "部屋の色",
     "createRoom": "部屋を作成",
     "deleteRoom": "部屋を削除",
     "editRoom": "部屋を編集",

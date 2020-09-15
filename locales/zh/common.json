@@ -8,8 +8,10 @@
     "billing": "开票",
     "billingGoTo": "前往帐单",
     "billingUpgrade": "升级计划",
+    "bond": "键",
     "cancel": "取消",
     "chat": "聊天",
+    "color": "颜色",
     "create": "创造",
     "createRoom": "创建房间",
     "createSpace": "创建一个空间",
@@ -83,6 +85,7 @@
     "username": "用户名",
     "visit": "访问",
     "week": "周",
+    "work": "工作",
     "workspace": "工作空间",
     "writeYourStatus": "写你的状态..."
   },
