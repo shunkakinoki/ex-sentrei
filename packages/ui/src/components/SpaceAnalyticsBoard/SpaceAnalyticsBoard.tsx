@@ -26,10 +26,36 @@ export default function SpaceAnalyticsBoard({
     analyticsShot,
   );
   const [period, setPeriod] = React.useState<Analytics.Period>("hour");
+  const [dayDisabled, setDayDisabled] = React.useState<boolean>(true);
+  const [hourDisabled, setHourDisabled] = React.useState<boolean>(true);
+  const [weekDisabled, setWeekDisabled] = React.useState<boolean>(true);
 
   React.useEffect(() => {
-    getAnalytics({spaceId, period}).then(setAnalytics);
-  }, [period, spaceId]);
+    if (analyticsShot.length > 1) {
+      getAnalytics({spaceId, period}).then(setAnalytics);
+    }
+  }, [period, analyticsShot.length, spaceId]);
+
+  React.useEffect(() => {
+    analyticsShot.forEach(doc => {
+      switch (doc.period) {
+        case "hour": {
+          setHourDisabled(false);
+          break;
+        }
+        case "day": {
+          setDayDisabled(false);
+          break;
+        }
+        case "week": {
+          setWeekDisabled(false);
+          break;
+        }
+        default:
+          break;
+      }
+    });
+  });
 
   return (
     <>
@@ -41,6 +67,7 @@ export default function SpaceAnalyticsBoard({
             aria-label="outlined primary button group"
           >
             <Button
+              disabled={hourDisabled}
               variant={period === "hour" ? "contained" : "outlined"}
               onClick={(): void => {
                 setPeriod("hour");
@@ -49,6 +76,7 @@ export default function SpaceAnalyticsBoard({
               {t("common:common.hour")}
             </Button>
             <Button
+              disabled={dayDisabled}
               variant={period === "day" ? "contained" : "outlined"}
               onClick={(): void => {
                 setPeriod("day");
@@ -57,6 +85,7 @@ export default function SpaceAnalyticsBoard({
               {t("common:common.day")}
             </Button>
             <Button
+              disabled={weekDisabled}
               variant={period === "week" ? "contained" : "outlined"}
               onClick={(): void => {
                 setPeriod("week");
