@@ -58,8 +58,8 @@ export default function RoomCard({
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
         <MuiButtonBase
-          href="/[namespaceId]/[roomId]"
-          as={`/${space.namespaceId}/${room.id}`}
+          href="/[namespaceId]/[nameroomId]"
+          as={`/${space.namespaceId}/${room.nameroomId}`}
         >
           <Box className={classes.media} />
         </MuiButtonBase>
@@ -93,7 +93,7 @@ export default function RoomCard({
           </Grid>
           <Grid item xs={2} sm={1} md={1}>
             <CopyToClipboard
-              text={`${window.location.origin}/${space.namespaceId}/${room.id}`}
+              text={`${window.location.origin}/${space.namespaceId}/${room.nameroomId}`}
               onCopy={(): void => {
                 snackbar("success", t("snackbar:snackbar.clipboard"));
                 trackEvent("Copy Clipboard Room");
