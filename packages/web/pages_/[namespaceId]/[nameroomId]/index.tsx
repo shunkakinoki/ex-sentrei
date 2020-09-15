@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
 
@@ -9,6 +10,13 @@ import Member from "@sentrei/types/models/Member";
 import HomeScreen from "@sentrei/ui/components/HomeScreen";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
+
+const RoomScreen = dynamic(
+  () => {
+    return import("@sentrei/ui/components/RoomScreen");
+  },
+  {ssr: false},
+);
 
 const NameroomId = (): JSX.Element => {
   const {query} = useRouter();
@@ -96,6 +104,12 @@ const NameroomId = (): JSX.Element => {
         userId={user.uid}
         tabRoomKey="home"
         model="room"
+      />
+      <RoomScreen
+        user={user}
+        profile={profile}
+        spaceId={spaceId}
+        roomId={roomId}
       />
     </>
   );
