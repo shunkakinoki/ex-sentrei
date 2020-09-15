@@ -86,7 +86,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
               <CopyToClipboard
                 text={`${window.location.origin}/${space.namespaceId}`}
                 onCopy={(): void => {
-                  snackbar("success", t("snackbar:snackbar.clipboar;d"));
+                  snackbar("success", t("snackbar:snackbar.clipboard"));
                   trackEvent("Copy Clipboard Space");
                 }}
               >
