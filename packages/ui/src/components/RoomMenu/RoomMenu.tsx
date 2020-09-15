@@ -15,7 +15,7 @@ export interface Props {
   onClose?:
     | ((event: {}, reason: "backdropClick" | "escapeKeyDown") => void)
     | undefined;
-  roomId: string;
+  nameroomId: string;
   namespaceId: string;
 }
 
@@ -24,7 +24,7 @@ export default function RoomMenu({
   open,
   onClose,
   namespaceId,
-  roomId,
+  nameroomId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
@@ -46,8 +46,8 @@ export default function RoomMenu({
       onClose={onClose}
     >
       <MuiMenuItem
-        href="/[namespaceId]/[roomId]/settings"
-        as={`/${namespaceId}/${roomId}/settings`}
+        href="/[namespaceId]/[nameroomId]/settings"
+        as={`/${namespaceId}/${nameroomId}/settings`}
       >
         <ListItemIcon>
           <SettingsIcon fontSize="small" />
@@ -55,8 +55,8 @@ export default function RoomMenu({
         <ListItemText primary={t("room:room.settings")} />
       </MuiMenuItem>
       <MuiMenuItem
-        href="/[namespaceId]/[roomId]/settings/quit"
-        as={`/${namespaceId}/${roomId}/settings/quit`}
+        href="/[namespaceId]/[nameroomId]/settings/quit"
+        as={`/${namespaceId}/${nameroomId}/settings/quit`}
       >
         <ListItemIcon>
           <ExitToAppIcon fontSize="small" />
@@ -64,8 +64,8 @@ export default function RoomMenu({
         <ListItemText primary={t("room:room.quitRoom")} />
       </MuiMenuItem>
       <MuiMenuItem
-        href="/[namespaceId]/[roomId]/settings/delete"
-        as={`/${namespaceId}/${roomId}/settings/delete`}
+        href="/[namespaceId]/[nameroomId]/settings/delete"
+        as={`/${namespaceId}/${nameroomId}/settings/delete`}
       >
         <ListItemIcon>
           <DeleteIcon fontSize="small" />

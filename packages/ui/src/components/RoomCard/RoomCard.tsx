@@ -119,7 +119,7 @@ export default function RoomCard({
           anchorEl={roomAnchorEl}
           open={Boolean(roomAnchorEl)}
           onClose={handleClose}
-          roomId={room.id}
+          nameroomId={room.nameroomId}
           namespaceId={space.namespaceId}
         />
         <Box p={1} />
@@ -128,8 +128,8 @@ export default function RoomCard({
             <Grid item xs={9} />
             <Grid item xs={3}>
               <MuiButton
-                href="/[namespaceId]/[roomId]/app"
-                as={`/${space.namespaceId}/${room.id}/app`}
+                href="/[namespaceId]/[nameroomId]/app"
+                as={`/${space.namespaceId}/${room.nameroomId}/app`}
                 fullWidth
                 variant="contained"
                 color="primary"
