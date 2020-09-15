@@ -8,10 +8,7 @@ import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
-import {
-  createNameroom,
-  validateNameroom,
-} from "@sentrei/common/firebase/namerooms";
+import {createNameroom} from "@sentrei/common/firebase/namerooms";
 import {trackEvent} from "@sentrei/common/utils/segment";
 
 import Room from "@sentrei/types/models/Room";
@@ -22,23 +19,23 @@ import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
   disabled: boolean;
+  spaceId: string;
   namespaceId: string;
   room: Room.Get;
 }
 
-const RoomFormId = ({disabled, namespaceId, room}: Props): JSX.Element => {
+const RoomFormId = ({
+  disabled,
+  spaceId,
+  namespaceId,
+  room,
+}: Props): JSX.Element => {
   const {t} = useTranslation();
   const {snackbar} = useSnackbar();
   const {backdrop} = useBackdrop();
 
   const RoomFormIdSchema = Yup.object().shape({
-    id: Yup.string()
-      .required(t("form:id.idRequired"))
-      .matches(/^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/, t("form:id.idInvalid"))
-      .test("id", t("form:id.idAlreadyUsed"), async value => {
-        const result = await validateNameroom(room.id, value || "");
-        return result;
-      }),
+    id: Yup.string().required(t("form:id.idRequired")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
@@ -50,12 +47,12 @@ const RoomFormId = ({disabled, namespaceId, room}: Props): JSX.Element => {
   const onSubmit = async (data: Record<string, string>): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.editing"));
     try {
-      await createNameroom(data.id, room.id)?.then(() => {
+      await createNameroom(spaceId, data.id, room.id)?.then(() => {
         snackbar("success");
         trackEvent("Edit Room Id");
         backdrop("loading");
         setTimeout(() => {
-          Router.pushI18n("/dashboard");
+          Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
         }, 300);
       });
     } catch (err) {
@@ -105,7 +102,9 @@ const RoomFormId = ({disabled, namespaceId, room}: Props): JSX.Element => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <FormButtonSubmit>{t("common:common.edit")}</FormButtonSubmit>
+          <FormButtonSubmit disabled={disabled}>
+            {t("common:common.edit")}
+          </FormButtonSubmit>
         </Grid>
         <Grid item xs={12}>
           <FormButtonCancel>{t("common:common.cancel")}</FormButtonCancel>

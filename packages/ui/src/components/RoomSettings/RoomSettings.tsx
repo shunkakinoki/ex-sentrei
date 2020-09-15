@@ -63,6 +63,7 @@ export default function RoomSettings({
         profile={profile}
         user={user}
         room={room}
+        spaceId={spaceId}
         namespaceId={namespaceId}
       />
     </GridSettings>

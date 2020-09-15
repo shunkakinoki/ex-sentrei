@@ -21,6 +21,7 @@ export interface Props {
   profile: Profile.Get;
   room: Room.Get;
   user: User.Get;
+  spaceId: string;
   namespaceId: string;
 }
 
@@ -29,6 +30,7 @@ const RoomSettingsBoard = ({
   profile,
   room,
   user,
+  spaceId,
   namespaceId,
 }: Props): JSX.Element => {
   const {t} = useTranslation();
@@ -60,6 +62,7 @@ const RoomSettingsBoard = ({
           <RoomFormId
             disabled={role !== "admin"}
             room={room}
+            spaceId={spaceId}
             namespaceId={namespaceId}
           />
         }
