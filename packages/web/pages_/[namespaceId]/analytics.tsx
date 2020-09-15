@@ -5,7 +5,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceAnalytics from "@sentrei/ui/components/SpaceAnalytics";
@@ -52,7 +52,7 @@ const Analytics: NextPage = () => {
           model="space"
           namespaceId={String(query.namespaceId)}
         />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }

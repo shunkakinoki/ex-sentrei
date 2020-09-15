@@ -8,7 +8,7 @@ import * as React from "react";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 
-export default function HomeScreen(): JSX.Element {
+export default function ErrorScreen(): JSX.Element {
   const {t} = useTranslation();
 
   return (

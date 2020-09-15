@@ -7,7 +7,7 @@ import {getMembers} from "@sentrei/common/firebase/members";
 import {getNameroom} from "@sentrei/common/firebase/namerooms";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import Member from "@sentrei/types/models/Member";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -89,7 +89,7 @@ const NameroomId = (): JSX.Element => {
           namespaceId={String(query.namespaceId)}
           nameroomId={String(query.nameroomId)}
         />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }

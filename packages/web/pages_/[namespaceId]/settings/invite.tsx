@@ -6,7 +6,7 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
-import HomeScreen from "@sentrei/ui/components/HomeScreen";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -59,7 +59,7 @@ const Invite: NextPage = () => {
           model="space"
           namespaceId={String(query.namespaceId)}
         />
-        <HomeScreen />
+        <ErrorScreen />
       </>
     );
   }
