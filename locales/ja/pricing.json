@@ -8,6 +8,7 @@
       "description4": "部屋ごとの無制限のユーザーが含まれています",
       "description5": "指定成功チーム",
       "description6": "...そしてはるかに！",
+      "landingText": "お問い合わせ",
       "price": "カスタム",
       "title": "企業"
     },
@@ -19,6 +20,7 @@
       "description4": "1部屋あたり3ユーザーが含まれています",
       "description5": "ヘルプセンターへのアクセス",
       "description6": "ユーザー構成",
+      "landingText": "無料でお申し込み頂けます",
       "price": "0円",
       "title": "自由"
     },
@@ -32,6 +34,7 @@
       "description4": "1部屋あたり10ユーザーが含まれています",
       "description5": "ヘルプセンターへのアクセス",
       "description6": "高度なユーザー設定",
+      "landingText": "もっと詳しく知る",
       "price": "3千円",
       "subTitle": "最も人気のある",
       "title": "プロ"

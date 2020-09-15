@@ -8,6 +8,7 @@
       "description4": "Unlimited users per room included",
       "description5": "Designated success team",
       "description6": "...and much more!",
+      "landingText": "Contact us",
       "price": "Custom",
       "title": "Enterprise"
     },
@@ -19,6 +20,7 @@
       "description4": "3 users per room included",
       "description5": "Help center access",
       "description6": "User Configuration",
+      "landingText": "Sign up for free",
       "price": "$0",
       "title": "Free"
     },
@@ -32,6 +34,7 @@
       "description4": "10 users per room included",
       "description5": "Help center access",
       "description6": "Advanced User Configuration",
+      "landingText": "Learn more",
       "price": "$30",
       "subTitle": "Most popular",
       "title": "Pro"

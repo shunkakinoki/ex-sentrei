@@ -8,6 +8,7 @@
       "description4": "包括每间客房的无限用户",
       "description5": "指定成功团队",
       "description6": "...以及更多！",
+      "landingText": "联系我们",
       "price": "自订",
       "title": "企业"
     },
@@ -19,6 +20,7 @@
       "description4": "每间房包括3位用户",
       "description5": "帮助中心访问",
       "description6": "用户配置",
+      "landingText": "免费注册",
       "price": "¥0",
       "title": "自由"
     },
@@ -32,6 +34,7 @@
       "description4": "包括每间房间10位使用者",
       "description5": "帮助中心访问",
       "description6": "进阶使用者设定",
+      "landingText": "学到更多",
       "price": "¥200",
       "subTitle": "最受欢迎",
       "title": "专业版"
