@@ -1,5 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
-import Error from "next/error";
+
 import * as React from "react";
 
 import {FreeTier, ProTier} from "@sentrei/common/const/tiers";
@@ -8,6 +8,7 @@ import Profile from "@sentrei/types/models/Profile";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import BillingDialog from "@sentrei/ui/components/BillingDialog";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import RoomCreateBoard from "@sentrei/ui/components/RoomCreateBoard";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 
@@ -42,7 +43,7 @@ export default function RoomCreate({
   }
 
   if (space === null) {
-    return <Error statusCode={404} />;
+    return <ErrorScreen />;
   }
 
   if (

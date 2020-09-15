@@ -1,4 +1,3 @@
-import Error from "next/error";
 import * as React from "react";
 
 import {getMember} from "@sentrei/common/firebase/members";
@@ -7,6 +6,7 @@ import Member from "@sentrei/types/models/Member";
 import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import User from "@sentrei/types/models/User";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import GridSettings from "@sentrei/ui/components/GridSettings";
 import RoomSettingsBoard from "@sentrei/ui/components/RoomSettingsBoard";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
@@ -48,7 +48,7 @@ export default function RoomSettings({
   }
 
   if (!room) {
-    return <Error statusCode={404} />;
+    return <ErrorScreen />;
   }
 
   return (

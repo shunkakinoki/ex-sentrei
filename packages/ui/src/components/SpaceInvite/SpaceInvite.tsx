@@ -1,5 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
-import Error from "next/error";
+
 import * as React from "react";
 
 import {FreeTier} from "@sentrei/common/const/tiers";
@@ -10,6 +10,7 @@ import Profile from "@sentrei/types/models/Profile";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import BillingDialog from "@sentrei/ui/components/BillingDialog";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SpaceInviteBoard from "@sentrei/ui/components/SpaceInviteBoard";
@@ -61,7 +62,7 @@ export default function SpaceInvite({
   }
 
   if (!space) {
-    return <Error statusCode={404} />;
+    return <ErrorScreen />;
   }
 
   if (space.tier === "free" && space.memberCount >= FreeTier.memberCount) {

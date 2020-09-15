@@ -1,8 +1,8 @@
-import Error from "next/error";
 import * as React from "react";
 
 import {getActivitiesSnapshot} from "@sentrei/common/firebase/analytics";
 import Activity from "@sentrei/types/models/Activity";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceAnalyticsBoard from "@sentrei/ui/components/SpaceAnalyticsBoard";
 
@@ -22,7 +22,7 @@ export default function SpaceAnalytics({spaceId}: Props): JSX.Element {
   }
 
   if (activityShot === null) {
-    return <Error statusCode={404} />;
+    return <ErrorScreen />;
   }
 
   return <SpaceAnalyticsBoard activityShot={activityShot} />;

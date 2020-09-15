@@ -1,4 +1,3 @@
-import Error from "next/error";
 import * as React from "react";
 
 import {getMembersLive} from "@sentrei/common/firebase/members";
@@ -10,6 +9,7 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SkeletonScreen from "@sentrei/ui/components/SkeletonScreen";
 import SpaceHome from "@sentrei/ui/components/SpaceHome";
 
@@ -84,7 +84,7 @@ export default function SpaceScreen({
   }
 
   if (!space || !members) {
-    return <Error statusCode={404} />;
+    return <ErrorScreen />;
   }
 
   return (

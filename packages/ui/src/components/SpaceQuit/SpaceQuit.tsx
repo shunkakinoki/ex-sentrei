@@ -1,4 +1,3 @@
-import Error from "next/error";
 import * as React from "react";
 
 import {getMember} from "@sentrei/common/firebase/members";
@@ -6,6 +5,7 @@ import {getSpace} from "@sentrei/common/firebase/spaces";
 import Member from "@sentrei/types/models/Member";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
+import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import GridSettings from "@sentrei/ui/components/GridSettings";
 import SkeletonForm from "@sentrei/ui/components/SkeletonForm";
 import SpaceQuitBoard from "@sentrei/ui/components/SpaceQuitBoard";
@@ -41,7 +41,7 @@ export default function SpaceQuit({
   }
 
   if (!space) {
-    return <Error statusCode={404} />;
+    return <ErrorScreen />;
   }
 
   return (
