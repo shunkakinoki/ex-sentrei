@@ -27,5 +27,7 @@ export default function SpaceAnalytics({spaceId}: Props): JSX.Element {
     return <ErrorScreen />;
   }
 
-  return <SpaceAnalyticsBoard analyticsShot={analyticsShot} />;
+  return (
+    <SpaceAnalyticsBoard analyticsShot={analyticsShot} spaceId={spaceId} />
+  );
 }
