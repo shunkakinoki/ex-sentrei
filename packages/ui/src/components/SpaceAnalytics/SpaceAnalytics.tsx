@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import {getActivitiesSnapshot} from "@sentrei/common/firebase/analytics";
-import Activity from "@sentrei/types/models/Activity";
+import {getAnalyticsSnapshot} from "@sentrei/common/firebase/analytics";
+import Analytics from "@sentrei/types/models/Analytics";
 import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
 import SpaceAnalyticsBoard from "@sentrei/ui/components/SpaceAnalyticsBoard";
@@ -11,19 +11,21 @@ export interface Props {
 }
 
 export default function SpaceAnalytics({spaceId}: Props): JSX.Element {
-  const [activityShot, setActivityShot] = React.useState<Activity.Snapshot[]>();
+  const [analyticsShot, setAnalyticsShot] = React.useState<
+    Analytics.Snapshot[]
+  >();
 
   React.useEffect(() => {
-    getActivitiesSnapshot({spaceId}).then(setActivityShot);
+    getAnalyticsSnapshot({spaceId}).then(setAnalyticsShot);
   }, [spaceId]);
 
-  if (activityShot === undefined) {
+  if (analyticsShot === undefined) {
     return <SkeletonList />;
   }
 
-  if (activityShot === null) {
+  if (analyticsShot === null) {
     return <ErrorScreen />;
   }
 
-  return <SpaceAnalyticsBoard activityShot={activityShot} />;
+  return <SpaceAnalyticsBoard analyticsShot={analyticsShot} />;
 }
