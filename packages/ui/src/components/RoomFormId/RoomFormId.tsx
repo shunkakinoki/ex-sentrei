@@ -68,7 +68,7 @@ const RoomFormId = ({disabled, namespaceId, room}: Props): JSX.Element => {
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Grid container direction="row" alignItems="center">
-            <Grid item xs={6} sm={5} md={4}>
+            <Grid item xs={7} sm={6} md={5}>
               <Typography
                 variant="subtitle1"
                 color="textSecondary"
@@ -78,7 +78,7 @@ const RoomFormId = ({disabled, namespaceId, room}: Props): JSX.Element => {
                 sentrei.com/{namespaceId}/
               </Typography>
             </Grid>
-            <Grid item xs={6} sm={7} md={8}>
+            <Grid item xs={5} sm={6} md={7}>
               <Controller
                 as={
                   <TextField
