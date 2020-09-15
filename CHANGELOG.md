@@ -1,3 +1,10 @@
+## [1.75.1](https://github.com/sentrei/sentrei/compare/v1.75.0...v1.75.1) (2020-09-15)
+
+### Performance Improvements
+
+- ⚡️ refactor landing pricing card w/ i18n ([b49af8b](https://github.com/sentrei/sentrei/commit/b49af8b762bdcd2bdbf94243f26ba72f6fc82f26))
+- ⚡️ refactor session update ([19cc64f](https://github.com/sentrei/sentrei/commit/19cc64f524b9c392caceb03ce3a68c5823fea7e4))
+
 # [1.75.0](https://github.com/sentrei/sentrei/compare/v1.74.0...v1.75.0) (2020-09-15)
 
 ### Features
