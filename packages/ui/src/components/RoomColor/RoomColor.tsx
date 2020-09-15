@@ -47,7 +47,7 @@ export default function RoomColor({
     );
   }
 
-  if (!room) {
+  if (!room || !member) {
     return <Error statusCode={404} />;
   }
 
@@ -58,12 +58,7 @@ export default function RoomColor({
       tabRoomKey="color"
       model="room"
     >
-      <RoomColorBoard
-        role={member?.role || "viewer"}
-        room={room}
-        user={user}
-        profile={profile}
-      />
+      <RoomColorBoard room={room} user={user} profile={profile} />
     </GridSettings>
   );
 }
