@@ -28,7 +28,7 @@ export default function SpaceAnalyticsBoard({
   const [period, setPeriod] = React.useState<Analytics.Period>("hour");
 
   React.useEffect(() => {
-    getAnalytics({spaceId}).then(setAnalytics);
+    getAnalytics({spaceId, period}).then(setAnalytics);
   }, [period, spaceId]);
 
   return (

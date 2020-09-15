@@ -19,6 +19,7 @@ const analyticsQuery = ({
   limit = 5,
   last,
   spaceId,
+  period,
 }: AnalyticsQuery): firebase.firestore.Query<Analytics.Get> => {
   const collection = spaceId ? `spaces/${spaceId}/analytics` : "analytics";
 
@@ -27,6 +28,10 @@ const analyticsQuery = ({
     .withConverter(analyticsConverter)
     .orderBy("updatedAt", "desc")
     .limit(limit);
+
+  if (period) {
+    ref = ref.where("period", "==", period);
+  }
 
   if (last) {
     ref = ref.startAfter(last);
