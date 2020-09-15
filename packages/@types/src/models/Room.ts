@@ -8,13 +8,13 @@ declare namespace Room {
     emoji: string;
     name: string;
     color: string;
+    type: Types;
   };
 
   interface Fields extends EditableFields {
     participantCount: FirebaseFirestore.FieldValue | number;
     nameroomId: string;
     spaceId: string;
-    type: Types;
   }
 
   export type AdminUpdate = Partial<Fields>;

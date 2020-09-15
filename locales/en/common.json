@@ -5,6 +5,7 @@
     "app": "App",
     "avatar": "Avatar",
     "back": "Back",
+    "bond": "Bond",
     "billing": "Billing",
     "billingGoTo": "Go to Billing",
     "billingUpgrade": "Upgrade Plan",
@@ -84,6 +85,7 @@
     "username": "Username",
     "visit": "Visit",
     "week": "Week",
+    "work": "Work",
     "workspace": "Workspace",
     "writeYourStatus": "Write your status..."
   },

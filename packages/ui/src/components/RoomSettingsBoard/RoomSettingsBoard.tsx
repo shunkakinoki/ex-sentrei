@@ -13,6 +13,7 @@ import User from "@sentrei/types/models/User";
 import FormSection from "@sentrei/ui/components/FormSection";
 import RoomFormId from "@sentrei/ui/components/RoomFormId";
 import RoomFormName from "@sentrei/ui/components/RoomFormName";
+import RoomFormType from "@sentrei/ui/components/RoomFormType";
 import TabBoard from "@sentrei/ui/components/TabBoard";
 
 export interface Props {
@@ -62,7 +63,14 @@ const RoomSettingsBoard = ({
             namespaceId={namespaceId}
           />
         }
-        tabPanelThree={<></>}
+        tabPanelThree={
+          <RoomFormType
+            disabled={role !== "admin"}
+            profile={profile}
+            room={room}
+            user={user}
+          />
+        }
       />
     </>
   );

@@ -100,7 +100,9 @@ const RoomStepperSubmit = ({
               value={type}
               onChange={handleChange}
             >
+              <MenuItem value="bond">{t("common:common.bond")}</MenuItem>
               <MenuItem value="focus">{t("common:common.focus")}</MenuItem>
+              <MenuItem value="work">{t("common:common.work")}</MenuItem>
             </TextField>
           </FormControl>
         </Grid>
