@@ -10,6 +10,9 @@ declare namespace Metrics {
     room?: {
       [x in Room.Types | "duration"]?: FirebaseFirestore.FieldValue | number;
     };
+    type?: {
+      [x in Room.Types | "duration"]?: FirebaseFirestore.FieldValue | number;
+    };
     record?: FirebaseFirestore.FieldValue | number;
     score?: FirebaseFirestore.FieldValue | number;
   };
@@ -20,6 +23,9 @@ declare namespace Metrics {
       [x in Room.Types | "duration"]?: number;
     };
     room?: {
+      [x in Room.Types | "duration"]?: number;
+    };
+    type?: {
       [x in Room.Types | "duration"]?: number;
     };
     record?: number;
@@ -43,6 +49,9 @@ declare namespace Metrics {
       [x in Room.Types | "duration"]?: number;
     };
     room?: {
+      [x in Room.Types | "duration"]?: number;
+    };
+    type?: {
       [x in Room.Types | "duration"]?: number;
     };
     record?: number;
