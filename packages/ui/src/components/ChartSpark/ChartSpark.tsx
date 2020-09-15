@@ -1,6 +1,7 @@
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import Grid from "@material-ui/core/Grid";
+import {withStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import {
@@ -29,19 +30,24 @@ export default function ChartSpark({
   title,
   value,
 }: Props): JSX.Element {
+  const CustomTypography = withStyles({
+    root: {
+      color,
+    },
+  })(Typography);
+
   return (
     <Card>
       <Grid container direction="row" alignItems="center">
-        <Grid item xs={1} />
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Grid container direction="column" alignItems="center">
-            <Box alignItems="flex-end">
-              <Typography noWrap component="h5" variant="h5" align="center">
+            <Box alignItems="flex-end" m={1}>
+              <CustomTypography noWrap variant="h5" align="center">
                 {value}
-              </Typography>
-              <Typography noWrap component="h6" variant="h6" align="center">
+              </CustomTypography>
+              <CustomTypography noWrap variant="h6" align="center">
                 {title}
-              </Typography>
+              </CustomTypography>
             </Box>
           </Grid>
         </Grid>
@@ -55,7 +61,7 @@ export default function ChartSpark({
                     <stop offset="95%" stopColor={color} stopOpacity={0} />
                   </linearGradient>
                 </defs>
-                <XAxis dataKey="updatedAt" />
+                <XAxis dataKey="updatedAt" reversed />
                 <Area
                   type="monotone"
                   dataKey={dataKey}
