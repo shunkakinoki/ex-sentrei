@@ -14,6 +14,7 @@
     "/[namespaceId]/members": ["space"],
     "/[namespaceId]/[nameroomId]": ["space", "video"],
     "/[namespaceId]/[nameroomId]/settings": ["room"],
+    "/[namespaceId]/[nameroomId]/settings/color": ["room"],
     "/[namespaceId]/[nameroomId]/settings/delete": ["room"],
     "/[namespaceId]/[nameroomId]/settings/quit": ["room"],
     "/[namespaceId]/rooms": ["room", "space"],

@@ -1,4 +1,5 @@
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import Container from "@material-ui/core/Container";
+import PaletteIcon from "@material-ui/icons/Palette";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
@@ -22,16 +23,18 @@ const RoomColorBoard = ({role, profile, room, user}: Props): JSX.Element => {
   return (
     <>
       <FormSection
-        icon={<ExitToAppIcon />}
-        title={t("room:room.colorRoom")}
+        icon={<PaletteIcon />}
+        title={t("room:room.color")}
         size="md"
       />
-      <RoomFormColor
-        disabled={role !== "admin"}
-        profile={profile}
-        room={room}
-        user={user}
-      />
+      <Container maxWidth="sm" component="main">
+        <RoomFormColor
+          disabled={role !== "admin"}
+          profile={profile}
+          room={room}
+          user={user}
+        />
+      </Container>
     </>
   );
 };

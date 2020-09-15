@@ -1,5 +1,6 @@
 {
   "room": {
+    "color": "Color",
     "createRoom": "Create Room",
     "deleteRoom": "Delete Room",
     "editRoom": "Edit Room",
