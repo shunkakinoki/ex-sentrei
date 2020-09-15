@@ -46,15 +46,6 @@ export default function RoomMenu({
       onClose={onClose}
     >
       <MuiMenuItem
-        href="/[namespaceId]/[nameroomId]/settings"
-        as={`/${namespaceId}/${nameroomId}/settings`}
-      >
-        <ListItemIcon>
-          <SettingsIcon fontSize="small" />
-        </ListItemIcon>
-        <ListItemText primary={t("room:room.settings")} />
-      </MuiMenuItem>
-      <MuiMenuItem
         href="/[namespaceId]/[nameroomId]/settings/color"
         as={`/${namespaceId}/${nameroomId}/settings/color`}
       >
@@ -62,6 +53,15 @@ export default function RoomMenu({
           <PaletteIcon fontSize="small" />
         </ListItemIcon>
         <ListItemText primary={t("room:room.color")} />
+      </MuiMenuItem>
+      <MuiMenuItem
+        href="/[namespaceId]/[nameroomId]/settings"
+        as={`/${namespaceId}/${nameroomId}/settings`}
+      >
+        <ListItemIcon>
+          <SettingsIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText primary={t("room:room.settings")} />
       </MuiMenuItem>
       <MuiMenuItem
         href="/[namespaceId]/[nameroomId]/settings/delete"
