@@ -30,7 +30,7 @@ const analyticsQuery = ({
     .limit(limit);
 
   if (period) {
-    ref = ref.where("period", "==", period);
+    ref = ref.where("period", "in", ["latest", period]);
   }
 
   if (last) {

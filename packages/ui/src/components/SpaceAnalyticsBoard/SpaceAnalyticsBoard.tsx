@@ -8,6 +8,7 @@ import * as React from "react";
 
 import {getAnalytics} from "@sentrei/common/firebase/analytics";
 import Analytics from "@sentrei/types/models/Analytics";
+import ChartBar from "@sentrei/ui/components/ChartBar";
 import ChartSpark from "@sentrei/ui/components/ChartSpark";
 import SpaceSection from "@sentrei/ui/components/SpaceSection";
 
@@ -134,6 +135,13 @@ export default function SpaceAnalyticsBoard({
               value={analytics[0].stats?.sessions || 0}
             />
           </Grid>
+        </Grid>
+        <Box m={3} />
+        <Grid container direction="row" alignItems="center" spacing={2}>
+          <Grid item xs={12} sm={12} md={4}>
+            <ChartBar data={analyticsShot[0]} color="#8884d8" />
+          </Grid>
+          <Grid item xs={12} sm={12} md={8} />
         </Grid>
       </Container>
     </>

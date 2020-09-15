@@ -9,6 +9,7 @@ export type ActionsCollection =
   | "updated_members"
   | "updated_rooms"
   | "updated_rooms"
+  | "updated_sessions"
   | "updated_spaces"
   | "deleted_invites"
   | "deleted_members"
@@ -28,7 +29,7 @@ export const actionsCollection: ActionsCollection[] = [
   "created_spaces",
   "updated_members",
   "updated_rooms",
-  "updated_rooms",
+  "updated_sessions",
   "updated_spaces",
   "deleted_invites",
   "deleted_members",
