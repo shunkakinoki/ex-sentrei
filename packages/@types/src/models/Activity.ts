@@ -79,7 +79,7 @@ declare namespace Activity {
   export type UpdateRoom = Update<Room.Response, "rooms">;
   export type DeleteRoom = Delete<Room.Response, "rooms">;
   export type CreateSession = Create<Session.Response, "sessions">;
-  export type DeleteSession = Delete<Session.Response, "sessions">;
+  export type UpdateSession = Update<Session.Response, "sessions">;
   export type CreateSpace = Create<Space.Response, "spaces">;
   export type UpdateSpace = Update<Space.Response, "spaces">;
   export type DeleteSpace = Delete<Space.Response, "spaces">;
@@ -93,7 +93,11 @@ declare namespace Activity {
     | CreateSession
     | CreateSpace;
 
-  export type UpdateActions = UpdateMember | UpdateRoom | UpdateSpace;
+  export type UpdateActions =
+    | UpdateMember
+    | UpdateRoom
+    | UpdateSession
+    | UpdateSpace;
 
   export type DeleteActions =
     | DeleteInvite
