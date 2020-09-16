@@ -1,4 +1,4 @@
-import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType} from "next";
+import {GetStaticProps, InferGetStaticPropsType} from "next";
 
 import dynamic from "next/dynamic";
 import * as React from "react";
@@ -19,11 +19,6 @@ export interface Props {
   dayData: string;
   weekData: string;
 }
-
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {paths: [], fallback: "unstable_blocking"};
-};
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const hourReq = getAdminAnalytics({period: "hour"});
