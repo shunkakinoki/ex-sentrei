@@ -5,6 +5,7 @@ import * as React from "react";
 
 import {getAdminAnalytics} from "@sentrei/common/firebaseAdmin/analytics";
 import Analytics from "@sentrei/types/models/Analytics";
+import Footer from "@sentrei/ui/components/Footer";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const AnalyticsScreen = dynamic(
@@ -56,6 +57,7 @@ const AnalyticsPage = ({
         dayData={JSON.parse(dayData) as Analytics.Get[]}
         weekData={JSON.parse(weekData) as Analytics.Get[]}
       />
+      <Footer />
     </>
   );
 };
