@@ -9,12 +9,11 @@ export type ActionsCollection =
   | "updated_members"
   | "updated_rooms"
   | "updated_rooms"
+  | "updated_sessions"
   | "updated_spaces"
   | "deleted_invites"
   | "deleted_members"
   | "deleted_participants"
-  | "deleted_rooms"
-  | "deleted_sessions"
   | "deleted_rooms"
   | "deleted_spaces";
 
@@ -28,13 +27,11 @@ export const actionsCollection: ActionsCollection[] = [
   "created_spaces",
   "updated_members",
   "updated_rooms",
-  "updated_rooms",
+  "updated_sessions",
   "updated_spaces",
   "deleted_invites",
   "deleted_members",
   "deleted_participants",
-  "deleted_rooms",
-  "deleted_sessions",
   "deleted_rooms",
   "deleted_spaces",
 ];

@@ -3,13 +3,17 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 
 export interface Props {
+  noBottom?: boolean;
   subTitle?: string;
   title: string;
 }
 
-export default function SpaceSection({title}: Props): JSX.Element {
+export default function SpaceSection({
+  noBottom = false,
+  title,
+}: Props): JSX.Element {
   return (
-    <Box mt={3} mb={6}>
+    <Box mt={3} mb={noBottom ? 0 : 3}>
       <Typography
         variant="h3"
         align="center"

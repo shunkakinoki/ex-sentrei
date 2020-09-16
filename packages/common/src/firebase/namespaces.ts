@@ -1,4 +1,6 @@
-import reservedNames from "@sentrei/common/const/reservedNamespaces";
+import reservedNamerooms from "@sentrei/common/const/reservedNamerooms";
+import reservedNames from "@sentrei/common/const/reservedNames";
+import reservedNamespaces from "@sentrei/common/const/reservedNamespaces";
 import {serializeNamespace} from "@sentrei/common/serializers/Namespace";
 import {db} from "@sentrei/common/utils/firebase";
 import Namespace, {NamespaceModel} from "@sentrei/types/models/Namespace";
@@ -15,7 +17,9 @@ const namespaceConverter: firebase.firestore.FirestoreDataConverter<Namespace> =
 };
 
 export const isReservedNamespace = (namespaceId: string): boolean => {
-  return reservedNames.includes(namespaceId);
+  return reservedNamespaces
+    .concat(reservedNames, reservedNamerooms)
+    .includes(namespaceId);
 };
 
 export const validateNamespace = async (

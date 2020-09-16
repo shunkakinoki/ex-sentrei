@@ -1,38 +1,36 @@
-import {serializeActivity} from "@sentrei/common/serializers/Activity";
+import {serializeAnalytics} from "@sentrei/common/serializers/Analytics";
 import {db} from "@sentrei/common/utils/firebase";
-import Activity from "@sentrei/types/models/Activity";
-import ActivityQuery from "@sentrei/types/services/ActivityQuery";
+import Analytics from "@sentrei/types/models/Analytics";
+import AnalyticsQuery from "@sentrei/types/services/AnalyticsQuery";
 
-const activityConverter: firebase.firestore.FirestoreDataConverter<Activity.Get> = {
+const analyticsConverter: firebase.firestore.FirestoreDataConverter<Analytics.Get> = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   toFirestore(data: any) {
     return data;
   },
   fromFirestore(
-    snapshot: firebase.firestore.QueryDocumentSnapshot<Activity.Response>,
-  ): Activity.Get {
-    return serializeActivity(snapshot);
+    snapshot: firebase.firestore.QueryDocumentSnapshot<Analytics.Response>,
+  ): Analytics.Get {
+    return serializeAnalytics(snapshot);
   },
 };
 
-const activitiesQuery = ({
-  limit = 30,
+const analyticsQuery = ({
+  limit = 5,
   last,
   spaceId,
-  itemPath,
-}: ActivityQuery): firebase.firestore.Query<Activity.Get> => {
-  const collection = spaceId ? `spaces/${spaceId}/activity` : "activity";
+  period,
+}: AnalyticsQuery): firebase.firestore.Query<Analytics.Get> => {
+  const collection = spaceId ? `spaces/${spaceId}/analytics` : "analytics";
 
   let ref = db
     .collection(collection)
-    .withConverter(activityConverter)
+    .withConverter(analyticsConverter)
     .orderBy("updatedAt", "desc")
-    .where("category", "==", "sessions")
-    .where("type", "==", "member")
     .limit(limit);
 
-  if (itemPath) {
-    ref = ref.where("itemPath", "==", itemPath);
+  if (period) {
+    ref = ref.where("period", "in", ["latest", period]);
   }
 
   if (last) {
@@ -42,16 +40,16 @@ const activitiesQuery = ({
   return ref;
 };
 
-export const getActivities = async (
-  query: ActivityQuery,
-): Promise<Activity.Get[]> => {
-  const snap = await activitiesQuery(query).get();
+export const getAnalytics = async (
+  query: AnalyticsQuery,
+): Promise<Analytics.Get[]> => {
+  const snap = await analyticsQuery(query).get();
   return snap.docs.map(doc => doc.data());
 };
 
-export const getActivitiesSnapshot = async (
-  query: ActivityQuery,
-): Promise<Activity.Snapshot[]> => {
-  const ref = await activitiesQuery(query).get();
+export const getAnalyticsSnapshot = async (
+  query: AnalyticsQuery,
+): Promise<Analytics.Snapshot[]> => {
+  const ref = await analyticsQuery(query).get();
   return ref.docs.map(snap => ({...snap.data(), snap}));
 };

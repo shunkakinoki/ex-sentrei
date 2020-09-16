@@ -1,5 +1,5 @@
 import {NextPage} from "next";
-
+import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
 import * as React from "react";
 
@@ -8,8 +8,14 @@ import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
 
 import SkeletonList from "@sentrei/ui/components/SkeletonList";
-import SpaceAnalytics from "@sentrei/ui/components/SpaceAnalytics";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
+
+const SpaceAnalytics = dynamic(
+  () => {
+    return import("@sentrei/ui/components/SpaceAnalytics");
+  },
+  {ssr: false},
+);
 
 const Analytics: NextPage = () => {
   const {query} = useRouter();

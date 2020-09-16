@@ -1,27 +1,155 @@
+import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import Activity from "@sentrei/types/models/Activity";
-import SpaceAnalyticsChart from "@sentrei/ui/components/SpaceAnalyticsChart";
+import {getAnalytics} from "@sentrei/common/firebase/analytics";
+import Analytics from "@sentrei/types/models/Analytics";
+import ChartBar from "@sentrei/ui/components/ChartBar";
+import ChartLine from "@sentrei/ui/components/ChartLine";
+import ChartSpark from "@sentrei/ui/components/ChartSpark";
 import SpaceSection from "@sentrei/ui/components/SpaceSection";
 
 export interface Props {
-  activityShot: Activity.Snapshot[];
+  analyticsShot: Analytics.Snapshot[];
+  spaceId: string;
 }
 
 export default function SpaceAnalyticsBoard({
-  activityShot,
+  analyticsShot,
+  spaceId,
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
-  const [activities] = React.useState<Activity.Get[]>(activityShot);
+  const [analytics, setAnalytics] = React.useState<Analytics.Get[]>(
+    analyticsShot,
+  );
+  const [period, setPeriod] = React.useState<Analytics.Period>("hour");
+  const [dayDisabled, setDayDisabled] = React.useState<boolean>(true);
+  const [hourDisabled, setHourDisabled] = React.useState<boolean>(true);
+  const [weekDisabled, setWeekDisabled] = React.useState<boolean>(true);
+
+  React.useEffect(() => {
+    if (analyticsShot.length > 1) {
+      getAnalytics({spaceId, period}).then(setAnalytics);
+    }
+  }, [period, analyticsShot.length, spaceId]);
+
+  React.useEffect(() => {
+    analyticsShot.forEach(doc => {
+      switch (doc.period) {
+        case "hour": {
+          setHourDisabled(false);
+          break;
+        }
+        case "day": {
+          setDayDisabled(false);
+          break;
+        }
+        case "week": {
+          setWeekDisabled(false);
+          break;
+        }
+        default:
+          break;
+      }
+    });
+  });
 
   return (
     <>
-      <SpaceSection title={t("space:analytics.title")} />
+      <SpaceSection noBottom title={t("space:analytics.title")} />
       <Container maxWidth="md" component="main">
-        <SpaceAnalyticsChart activities={activities} />
+        <Box display="flex" justifyContent="flex-end" mb={2}>
+          <ButtonGroup
+            color="primary"
+            aria-label="outlined primary button group"
+          >
+            <Button
+              disabled={hourDisabled}
+              variant={period === "hour" ? "contained" : "outlined"}
+              onClick={(): void => {
+                setPeriod("hour");
+              }}
+            >
+              {t("common:common.hour")}
+            </Button>
+            <Button
+              disabled={dayDisabled}
+              variant={period === "day" ? "contained" : "outlined"}
+              onClick={(): void => {
+                setPeriod("day");
+              }}
+            >
+              {t("common:common.day")}
+            </Button>
+            <Button
+              disabled={weekDisabled}
+              variant={period === "week" ? "contained" : "outlined"}
+              onClick={(): void => {
+                setPeriod("week");
+              }}
+            >
+              {t("common:common.week")}
+            </Button>
+          </ButtonGroup>
+        </Box>
+      </Container>
+      <Container maxWidth="lg" component="main">
+        <Grid container direction="row" alignItems="center" spacing={2}>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color="#8884d8"
+              dataKey="stats.activity"
+              title={t("common:common.activity")}
+              value={analytics[0].stats?.activity || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color="#8884d8"
+              dataKey="stats.analytics"
+              title={t("common:common.analytics")}
+              value={analytics[0].stats?.analytics || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color="#8884d8"
+              dataKey="stats.rooms"
+              title={t("common:common.rooms")}
+              value={analytics[0].stats?.rooms || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color="#8884d8"
+              dataKey="stats.sessions"
+              title={t("common:common.sessions")}
+              value={analytics[0].stats?.sessions || 0}
+            />
+          </Grid>
+        </Grid>
+        <Box m={2} />
+        <Grid container direction="row" alignItems="stretch" spacing={2}>
+          <Grid item xs={12} sm={12} md={4}>
+            <ChartBar data={analyticsShot[0]} color="#8884d8" />
+          </Grid>
+          <Grid item xs={12} sm={12} md={8}>
+            <ChartLine
+              data={analytics}
+              color="#8884d8"
+              title={t("common:common.duration")}
+            />
+          </Grid>
+        </Grid>
       </Container>
     </>
   );

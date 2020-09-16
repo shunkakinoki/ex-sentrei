@@ -9,6 +9,7 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import {
+  isReservedNameroom,
   validateNameroom,
   createNameroom,
 } from "@sentrei/common/firebase/namerooms";
@@ -41,6 +42,10 @@ const RoomFormId = ({
     id: Yup.string()
       .required(t("form:id.idRequired"))
       .matches(/^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$/, t("form:id.idInvalid"))
+      .test("id", t("form:id.idInvalid"), value => {
+        const result = isReservedNameroom(value || "");
+        return !result;
+      })
       .test("id", t("form:id.idAlreadyUsed"), async value => {
         const result = await validateNameroom(spaceId, value || "");
         return result;
