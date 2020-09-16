@@ -3,6 +3,8 @@ import Box from "@material-ui/core/Box";
 import * as React from "react";
 
 import Analytics from "@sentrei/types/models/Analytics";
+import AnalyticsBanner from "@sentrei/ui/components/AnalyticsBanner";
+import AnalyticsBoard from "@sentrei/ui/components/AnalyticsBoard";
 
 export interface Props {
   hourData: Analytics.Get[];
@@ -16,8 +18,13 @@ export default function AnalyticsScreen({
 }: Props): JSX.Element {
   return (
     <>
-      <Box p={1} />
+      <AnalyticsBanner />
       <Box p={3} />
+      <AnalyticsBoard
+        hourData={hourData}
+        dayData={dayData}
+        weekData={weekData}
+      />
     </>
   );
 }
