@@ -1,3 +1,25 @@
+# [1.77.0](https://github.com/sentrei/sentrei/compare/v1.76.0...v1.77.0) (2020-09-16)
+
+### Features
+
+- 🎸 complete refactor metric model ([881f985](https://github.com/sentrei/sentrei/commit/881f9852d8f9996b09d23076501c07af2ac5d63d))
+- 🎸 ini analytics button group ([17dbf4a](https://github.com/sentrei/sentrei/commit/17dbf4adf8ee8ffb78c4914e883ef76c00e6d629))
+- 🎸 ini analytics conditional rendering ([e769496](https://github.com/sentrei/sentrei/commit/e7694961d406aa25c219ffe8ddd02fd9db632d68))
+- 🎸 ini chart bar ([c66883d](https://github.com/sentrei/sentrei/commit/c66883db631977afe6a45c8ba93cdd0b05398297))
+- 🎸 ini chart line ([defae7b](https://github.com/sentrei/sentrei/commit/defae7b8016b78bd1da77fed7b7bdc0cd9b7a9fd))
+- 🎸 ini chart spark component ([20ec3be](https://github.com/sentrei/sentrei/commit/20ec3bee69df61dd68082f43e3b23cabd177ebd0))
+- 🎸 ini composite query for analytics ([2b25fab](https://github.com/sentrei/sentrei/commit/2b25fab8c9b29247d3da3ed02282cc23381d230d))
+- 🎸 ini reserved nameroom ([83ba8c1](https://github.com/sentrei/sentrei/commit/83ba8c12cad95abe73d33ca649891f8c844affd8))
+- 🎸 ini update session activity ([fd20f55](https://github.com/sentrei/sentrei/commit/fd20f55b4f2aafdcf418825a43d5b6fa6319baaf))
+- 🎸 migrate activity to analytics ([d72850e](https://github.com/sentrei/sentrei/commit/d72850e41d90e15273185632569b328d1596a9ba))
+- 🎸 refactor chart spark ([b503511](https://github.com/sentrei/sentrei/commit/b503511d79590e4829a414e92059aba18b486b94))
+
+### Performance Improvements
+
+- ⚡️ ini custom formatter ([4026e4e](https://github.com/sentrei/sentrei/commit/4026e4e83d12cf4b5d37bdaabb34ee002a1f1664))
+- ⚡️ install apex charts ([5cea14d](https://github.com/sentrei/sentrei/commit/5cea14d64ad48cb87a041e8b72e6c3b6f11e899d))
+- ⚡️ refactor session optional for chart bar ([e1c1713](https://github.com/sentrei/sentrei/commit/e1c1713a169d69f62d250d996ce49c768a7912bc))
+
 # [1.76.0](https://github.com/sentrei/sentrei/compare/v1.75.1...v1.76.0) (2020-09-15)
 
 ### Features
