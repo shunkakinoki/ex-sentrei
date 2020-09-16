@@ -19,7 +19,7 @@ export default function AnalyticsScreen({
   return (
     <>
       <AnalyticsBanner />
-      <Box p={3} />
+      <Box p={1} />
       <AnalyticsBoard
         hourData={hourData}
         dayData={dayData}

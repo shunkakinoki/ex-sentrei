@@ -1,4 +1,3 @@
-import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 
@@ -12,7 +11,6 @@ export default function AnalyticsBanner(): JSX.Element {
 
   return (
     <Container maxWidth="md" component="main">
-      <Box p={1} />
       <Typography
         variant="h1"
         component="h1"
