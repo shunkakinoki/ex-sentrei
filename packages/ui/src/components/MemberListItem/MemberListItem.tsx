@@ -1,10 +1,8 @@
-import IconButton from "@material-ui/core/IconButton";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
-import GitHubIcon from "@material-ui/icons/GitHub";
 import {Emoji} from "emoji-mart";
 import * as React from "react";
 
@@ -37,11 +35,7 @@ export default function MemberListItem({member}: Props): JSX.Element {
           </div>
         }
       />
-      <ListItemSecondaryAction>
-        <IconButton edge="end" aria-label="delete">
-          <GitHubIcon />
-        </IconButton>
-      </ListItemSecondaryAction>
+      <ListItemSecondaryAction />
     </ListItem>
   );
 }

@@ -21,8 +21,8 @@ import BoxGradient from "@sentrei/ui/components/BoxGradient";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
 import MuiLink from "@sentrei/ui/components/MuiLink";
+import RoomCardEmojiPicker from "@sentrei/ui/components/RoomCardEmojiPicker";
 import RoomMenu from "@sentrei/ui/components/RoomMenu";
-import RoomTypeChip from "@sentrei/ui/components/RoomTypeChip";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 import RoomCardStyles from "./RoomCardStyles";
@@ -76,7 +76,12 @@ export default function RoomCard({
           alignItems="center"
         >
           <Grid item xs={1} sm={1} md={1}>
-            <RoomTypeChip type={room.type} />
+            <RoomCardEmojiPicker
+              emoji={room.emoji}
+              profile={profile}
+              roomId={room.id}
+              userId={user.uid}
+            />
           </Grid>
           <Grid item xs={6} sm={7} md={8} justify="center">
             <MuiLink
