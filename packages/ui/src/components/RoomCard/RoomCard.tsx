@@ -19,8 +19,6 @@ import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import BoxGradient from "@sentrei/ui/components/BoxGradient";
 import MuiButton from "@sentrei/ui/components/MuiButton";
-import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
-import MuiLink from "@sentrei/ui/components/MuiLink";
 import RoomCardEmojiPicker from "@sentrei/ui/components/RoomCardEmojiPicker";
 import RoomMenu from "@sentrei/ui/components/RoomMenu";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -61,12 +59,7 @@ export default function RoomCard({
   return (
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
-        <MuiButtonBase
-          href="/[namespaceId]/[nameroomId]"
-          as={`/${space.namespaceId}/${room.nameroomId}`}
-        >
-          <BoxGradient color={room.color} />
-        </MuiButtonBase>
+        <BoxGradient color={room.color} />
       </CardActionArea>
       <CardContent>
         <Grid
@@ -84,22 +77,16 @@ export default function RoomCard({
             />
           </Grid>
           <Grid item xs={6} sm={7} md={8} justify="center">
-            <MuiLink
-              href="/[namespaceId]/[nameroomId]"
-              as={`/${space.namespaceId}/${room.nameroomId}`}
-              color="secondary"
+            <Typography
+              component="h3"
+              variant="h4"
+              align="center"
+              color="textPrimary"
+              noWrap
+              gutterBottom
             >
-              <Typography
-                component="h3"
-                variant="h4"
-                align="center"
-                color="textPrimary"
-                noWrap
-                gutterBottom
-              >
-                {room.name}
-              </Typography>
-            </MuiLink>
+              {room.name}
+            </Typography>
           </Grid>
           <Grid item xs={2} sm={1} md={1}>
             <CopyToClipboard
@@ -138,8 +125,8 @@ export default function RoomCard({
             <Grid item xs={9} />
             <Grid item xs={3}>
               <MuiButton
-                href="/[namespaceId]/[nameroomId]/app"
-                as={`/${space.namespaceId}/${room.nameroomId}/app`}
+                href="/[namespaceId]/[nameroomId]"
+                as={`/${space.namespaceId}/${room.nameroomId}`}
                 fullWidth
                 variant="contained"
                 color="primary"
