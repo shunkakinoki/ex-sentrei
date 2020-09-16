@@ -1,11 +1,13 @@
 import Badge from "@material-ui/core/Badge";
 import {Theme, withStyles, createStyles} from "@material-ui/core/styles";
 
+import {BadgeOfflineColor} from "@sentrei/common/const/color";
+
 const BadgeOffline = withStyles((theme: Theme) =>
   createStyles({
     badge: {
-      backgroundColor: "#ea907a",
-      color: "#ea907a",
+      backgroundColor: BadgeOfflineColor,
+      color: BadgeOfflineColor,
       boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
       "&::after": {
         position: "absolute",

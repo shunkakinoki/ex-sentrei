@@ -6,20 +6,26 @@ import * as React from "react";
 import {
   BarChart,
   Bar,
+  Legend,
   ResponsiveContainer,
   XAxis,
   CartesianGrid,
   Tooltip,
 } from "recharts";
 
+import {
+  MemberColor,
+  RoomColor,
+  SessionColor,
+} from "@sentrei/common/const/color";
+
 import Analytics from "@sentrei/types/models/Analytics";
 
 export interface Props {
-  color: string;
   data: Analytics.Get;
 }
 
-export default function ChartBar({color, data}: Props): JSX.Element {
+export default function ChartBar({data}: Props): JSX.Element {
   const {t} = useTranslation();
 
   const [barData, setBarData] = React.useState<
@@ -56,11 +62,49 @@ export default function ChartBar({color, data}: Props): JSX.Element {
             <ResponsiveContainer minWidth={350} minHeight={300}>
               <BarChart data={barData} barSize={20}>
                 <XAxis dataKey="action" />
-                <Tooltip />
+                <Legend
+                  formatter={(
+                    val: string | number | React.ReactText[],
+                  ): (string | number | React.ReactText[])[] => {
+                    switch (val) {
+                      case "member": {
+                        return [t("analytics:actions.member")];
+                      }
+                      case "room": {
+                        return [t("analytics:actions.room")];
+                      }
+                      case "session": {
+                        return [t("analytics:actions.session")];
+                      }
+                      default:
+                        return [val];
+                    }
+                  }}
+                />
+                <Tooltip
+                  formatter={(
+                    value: string | number | Array<string | number>,
+                    name: string,
+                  ): (string | number | React.ReactText[])[] => {
+                    switch (name) {
+                      case "member": {
+                        return [value, t("analytics:actions.member")];
+                      }
+                      case "room": {
+                        return [value, t("analytics:actions.room")];
+                      }
+                      case "session": {
+                        return [value, t("analytics:actions.session")];
+                      }
+                      default:
+                        return [name];
+                    }
+                  }}
+                />
                 <CartesianGrid strokeDasharray="3 3" />
-                <Bar dataKey="member" fill={color} />
-                <Bar dataKey="room" fill={color} />
-                <Bar dataKey="session" fill={color} />
+                <Bar dataKey="member" fill={MemberColor} />
+                <Bar dataKey="room" fill={RoomColor} />
+                <Bar dataKey="session" fill={SessionColor} />
               </BarChart>
             </ResponsiveContainer>
           </Box>

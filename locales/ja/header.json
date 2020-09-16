@@ -1,14 +1,14 @@
 {
   "about": {
-    "core": "基本的価値観",
+    "core": "コア・バリュー",
     "investor": "投資家",
     "mission": "ミッション",
     "team": "チーム"
   },
   "default": {
     "about": "会社について",
-    "home": "ホーム",
-    "pricing": "価格",
+    "analytics": "アナリティクス",
+    "pricing": "価格表",
     "support": "サポート"
   },
   "header": {

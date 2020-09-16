@@ -1,0 +1,30 @@
+{
+  "actions": {
+    "member": "Member",
+    "room": "Room",
+    "session": "Session"
+  },
+  "analytics": {
+    "title": "Analytics"
+  },
+  "label": {
+    "activity": "Activity",
+    "analytics": "Analytics",
+    "invites": "Invites",
+    "members": "Members",
+    "namerooms": "Namerooms",
+    "namespaces": "Namespaces",
+    "participants": "Participants",
+    "profiles": "Profiles",
+    "rooms": "Rooms",
+    "sessions": "Sessions",
+    "spaces": "Spaces",
+    "users": "Users"
+  },
+  "metrics": {
+    "bond": "Bond",
+    "duration": "Duration",
+    "focus": "Focus",
+    "work": "Work"
+  }
+}

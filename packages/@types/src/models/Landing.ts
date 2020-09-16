@@ -1,5 +1,6 @@
 export type LandingKey =
   | "about"
+  | "analytics"
   | "credits"
   | "invite"
   | "landing"

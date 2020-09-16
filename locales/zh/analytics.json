@@ -1,0 +1,31 @@
+{
+  "actions": {
+    "member": "会员",
+    "room": "房间",
+    "session": "届会"
+  },
+  "analytics": {
+    "title": "分析工具"
+  },
+  "label": {
+    "activity": "活动",
+    "analytics": "分析工具",
+    "duration": "持续时间",
+    "invites": "邀请",
+    "members": "会员",
+    "namerooms": "命名室",
+    "namespaces": "命名空间",
+    "participants": "参加者",
+    "profiles": "个人资料",
+    "rooms": "房间数",
+    "sessions": "届会",
+    "spaces": "空间",
+    "users": "用户数"
+  },
+  "metrics": {
+    "bond": "键",
+    "duration": "持续时间",
+    "focus": "焦点",
+    "work": "工作"
+  }
+}
