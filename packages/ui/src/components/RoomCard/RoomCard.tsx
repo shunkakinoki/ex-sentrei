@@ -18,8 +18,8 @@ import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
 import BoxGradient from "@sentrei/ui/components/BoxGradient";
-import MuiButton from "@sentrei/ui/components/MuiButton";
 import RoomCardEmojiPicker from "@sentrei/ui/components/RoomCardEmojiPicker";
+import RoomCardVisitButton from "@sentrei/ui/components/RoomCardVisitButton";
 import RoomMenu from "@sentrei/ui/components/RoomMenu";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -122,17 +122,13 @@ export default function RoomCard({
         <Box p={1} />
         <div className={classes.container}>
           <Grid container direction="row" justify="space-around">
-            <Grid item xs={9} />
-            <Grid item xs={3}>
-              <MuiButton
-                href="/[namespaceId]/[nameroomId]"
-                as={`/${space.namespaceId}/${room.nameroomId}`}
-                fullWidth
-                variant="contained"
-                color="primary"
-              >
-                {t("common:common.visit")}
-              </MuiButton>
+            <Grid item xs={8} />
+            <Grid item xs={4}>
+              <RoomCardVisitButton
+                namespaceId={space.namespaceId}
+                room={room}
+                space={space}
+              />
             </Grid>
           </Grid>
         </div>
