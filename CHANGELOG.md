@@ -1,3 +1,9 @@
+# [1.80.0](https://github.com/sentrei/sentrei/compare/v1.79.0...v1.80.0) (2020-09-16)
+
+### Features
+
+- 🎸 refactor video button ([ec393fd](https://github.com/sentrei/sentrei/commit/ec393fdeb47f8519b931d2dd3b32e6326fd1e895))
+
 # [1.79.0](https://github.com/sentrei/sentrei/compare/v1.78.0...v1.79.0) (2020-09-16)
 
 ### Features
