@@ -1,3 +1,22 @@
+# [1.79.0](https://github.com/sentrei/sentrei/compare/v1.78.0...v1.79.0) (2020-09-16)
+
+### Features
+
+- 🎸 ini box gradient ([efe0145](https://github.com/sentrei/sentrei/commit/efe01457ce29ec7c4a9b47a1d3ed70a45f60cd9e))
+- 🎸 ini member top for space home board ([9155ca2](https://github.com/sentrei/sentrei/commit/9155ca2f64fbced796f35beaf5fb86a573c58d7d))
+- 🎸 ini room card visit button ([04194bc](https://github.com/sentrei/sentrei/commit/04194bc9d5f6099841cfd77725f552de9109c9a5))
+- 🎸 ini room type chip w/ card ([6649660](https://github.com/sentrei/sentrei/commit/66496604c10f30359fb648cd9d86debc226e6d8f))
+- 🎸 refactor app to nameroomId ([c94909a](https://github.com/sentrei/sentrei/commit/c94909a5fca26646f22f0a6698bc0e69cc24b4a4))
+- 🎸 remove space fab on dashboard ([a25b597](https://github.com/sentrei/sentrei/commit/a25b5978cec402771fac3f2f56c76e02aafe121f))
+
+### Performance Improvements
+
+- ⚡️ invite signup board delay from 3000 to 5000 ([c0ecca2](https://github.com/sentrei/sentrei/commit/c0ecca2adf3f5bb5eb3de27f6c5069ede223050e))
+- ⚡️ refactor analytics chart ([7d66fd1](https://github.com/sentrei/sentrei/commit/7d66fd123feddbf3866697affcd14bbfd26fa369))
+- ⚡️ refactor pricing discount ([14a3b85](https://github.com/sentrei/sentrei/commit/14a3b854d94815b445603cfbacecbcb0945827f5))
+- ⚡️ refactor room card ([0dcb99c](https://github.com/sentrei/sentrei/commit/0dcb99c33f75596e040a2010b329091774debbbc))
+- ⚡️ refactor space home board ([75c85f8](https://github.com/sentrei/sentrei/commit/75c85f8fa6da459fb5eb63c9084d010e55fd51b7))
+
 # [1.78.0](https://github.com/sentrei/sentrei/compare/v1.77.0...v1.78.0) (2020-09-16)
 
 ### Features
