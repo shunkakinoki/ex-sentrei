@@ -4,7 +4,6 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import TextField from "@material-ui/core/TextField";
 import ToggleFullscreenButton from "./ToggleFullScreenButton/ToggleFullScreenButton";
 import Toolbar from "@material-ui/core/Toolbar";
 import Menu from "./Menu/Menu";
@@ -12,10 +11,8 @@ import issueRoomToken from "@sentrei/common/services/issueRoomToken";
 import {useAppState} from "@sentrei/video/state";
 import useRoomState from "@sentrei/video/hooks/useRoomState/useRoomState";
 import useVideoContext from "@sentrei/video/hooks/useVideoContext/useVideoContext";
-import {Typography} from "@material-ui/core";
 import FlipCameraButton from "./FlipCameraButton/FlipCameraButton";
 import LocalAudioLevelIndicator from "./DeviceSelector/LocalAudioLevelIndicator/LocalAudioLevelIndicator";
-import {StateContextType} from "@sentrei/video/state";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -65,20 +62,9 @@ export default function MenuBar() {
   const {isConnecting, connect, isAcquiringLocalTracks} = useVideoContext();
   const roomState = useRoomState();
 
-  const [name, setName] = useState<string>(user?.displayName || "");
-  const [roomName, setRoomName] = useState<string>(roomId);
-
-  const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
-  };
-
-  const handleRoomNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setRoomName(event.target.value);
-  };
-
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    issueRoomToken(roomName).then(token => {
+    issueRoomToken(roomId).then(token => {
       connect(token);
     });
   };
@@ -88,42 +74,12 @@ export default function MenuBar() {
       <Toolbar className={classes.toolbar}>
         {roomState === "disconnected" ? (
           <form className={classes.form} onSubmit={handleSubmit}>
-            {window.location.search.includes("customIdentity=true") ||
-            !user?.displayName ? (
-              <TextField
-                id="menu-name"
-                label="Name"
-                className={classes.textField}
-                value={name}
-                onChange={handleNameChange}
-                margin="dense"
-              />
-            ) : (
-              <Typography className={classes.displayName} variant="body1">
-                {user.displayName}
-              </Typography>
-            )}
-            <TextField
-              disabled
-              id="menu-room"
-              label="Room"
-              className={classes.textField}
-              value={roomName}
-              onChange={handleRoomNameChange}
-              margin="dense"
-            />
             <Button
               className={classes.joinButton}
               type="submit"
               color="primary"
               variant="contained"
-              disabled={
-                isAcquiringLocalTracks ||
-                isConnecting ||
-                !name ||
-                !roomName ||
-                isFetching
-              }
+              disabled={isAcquiringLocalTracks || isConnecting || isFetching}
             >
               Join Room
             </Button>
@@ -132,7 +88,7 @@ export default function MenuBar() {
             )}
           </form>
         ) : (
-          <h3>{roomName}</h3>
+          <h3>{roomId}</h3>
         )}
         <div className={classes.rightButtonContainer}>
           <FlipCameraButton />
