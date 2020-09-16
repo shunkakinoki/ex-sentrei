@@ -5,7 +5,6 @@
   "label": {
     "activity": "Activity",
     "analytics": "Analytics",
-    "duration": "Duration",
     "invites": "Invites",
     "members": "Members",
     "namerooms": "Namerooms",
@@ -16,5 +15,11 @@
     "sessions": "Sessions",
     "spaces": "Spaces",
     "users": "Users"
+  },
+  "metrics": {
+    "duration": "Duration",
+    "bond": "Bond",
+    "focus": "Focus",
+    "work": "Work"
   }
 }

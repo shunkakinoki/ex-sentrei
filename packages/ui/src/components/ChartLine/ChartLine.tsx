@@ -1,6 +1,7 @@
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import Grid from "@material-ui/core/Grid";
+import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import {
   LineChart,
@@ -13,6 +14,8 @@ import {
   Tooltip,
 } from "recharts";
 
+import {BondColor, FocusColor, WorkColor} from "@sentrei/common/const/color";
+
 import Analytics from "@sentrei/types/models/Analytics";
 
 export interface Props {
@@ -22,6 +25,8 @@ export interface Props {
 }
 
 export default function ChartLine({color, data, title}: Props): JSX.Element {
+  const {t} = useTranslation();
+
   return (
     <Card>
       <Grid container direction="row" alignItems="center">
@@ -34,14 +39,47 @@ export default function ChartLine({color, data, title}: Props): JSX.Element {
                 <YAxis />
                 <Tooltip
                   formatter={(
-                    val: string | number | React.ReactText[],
+                    value: string | number | Array<string | number>,
+                    name: string,
                   ): (string | number | React.ReactText[])[] => {
-                    return [val, title];
+                    switch (name) {
+                      case "metrics.duration": {
+                        return [value, t("analytics:metrics.duration")];
+                      }
+                      case "metrics.type.bond": {
+                        return [value, t("analytics:metrics.bond")];
+                      }
+                      case "metrics.type.focus": {
+                        return [value, t("analytics:metrics.focus")];
+                      }
+                      case "metrics.type.work": {
+                        return [value, t("analytics:metrics.work")];
+                      }
+                      default:
+                        return [name];
+                    }
                   }}
                 />
                 <Legend
-                  formatter={(): (string | number | React.ReactText[])[] => {
-                    return [title];
+                  formatter={(
+                    val: string | number | React.ReactText[],
+                  ): (string | number | React.ReactText[])[] => {
+                    switch (val) {
+                      case "metrics.duration": {
+                        return [t("analytics:metrics.duration")];
+                      }
+                      case "metrics.type.bond": {
+                        return [t("analytics:metrics.bond")];
+                      }
+                      case "metrics.type.focus": {
+                        return [t("analytics:metrics.focus")];
+                      }
+                      case "metrics.type.work": {
+                        return [t("analytics:metrics.work")];
+                      }
+                      default:
+                        return [val];
+                    }
                   }}
                 />
                 <Line
@@ -53,19 +91,19 @@ export default function ChartLine({color, data, title}: Props): JSX.Element {
                 <Line
                   type="monotone"
                   dataKey="metrics.type.bond"
-                  stroke={color}
+                  stroke={BondColor}
                   activeDot={{r: 8}}
                 />
                 <Line
                   type="monotone"
                   dataKey="metrics.type.focus"
-                  stroke={color}
+                  stroke={FocusColor}
                   activeDot={{r: 8}}
                 />
                 <Line
                   type="monotone"
                   dataKey="metrics.type.work"
-                  stroke={color}
+                  stroke={WorkColor}
                   activeDot={{r: 8}}
                 />
               </LineChart>
