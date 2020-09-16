@@ -1,4 +1,9 @@
 {
+  "actions": {
+    "member": "メンバー",
+    "room": "ルーム",
+    "session": "セッション"
+  },
   "analytics": {
     "title": "分析"
   },
@@ -16,5 +21,11 @@
     "sessions": "セッション",
     "spaces": "スペース",
     "users": "ユーザー"
+  },
+  "metrics": {
+    "bond": "つなぐ",
+    "duration": "期間",
+    "focus": "フォーカス",
+    "work": "作業"
   }
 }

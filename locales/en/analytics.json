@@ -1,4 +1,9 @@
 {
+  "actions": {
+    "member": "Member",
+    "room": "Room",
+    "session": "Session"
+  },
   "analytics": {
     "title": "Analytics"
   },

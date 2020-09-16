@@ -1,4 +1,9 @@
 {
+  "actions": {
+    "member": "会员",
+    "room": "房间",
+    "session": "届会"
+  },
   "analytics": {
     "title": "分析工具"
   },
@@ -16,5 +21,11 @@
     "sessions": "届会",
     "spaces": "空间",
     "users": "用户数"
+  },
+  "metrics": {
+    "bond": "键",
+    "duration": "持续时间",
+    "focus": "焦点",
+    "work": "工作"
   }
 }

@@ -65,7 +65,7 @@ export default function SpaceAnalyticsChart({
         <Box m={2} />
         <Grid container direction="row" alignItems="stretch" spacing={2}>
           <Grid item xs={12} sm={12} md={4}>
-            <ChartBar data={analyticsShot[0]} color={AnalyticsColor} />
+            <ChartBar data={analyticsShot[0]} />
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
             <ChartLine data={analytics} color={AnalyticsColor} />
