@@ -7,7 +7,6 @@ import * as React from "react";
 
 import Analytics from "@sentrei/types/models/Analytics";
 import AnalyticsChart from "@sentrei/ui/components/AnalyticsChart";
-import SpaceSection from "@sentrei/ui/components/SpaceSection";
 
 export interface Props {
   hourData: Analytics.Get[];
@@ -48,7 +47,6 @@ export default function AnalyticsBoard({
 
   return (
     <>
-      <SpaceSection noBottom title={t("space:analytics.title")} />
       <Container maxWidth="md" component="main">
         <Box display="flex" justifyContent="flex-end" mb={2}>
           <ButtonGroup
