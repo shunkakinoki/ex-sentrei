@@ -57,8 +57,6 @@ export default function AnalyticsChart({analytics}: Props): JSX.Element {
               value={analytics[0].stats?.members || 0}
             />
           </Grid>
-        </Grid>
-        <Grid container direction="row" alignItems="center" spacing={2}>
           <Grid item xs={12} sm={6} md={3}>
             <ChartSpark
               data={analytics}
@@ -95,8 +93,6 @@ export default function AnalyticsChart({analytics}: Props): JSX.Element {
               value={analytics[0].stats?.profiles || 0}
             />
           </Grid>
-        </Grid>
-        <Grid container direction="row" alignItems="center" spacing={2}>
           <Grid item xs={12} sm={6} md={3}>
             <ChartSpark
               data={analytics}
