@@ -123,8 +123,8 @@ export default function Header({
                           title={t("header:default.about")}
                         />
                         <HeaderButton
-                          href="/"
-                          title={t("header:default.home")}
+                          href="/analytics"
+                          title={t("header:default.analytics")}
                         />
                         <HeaderButton
                           href="/pricing"
