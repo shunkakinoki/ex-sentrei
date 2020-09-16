@@ -1,1 +1,1 @@
-export {default} from "./AnalyticsBoard
+export {default} from "./AnalyticsBoard";
