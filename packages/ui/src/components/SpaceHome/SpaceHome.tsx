@@ -33,6 +33,7 @@ export default function SpaceHome({
       <SpacePanel member={member} profile={profile} space={space} user={user} />
       <Box py={2} />
       <SpaceHomeBoard
+        member={member}
         members={members}
         profile={profile}
         rooms={rooms}

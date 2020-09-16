@@ -8,8 +8,8 @@ const RoomScreenStyles = makeStyles((theme: Theme) =>
     media: {
       width: theme.spacing(100),
       maxWidth: "100%",
-      height: theme.spacing(30),
-      maxHeight: theme.spacing(30),
+      height: theme.spacing(3),
+      maxHeight: theme.spacing(3),
     },
     placeholder: {
       backgroundColor: fade(
@@ -18,7 +18,7 @@ const RoomScreenStyles = makeStyles((theme: Theme) =>
       ),
     },
     root: {
-      boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
+      boxShadow: "0 10px 10px -3px rgba(0,0,0,0.3)",
       "&:hover": {
         boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)",
       },

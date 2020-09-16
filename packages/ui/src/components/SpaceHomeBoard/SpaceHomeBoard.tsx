@@ -1,5 +1,6 @@
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
+import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 
 import List from "@material-ui/core/List";
@@ -15,6 +16,7 @@ import RoomCard from "@sentrei/ui/components/RoomCard";
 import RoomNone from "@sentrei/ui/components/RoomNone";
 
 export interface Props {
+  member: Member.Get;
   members: Member.Get[];
   profile: Profile.Get;
   rooms: Room.Get[] | null;
@@ -22,6 +24,7 @@ export interface Props {
   user: User.Get;
 }
 export default function SpaceHomeBoard({
+  member,
   members,
   profile,
   rooms,
@@ -53,10 +56,12 @@ export default function SpaceHomeBoard({
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
           <List>
+            <MemberListItem member={member} />
+            <Divider />
             {members &&
-              members.map(member => (
-                <MemberListItem key={member.id} member={member} />
-              ))}
+              members
+                .filter(doc => doc.uid !== member.uid)
+                .map(doc => <MemberListItem key={doc.id} member={doc} />)}
           </List>
         </Grid>
       </Grid>

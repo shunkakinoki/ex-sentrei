@@ -17,9 +17,9 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
-import MuiButton from "@sentrei/ui/components/MuiButton";
-import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
+import BoxGradient from "@sentrei/ui/components/BoxGradient";
 import RoomCardEmojiPicker from "@sentrei/ui/components/RoomCardEmojiPicker";
+import RoomCardVisitButton from "@sentrei/ui/components/RoomCardVisitButton";
 import RoomMenu from "@sentrei/ui/components/RoomMenu";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
@@ -33,9 +33,11 @@ export interface Props {
 }
 
 export default function RoomCard({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   profile,
   room,
   space,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   user,
 }: Props): JSX.Element {
   const classes = RoomCardStyles();
@@ -57,12 +59,7 @@ export default function RoomCard({
   return (
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
-        <MuiButtonBase
-          href="/[namespaceId]/[nameroomId]"
-          as={`/${space.namespaceId}/${room.nameroomId}`}
-        >
-          <Box className={classes.media} />
-        </MuiButtonBase>
+        <BoxGradient color={room.color} />
       </CardActionArea>
       <CardContent>
         <Grid
@@ -79,7 +76,7 @@ export default function RoomCard({
               userId={user.uid}
             />
           </Grid>
-          <Grid item xs={6} sm={7} md={8}>
+          <Grid item xs={6} sm={7} md={8} justify="center">
             <Typography
               component="h3"
               variant="h4"
@@ -125,17 +122,13 @@ export default function RoomCard({
         <Box p={1} />
         <div className={classes.container}>
           <Grid container direction="row" justify="space-around">
-            <Grid item xs={9} />
-            <Grid item xs={3}>
-              <MuiButton
-                href="/[namespaceId]/[nameroomId]/app"
-                as={`/${space.namespaceId}/${room.nameroomId}/app`}
-                fullWidth
-                variant="contained"
-                color="primary"
-              >
-                {t("common:common.visit")}
-              </MuiButton>
+            <Grid item xs={8} />
+            <Grid item xs={4}>
+              <RoomCardVisitButton
+                namespaceId={space.namespaceId}
+                room={room}
+                space={space}
+              />
             </Grid>
           </Grid>
         </div>

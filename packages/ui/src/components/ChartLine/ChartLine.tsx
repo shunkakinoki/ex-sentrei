@@ -31,7 +31,7 @@ export default function ChartLine({color, data}: Props): JSX.Element {
       <Grid container direction="row" alignItems="center">
         <Grid item>
           <Box m={3} display="flex">
-            <ResponsiveContainer minWidth={800} minHeight={300}>
+            <ResponsiveContainer minWidth={700} minHeight={300}>
               <LineChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="updatedAt" reversed />
