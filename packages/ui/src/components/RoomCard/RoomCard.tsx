@@ -17,8 +17,10 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
+import BoxGradient from "@sentrei/ui/components/BoxGradient";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
+import MuiLink from "@sentrei/ui/components/MuiLink";
 import RoomCardEmojiPicker from "@sentrei/ui/components/RoomCardEmojiPicker";
 import RoomMenu from "@sentrei/ui/components/RoomMenu";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
@@ -61,7 +63,7 @@ export default function RoomCard({
           href="/[namespaceId]/[nameroomId]"
           as={`/${space.namespaceId}/${room.nameroomId}`}
         >
-          <Box className={classes.media} />
+          <BoxGradient color={room.color} />
         </MuiButtonBase>
       </CardActionArea>
       <CardContent>
@@ -79,17 +81,23 @@ export default function RoomCard({
               userId={user.uid}
             />
           </Grid>
-          <Grid item xs={6} sm={7} md={8}>
-            <Typography
-              component="h3"
-              variant="h4"
-              align="center"
-              color="textPrimary"
-              noWrap
-              gutterBottom
+          <Grid item xs={6} sm={7} md={8} justify="center">
+            <MuiLink
+              href="/[namespaceId]/[nameroomId]"
+              as={`/${space.namespaceId}/${room.nameroomId}`}
+              color="secondary"
             >
-              {room.name}
-            </Typography>
+              <Typography
+                component="h3"
+                variant="h4"
+                align="center"
+                color="textPrimary"
+                noWrap
+                gutterBottom
+              >
+                {room.name}
+              </Typography>
+            </MuiLink>
           </Grid>
           <Grid item xs={2} sm={1} md={1}>
             <CopyToClipboard
