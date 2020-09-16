@@ -26,7 +26,7 @@
     "/[namespaceId]/settings/quit": ["space"],
     "/[namespaceId]": ["room", "space"],
     "/about": ["about", "footer", "header", "papercups"],
-    "/analytics": ["analytics"],
+    "/analytics": ["analytics", "footer", "header", "papercups"],
     "/create": ["space"],
     "/credits": ["credits", "footer", "header", "papercups"],
     "/dashboard": ["space"],
