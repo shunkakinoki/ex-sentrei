@@ -69,7 +69,7 @@ export default function InviteSignupBoard({
         });
         setTimeout(() => {
           Router.pushI18n("/dashboard");
-        }, 3000);
+        }, 5000);
       })
       .catch(err => snackbar("error", err.message));
   };
@@ -86,7 +86,7 @@ export default function InviteSignupBoard({
           });
           setTimeout(() => {
             Router.pushI18n("/dashboard");
-          }, 3000);
+          }, 5000);
         })
         .catch(err => {
           snackbar("error", err.message);
