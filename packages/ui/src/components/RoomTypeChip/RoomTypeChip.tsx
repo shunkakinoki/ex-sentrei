@@ -16,12 +16,8 @@ export default function RoomTypeChip({type}: Props): JSX.Element {
 
   return (
     <Chip
-      color={
-        type === "bond" ? "secondary" : type === "focus" ? "primary" : "default"
-      }
-      variant={
-        type === "bond" ? "default" : type === "focus" ? "outlined" : "default"
-      }
+      color="primary"
+      variant="outlined"
       icon={
         type === "bond" ? (
           <EventSeatIcon />
