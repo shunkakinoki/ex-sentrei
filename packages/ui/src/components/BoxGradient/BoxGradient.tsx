@@ -13,8 +13,8 @@ export default function BoxGradient({color}: Props): JSX.Element {
         background: `linear-gradient(60deg, ${color} 30%, ${theme.palette.background.paper} 70%)`,
         minWidth: theme.spacing(100),
         maxWidth: "100%",
-        height: theme.spacing(3),
-        maxHeight: theme.spacing(3),
+        height: theme.spacing(2),
+        maxHeight: theme.spacing(2),
       },
     }),
   );
