@@ -8,15 +8,12 @@ import {getNameroom} from "@sentrei/common/firebase/namerooms";
 import {getNamespace} from "@sentrei/common/firebase/namespaces";
 import Member from "@sentrei/types/models/Member";
 import ErrorScreen from "@sentrei/ui/components/ErrorScreen";
+import Loader from "@sentrei/ui/components/Loader";
+import AppStateProvider from "@sentrei/video/state";
 
-import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
-
-const RoomScreen = dynamic(
-  () => {
-    return import("@sentrei/ui/components/RoomScreen");
-  },
-  {ssr: false},
-);
+const VideoApp = dynamic(() => import("@sentrei/video/VideoApp"), {
+  ssr: false,
+});
 
 const NameroomId = (): JSX.Element => {
   const {query} = useRouter();
@@ -61,57 +58,22 @@ const NameroomId = (): JSX.Element => {
 
   if (
     user === undefined ||
+    profile === undefined ||
     spaceId === undefined ||
     roomId === undefined ||
     members === undefined
   ) {
-    return (
-      <>
-        <SentreiAppHeader
-          skeleton
-          profile={profile ?? undefined}
-          tabRoomKey="home"
-          model="room"
-          namespaceId={String(query.namespaceId)}
-          nameroomId={String(query.nameroomId)}
-        />
-      </>
-    );
+    return <Loader />;
   }
 
   if (!user || !profile || !spaceId || !roomId || !members) {
-    return (
-      <>
-        <SentreiAppHeader
-          skeleton
-          tabRoomKey="home"
-          model="room"
-          namespaceId={String(query.namespaceId)}
-          nameroomId={String(query.nameroomId)}
-        />
-        <ErrorScreen />
-      </>
-    );
+    return <ErrorScreen />;
   }
 
   return (
-    <>
-      <SentreiAppHeader
-        notificationCount={Number(user.notificationCount)}
-        profile={profile}
-        namespaceId={String(query.namespaceId)}
-        nameroomId={String(query.nameroomId)}
-        userId={user.uid}
-        tabRoomKey="home"
-        model="room"
-      />
-      <RoomScreen
-        user={user}
-        profile={profile}
-        spaceId={spaceId}
-        roomId={roomId}
-      />
-    </>
+    <AppStateProvider roomId={roomId}>
+      <VideoApp />
+    </AppStateProvider>
   );
 };
 
