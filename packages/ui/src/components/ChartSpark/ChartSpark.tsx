@@ -45,7 +45,7 @@ export default function ChartSpark({
               <CustomTypography noWrap variant="h5" align="center">
                 {value}
               </CustomTypography>
-              <CustomTypography noWrap variant="h6" align="center">
+              <CustomTypography noWrap variant="subtitle1" align="center">
                 {title}
               </CustomTypography>
             </Box>
