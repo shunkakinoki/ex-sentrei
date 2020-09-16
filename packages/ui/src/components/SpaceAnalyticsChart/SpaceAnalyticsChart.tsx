@@ -30,7 +30,7 @@ export default function SpaceAnalyticsChart({
               data={analytics}
               color={AnalyticsColor}
               dataKey="stats.activity"
-              title={t("common:common.activity")}
+              title={t("analytics:label.activity")}
               value={analytics[0].stats?.activity || 0}
             />
           </Grid>
@@ -39,7 +39,7 @@ export default function SpaceAnalyticsChart({
               data={analytics}
               color={AnalyticsColor}
               dataKey="stats.analytics"
-              title={t("common:common.analytics")}
+              title={t("analytics:label.analytics")}
               value={analytics[0].stats?.analytics || 0}
             />
           </Grid>
@@ -48,7 +48,7 @@ export default function SpaceAnalyticsChart({
               data={analytics}
               color={AnalyticsColor}
               dataKey="stats.rooms"
-              title={t("common:common.rooms")}
+              title={t("analytics:label.rooms")}
               value={analytics[0].stats?.rooms || 0}
             />
           </Grid>
@@ -57,7 +57,7 @@ export default function SpaceAnalyticsChart({
               data={analytics}
               color={AnalyticsColor}
               dataKey="stats.sessions"
-              title={t("common:common.sessions")}
+              title={t("analytics:label.sessions")}
               value={analytics[0].stats?.sessions || 0}
             />
           </Grid>
@@ -71,7 +71,7 @@ export default function SpaceAnalyticsChart({
             <ChartLine
               data={analytics}
               color={AnalyticsColor}
-              title={t("common:common.duration")}
+              title={t("analytics:label.duration")}
             />
           </Grid>
         </Grid>

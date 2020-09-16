@@ -50,6 +50,24 @@ export default function ChartLine({color, data, title}: Props): JSX.Element {
                   stroke={color}
                   activeDot={{r: 8}}
                 />
+                <Line
+                  type="monotone"
+                  dataKey="metrics.type.bond"
+                  stroke={color}
+                  activeDot={{r: 8}}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="metrics.type.focus"
+                  stroke={color}
+                  activeDot={{r: 8}}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="metrics.type.work"
+                  stroke={color}
+                  activeDot={{r: 8}}
+                />
               </LineChart>
             </ResponsiveContainer>
           </Box>

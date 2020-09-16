@@ -26,7 +26,7 @@ export default function AnalyticsChart({analytics}: Props): JSX.Element {
               data={analytics}
               color={AnalyticsColor}
               dataKey="stats.activity"
-              title={t("common:common.activity")}
+              title={t("analytics:label.activity")}
               value={analytics[0].stats?.activity || 0}
             />
           </Grid>
@@ -35,7 +35,7 @@ export default function AnalyticsChart({analytics}: Props): JSX.Element {
               data={analytics}
               color={AnalyticsColor}
               dataKey="stats.analytics"
-              title={t("common:common.analytics")}
+              title={t("analytics:label.analytics")}
               value={analytics[0].stats?.analytics || 0}
             />
           </Grid>
@@ -43,8 +43,66 @@ export default function AnalyticsChart({analytics}: Props): JSX.Element {
             <ChartSpark
               data={analytics}
               color={AnalyticsColor}
+              dataKey="stats.invites"
+              title={t("analytics:label.invites")}
+              value={analytics[0].stats?.invites || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color={AnalyticsColor}
+              dataKey="stats.members"
+              title={t("analytics:label.members")}
+              value={analytics[0].stats?.members || 0}
+            />
+          </Grid>
+        </Grid>
+        <Grid container direction="row" alignItems="center" spacing={2}>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color={AnalyticsColor}
+              dataKey="stats.namerooms"
+              title={t("analytics:label.namerooms")}
+              value={analytics[0].stats?.namerooms || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color={AnalyticsColor}
+              dataKey="stats.namespaces"
+              title={t("analytics:label.namespaces")}
+              value={analytics[0].stats?.namespaces || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color={AnalyticsColor}
+              dataKey="stats.participants"
+              title={t("analytics:label.participants")}
+              value={analytics[0].stats?.participants || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color={AnalyticsColor}
+              dataKey="stats.profiles"
+              title={t("analytics:label.profiles")}
+              value={analytics[0].stats?.profiles || 0}
+            />
+          </Grid>
+        </Grid>
+        <Grid container direction="row" alignItems="center" spacing={2}>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color={AnalyticsColor}
               dataKey="stats.rooms"
-              title={t("common:common.rooms")}
+              title={t("analytics:label.rooms")}
               value={analytics[0].stats?.rooms || 0}
             />
           </Grid>
@@ -53,8 +111,26 @@ export default function AnalyticsChart({analytics}: Props): JSX.Element {
               data={analytics}
               color={AnalyticsColor}
               dataKey="stats.sessions"
-              title={t("common:common.sessions")}
+              title={t("analytics:label.sessions")}
               value={analytics[0].stats?.sessions || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color={AnalyticsColor}
+              dataKey="stats.spaces"
+              title={t("analytics:label.spaces")}
+              value={analytics[0].stats?.spaces || 0}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <ChartSpark
+              data={analytics}
+              color={AnalyticsColor}
+              dataKey="stats.users"
+              title={t("analytics:label.users")}
+              value={analytics[0].stats?.users || 0}
             />
           </Grid>
         </Grid>
@@ -67,7 +143,7 @@ export default function AnalyticsChart({analytics}: Props): JSX.Element {
             <ChartLine
               data={analytics}
               color={AnalyticsColor}
-              title={t("common:common.duration")}
+              title={t("analytics:label.duration")}
             />
           </Grid>
         </Grid>

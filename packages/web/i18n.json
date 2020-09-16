@@ -8,7 +8,7 @@
     "*": ["_error", "billing", "common", "form", "seo", "snackbar"],
     "/": ["footer", "header", "index", "papercups", "pricing"],
     "/[namespaceId]/activity": ["space"],
-    "/[namespaceId]/analytics": ["space"],
+    "/[namespaceId]/analytics": ["analytics", "space"],
     "/[namespaceId]/invite/[inviteId]": ["auth", "header", "space"],
     "/[namespaceId]/leaderboard": ["space"],
     "/[namespaceId]/members": ["space"],

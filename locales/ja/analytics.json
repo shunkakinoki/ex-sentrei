@@ -1,5 +1,20 @@
 {
   "analytics": {
     "title": "分析"
+  },
+  "label": {
+    "activity": "アクティビティ",
+    "analytics": "分析",
+    "duration": "期間",
+    "invites": "招待する",
+    "members": "会員",
+    "namerooms": "ネームルーム",
+    "namespaces": "名前空間",
+    "participants": "参加者",
+    "profiles": "プロフィール",
+    "rooms": "部屋",
+    "sessions": "セッション",
+    "spaces": "スペース",
+    "users": "ユーザー"
   }
 }
