@@ -68,11 +68,7 @@ export default function SpaceAnalyticsChart({
             <ChartBar data={analyticsShot[0]} color={AnalyticsColor} />
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            <ChartLine
-              data={analytics}
-              color={AnalyticsColor}
-              title={t("analytics:label.duration")}
-            />
+            <ChartLine data={analytics} color={AnalyticsColor} />
           </Grid>
         </Grid>
       </Container>

@@ -21,10 +21,9 @@ import Analytics from "@sentrei/types/models/Analytics";
 export interface Props {
   color: string;
   data: Analytics.Get[];
-  title: string;
 }
 
-export default function ChartLine({color, data, title}: Props): JSX.Element {
+export default function ChartLine({color, data}: Props): JSX.Element {
   const {t} = useTranslation();
 
   return (
