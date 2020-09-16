@@ -23,7 +23,7 @@ export default function ChartBar({color, data}: Props): JSX.Element {
   const {t} = useTranslation();
 
   const [barData, setBarData] = React.useState<
-    {action: string; member: number; room: number; session: number}[]
+    {action: string; member: number; room: number; session?: number}[]
   >([]);
 
   React.useEffect(() => {
@@ -44,7 +44,6 @@ export default function ChartBar({color, data}: Props): JSX.Element {
         action: t("common:common.delete"),
         member: data?.actions?.deleted_members || 0,
         room: data?.actions?.deleted_rooms || 0,
-        session: data?.actions?.deleted_sessions || 0,
       },
     ]);
   }, [data, t]);
