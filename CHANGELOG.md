@@ -1,3 +1,26 @@
+# [1.78.0](https://github.com/sentrei/sentrei/compare/v1.77.0...v1.78.0) (2020-09-16)
+
+### Features
+
+- 🎸 complete ini chart line ([b856e48](https://github.com/sentrei/sentrei/commit/b856e48dbab195229c86d6b6199e6193a19ca89c))
+- 🎸 complete refactor analytics sentrei header ([1e9c0b1](https://github.com/sentrei/sentrei/commit/1e9c0b116e7477ff6abd9b80dd79a95e52994b93))
+- 🎸 ini analytics board chart banner ([424bcf8](https://github.com/sentrei/sentrei/commit/424bcf801430f47f19b77bdd3bddd4116b4df533))
+- 🎸 ini analytics i18n ([34afd88](https://github.com/sentrei/sentrei/commit/34afd887e754e618603a11bd6f69ccaef2a61cc5))
+- 🎸 ini analytics screen ([d15c5df](https://github.com/sentrei/sentrei/commit/d15c5df3a25b09dfa4e7a0546d0c2ee39ae608d2))
+- 🎸 ini analytics screen ([57e73ef](https://github.com/sentrei/sentrei/commit/57e73ef0959051209c9cc895f8f1f13c14fd45b2))
+- 🎸 ini badge const color ([c86f559](https://github.com/sentrei/sentrei/commit/c86f559d7d26c43a7d56f3c3b90106ddc5b99079))
+- 🎸 ini color for analytics bar chart ([82f79e5](https://github.com/sentrei/sentrei/commit/82f79e5d797c2122d215ac5ab4cccbb49ef298b1))
+- 🎸 ini root analytics ([3bee51d](https://github.com/sentrei/sentrei/commit/3bee51d9b1dce1d459402920260f6e63256b7256))
+- 🎸 ini space analytics chart ([5033db7](https://github.com/sentrei/sentrei/commit/5033db7c30fa94b5ccfe2fbe1f456264a61a909f))
+- 🎸 ini space analytics chart ([c29e720](https://github.com/sentrei/sentrei/commit/c29e720d9c2c0a1b04a3742dbcec0ac6225a7564))
+
+### Performance Improvements
+
+- ⚡️ ini analytics color ([f85dd3f](https://github.com/sentrei/sentrei/commit/f85dd3ff44a0668249d6be11bba5b5c7b84dcb85))
+- ⚡️ ini bond focus work colors ([b7d2a04](https://github.com/sentrei/sentrei/commit/b7d2a044e1ff763ebe900bae745cabc8f4531098))
+- ⚡️ refactor analytics board ([2b0be6c](https://github.com/sentrei/sentrei/commit/2b0be6c9a2c9c9b00b0f86befe3d16609a761339))
+- ⚡️ remove get static paths for analytics page ([d451044](https://github.com/sentrei/sentrei/commit/d451044903561e8252b9513ff4d34636b143dd8f))
+
 # [1.77.0](https://github.com/sentrei/sentrei/compare/v1.76.0...v1.77.0) (2020-09-16)
 
 ### Features
