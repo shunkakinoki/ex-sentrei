@@ -58,7 +58,19 @@ export default function AppListMenu({
       onClose={onClose}
     >
       <MenuItem disabled>
-        <ListItemText primary={t("common:common.team")} />
+        <ListItemText primary={t("common:common.mySpaces")} />
+      </MenuItem>
+      <MuiMenuItem href="/dashboard">
+        <ListItemIcon>
+          <Avatar
+            src={profile ? profile.photo || profile.name[0] : undefined}
+          />
+        </ListItemIcon>
+        <ListItemText primary={profile ? profile.name : userId} />
+      </MuiMenuItem>
+      <Divider />
+      <MenuItem disabled>
+        <ListItemText primary={t("common:common.space")} />
       </MenuItem>
       {spaces &&
         spaces.map(space => (
@@ -77,18 +89,6 @@ export default function AppListMenu({
             <ListItemText primary={space.name} />
           </MuiMenuItem>
         ))}
-      <Divider />
-      <MenuItem disabled>
-        <ListItemText primary={t("common:common.personal")} />
-      </MenuItem>
-      <MuiMenuItem href="/dashboard">
-        <ListItemIcon>
-          <Avatar
-            src={profile ? profile.photo || profile.name[0] : undefined}
-          />
-        </ListItemIcon>
-        <ListItemText primary={profile ? profile.name : userId} />
-      </MuiMenuItem>
       <Divider />
       <MenuItem disabled>
         <ListItemText primary={t("common:common.other")} />
