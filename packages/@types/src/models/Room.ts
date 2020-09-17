@@ -1,5 +1,4 @@
 import Metadata from "@sentrei/types/models/Metadata";
-import Participant from "@sentrei/types/models/Participant";
 
 declare namespace Room {
   export type Types = "bond" | "focus" | "work";
