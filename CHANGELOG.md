@@ -1,3 +1,9 @@
+## [1.80.2](https://github.com/sentrei/sentrei/compare/v1.80.1...v1.80.2) (2020-09-17)
+
+### Performance Improvements
+
+- ⚡️ refactor participants model ([f39561f](https://github.com/sentrei/sentrei/commit/f39561f4ae08642feaa2eb7a46a6e22edbbf76be))
+
 ## [1.80.1](https://github.com/sentrei/sentrei/compare/v1.80.0...v1.80.1) (2020-09-17)
 
 ### Performance Improvements
