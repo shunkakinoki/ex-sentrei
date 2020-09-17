@@ -11,6 +11,7 @@ export const serializeRoom = (
   return {
     ...data,
     id: snap.id,
+    participants: data.participants as string[],
     participantCount: data.participantCount as number,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),
@@ -25,6 +26,7 @@ export const serializeAdminRoom = (
   return {
     ...data,
     id: snap.id,
+    participants: data.participants as string[],
     participantCount: data.participantCount as number,
     createdAt: serializeFirebaseDate(data.createdAt),
     updatedAt: serializeFirebaseDate(data.updatedAt),

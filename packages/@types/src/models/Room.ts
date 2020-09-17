@@ -12,7 +12,7 @@ declare namespace Room {
   };
 
   interface Fields extends EditableFields {
-    participants?: string[];
+    participants?: FirebaseFirestore.FieldValue[] | string[];
     participantCount: FirebaseFirestore.FieldValue | number;
     nameroomId: string;
     spaceId: string;
@@ -29,6 +29,7 @@ declare namespace Room {
 
   export interface Get extends Fields, Metadata.Get {
     id: string;
+    participants?: string[];
     participantCount: number;
   }
 
