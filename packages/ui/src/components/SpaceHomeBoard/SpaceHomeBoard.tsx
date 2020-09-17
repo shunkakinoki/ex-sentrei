@@ -54,7 +54,8 @@ export default function SpaceHomeBoard({
               ))}
           </Box>
         </Grid>
-        <Grid item xs={12} sm={12} md={6}>
+        <Grid item xs={false} sm={false} md={1} />
+        <Grid item xs={12} sm={12} md={4}>
           <List>
             <MemberListItem member={member} />
             <Divider />
