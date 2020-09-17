@@ -1,3 +1,13 @@
+# [1.81.0](https://github.com/sentrei/sentrei/compare/v1.80.2...v1.81.0) (2020-09-17)
+
+### Features
+
+- 🎸 refactor app list menu ui/ux ([726ec54](https://github.com/sentrei/sentrei/commit/726ec54cdfd54b9d2c23b097f71a3ab34ba593d6))
+
+### Performance Improvements
+
+- ⚡️ refactor room model ([cdc04f6](https://github.com/sentrei/sentrei/commit/cdc04f6de517198b02402c512451f1c18fe9254b))
+
 ## [1.80.2](https://github.com/sentrei/sentrei/compare/v1.80.1...v1.80.2) (2020-09-17)
 
 ### Performance Improvements
