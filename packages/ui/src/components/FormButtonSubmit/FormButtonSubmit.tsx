@@ -1,19 +1,19 @@
-import Button from "@material-ui/core/Button";
+import Button, {ButtonProps} from "@material-ui/core/Button";
 
 import * as React from "react";
 
 import {trackEvent} from "@sentrei/common/utils/segment";
 
-export interface Props {
+export interface Props extends ButtonProps {
   children: React.ReactNode;
   startIcon?: React.ReactNode;
   disabled?: boolean;
-  variant?: "text" | "contained" | "outlined";
   onClick?: (() => void) | undefined;
   event?: string;
 }
 
 export default function FormButtonSubmit({
+  color = "primary",
   children,
   startIcon,
   disabled = false,
@@ -34,7 +34,7 @@ export default function FormButtonSubmit({
     <Button
       type="submit"
       fullWidth
-      color="primary"
+      color={color}
       variant={variant}
       disabled={disabled}
       startIcon={startIcon}
