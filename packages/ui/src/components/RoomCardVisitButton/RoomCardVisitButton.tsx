@@ -1,9 +1,4 @@
-import {
-  createStyles,
-  makeStyles,
-  withStyles,
-  Theme,
-} from "@material-ui/core/styles";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -29,8 +24,7 @@ export default function RoomCardVisitButton({
 }: Props): JSX.Element {
   const {t} = useTranslation();
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const useStyles = makeStyles((theme: Theme) =>
+  const useStyles = makeStyles(() =>
     createStyles({
       color: {
         color: room.color,
