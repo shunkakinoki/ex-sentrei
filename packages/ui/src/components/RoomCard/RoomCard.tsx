@@ -55,7 +55,7 @@ export default function RoomCard({
             : theme.palette.background.paper,
         borderRadius: theme.spacing(1),
         borderColor: room.color,
-        borderWidth: theme.palette.type === "light" ? 0 : 2,
+        borderWidth: theme.palette.type === "light" ? 1 : 2,
       },
     }),
   );
