@@ -1,3 +1,14 @@
+# [1.82.0](https://github.com/sentrei/sentrei/compare/v1.81.0...v1.82.0) (2020-09-18)
+
+### Features
+
+- 🎸 complete refactor room card design ([2102917](https://github.com/sentrei/sentrei/commit/2102917e2ea11397b49b853329f319268f258c5b))
+
+### Performance Improvements
+
+- ⚡️ refactor home board ([d487ee4](https://github.com/sentrei/sentrei/commit/d487ee45b54035bb69ebf6b1a8a580b80a7a39ec))
+- ⚡️ refactor room card dark mode border ([0ddde12](https://github.com/sentrei/sentrei/commit/0ddde123424a054ca44ba25b3783e361944fb51a))
+
 # [1.81.0](https://github.com/sentrei/sentrei/compare/v1.80.2...v1.81.0) (2020-09-17)
 
 ### Features
