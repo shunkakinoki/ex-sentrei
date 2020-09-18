@@ -22,6 +22,7 @@ import RoomMenu from "@sentrei/ui/components/RoomMenu";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
 export interface Props {
+  square?: boolean;
   profile: Profile.Get;
   room: Room.Get;
   space: Space.Get;
@@ -29,6 +30,7 @@ export interface Props {
 }
 
 export default function RoomCard({
+  square = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   profile,
   room,
@@ -56,6 +58,8 @@ export default function RoomCard({
         borderRadius: theme.spacing(1),
         borderColor: room.color,
         borderWidth: theme.palette.type === "light" ? 1 : 2,
+        paddingTop: square ? "5%" : undefined,
+        paddingBottom: square ? "5%" : undefined,
       },
     }),
   );

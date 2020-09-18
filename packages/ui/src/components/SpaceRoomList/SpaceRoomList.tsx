@@ -39,6 +39,7 @@ export default function SpaceHomeBoard({
             rooms.map(room => (
               <Grid item key={room.id} xs={12} sm={6} md={4}>
                 <RoomCard
+                  square
                   profile={profile}
                   room={room}
                   space={space}
