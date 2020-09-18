@@ -1,9 +1,9 @@
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ShareIcon from "@material-ui/icons/Share";
@@ -17,13 +17,9 @@ import Profile from "@sentrei/types/models/Profile";
 import Room from "@sentrei/types/models/Room";
 import Space from "@sentrei/types/models/Space";
 import User from "@sentrei/types/models/User";
-import BoxGradient from "@sentrei/ui/components/BoxGradient";
-import RoomCardEmojiPicker from "@sentrei/ui/components/RoomCardEmojiPicker";
 import RoomCardVisitButton from "@sentrei/ui/components/RoomCardVisitButton";
 import RoomMenu from "@sentrei/ui/components/RoomMenu";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
-
-import RoomCardStyles from "./RoomCardStyles";
 
 export interface Props {
   profile: Profile.Get;
@@ -40,9 +36,30 @@ export default function RoomCard({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   user,
 }: Props): JSX.Element {
-  const classes = RoomCardStyles();
   const {snackbar} = useSnackbar();
   const {t} = useTranslation();
+
+  const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+      color: {
+        color: theme.palette.type === "light" ? room.color : "white",
+        fontWeight: theme.typography.fontWeightMedium,
+      },
+      container: {
+        flexGrow: 1,
+      },
+      root: {
+        backgroundImage:
+          theme.palette.type === "light"
+            ? `linear-gradient(to bottom right, ${room.color}26, ${room.color}4D)`
+            : theme.palette.background.paper,
+        borderRadius: theme.spacing(1),
+        borderColor: room.color,
+        borderWidth: theme.palette.type === "light" ? 0 : 1,
+      },
+    }),
+  );
+  const classes = useStyles();
 
   const [roomAnchorEl, roomSetAnchorEl] = React.useState<null | HTMLElement>(
     null,
@@ -57,61 +74,54 @@ export default function RoomCard({
   };
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea className={classes.placeholder}>
-        <BoxGradient color={room.color} />
-      </CardActionArea>
+    <Card className={classes.root} variant="outlined">
       <CardContent>
-        <Grid
-          container
-          direction="row"
-          justify="space-between"
-          alignItems="center"
-        >
-          <Grid item xs={1} sm={1} md={1}>
-            <RoomCardEmojiPicker
-              emoji={room.emoji}
-              profile={profile}
-              roomId={room.id}
-              userId={user.uid}
-            />
-          </Grid>
-          <Grid item xs={6} sm={7} md={8} justify="center">
-            <Typography
-              component="h3"
-              variant="h4"
-              align="center"
-              color="textPrimary"
-              noWrap
-              gutterBottom
-            >
-              {room.name}
-            </Typography>
-          </Grid>
-          <Grid item xs={2} sm={1} md={1}>
-            <CopyToClipboard
-              text={`${window.location.origin}/${space.namespaceId}/${room.nameroomId}`}
-              onCopy={(): void => {
-                snackbar("success", t("snackbar:snackbar.clipboard"));
-                trackEvent("Copy Clipboard Room");
-              }}
-            >
-              <IconButton aria-label="share">
-                <ShareIcon />
+        <Box p={3}>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+          >
+            <Grid item xs={10}>
+              <Typography
+                align="left"
+                component="h3"
+                variant="h4"
+                color="textPrimary"
+                className={classes.color}
+                noWrap
+                gutterBottom
+              >
+                {room.name}
+              </Typography>
+            </Grid>
+            <Grid item xs={1}>
+              <CopyToClipboard
+                text={`${window.location.origin}/${space.namespaceId}/${room.nameroomId}`}
+                onCopy={(): void => {
+                  snackbar("success", t("snackbar:snackbar.clipboard"));
+                  trackEvent("Copy Clipboard Room");
+                }}
+              >
+                <IconButton aria-label="share" className={classes.color}>
+                  <ShareIcon />
+                </IconButton>
+              </CopyToClipboard>
+            </Grid>
+            <Grid item xs={1}>
+              <IconButton
+                aria-label="more"
+                edge="end"
+                aria-haspopup="true"
+                className={classes.color}
+                onClick={handleRoomClick}
+              >
+                <MoreVertIcon />
               </IconButton>
-            </CopyToClipboard>
+            </Grid>
           </Grid>
-          <Grid item xs={2} sm={2} md={1}>
-            <IconButton
-              aria-label="more"
-              edge="end"
-              aria-haspopup="true"
-              onClick={handleRoomClick}
-            >
-              <MoreVertIcon />
-            </IconButton>
-          </Grid>
-        </Grid>
+        </Box>
         <RoomMenu
           anchorEl={roomAnchorEl}
           open={Boolean(roomAnchorEl)}

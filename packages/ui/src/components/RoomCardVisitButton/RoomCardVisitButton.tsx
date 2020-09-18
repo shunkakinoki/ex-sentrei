@@ -1,3 +1,9 @@
+import {
+  createStyles,
+  makeStyles,
+  withStyles,
+  Theme,
+} from "@material-ui/core/styles";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
@@ -22,6 +28,16 @@ export default function RoomCardVisitButton({
   space,
 }: Props): JSX.Element {
   const {t} = useTranslation();
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+      color: {
+        color: room.color,
+      },
+    }),
+  );
+  const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
 
@@ -57,7 +73,12 @@ export default function RoomCardVisitButton({
           namespaceId={namespaceId}
           handleClose={handleClose}
         />
-        <FormButtonSubmit startIcon={<MeetingRoomIcon />} onClick={handleOpen}>
+        <FormButtonSubmit
+          startIcon={<MeetingRoomIcon />}
+          onClick={handleOpen}
+          color="inherit"
+          variant="text"
+        >
           {t("common:common.visit")}
         </FormButtonSubmit>
       </>
@@ -69,8 +90,9 @@ export default function RoomCardVisitButton({
       href="/[namespaceId]/[nameroomId]"
       as={`/${space.namespaceId}/${room.nameroomId}`}
       fullWidth
-      variant="contained"
-      color="primary"
+      variant="outlined"
+      color="inherit"
+      className={classes.color}
       startIcon={<MeetingRoomIcon />}
     >
       {t("common:common.visit")}
