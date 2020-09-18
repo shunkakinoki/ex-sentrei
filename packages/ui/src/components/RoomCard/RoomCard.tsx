@@ -43,7 +43,7 @@ export default function RoomCard({
     createStyles({
       color: {
         color: theme.palette.type === "light" ? room.color : "white",
-        fontWeight: theme.typography.fontWeightMedium,
+        fontWeight: theme.typography.fontWeightRegular,
       },
       container: {
         flexGrow: 1,
