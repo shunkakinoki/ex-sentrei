@@ -1,3 +1,12 @@
+## [1.82.1](https://github.com/sentrei/sentrei/compare/v1.82.0...v1.82.1) (2020-09-19)
+
+### Performance Improvements
+
+- ⚡️ add padding for square types ([57dbfdc](https://github.com/sentrei/sentrei/commit/57dbfdce6f7058230ef3ef92798b4857fd39262e))
+- ⚡️ ini room card color border ([7166a58](https://github.com/sentrei/sentrei/commit/7166a5859dbe050ed8f426181aa336ff6bffb5c7))
+- ⚡️ ini square props for room card ([ab18a21](https://github.com/sentrei/sentrei/commit/ab18a21425145e43e57a2de3e49c3238e741771f))
+- ⚡️ refactor analytics model ([76d786f](https://github.com/sentrei/sentrei/commit/76d786f89adcabb68832ebd98fb3caa9dfc586a7))
+
 # [1.82.0](https://github.com/sentrei/sentrei/compare/v1.81.0...v1.82.0) (2020-09-18)
 
 ### Features
