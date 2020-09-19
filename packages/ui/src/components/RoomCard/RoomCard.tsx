@@ -58,8 +58,8 @@ export default function RoomCard({
         borderRadius: theme.spacing(1),
         borderColor: room.color,
         borderWidth: theme.palette.type === "light" ? 1 : 2,
-        paddingTop: square ? "5%" : undefined,
-        paddingBottom: square ? "5%" : undefined,
+        paddingTop: square ? "3%" : undefined,
+        paddingBottom: square ? "3%" : undefined,
       },
     }),
   );
@@ -83,69 +83,76 @@ export default function RoomCard({
         <Box p={3}>
           <Grid
             container
-            direction="row"
+            direction="column"
             justify="space-between"
-            alignItems="center"
+            alignItems="stretch"
           >
-            <Grid item xs={10}>
-              <Typography
-                align="left"
-                component="h3"
-                variant="h4"
-                color="textPrimary"
-                className={classes.color}
-                noWrap
-                gutterBottom
-              >
-                {room.name}
-              </Typography>
-            </Grid>
-            <Grid item xs={1}>
-              <CopyToClipboard
-                text={`${window.location.origin}/${space.namespaceId}/${room.nameroomId}`}
-                onCopy={(): void => {
-                  snackbar("success", t("snackbar:snackbar.clipboard"));
-                  trackEvent("Copy Clipboard Room");
-                }}
-              >
-                <IconButton aria-label="share" className={classes.color}>
-                  <ShareIcon />
+            <Grid
+              container
+              direction="row"
+              justify="space-between"
+              alignItems="center"
+            >
+              <Grid item xs={10}>
+                <Typography
+                  align="left"
+                  component="h3"
+                  variant="h4"
+                  color="textPrimary"
+                  className={classes.color}
+                  noWrap
+                  gutterBottom
+                >
+                  {room.name}
+                </Typography>
+              </Grid>
+              <Grid item xs={1}>
+                <CopyToClipboard
+                  text={`${window.location.origin}/${space.namespaceId}/${room.nameroomId}`}
+                  onCopy={(): void => {
+                    snackbar("success", t("snackbar:snackbar.clipboard"));
+                    trackEvent("Copy Clipboard Room");
+                  }}
+                >
+                  <IconButton aria-label="share" className={classes.color}>
+                    <ShareIcon />
+                  </IconButton>
+                </CopyToClipboard>
+              </Grid>
+              <Grid item xs={1}>
+                <IconButton
+                  aria-label="more"
+                  edge="end"
+                  aria-haspopup="true"
+                  className={classes.color}
+                  onClick={handleRoomClick}
+                >
+                  <MoreVertIcon />
                 </IconButton>
-              </CopyToClipboard>
+              </Grid>
             </Grid>
-            <Grid item xs={1}>
-              <IconButton
-                aria-label="more"
-                edge="end"
-                aria-haspopup="true"
-                className={classes.color}
-                onClick={handleRoomClick}
-              >
-                <MoreVertIcon />
-              </IconButton>
-            </Grid>
+            <RoomMenu
+              anchorEl={roomAnchorEl}
+              open={Boolean(roomAnchorEl)}
+              onClose={handleClose}
+              nameroomId={room.nameroomId}
+              namespaceId={space.namespaceId}
+            />
+            <Box p={3} />
+            <div className={classes.container}>
+              <Grid container direction="row" justify="space-around">
+                <Grid item xs={8} />
+                <Grid item xs={4}>
+                  <RoomCardVisitButton
+                    namespaceId={space.namespaceId}
+                    room={room}
+                    space={space}
+                  />
+                </Grid>
+              </Grid>
+            </div>
           </Grid>
         </Box>
-        <RoomMenu
-          anchorEl={roomAnchorEl}
-          open={Boolean(roomAnchorEl)}
-          onClose={handleClose}
-          nameroomId={room.nameroomId}
-          namespaceId={space.namespaceId}
-        />
-        <Box p={1} />
-        <div className={classes.container}>
-          <Grid container direction="row" justify="space-around">
-            <Grid item xs={8} />
-            <Grid item xs={4}>
-              <RoomCardVisitButton
-                namespaceId={space.namespaceId}
-                room={room}
-                space={space}
-              />
-            </Grid>
-          </Grid>
-        </div>
       </CardContent>
     </Card>
   );
