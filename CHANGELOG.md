@@ -1,3 +1,10 @@
+## [1.82.2](https://github.com/sentrei/sentrei/compare/v1.82.1...v1.82.2) (2020-09-21)
+
+### Performance Improvements
+
+- ⚡️ ini sentrei roadmap ([97b8e20](https://github.com/sentrei/sentrei/commit/97b8e20611f7a745fef780ad26de7bc44b5228b1))
+- ⚡️ update sus week ([3e5f292](https://github.com/sentrei/sentrei/commit/3e5f2929cc42c850e7eec7fac9029ae0cd7a5e94))
+
 ## [1.82.1](https://github.com/sentrei/sentrei/compare/v1.82.0...v1.82.1) (2020-09-19)
 
 ### Performance Improvements
