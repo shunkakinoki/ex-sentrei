@@ -66,6 +66,12 @@ export default function FooterSection(): JSX.Element {
         >
           <Typography gutterBottom>{t("footer:footer.releases")}</Typography>
         </Link>
+        <Link
+          href="https://github.com/sentrei/roadmap/projects/1"
+          target="_blank"
+        >
+          <Typography gutterBottom>{t("footer:footer.roadmap")}</Typography>
+        </Link>
       </Grid>
       <Grid item xs={12} sm={3} md={2}>
         <Typography variant="h6" gutterBottom>
