@@ -1,3 +1,4 @@
+import Analytics from "@sentrei/types/models/Analytics";
 import Metadata from "@sentrei/types/models/Metadata";
 import Room from "@sentrei/types/models/Room";
 
@@ -13,6 +14,9 @@ declare namespace Metrics {
     type?: {
       [x in Room.Types | "duration"]?: FirebaseFirestore.FieldValue | number;
     };
+    period?: {
+      [x in Analytics.Period]?: FirebaseFirestore.FieldValue | number;
+    };
     record?: FirebaseFirestore.FieldValue | number;
     score?: FirebaseFirestore.FieldValue | number;
   };
@@ -27,6 +31,9 @@ declare namespace Metrics {
     };
     type?: {
       [x in Room.Types | "duration"]?: number;
+    };
+    period?: {
+      [x in Analytics.Period]?: number;
     };
     record?: number;
     score?: number;
@@ -53,6 +60,9 @@ declare namespace Metrics {
     };
     type?: {
       [x in Room.Types | "duration"]?: number;
+    };
+    period?: {
+      [x in Analytics.Period]?: number;
     };
     record?: number;
     score?: number;
