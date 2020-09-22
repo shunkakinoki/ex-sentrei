@@ -12,7 +12,7 @@ export default function Metomic(): JSX.Element {
     >
       <>
         <ConsentGate micropolicy="sentrei">
-          <Segment />
+          <Segment plain />
         </ConsentGate>
       </>
     </MetomicProvider>
