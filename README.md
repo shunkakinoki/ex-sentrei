@@ -47,7 +47,7 @@
 | Sentrei | https://sentrei.com | [`sentrei`](package.json) | [![version](https://img.shields.io/npm/v/sentrei/latest.svg?color=success)](https://www.npmjs.com/package/sentrei) |
 <!-- prettier-ignore-end -->
 
-### Components 🧰
+### Packages 🧰
 
 <!-- prettier-ignore-start -->
 | Project | Package | Version |
