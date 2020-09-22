@@ -1,3 +1,9 @@
+## [1.83.1](https://github.com/sentrei/sentrei/compare/v1.83.0...v1.83.1) (2020-09-22)
+
+### Performance Improvements
+
+- ⚡️ refactor metrics model ([bd8fc6c](https://github.com/sentrei/sentrei/commit/bd8fc6c54f9632c81f1faefb2f16921e9ca5c12a))
+
 # [1.83.0](https://github.com/sentrei/sentrei/compare/v1.82.2...v1.83.0) (2020-09-22)
 
 ### Bug Fixes
