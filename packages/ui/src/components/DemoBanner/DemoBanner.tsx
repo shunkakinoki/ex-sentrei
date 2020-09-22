@@ -8,7 +8,7 @@ import * as React from "react";
 
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 
-export default function PitchBanner(): JSX.Element {
+export default function DemoBanner(): JSX.Element {
   const {t} = useTranslation();
 
   return (
@@ -27,7 +27,7 @@ export default function PitchBanner(): JSX.Element {
           strokeWidth={10}
           iterations={3}
           color="secondary"
-          text={t("pitch:pitch.title")}
+          text={t("demo:demo.title")}
           type="underline"
         />
       </Typography>
@@ -38,7 +38,7 @@ export default function PitchBanner(): JSX.Element {
         color="textSecondary"
         gutterBottom
       >
-        {t("pitch:pitch.greetings")}
+        {t("demo:demo.greetings")}
         &nbsp;
         <Emoji emoji=":fire:" set="apple" size={30} />
       </Typography>

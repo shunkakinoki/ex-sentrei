@@ -54,6 +54,9 @@ export default function FooterSection(): JSX.Element {
         <Typography variant="h6" gutterBottom>
           {t("footer:footer.product")}
         </Typography>
+        <MuiLink href="/demo">
+          <Typography gutterBottom>{t("footer:footer.demo")}</Typography>
+        </MuiLink>
         <MuiLink href="/pitch">
           <Typography gutterBottom>{t("footer:footer.pitch")}</Typography>
         </MuiLink>

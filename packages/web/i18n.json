@@ -30,6 +30,7 @@
     "/create": ["space"],
     "/credits": ["credits", "footer", "header", "papercups"],
     "/dashboard": ["space"],
+    "/demo": ["demo", "footer", "header", "papercups"],
     "/help": ["papercups"],
     "/login": ["auth", "header", "papercups"],
     "/notifications": ["notifications"],
