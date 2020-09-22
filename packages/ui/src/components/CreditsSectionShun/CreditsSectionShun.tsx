@@ -28,12 +28,24 @@ export default function CreditsSectionShun(): JSX.Element {
           label={t("credits:shunkakinoki.friends.hibikiOtawara")}
         />
         <CreditsTreeItem
+          nodeId="15"
+          label={t("credits:shunkakinoki.friends.keiichiroKato")}
+        />
+        <CreditsTreeItem
           nodeId="9"
           label={t("credits:shunkakinoki.friends.kojuFuruta")}
         />
         <CreditsTreeItem
+          nodeId="16"
+          label={t("credits:shunkakinoki.friends.ryoseiYasuda")}
+        />
+        <CreditsTreeItem
           nodeId="10"
           label={t("credits:shunkakinoki.friends.ryotaroSaishu")}
+        />
+        <CreditsTreeItem
+          nodeId="14"
+          label={t("credits:shunkakinoki.friends.shuyaTateishi")}
         />
         <CreditsTreeItem
           nodeId="11"
