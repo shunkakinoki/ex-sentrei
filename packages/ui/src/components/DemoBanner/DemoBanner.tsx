@@ -27,7 +27,7 @@ export default function DemoBanner(): JSX.Element {
           strokeWidth={10}
           iterations={3}
           color="secondary"
-          text={t("pitch:pitch.title")}
+          text={t("demo:demo.title")}
           type="underline"
         />
       </Typography>
@@ -38,7 +38,7 @@ export default function DemoBanner(): JSX.Element {
         color="textSecondary"
         gutterBottom
       >
-        {t("pitch:pitch.greetings")}
+        {t("demo:demo.greetings")}
         &nbsp;
         <Emoji emoji=":fire:" set="apple" size={30} />
       </Typography>
