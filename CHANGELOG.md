@@ -1,3 +1,21 @@
+# [1.83.0](https://github.com/sentrei/sentrei/compare/v1.82.2...v1.83.0) (2020-09-22)
+
+### Bug Fixes
+
+- 🐛 metomic segment bug ([740b855](https://github.com/sentrei/sentrei/commit/740b855fa4eac590124145b6d0f3125a2d6b8f7f))
+
+### Features
+
+- 🎸 ini footer section ([c81a3ec](https://github.com/sentrei/sentrei/commit/c81a3ecba5810d7871e5c5e410a807e6637c246b))
+- 🎸 refactor credits section ([fbdf50e](https://github.com/sentrei/sentrei/commit/fbdf50e96c082f05821616c9d101a1060645fa27))
+- 🎸 refactor pitch section ([305ada3](https://github.com/sentrei/sentrei/commit/305ada3d78f370036a181b0cda263cb6fea86a44))
+
+### Performance Improvements
+
+- ⚡️ ini i18n seo ([3750930](https://github.com/sentrei/sentrei/commit/3750930f876a7c6dec696442a5b9b3a8e3b40543))
+- ⚡️ ini sentrei week ([21e546f](https://github.com/sentrei/sentrei/commit/21e546fc182fc5cfecf348f32a63bfcff435cf73))
+- ⚡️ refactor demo screen ([5650313](https://github.com/sentrei/sentrei/commit/5650313ad2392484bbb3cf7688b5656cd167c3e1))
+
 ## [1.82.2](https://github.com/sentrei/sentrei/compare/v1.82.1...v1.82.2) (2020-09-21)
 
 ### Performance Improvements
