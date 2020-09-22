@@ -42,22 +42,6 @@ export default function PitchBanner(): JSX.Element {
         &nbsp;
         <Emoji emoji=":fire:" set="apple" size={30} />
       </Typography>
-      <Box pr={3}>
-        <Typography
-          variant="subtitle1"
-          align="right"
-          color="textSecondary"
-          component="p"
-        >
-          <RoughNotation
-            animationDelay={3000}
-            animationDuration={3000}
-            color="secondary"
-            text={t("pitch:pitch.thankYou")}
-            type="highlight"
-          />
-        </Typography>
-      </Box>
     </Container>
   );
 }

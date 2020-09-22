@@ -1,10 +1,9 @@
 {
   "pitch": {
     "greetings": "Take a time to listen to the product pitches",
-    "thankYou": "Thank you, from the Sentrei Team",
     "title": "Pitch"
   },
   "section": {
-    "one": "#1 45-Second Pitch"
+    "one": "#001 45-Second Pitch"
   }
 }
