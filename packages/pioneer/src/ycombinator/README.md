@@ -74,7 +74,7 @@ It was after practice of the summer camp of the high-school swimming team, we ha
 
 #### Please tell us in one or two sentences about the most impressive thing other than this startup that you have built or achieved.
 
-Landing #3 on https://pioneer.app leaderboard!
+Contributions & projects & repositories listed in my Github profile (https://github.com/shunkakinoki)
 
 #### Are you a technical founder?
 
@@ -132,9 +132,9 @@ Open source, engaging virtual workspace.
 
 #### What is your company going to make? Please describe your product and what it does or will do.
 
-Sentrei is an engaging virtual
+Sentrei is an engaging virtual workspace.
 
-We aim to be the most seamless
+We aim to be the most seamless video workspace app out there.
 
 #### Where do you live now, and where would the company be based after YC?
 
@@ -224,13 +224,16 @@ I tend to resort to Zoom/Meets/Tandem, and most people do so.
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
 
+- Pragli (https://pragli.com/)
+- Sidekick (https://sidekick.video/)
+- Wfh.land (https://wfh.land/)
 
+I fear
 
 #### What do you understand about your business that other companies in it just don't get?
 
 - The UI of a video conferencing screen should be optimized depending on the usecase.
 - Having a video-chat with someone should be more of an awesome experience in entirety.
--
 
 #### How do or will you make money? How much could you make?
 
