@@ -1,0 +1,3 @@
+variable "email" {
+  type = string
+}
