@@ -17,6 +17,7 @@ import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
 import Authentication from "@sentrei/ui/components/Authentication";
 import Backdrop from "@sentrei/ui/components/Backdrop";
+import SeoDefault from "@sentrei/ui/components/SeoDefault";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 
 import "@sentrei/common/utils/nprogress";
@@ -42,6 +43,7 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
+      <SeoDefault />
       <StyledThemeProvider theme={theme}>
         <MaterialThemeProvider theme={theme}>
           <CssBaseline />
