@@ -165,7 +165,6 @@ Other
 Beta Launch.
 I am in the process of refining the product.
 I think I will keep on making improvements until I've reached a point where I will want to buy my own product.
-(Thank you to beta testers!)
 
 #### How long have each of you been working on this? How much of that has been full-time? Please explain.
 
@@ -179,8 +178,9 @@ Yes
 
 #### How many active users or customers do you have? If you have some particularly valuable customers, who are they? If you're building hardware, how many units have you shipped?
 
-About 10 users during the beta testing.
-At this point in time, I
+About ~10 users during the beta launch.
+Frankly speaking, most of the beta testers are my friends.
+It's hard for me to say we have particularly valuable customers at this time.
 
 #### Do you have revenue?
 
@@ -196,7 +196,7 @@ This is my first application.
 
 #### If you have already participated or committed to participate in an incubator, "accelerator" or "pre-accelerator" program, please tell us about it.
 
-I am a pioneer from pioneer.app (fully remote accelerator)
+I am a pioneer from pioneer.app (fully remote accelerator) from August, 2020.
 
 ### IDEA
 
@@ -216,7 +216,7 @@ I know that people need what I'm making through feedback at pioneer.app, stories
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
 I want to make Sentrei the most seamless experience for teams.
-I guess I tend to resort to Zoom/Meets/Tandem, and most people do so.
+I tend to resort to Zoom/Meets/Tandem, and most people do so.
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
 
@@ -297,6 +297,8 @@ Nothing in particular.
 #### If you had any other ideas you considered applying with, please list them. One may be something we've been waiting for. Often when we fund people it's to do something they list here and not in the main application.
 
 https://pitch.shunkakinoki.com
+https://pitch.shunkakinoki.com/ideas
+https://www.notion.so/shunkakinoki/939e7460007849d295d38252278dec34?v=e2c22afbc58349a9a7b1834ededc8426
 
 #### Please tell us something surprising or amusing that one of you has discovered.
 
