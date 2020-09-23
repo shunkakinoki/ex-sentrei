@@ -36,7 +36,7 @@ const SpaceQuitBoard = ({
         trackEvent("Quit Space");
         backdrop("loading");
       });
-      Router.pushI18n("/dashboard");
+      Router.replaceI18n("/dashboard");
     } catch (err) {
       snackbar("error", err.message);
     }

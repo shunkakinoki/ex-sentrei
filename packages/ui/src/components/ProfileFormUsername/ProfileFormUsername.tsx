@@ -63,7 +63,7 @@ const ProfileFormUsername = ({profile}: Props): JSX.Element => {
         trackEvent("Edit Profile Username");
         backdrop("loading");
         setTimeout(() => {
-          Router.pushI18n("/dashboard");
+          Router.replaceI18n("/dashboard");
         }, 300);
       });
     } catch (err) {
