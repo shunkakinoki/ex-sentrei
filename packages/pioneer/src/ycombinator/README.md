@@ -193,11 +193,8 @@ I thought that the end user experience could be much better if the video chat UI
 
 I have basically no domain expertise in the field of video communications.
 
-<<<<<<< HEAD
 I know that people need what I'm making through feedback at pioneer.app, stories of my friends and their parents complaining particular areas current video communications tools lack in, and Jason Calacanis mentioning on his podcast that he had a secondary display that was always on to recreate the office experience remotely.
 
-=======
->>>>>>> f814090a491a2e7953fcf3433f2bcdcd841f8a6b
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
 I want to make Sentrei the most seamless experience for
