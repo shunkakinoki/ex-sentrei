@@ -138,11 +138,11 @@ Key Features
 
 1. Enhances.
 
-The video chat UI will be optimized depending on the use-case. No same blatant set of controls each time. We aim to deliver the best possible user experience through providing dedicated features depending on the purpose of the room.
+The video chat UI will be optimized depending on the use-case. No same blatant set of controls each time. We aim to deliver the best possible user experience through providing dedicated features depending on the purpose of each room.
 
 2. Fun.
 
-Compete with your teammates through a dedicated leaderboard, and occasionally poke at others if you are taking a break. Hop into "bonding" rooms to recreate the feeling of spontaneous conversations online.
+Compete with your teammates through a dedicated leaderboard, and occasionally poke at others if you are feeling like taking a break. Hop into "bonding" rooms to recreate the feeling of spontaneous conversations online.
 
 3. Seamless.
 
@@ -224,19 +224,24 @@ I was occasionally doing a study session through Zoom with my friends back in Ma
 2. You get distracted by keyboard sounds if un-muted, video chat seems unnecessary otherwise.
 3. UI is the same even for very different situations (bonding, focusing, working)
 
-I thought that the end user experience could be much better if the video chat UI was more optimized for specific use-cases.
+I believe that the end user experience could be much better if the video chat UI was more optimized for each specific use-case.
 
-I have basically no domain expertise in the field of video communications.
+I have basically no domain expertise in the field of video communications though Twilio would take it care for us.
+
 I know that people need what I'm making through feedback at https://pioneer.app, stories of my friends and their parents complaining in which particular areas current video communication tools lack in, and Jason Calacanis mentioning on his podcast that he had a secondary display that was always on to recreate the office experience remotely.
 
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
 The new thing about Sentrei is that the UI will drastically change depending on the use-case.
-We believe that we could deliver a much better user experience if each video session is optimized for the end user.
+We believe that we could deliver a much better user experience if each video session is optimized for each purpose.
+
+We plan to provide three options.
+
+1. Bond. - Short conversations & spontaneous chats through a colorful and enjoyful UI.
+2. Focus. - Always-connected sessions for tele-presence to help you get things done through a zen-like interface.
+3. Work. - Seamless meetings between members for doing synchronous work (basically like Zoom).
 
 I tend to resort to Zoom/Meets/Tandem, and most people do so.
-Though they are all great products which has made remote work possible in the first place, I see that there will be another emerging product in the field of video communications in the near future.
-Just like there was an Instagram after
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
 
@@ -244,22 +249,27 @@ Current competitors
 
 - Pragli (https://pragli.com/)
 - Sidekick (https://sidekick.video/)
-- Tandem (https://wfh.land/)
+- Tandem (https://tandem.chat/)
 
 I fear most that Zoom comes out with a Slack-like alternative, equipped with features that make it not like Zoom, tailored for teams.
-Since we do not want to compete
+We do not want to compete with the above, but rather act as a supplement for Slack and Zoom.
+Thus, Zoom coming out with a Slack-like alternative video chat tool could be devastating for us.
 
 #### What do you understand about your business that other companies in it just don't get?
 
+- Every video chat tool is designed for synchronous & productive communication, yet many people use it for other cases as well.
 - The UI of a video chat screen should completely be optimized depending on the use-case.
-- Having a video-chat with someone should be for comfortable and fun.
+- Being on a virtual workspace should be a lot more comfortable and fun.
 
 #### How do or will you make money? How much could you make?
 
-We charge \$15/month per user.
-The cost would mostly consist of Twilio video server cost, avg. $0.003 per particpant.
-On the assumption that each user spends 3hr per weekday on the platform, that would lead to \$10 per month.
+We charge \$15/month per user for the pro plan, custom pricing for enterprise plan.
+
+The cost would mostly consist of Twilio video server cost(avg. \$0.003 per particpant).
+On the assumption that each user spends 3hr per weekday on the platform, that would lead to a cost of \$10 per month.
 That would probably lead to at least 30~40% gross margin.
+If we could create a great product to reach PMF, i.e. 100,000 paying customers, that would be about ~\$3 mil MRR, ~\$30 mil ARR.
+Under the current circumstances of the world, we have a puncher's chance to grow exponentially.
 
 We could be the best decision your organization has ever made.
 
