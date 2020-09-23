@@ -1,3 +1,9 @@
+# [1.86.0](https://github.com/sentrei/sentrei/compare/v1.85.0...v1.86.0) (2020-09-23)
+
+### Features
+
+- 🎸 complete migrate infrastructure ([e3ee937](https://github.com/sentrei/sentrei/commit/e3ee937dc6d91f6cfae373e32b10f37a94c4a4a7))
+
 # [1.85.0](https://github.com/sentrei/sentrei/compare/v1.84.0...v1.85.0) (2020-09-23)
 
 ### Features
