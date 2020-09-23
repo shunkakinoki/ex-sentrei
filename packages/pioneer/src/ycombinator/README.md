@@ -123,7 +123,7 @@ We help teams do great work through providing a dedicated virtual workspace.
 A dedicated virtual workspace that
 
 It currently has analytics, leaderboard, and basic video chat capability for teams.
-It will have dedicated UI for each 
+It will have dedicated UI for each
 
 #### Where do you live now, and where would the company be based after YC?
 
@@ -193,8 +193,11 @@ I thought that the end user experience could be much better if the video chat UI
 
 I have basically no domain expertise in the field of video communications.
 
+<<<<<<< HEAD
 I know that people need what I'm making through feedback at pioneer.app, stories of my friends and their parents complaining particular areas current video communications tools lack in, and Jason Calacanis mentioning on his podcast that he had a secondary display that was always on to recreate the office experience remotely.
 
+=======
+>>>>>>> f814090a491a2e7953fcf3433f2bcdcd841f8a6b
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
 I want to make Sentrei the most seamless experience for
@@ -281,7 +284,7 @@ https://pitch.shunkakinoki.com
 
 #### Please tell us something surprising or amusing that one of you has discovered.
 
-In the last 20-30 years, there are 0 startups born from Japan with a current market cap of over $10 billion.
+In the last 20-30 years, there are 0 startups born from Japan with a current market cap of over \$10 billion.
 This is crazy!
 I want to prove that even Japanese founders can create great software products beloved by people all around the world.
 
