@@ -74,7 +74,7 @@ It was after practice of the summer camp of the high-school swimming team, we ha
 
 #### Please tell us in one or two sentences about the most impressive thing other than this startup that you have built or achieved.
 
-Honestly, I don't have
+Honestly, I don't have any kinds of
 
 #### Are you a technical founder?
 
@@ -136,7 +136,7 @@ A dedicated virtual workspace that
 
 #### Where do you live now, and where would the company be based after YC?
 
-Tokyo, Japan / SF, U.S.A.
+Tokyo, Japan / Cupertino, U.S.A.
 
 ### CONTACT
 
@@ -163,7 +163,9 @@ Other
 #### How far along are you?
 
 Beta Launch.
-I am in the process of refining the product until I think I want to buy my product.
+I am in the process of refining the product.
+I think I will keep on making improvements until I've reached a point where I will want to buy my own product.
+(Thank you to beta testers!)
 
 #### How long have each of you been working on this? How much of that has been full-time? Please explain.
 
@@ -186,7 +188,7 @@ No
 
 #### Anything else you would like us to know regarding your revenue or growth rate?
 
-Sentrei is an open startup, analytics can be seen here: https://sentrei.com/analytics
+https://sentrei.com/analytics
 
 #### If you are applying with the same idea, did anything change? If you applied with a different idea, why did you pivot and what did you learn from the last idea?
 
@@ -233,7 +235,7 @@ I could be the best decision your organization has ever made.
 
 #### How will you get users? If your idea is the type that faces a chicken-and-egg problem in the sense that it won't be attractive to users till it has a lot of users (e.g. a marketplace, a dating site, an ad network), how will you overcome that?
 
-It's basically a team-based tool like Notion/Slack, so if the product is great, it likely will virally grow exponentionally.
+It's a team-based tool like Notion/Slack, so if the product is great, it likely will grow virally.
 If not, it will die.
 
 ### EQUITY
@@ -284,7 +286,7 @@ No.
 
 I basically have written all of the code.
 The entirety of the work can be seen at https://github.com/sentrei/sentrei
-I've gotten some piece of UI advice from my friends, but basically I've worked alone from the start to now.
+I've gotten some piece of UI advice from my friends, but basically I've worked all alone from the start to now.
 
 #### Is there anything else we should know about your company?
 
@@ -308,8 +310,8 @@ I want to prove that even Japanese founders can create great software products b
 
 The moment I started a startup, I knew at least I had to try to get in.
 In a sense, it's like a dream for aspiring founders all around the world.
-Nope.
+No.
 
 #### How did you hear about Y Combinator?
 
-Everybody who's ever dreamt of doing a startup in the valley must know.
+I don't remember.
