@@ -284,7 +284,7 @@ https://pitch.shunkakinoki.com
 
 #### Please tell us something surprising or amusing that one of you has discovered.
 
-In the last 20-30 years, there are 0 startups born from Japan with a current market cap of over \$10 billion.
+In the last 20 years, there are 0 startups born from Japan with a current market cap of over \$10 billion.
 This is crazy!
 I want to prove that even Japanese founders can create great software products beloved by people all around the world.
 
