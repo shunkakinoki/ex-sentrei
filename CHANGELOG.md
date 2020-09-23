@@ -1,3 +1,14 @@
+## [1.87.1](https://github.com/sentrei/sentrei/compare/v1.87.0...v1.87.1) (2020-09-23)
+
+### Bug Fixes
+
+- 🐛 no opener seo ([0b5012a](https://github.com/sentrei/sentrei/commit/0b5012a1a718c555de400b60abf0f0f0fbb006f0))
+- 🐛 seo default app ([d3236b0](https://github.com/sentrei/sentrei/commit/d3236b0f5e21b684158c5af70d2542d48b0a3cc0))
+
+### Performance Improvements
+
+- ⚡️ refactor pricing button landing text ([ff2a1e9](https://github.com/sentrei/sentrei/commit/ff2a1e95c1d515906865809e14ebb860c7e70f77))
+
 # [1.87.0](https://github.com/sentrei/sentrei/compare/v1.86.0...v1.87.0) (2020-09-23)
 
 ### Features
