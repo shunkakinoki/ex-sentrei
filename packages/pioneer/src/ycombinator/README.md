@@ -257,9 +257,9 @@ Thus, Zoom coming out with a Slack-like alternative video chat tool could be dev
 
 #### What do you understand about your business that other companies in it just don't get?
 
-- Every video chat tool is designed for synchronous & productive communication, yet many people use it for other cases as well.
+- Every video chat tool is designed for synchronous & productive communication, yet many people use it for other purposes as well.
 - The UI of a video chat screen should completely be optimized depending on the use-case.
-- Being on a virtual workspace should be a lot more comfortable and fun.
+- Being on a virtual workspace should be a lot more comfortable and fun, not clumsy and stressful.
 
 #### How do or will you make money? How much could you make?
 
