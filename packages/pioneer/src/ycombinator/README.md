@@ -134,7 +134,19 @@ Open source, engaging virtual workspace.
 
 Sentrei is an engaging virtual workspace.
 
-We aim to be the most seamless video workspace app out there.
+Key Features
+
+1. Focus-oriented.
+
+You will not get distracted through notifications or your colleagues' keyboard noise. Reflect back on how productive you were through metrics and compete with your colleagues through a dedicated leaderboard.
+
+2. Fun.
+
+Compete with your friends through a dedicated leaderboard, and occasionally poke at others if you are taking a break. Hop into "bonding" rooms to recreate the feeling of spontaneous conversations.
+
+3. Seamless.
+
+Hop in to the same virtual room when you want to get work (same static link always!!!), and never worry about time-limits, invitations, or passcodes. Everything is minimalistic and kept simple for your team.
 
 #### Where do you live now, and where would the company be based after YC?
 
@@ -206,30 +218,33 @@ I am a pioneer from https://pioneer.app (fully remote accelerator) from August, 
 
 #### Why did you pick this idea to work on? Do you have domain expertise in this area? How do you know people need what you're making?
 
-I was doing a study session through Zoom with my friends back in March, and it was far from a good experience.
+I was occasionally doing a study session through Zoom with my friends back in March, and it was far from a good experience.
 
 1) Too many steps to get a session going even for the same consistent group of people (links, passcodes, etc...)
-2) You get distracted by keyboard sounds if un-muted, video screen seems unnecessary otherwise.
+2) You get distracted by keyboard sounds if un-muted, video chat seems unnecessary otherwise.
 3) UI is the same even for very different situations (bonding, focusing, working)
 
-I thought that the end user experience could be much better if the video chat UI was more optimized for specific usecases.
+I thought that the end user experience could be much better if the video chat UI was more optimized for specific use-cases.
 
 I have basically no domain expertise in the field of video communications.
-I know that people need what I'm making through feedback at https://pioneer.app, stories of my friends and their parents complaining particular areas current video communications tools lack in, and Jason Calacanis mentioning on his podcast that he had a secondary display that was always on to recreate the office experience remotely.
+I know that people need what I'm making through feedback at https://pioneer.app, stories of my friends and their parents complaining in which particular areas current video communication tools lack in, and Jason Calacanis mentioning on his podcast that he had a secondary display that was always on to recreate the office experience remotely.
 
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
-I want to make Sentrei the most seamless experience for teams.
+The new about Sentrei is that the UI will drastically change depending on the use-case.
+We believe that we could deliver a much better user experience if each video session could be optimized for the end user.
+
+
 I tend to resort to Zoom/Meets/Tandem, and most people do so.
+Though they are all great products which has made remote work possible in the first place, I see that there will be
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
 
 - Pragli (https://pragli.com/)
 - Sidekick (https://sidekick.video/)
-- Wfh.land (https://wfh.land/)
+- Tandem (https://wfh.land/)
 
-I fear
-
+I fear that
 #### What do you understand about your business that other companies in it just don't get?
 
 - The UI of a video conferencing screen should be optimized depending on the usecase.
@@ -239,6 +254,8 @@ I fear
 
 We charge \$15/month per user.
 Roughly at least 50~60% gross margin.
+
+
 I could be the best decision your organization has ever made.
 
 #### How will you get users? If your idea is the type that faces a chicken-and-egg problem in the sense that it won't be attractive to users till it has a lot of users (e.g. a marketplace, a dating site, an ad network), how will you overcome that?
