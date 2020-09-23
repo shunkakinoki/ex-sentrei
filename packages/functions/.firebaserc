@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "alpha": "sentrei-alpha",
+    "beta": "sentrei-beta",
+    "main": "sentrei-main"
+  }
+}

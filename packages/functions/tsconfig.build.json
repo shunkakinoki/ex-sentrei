@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@counter/*": ["./src/extensions/firestore-counter/functions/src/*"],
+      "@sentrei/types/*": ["./src/@types/src/*"],
+      "@sentrei/common/*": ["./src/common/src/*"],
+      "@sentrei/functions/*": ["src/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "src/extensions/**/*",
+    "**/__mocks__/*.ts",
+    "**/__mocks__/*.tsx",
+    "**/__tests__/*.ts",
+    "**/__tests__/*.tsx",
+    "**/*.stories.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ]
+}

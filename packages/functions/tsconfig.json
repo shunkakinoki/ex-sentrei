@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": false,
+    "target": "es2018",
+    "paths": {
+      "@counter/*": ["src/extensions/firestore-counter/functions/src/*"],
+      "@sentrei/types/*": ["../@types/dist/*"],
+      "@sentrei/common/*": ["../common/dist/*"],
+      "@sentrei/functions/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/extensions/**/*"],
+  "references": [
+    {
+      "path": "../@types"
+    },
+    {
+      "path": "../common"
+    }
+  ]
+}

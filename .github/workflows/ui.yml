@@ -9,7 +9,6 @@ on:
       - "packages/@types/**"
       - "packages/common/**"
       - "packages/ui/**"
-      - "packages/video/**"
 jobs:
   ui:
     runs-on: ubuntu-latest

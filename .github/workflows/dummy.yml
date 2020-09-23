@@ -1,6 +1,10 @@
 name: Dummy
 on: push
 jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
   infrastructure:
     runs-on: ubuntu-latest
     steps:

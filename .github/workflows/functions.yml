@@ -1,0 +1,55 @@
+name: Functions
+on:
+  pull_request:
+    paths:
+      - "package.json"
+      - "tsconfig.json"
+      - "yarn.lock"
+      - ".github/workflows/functions.yml"
+      - "packages/@types/**"
+      - "packages/common/**"
+      - "packages/functions/**"
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.4.0"
+      - id: cache
+        uses: actions/cache@v2.1.1
+        with:
+          path: |
+            node_modules
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - run: |
+          yarn run typescript
+      - working-directory: packages/functions
+        run: |
+          yarn run swap:${{ github.event.pull_request.base.ref }}
+          yarn run setup
+          yarn run test
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - uses: codecov/codecov-action@v1.0.13
+        continue-on-error: true
+        timeout-minutes: 3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: packages/functions/coverage/lcov.info
+          name: functions
+          fail_ci_if_error: true
+      - uses: actions/upload-artifact@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: ruleCoverage.html
+          path: packages/functions/coverage/ruleCoverage.html

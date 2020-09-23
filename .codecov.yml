@@ -3,6 +3,10 @@ coverage:
     project: off
     patch: off
 flags:
+  functions:
+    paths:
+      - packages/functions/src
+    carryforward: true
   ui:
     paths:
       - packages/ui/src
