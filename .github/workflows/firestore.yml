@@ -1,0 +1,29 @@
+name: Firestore
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  firestore:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: ["alpha", "beta", "main"]
+    steps:
+      - uses: actions/checkout@v2
+      - id: secrets
+        uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@0.1.3
+        with:
+          credentials: ${{ secrets.GCP_CREDENTIALS }}
+          secrets: |-
+            SERVICE_ACCOUNT_EMAIL:sentrei-main/github_${{ matrix.branch }}_email
+            SERVICE_ACCOUNT_KEY:sentrei-main/github_${{ matrix.branch }}_key
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.3
+        with:
+          version: "286.0.0"
+          service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
+          service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
+          project_id: "sentrei-${{ matrix.branch }}"
+          export_default_credentials: true
+      - run: |
+          make firestore-backup-${{ matrix.branch }}

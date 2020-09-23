@@ -51,3 +51,24 @@ yarn-upgrade:
 
 vercel-preview:
 	yarn run vercel alias sentrei-git-beta.sentrei.vercel.app preview.sentrei.com
+
+firestore-backup-alpha:
+	gcloud firestore export gs://sentrei-alpha-firestore
+
+firestore-backup-beta:
+	gcloud firestore export gs://sentrei-beta-firestore
+
+firestore-backup-main:
+	gcloud firestore export gs://sentrei-main-firestore
+
+gcr-clean-alpha:
+	gcloud container images list-tags gcr.io/sentrei-alpha/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
+	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-alpha/sentrei@{arg}" --quiet
+
+gcr-clean-beta:
+	gcloud container images list-tags gcr.io/sentrei-beta/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
+	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-beta/sentrei@{arg}" --quiet
+
+gcr-clean-main:
+	gcloud container images list-tags gcr.io/sentrei-main/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
+	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-main/sentrei@{arg}" --quiet
