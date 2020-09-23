@@ -132,11 +132,13 @@ Open source, enhanced virtual workspace.
 
 #### What is your company going to make? Please describe your product and what it does or will do.
 
-Sentrei is an enhanced virtual workspace.
+Sentrei is a dedicated virtual workspace for remote teams.
+We help people do great work through aiming to provide the best user experience for remote teams.
+Fully open-source, see us on https://github.com/sentrei/sentrei
 
 Key Features
 
-1. Enhances.
+1. Enhanced.
 
 The video chat UI will be optimized depending on the use-case. No same blatant set of controls each time. We aim to deliver the best possible user experience through providing dedicated features depending on the purpose of each room.
 
