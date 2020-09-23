@@ -7,7 +7,7 @@
     "url": "https://github.com/sentrei/sentrei.git",
     "directory": "packages/@types"
   },
-  "license": "GPL-3.0-only",
+  "license": "MIT",
   "author": "Shun Kakinoki",
   "main": "dist/index.js",
   "module": "dist/index.js",
