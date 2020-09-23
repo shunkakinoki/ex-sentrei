@@ -14,6 +14,10 @@ Shun Kakinoki
 
 21
 
+#### Gender
+
+Male
+
 #### City where you currently live
 
 Tokyo
@@ -30,11 +34,17 @@ Japan
 
 #### Schools, Degrees (including field of study), and Years of Graduation
 
-Keio University, Political Science, 2021
+Keio University (Political Science), 2021
+Keio Shonan Fujisawa High School, 2017
+Keio Shonan Fujisawa Middle School, 2014
+Tsuchihashi Elementary School, 2011
+Eaton Elementary School, 2009
 
 #### Employers, Position / Titles and Dates
 
 No full-time work experience.
+
+Nikkei, Full Stack Software Engineer Intern, Apr, 2019 - Mar, 2020
 
 ### PRESENCE
 
@@ -60,7 +70,7 @@ https://twitter.com/shunkakinoki
 
 #### Please tell us about the time you, shunkakinoki, most successfully hacked some (non-computer) system to your advantage.
 
-It was after practice of the summer camp of the high-school swimming team, we had to dry up a few dozen kickboards in a relatively small area. Lacking the usual shelves to put them up, we devised of a way to put together the kickboards triangularly so they would all fit while having enough distance between each other for them to dry out.
+It was after practice of the summer camp of the high-school swimming team, we had to dry up a few dozen kickboards within a relatively small area. Lacking the usual shelves to put them up, we devised of a way to put together the boards triangularly so they would all fit while having enough distance between each other for them to dry out.
 
 #### Please tell us in one or two sentences about the most impressive thing other than this startup that you have built or achieved.
 
@@ -90,7 +100,9 @@ No
 
 #### Do you have any commitments in the future and if so what?
 
-Obliterate the Galaxy 🚀
+My life mission is to Obliterate the Galaxy 🚀
+Steve Jobs once said that he wanted to "put a dent in the galaxy".
+I want to create great products that are galaxy shattering, and wake up everyday striving to do so.
 
 ### CURIOUS
 
@@ -116,14 +128,11 @@ https://sentrei.com/demo
 
 #### Describe what your company does in 50 characters or less.
 
-We help teams do great work through providing a dedicated virtual workspace.
+Open source, virtual workspace for remote teams.
 
 #### What is your company going to make? Please describe your product and what it does or will do.
 
 A dedicated virtual workspace that
-
-It currently has analytics, leaderboard, and basic video chat capability for teams.
-It will have dedicated UI for each
 
 #### Where do you live now, and where would the company be based after YC?
 
@@ -192,15 +201,15 @@ I was doing a study session through Zoom with my friends back in March, and it w
 I thought that the end user experience could be much better if the video chat UI was more optimized for specific usecases.
 
 I have basically no domain expertise in the field of video communications.
-
 I know that people need what I'm making through feedback at pioneer.app, stories of my friends and their parents complaining particular areas current video communications tools lack in, and Jason Calacanis mentioning on his podcast that he had a secondary display that was always on to recreate the office experience remotely.
 
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
-I want to make Sentrei the most seamless experience for
+I want to make Sentrei the most seamless experience for teams.
 I guess I tend to resort to Zoom/Meets/Tandem, and most people do so.
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
+
 
 #### What do you understand about your business that other companies in it just don't get?
 
@@ -212,7 +221,7 @@ I guess I tend to resort to Zoom/Meets/Tandem, and most people do so.
 
 We charge \$15/month per user.
 Roughly at least 50~60% gross margin.
-I don't know how much could I make in the short term, but I could be the best decision your organization has ever made.
+I could be the best decision your organization has ever made.
 
 #### How will you get users? If your idea is the type that faces a chicken-and-egg problem in the sense that it won't be attractive to users till it has a lot of users (e.g. a marketplace, a dating site, an ad network), how will you overcome that?
 
