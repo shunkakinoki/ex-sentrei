@@ -128,11 +128,11 @@ https://sentrei.com/demo
 
 #### Describe what your company does in 50 characters or less.
 
-Open source, engaging virtual workspace.
+Open source, enhanced virtual workspace.
 
 #### What is your company going to make? Please describe your product and what it does or will do.
 
-Sentrei is an engaging virtual workspace.
+Sentrei is an enhanced virtual workspace.
 
 Key Features
 
@@ -162,7 +162,7 @@ Tokyo, Japan / Cupertino, U.S.A.
 
 #### Please enter the url of a 1 minute unlisted (not private) YouTube or Youku video introducing the founder(s). This video is an important part of the application. (Follow the Video Guidelines.)
 
-https://www.youtube.com/watch?v=VH6_ooC-L7I
+https://youtu.be/hvVKiPQKEt0
 
 #### How many founders are on the team?
 
