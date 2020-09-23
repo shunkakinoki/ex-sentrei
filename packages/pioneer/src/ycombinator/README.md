@@ -56,7 +56,11 @@ https://twitter.com/shunkakinoki
 
 #### Please tell us about the time you, shunkakinoki, most successfully hacked some (non-computer) system to your advantage.
 
+I was in the high-school swimming team at the time,
+
 #### Please tell us in one or two sentences about the most impressive thing other than this startup that you have built or achieved.
+
+Honestly,
 
 #### Are you a technical founder?
 
@@ -124,9 +128,13 @@ Tokyo, Japan / SF, U.S.A.
 
 #### How many founders are on the team?
 
+1
+
 ### CATEGORY
 
 #### Which category best applies to your company?
+
+Other
 
 ### PROGRESS
 
@@ -135,36 +143,60 @@ Tokyo, Japan / SF, U.S.A.
 #### How long have each of you been working on this? How much of that has been full-time? Please explain.
 
 From April 2021, full time since then.
-Living with my family for now,
-but I will get kicked out next March.
+Thankfully, I'm living with my family for now,
+but I will get kicked out next April.
 
 #### Are people using your product?
 
+No
+
 #### When will you have a prototype or beta?
+
+10/2
 
 #### Do you have revenue?
 
 #### If you are applying with the same idea, did anything change? If you applied with a different idea, why did you pivot and what did you learn from the last idea?
 
+This is my first application.
+
 #### If you have already participated or committed to participate in an incubator, "accelerator" or "pre-accelerator" program, please tell us about it.
+
+I am a pioneer from pioneer.app
 
 ### IDEA
 
 #### Why did you pick this idea to work on? Do you have domain expertise in this area? How do you know people need what you're making?
 
+I was doing a study session through Zoom with my friends back in March, and it was a terrible experience.
+When you're tyring to way too many steps to get a session going, you get distracted by keyboard sounds, and it meant nothing if it were put on mute.
+I thought that if
+I have basically no domain expertise in the field of video communications.
+
+
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
+
+I want to
+Zoom/Meets/Tandem
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
 
 #### What do you understand about your business that other companies in it just don't get?
 
+- The UI of a video conferencing screen should be OPTIMIZED depending on the usecase.
+- Having a video-chat with someone should be more of an awesome experience.
+-
+
 #### How do or will you make money? How much could you make?
 
-- We charge \$30/month per user.
-- Roughly at least 50~60% gross margin.
-- I could be the best decision your organization has ever made
+We charge \$15/month per user.
+Roughly at least 50~60% gross margin.
+I don't know how much could I make in the short term, but I could be the best decision your organization has ever made.
 
 #### How will you get users? If your idea is the type that faces a chicken-and-egg problem in the sense that it won't be attractive to users till it has a lot of users (e.g. a marketplace, a dating site, an ad network), how will you overcome that?
+
+It's basically a team-based tool like Notion/Slack, so if the product is great, it likely will virally grow on itself.
+If not, it will die.
 
 ### EQUITY
 
@@ -184,36 +216,59 @@ Yes
 
 #### List any investments your company has received. Include the name of the investor, the amount invested, the premoney valuation / valuation cap, and the type of security sold (convertible notes, safes or stock).
 
+1% from pioneer.app (SAFE)
+
 #### How much money do you spend per month?
 
-300
+40
 
 #### How much money does your company have in the bank now?
 
-1500
+120
 
 #### How long is your runway?
 
-5 months
+3 months
 
 #### Please provide any other relevant information about the structure or formation of the company.
+
+Stripe Atlas Incorporated.
 
 ### LEGAL
 
 #### Are any of the founders covered by noncompetes or intellectual property agreements that overlap with your project? If so, please explain.
 
+No.
+
 #### Who writes code, or does other technical work on your product? Was any of it done by a non-founder? Please explain.
 
+I basically have written all of the code.
+The entirety of the work can be seen at https://github.com/sentrei/sentrei
+Nope.
+
 #### Is there anything else we should know about your company?
+
+Nothing in particular.
 
 ### OTHERS
 
 #### If you had any other ideas you considered applying with, please list them. One may be something we've been waiting for. Often when we fund people it's to do something they list here and not in the main application.
 
+https://pitch.shunkakinoki.com
+
 #### Please tell us something surprising or amusing that one of you has discovered.
+
+In the last 20-30 years, there are basically 0 startups from Japan with a current market cap of over $10 billion.
+This is crazy!
+I want to prove that even Japanese founders can create great software products loved by people all around the world.
 
 ### CURIOUS
 
 #### What convinced you to apply to Y Combinator? Did someone encourage you to apply?
 
+The moment I started a startup, I knew at least I had to try to get in.
+Nope.
+
 #### How did you hear about Y Combinator?
+
+Everybody who's ever dreamt of doing a startup in the valley must know.
