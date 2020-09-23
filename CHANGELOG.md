@@ -1,3 +1,16 @@
+# [1.87.0](https://github.com/sentrei/sentrei/compare/v1.86.0...v1.87.0) (2020-09-23)
+
+### Features
+
+- 🎸 ini functions oss ([c712136](https://github.com/sentrei/sentrei/commit/c712136a83d1781c2ddf43cc97caaedbc2931464))
+- 🎸 license to MIT ([cb6e71a](https://github.com/sentrei/sentrei/commit/cb6e71a471af1ef5dd3d1cc503aba6e33fbdc074))
+- 🎸 refactor sentrei repo for infrastructure ([8e8dcc4](https://github.com/sentrei/sentrei/commit/8e8dcc4422d33951e6d9f51222b390e3821b7361))
+
+### Performance Improvements
+
+- ⚡️ remove iam member for secrets ([8c29c86](https://github.com/sentrei/sentrei/commit/8c29c8649e1977d7989e164c755a53bee1c67484))
+- ⚡️ update checkout gha ([b0fc38c](https://github.com/sentrei/sentrei/commit/b0fc38cdd870bbcef614ba724522e0eb07bbef93))
+
 # [1.86.0](https://github.com/sentrei/sentrei/compare/v1.85.0...v1.86.0) (2020-09-23)
 
 ### Features
