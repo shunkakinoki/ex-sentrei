@@ -39,7 +39,7 @@
     "swap:beta": "cp beta.firebase.json firebase.json",
     "swap:main": "cp main.firebase.json firebase.json",
     "test": "start-server-and-test start http://localhost:3000 cypress",
-    "typescript": "cd ../.. && yarn run typescript",
+    "typescript": "cd ../.. && yarn run typescript:build",
     "watch": "cd ../.. && yarn run watch"
   },
   "dependencies": {
