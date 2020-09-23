@@ -74,7 +74,7 @@ It was after practice of the summer camp of the high-school swimming team, we ha
 
 #### Please tell us in one or two sentences about the most impressive thing other than this startup that you have built or achieved.
 
-I was #3 on the pioneer.app leaderboard.
+Honestly, I don't have
 
 #### Are you a technical founder?
 
@@ -162,23 +162,31 @@ Other
 
 #### How far along are you?
 
-70% done until launch.
+Beta Launch.
+I am in the process of refining the product until I think I want to buy my product.
 
 #### How long have each of you been working on this? How much of that has been full-time? Please explain.
 
 From April 2021, full time since then.
 Thankfully, I'm lucky enough to have the blessing to be with my family for now,
-but my mom says that I will get kicked out next April.
+but mom has warned me that I will get kicked out next April.
 
 #### Are people using your product?
 
-No
+Yes
 
-#### When will you have a prototype or beta?
+#### How many active users or customers do you have? If you have some particularly valuable customers, who are they? If you're building hardware, how many units have you shipped?
 
-10/2
+About 10 users during the beta testing.
+At this point in time, I
 
 #### Do you have revenue?
+
+No
+
+#### Anything else you would like us to know regarding your revenue or growth rate?
+
+Sentrei is an open startup, analytics can be seen here: https://sentrei.com/analytics
 
 #### If you are applying with the same idea, did anything change? If you applied with a different idea, why did you pivot and what did you learn from the last idea?
 
@@ -225,7 +233,7 @@ I could be the best decision your organization has ever made.
 
 #### How will you get users? If your idea is the type that faces a chicken-and-egg problem in the sense that it won't be attractive to users till it has a lot of users (e.g. a marketplace, a dating site, an ad network), how will you overcome that?
 
-It's basically a team-based tool like Notion/Slack, so if the product is great, it likely will virally exponentionally.
+It's basically a team-based tool like Notion/Slack, so if the product is great, it likely will virally grow exponentionally.
 If not, it will die.
 
 ### EQUITY
