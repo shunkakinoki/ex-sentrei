@@ -7,7 +7,7 @@
     "url": "https://github.com/sentrei/sentrei.git",
     "directory": "packages/web"
   },
-  "license": "GPL-3.0-only",
+  "license": "MIT",
   "author": "Shun Kakinoki",
   "scripts": {
     "alpha": "yarn run alpha:local && yarn run deploy",
