@@ -136,17 +136,17 @@ Sentrei is an engaging virtual workspace.
 
 Key Features
 
-1. Focus-oriented.
+1. Enhances.
 
-You will not get distracted through notifications or your colleagues' keyboard noise. Reflect back on how productive you were through metrics and compete with your colleagues through a dedicated leaderboard.
+The video chat UI will be optimized depending on the use-case. No same blatant set of controls each time. We aim to deliver the best possible user experience through providing dedicated features depending on the purpose of the video 
 
 2. Fun.
 
-Compete with your friends through a dedicated leaderboard, and occasionally poke at others if you are taking a break. Hop into "bonding" rooms to recreate the feeling of spontaneous conversations.
+Compete with your teammates through a dedicated leaderboard, and occasionally poke at others if you are taking a break. Hop into "bonding" rooms to recreate the feeling of spontaneous conversations.
 
 3. Seamless.
 
-Hop in to the same virtual room when you want to get work (same static link always!!!), and never worry about time-limits, invitations, or passcodes. Everything is minimalistic and kept simple for your team.
+Hop in to the same virtual room when you want to get work (same static link always!!!), and never worry about time-limits, invitations, or passcodes. Everything is minimalistic and kept simple as possible for your team.
 
 #### Where do you live now, and where would the company be based after YC?
 
@@ -220,9 +220,9 @@ I am a pioneer from https://pioneer.app (fully remote accelerator) from August, 
 
 I was occasionally doing a study session through Zoom with my friends back in March, and it was far from a good experience.
 
-1) Too many steps to get a session going even for the same consistent group of people (links, passcodes, etc...)
-2) You get distracted by keyboard sounds if un-muted, video chat seems unnecessary otherwise.
-3) UI is the same even for very different situations (bonding, focusing, working)
+1. Too many steps to get a session going even for the same consistent group of people (links, passcodes, etc...)
+2. You get distracted by keyboard sounds if un-muted, video chat seems unnecessary otherwise.
+3. UI is the same even for very different situations (bonding, focusing, working)
 
 I thought that the end user experience could be much better if the video chat UI was more optimized for specific use-cases.
 
@@ -231,32 +231,37 @@ I know that people need what I'm making through feedback at https://pioneer.app,
 
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
-The new about Sentrei is that the UI will drastically change depending on the use-case.
-We believe that we could deliver a much better user experience if each video session could be optimized for the end user.
-
+The new thing about Sentrei is that the UI will drastically change depending on the use-case.
+We believe that we could deliver a much better user experience if each video session is optimized for the end user.
 
 I tend to resort to Zoom/Meets/Tandem, and most people do so.
-Though they are all great products which has made remote work possible in the first place, I see that there will be
+Though they are all great products which has made remote work possible in the first place, I see that there will be another emerging product in the field of video communications in the near future.
+Just like there was an Instagram after
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
+
+Current competitors
 
 - Pragli (https://pragli.com/)
 - Sidekick (https://sidekick.video/)
 - Tandem (https://wfh.land/)
 
-I fear that
+I fear most that Zoom comes out with a Slack-like alternative, equipped with features that make it not like Zoom, tailored for teams.
+Since we do not want to compete
+
 #### What do you understand about your business that other companies in it just don't get?
 
-- The UI of a video conferencing screen should be optimized depending on the usecase.
-- Having a video-chat with someone should be more of an awesome experience in entirety.
+- The UI of a video chat screen should completely be optimized depending on the use-case.
+- Having a video-chat with someone should be for comfortable and fun.
 
 #### How do or will you make money? How much could you make?
 
 We charge \$15/month per user.
-Roughly at least 50~60% gross margin.
+The cost would mostly consist of Twilio video server cost, avg. $0.003 per particpant.
+On the assumption that each user spends 3hr per weekday on the platform, that would lead to \$10 per month.
+That would probably lead to at least 30~40% gross margin.
 
-
-I could be the best decision your organization has ever made.
+We could be the best decision your organization has ever made.
 
 #### How will you get users? If your idea is the type that faces a chicken-and-egg problem in the sense that it won't be attractive to users till it has a lot of users (e.g. a marketplace, a dating site, an ad network), how will you overcome that?
 
