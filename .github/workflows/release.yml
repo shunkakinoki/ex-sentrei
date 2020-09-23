@@ -26,8 +26,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
           token: ${{ secrets.BOT_TOKEN }}
+          fetch-depth: 0
+          submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
           always-auth: false
