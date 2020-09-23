@@ -74,7 +74,7 @@ It was after practice of the summer camp of the high-school swimming team, we ha
 
 #### Please tell us in one or two sentences about the most impressive thing other than this startup that you have built or achieved.
 
-Honestly, I don't have any kinds of
+Landing #3 on https://pioneer.app leaderboard!
 
 #### Are you a technical founder?
 
@@ -102,7 +102,7 @@ No
 
 My life mission is to Obliterate the Galaxy 🚀
 Steve Jobs once said that he wanted to "put a dent in the galaxy".
-I want to create great products that are galaxy shattering, and wake up everyday striving to do so.
+I want to create great products that are galaxy shattering, and wake up everyday in the morning striving to do so.
 
 ### CURIOUS
 
@@ -128,11 +128,13 @@ https://sentrei.com/demo
 
 #### Describe what your company does in 50 characters or less.
 
-Open source, virtual workspace for remote teams.
+Open source, engaging virtual workspace.
 
 #### What is your company going to make? Please describe your product and what it does or will do.
 
-A dedicated virtual workspace that
+Sentrei is an engaging virtual
+
+We aim to be the most seamless
 
 #### Where do you live now, and where would the company be based after YC?
 
@@ -147,6 +149,8 @@ Tokyo, Japan / Cupertino, U.S.A.
 ### FOUNDERS
 
 #### Please enter the url of a 1 minute unlisted (not private) YouTube or Youku video introducing the founder(s). This video is an important part of the application. (Follow the Video Guidelines.)
+
+https://www.youtube.com/watch?v=VH6_ooC-L7I
 
 #### How many founders are on the team?
 
@@ -180,7 +184,7 @@ Yes
 
 About ~10 users during the beta launch.
 Frankly speaking, most of the beta testers are my friends.
-It's hard for me to say we have particularly valuable customers at this time.
+It's hard for me to say we have particularly valuable customers at this point in time.
 
 #### Do you have revenue?
 
@@ -196,7 +200,7 @@ This is my first application.
 
 #### If you have already participated or committed to participate in an incubator, "accelerator" or "pre-accelerator" program, please tell us about it.
 
-I am a pioneer from pioneer.app (fully remote accelerator) from August, 2020.
+I am a pioneer from https://pioneer.app (fully remote accelerator) from August, 2020.
 
 ### IDEA
 
@@ -211,7 +215,7 @@ I was doing a study session through Zoom with my friends back in March, and it w
 I thought that the end user experience could be much better if the video chat UI was more optimized for specific usecases.
 
 I have basically no domain expertise in the field of video communications.
-I know that people need what I'm making through feedback at pioneer.app, stories of my friends and their parents complaining particular areas current video communications tools lack in, and Jason Calacanis mentioning on his podcast that he had a secondary display that was always on to recreate the office experience remotely.
+I know that people need what I'm making through feedback at https://pioneer.app, stories of my friends and their parents complaining particular areas current video communications tools lack in, and Jason Calacanis mentioning on his podcast that he had a secondary display that was always on to recreate the office experience remotely.
 
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
@@ -219,6 +223,7 @@ I want to make Sentrei the most seamless experience for teams.
 I tend to resort to Zoom/Meets/Tandem, and most people do so.
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
+
 
 
 #### What do you understand about your business that other companies in it just don't get?
@@ -258,7 +263,7 @@ Yes
 
 #### List any investments your company has received. Include the name of the investor, the amount invested, the premoney valuation / valuation cap, and the type of security sold (convertible notes, safes or stock).
 
-1% from pioneer.app (SAFE)
+1% from https://pioneer.app (SAFE)
 
 #### How much money do you spend per month?
 
@@ -298,7 +303,7 @@ Nothing in particular.
 
 https://pitch.shunkakinoki.com
 https://pitch.shunkakinoki.com/ideas
-https://www.notion.so/shunkakinoki/939e7460007849d295d38252278dec34?v=e2c22afbc58349a9a7b1834ededc8426
+https://shunkakinoki.com/ideas
 
 #### Please tell us something surprising or amusing that one of you has discovered.
 
