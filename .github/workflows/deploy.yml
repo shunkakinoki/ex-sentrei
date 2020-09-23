@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
+          submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: "14.4.0"
@@ -68,6 +69,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
+          submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: "14.4.0"
@@ -119,6 +121,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
+          submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: "14.4.0"
@@ -172,6 +175,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
+          submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: "14.4.0"

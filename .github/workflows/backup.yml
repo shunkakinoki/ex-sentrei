@@ -13,6 +13,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ matrix.branch }}
           fetch-depth: 0
+          submodules: true
       - run: |
           git fetch --quiet
       - uses: pixta-dev/repository-mirroring-action@v1
