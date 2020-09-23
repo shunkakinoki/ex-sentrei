@@ -10,8 +10,7 @@ RUN set -x && \
     --no-cache --update \
     libtool automake autoconf nasm vips-dev fftw-dev gcc g++ make libpng-dev libc6-compat
 
-RUN yarn install --frozen-lockfile && \
-    yarn run typescript
+RUN yarn install --frozen-lockfile
 
 WORKDIR /app/packages/web
 
