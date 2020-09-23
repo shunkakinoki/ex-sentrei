@@ -4,9 +4,10 @@ resource "github_repository" "sentrei" {
   homepage_url   = "https://sentrei.com"
   default_branch = "main"
 
+  archived               = false
   private                = false
   has_issues             = true
-  has_projects           = false
+  has_projects           = true
   has_wiki               = false
   is_template            = false
   allow_merge_commit     = true
