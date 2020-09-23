@@ -138,11 +138,11 @@ Key Features
 
 1. Enhances.
 
-The video chat UI will be optimized depending on the use-case. No same blatant set of controls each time. We aim to deliver the best possible user experience through providing dedicated features depending on the purpose of the video 
+The video chat UI will be optimized depending on the use-case. No same blatant set of controls each time. We aim to deliver the best possible user experience through providing dedicated features depending on the purpose of the room.
 
 2. Fun.
 
-Compete with your teammates through a dedicated leaderboard, and occasionally poke at others if you are taking a break. Hop into "bonding" rooms to recreate the feeling of spontaneous conversations.
+Compete with your teammates through a dedicated leaderboard, and occasionally poke at others if you are taking a break. Hop into "bonding" rooms to recreate the feeling of spontaneous conversations online.
 
 3. Seamless.
 
