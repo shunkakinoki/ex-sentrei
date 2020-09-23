@@ -1,3 +1,14 @@
+# [1.85.0](https://github.com/sentrei/sentrei/compare/v1.84.0...v1.85.0) (2020-09-23)
+
+### Features
+
+- 🎸 push to replace for dashboard href ([17b99fc](https://github.com/sentrei/sentrei/commit/17b99fc501f5f1d021091743564b09162a3b9bb6))
+
+### Performance Improvements
+
+- ⚡️ ini docker deploy ([a360ed9](https://github.com/sentrei/sentrei/commit/a360ed90eecb040cc68c30c8a4670a102cdbe188))
+- ⚡️ ini sentry release ([2e34583](https://github.com/sentrei/sentrei/commit/2e3458338b2c7d463365de279336f424c5065c47))
+
 # [1.84.0](https://github.com/sentrei/sentrei/compare/v1.83.1...v1.84.0) (2020-09-23)
 
 ### Features
