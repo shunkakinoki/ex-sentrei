@@ -1,3 +1,14 @@
+# [1.84.0](https://github.com/sentrei/sentrei/compare/v1.83.1...v1.84.0) (2020-09-23)
+
+### Features
+
+- 🎸 ini next sitemap ([5669cc6](https://github.com/sentrei/sentrei/commit/5669cc6e0a7ee02db072a40a0b50c11d46a05bd4))
+
+### Performance Improvements
+
+- ⚡️ ini exclude pages for sitemap ([95f7e3b](https://github.com/sentrei/sentrei/commit/95f7e3b8d907647bac5a2aa6f09f561b21171132))
+- ⚡️ refactor reserved namerooms ([c60cf8a](https://github.com/sentrei/sentrei/commit/c60cf8a7a961266d080f5190ecc47c7c25d8d79a))
+
 ## [1.83.1](https://github.com/sentrei/sentrei/compare/v1.83.0...v1.83.1) (2020-09-22)
 
 ### Performance Improvements
