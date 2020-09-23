@@ -173,7 +173,6 @@ When you're tyring to way too many steps to get a session going, you get distrac
 I thought that if
 I have basically no domain expertise in the field of video communications.
 
-
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
 I want to
@@ -258,7 +257,7 @@ https://pitch.shunkakinoki.com
 
 #### Please tell us something surprising or amusing that one of you has discovered.
 
-In the last 20-30 years, there are basically 0 startups from Japan with a current market cap of over $10 billion.
+In the last 20-30 years, there are basically 0 startups from Japan with a current market cap of over \$10 billion.
 This is crazy!
 I want to prove that even Japanese founders can create great software products loved by people all around the world.
 
