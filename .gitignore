@@ -13,6 +13,14 @@
 **/.dvc/state
 **/.dvc/cache
 
+# Functions related.
+**/functions/firebase.json
+**/functions/env.json
+**/functions/alpha.env.json
+**/functions/beta.env.json
+**/functions/main.env.json
+**/functions/src/extensions
+
 # Typedoc related.
 **/typedoc/firebase.json
 

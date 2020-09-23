@@ -1,0 +1,34 @@
+{
+  "emulators": {
+    "firestore": {
+      "host": "localhost",
+      "port": 8080
+    },
+    "ui": {
+      "enabled": true,
+      "host": "localhost",
+      "port": 4000
+    },
+    "functions": {
+      "host": "localhost",
+      "port": 5001
+    },
+    "pubsub": {
+      "host": "localhost",
+      "port": 8085
+    }
+  },
+  "database": {
+    "rules": "./database/rules.json"
+  },
+  "firestore": {
+    "indexes": "./firestore/firestore.indexes.json",
+    "rules": "./firestore/firestore.rules"
+  },
+  "functions": {
+    "source": "."
+  },
+  "storage": {
+    "rules": "./storage/storage.rules"
+  }
+}

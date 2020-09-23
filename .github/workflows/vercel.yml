@@ -5,12 +5,22 @@ on:
       - alpha
       - beta
       - main
+    paths:
+      - "yarn.lock"
+      - ".github/workflows/vercel.yml"
+      - "packages/@types/src/**"
+      - "packages/common/src/**"
+      - "packages/ui/src/**"
+      - "packages/video/src/**"
+      - "packages/web/src/**"
 jobs:
   vercel:
     if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: "14.4.0"

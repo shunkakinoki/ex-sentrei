@@ -98,6 +98,24 @@
       }
     },
     {
+      "files": ["packages/functions/src/**"],
+      "rules": {
+        "consistent-return": 0,
+        "default-case": 0,
+        "no-console": 0,
+        "no-else-return": 0,
+        "no-plusplus": 0,
+        "no-restricted-syntax": 0,
+        "no-useless-return": 0,
+        "object-shorthand": 0,
+        "prefer-destructuring": 0,
+        "import/order": 0,
+        "import/prefer-default-export": 0,
+        "import/newline-after-import": 0,
+        "@typescript-eslint/no-shadow": 0
+      }
+    },
+    {
       "files": ["packages/video/src/**"],
       "rules": {
         "consistent-return": 0,

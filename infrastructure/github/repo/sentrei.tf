@@ -4,9 +4,10 @@ resource "github_repository" "sentrei" {
   homepage_url   = "https://sentrei.com"
   default_branch = "main"
 
+  archived               = false
   private                = false
   has_issues             = true
-  has_projects           = false
+  has_projects           = true
   has_wiki               = false
   is_template            = false
   allow_merge_commit     = true
@@ -30,7 +31,7 @@ resource "github_branch_protection" "sentrei_alpha" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "cla", "labeler", "ui", "yarn", "video", "web", "WIP"]
+    contexts = ["auto-approve", "cla", "functions", "labeler", "ui", "yarn", "video", "web", "WIP"]
   }
 
   restrictions {
@@ -51,7 +52,7 @@ resource "github_branch_protection" "sentrei_beta" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "cla", "labeler", "ui", "yarn", "video", "web", "WIP"]
+    contexts = ["auto-approve", "cla", "functions", "labeler", "ui", "yarn", "video", "web", "WIP"]
   }
 
   restrictions {
@@ -72,7 +73,7 @@ resource "github_branch_protection" "sentrei_main" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "cla", "labeler", "ui", "yarn", "video", "web", "WIP"]
+    contexts = ["auto-approve", "cla", "functions", "labeler", "ui", "yarn", "video", "web", "WIP"]
   }
 
   restrictions {

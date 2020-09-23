@@ -1,0 +1,3 @@
+[submodule "packages/functions/src/extensions"]
+	path = packages/functions/src/extensions
+	url = https://github.com/firebase/extensions

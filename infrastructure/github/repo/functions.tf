@@ -4,6 +4,7 @@ resource "github_repository" "functions" {
   homepage_url   = "https://sentrei.com"
   default_branch = "main"
 
+  archived               = true
   private                = true
   has_issues             = true
   has_projects           = false
