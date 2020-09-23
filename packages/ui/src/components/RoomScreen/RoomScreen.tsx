@@ -20,6 +20,7 @@ export interface Props {
 }
 
 export default function RoomScreen({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   user,
   profile,
   roomId,

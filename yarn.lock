@@ -1392,6 +1392,11 @@
   resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-9.1.2.tgz#d05f66db03e3a3638a654e8badf2deb489eb220d"
   integrity sha512-r3fwVbVH+M8W0qYlBBZFsUwKe6NT5qvz+EmU7sr8VeN1cQ63z+3cfXyTo7WGGEMEgKiT0jboNAK3b1FZp8k9LQ==
 
+"@corex/deepmerge@^2.4.6":
+  version "2.4.14"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-2.4.14.tgz#e673056e4512036c2a8277407798089a32c9cd6a"
+  integrity sha512-kjNIKt5zCoO0M4ArjFlU8cxx+7Yyx9nq3H6dMngnZxQ12Gh/9cUz4kXRkWrwNjp5vtlls2A8Qsi1onrj5OqTgA==
+
 "@cypress/browserify-preprocessor@3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@cypress/browserify-preprocessor/-/browserify-preprocessor-3.0.0.tgz#2d1fa6a96ed7130a1b172c540448a5955cbc1264"
@@ -18930,6 +18935,13 @@ next-seo@^4.7.3:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.7.3.tgz#8da82dca4f425c84392c4a8462f215dfcb4195b0"
   integrity sha512-hEl6fVbYU6h0EqGTqsVM3aEbn+ejlV7JjjIRLzT8at5TDxXQWs1Ypd0UA9oalHfVo7rDbWawD9rrvMe+PWl4kw==
+
+next-sitemap@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.2.4.tgz#6f4b94563da26133f265920ab9779c15e49639eb"
+  integrity sha512-Dpitr8mdRpdpEj7iE/3llrAw/uHK0UB6zf68FX3Zxlt5DvdxzwtXzbQc8s6V6DPtOvwfctj5LXvQr+C4NEpImw==
+  dependencies:
+    "@corex/deepmerge" "^2.4.6"
 
 next-tick@1:
   version "1.1.0"
