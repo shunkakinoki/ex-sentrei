@@ -66,12 +66,14 @@ export default function FooterSection(): JSX.Element {
         <Link
           href="https://github.com/sentrei/sentrei/releases"
           target="_blank"
+          rel="noopener"
         >
           <Typography gutterBottom>{t("footer:footer.releases")}</Typography>
         </Link>
         <Link
-          href="https://github.com/sentrei/roadmap/projects/1"
+          href="https://github.com/sentrei/sentrei/projects/1"
           target="_blank"
+          rel="noopener"
         >
           <Typography gutterBottom>{t("footer:footer.roadmap")}</Typography>
         </Link>
@@ -88,21 +90,33 @@ export default function FooterSection(): JSX.Element {
         </Typography>
         <Grid container direction="row" spacing={3}>
           <Grid item>
-            <Link href="https://github.com/sentrei/sentrei" target="_blank">
+            <Link
+              href="https://github.com/sentrei/sentrei"
+              target="_blank"
+              rel="noopener"
+            >
               <Avatar aria-label="github" variant="rounded">
                 <UseAnimations animation={github} />
               </Avatar>
             </Link>
           </Grid>
           <Grid item>
-            <Link href="https://linkedin.com/company/sentrei" target="_blank">
+            <Link
+              href="https://linkedin.com/company/sentrei"
+              target="_blank"
+              rel="noopener"
+            >
               <Avatar aria-label="linkedin" variant="rounded">
                 <UseAnimations animation={linkedin} />
               </Avatar>
             </Link>
           </Grid>
           <Grid item>
-            <Link href="https://twitter.com/sentrei_com" target="_blank">
+            <Link
+              href="https://twitter.com/sentrei_com"
+              target="_blank"
+              rel="noopener"
+            >
               <Avatar aria-label="twitter" variant="rounded">
                 <UseAnimations animation={twitter} />
               </Avatar>

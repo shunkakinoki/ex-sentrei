@@ -82,7 +82,7 @@ jobs:
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ github.repository_owner }}
-          SENTRY_PROJECT: ${{ github.event.repository.name }}
+          SENTRY_PROJECT: ${{ github.repository_owner }}
         with:
           environment: ${{ needs.context.outputs.branch }}
           version: ${{ steps.version.outputs.release }}
