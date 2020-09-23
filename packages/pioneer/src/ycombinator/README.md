@@ -146,7 +146,7 @@ Compete with your teammates through a dedicated leaderboard, and occasionally po
 
 3. Seamless.
 
-Hop in to the same virtual room when you want to get work (same static link always!!!), and never worry about time-limits, invitations, or passcodes. Everything is minimalistic and kept simple as possible for your team.
+Enter the same virtual room when you want to get to work (same static link always!!!), and never worry about time-limits, invitations, or passcodes. Everything is minimalistic and kept simple as possible for your team.
 
 #### Where do you live now, and where would the company be based after YC?
 
