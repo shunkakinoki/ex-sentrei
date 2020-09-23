@@ -222,9 +222,9 @@ I was occasionally doing a study session through Zoom with my friends back in Ma
 
 1. Too many steps to get a session going even for the same consistent group of people (links, passcodes, etc...)
 2. You get distracted by keyboard sounds if un-muted, video chat seems unnecessary otherwise.
-3. UI is the same even for very different situations (bonding, focusing, working)
+3. UI is always the same even for very different purposes.
 
-I believe that the end user experience could be much better if the video chat UI was more optimized for each specific use-case.
+I believe that the end user experience could be much better if the video chat UI was more optimized for each specific use-case like I encountered.
 
 I have basically no domain expertise in the field of video communications though Twilio would take it care for us.
 
