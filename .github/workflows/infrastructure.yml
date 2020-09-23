@@ -1,5 +1,9 @@
 name: Infrastructure
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/infrastructure.yml"
+      - "infrastructure/**"
 jobs:
   terraform:
     runs-on: ubuntu-latest
