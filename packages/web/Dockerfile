@@ -15,8 +15,8 @@ RUN yarn install --frozen-lockfile && \
 
 WORKDIR /app/packages/web
 
-RUN yarn run build && \
-    yarn cache clean
+# RUN yarn run build && \
+#     yarn cache clean
 
 FROM node:14.8.0-alpine
 
