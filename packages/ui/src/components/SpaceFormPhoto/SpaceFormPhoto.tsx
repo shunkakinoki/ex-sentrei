@@ -32,7 +32,7 @@ const SpaceFormPhoto = ({
     try {
       snackbar("success");
       trackEvent("Edit Space Photo");
-      await Router.pushI18n("/dashboard");
+      await Router.replaceI18n("/dashboard");
     } catch (err) {
       snackbar("error", err.message);
     }

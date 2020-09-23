@@ -204,24 +204,6 @@ jobs:
           secrets: |-
             SERVICE_ACCOUNT_EMAIL:sentrei-main/github_${{ github.event.client_payload.base }}_email
             SERVICE_ACCOUNT_KEY:sentrei-main/github_${{ github.event.client_payload.base }}_key
-            WEB_ENV:sentrei-main/web_${{ github.event.client_payload.base }}_env
-      - id: version
-        run: |
-          version=$(node -pe "require('./package.json').version")
-          echo "::set-output name=release::sentrei@${version}"
-      - working-directory: packages/web
-        run: |
-          echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
-      - working-directory: packages/web
-        run: |
-          echo "SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT}" >> .env
-          echo "SENTRY_RELEASE=${SENTRY_RELEASE}" >> .env
-        env:
-          SENTRY_ENVIRONMENT: ${{ github.event.client_payload.base }}
-          SENTRY_RELEASE: ${{ steps.version.outputs.release }}
-      - working-directory: packages/web
-        run: |
-          yarn run build
       - uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}

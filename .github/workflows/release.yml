@@ -76,14 +76,16 @@ jobs:
       - id: version
         run: |
           version=$(node -pe "require('./package.json').version")
-          echo "::set-output name=release::sentrei@${version}"
-      - run: |
-          yarn run sentry:release
+          echo "::set-output name=release::v${version}"
+      - uses: getsentry/action-release@v1
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ github.repository_owner }}
-          SENTRY_ENVIRONMENT: ${{ needs.context.outputs.branch }}
-          SENTRY_RELEASE: ${{ steps.version.outputs.release }}
+          SENTRY_PROJECT: ${{ github.event.repository.name }}
+        with:
+          environment: ${{ needs.context.outputs.branch }}
+          version: ${{ steps.version.outputs.release }}
+          finalize: true
   pioneer:
     if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest

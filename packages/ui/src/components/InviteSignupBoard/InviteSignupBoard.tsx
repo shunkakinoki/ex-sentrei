@@ -68,7 +68,7 @@ export default function InviteSignupBoard({
           invokeMemberSpace(spaceId, invite.id);
         });
         setTimeout(() => {
-          Router.pushI18n("/dashboard");
+          Router.replaceI18n("/dashboard");
         }, 5000);
       })
       .catch(err => snackbar("error", err.message));
@@ -85,7 +85,7 @@ export default function InviteSignupBoard({
             invokeMemberSpace(spaceId, invite.id);
           });
           setTimeout(() => {
-            Router.pushI18n("/dashboard");
+            Router.replaceI18n("/dashboard");
           }, 5000);
         })
         .catch(err => {

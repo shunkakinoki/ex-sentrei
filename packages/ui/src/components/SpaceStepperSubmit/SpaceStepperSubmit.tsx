@@ -66,7 +66,7 @@ const SpaceStepperSubmit = ({
         backdrop("loading");
         setActiveForm({id: "", name: ""});
         setActiveStep(0);
-        Router.pushI18n("/dashboard");
+        Router.replaceI18n("/dashboard");
       });
     } catch (err) {
       snackbar("error", err.message);

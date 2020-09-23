@@ -22,7 +22,7 @@ const ProfileFormPhoto = ({disabled = false, profile}: Props): JSX.Element => {
     try {
       snackbar("success");
       trackEvent("Edit Profile Photo");
-      await Router.pushI18n("/dashboard");
+      await Router.replaceI18n("/dashboard");
     } catch (err) {
       snackbar("error", err.message);
     }
