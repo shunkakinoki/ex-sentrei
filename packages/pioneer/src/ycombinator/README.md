@@ -133,7 +133,7 @@ Open source, enhanced virtual workspace.
 #### What is your company going to make? Please describe your product and what it does or will do.
 
 Sentrei is a dedicated virtual workspace for remote teams.
-We help people do great work through aiming to provide the best user experience for remote teams.
+We help people do great work through providing the best user experience for remote teams.
 Fully open-source, see us on https://github.com/sentrei/sentrei
 
 Key Features
