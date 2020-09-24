@@ -1,3 +1,9 @@
+## [1.89.1](https://github.com/sentrei/sentrei/compare/v1.89.0...v1.89.1) (2020-09-24)
+
+### Performance Improvements
+
+- ⚡️ refactor demo screen ([cc224a9](https://github.com/sentrei/sentrei/commit/cc224a9e57e59c7cc6924575627a2d35a633435f))
+
 # [1.89.0](https://github.com/sentrei/sentrei/compare/v1.88.0...v1.89.0) (2020-09-24)
 
 ### Features
