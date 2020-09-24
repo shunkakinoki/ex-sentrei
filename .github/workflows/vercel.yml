@@ -5,14 +5,6 @@ on:
       - alpha
       - beta
       - main
-    paths:
-      - "yarn.lock"
-      - ".github/workflows/vercel.yml"
-      - "packages/@types/src/**"
-      - "packages/common/src/**"
-      - "packages/ui/src/**"
-      - "packages/video/src/**"
-      - "packages/web/src/**"
 jobs:
   vercel:
     if: github.actor == 'sentrei-bot'

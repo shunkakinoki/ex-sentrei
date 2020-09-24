@@ -74,19 +74,17 @@ jobs:
           git stash && yarn run publish:lerna && git stash pop || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - id: version
+      - id: release
         run: |
           version=$(node -pe "require('./package.json').version")
-          echo "::set-output name=release::v${version}"
-      - uses: getsentry/action-release@v1
+          echo "::set-output name=release::${version}"
+      - run: |
+          yarn run sentry:release
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ github.repository_owner }}
-          SENTRY_PROJECT: ${{ github.repository_owner }}
-        with:
-          environment: ${{ needs.context.outputs.branch }}
-          version: ${{ steps.version.outputs.release }}
-          finalize: true
+          SENTRY_ENVIRONMENT: ${{ needs.context.outputs.branch }}
+          SENTRY_RELEASE: ${{ steps.release.outputs.release }}
   pioneer:
     if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
