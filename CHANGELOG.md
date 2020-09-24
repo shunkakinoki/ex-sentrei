@@ -1,3 +1,9 @@
+# [1.89.0](https://github.com/sentrei/sentrei/compare/v1.88.0...v1.89.0) (2020-09-24)
+
+### Features
+
+- 🎸 ini first demo ([6240fb2](https://github.com/sentrei/sentrei/commit/6240fb299f507af8ec39baea71fe4e0e6666259a))
+
 # [1.88.0](https://github.com/sentrei/sentrei/compare/v1.87.1...v1.88.0) (2020-09-24)
 
 ### Features
