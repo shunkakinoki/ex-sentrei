@@ -244,8 +244,8 @@ We plan to provide three options each with distinctive video UIs.
 3. Work. - Seamless meetings between members for doing synchronous work (basically like Zoom).
 
 I tend to resort to Zoom/Meets/Tandem, and most people do so.
-However, we beleve that other products will emerge in the long run in this space.
-Just as Snapchat emerged over Instagram, maybe there's a product waiting for
+However, we believe that other unique products will emerge in the long run in this space.
+Just as Snapchat emerged over Instagram, maybe there's a product waiting in the virtual workspace field.
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
 
