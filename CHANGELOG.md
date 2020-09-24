@@ -1,3 +1,13 @@
+# [1.88.0](https://github.com/sentrei/sentrei/compare/v1.87.1...v1.88.0) (2020-09-24)
+
+### Features
+
+- 🎸 ini sentry release ([79cdaf7](https://github.com/sentrei/sentrei/commit/79cdaf75a242ab7104396e2716c761f03bf60c67))
+
+### Performance Improvements
+
+- ⚡️ ini version y ([25f3904](https://github.com/sentrei/sentrei/commit/25f3904c142624a83c275cc27a1ea6ae795a161a))
+
 ## [1.87.1](https://github.com/sentrei/sentrei/compare/v1.87.0...v1.87.1) (2020-09-23)
 
 ### Bug Fixes
