@@ -214,13 +214,13 @@ This is my first application.
 
 #### If you have already participated or committed to participate in an incubator, "accelerator" or "pre-accelerator" program, please tell us about it.
 
-I am a pioneer at https://pioneer.app (fully remote accelerator) from August, 2020.
+https://pioneer.app (fully remote accelerator) from August, 2020.
 
 ### IDEA
 
 #### Why did you pick this idea to work on? Do you have domain expertise in this area? How do you know people need what you're making?
 
-I was occasionally doing a study session through Zoom with my friends back in March, and it was far from a good experience.
+I was occasionally doing a study session through Zoom with my friends back in March, and it was far from a great experience.
 
 1. Too many steps to get a session going even for the same consistent group of people (links, passcodes, etc...)
 2. You get distracted by keyboard sounds if un-muted, video chat seems unnecessary otherwise.
