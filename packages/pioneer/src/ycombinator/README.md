@@ -251,11 +251,11 @@ Just as Snapchat emerged over Instagram, maybe there's a product waiting in the 
 
 Current competitors
 
-- Whereby (https://whereby.com/)
 - Sidekick (https://sidekick.video/)
 - Tandem (https://tandem.chat/)
+- Whereby (https://whereby.com/)
 
-I fear most that Zoom comes out with a Slack-like alternative, equipped with features that make it not like Zoom, tailored for teams.
+I fear most that Zoom comes out with a Slack-like alternative, equipped with features that make it tailored for teams.
 We do not want to compete with the above, but rather act as a supplement piece for Slack and Zoom.
 Thus, Zoom coming out with a Slack-like alternative video chat tool could be devastating for us.
 
