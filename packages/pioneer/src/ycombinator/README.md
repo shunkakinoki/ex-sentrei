@@ -269,7 +269,7 @@ Thus, Zoom coming out with a Slack-like alternative video chat tool could be dev
 
 We charge \$15/month per user for the pro plan, custom pricing for enterprise plan.
 
-The cost would mostly consist of Twilio video server cost(avg. \$0.003 per particpant).
+The cost would mostly consist of Twilio video server cost(avg. \$0.003 per participant/min).
 On the assumption that each user spends 3hr per weekday on the platform, that would lead to a cost of \$10 per month.
 That would probably lead to at least 30~40% gross margin.
 If we could create a great product to reach PMF, i.e. 100,000 paying customers, that would be about ~\$3 mil MRR, ~\$30 mil ARR.
