@@ -138,7 +138,7 @@ Fully open-source, see us on https://github.com/sentrei/sentrei
 
 Key Features
 
-1. Enhanced.
+1. Enhanced Video UI/UX.
 
 The video chat UI will be optimized depending on the use-case. No same blatant set of controls each time. We aim to deliver the best possible user experience through providing dedicated features depending on the purpose of each room.
 
@@ -182,7 +182,7 @@ Other
 
 Beta Launch.
 I am in the process of refining the product.
-I think I will keep on making improvements until I've reached a point where I will want to buy my own product.
+I will keep on making improvements until I've reached a point where I will want to buy my own product.
 
 #### How long have each of you been working on this? How much of that has been full-time? Please explain.
 
@@ -214,7 +214,7 @@ This is my first application.
 
 #### If you have already participated or committed to participate in an incubator, "accelerator" or "pre-accelerator" program, please tell us about it.
 
-I am a pioneer from https://pioneer.app (fully remote accelerator) from August, 2020.
+I am a pioneer at https://pioneer.app (fully remote accelerator) from August, 2020.
 
 ### IDEA
 
@@ -235,33 +235,35 @@ I know that people need what I'm making through feedback at https://pioneer.app,
 #### What's new about what you're making? What substitutes do people resort to because it doesn't exist yet (or they don't know about it)?
 
 The new thing about Sentrei is that the UI will drastically change depending on the use-case.
-We believe that we could deliver a much better user experience if each video session is optimized for each purpose.
+We believe that we could deliver a much better user experience if each video session is optimized for a particular purpose.
 
-We plan to provide three options.
+We plan to provide three options each with distinctive video UIs.
 
-1. Bond. - Short conversations & spontaneous chats through a colorful and enjoyful UI.
+1. Bond. - Short conversations & spontaneous chats through a colorful and joyful UI.
 2. Focus. - Always-connected sessions for tele-presence to help you get things done through a zen-like interface.
 3. Work. - Seamless meetings between members for doing synchronous work (basically like Zoom).
 
 I tend to resort to Zoom/Meets/Tandem, and most people do so.
+However, we beleve that other products will emerge in the long run in this space.
+Just as Snapchat emerged over Instagram, maybe there's a product waiting for
 
 #### Who are your competitors, and who might become competitors? Who do you fear most?
 
 Current competitors
 
-- Pragli (https://pragli.com/)
+- Whereby (https://whereby.com/)
 - Sidekick (https://sidekick.video/)
 - Tandem (https://tandem.chat/)
 
 I fear most that Zoom comes out with a Slack-like alternative, equipped with features that make it not like Zoom, tailored for teams.
-We do not want to compete with the above, but rather act as a supplement for Slack and Zoom.
+We do not want to compete with the above, but rather act as a supplement piece for Slack and Zoom.
 Thus, Zoom coming out with a Slack-like alternative video chat tool could be devastating for us.
 
 #### What do you understand about your business that other companies in it just don't get?
 
 - Every video chat tool is designed for synchronous & productive communication, yet many people use it for other purposes as well.
 - The UI of a video chat screen should completely be optimized depending on the use-case.
-- Being on a virtual workspace should be a lot more comfortable and fun, not clumsy and stressful.
+- A virtual workspace should be a lot more comfortable and fun, not clumsy and stressful.
 
 #### How do or will you make money? How much could you make?
 
@@ -271,13 +273,14 @@ The cost would mostly consist of Twilio video server cost(avg. \$0.003 per parti
 On the assumption that each user spends 3hr per weekday on the platform, that would lead to a cost of \$10 per month.
 That would probably lead to at least 30~40% gross margin.
 If we could create a great product to reach PMF, i.e. 100,000 paying customers, that would be about ~\$3 mil MRR, ~\$30 mil ARR.
-Under the current circumstances of the world, we have a puncher's chance to grow exponentially.
+Under the current circumstances of the world, we have a puncher's chance to grow beyond exponentially.
 
 We could be the best decision your organization has ever made.
 
 #### How will you get users? If your idea is the type that faces a chicken-and-egg problem in the sense that it won't be attractive to users till it has a lot of users (e.g. a marketplace, a dating site, an ad network), how will you overcome that?
 
-It's a team-based tool like Notion/Slack, so if the product is great, it likely will grow virally.
+Planning to launch on PH, HN, Reddit initially.
+It's a team-based tool like Notion/Slack, so if the product is great, it likely will grow virally over time.
 If not, it will die.
 
 ### EQUITY
