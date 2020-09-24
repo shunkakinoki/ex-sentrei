@@ -15,7 +15,7 @@ export default function DemoScreen(): JSX.Element {
       <Box p={1} />
       <DemoSection
         title={t("demo:section.one")}
-        url="https://youtu.be/e9d--yzKKLw"
+        url="https://youtube.com/watch?v=e9d--yzKKLw"
       />
       <Box p={3} />
     </>
