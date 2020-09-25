@@ -27,16 +27,16 @@ const calculateRecord = (
     metricsData = {
       ...metricsData,
       period: {
-        latest: 1,
-        hour: 1,
-        day: 1,
-        week: 1,
+        latest: recordValue,
+        hour: recordValue,
+        day: recordValue,
+        week: recordValue,
       },
     };
     return metricsData;
   }
 
-  if (after.metrics.period.latest === 0) {
+  if (after.metrics.period.latest < 3) {
     metricsData = {
       ...metricsData,
       period: {
@@ -45,7 +45,7 @@ const calculateRecord = (
     };
   }
 
-  if (after.metrics.period.hour === 0) {
+  if (after.metrics.period.hour < 3) {
     metricsData = {
       ...metricsData,
       period: {
@@ -54,7 +54,7 @@ const calculateRecord = (
     };
   }
 
-  if (after.metrics.period.day === 0) {
+  if (after.metrics.period.day < 3) {
     metricsData = {
       ...metricsData,
       period: {
@@ -63,7 +63,7 @@ const calculateRecord = (
     };
   }
 
-  if (after.metrics.period.week === 0) {
+  if (after.metrics.period.week < 3) {
     metricsData = {
       ...metricsData,
       period: {
