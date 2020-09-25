@@ -72,7 +72,7 @@
     "test": "firebase emulators:exec --only firestore 'jest --collect-coverage --silent && yarn run coverage:rules'",
     "test:watch": "firebase emulators:exec --only firestore 'jest --collect-coverage --watch && yarn run coverage:rules'",
     "tsc": "tsc --p tsconfig.build.json",
-    "tscpaths": "tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "tscpaths": "tscpaths -p tsconfig.build.json -s ./src -o ./dist",
     "typescript": "yarn run clean && yarn run tsc && yarn run tscpaths",
     "watch": "yarn run tsc -w --preserveWatchOutput"
   },
