@@ -9,7 +9,7 @@ const calculateRecord = (
   user?: boolean,
 ): Metrics.Update | false => {
   const before = change.before.data() as Analytics.Response;
-  const after = change.before.data() as Analytics.Response;
+  const after = change.after.data() as Analytics.Response;
 
   const recordValue = admin.firestore.FieldValue.increment(1);
   let metricsData = <Metrics.Update>{};
