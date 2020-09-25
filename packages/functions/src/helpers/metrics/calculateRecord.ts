@@ -36,7 +36,7 @@ const calculateRecord = (
     return metricsData;
   }
 
-  if (after.metrics.period.latest < 3) {
+  if (after.metrics.period.latest === 3) {
     metricsData = {
       ...metricsData,
       period: {
@@ -45,7 +45,7 @@ const calculateRecord = (
     };
   }
 
-  if (after.metrics.period.hour < 3) {
+  if (after.metrics.period.hour === 3) {
     metricsData = {
       ...metricsData,
       period: {
@@ -54,7 +54,7 @@ const calculateRecord = (
     };
   }
 
-  if (after.metrics.period.day < 3) {
+  if (after.metrics.period.day === 3) {
     metricsData = {
       ...metricsData,
       period: {
@@ -63,7 +63,7 @@ const calculateRecord = (
     };
   }
 
-  if (after.metrics.period.week < 3) {
+  if (after.metrics.period.week === 3) {
     metricsData = {
       ...metricsData,
       period: {
