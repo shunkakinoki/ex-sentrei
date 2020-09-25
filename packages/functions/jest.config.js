@@ -4,9 +4,9 @@ module.exports = {
   testEnvironment: "node",
   testTimeout: 30000,
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.(ts)$": "ts-jest",
   },
-  testRegex: "(/__tests__/.*|(\\.|/)(spec))\\.tsx?$",
+  testRegex: "(/__tests__/.*|(\\.|/)(spec))\\.ts?$",
   testPathIgnorePatterns: [
     "<rootDir>/node_modules/",
     "<rootDir>/src/extensions/",

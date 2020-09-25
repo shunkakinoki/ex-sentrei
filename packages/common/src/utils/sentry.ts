@@ -3,8 +3,6 @@ import {RewriteFrames} from "@sentry/integrations";
 import get from "lodash.get";
 import getConfig from "next/config";
 
-import isBrowser from "@sentrei/common/utils/isBrowser";
-
 const config = getConfig();
 const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
 Sentry.init({
@@ -13,12 +11,6 @@ Sentry.init({
   environment: process.env.SENTRY_ENVIRONMENT,
   release: process.env.SENTRY_RELEASE,
   tracesSampleRate: 1.0,
-  beforeSend(event) {
-    if (isBrowser() && event.exception) {
-      Sentry.showReportDialog({eventId: event.event_id});
-    }
-    return event;
-  },
   integrations: [
     new RewriteFrames({
       iteratee: (frame: Sentry.StackFrame): Sentry.StackFrame => {
