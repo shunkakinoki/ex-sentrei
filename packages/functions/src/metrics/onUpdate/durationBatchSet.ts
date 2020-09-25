@@ -12,13 +12,13 @@ const db = admin.firestore();
 const durationBatchSet = functions.firestore
   .document("sessions/{sessionId}")
   .onUpdate(change => {
-    const batch = db.batch();
-
     const data = change.after.data() as Session.Response;
     if (!data?.duration) {
       return false;
     }
     const metricsData = calculateDuration(data);
+
+    const batch = db.batch();
 
     const roomRef = db.doc(`rooms/${data.roomId}/admin/metrics`);
     const spaceRef = db.doc(`spaces/${data.spaceId}/admin/metrics`);

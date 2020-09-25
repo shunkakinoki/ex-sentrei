@@ -4,9 +4,9 @@ module.exports = {
   testEnvironment: "node",
   testTimeout: 30000,
   transform: {
-    "^.+\\.(ts)$": "ts-jest",
+    "^.+\\.(ts|tsx)$": "ts-jest",
   },
-  testRegex: "(/__tests__/.*|(\\.|/)(spec))\\.ts?$",
+  testRegex: "(/__tests__/.*|(\\.|/)(spec))\\.tsx?$",
   testPathIgnorePatterns: [
     "<rootDir>/node_modules/",
     "<rootDir>/src/extensions/",
@@ -21,7 +21,7 @@ module.exports = {
   collectCoverage: true,
   verbose: true,
   collectCoverageFrom: [
-    "**/*.{ts}",
+    "**/*.{js,ts}",
     "!**/*.d.ts",
     "!**/*.spec.{ts}",
     "!**/node_modules/**",
