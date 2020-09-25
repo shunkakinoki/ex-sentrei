@@ -18,16 +18,23 @@ const calculateRecord = (
     const nowDate = new Date().getDate();
     const updatedDate = before.updatedAt.toDate().getDate();
 
-    const metricsData: Metrics.Update = {
+    if (nowDate !== updatedDate) {
+      metricsData = {
+        ...metricsData,
+        record: admin.firestore.FieldValue.increment(
+          nowDate === updatedDate ? 0 : 1,
+        ),
+      };
+    }
+
+    metricsData = {
+      ...metricsData,
       period: {
         latest: 1,
         hour: 1,
         day: 1,
         week: 1,
       },
-      record: admin.firestore.FieldValue.increment(
-        nowDate === updatedDate ? 0 : 1,
-      ),
     };
 
     return metricsData;
