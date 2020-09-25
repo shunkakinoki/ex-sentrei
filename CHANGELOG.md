@@ -1,3 +1,10 @@
+## [1.90.1](https://github.com/sentrei/sentrei/compare/v1.90.0...v1.90.1) (2020-09-25)
+
+### Performance Improvements
+
+- ⚡️ git reset hard recurse submodule ([0f7829f](https://github.com/sentrei/sentrei/commit/0f7829f339af129286950347541d4729bafdafa8))
+- ⚡️ refactor release gha ([872b8f5](https://github.com/sentrei/sentrei/commit/872b8f5c2f08d730ac01ddd0093bb4f40578a284))
+
 # [1.90.0](https://github.com/sentrei/sentrei/compare/v1.89.1...v1.90.0) (2020-09-25)
 
 ### Features
