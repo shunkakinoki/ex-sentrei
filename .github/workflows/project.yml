@@ -1,7 +1,5 @@
 name: Project
-on:
-  issues:
-    types: [opened]
+on: issues
 jobs:
   automate-project-columns:
     runs-on: ubuntu-latest
