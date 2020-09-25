@@ -1,3 +1,15 @@
+# [1.90.0](https://github.com/sentrei/sentrei/compare/v1.89.1...v1.90.0) (2020-09-25)
+
+### Features
+
+- 🎸 ini metrics record ([36615e1](https://github.com/sentrei/sentrei/commit/36615e1f61c5267ccc8b6bc8090a43a764fab639))
+
+### Performance Improvements
+
+- ⚡️ ini coverage for functions ([623ec07](https://github.com/sentrei/sentrei/commit/623ec07063b7d764ee8e352b15cbc5840e9dfcfe))
+- ⚡️ ini record index ([9684eee](https://github.com/sentrei/sentrei/commit/9684eeeba32da6250f8ce88801a6baa8db1bf21c))
+- ⚡️ ini record room set function ([dea4443](https://github.com/sentrei/sentrei/commit/dea444393e46f3bfc2196378b818463ea81a4ea8))
+
 ## [1.89.1](https://github.com/sentrei/sentrei/compare/v1.89.0...v1.89.1) (2020-09-24)
 
 ### Performance Improvements
