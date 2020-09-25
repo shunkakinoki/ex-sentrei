@@ -12,50 +12,57 @@ const calculateRecord = (
   const after = change.before.data() as Analytics.Response;
 
   const recordValue = admin.firestore.FieldValue.increment(1);
-  const metricsData = <Metrics.Update>{};
+  let metricsData = <Metrics.Update>{};
 
   if (user) {
     const nowDate = new Date().getDate();
     const updatedDate = before.updatedAt.toDate().getDate();
 
-    const metricsData: Metrics.Update = {
+    if (nowDate !== updatedDate) {
+      metricsData = {
+        ...metricsData,
+        record: admin.firestore.FieldValue.increment(
+          nowDate === updatedDate ? 0 : 1,
+        ),
+      };
+    }
+
+    metricsData = {
+      ...metricsData,
       period: {
         latest: 1,
         hour: 1,
         day: 1,
         week: 1,
       },
-      record: admin.firestore.FieldValue.increment(
-        nowDate === updatedDate ? 0 : 1,
-      ),
     };
 
     return metricsData;
   }
 
   if (after.metrics.period.latest === 0) {
-    return {
+    metricsData = {
       ...metricsData,
       period: {
         latest: recordValue,
       },
     };
   } else if (after.metrics.period.hour === 0) {
-    return {
+    metricsData = {
       ...metricsData,
       period: {
         hour: recordValue,
       },
     };
   } else if (after.metrics.period.day === 0) {
-    return {
+    metricsData = {
       ...metricsData,
       period: {
         day: recordValue,
       },
     };
   } else if (after.metrics.period.week === 0) {
-    return {
+    metricsData = {
       ...metricsData,
       period: {
         week: recordValue,

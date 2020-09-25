@@ -13,7 +13,7 @@ const latestRootSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {adminId} = context.params;
 
-    const analyticsData = analyticsLatest(adminId, "root", change);
+    const analyticsData = analyticsLatest(adminId, "root", change, context);
 
     if (!analyticsData) {
       return false;
