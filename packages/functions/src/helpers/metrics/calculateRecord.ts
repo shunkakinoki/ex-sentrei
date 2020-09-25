@@ -23,9 +23,47 @@ const calculateRecord = (
     };
   }
 
-  if (
-    user ? after.metrics.period.latest < 3 : after.metrics.period.latest === 3
-  ) {
+  if (user) {
+    if (after.metrics.period.latest < 3) {
+      metricsData = {
+        ...metricsData,
+        period: {
+          latest: recordValue,
+        },
+      };
+    }
+
+    if (after.metrics.period.hour < 3) {
+      metricsData = {
+        ...metricsData,
+        period: {
+          hour: recordValue,
+        },
+      };
+    }
+
+    if (after.metrics.period.day < 3) {
+      metricsData = {
+        ...metricsData,
+        period: {
+          day: recordValue,
+        },
+      };
+    }
+
+    if (after.metrics.period.week < 3) {
+      metricsData = {
+        ...metricsData,
+        period: {
+          week: recordValue,
+        },
+      };
+    }
+
+    return metricsData;
+  }
+
+  if (after.metrics.period.latest === 3) {
     metricsData = {
       ...metricsData,
       period: {
@@ -34,7 +72,7 @@ const calculateRecord = (
     };
   }
 
-  if (user ? after.metrics.period.hour < 3 : after.metrics.period.hour === 3) {
+  if (after.metrics.period.hour === 3) {
     metricsData = {
       ...metricsData,
       period: {
@@ -43,7 +81,7 @@ const calculateRecord = (
     };
   }
 
-  if (user ? after.metrics.period.day < 3 : after.metrics.period.day === 3) {
+  if (after.metrics.period.day === 3) {
     metricsData = {
       ...metricsData,
       period: {
@@ -52,7 +90,7 @@ const calculateRecord = (
     };
   }
 
-  if (user ? after.metrics.period.week < 3 : after.metrics.period.week === 3) {
+  if (after.metrics.period.week === 3) {
     metricsData = {
       ...metricsData,
       period: {
