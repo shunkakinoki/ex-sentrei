@@ -34,19 +34,19 @@ const calculateRecord = (
       },
     };
 
-    if (after.metrics.period.latest < 3) {
+    if (after.metrics.period.latest > 3) {
       delete metricsData.period.latest;
     }
 
-    if (after.metrics.period.hour < 3) {
+    if (after.metrics.period.hour > 3) {
       delete metricsData.period.hour;
     }
 
-    if (after.metrics.period.day < 3) {
+    if (after.metrics.period.day > 3) {
       delete metricsData.period.day;
     }
 
-    if (after.metrics.period.week < 3) {
+    if (after.metrics.period.week > 3) {
       delete metricsData.period.week;
     }
 
