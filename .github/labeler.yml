@@ -1,33 +1,33 @@
 design:
-  - design/**/*
+  - design/**
 github:
-  - .github/**/*
+  - .github/**
 infrastructure:
-  - infrastructure/**/*
+  - infrastructure/**
 packages/common:
-  - packages/@types/**/*
-  - packages/common/**/*
-packages/docs:
-  - packages/docs/**/*
-packages/fastlane:
-  - packages/fastlane/**/*
+  - packages/@types/**
+  - packages/common/**
+packages/functions:
+  - packages/@types/**
+  - packages/common/**
+  - packages/functions/**
 packages/pioneer:
-  - packages/pioneer/**/*
+  - packages/pioneer/**
 packages/types:
-  - packages/@types/**/*
+  - packages/@types/**
 packages/typedoc:
-  - packages/typedoc/**/*
+  - packages/typedoc/**
 packages/ui:
-  - packages/@types/**/*
-  - packages/common/**/*
-  - packages/ui/**/*
+  - packages/@types/**
+  - packages/common/**
+  - packages/ui/**
 packages/video:
-  - packages/@types/**/*
-  - packages/common/**/*
-  - packages/video/**/*
+  - packages/@types/**
+  - packages/common/**
+  - packages/video/**
 packages/web:
-  - packages/@types/**/*
-  - packages/common/**/*
-  - packages/ui/**/*
-  - packages/video/**/*
-  - packages/web/**/*
+  - packages/@types/**
+  - packages/common/**
+  - packages/ui/**
+  - packages/video/**
+  - packages/web/**
