@@ -9,4 +9,4 @@ jobs:
         with:
           project: Roadmap
           column: Icebox
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.ACCESS_TOKEN }}
