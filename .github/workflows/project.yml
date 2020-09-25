@@ -10,3 +10,9 @@ jobs:
           project: Roadmap
           column: Icebox
           repo-token: ${{ secrets.ACCESS_TOKEN }}
+      - if: github.event.action == 'labeled' && github.event.label.name == 'Bug'
+        uses: alex-page/github-project-automation-plus@v0.3.0
+        with:
+          project: Bugs
+          column: Icebox
+          repo-token: ${{ secrets.ACCESS_TOKEN }}
