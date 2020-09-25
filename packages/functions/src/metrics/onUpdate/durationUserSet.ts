@@ -12,13 +12,13 @@ const db = admin.firestore();
 const durationUserSet = functions.firestore
   .document("sessions/{sessionId}")
   .onUpdate(change => {
-    const batch = db.batch();
-
     const data = change.after.data() as Session.Response;
     if (!data?.duration) {
       return false;
     }
     const metricsData = calculateDuration(data, true);
+
+    const batch = db.batch();
 
     const userRef = db.doc(`users/${data.createdByUid}`);
     const memberRef = db.doc(
