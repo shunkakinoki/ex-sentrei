@@ -1,3 +1,13 @@
+# [1.91.0](https://github.com/sentrei/sentrei/compare/v1.90.2...v1.91.0) (2020-09-25)
+
+### Features
+
+- 🎸 refactor analytics latest ([6095f85](https://github.com/sentrei/sentrei/commit/6095f85de2dae007d8bd4c956b19fcde45596c39))
+
+### Performance Improvements
+
+- ⚡️ ini bug project gha ([5ff94f8](https://github.com/sentrei/sentrei/commit/5ff94f8e22732ad8f84318da8f8491deb5ad319d))
+
 ## [1.90.2](https://github.com/sentrei/sentrei/compare/v1.90.1...v1.90.2) (2020-09-25)
 
 ### Performance Improvements
