@@ -14,7 +14,7 @@ const timestamp = admin.firestore.FieldValue.serverTimestamp();
 const analyticsLatest = (
   adminId: string,
   model: Analytics.Models,
-  change: functions.Change<functions.firestore.QueryDocumentSnapshot>,
+  change: functions.Change<FirebaseFirestore.DocumentSnapshot>,
 ): Analytics.Update | false => {
   let analyticsData;
   const initialData = {
