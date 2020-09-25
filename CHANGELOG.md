@@ -1,3 +1,14 @@
+## [1.91.1](https://github.com/sentrei/sentrei/compare/v1.91.0...v1.91.1) (2020-09-25)
+
+### Performance Improvements
+
+- ⚡️ refactor calculate record ([e1eb23f](https://github.com/sentrei/sentrei/commit/e1eb23ffec0e0243930beb04b49b54adbac04050))
+- ⚡️ refactor change after calculate record ([0584249](https://github.com/sentrei/sentrei/commit/05842497c528e7b2c050e4cc0935f93e0b073ce9))
+- ⚡️ refactor collect coverage ([3411f80](https://github.com/sentrei/sentrei/commit/3411f80dc03392ed120927d2563f36d476123fd0))
+- ⚡️ refactor db batch ([1553485](https://github.com/sentrei/sentrei/commit/15534850bb4cbcdf8e8a8eeef9f7dca9a968dccb))
+- ⚡️ refactor test regex for functions ([c8f489b](https://github.com/sentrei/sentrei/commit/c8f489bc036d717136e50bebf3fe7508b4babcb4))
+- ⚡️ refactor tscpaths build ([7d5d770](https://github.com/sentrei/sentrei/commit/7d5d770697d2b484c05c185e55cdadcbbe10824d))
+
 # [1.91.0](https://github.com/sentrei/sentrei/compare/v1.90.2...v1.91.0) (2020-09-25)
 
 ### Features
