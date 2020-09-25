@@ -1,0 +1,14 @@
+name: Project
+on:
+  issues:
+    types: [opened]
+jobs:
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - if: github.event.action == 'labeled' && github.event.label.name == 'Roadmap'
+        uses: alex-page/github-project-automation-plus@v0.3.0
+        with:
+          project: Roadmap
+          column: Icebox
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
