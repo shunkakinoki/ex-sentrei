@@ -71,7 +71,7 @@ jobs:
       - run: |
           cat <<< $(jq '.private = false' package.json) > package.json && npm publish . --tag $DIST_TAG
           cat <<< $(jq '.private = true' package.json) > package.json
-          git reset --hard && yarn run publish:lerna
+          git reset --hard --recurse-submodule && yarn run publish:lerna
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - id: release
