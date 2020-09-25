@@ -13,7 +13,7 @@ const latestUserSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {userId, adminId} = context.params;
 
-    const analyticsData = analyticsLatest(adminId, "user", change);
+    const analyticsData = analyticsLatest(adminId, "user", change, context);
 
     if (!analyticsData) {
       return false;
