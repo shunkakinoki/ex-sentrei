@@ -10,14 +10,17 @@ const db = admin.firestore();
  */
 const recordSpaceSet = functions.firestore
   .document("spaces/{spaceId}/members/{memberId}/analytics/latest")
-  .onUpdate(async change => {
+  .onUpdate(async (change, context) => {
+    const {spaceId} = context.params;
     const metricsData = calculateRecord(change);
 
     if (!metricsData) {
       return false;
     }
 
-    return db.doc("admin/metrics").set(metricsData, {merge: true});
+    return db
+      .doc(`spaces/${spaceId}/admin/metrics`)
+      .set(metricsData, {merge: true});
   });
 
 export default recordSpaceSet;
