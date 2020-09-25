@@ -21,7 +21,7 @@ module.exports = {
   collectCoverage: true,
   verbose: true,
   collectCoverageFrom: [
-    "**/*.{ts}",
+    "**/*.{js,ts}",
     "!**/*.d.ts",
     "!**/*.spec.{ts}",
     "!**/node_modules/**",
