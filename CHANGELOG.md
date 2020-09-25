@@ -1,3 +1,14 @@
+# [1.92.0](https://github.com/sentrei/sentrei/compare/v1.91.1...v1.92.0) (2020-09-25)
+
+### Features
+
+- 🎸 remove record room set ([e6c4f7c](https://github.com/sentrei/sentrei/commit/e6c4f7c3cf8f4027f616ed48d32f69f8b96393f0))
+
+### Performance Improvements
+
+- ⚡️ completely remove sentry dialog when error ([565b3aa](https://github.com/sentrei/sentrei/commit/565b3aa412ae78fc0812663239563bac1f96bc62))
+- ⚡️ refactor jest config ([d006fa6](https://github.com/sentrei/sentrei/commit/d006fa626a34666643a01e331026a25829e21049))
+
 ## [1.91.1](https://github.com/sentrei/sentrei/compare/v1.91.0...v1.91.1) (2020-09-25)
 
 ### Performance Improvements
