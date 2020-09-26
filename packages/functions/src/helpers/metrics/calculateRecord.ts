@@ -34,7 +34,7 @@ const calculateRecord = (
       },
     };
 
-    if (after.metrics.period.latest > 1) {
+    if (after.metrics.period.latest > 0) {
       metricsData = {
         ...metricsData,
         period: {
@@ -43,7 +43,7 @@ const calculateRecord = (
       };
     }
 
-    if (after.metrics.period.hour > 1) {
+    if (after.metrics.period.hour > 0) {
       metricsData = {
         ...metricsData,
         period: {
@@ -53,7 +53,7 @@ const calculateRecord = (
       };
     }
 
-    if (after.metrics.period.day > 1) {
+    if (after.metrics.period.day > 0) {
       metricsData = {
         ...metricsData,
         period: {
@@ -63,7 +63,7 @@ const calculateRecord = (
       };
     }
 
-    if (after.metrics.period.week > 1) {
+    if (after.metrics.period.week > 0) {
       metricsData = {
         ...metricsData,
         period: {
@@ -76,7 +76,7 @@ const calculateRecord = (
     return metricsData;
   }
 
-  if (after.metrics.period.latest === 1) {
+  if (after.metrics.period.latest === 0) {
     metricsData = {
       ...metricsData,
       period: {
@@ -85,7 +85,7 @@ const calculateRecord = (
     };
   }
 
-  if (after.metrics.period.hour === 1) {
+  if (after.metrics.period.hour === 0) {
     metricsData = {
       ...metricsData,
       period: {
@@ -95,7 +95,7 @@ const calculateRecord = (
     };
   }
 
-  if (after.metrics.period.day === 1) {
+  if (after.metrics.period.day === 0) {
     metricsData = {
       ...metricsData,
       period: {
@@ -105,7 +105,7 @@ const calculateRecord = (
     };
   }
 
-  if (after.metrics.period.week === 1) {
+  if (after.metrics.period.week === 0) {
     metricsData = {
       ...metricsData,
       period: {
