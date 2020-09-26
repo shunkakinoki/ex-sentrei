@@ -34,7 +34,7 @@ const calculateRecord = (
       },
     };
 
-    if (after.metrics.period.latest > 0) {
+    if (after.metrics.period.latest >= 0) {
       metricsData = {
         ...metricsData,
         period: {
@@ -43,7 +43,7 @@ const calculateRecord = (
       };
     }
 
-    if (after.metrics.period.hour > 0) {
+    if (after.metrics.period.hour >= 0) {
       metricsData = {
         ...metricsData,
         period: {
@@ -53,7 +53,7 @@ const calculateRecord = (
       };
     }
 
-    if (after.metrics.period.day > 0) {
+    if (after.metrics.period.day >= 0) {
       metricsData = {
         ...metricsData,
         period: {
@@ -63,7 +63,7 @@ const calculateRecord = (
       };
     }
 
-    if (after.metrics.period.week > 0) {
+    if (after.metrics.period.week >= 0) {
       metricsData = {
         ...metricsData,
         period: {
