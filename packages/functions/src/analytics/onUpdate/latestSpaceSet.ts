@@ -13,7 +13,7 @@ const latestSpaceSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {spaceId, adminId} = context.params;
 
-    const analyticsData = analyticsLatest(adminId, "space", change, context);
+    const analyticsData = analyticsLatest(adminId, "space", change);
 
     if (!analyticsData) {
       return false;
