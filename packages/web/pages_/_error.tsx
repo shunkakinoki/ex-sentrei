@@ -25,6 +25,7 @@ const getInitialProps = async (
   if (res?.statusCode === 404) {
     return {statusCode: 404};
   }
+
   if (err) {
     trackEvent("Exception", {
       error: err.name,
@@ -37,10 +38,10 @@ const getInitialProps = async (
     return errorInitialProps;
   }
 
-  Sentry.captureException(
-    new Error(`_error.js getInitialProps missing data at path: ${asPath}`),
-  );
-  await Sentry.flush(2000);
+  trackEvent("Exception", {
+    error: "getInitialProps missing data",
+    description: `_error.js getInitialProps missing data at path: ${asPath}`,
+  });
 
   return {
     ...errorInitialProps,

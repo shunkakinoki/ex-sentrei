@@ -13,7 +13,7 @@ const latestRoomSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {spaceId, memberId, adminId} = context.params;
 
-    const analyticsData = analyticsLatest(adminId, "member", change, context);
+    const analyticsData = analyticsLatest(adminId, "member", change);
 
     if (!analyticsData) {
       return false;

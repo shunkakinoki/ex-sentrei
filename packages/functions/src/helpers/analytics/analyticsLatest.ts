@@ -15,21 +15,13 @@ const analyticsLatest = (
   adminId: string,
   model: Analytics.Models,
   change: functions.Change<FirebaseFirestore.DocumentSnapshot>,
-  context: functions.EventContext,
 ): Analytics.Update | false => {
   let analyticsData;
-  let initialData;
 
-  if (context.authType !== "ADMIN") {
-    initialData = {
-      updatedAt: timestamp,
-    };
-  }
-
-  initialData = {
-    ...initialData,
+  const initialData = {
     model,
     period: "latest",
+    updatedAt: timestamp,
   };
 
   switch (adminId) {
