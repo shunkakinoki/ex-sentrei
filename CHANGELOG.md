@@ -1,3 +1,10 @@
+## [1.93.1](https://github.com/sentrei/sentrei/compare/v1.93.0...v1.93.1) (2020-09-26)
+
+### Performance Improvements
+
+- ⚡️ refactor custom error ([48ae5ae](https://github.com/sentrei/sentrei/commit/48ae5aeb1ed5d5e73615baa80602ab94704ea75e))
+- ⚡️ revert analytics to not include context ([d7f7d2a](https://github.com/sentrei/sentrei/commit/d7f7d2a210a747bb8f15398db557c6e8f127394a))
+
 # [1.93.0](https://github.com/sentrei/sentrei/compare/v1.92.0...v1.93.0) (2020-09-26)
 
 ### Features
