@@ -13,15 +13,23 @@ const recordMemberSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {spaceId, memberId} = context.params;
 
-    const metricsData = calculateRecord(change, true);
+    const metricsData = calculateRecord(change);
 
     if (!metricsData) {
       return false;
     }
 
-    return db
-      .doc(`spaces/${spaceId}/members/${memberId}/admin/metrics`)
-      .set(metricsData, {merge: true});
+    const batch = db.batch();
+
+    const memberRef = db.doc(`spaces/${spaceId}/members/${memberId}`);
+    const metricsRef = db.doc(
+      `spaces/${spaceId}/members/${memberId}/admin/metrics`,
+    );
+
+    batch.set(memberRef, metricsData, {merge: true});
+    batch.set(metricsRef, metricsData, {merge: true});
+
+    return batch.commit();
   });
 
 export default recordMemberSet;
