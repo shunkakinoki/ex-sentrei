@@ -19,9 +19,21 @@ const recordMemberSet = functions.firestore
       return false;
     }
 
-    return db
-      .doc(`spaces/${spaceId}/members/${memberId}/admin/metrics`)
-      .set(metricsData, {merge: true});
+    const batch = db.batch();
+
+    if (metricsData.record) {
+      const recordData = {record: metricsData.record};
+
+      const memberRef = db.doc(`spaces/${spaceId}/members/${memberId}`);
+      batch.set(memberRef, recordData, {merge: true});
+    }
+
+    const metricsRef = db.doc(
+      `spaces/${spaceId}/members/${memberId}/admin/metrics`,
+    );
+    batch.set(metricsRef, metricsData, {merge: true});
+
+    return batch.commit();
   });
 
 export default recordMemberSet;

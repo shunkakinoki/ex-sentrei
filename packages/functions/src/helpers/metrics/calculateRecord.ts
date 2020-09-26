@@ -47,6 +47,7 @@ const calculateRecord = (
       metricsData = {
         ...metricsData,
         period: {
+          ...metricsData.period,
           hour: 1,
         },
       };
@@ -56,6 +57,7 @@ const calculateRecord = (
       metricsData = {
         ...metricsData,
         period: {
+          ...metricsData.period,
           day: 1,
         },
       };
@@ -65,6 +67,7 @@ const calculateRecord = (
       metricsData = {
         ...metricsData,
         period: {
+          ...metricsData.period,
           week: 1,
         },
       };
@@ -86,6 +89,7 @@ const calculateRecord = (
     metricsData = {
       ...metricsData,
       period: {
+        ...metricsData.period,
         hour: recordValue,
       },
     };
@@ -95,6 +99,7 @@ const calculateRecord = (
     metricsData = {
       ...metricsData,
       period: {
+        ...metricsData.period,
         day: recordValue,
       },
     };
@@ -104,6 +109,7 @@ const calculateRecord = (
     metricsData = {
       ...metricsData,
       period: {
+        ...metricsData.period,
         week: recordValue,
       },
     };

@@ -18,9 +18,19 @@ const recordUserSet = functions.firestore
       return false;
     }
 
-    return db
-      .doc(`users/${userId}/admin/metrics`)
-      .set(metricsData, {merge: true});
+    const batch = db.batch();
+
+    if (metricsData.record) {
+      const recordData = {record: metricsData.record};
+
+      const memberRef = db.doc(`users/${userId}`);
+      batch.set(memberRef, recordData, {merge: true});
+    }
+
+    const metricsRef = db.doc(`users/${userId}/admin/metrics`);
+    batch.set(metricsRef, metricsData, {merge: true});
+
+    return batch.commit();
   });
 
 export default recordUserSet;
