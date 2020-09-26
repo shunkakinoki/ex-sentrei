@@ -1,6 +1,6 @@
 coverage:
   status:
-    project: off
+    project: on
     patch: off
 flags:
   functions:
