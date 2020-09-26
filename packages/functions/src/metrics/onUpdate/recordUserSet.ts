@@ -2,6 +2,7 @@ import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
 import calculateRecord from "@sentrei/functions/helpers/metrics/calculateRecord";
+
 const db = admin.firestore();
 
 /**
@@ -12,7 +13,7 @@ const recordUserSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {userId} = context.params;
 
-    const metricsData = calculateRecord(change, true);
+    const metricsData = calculateRecord(change);
 
     if (!metricsData) {
       return false;
@@ -20,14 +21,10 @@ const recordUserSet = functions.firestore
 
     const batch = db.batch();
 
-    if (metricsData.record) {
-      const recordData = {record: metricsData.record};
-
-      const memberRef = db.doc(`users/${userId}`);
-      batch.set(memberRef, recordData, {merge: true});
-    }
-
+    const memberRef = db.doc(`users/${userId}`);
     const metricsRef = db.doc(`users/${userId}/admin/metrics`);
+
+    batch.set(memberRef, metricsData, {merge: true});
     batch.set(metricsRef, metricsData, {merge: true});
 
     return batch.commit();
