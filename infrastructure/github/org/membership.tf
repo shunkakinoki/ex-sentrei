@@ -5,5 +5,5 @@ resource "github_membership" "sentrei_bot" {
 
 resource "github_membership" "shunkakinoki" {
   username = "shunkakinoki"
-  role     = "member"
+  role     = "admin"
 }
