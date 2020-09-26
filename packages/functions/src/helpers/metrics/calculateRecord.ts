@@ -12,7 +12,6 @@ const calculateRecord = (
   const after = change.after.data() as Analytics.Response;
 
   const recordValue = admin.firestore.FieldValue.increment(1);
-  const nullValue = admin.firestore.FieldValue.increment(0);
   let metricsData = <Metrics.Update>{};
 
   const nowDate = new Date().getDate();
@@ -28,10 +27,10 @@ const calculateRecord = (
     metricsData = {
       ...metricsData,
       period: {
-        latest: recordValue,
-        hour: recordValue,
-        day: recordValue,
-        week: recordValue,
+        latest: 1,
+        hour: 1,
+        day: 1,
+        week: 1,
       },
     };
 
@@ -39,7 +38,7 @@ const calculateRecord = (
       metricsData = {
         ...metricsData,
         period: {
-          latest: nullValue,
+          latest: 1,
         },
       };
     }
@@ -48,7 +47,7 @@ const calculateRecord = (
       metricsData = {
         ...metricsData,
         period: {
-          hour: nullValue,
+          hour: 1,
         },
       };
     }
@@ -57,7 +56,7 @@ const calculateRecord = (
       metricsData = {
         ...metricsData,
         period: {
-          day: nullValue,
+          day: 1,
         },
       };
     }
@@ -66,7 +65,7 @@ const calculateRecord = (
       metricsData = {
         ...metricsData,
         period: {
-          week: nullValue,
+          week: 1,
         },
       };
     }
