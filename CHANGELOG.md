@@ -1,3 +1,19 @@
+# [1.93.0](https://github.com/sentrei/sentrei/compare/v1.92.0...v1.93.0) (2020-09-26)
+
+### Features
+
+- 🎸 complete record functions ([f052f86](https://github.com/sentrei/sentrei/commit/f052f865b3989eeaf7cc607dec08e0bd8df5413e))
+- 🎸 refactor calculate record for 3 actions ([9b5fea1](https://github.com/sentrei/sentrei/commit/9b5fea1aa18998be9cc0529825c4b51463c83648))
+- 🎸 refactor user invoke ([ca75c18](https://github.com/sentrei/sentrei/commit/ca75c1897799a7dbe03e3f9271f673bc79c969bd))
+
+### Performance Improvements
+
+- ⚡️ calculate record improvements ([65edccb](https://github.com/sentrei/sentrei/commit/65edccb370357078c998eaf92c49f40764f4b712))
+- ⚡️ ini record for 3 actions ([d2fe906](https://github.com/sentrei/sentrei/commit/d2fe9060608a4ba15226cc3c3901b5fadb129feb))
+- ⚡️ invoke on null ([91e86ba](https://github.com/sentrei/sentrei/commit/91e86ba0874c3a35787f69b0a7052009535d64d3))
+- ⚡️ refactor user calculatioin ([2d5bae9](https://github.com/sentrei/sentrei/commit/2d5bae962f9577379a05da5823a663e5fd2d6c05))
+- ⚡️ refactor user record to 1 ([3b4c819](https://github.com/sentrei/sentrei/commit/3b4c8190ea1d0925603af3920094e897325ea7b2))
+
 # [1.92.0](https://github.com/sentrei/sentrei/compare/v1.91.1...v1.92.0) (2020-09-25)
 
 ### Features
