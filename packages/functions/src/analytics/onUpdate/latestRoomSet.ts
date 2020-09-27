@@ -1,7 +1,7 @@
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
-import analyticsLatest from "@sentrei/functions/helpers/analytics/analyticsLatest";
+import setLatestAnalytics from "@sentrei/functions/helpers/analytics/setLatestAnalytics";
 
 const db = admin.firestore();
 
@@ -13,7 +13,7 @@ const latestRoomSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {roomId, adminId} = context.params;
 
-    const analyticsData = analyticsLatest(adminId, "room", change);
+    const analyticsData = setLatestAnalytics(adminId, "room", change);
 
     if (!analyticsData) {
       return false;

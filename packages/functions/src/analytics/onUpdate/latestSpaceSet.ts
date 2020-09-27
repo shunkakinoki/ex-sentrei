@@ -1,7 +1,7 @@
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
-import analyticsLatest from "@sentrei/functions/helpers/analytics/analyticsLatest";
+import setLatestAnalytics from "@sentrei/functions/helpers/analytics/setLatestAnalytics";
 
 const db = admin.firestore();
 
@@ -13,7 +13,7 @@ const latestSpaceSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {spaceId, adminId} = context.params;
 
-    const analyticsData = analyticsLatest(adminId, "space", change);
+    const analyticsData = setLatestAnalytics(adminId, "space", change);
 
     if (!analyticsData) {
       return false;

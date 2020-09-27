@@ -11,7 +11,7 @@ const timestamp = admin.firestore.FieldValue.serverTimestamp();
 /**
  * Set latest users on update
  */
-const analyticsLatest = (
+const setLatestAnalytics = (
   adminId: string,
   model: Analytics.Models,
   change: functions.Change<FirebaseFirestore.DocumentSnapshot>,
@@ -39,6 +39,13 @@ const analyticsLatest = (
         ...initialData,
         metrics: metricsData,
       };
+      if (
+        metricsData?.period?.hour === 0 ||
+        metricsData?.period?.day === 0 ||
+        metricsData?.period?.week === 0
+      ) {
+        delete analyticsData.updatedAt;
+      }
       return analyticsData;
     }
     case "stats": {
@@ -54,4 +61,4 @@ const analyticsLatest = (
   }
 };
 
-export default analyticsLatest;
+export default setLatestAnalytics;
