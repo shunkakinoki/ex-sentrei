@@ -6,6 +6,7 @@ export type LandingKey =
   | "invite"
   | "landing"
   | "login"
+  | "media"
   | "pricing"
   | "privacy"
   | "pitch"
