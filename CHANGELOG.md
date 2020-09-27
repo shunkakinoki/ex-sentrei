@@ -1,3 +1,13 @@
+# [1.94.0](https://github.com/sentrei/sentrei/compare/v1.93.1...v1.94.0) (2020-09-27)
+
+### Features
+
+- 🎸 ini user cron ([15c66a8](https://github.com/sentrei/sentrei/commit/15c66a858ba310c7fe4be26f48e5f6f95e0b39a7))
+
+### Performance Improvements
+
+- ⚡️ refactor record user to include period ([46db6b9](https://github.com/sentrei/sentrei/commit/46db6b9cdcad2b2bda93c77e230efc4bda41e1b8))
+
 ## [1.93.1](https://github.com/sentrei/sentrei/compare/v1.93.0...v1.93.1) (2020-09-26)
 
 ### Performance Improvements
