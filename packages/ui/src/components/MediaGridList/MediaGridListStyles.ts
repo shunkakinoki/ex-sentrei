@@ -7,11 +7,10 @@ const MediaGridListStyles = makeStyles((theme: Theme) =>
       flexWrap: "wrap",
       justifyContent: "space-around",
       overflow: "hidden",
-      backgroundColor: theme.palette.background.paper,
-    },
-    gridList: {
-      width: 500,
-      height: 450,
+      backgroundColor:
+        theme.palette.type === "light"
+          ? theme.palette.background.default
+          : theme.palette.background.paper,
     },
   }),
 );

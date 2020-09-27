@@ -10,7 +10,7 @@ const data = [
   {
     img: <LogoPicture />,
     title: "banner",
-    cols: 3,
+    cols: 1,
   },
 ];
 

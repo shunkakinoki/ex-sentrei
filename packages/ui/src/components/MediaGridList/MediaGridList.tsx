@@ -15,7 +15,7 @@ export default function MediaGridList({data}: Props): JSX.Element {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={300} className={classes.gridList} cols={3}>
+      <GridList cellHeight={300} cols={3}>
         {data.map(media => (
           <GridListTile key={media.title} cols={media.cols || 1}>
             {media.img}
