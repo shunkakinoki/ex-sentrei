@@ -1,3 +1,18 @@
+# [1.96.0](https://github.com/sentrei/sentrei/compare/v1.95.0...v1.96.0) (2020-09-27)
+
+### Features
+
+- 🎸 ini media grid list ([87dbe50](https://github.com/sentrei/sentrei/commit/87dbe5057b2ca586c8bd9c7c5b0a7b828ca4e8d9))
+- 🎸 ini media page ([76ac848](https://github.com/sentrei/sentrei/commit/76ac84801b541ee61899878f2ed1b89a4b846ad2))
+- 🎸 migrate header to landing header ([ca092fc](https://github.com/sentrei/sentrei/commit/ca092fc3f7f34ad676ddd749bf5acd5c71e3bf86))
+- 🎸 refactor media grid list styles ([d4417cf](https://github.com/sentrei/sentrei/commit/d4417cf173f554b47c25709d352325d755a58cfa))
+
+### Performance Improvements
+
+- ⚡️ ini media i18n and footer ([769968e](https://github.com/sentrei/sentrei/commit/769968e96d737f7d1aa0ce6b6e304cd7c0517f7e))
+- ⚡️ ini media model ([76ae9c2](https://github.com/sentrei/sentrei/commit/76ae9c24e8579accbc446af9312e5c0ad4a388e6))
+- ⚡️ ini media screen ([d346507](https://github.com/sentrei/sentrei/commit/d3465077767553503d33da63dc22d48f855cea1f))
+
 # [1.95.0](https://github.com/sentrei/sentrei/compare/v1.94.0...v1.95.0) (2020-09-27)
 
 ### Features
