@@ -13,15 +13,15 @@ import * as React from "react";
 
 import {LandingKey, LandingType} from "@sentrei/types/models/Landing";
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
-import HeaderButton from "@sentrei/ui/components/HeaderButton";
-import HeaderLogo from "@sentrei/ui/components/HeaderLogo";
-import HeaderMobileDialog from "@sentrei/ui/components/HeaderMobileDialog";
-import HeaderScrollButton from "@sentrei/ui/components/HeaderScrollButton";
+import LandingHeaderButton from "@sentrei/ui/components/LandingHeaderButton";
+import LandingHeaderLogo from "@sentrei/ui/components/LandingHeaderLogo";
+import LandingHeaderMobileDialog from "@sentrei/ui/components/LandingHeaderMobileDialog";
+import LandingHeaderScrollButton from "@sentrei/ui/components/LandingHeaderScrollButton";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import PaperCupsWidget from "@sentrei/ui/components/PaperCupsWidget";
 import SeoLanding from "@sentrei/ui/components/SeoLanding";
 
-import HeaderStyles from "./HeaderStyles";
+import LandingHeaderStyles from "./LandingHeaderStyles";
 
 export interface Props {
   logo: JSX.Element;
@@ -30,13 +30,13 @@ export interface Props {
   type?: LandingType;
 }
 
-export default function Header({
+export default function LandingHeader({
   logo,
   papercups = true,
   landingKey,
   type = "default",
 }: Props): JSX.Element {
-  const classes = HeaderStyles();
+  const classes = LandingHeaderStyles();
   const {t} = useTranslation();
 
   const [
@@ -92,25 +92,25 @@ export default function Header({
         <AppBar position="fixed" className={appBarClasses}>
           <Toolbar>
             <Grid container alignItems="center" justify="center">
-              <HeaderLogo logo={logo} href="/" />
+              <LandingHeaderLogo logo={logo} href="/" />
               <div className={classes.spy}>
                 <Grid item>
                   <Hidden smDown implementation="css">
                     {type === "about" && (
                       <>
-                        <HeaderScrollButton
+                        <LandingHeaderScrollButton
                           href="mission"
                           title={t("header:about.mission")}
                         />
-                        <HeaderScrollButton
+                        <LandingHeaderScrollButton
                           href="core"
                           title={t("header:about.core")}
                         />
-                        <HeaderScrollButton
+                        <LandingHeaderScrollButton
                           href="team"
                           title={t("header:about.team")}
                         />
-                        <HeaderScrollButton
+                        <LandingHeaderScrollButton
                           href="investor"
                           title={t("header:about.investor")}
                         />
@@ -118,19 +118,19 @@ export default function Header({
                     )}
                     {type === "default" && (
                       <>
-                        <HeaderButton
+                        <LandingHeaderButton
                           href="/about"
                           title={t("header:default.about")}
                         />
-                        <HeaderButton
+                        <LandingHeaderButton
                           href="/analytics"
                           title={t("header:default.analytics")}
                         />
-                        <HeaderButton
+                        <LandingHeaderButton
                           href="/pricing"
                           title={t("header:default.pricing")}
                         />
-                        <HeaderButton
+                        <LandingHeaderButton
                           href="/support"
                           title={t("header:default.support")}
                         />
@@ -138,19 +138,19 @@ export default function Header({
                     )}
                     {type === "landing" && (
                       <>
-                        <HeaderScrollButton
+                        <LandingHeaderScrollButton
                           href="product"
                           title={t("header:landing.product")}
                         />
-                        <HeaderScrollButton
+                        <LandingHeaderScrollButton
                           href="testimonial"
                           title={t("header:landing.testimonial")}
                         />
-                        <HeaderScrollButton
+                        <LandingHeaderScrollButton
                           href="pricing"
                           title={t("header:landing.pricing")}
                         />
-                        <HeaderScrollButton
+                        <LandingHeaderScrollButton
                           href="faq"
                           title={t("header:landing.faq")}
                         />
@@ -186,7 +186,7 @@ export default function Header({
                 <IconButton edge="end" onClick={handleMobileClick}>
                   {mobileAnchorEl ? <CloseIcon /> : <MenuIcon />}
                 </IconButton>
-                <HeaderMobileDialog
+                <LandingHeaderMobileDialog
                   anchorEl={mobileAnchorEl}
                   open={Boolean(mobileAnchorEl)}
                   onClose={handleClose}

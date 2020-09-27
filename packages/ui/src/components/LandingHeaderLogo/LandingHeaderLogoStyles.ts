@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const HeaderLogoStyles = makeStyles((theme: Theme) =>
+const LandingHeaderLogoStyles = makeStyles((theme: Theme) =>
   createStyles({
     logo: {
       maxWidth: "180px",
@@ -17,4 +17,4 @@ const HeaderLogoStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default HeaderLogoStyles;
+export default LandingHeaderLogoStyles;

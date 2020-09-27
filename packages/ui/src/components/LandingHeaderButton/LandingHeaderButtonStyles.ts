@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const HeaderStyles = makeStyles((theme: Theme) =>
+const LandingHeaderStyles = makeStyles((theme: Theme) =>
   createStyles({
     button: {
       "&:hover": {
@@ -11,4 +11,4 @@ const HeaderStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default HeaderStyles;
+export default LandingHeaderStyles;
