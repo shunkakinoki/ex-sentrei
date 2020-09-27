@@ -33,6 +33,7 @@
     "/demo": ["demo", "footer", "header", "papercups"],
     "/help": ["papercups"],
     "/login": ["auth", "header", "papercups"],
+    "/media": ["footer", "header", "papercups"],
     "/notifications": ["notifications"],
     "/pitch": ["footer", "header", "papercups", "pitch"],
     "/pricing": ["footer", "header", "papercups", "pricing"],

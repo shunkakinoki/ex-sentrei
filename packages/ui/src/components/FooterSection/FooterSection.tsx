@@ -31,6 +31,9 @@ export default function FooterSection(): JSX.Element {
         <MuiLink href="/analytics">
           <Typography gutterBottom>{t("footer:footer.analytics")}</Typography>
         </MuiLink>
+        <MuiLink href="/media">
+          <Typography gutterBottom>{t("footer:footer.media")}</Typography>
+        </MuiLink>
         <MuiLink href="/support">
           <Typography gutterBottom>{t("footer:footer.support")}</Typography>
         </MuiLink>
