@@ -32,6 +32,8 @@
     "firebase:main": "yarn run main:local && yarn run dev",
     "main": "yarn run main:local && yarn run deploy",
     "main:local": "yarn run swap:main && firebase use main",
+    "ncu:check": "ncu -p yarn",
+    "ncu:upgrade": "ncu -u -p yarn",
     "relative-ci": "relative-ci-agent",
     "sentry:release": "sentry-cli releases new -p sentrei ${SENTRY_RELEASE} && sentry-cli releases set-commits --auto ${SENTRY_RELEASE} && sentry-cli releases finalize ${SENTRY_RELEASE} && sentry-cli releases deploys ${SENTRY_RELEASE} new -e ${SENTRY_ENVIRONMENT}",
     "start": "next start",

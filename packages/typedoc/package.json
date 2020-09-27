@@ -16,6 +16,8 @@
     "deploy": "yarn run deploy:typedoc",
     "deploy:typedoc": "firebase deploy --only hosting:typedoc",
     "main": "yarn run swap:main && firebase use main && yarn run deploy",
+    "ncu:check": "ncu -p yarn",
+    "ncu:upgrade": "ncu -u -p yarn",
     "swap:alpha": "cp alpha.firebase.json firebase.json",
     "swap:beta": "cp beta.firebase.json firebase.json",
     "swap:main": "cp main.firebase.json firebase.json"

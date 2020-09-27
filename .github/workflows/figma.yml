@@ -28,10 +28,9 @@ jobs:
         env:
           FIGMA_FILE_URL: "https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web"
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-      - uses: peter-evans/create-pull-request@v2
+      - uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          branch-suffix: create-pull-request/figma
+          branch: create-pull-request/figma
           title: "chore: [sentrei-auto-pr]"
           commit-message: "chore: [sentrei-auto-pr]"
-          committer: Shun Kakinoki <shunkakinoki@users.noreply.github.com>

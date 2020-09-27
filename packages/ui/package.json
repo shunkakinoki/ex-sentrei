@@ -25,6 +25,8 @@
     "dev": "start-storybook -p 6006",
     "jest": "jest --coverage",
     "jest:watch": "jest --watch",
+    "ncu:check": "ncu -p yarn",
+    "ncu:upgrade": "ncu -u -p yarn",
     "reg": "reg-suit run",
     "test": "yarn run jest",
     "test:watch": "yarn run jest:watch",
