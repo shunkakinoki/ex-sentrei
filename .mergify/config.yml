@@ -14,7 +14,7 @@ pull_request_rules:
         strict: smart
   - name: sentrei-auto-pr
     conditions:
-      - label=sentrei-auto-pr
+      - author~=^sentrei-bot$
     actions:
       delete_head_branch:
         force: true
