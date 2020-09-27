@@ -35,8 +35,9 @@ const calculateRecord = (
   }
 
   if (
-    nowDate.getDate() !== updatedDate.getDate() &&
-    nowDate.getHours() !== updatedDate.getHours()
+    nowDate.getDate() !== updatedDate.getDate() ||
+    (nowDate.getDate() === updatedDate.getDate() &&
+      nowDate.getHours() !== updatedDate.getHours())
   ) {
     metricsData = {
       ...metricsData,
