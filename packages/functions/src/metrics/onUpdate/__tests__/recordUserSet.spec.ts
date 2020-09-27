@@ -31,6 +31,11 @@ test("Invoke a request to add new metrics to user collection", async done => {
   const wrapped = testEnv.wrap(recordUserSet);
   const req = await wrapped(snap, context);
   const metricsData: Metrics.Update = {
+    period: {
+      hour: 1,
+      day: 1,
+      week: 1,
+    },
     record: 1,
   };
 

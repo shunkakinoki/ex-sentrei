@@ -21,6 +21,11 @@ test("Invoke a request to add new metrics to root collection", async done => {
   const context = {params: {userId: "userId"}};
   const req = await wrapped(snap, context);
   const metricsData: Metrics.Update = {
+    period: {
+      hour: 1,
+      day: 1,
+      week: 1,
+    },
     record: 1,
   };
 
