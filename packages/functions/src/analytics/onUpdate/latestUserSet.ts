@@ -1,7 +1,7 @@
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
-import analyticsLatest from "@sentrei/functions/helpers/analytics/analyticsLatest";
+import setLatestAnalytics from "@sentrei/functions/helpers/analytics/setLatestAnalytics";
 
 const db = admin.firestore();
 
@@ -13,7 +13,7 @@ const latestUserSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {userId, adminId} = context.params;
 
-    const analyticsData = analyticsLatest(adminId, "user", change);
+    const analyticsData = setLatestAnalytics(adminId, "user", change);
 
     if (!analyticsData) {
       return false;
