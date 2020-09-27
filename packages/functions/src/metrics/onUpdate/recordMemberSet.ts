@@ -13,7 +13,7 @@ const recordMemberSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {spaceId, memberId} = context.params;
 
-    const metricsData = calculateRecord(change, true);
+    const metricsData = calculateRecord(change);
 
     if (!metricsData) {
       return false;

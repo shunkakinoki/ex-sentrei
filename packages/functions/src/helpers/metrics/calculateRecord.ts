@@ -6,7 +6,6 @@ import Analytics from "@sentrei/types/models/Analytics";
 
 const calculateRecord = (
   change: functions.Change<FirebaseFirestore.DocumentSnapshot>,
-  user?: boolean,
 ): Metrics.Update | false => {
   const before = change.before.data() as Analytics.Response;
   let metricsData: Metrics.Update;
@@ -16,22 +15,10 @@ const calculateRecord = (
 
   if (nowDate.getDate() !== updatedDate.getDate()) {
     metricsData = {
+      ...metricsData,
       record: admin.firestore.FieldValue.increment(1),
+      period: {day: admin.firestore.FieldValue.increment(1)},
     };
-    if (!user) {
-      metricsData = {
-        ...metricsData,
-        period: {day: admin.firestore.FieldValue.increment(1)},
-      };
-    }
-  }
-
-  if (user) {
-    if (metricsData) {
-      return metricsData;
-    } else {
-      return false;
-    }
   }
 
   if (
@@ -70,7 +57,11 @@ const calculateRecord = (
     };
   }
 
-  return metricsData;
+  if (metricsData) {
+    return metricsData;
+  } else {
+    return false;
+  }
 };
 
 export default calculateRecord;
