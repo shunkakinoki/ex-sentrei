@@ -1,3 +1,9 @@
+# [1.97.0](https://github.com/sentrei/sentrei/compare/v1.96.0...v1.97.0) (2020-09-27)
+
+### Features
+
+- 🎸 ini ncu cmd ([cf85a11](https://github.com/sentrei/sentrei/commit/cf85a11add3cd17db445f7cda35fee659968ad07))
+
 # [1.96.0](https://github.com/sentrei/sentrei/compare/v1.95.0...v1.96.0) (2020-09-27)
 
 ### Features
