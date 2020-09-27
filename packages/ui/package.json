@@ -23,6 +23,8 @@
     "deploy": "yarn run deploy:storybook",
     "deploy:storybook": "firebase deploy --only hosting:ui",
     "dev": "start-storybook -p 6006",
+    "ncu:check": "ncu -p yarn",
+    "ncu:upgrade": "ncu -u -p yarn",
     "jest": "jest --coverage",
     "jest:watch": "jest --watch",
     "reg": "reg-suit run",

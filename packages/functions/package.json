@@ -54,6 +54,8 @@
     "log": "firebase functions:log",
     "main": "yarn run main:local && yarn run deploy",
     "main:local": "yarn run swap:main && firebase use main",
+    "ncu:check": "ncu -p yarn",
+    "ncu:upgrade": "ncu -u -p yarn",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "release": "semantic-release",

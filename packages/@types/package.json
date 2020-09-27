@@ -19,6 +19,8 @@
     "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
+    "ncu:check": "ncu -p yarn",
+    "ncu:upgrade": "ncu -u -p yarn",
     "test": "yarn run jest",
     "tsc": "tsc --p tsconfig.build.json",
     "typescript": "yarn run clean && yarn run tsc",

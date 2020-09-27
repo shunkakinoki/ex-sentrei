@@ -14,7 +14,9 @@
     "deploy": "yarn run deploy:pioneer",
     "deploy:pioneer": "firebase deploy --only hosting:pioneer",
     "dev": "vuepress dev src",
-    "pioneer": "firebase use main && yarn run deploy"
+    "pioneer": "firebase use main && yarn run deploy",
+    "ncu:check": "ncu -p yarn",
+    "ncu:upgrade": "ncu -u -p yarn"
   },
   "dependencies": {
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
