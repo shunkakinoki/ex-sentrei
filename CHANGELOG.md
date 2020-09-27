@@ -1,3 +1,11 @@
+# [1.95.0](https://github.com/sentrei/sentrei/compare/v1.94.0...v1.95.0) (2020-09-27)
+
+### Features
+
+- 🎸 complete refactor set latest analytics ([738be2e](https://github.com/sentrei/sentrei/commit/738be2e7123aea5e23db3b43f9281b015bafc18a))
+- 🎸 ini complete metrics on topic ([2838fc7](https://github.com/sentrei/sentrei/commit/2838fc7c88d002561dc7c7b9ac0e04cc34a8c9a6))
+- 🎸 ini latest functions ([6bb9668](https://github.com/sentrei/sentrei/commit/6bb9668258ebd22e09e8cd3ada06878225279967))
+
 # [1.94.0](https://github.com/sentrei/sentrei/compare/v1.93.1...v1.94.0) (2020-09-27)
 
 ### Features
