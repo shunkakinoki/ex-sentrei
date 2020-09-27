@@ -42,7 +42,7 @@ const calculateRecord = (
     metricsData = {
       ...metricsData,
       period: {
-        ...metricsData.period,
+        ...metricsData?.period,
         hour: admin.firestore.FieldValue.increment(1),
       },
     };
@@ -64,7 +64,7 @@ const calculateRecord = (
     metricsData = {
       ...metricsData,
       period: {
-        ...metricsData.period,
+        ...metricsData?.period,
         week: admin.firestore.FieldValue.increment(1),
       },
     };
