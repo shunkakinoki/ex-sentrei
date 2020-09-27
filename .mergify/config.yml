@@ -2,6 +2,7 @@ pull_request_rules:
   - name: sentrei
     conditions:
       - label=ready-to-merge
+      - label!=packages/functions
       - label!=packages/pioneer
       - label!=packages/typedoc
       - label!=packages/ui
@@ -12,9 +13,9 @@ pull_request_rules:
       merge:
         method: merge
         strict: smart
-  - name: sentrei-auto-pr
+  - name: sentrei-bot
     conditions:
-      - label=sentrei-auto-pr
+      - author~=^sentrei-bot$
     actions:
       delete_head_branch:
         force: true

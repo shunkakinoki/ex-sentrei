@@ -1,5 +1,6 @@
 name: Figma
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [figma-cmd]
 jobs:
