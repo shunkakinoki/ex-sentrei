@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable import/first */
 
 import * as admin from "firebase-admin";
