@@ -1,5 +1,5 @@
 export default interface Media {
-  img: string;
+  img: JSX.Element;
   title: string;
   cols: number;
 }
