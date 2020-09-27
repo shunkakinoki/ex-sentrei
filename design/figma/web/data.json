@@ -1,12 +1,1 @@
-{
-  "1:3": {
-    "name": "Corporation",
-    "id": "1:3",
-    "key": "",
-    "file": "jHYqhmFQWXTUO1B0rcChya",
-    "description": "",
-    "width": 1440,
-    "height": 1024,
-    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/9a4a/745a/39e2013c9c4cbbfd9ceb28510839b9ac"
-  }
-}
+{"44:3":{"name":"Colours Black","id":"44:3","key":"aa411538722727112da9768b3348dcaa267a5420","file":"jHYqhmFQWXTUO1B0rcChya","description":"","width":110,"height":60,"image":"https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/df57/7508/406e8ede54d92ca352de4476de009a6d"}}
