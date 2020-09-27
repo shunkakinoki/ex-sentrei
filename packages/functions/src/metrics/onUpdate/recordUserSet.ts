@@ -13,7 +13,7 @@ const recordUserSet = functions.firestore
   .onUpdate(async (change, context) => {
     const {userId} = context.params;
 
-    const metricsData = calculateRecord(change);
+    const metricsData = calculateRecord(change, true);
 
     if (!metricsData) {
       return false;
