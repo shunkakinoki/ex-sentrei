@@ -2,7 +2,7 @@ import * as React from "react";
 
 import MuiButtonBase from "@sentrei/ui/components/MuiButtonBase";
 
-import HeaderLogoStyles from "./HeaderLogoStyles";
+import LandingHeaderLogoStyles from "./LandingHeaderLogoStyles";
 
 export interface Props {
   as?: string;
@@ -10,8 +10,12 @@ export interface Props {
   logo: JSX.Element;
 }
 
-export default function HeaderLogo({as, logo, href}: Props): JSX.Element {
-  const classes = HeaderLogoStyles();
+export default function LandingHeaderLogo({
+  as,
+  logo,
+  href,
+}: Props): JSX.Element {
+  const classes = LandingHeaderLogoStyles();
 
   return (
     <MuiButtonBase href={href} as={as} className={classes.logo}>

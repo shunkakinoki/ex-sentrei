@@ -3,15 +3,15 @@ import * as React from "react";
 
 import MuiButton from "@sentrei/ui/components/MuiButton";
 
-import HeaderButtonStyles from "./HeaderButtonStyles";
+import LandingHeaderButtonStyles from "./LandingHeaderButtonStyles";
 
 export interface Props {
   href: string;
   title: string;
 }
 
-export default function Header({href, title}: Props): JSX.Element {
-  const classes = HeaderButtonStyles();
+export default function LandingHeaderButton({href, title}: Props): JSX.Element {
+  const classes = LandingHeaderButtonStyles();
 
   return (
     <MuiButton className={classes.button} href={href}>

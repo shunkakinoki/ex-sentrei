@@ -25,7 +25,7 @@ export interface Props {
     | undefined;
 }
 
-export default function HeaderMobileDialog({
+export default function LandingHeaderMobileDialog({
   anchorEl,
   open,
   onClose,

@@ -1,6 +1,8 @@
 import * as React from "react";
 
-import Header, {Props as Original} from "@sentrei/ui/components/Header";
+import LandingHeader, {
+  Props as Original,
+} from "@sentrei/ui/components/LandingHeader";
 import LogoPicture from "@sentrei/web/images/png/LogoPicture";
 
 type Props = Omit<Original, "logo">;
@@ -11,7 +13,7 @@ export default function SentreiHeader({
   type = "default",
 }: Props): JSX.Element {
   return (
-    <Header
+    <LandingHeader
       papercups={papercups}
       type={type}
       landingKey={landingKey}
