@@ -1,3 +1,9 @@
+## [1.97.1](https://github.com/sentrei/sentrei/compare/v1.97.0...v1.97.1) (2020-09-28)
+
+### Performance Improvements
+
+- ⚡️ ini week pioneer & sus ([db7f9f6](https://github.com/sentrei/sentrei/commit/db7f9f6dcfa18208acd7cf5f99299ea6b6d733ae))
+
 # [1.97.0](https://github.com/sentrei/sentrei/compare/v1.96.0...v1.97.0) (2020-09-27)
 
 ### Features
