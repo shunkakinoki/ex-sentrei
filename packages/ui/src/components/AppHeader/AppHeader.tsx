@@ -11,7 +11,6 @@ import AppBar from "@sentrei/ui/components/AppBar";
 import AppTabRoom from "@sentrei/ui/components/AppTabRoom";
 import AppTabSpace from "@sentrei/ui/components/AppTabSpace";
 import AppTabUser from "@sentrei/ui/components/AppTabUser";
-import Segment from "@sentrei/ui/components/Segment";
 import SeoApp from "@sentrei/ui/components/SeoApp";
 import StatusSpace from "@sentrei/ui/components/StatusSpace";
 
@@ -50,7 +49,6 @@ export default function AppHeader({
         namespaceId={namespaceId}
         model={model}
       />
-      <Segment />
       <AppBar
         logo={logo}
         profile={profile}
