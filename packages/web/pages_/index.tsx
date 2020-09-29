@@ -37,7 +37,7 @@ const Index: NextPage = () => {
         personTwoImg={<GoalPicture />}
         personThreeImg={<TimePicture />}
       />
-      <Footer metomic />
+      <Footer />
     </>
   );
 };

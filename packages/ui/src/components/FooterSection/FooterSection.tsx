@@ -12,7 +12,6 @@ import github from "react-useanimations/lib/github";
 import linkedin from "react-useanimations/lib/linkedin";
 import twitter from "react-useanimations/lib/twitter";
 
-import metomic from "@sentrei/common/services/metomic";
 import LanguageButton from "@sentrei/ui/components/LanguageButton";
 import MuiLink from "@sentrei/ui/components/MuiLink";
 
@@ -42,10 +41,6 @@ export default function FooterSection(): JSX.Element {
         <Typography variant="h6" gutterBottom>
           {t("footer:footer.legal")}
         </Typography>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <Link onClick={(): void => metomic()}>
-          <Typography gutterBottom>{t("footer:footer.cookies")}</Typography>
-        </Link>
         <MuiLink href="/privacy">
           <Typography gutterBottom>{t("footer:footer.privacy")}</Typography>
         </MuiLink>

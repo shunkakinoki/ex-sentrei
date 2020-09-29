@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 
 declare module "react-useanimations";
-declare module "@metomic/react";
 declare module "next-translate";
 declare module "next-translate/fixHref";
 declare module "next-translate/Router";
