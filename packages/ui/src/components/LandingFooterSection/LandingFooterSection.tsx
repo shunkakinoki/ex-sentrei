@@ -17,7 +17,7 @@ import LanguageButton from "@sentrei/ui/components/LanguageButton";
 import MuiLink from "@sentrei/ui/components/MuiLink";
 import SegmentManager from "@sentrei/ui/components/SegmentManager";
 
-export default function FooterSection(): JSX.Element {
+export default function LandingFooterSection(): JSX.Element {
   const {t} = useTranslation();
 
   return (

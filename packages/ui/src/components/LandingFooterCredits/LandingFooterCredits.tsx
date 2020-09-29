@@ -9,7 +9,7 @@ import heart from "react-useanimations/lib/heart";
 
 import MuiLink from "@sentrei/ui/components/MuiLink";
 
-export default function FooterCredits(): JSX.Element {
+export default function LandingFooterCredits(): JSX.Element {
   const theme = useTheme();
   const {t} = useTranslation();
 

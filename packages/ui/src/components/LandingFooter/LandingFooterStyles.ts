@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const FooterStyles = makeStyles((theme: Theme) =>
+const LandingFooterStyles = makeStyles((theme: Theme) =>
   createStyles({
     footer: {
       padding: theme.spacing(6, 3),
@@ -13,4 +13,4 @@ const FooterStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default FooterStyles;
+export default LandingFooterStyles;
