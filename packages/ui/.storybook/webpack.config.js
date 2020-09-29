@@ -20,7 +20,7 @@ module.exports = ({config}) => {
       {
         loader: require.resolve("react-docgen-typescript-loader"),
         options: {
-          tsconfigPath: path.resolve(__dirname, "../tsconfig..stories.json"),
+          tsconfigPath: path.resolve(__dirname, "../tsconfig.stories.json"),
         },
       },
     ],
