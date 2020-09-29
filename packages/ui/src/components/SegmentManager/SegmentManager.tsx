@@ -15,39 +15,9 @@ export default function SegmentManager(): JSX.Element {
     boolean
   >(false);
 
-  const [initialPreferences, setnitialPreferences] = React.useState<
-    | {
-        advertising: boolean;
-        marketingAndAnalytics: boolean;
-        functional: boolean;
-      }
-    | undefined
-  >(undefined);
-
   React.useEffect(() => {
     if (isBrowser()) {
-      const inCA = inRegions(["CA"]);
-      const inEU = inRegions(["EU"]);
       setShouldRequireConsent(inRegions(["CA", "EU"]));
-
-      const caDefaultPreferences = {
-        advertising: false,
-        marketingAndAnalytics: true,
-        functional: true,
-      };
-      const euDefaultPreferences = {
-        advertising: false,
-        marketingAndAnalytics: false,
-        functional: false,
-      };
-
-      const preferences = inCA()
-        ? caDefaultPreferences
-        : inEU()
-        ? euDefaultPreferences
-        : undefined;
-
-      setnitialPreferences(preferences);
     }
   }, []);
 
@@ -58,7 +28,6 @@ export default function SegmentManager(): JSX.Element {
         bannerContent={<></>}
         bannerSubContent=""
         shouldRequireConsent={(): boolean => shouldRequireConsent}
-        initialPreferences={initialPreferences}
       />
     </NoSsr>
   );
