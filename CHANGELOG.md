@@ -1,3 +1,10 @@
+## [1.99.1](https://github.com/sentrei/sentrei/compare/v1.99.0...v1.99.1) (2020-09-29)
+
+### Performance Improvements
+
+- ⚡️ ini chromatic gha ([6924b92](https://github.com/sentrei/sentrei/commit/6924b92deff8454ca54e97d64ec715222cdb940a))
+- ⚡️ ini chromatic storybook version ([82c8f55](https://github.com/sentrei/sentrei/commit/82c8f5521e3611108b6b8c55679a71f36e24caac))
+
 # [1.99.0](https://github.com/sentrei/sentrei/compare/v1.98.0...v1.99.0) (2020-09-29)
 
 ### Features
