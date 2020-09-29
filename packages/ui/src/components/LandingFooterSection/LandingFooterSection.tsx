@@ -97,6 +97,14 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
       </Grid>
       <Grid item xs={12} sm={3} md={2}>
         {logo}
+        <Typography
+          gutterBottom
+          align="center"
+          display="block"
+          variant="caption"
+        >
+          {t("footer:footer.sentrei")}
+        </Typography>
         <Box py={1} />
         <Grid container direction="row" spacing={3}>
           <Grid item>
