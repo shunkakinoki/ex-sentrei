@@ -12,7 +12,7 @@ import NextDocument, {
 import * as React from "react";
 import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 
-import Segment from "@sentrei/ui/components/Segment";
+import SegmentHead from "@sentrei/ui/components/SegmentHead";
 import "@sentrei/common/utils/sentry";
 import "@sentrei/common/utils/registerExceptionHandler";
 
@@ -70,7 +70,7 @@ export default class CustomDocument extends NextDocument {
           <link rel="icon" href="/favicon.ico" />
           <script src="https://cdn.jsdelivr.net/npm/first-input-delay@0.1.3/dist/first-input-delay.min.js" />
         </Head>
-        <Segment />
+        <SegmentHead />
         <body>
           <Main />
           <NextScript />

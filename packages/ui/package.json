@@ -42,7 +42,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@papercups-io/chat-widget": "^1.1.0-beta.0",
     "@segment/consent-manager": "^5.0.1",
-    "@segment/in-eu": "^0.3.0",
+    "@segment/in-regions": "^1.2.2",
     "@sentrei/common": "^1.52.1-beta.1",
     "@sentrei/types": "^1.52.1-beta.1",
     "@sentry/browser": "^5.21.1",

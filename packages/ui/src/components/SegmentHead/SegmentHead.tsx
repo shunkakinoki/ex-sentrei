@@ -4,11 +4,7 @@ import * as React from "react";
 
 import {renderSnippet} from "@sentrei/common/utils/segment";
 
-export interface Props {
-  plain?: boolean;
-}
-
-export default function Segment(): JSX.Element {
+export default function SegmentHead(): JSX.Element {
   return (
     <Head>
       {/* eslint-disable-next-line react/no-danger */}

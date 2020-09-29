@@ -3886,7 +3886,7 @@
   dependencies:
     jstz "^2.0.0"
 
-"@segment/in-regions@^1.2.0":
+"@segment/in-regions@^1.2.0", "@segment/in-regions@^1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@segment/in-regions/-/in-regions-1.2.2.tgz#82beeffc54ad22f8007a7b4587927003cf97bba2"
   integrity sha512-9yQxh14LDk0qRAY6b6wjIXKKbkN+NVLnIfNkbepOzKQmPXj1B9caYtu997YOEwMAJ8zNetmdju2wbKnfaM3SCA==
