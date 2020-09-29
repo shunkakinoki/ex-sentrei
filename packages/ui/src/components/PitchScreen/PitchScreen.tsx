@@ -17,6 +17,11 @@ export default function PricingScreen(): JSX.Element {
       <PitchSlideWidget />
       <Box p={1} />
       <PitchSection
+        title={t("pitch:section.two")}
+        url="https://www.youtube.com/watch?v=hvVKiPQKEt0"
+      />
+      <Box p={1} />
+      <PitchSection
         title={t("pitch:section.one")}
         url="https://www.youtube.com/watch?v=VH6_ooC-L7I"
       />
