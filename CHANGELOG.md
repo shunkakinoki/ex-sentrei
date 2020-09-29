@@ -1,3 +1,23 @@
+# [1.99.0](https://github.com/sentrei/sentrei/compare/v1.98.0...v1.99.0) (2020-09-29)
+
+### Features
+
+- 🎸 ini addons for storybook ui ([8f2c397](https://github.com/sentrei/sentrei/commit/8f2c397ee4b76d5238c82fce9585bfe5dcdda950))
+- 🎸 ini footer sentrei ([ab184b1](https://github.com/sentrei/sentrei/commit/ab184b1c1b9fa25ce3ad07d0b24c8806e0ff5d86))
+- 🎸 ini landing footer image ([950d676](https://github.com/sentrei/sentrei/commit/950d676f154e3a272c4686e1b7147d0e890a2e16))
+- 🎸 ini pitch slide ([9584093](https://github.com/sentrei/sentrei/commit/9584093437765a2f9fe6365b2c65b78b04a1c47d))
+- 🎸 ini second pitch ([378348b](https://github.com/sentrei/sentrei/commit/378348bb20d3d726f9f5b0bf6f7dda03ab5b48e8))
+- 🎸 ini storybook v6 ([a6886aa](https://github.com/sentrei/sentrei/commit/a6886aa48b62e4d16939353d1f30ce5e85faac8b))
+- 🎸 migrate footer to landing footer ([b4a07dd](https://github.com/sentrei/sentrei/commit/b4a07ddd527f0f8349b511a074136de6c8425b60))
+- 🎸 upgrade storybook version ([2b40362](https://github.com/sentrei/sentrei/commit/2b40362de55e27a45f2b420c8e3bb2166f648bec))
+
+### Performance Improvements
+
+- ⚡️ ini chromatic action ([4b4a5a2](https://github.com/sentrei/sentrei/commit/4b4a5a26005ec6e39c167cd9ba5413f27c3a70bb))
+- ⚡️ ini pioneer section ([eb299ba](https://github.com/sentrei/sentrei/commit/eb299baa1f7bbe41df0cfd6b19f73c2f42391bde))
+- ⚡️ ini stories board ([53267b6](https://github.com/sentrei/sentrei/commit/53267b6e38eab2e73e4ef1ff0ee969f58d0e6c44))
+- ⚡️ ini tsconfig storybook ([90a3838](https://github.com/sentrei/sentrei/commit/90a38387b4739168cc5f2191958e46d538713083))
+
 # [1.98.0](https://github.com/sentrei/sentrei/compare/v1.97.1...v1.98.0) (2020-09-29)
 
 ### Features
