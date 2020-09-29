@@ -1,6 +1,7 @@
 const path = require("path");
 
 const aliases = {
+  "@sentrei/types": path.join(__dirname, "../../@types/dist"),
   "@sentrei/common": path.join(__dirname, "../../common/dist"),
   "@sentrei/ui": path.join(__dirname, "../src"),
 };
@@ -19,7 +20,7 @@ module.exports = ({config}) => {
       {
         loader: require.resolve("react-docgen-typescript-loader"),
         options: {
-          tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
+          tsconfigPath: path.resolve(__dirname, "../tsconfig..stories.json"),
         },
       },
     ],
