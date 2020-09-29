@@ -32,6 +32,8 @@ export default function SegmentManager(): JSX.Element {
   return (
     <ConsentManager
       writeKey={segment_id}
+      bannerContent={<></>}
+      bannerSubContent=""
       shouldRequireConsent={shouldRequireConsent}
       initialPreferences={initialPreferences}
     />
