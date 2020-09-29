@@ -1,3 +1,20 @@
+# [1.98.0](https://github.com/sentrei/sentrei/compare/v1.97.1...v1.98.0) (2020-09-29)
+
+### Features
+
+- 🎸 complete refactor analytics ([06f106f](https://github.com/sentrei/sentrei/commit/06f106f05226980d650bbf7e3d68159ebc914c34))
+- 🎸 ini segment head ([146a03d](https://github.com/sentrei/sentrei/commit/146a03dcace2da35249a49398ebb19553a07c9b0))
+- 🎸 ini segment manager ([2ed7536](https://github.com/sentrei/sentrei/commit/2ed7536f5eb0a1c5674ef71aa94f707f746077cb))
+
+### Performance Improvements
+
+- ⚡️ ini no ssr for papercups ([561fed4](https://github.com/sentrei/sentrei/commit/561fed4c849bf5e7dd0e3d052e47d520f82a066e))
+- ⚡️ ini react hooks for segment manager ([ecb50ff](https://github.com/sentrei/sentrei/commit/ecb50ff45823e207991069f22a204262d74b73e5))
+- ⚡️ move segment to header and app header ([3e35e3f](https://github.com/sentrei/sentrei/commit/3e35e3f803f1f8b674f2ccd7d748433314f75d72))
+- ⚡️ nossr for segment manager ([107469f](https://github.com/sentrei/sentrei/commit/107469f32a86856b68619f3a2449e452ad0134c8))
+- ⚡️ refactor segment manager banner ([9dcf904](https://github.com/sentrei/sentrei/commit/9dcf904113e469f8a8a226c4525d4865df9cc82a))
+- ⚡️ update segment component ([4e42f2e](https://github.com/sentrei/sentrei/commit/4e42f2e683e05571e963b56d57f53524354d274a))
+
 ## [1.97.1](https://github.com/sentrei/sentrei/compare/v1.97.0...v1.97.1) (2020-09-28)
 
 ### Performance Improvements
