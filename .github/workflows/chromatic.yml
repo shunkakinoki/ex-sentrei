@@ -1,6 +1,10 @@
 name: Chromatic
 on:
-  pull_request:
+  push:
+    branches:
+      - alpha
+      - beta
+      - main
     paths:
       - "package.json"
       - "tsconfig.json"
