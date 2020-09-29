@@ -1,3 +1,9 @@
+# [1.100.0](https://github.com/sentrei/sentrei/compare/v1.99.1...v1.100.0) (2020-09-29)
+
+### Features
+
+- 🎸 complete refactor skeleton stories ([c6cbb46](https://github.com/sentrei/sentrei/commit/c6cbb466ff1ff8daa78967b1ce601ab0cbcd82b7))
+
 ## [1.99.1](https://github.com/sentrei/sentrei/compare/v1.99.0...v1.99.1) (2020-09-29)
 
 ### Performance Improvements
