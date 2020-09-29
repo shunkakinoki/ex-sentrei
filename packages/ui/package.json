@@ -17,7 +17,6 @@
   ],
   "scripts": {
     "build": "build-storybook -o out",
-    "build-storybook": "build-storybook",
     "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
@@ -29,7 +28,6 @@
     "ncu:check": "ncu -p yarn",
     "ncu:upgrade": "ncu -u -p yarn",
     "reg": "reg-suit run",
-    "storybook": "start-storybook -p 6006",
     "test": "yarn run jest",
     "test:watch": "yarn run jest:watch",
     "tsc": "tsc --p tsconfig.build.json",
