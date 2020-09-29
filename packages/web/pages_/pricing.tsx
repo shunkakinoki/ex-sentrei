@@ -1,8 +1,8 @@
 import {NextPage} from "next";
 import * as React from "react";
 
-import Footer from "@sentrei/ui/components/Footer";
 import PricingScreen from "@sentrei/ui/components/PricingScreen";
+import SentreiFooter from "@sentrei/web/components/SentreiFooter";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const Pricing: NextPage = () => {
@@ -10,7 +10,7 @@ const Pricing: NextPage = () => {
     <>
       <SentreiHeader landingKey="pricing" />
       <PricingScreen />
-      <Footer />
+      <SentreiFooter />
     </>
   );
 };

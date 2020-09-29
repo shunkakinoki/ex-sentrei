@@ -4,9 +4,9 @@ import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
 
-import Footer from "@sentrei/ui/components/Footer";
 import LandingScreen from "@sentrei/ui/components/LandingScreen";
 import OneTap from "@sentrei/ui/components/OneTap";
+import SentreiFooter from "@sentrei/web/components/SentreiFooter";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import ConnectPicture from "@sentrei/web/images/svg/ConnectPicture";
 import DataPicture from "@sentrei/web/images/svg/DataPicture";
@@ -37,7 +37,7 @@ const Index: NextPage = () => {
         personTwoImg={<GoalPicture />}
         personThreeImg={<TimePicture />}
       />
-      <Footer />
+      <SentreiFooter />
     </>
   );
 };

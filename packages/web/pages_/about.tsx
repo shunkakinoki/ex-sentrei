@@ -2,7 +2,7 @@ import {NextPage} from "next";
 import * as React from "react";
 
 import AboutScreen from "@sentrei/ui/components/AboutScreen";
-import Footer from "@sentrei/ui/components/Footer";
+import SentreiFooter from "@sentrei/web/components/SentreiFooter";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const About: NextPage = () => {
@@ -10,7 +10,7 @@ const About: NextPage = () => {
     <>
       <SentreiHeader type="about" landingKey="about" />
       <AboutScreen />
-      <Footer />
+      <SentreiFooter />
     </>
   );
 };

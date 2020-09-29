@@ -40,7 +40,6 @@ jobs:
           yarn run typescript
       - working-directory: packages/ui
         run: |
-          yarn run build
           yarn run test
       - uses: codecov/codecov-action@v1.0.13
         continue-on-error: true
@@ -50,3 +49,13 @@ jobs:
           name: sentrei
           fail_ci_if_error: true
           flags: ui
+      - working-directory: packages/ui
+        run: |
+          yarn run build
+      - uses: chromaui/action@v1
+        continue-on-error: true
+        timeout-minutes: 3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: "packages/ui/out"
