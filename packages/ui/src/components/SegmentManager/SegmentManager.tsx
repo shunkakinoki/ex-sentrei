@@ -1,3 +1,4 @@
+import NoSsr from "@material-ui/core/NoSsr";
 import {ConsentManager} from "@segment/consent-manager";
 
 import inRegions from "@segment/in-regions";
@@ -30,12 +31,14 @@ const initialPreferences = inCA()
 
 export default function SegmentManager(): JSX.Element {
   return (
-    <ConsentManager
-      writeKey={segment_id}
-      bannerContent={<></>}
-      bannerSubContent=""
-      shouldRequireConsent={shouldRequireConsent}
-      initialPreferences={initialPreferences}
-    />
+    <NoSsr>
+      <ConsentManager
+        writeKey={segment_id}
+        bannerContent={<></>}
+        bannerSubContent=""
+        shouldRequireConsent={shouldRequireConsent}
+        initialPreferences={initialPreferences}
+      />
+    </NoSsr>
   );
 }
