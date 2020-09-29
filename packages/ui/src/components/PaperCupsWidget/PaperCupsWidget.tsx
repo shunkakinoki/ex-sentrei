@@ -1,3 +1,4 @@
+import NoSsr from "@material-ui/core/NoSsr";
 import {useTheme} from "@material-ui/core/styles";
 import {ChatWidget} from "@papercups-io/chat-widget";
 
@@ -25,19 +26,21 @@ export default function PaperCupsWidget({
   const theme = useTheme();
 
   return (
-    <ChatWidget
-      accountId={accountId}
-      title={t("papercups:papercups.title")}
-      subtitle={t("papercups:papercups.subTitle")}
-      newMessagePlaceholder={t("papercups:papercups.messagePlaceholder")}
-      greeting={t("papercups:papercups.greeting")}
-      primaryColor={theme.palette.primary.main}
-      defaultIsOpen={defaultIsOpen}
-      customer={{
-        name: customerName || "",
-        email: customerEmail || "",
-        external_id: customerUid || "",
-      }}
-    />
+    <NoSsr>
+      <ChatWidget
+        accountId={accountId}
+        title={t("papercups:papercups.title")}
+        subtitle={t("papercups:papercups.subTitle")}
+        newMessagePlaceholder={t("papercups:papercups.messagePlaceholder")}
+        greeting={t("papercups:papercups.greeting")}
+        primaryColor={theme.palette.primary.main}
+        defaultIsOpen={defaultIsOpen}
+        customer={{
+          name: customerName || "",
+          email: customerEmail || "",
+          external_id: customerUid || "",
+        }}
+      />
+    </NoSsr>
   );
 }
