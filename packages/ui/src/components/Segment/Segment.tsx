@@ -8,12 +8,7 @@ export interface Props {
   plain?: boolean;
 }
 
-export default function Segment({plain = false}: Props): JSX.Element {
-  if (plain) {
-    // eslint-disable-next-line react/no-danger
-    return <script dangerouslySetInnerHTML={{__html: renderSnippet()}} />;
-  }
-
+export default function Segment(): JSX.Element {
   return (
     <Head>
       {/* eslint-disable-next-line react/no-danger */}
