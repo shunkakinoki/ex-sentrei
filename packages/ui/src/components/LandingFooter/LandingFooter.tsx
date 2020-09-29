@@ -9,14 +9,18 @@ import LandingFooterSection from "@sentrei/ui/components/LandingFooterSection";
 
 import LandingFooterStyles from "./LandingFooterStyles";
 
-export default function LandingLandingFooter(): JSX.Element {
+export interface Props {
+  logo: JSX.Element;
+}
+
+export default function LandingLandingFooter({logo}: Props): JSX.Element {
   const classes = LandingFooterStyles();
 
   return (
     <>
       <footer className={classes.footer}>
         <Container maxWidth="lg" component="footer">
-          <LandingFooterSection />
+          <LandingFooterSection logo={logo} />
           <Box m={3}>
             <LandingFooterCredits />
           </Box>

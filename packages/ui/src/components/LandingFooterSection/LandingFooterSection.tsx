@@ -1,6 +1,5 @@
-/* eslint-disable no-script-url */
-
 import Avatar from "@material-ui/core/Avatar";
+import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
@@ -17,7 +16,11 @@ import LanguageButton from "@sentrei/ui/components/LanguageButton";
 import MuiLink from "@sentrei/ui/components/MuiLink";
 import SegmentManager from "@sentrei/ui/components/SegmentManager";
 
-export default function LandingFooterSection(): JSX.Element {
+export interface Props {
+  logo: JSX.Element;
+}
+
+export default function LandingFooterSection({logo}: Props): JSX.Element {
   const {t} = useTranslation();
 
   return (
@@ -93,9 +96,8 @@ export default function LandingFooterSection(): JSX.Element {
         <LanguageButton />
       </Grid>
       <Grid item xs={12} sm={3} md={2}>
-        <Typography variant="h6" gutterBottom>
-          {t("footer:footer.social")}
-        </Typography>
+        {logo}
+        <Box py={1} />
         <Grid container direction="row" spacing={3}>
           <Grid item>
             <Link

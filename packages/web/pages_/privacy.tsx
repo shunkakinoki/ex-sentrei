@@ -1,8 +1,8 @@
 import {NextPage} from "next";
 import * as React from "react";
 
-import Footer from "@sentrei/ui/components/Footer";
 import PrivacyScreen from "@sentrei/ui/components/PrivacyScreen";
+import SentreiFooter from "@sentrei/web/components/SentreiFooter";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const Privacy: NextPage = () => {
@@ -10,7 +10,7 @@ const Privacy: NextPage = () => {
     <>
       <SentreiHeader landingKey="privacy" />
       <PrivacyScreen />
-      <Footer />
+      <SentreiFooter />
     </>
   );
 };
