@@ -59,3 +59,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: "packages/ui/out"
+        env:
+          CHROMATIC_STORYBOOK_VERSION: react@6.0.22
