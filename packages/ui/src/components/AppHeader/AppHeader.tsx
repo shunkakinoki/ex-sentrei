@@ -11,6 +11,7 @@ import AppBar from "@sentrei/ui/components/AppBar";
 import AppTabRoom from "@sentrei/ui/components/AppTabRoom";
 import AppTabSpace from "@sentrei/ui/components/AppTabSpace";
 import AppTabUser from "@sentrei/ui/components/AppTabUser";
+import SegmentHead from "@sentrei/ui/components/SegmentHead";
 import SeoApp from "@sentrei/ui/components/SeoApp";
 import StatusSpace from "@sentrei/ui/components/StatusSpace";
 
@@ -43,6 +44,7 @@ export default function AppHeader({
 }: Props): JSX.Element {
   return (
     <>
+      <SegmentHead />
       <SeoApp
         appKey={tabRoomKey || tabUserKey || tabSpaceKey || "home"}
         profile={profile}
