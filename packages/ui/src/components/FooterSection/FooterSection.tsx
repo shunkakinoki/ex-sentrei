@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 
+import {openConsentManager} from "@segment/consent-manager";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import UseAnimations from "react-useanimations";
@@ -12,9 +13,9 @@ import github from "react-useanimations/lib/github";
 import linkedin from "react-useanimations/lib/linkedin";
 import twitter from "react-useanimations/lib/twitter";
 
-import metomic from "@sentrei/common/services/metomic";
 import LanguageButton from "@sentrei/ui/components/LanguageButton";
 import MuiLink from "@sentrei/ui/components/MuiLink";
+import SegmentManager from "@sentrei/ui/components/SegmentManager";
 
 export default function FooterSection(): JSX.Element {
   const {t} = useTranslation();
@@ -42,8 +43,9 @@ export default function FooterSection(): JSX.Element {
         <Typography variant="h6" gutterBottom>
           {t("footer:footer.legal")}
         </Typography>
+        <SegmentManager />
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <Link onClick={(): void => metomic()}>
+        <Link onClick={openConsentManager}>
           <Typography gutterBottom>{t("footer:footer.cookies")}</Typography>
         </Link>
         <MuiLink href="/privacy">

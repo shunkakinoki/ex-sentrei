@@ -1,11 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 
 declare module "react-useanimations";
-declare module "@metomic/react";
 declare module "next-translate";
 declare module "next-translate/fixHref";
 declare module "next-translate/Router";
 declare module "next-translate/I18nProvider";
+declare module "@segment/consent-manager";
 
 declare module "next-translate/Link" {
   type NextLink = import("next/link");

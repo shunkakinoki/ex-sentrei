@@ -56,7 +56,6 @@ const nextConfig = {
     FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
     FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
     FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
-    METOMIC_PROJECT_ID: process.env.METOMIC_PROJECT_ID,
     PAPERCUPS_ID: process.env.PAPERCUPS_ID,
     SEGMENT_ID: process.env.SEGMENT_ID,
     SENTREI_VERSION: require("./package.json").version,
