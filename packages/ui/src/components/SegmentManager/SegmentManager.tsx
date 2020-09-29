@@ -10,6 +10,7 @@ const segment_id = publicRuntimeConfig.SEGMENT_ID;
 const inCA = inRegions(["CA"]);
 const inEU = inRegions(["EU"]);
 const shouldRequireConsent = inRegions(["CA", "EU"]);
+
 const caDefaultPreferences = {
   advertising: false,
   marketingAndAnalytics: true,
