@@ -53,6 +53,8 @@ jobs:
         run: |
           yarn run build
       - uses: chromaui/action@v1
+        continue-on-error: true
+        timeout-minutes: 3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
