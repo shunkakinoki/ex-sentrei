@@ -7,6 +7,7 @@ const aliases = {
 };
 
 module.exports = {
+  addons: ["@storybook/addon-essentials"],
   stories: ["../src/**/*.stories.tsx"],
   webpackFinal: async config => {
     config.resolve.alias = {
