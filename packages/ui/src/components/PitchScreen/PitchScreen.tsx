@@ -5,6 +5,7 @@ import * as React from "react";
 
 import PitchBanner from "@sentrei/ui/components/PitchBanner";
 import PitchSection from "@sentrei/ui/components/PitchSection";
+import PitchSlideWidget from "@sentrei/ui/components/PitchSlideWidget";
 
 export default function PricingScreen(): JSX.Element {
   const {t} = useTranslation();
@@ -12,6 +13,8 @@ export default function PricingScreen(): JSX.Element {
   return (
     <>
       <PitchBanner />
+      <Box p={1} />
+      <PitchSlideWidget />
       <Box p={1} />
       <PitchSection
         title={t("pitch:section.one")}
