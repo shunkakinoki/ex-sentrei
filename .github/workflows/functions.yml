@@ -36,10 +36,19 @@ jobs:
           yarn install --frozen-lockfile
       - run: |
           yarn run typescript
-      - working-directory: packages/functions
+      - if: github.event_name == 'push'
+        working-directory: packages/functions
+        run: |
+          yarn run swap:${GITHUB_REF#refs/heads/}
+      - if: github.event_name == 'pull_request'
+        working-directory: packages/functions
         run: |
           yarn run swap:${{ github.event.pull_request.base.ref }}
+      - working-directory: packages/functions
+        run: |
           yarn run setup
+      - working-directory: packages/functions
+        run: |
           yarn run test
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

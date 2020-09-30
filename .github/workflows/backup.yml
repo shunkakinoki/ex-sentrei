@@ -1,5 +1,6 @@
 name: Backup
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [backup-cmd]
   schedule:
