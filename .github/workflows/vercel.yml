@@ -28,15 +28,10 @@ jobs:
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: "14.4.0"
-      - id: yarn-cache-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - id: cache
-        uses: actions/cache@v2.1.1
+      - uses: actions/cache@v2.1.1
         with:
           path: |
-            node_modules
-            */*/node_modules
-            ${{ steps.yarn-cache-path.outputs.dir }}
+            **/node_modules
           key: |
             yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |

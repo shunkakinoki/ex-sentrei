@@ -1,5 +1,10 @@
 name: Functions
 on:
+  push:
+    branches:
+      - alpha
+      - beta
+      - main
   pull_request:
     paths:
       - "package.json"
@@ -19,11 +24,10 @@ jobs:
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: "14.4.0"
-      - id: cache
-        uses: actions/cache@v2.1.1
+      - uses: actions/cache@v2.1.1
         with:
           path: |
-            node_modules
+            **/node_modules
           key: |
             yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
