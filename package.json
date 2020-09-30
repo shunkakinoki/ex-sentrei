@@ -17,7 +17,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream --scope={@sentrei/pioneer,@sentrei/typedoc}",
-    "check": "yarn run depcheck && yarn run lint && yarn run release:test",
+    "check": "yarn run depcheck && yarn run lint && yarn run release:check",
     "clean": "lerna clean -y",
     "depcheck": "lerna exec --stream --no-bail 'yarn run depcheck .' --scope={@sentrei/common,@sentrei/ui,@sentrei/video,@sentrei/web} || true",
     "env:set:all": "yarn run env:set:alpha && yarn run env:set:beta && yarn run env:set:main",
