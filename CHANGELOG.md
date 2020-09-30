@@ -1,3 +1,10 @@
+# [1.102.0](https://github.com/sentrei/sentrei/compare/v1.101.0...v1.102.0) (2020-09-30)
+
+### Features
+
+- 🎸 complete refactor gha v2 ([c64afcf](https://github.com/sentrei/sentrei/commit/c64afcf8426bf7969f8874b8a6e49e03560831f2))
+- 🎸 completely refactor direction of landing page ([5ae72e3](https://github.com/sentrei/sentrei/commit/5ae72e31881f3a9f2de17b99b69531460be821a5))
+
 # [1.101.0](https://github.com/sentrei/sentrei/compare/v1.100.0...v1.101.0) (2020-09-30)
 
 ### Features
