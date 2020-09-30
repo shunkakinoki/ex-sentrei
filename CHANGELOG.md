@@ -1,3 +1,9 @@
+## [1.103.1](https://github.com/sentrei/sentrei/compare/v1.103.0...v1.103.1) (2020-09-30)
+
+### Performance Improvements
+
+- ⚡️ refactor pitch ([af5d4ee](https://github.com/sentrei/sentrei/commit/af5d4eeef734db5df2b47ffdb88781883e15df04))
+
 # [1.103.0](https://github.com/sentrei/sentrei/compare/v1.102.0...v1.103.0) (2020-09-30)
 
 ### Features
