@@ -1,3 +1,9 @@
+# [1.101.0](https://github.com/sentrei/sentrei/compare/v1.100.0...v1.101.0) (2020-09-30)
+
+### Features
+
+- 🎸 complete refactor gha ([64b8471](https://github.com/sentrei/sentrei/commit/64b8471b3017bd87ff377d50e0c74cfa21db91b8))
+
 # [1.100.0](https://github.com/sentrei/sentrei/compare/v1.99.1...v1.100.0) (2020-09-29)
 
 ### Features
