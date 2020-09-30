@@ -59,7 +59,9 @@ module.exports = {
     ],
     sidebar: [
       ["/mission/", "Mission"],
-      ["/project/", "Project"],
+      ["/pitch/", "Pitch"],
+      ["/pioneer/", "Pioneer"],
+      ["/ycombinator/", "Y Combinator"],
       {
         title: "2020 Startup School",
         collapsable: true,
