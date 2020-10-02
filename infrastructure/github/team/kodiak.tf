@@ -5,11 +5,7 @@ resource "github_team" "kodiak" {
 }
 
 resource "github_team_membership" "kodiak_kodiakhq" {
-  team_id  = github_team.admin.id
+  team_id  = github_team.kodiak.id
   username = "kodiakhq"
   role     = "member"
-}
-
-output "kodiak_team_id" {
-  value = github_team.admin.id
 }
