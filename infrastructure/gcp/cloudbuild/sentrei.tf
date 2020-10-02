@@ -1,20 +1,4 @@
-resource "google_cloudbuild_trigger" "sentrei_pull_request" {
-  provider = google-beta
-
-  github {
-    owner = "sentrei"
-    name  = "sentrei"
-
-    pull_request {
-      branch          = var.environment
-      comment_control = "COMMENTS_ENABLED"
-    }
-  }
-
-  filename = "packages/web/cloudbuild.yaml"
-}
-
-resource "google_cloudbuild_trigger" "sentrei_push" {
+resource "google_cloudbuild_trigger" "sentrei" {
   provider = google-beta
 
   github {
