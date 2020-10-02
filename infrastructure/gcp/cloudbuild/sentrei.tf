@@ -6,6 +6,7 @@ resource "google_cloudbuild_trigger" "sentrei" {
     name  = "sentrei"
 
     pull_request {
+      branch          = "*"
       comment_control = "COMMENTS_ENABLED"
     }
   }
