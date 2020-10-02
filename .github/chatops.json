@@ -15,7 +15,7 @@
   },
   {
     "command": "sync",
-    "permission": "none",
+    "permission": "maintain",
     "issue_type": "both",
     "allow_edits": true,
     "event_type_suffix": "-cmd"
