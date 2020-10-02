@@ -10,6 +10,7 @@ jobs:
     if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
+      - uses: nelonoel/branch-name@v1
       - uses: actions/checkout@v2
         with:
           submodules: true
@@ -60,17 +61,13 @@ jobs:
           deployment_id: ${{ steps.production.outputs.deployment_id }}
           target_url: https://sentrei.com
       - if: github.ref != 'refs/heads/main'
-        id: branch
-        run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      - if: github.ref != 'refs/heads/main'
         uses: chrnorm/deployment-action@releases/v1
         id: preview
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.branch }}
-          target_url: https://${{ steps.branch.outputs.branch }}.sentrei.com
-          environment: "Vercel preview ${{ steps.branch.outputs.branch }}"
+          target_url: https://${{ env.BRANCH_NAME }} .sentrei.com
+          environment: "Vercel preview ${{ env.BRANCH_NAME }} "
       - if: github.ref != 'refs/heads/main'
         timeout-minutes: 300
         uses: amondnet/vercel-action@v19.0.1+3
@@ -80,18 +77,18 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           alias-domains: |
-            ${{ steps.branch.outputs.branch }}.sentrei.com
+            ${{ env.BRANCH_NAME }} .sentrei.com
       - if: success() && github.ref != 'refs/heads/main'
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "success"
           deployment_id: ${{ steps.preview.outputs.deployment_id }}
-          target_url: https://${{ steps.branch.outputs.branch }}.sentrei.com
+          target_url: https://${{ env.BRANCH_NAME }} .sentrei.com
       - if: failure() && github.ref != 'refs/heads/main'
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "failure"
           deployment_id: ${{ steps.preview.outputs.deployment_id }}
-          target_url: https://${{ steps.branch.outputs.branch }}.sentrei.com
+          target_url: https://${{ env.BRANCH_NAME }} .sentrei.com

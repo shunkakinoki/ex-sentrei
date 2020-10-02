@@ -19,6 +19,7 @@ jobs:
     if: github.actor == 'sentrei-bot' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
+      - uses: nelonoel/branch-name@v1
       - uses: actions/checkout@v2
         with:
           submodules: true
@@ -40,7 +41,7 @@ jobs:
       - if: github.event_name == 'push'
         working-directory: packages/functions
         run: |
-          yarn run swap:${GITHUB_REF#refs/heads/}
+          yarn run swap:${{ env.BRANCH_NAME }}
       - if: github.event_name == 'pull_request'
         working-directory: packages/functions
         run: |

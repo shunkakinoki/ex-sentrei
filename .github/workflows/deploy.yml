@@ -10,16 +10,17 @@ jobs:
     if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
+      - uses: nelonoel/branch-name@v1
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${GITHUB_REF#refs/heads/}
+          ref: ${{ env.BRANCH_NAME }}
           target_url: https://pioneer.sentrei.com
-          environment: "Pioneer ${GITHUB_REF#refs/heads/}"
+          environment: "Pioneer ${{ env.BRANCH_NAME }}"
       - uses: actions/checkout@v2
         with:
-          ref: ${GITHUB_REF#refs/heads/}
+          ref: ${{ env.BRANCH_NAME }}
           submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
@@ -57,16 +58,17 @@ jobs:
     if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
+      - uses: nelonoel/branch-name@v1
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${GITHUB_REF#refs/heads/}
-          target_url: https://${GITHUB_REF#refs/heads/}.typedoc.sentrei.com
-          environment: "Typedoc ${GITHUB_REF#refs/heads/}"
+          ref: ${{ env.BRANCH_NAME }}
+          target_url: https://${{ env.BRANCH_NAME }} .typedoc.sentrei.com
+          environment: "Typedoc ${{ env.BRANCH_NAME }} "
       - uses: actions/checkout@v2
         with:
-          ref: ${GITHUB_REF#refs/heads/}
+          ref: ${{ env.BRANCH_NAME }}
           submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
@@ -83,7 +85,7 @@ jobs:
           yarn install --frozen-lockfile
       - working-directory: packages/typedoc
         run: |
-          yarn run ${GITHUB_REF#refs/heads/}
+          yarn run ${{ env.BRANCH_NAME }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - if: success()
@@ -92,28 +94,29 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${GITHUB_REF#refs/heads/}.typedoc.sentrei.com
+          target_url: https://${{ env.BRANCH_NAME }} .typedoc.sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${GITHUB_REF#refs/heads/}.typedoc.sentrei.com
+          target_url: https://${{ env.BRANCH_NAME }} .typedoc.sentrei.com
   ui:
     if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
+      - uses: nelonoel/branch-name@v1
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${GITHUB_REF#refs/heads/}
+          ref: ${{ env.BRANCH_NAME }}
           target_url: https://ui.sentrei.com
-          environment: "UI ${GITHUB_REF#refs/heads/}"
+          environment: "UI ${{ env.BRANCH_NAME }} "
       - uses: actions/checkout@v2
         with:
-          ref: ${GITHUB_REF#refs/heads/}
+          ref: ${{ env.BRANCH_NAME }}
           submodules: true
       - uses: actions/setup-node@v2.1.1
         with:

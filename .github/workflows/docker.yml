@@ -10,12 +10,13 @@ jobs:
     if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
+      - uses: nelonoel/branch-name@v1
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${GITHUB_REF#refs/heads/}
-          environment: "Docker ${GITHUB_REF#refs/heads/}"
+          ref: ${{ env.BRANCH_NAME }}
+          environment: "Docker ${{ env.BRANCH_NAME }} "
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
@@ -40,8 +41,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: ${{ github.repository }}
-          tags: ${GITHUB_REF#refs/heads/}
-          cache_froms: ${{ github.repository }}:${GITHUB_REF#refs/heads/}
+          tags: ${{ env.BRANCH_NAME }}
+          cache_froms: ${{ github.repository }}:${{ env.BRANCH_NAME }}
           dockerfile: packages/web/Dockerfile
           path: "."
           always_pull: true
