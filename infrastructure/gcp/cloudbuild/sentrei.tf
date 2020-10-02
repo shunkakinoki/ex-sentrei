@@ -2,11 +2,12 @@ resource "google_cloudbuild_trigger" "sentrei" {
   provider = google-beta
 
   github {
-    owner = "sentrei"
-    name  = "sentrei"
+    owner          = "sentrei"
+    name           = "sentrei"
+    included_files = "CHANGELOG.md"
 
     push {
-      tag = ".*"
+      branch = "^${var.environment}$"
     }
   }
 
