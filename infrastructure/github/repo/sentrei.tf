@@ -77,7 +77,7 @@ resource "github_branch_protection" "sentrei_main" {
   }
 
   restrictions {
-    teams = ["admin"]
+    teams = ["admin", "kodiak"]
   }
 }
 
