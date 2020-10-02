@@ -33,6 +33,10 @@ module "gcp-dns" {
 #   source      = "../../gcp/firebase"
 # }
 
+module "gcp-cloudbuild" {
+  source      = "../../gcp/cloudbuild"
+}
+
 module "gcp-iam" {
   source      = "../../gcp/iam"
   environment = var.environment
