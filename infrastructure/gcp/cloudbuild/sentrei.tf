@@ -6,9 +6,10 @@ resource "google_cloudbuild_trigger" "sentrei" {
     name  = "sentrei"
 
     push {
-      tag = ".*"
+      branch = "^${var.environment}$"
     }
   }
 
-  filename = "packages/web/cloudbuild.yaml"
+  filename       = "packages/web/cloudbuild.yaml"
+  included_files = ["CHANGELOG.md"]
 }
