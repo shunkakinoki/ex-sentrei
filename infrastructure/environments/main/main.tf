@@ -24,6 +24,10 @@ module "gcp-bigquery" {
   environment = var.environment
 }
 
+module "gcp-cloudbuild" {
+  source = "../../gcp/cloudbuild"
+}
+
 module "gcp-dns" {
   source = "../../gcp/dns"
 }
@@ -32,10 +36,6 @@ module "gcp-dns" {
 #   environment = var.environment
 #   source      = "../../gcp/firebase"
 # }
-
-module "gcp-cloudbuild" {
-  source      = "../../gcp/cloudbuild"
-}
 
 module "gcp-iam" {
   source      = "../../gcp/iam"
