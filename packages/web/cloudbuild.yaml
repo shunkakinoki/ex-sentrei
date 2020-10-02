@@ -10,8 +10,20 @@ steps:
     args: ["build", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME", "."]
   - name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME"]
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
-    args: ['run', 'deploy', '$REPO_NAME-web', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+    args:
+      [
+        "run",
+        "deploy",
+        "$REPO_NAME-web",
+        "--image",
+        "gcr.io/$PROJECT_ID/$REPO_NAME",
+        "--region",
+        "us-central1",
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
+      ]
 images:
   - "gcr.io/$PROJECT_ID/$REPO_NAME"
