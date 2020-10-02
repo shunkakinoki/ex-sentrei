@@ -23,7 +23,7 @@ jobs:
               issue_number: ${{ github.event.client_payload.pull_request.number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['automerge'],
+              labels: ['ready-to-merge'],
             })
       - if: github.actor != 'shunkakinoki'
         uses: actions/github-script@v3

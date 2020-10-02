@@ -19,7 +19,7 @@
 - name: "good-first-issue"
   color: "7057ff"
   description: ""
-- name: "automerge"
+- name: "ready-to-merge"
   color: "d876e3"
   description: ""
 - name: "roadmap"
