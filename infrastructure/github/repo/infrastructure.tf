@@ -35,6 +35,7 @@ resource "github_branch_protection" "infrastructure_alpha" {
   }
 
   restrictions {
+    users = ["kodiakhq"]
     teams = ["admin"]
   }
 }
@@ -56,6 +57,7 @@ resource "github_branch_protection" "infrastructure_beta" {
   }
 
   restrictions {
+    users = ["kodiakhq"]
     teams = ["admin"]
   }
 }
@@ -77,6 +79,7 @@ resource "github_branch_protection" "infrastructure_main" {
   }
 
   restrictions {
+    users = ["kodiakhq"]
     teams = ["admin"]
   }
 }
