@@ -1,7 +1,10 @@
 resource "google_cloudbuild_trigger" "sentrei" {
+  provider = google-beta
+
   github {
     owner = "sentrei"
-    name = "sentrei"
+    name  = "sentrei"
+
     pull_request {
       comment_control = "COMMENTS_ENABLED"
     }
