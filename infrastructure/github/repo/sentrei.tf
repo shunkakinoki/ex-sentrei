@@ -35,7 +35,6 @@ resource "github_branch_protection" "sentrei_alpha" {
   }
 
   restrictions {
-    users = ["kodiakhq"]
     teams = ["admin"]
   }
 }
@@ -57,7 +56,6 @@ resource "github_branch_protection" "sentrei_beta" {
   }
 
   restrictions {
-    users = ["kodiakhq"]
     teams = ["admin"]
   }
 }
@@ -79,8 +77,7 @@ resource "github_branch_protection" "sentrei_main" {
   }
 
   restrictions {
-    users = ["kodiakhq"]
-    teams = ["admin"]
+    teams = ["admin", "kodiak"]
   }
 }
 
