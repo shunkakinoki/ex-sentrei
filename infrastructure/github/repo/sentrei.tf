@@ -31,7 +31,7 @@ resource "github_branch_protection" "sentrei_alpha" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "cla", "functions", "labeler", "ui", "yarn", "video", "web", "WIP"]
+    contexts = ["auto-approve", "cla", "functions", "labeler", "terraform(alpha)", "ui", "yarn", "video", "web", "WIP"]
   }
 
   restrictions {
@@ -53,7 +53,7 @@ resource "github_branch_protection" "sentrei_beta" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "cla", "functions", "labeler", "ui", "yarn", "video", "web", "WIP"]
+    contexts = ["auto-approve", "cla", "functions", "labeler", "terraform (beta)", "ui", "yarn", "video", "web", "WIP"]
   }
 
   restrictions {
@@ -75,7 +75,7 @@ resource "github_branch_protection" "sentrei_main" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "cla", "functions", "labeler", "ui", "yarn", "video", "web", "WIP"]
+    contexts = ["auto-approve", "cla", "functions", "labeler", "terraform (main)", "ui", "yarn", "video", "web", "WIP"]
   }
 
   restrictions {
