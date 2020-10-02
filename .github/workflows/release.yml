@@ -9,7 +9,6 @@ jobs:
   release:
     if: github.actor != 'sentrei-bot'
     runs-on: ubuntu-latest
-    needs: context
     steps:
       - uses: actions/checkout@v2
         with:
