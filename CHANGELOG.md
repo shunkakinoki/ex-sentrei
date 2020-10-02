@@ -1,3 +1,9 @@
+## [1.106.2](https://github.com/sentrei/sentrei/compare/v1.106.1...v1.106.2) (2020-10-02)
+
+### Performance Improvements
+
+- ⚡️ ini invoke changelog ([1c3ee83](https://github.com/sentrei/sentrei/commit/1c3ee83e16affbf67b504c9a02e19718709be49b))
+
 ## [1.106.1](https://github.com/sentrei/sentrei/compare/v1.106.0...v1.106.1) (2020-10-02)
 
 ### Performance Improvements
