@@ -1,22 +1,25 @@
 name: Deploy
 on:
-  repository_dispatch:
-    types: [deploy-cmd]
+  push:
+    branches:
+      - alpha
+      - beta
+      - main
 jobs:
   pioneer:
-    if: github.event.client_payload.event_name == 'pioneer'
+    if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.event.client_payload.branch }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
-          environment: "Pioneer ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+          ref: ${GITHUB_REF#refs/heads/}
+          target_url: https://pioneer.sentrei.com
+          environment: "Pioneer ${GITHUB_REF#refs/heads/}"
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.client_payload.branch }}
+          ref: ${GITHUB_REF#refs/heads/}
           submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
@@ -33,7 +36,7 @@ jobs:
           yarn install --frozen-lockfile
       - working-directory: packages/pioneer
         run: |
-          yarn run ${{ github.event.client_payload.task }}
+          yarn run pioneer
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - if: success()
@@ -42,28 +45,28 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
+          target_url: https://pioneer.sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
+          target_url: https://pioneer.sentrei.com
   typedoc:
-    if: github.event.client_payload.event_name == 'typedoc'
+    if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.event.client_payload.branch }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
-          environment: "Typedoc ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+          ref: ${GITHUB_REF#refs/heads/}
+          target_url: https://${GITHUB_REF#refs/heads/}.typedoc.sentrei.com
+          environment: "Typedoc ${GITHUB_REF#refs/heads/}"
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.client_payload.branch }}
+          ref: ${GITHUB_REF#refs/heads/}
           submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
@@ -80,7 +83,7 @@ jobs:
           yarn install --frozen-lockfile
       - working-directory: packages/typedoc
         run: |
-          yarn run ${{ github.event.client_payload.task }}
+          yarn run ${GITHUB_REF#refs/heads/}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - if: success()
@@ -89,28 +92,28 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
+          target_url: https://${GITHUB_REF#refs/heads/}.typedoc.sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
+          target_url: https://${GITHUB_REF#refs/heads/}.typedoc.sentrei.com
   ui:
-    if: github.event.client_payload.event_name == 'ui'
+    if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.event.client_payload.branch }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
-          environment: "UI ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+          ref: ${GITHUB_REF#refs/heads/}
+          target_url: https://ui.sentrei.com
+          environment: "UI ${GITHUB_REF#refs/heads/}"
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.client_payload.branch }}
+          ref: ${GITHUB_REF#refs/heads/}
           submodules: true
       - uses: actions/setup-node@v2.1.1
         with:
@@ -129,7 +132,7 @@ jobs:
           yarn run typescript
       - working-directory: packages/ui
         run: |
-          yarn run ${{ github.event.client_payload.task }}
+          yarn run ui
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - if: success()
@@ -138,108 +141,11 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
+          target_url: https://ui.sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
-  web:
-    if: github.event.client_payload.event_name == 'web'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: chrnorm/deployment-action@releases/v1
-        id: deployment
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.event.client_payload.branch }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
-          environment: "Web ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.client_payload.branch }}
-          submodules: true
-      - uses: actions/setup-node@v2.1.1
-        with:
-          node-version: "14.4.0"
-      - uses: actions/cache@v2.1.1
-        with:
-          path: |
-            **/node_modules
-          key: |
-            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-v1-${{ runner.os }}-
-      - run: |
-          yarn install --frozen-lockfile
-      - run: |
-          yarn run typescript
-      - working-directory: packages/web
-        run: |
-          yarn run ${{ github.event.client_payload.task }}
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - id: secrets
-        uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@0.1.3
-        with:
-          credentials: ${{ secrets.GCP_CREDENTIALS }}
-          secrets: |-
-            SERVICE_ACCOUNT_EMAIL:sentrei-main/github_${{ github.event.client_payload.base }}_email
-            SERVICE_ACCOUNT_KEY:sentrei-main/github_${{ github.event.client_payload.base }}_key
-      - uses: docker/build-push-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: ${{ github.repository }}
-          tags: ${{ github.event.client_payload.tag }}
-          cache_froms: ${{ github.repository }}:${{ github.event.client_payload.tag }}
-          dockerfile: packages/web/Dockerfile
-          path: "."
-          always_pull: true
-          add_git_labels: true
-          tag_with_ref: true
-          tag_with_sha: true
-          push: true
-      - uses: docker/build-push-action@v1
-        with:
-          username: _json_key
-          password: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
-          registry: gcr.io
-          repository: sentrei-${{ github.event.client_payload.base }}/sentrei
-          tags: ${{ github.event.client_payload.tag }}
-          dockerfile: packages/web/Dockerfile
-          path: "."
-          always_pull: false
-          add_git_labels: true
-          tag_with_ref: false
-          tag_with_sha: false
-          push: true
-      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.3
-        with:
-          version: "286.0.0"
-          service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
-          service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
-          project_id: "sentrei-${{ github.event.client_payload.base }}"
-      - run: |
-          gcloud run deploy "sentrei-${{ github.event.client_payload.tag }}-web" \
-            --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.tag }}" \
-            --platform "managed" \
-            --region "us-central1" \
-            --allow-unauthenticated \
-            --quiet
-      - if: success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
-      - if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
+          target_url: https://ui.sentrei.com

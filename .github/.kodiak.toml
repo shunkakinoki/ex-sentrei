@@ -1,0 +1,11 @@
+version = 1
+
+[merge]
+automerge_label = "ready-to-merge"
+require_automerge_label = true
+method = "merge"
+notify_on_conflict = true
+delete_branch_on_merge = true
+optimistic_updates = true
+prioritize_ready_to_merge = true
+notify_on_conflict = false
