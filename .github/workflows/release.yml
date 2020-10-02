@@ -64,5 +64,5 @@ jobs:
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ github.repository_owner }}
-          SENTRY_ENVIRONMENT: "${GITHUB_REF#refs/heads/}"
+          SENTRY_ENVIRONMENT: ${{ '${GITHUB_REF#refs/heads/}' }}
           SENTRY_RELEASE: ${{ steps.release.outputs.release }}
