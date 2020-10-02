@@ -35,7 +35,6 @@ resource "github_branch_protection" "functions_alpha" {
   }
 
   restrictions {
-    users = ["kodiakhq"]
     teams = ["admin"]
   }
 }
@@ -57,7 +56,6 @@ resource "github_branch_protection" "functions_beta" {
   }
 
   restrictions {
-    users = ["kodiakhq"]
     teams = ["admin"]
   }
 }
@@ -79,7 +77,6 @@ resource "github_branch_protection" "functions_main" {
   }
 
   restrictions {
-    users = ["kodiakhq"]
     teams = ["admin"]
   }
 }
