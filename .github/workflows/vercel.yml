@@ -5,21 +5,9 @@ on:
       - alpha
       - beta
       - main
-    paths:
-      - "package.json"
-      - "tsconfig.json"
-      - "yarn.lock"
-      - "assets/**"
-      - "design/**"
-      - "locales/**"
-      - "packages/@types/**"
-      - "packages/common/**"
-      - "packages/ui/**"
-      - "packages/video/**"
-      - "packages/web/**"
 jobs:
   vercel:
-    if: github.actor != 'sentrei-bot'
+    if: github.actor == 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

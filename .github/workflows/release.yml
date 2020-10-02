@@ -6,19 +6,6 @@ on:
       - beta
       - main
 jobs:
-  context:
-    runs-on: ubuntu-latest
-    outputs:
-      branch: ${{ steps.branch.outputs.branch }}
-    steps:
-      - run: |
-          echo $GITHUB_CONTEXT
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-      - id: branch
-        shell: bash
-        run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
   release:
     if: github.actor != 'sentrei-bot'
     runs-on: ubuntu-latest
@@ -59,7 +46,7 @@ jobs:
           GIT_COMMITTER_EMAIL: "70007101+sentrei-bot@users.noreply.github.com"
       - if: needs.context.outputs.branch != 'main'
         run: |
-          echo "::set-env name=DIST_TAG::${{ needs.context.outputs.branch }}"
+          echo "::set-env name=DIST_TAG::${GITHUB_REF#refs/heads/}"
       - if: needs.context.outputs.branch == 'main'
         run: |
           echo "::set-env name=DIST_TAG::latest"
@@ -78,45 +65,5 @@ jobs:
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ github.repository_owner }}
-          SENTRY_ENVIRONMENT: ${{ needs.context.outputs.branch }}
+          SENTRY_ENVIRONMENT: ${GITHUB_REF#refs/heads/}
           SENTRY_RELEASE: ${{ steps.release.outputs.release }}
-  pioneer:
-    if: github.actor == 'sentrei-bot'
-    runs-on: ubuntu-latest
-    needs: context
-    steps:
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: deploy-cmd
-          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "pioneer", "pull_request_number": "", "release": "true", "task": "pioneer", "tag": "pioneer", "url_prefix": ""}'
-  typedoc:
-    if: github.actor == 'sentrei-bot'
-    runs-on: ubuntu-latest
-    needs: context
-    steps:
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: deploy-cmd
-          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "typedoc", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
-  ui:
-    if: github.actor == 'sentrei-bot'
-    runs-on: ubuntu-latest
-    needs: context
-    steps:
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: deploy-cmd
-          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "ui", "pull_request_number": "", "release": "true", "task": "ui", "tag": "ui", "url_prefix": ""}'
-  web:
-    if: github.actor == 'sentrei-bot'
-    runs-on: ubuntu-latest
-    needs: context
-    steps:
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: deploy-cmd
-          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "web", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
