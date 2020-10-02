@@ -1,3 +1,9 @@
+## [1.103.2](https://github.com/sentrei/sentrei/compare/v1.103.1...v1.103.2) (2020-10-02)
+
+### Performance Improvements
+
+- ⚡️ upgrade slash command dispatch ([c3511aa](https://github.com/sentrei/sentrei/commit/c3511aa8001ad967e7346df406c41c67330ee508))
+
 ## [1.103.1](https://github.com/sentrei/sentrei/compare/v1.103.0...v1.103.1) (2020-09-30)
 
 ### Performance Improvements
