@@ -25,8 +25,7 @@ module "gcp-bigquery" {
 }
 
 module "gcp-cloudbuild" {
-  source      = "../../gcp/cloudbuild"
-  environment = var.environment
+  source = "../../gcp/cloudbuild"
 }
 
 module "gcp-dns" {
