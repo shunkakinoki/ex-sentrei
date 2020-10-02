@@ -1,3 +1,9 @@
+# [1.106.0](https://github.com/sentrei/sentrei/compare/v1.105.0...v1.106.0) (2020-10-02)
+
+### Features
+
+- 🎸 ini cloud build dockerfile ([d6dc46e](https://github.com/sentrei/sentrei/commit/d6dc46e92a2ca4ac86c36ba9cc4d88b78b8847c6))
+
 # [1.105.0](https://github.com/sentrei/sentrei/compare/v1.104.0...v1.105.0) (2020-10-02)
 
 ### Features
