@@ -4,10 +4,14 @@ steps:
     args:
       [
         "-c",
-        "gcloud secrets versions access latest --secret=web_$_BASE_BRANCH --format='get(payload.data)' | tr '_-' '/+' | base64 -d > .env",
+        "gcloud secrets versions access latest --secret=web_$(echo $BRANCH_NAME | tr / -) --format='get(payload.data)' | tr '_-' '/+' | base64 -d > .env",
       ]
   - name: "gcr.io/cloud-builders/docker"
     args: ["build", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME", "."]
-    timeout: 500s
   - name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME"]
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', '$REPO_NAME-web', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+images:
+  - "gcr.io/$PROJECT_ID/$REPO_NAME"
