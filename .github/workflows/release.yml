@@ -10,6 +10,7 @@ jobs:
     if: github.actor != 'sentrei-bot'
     runs-on: ubuntu-latest
     steps:
+      - uses: nelonoel/branch-name@v1
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.BOT_TOKEN }}
@@ -45,7 +46,7 @@ jobs:
           GIT_COMMITTER_EMAIL: "70007101+sentrei-bot@users.noreply.github.com"
       - if: needs.context.outputs.branch != 'main'
         run: |
-          echo "::set-env name=DIST_TAG::${GITHUB_REF#refs/heads/}"
+          echo "::set-env name=DIST_TAG::${{ env.BRANCH_NAME }} "
       - if: needs.context.outputs.branch == 'main'
         run: |
           echo "::set-env name=DIST_TAG::latest"
@@ -64,5 +65,5 @@ jobs:
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ github.repository_owner }}
-          SENTRY_ENVIRONMENT: ${{ '${GITHUB_REF#refs/heads/}' }}
+          SENTRY_ENVIRONMENT: ${{ env.BRANCH_NAME }}
           SENTRY_RELEASE: ${{ steps.release.outputs.release }}
