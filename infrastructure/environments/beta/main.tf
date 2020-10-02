@@ -11,6 +11,11 @@ module "aws-iam" {
   environment = var.environment
 }
 
+module "gcp-cloudbuild" {
+  source      = "../../gcp/cloudbuild"
+  environment = var.environment
+}
+
 # module "gcp-firebase" {
 #   environment = var.environment
 #   source      = "../../gcp/firebase"
