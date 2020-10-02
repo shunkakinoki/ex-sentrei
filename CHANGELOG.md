@@ -1,3 +1,18 @@
+# [1.104.0](https://github.com/sentrei/sentrei/compare/v1.103.2...v1.104.0) (2020-10-02)
+
+### Features
+
+- 🎸 complete refactor gha ([ed88bd2](https://github.com/sentrei/sentrei/commit/ed88bd2a9c3c41d1f990f86e0d2bcb3003c380a0))
+- 🎸 ini cloudbuild tf ([8dce75f](https://github.com/sentrei/sentrei/commit/8dce75f8e0cad84039d092bb2c14905b3543de12))
+
+### Performance Improvements
+
+- ⚡️ ini automerge label ([36030bc](https://github.com/sentrei/sentrei/commit/36030bc1ca3bc55a543c81137ec9ca9aa7a98e9b))
+- ⚡️ ini docker gha ([2370039](https://github.com/sentrei/sentrei/commit/2370039a915f80996684c1497cf88b607aa87c0d))
+- ⚡️ ini kodiak toml ([a2e1057](https://github.com/sentrei/sentrei/commit/a2e1057e90c139751bb4b75304f7ea80a9f51ebc))
+- ⚡️ ini release ([42c1f15](https://github.com/sentrei/sentrei/commit/42c1f15ca41c7c25b9e0398e77f137dcb97b8fc2))
+- ⚡️ make vercel private ([6786916](https://github.com/sentrei/sentrei/commit/6786916281cc64875f14fd916fe792c9c5097753))
+
 ## [1.103.2](https://github.com/sentrei/sentrei/compare/v1.103.1...v1.103.2) (2020-10-02)
 
 ### Performance Improvements
