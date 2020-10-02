@@ -6,7 +6,7 @@ resource "google_cloudbuild_trigger" "sentrei" {
     name  = "sentrei"
 
     push {
-      tag = "v*"
+      tag = ".*"
     }
   }
 
