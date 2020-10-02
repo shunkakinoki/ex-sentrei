@@ -12,7 +12,8 @@ module "aws-iam" {
 }
 
 module "gcp-cloudbuild" {
-  source = "../../gcp/cloudbuild"
+  source      = "../../gcp/cloudbuild"
+  environment = var.environment
 }
 
 # module "gcp-firebase" {
