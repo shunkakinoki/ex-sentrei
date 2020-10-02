@@ -1,0 +1,9 @@
+steps:
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: 'bash'
+  args: [ '-c', "gcloud secrets versions access latest --secret=web_$_BASE_BRANCH --format='get(payload.data)' | tr '_-' '/+' | base64 -d > .env" ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/sentrei-$_BASE_BRANCH/sentrei', '.']
+  timeout: 500s
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/sentrei-$_BASE_BRANCH/sentrei']
