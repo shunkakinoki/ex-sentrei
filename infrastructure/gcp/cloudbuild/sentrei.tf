@@ -11,5 +11,4 @@ resource "google_cloudbuild_trigger" "sentrei" {
   }
 
   filename       = "packages/web/cloudbuild.yaml"
-  included_files = ["CHANGELOG.md"]
 }
