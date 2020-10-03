@@ -15,7 +15,7 @@ resource "google_cloud_run_service" "sentrei_web" {
   template {
     spec {
       containers {
-        image = "gcr.io/sentrei-${var.environment}/sentrei:${var.environment}"
+        image = "gcr.io/sentrei-${var.environment}/sentrei"
         env {
           name  = "FIREBASE_CLIENT_EMAIL"
           value = var.firebase_client_email
