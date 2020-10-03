@@ -4,7 +4,7 @@ steps:
     args:
       [
         "-c",
-        "gcloud secrets versions access latest --secret=web_$(echo $BRANCH_NAME | tr / -)_env --format='get(payload.data)' | tr '_-' '/+' | base64 -d > .env",
+        "gcloud secrets versions access latest --secret=web_$(echo $BRANCH_NAME | tr / -)_env --format='get(payload.data)' | tr '_-' '/+' | base64 -d > packages/web/.env",
       ]
   - name: "gcr.io/cloud-builders/docker"
     args:
