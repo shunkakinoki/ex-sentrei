@@ -1,5 +1,7 @@
 resource "google_cloudbuild_trigger" "sentrei" {
   provider = google-beta
+  name     = "Cloud run ${var.environment}"
+  filename = "packages/web/cloudbuild.yaml"
 
   github {
     owner = "sentrei"
@@ -10,5 +12,4 @@ resource "google_cloudbuild_trigger" "sentrei" {
     }
   }
 
-  filename       = "packages/web/cloudbuild.yaml"
 }
