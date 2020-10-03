@@ -35,3 +35,4 @@ steps:
       ]
 images:
   - "gcr.io/$PROJECT_ID/$REPO_NAME"
+timeout: 1800s
