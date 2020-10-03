@@ -26,15 +26,12 @@ secrets-get-all: secrets-get-alpha secrets-get-beta secrets-get-main
 
 secrets-get-alpha:
 	gcloud secrets versions access $(SECRETS_VERSION) --secret=web_alpha_env > .alpha.env
-	cp .alpha.env ../../.env.development
 
 secrets-get-beta:
 	gcloud secrets versions access $(SECRETS_VERSION) --secret=web_beta_env > .beta.env
-	cp .beta.env ../../.env.preview
 
 secrets-get-main:
 	gcloud secrets versions access $(SECRETS_VERSION) --secret=web_main_env > .main.env
-	cp .main.env ../../.env.production
 
 secrets-list-all: secrets-list-alpha secrets-list-beta secrets-list-main
 
