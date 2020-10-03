@@ -1,3 +1,9 @@
+## [1.106.3](https://github.com/sentrei/sentrei/compare/v1.106.2...v1.106.3) (2020-10-03)
+
+### Performance Improvements
+
+- ⚡️ cloudbuild ([0243a09](https://github.com/sentrei/sentrei/commit/0243a09c28403623db8ca996facb886782c4fefd))
+
 ## [1.106.2](https://github.com/sentrei/sentrei/compare/v1.106.1...v1.106.2) (2020-10-02)
 
 ### Performance Improvements
