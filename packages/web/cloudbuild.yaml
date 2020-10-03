@@ -24,7 +24,7 @@ steps:
       [
         "run",
         "deploy",
-        "$REPO_NAME-web",
+        "sentrei-$(echo $BRANCH_NAME | tr / -)-web",
         "--image",
         "gcr.io/$PROJECT_ID/$REPO_NAME",
         "--region",
