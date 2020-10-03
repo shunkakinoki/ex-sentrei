@@ -9,7 +9,7 @@ data "google_iam_policy" "noauth" {
 
 resource "google_cloud_run_service" "sentrei_web" {
   provider = google-beta
-  name     = "sentrei-${var.environment}-web"
+  name     = "sentrei-web"
   location = "us-central1"
 
   template {
