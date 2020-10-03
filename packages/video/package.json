@@ -41,6 +41,8 @@
     "@testing-library/react": "^11.0.2",
     "@testing-library/react-hooks": "^3.4.1",
     "@types/d3-timer": "^1.0.9",
+    "@types/enzyme": "^3.10.6",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/fscreen": "^1.0.1",
     "@types/lodash.throttle": "^4.1.6",
     "@types/node": "^12.12.26",
@@ -60,8 +62,6 @@
     "twilio-video": "^2.7.2"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.6",
-    "@types/enzyme-adapter-react-16": "^1.0.6",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.4",
     "enzyme-to-json": "^3.5.0",
