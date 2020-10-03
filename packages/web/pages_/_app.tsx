@@ -1,6 +1,6 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
-import {AppProps} from "next/app";
+import {AppProps, NextWebVitalsMetric} from "next/app";
 import Head from "next/head";
 import * as React from "react";
 import {RecoilRoot} from "recoil";
@@ -12,6 +12,7 @@ import LightTheme from "@sentrei/common/containers/LightTheme";
 import AuthContext from "@sentrei/common/context/AuthContext";
 import GlobalContext from "@sentrei/common/context/GlobalContext";
 import BackdropEmitter from "@sentrei/common/utils/backdrop";
+import {trackEvent} from "@sentrei/common/utils/segment";
 import SnackbarEmitter from "@sentrei/common/utils/snackbar";
 import Profile from "@sentrei/types/models/Profile";
 import User from "@sentrei/types/models/User";
@@ -64,5 +65,10 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
     </>
   );
 };
+
+export function reportWebVitals(metric: NextWebVitalsMetric): void {
+  const body = JSON.stringify(metric);
+  trackEvent("Web Vitals", body);
+}
 
 export default CustomApp;
