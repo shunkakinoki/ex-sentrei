@@ -1,3 +1,10 @@
+## [1.107.2](https://github.com/sentrei/sentrei/compare/v1.107.1...v1.107.2) (2020-10-03)
+
+### Performance Improvements
+
+- ⚡️ ini cloudbuild tag ([ba0ccee](https://github.com/sentrei/sentrei/commit/ba0ccee31d3a95d6d3c470570b70190ed6c33620))
+- ⚡️ run ([fcc787b](https://github.com/sentrei/sentrei/commit/fcc787bc394f43359994b03ddc5926ce236aab77))
+
 ## [1.107.1](https://github.com/sentrei/sentrei/compare/v1.107.0...v1.107.1) (2020-10-03)
 
 ### Performance Improvements
