@@ -10,7 +10,7 @@
         {
           "source": "**",
           "run": {
-            "serviceId": "sentrei-beta-web",
+            "serviceId": "sentrei-web",
             "region": "us-central1"
           }
         }

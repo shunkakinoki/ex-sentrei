@@ -39,7 +39,7 @@
         {
           "source": "**",
           "run": {
-            "serviceId": "sentrei-main-web",
+            "serviceId": "sentrei-web",
             "region": "us-central1"
           }
         }
