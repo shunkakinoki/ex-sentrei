@@ -1,3 +1,13 @@
+# [1.107.0](https://github.com/sentrei/sentrei/compare/v1.106.3...v1.107.0) (2020-10-03)
+
+### Features
+
+- 🎸 next.js web vitals ([3a3b7ff](https://github.com/sentrei/sentrei/commit/3a3b7ff7520c00655ee899478b72d13cb7489c64))
+
+### Performance Improvements
+
+- ⚡️ ini @sentrei/public tsconfig ([1382864](https://github.com/sentrei/sentrei/commit/1382864b3ad0b1102e73b52e6b476ba07fb05f80))
+
 ## [1.106.3](https://github.com/sentrei/sentrei/compare/v1.106.2...v1.106.3) (2020-10-03)
 
 ### Performance Improvements
