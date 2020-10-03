@@ -1,3 +1,9 @@
+## [1.107.1](https://github.com/sentrei/sentrei/compare/v1.107.0...v1.107.1) (2020-10-03)
+
+### Performance Improvements
+
+- ⚡️ remove docker gha ([4a80f12](https://github.com/sentrei/sentrei/commit/4a80f122526906f7fad4eaefee65d7004087ee37))
+
 # [1.107.0](https://github.com/sentrei/sentrei/compare/v1.106.3...v1.107.0) (2020-10-03)
 
 ### Features
