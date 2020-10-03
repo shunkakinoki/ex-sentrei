@@ -8,7 +8,7 @@
     "**/__tests__/*.ts",
     "**/__tests__/*.tsx",
     "**/*.stories.tsx",
-    "**/*.spec.ts",
-    "**/*.spec.tsx"
+    "**/*.test.ts",
+    "**/*.test.tsx"
   ]
 }
