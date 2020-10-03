@@ -13,20 +13,20 @@ steps:
         "-f",
         "packages/web/Dockerfile",
         "-t",
-        "gcr.io/$PROJECT_ID/$REPO_NAME",
+        "gcr.io/$PROJECT_ID/$REPO_NAME:$(echo $BRANCH_NAME | tr / -)",
         ".",
       ]
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME"]
+    args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME:$(echo $BRANCH_NAME | tr / -)"]
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
     args:
       [
         "run",
         "deploy",
-        "$REPO_NAME",
+        "$REPO_NAME-web",
         "--image",
-        "gcr.io/$PROJECT_ID/$REPO_NAME",
+        "gcr.io/$PROJECT_ID/$REPO_NAME:$(echo $BRANCH_NAME | tr / -)",
         "--region",
         "us-central1",
         "--platform",
