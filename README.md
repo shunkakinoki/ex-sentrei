@@ -31,6 +31,7 @@
 | Project | Package | Version |
 | ------- | ------- | ------- |
 | Common | [`packages/common`](packages/common) | [![version](https://img.shields.io/npm/v/@sentrei/common/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/common) |
+| Functions | [`packages/functions`](packages/functions) | [![version](https://img.shields.io/npm/v/@sentrei/functions/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/functions) |
 | Types | [`packages/types`](packages/@types) | [![version](https://img.shields.io/npm/v/@sentrei/types/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/types) |
 | UI | [`packages/ui`](packages/ui) | [![version](https://img.shields.io/npm/v/@sentrei/ui/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/ui) |
 | Video | [`packages/video`](packages/video) | [![version](https://img.shields.io/npm/v/@sentrei/video/latest.svg?color=success)](https://www.npmjs.com/package/@sentrei/video) |
