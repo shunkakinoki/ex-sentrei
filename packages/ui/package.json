@@ -21,8 +21,6 @@
     "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
-    "deploy": "yarn run deploy:storybook",
-    "deploy:storybook": "firebase deploy --only hosting:ui",
     "dev": "start-storybook -p 6006",
     "jest": "jest --coverage",
     "jest:watch": "jest --watch",
@@ -33,7 +31,6 @@
     "test:watch": "yarn run jest:watch",
     "tsc": "tsc --p tsconfig.build.json",
     "typescript": "yarn run clean && yarn run tsc",
-    "ui": "firebase use main && yarn run deploy",
     "watch": "yarn run tsc -w --preserveWatchOutput"
   },
   "dependencies": {
@@ -61,7 +58,6 @@
     "classnames": "^2.2.6",
     "clsx": "^1.1.1",
     "emoji-mart": "^3.0.0",
-    "firebase": "^7.19.1",
     "framer-motion": "^2.6.10",
     "next": "^9.5.3",
     "next-seo": "^4.7.3",
