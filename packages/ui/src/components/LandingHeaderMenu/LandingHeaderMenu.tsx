@@ -1,9 +1,9 @@
+import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import * as React from "react";
-
-import LandingHeaderMenuPopover from "@sentrei/ui/components/LandingHeaderMenuPopover";
 
 import LandingHeaderMenuStyles from "./LandingHeaderMenuStyles";
 
@@ -14,36 +14,50 @@ export interface Props {
 export default function LandingHeaderMenu({title}: Props): JSX.Element {
   const classes = LandingHeaderMenuStyles();
 
-  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
-
-  const handlePopoverOpen = (
-    event: React.MouseEvent<HTMLElement, MouseEvent>,
-  ): void => {
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
+    null,
+  );
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handlePopoverClose = (): void => {
+  const handleClose = (): void => {
     setAnchorEl(null);
   };
 
   const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
 
   return (
-    <Button
-      disableRipple
-      className={classes.button}
-      aria-owns={open ? "mouse-over-popover" : undefined}
-      aria-haspopup="true"
-      onMouseEnter={handlePopoverOpen}
-      onMouseLeave={handlePopoverClose}
-    >
-      <Typography>{title}</Typography>
-      <KeyboardArrowDownIcon />
-      <LandingHeaderMenuPopover
-        anchorEl={anchorEl}
+    <>
+      <Button
+        disableRipple
+        className={classes.button}
+        aria-describedby={id}
+        onMouseEnter={handleClick}
+        onClick={handleClose}
+      >
+        <Typography>{title}</Typography>
+        <KeyboardArrowDownIcon />
+      </Button>
+      <Popover
+        id={id}
         open={open}
-        onClose={handlePopoverClose}
-      />
-    </Button>
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "center",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+      >
+        <Box onMouseLeave={handleClose}>
+          <Typography>The content of the Popover.</Typography>
+        </Box>
+      </Popover>
+    </>
   );
 }
