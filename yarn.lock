@@ -5720,13 +5720,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-scroll@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@types/react-scroll/-/react-scroll-1.8.0.tgz#39de819f5f61540be2f7b36986d1ee8cdb718784"
-  integrity sha512-qeSk1fHZkOydpYPathIrQxsrLMH/xE5rdZ6dkLoceHYU38TspS/Hkua2xlmuQAgU6o3OIG+9IW6x+bmOXd2eCA==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-syntax-highlighter@11.0.4":
   version "11.0.4"
   resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.4.tgz#d86d17697db62f98046874f62fdb3e53a0bbc4cd"
@@ -22572,14 +22565,6 @@ react-rough-notation@^0.1.1:
   integrity sha512-Otu5j+anE9R90IaS4UoloPIy9841V51u0CMI+6xG5yZEWYmPHYHVPS5B50iFHIuOPgPDUqA2fVKNvglb4WKLHw==
   dependencies:
     rough-notation "^0.4.0"
-
-react-scroll@^1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.8.1.tgz#eb4052265f1606cf60855c981ebcfed1bc3beff3"
-  integrity sha512-UAKmawFHn+c7x/DoXuHqOsQ5xwNk2Dxv7vP8Ft41K2hglPWkshcSos0tMTr8704UkFqImoUGzMTdN4vuZXoqbw==
-  dependencies:
-    lodash.throttle "^4.1.1"
-    prop-types "^15.7.2"
 
 react-sizeme@^2.6.7:
   version "2.6.12"

@@ -11,12 +11,11 @@ import classNames from "classnames";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import {LandingKey, LandingType} from "@sentrei/types/models/Landing";
+import {LandingKey} from "@sentrei/types/models/Landing";
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
 import LandingHeaderButton from "@sentrei/ui/components/LandingHeaderButton";
 import LandingHeaderLogo from "@sentrei/ui/components/LandingHeaderLogo";
 import LandingHeaderMobileDialog from "@sentrei/ui/components/LandingHeaderMobileDialog";
-import LandingHeaderScrollButton from "@sentrei/ui/components/LandingHeaderScrollButton";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import PaperCupsWidget from "@sentrei/ui/components/PaperCupsWidget";
 import SegmentHead from "@sentrei/ui/components/SegmentHead";
@@ -28,14 +27,12 @@ export interface Props {
   logo: JSX.Element;
   papercups?: boolean;
   landingKey: LandingKey;
-  type?: LandingType;
 }
 
 export default function LandingHeader({
   logo,
   papercups = true,
   landingKey,
-  type = "default",
 }: Props): JSX.Element {
   const classes = LandingHeaderStyles();
   const {t} = useTranslation();
@@ -117,66 +114,22 @@ export default function LandingHeader({
               <div className={classes.spy}>
                 <Grid item>
                   <Hidden smDown implementation="css">
-                    {type === "about" && (
-                      <>
-                        <LandingHeaderScrollButton
-                          href="mission"
-                          title={t("header:about.mission")}
-                        />
-                        <LandingHeaderScrollButton
-                          href="core"
-                          title={t("header:about.core")}
-                        />
-                        <LandingHeaderScrollButton
-                          href="team"
-                          title={t("header:about.team")}
-                        />
-                        <LandingHeaderScrollButton
-                          href="investor"
-                          title={t("header:about.investor")}
-                        />
-                      </>
-                    )}
-                    {type === "default" && (
-                      <>
-                        <LandingHeaderButton
-                          href="/about"
-                          title={t("header:default.about")}
-                        />
-                        <LandingHeaderButton
-                          href="/analytics"
-                          title={t("header:default.analytics")}
-                        />
-                        <LandingHeaderButton
-                          href="/pricing"
-                          title={t("header:default.pricing")}
-                        />
-                        <LandingHeaderButton
-                          href="/support"
-                          title={t("header:default.support")}
-                        />
-                      </>
-                    )}
-                    {type === "landing" && (
-                      <>
-                        <LandingHeaderScrollButton
-                          href="product"
-                          title={t("header:landing.product")}
-                        />
-                        <LandingHeaderScrollButton
-                          href="testimonial"
-                          title={t("header:landing.testimonial")}
-                        />
-                        <LandingHeaderScrollButton
-                          href="pricing"
-                          title={t("header:landing.pricing")}
-                        />
-                        <LandingHeaderScrollButton
-                          href="faq"
-                          title={t("header:landing.faq")}
-                        />
-                      </>
-                    )}
+                    <LandingHeaderButton
+                      href="/about"
+                      title={t("header:default.about")}
+                    />
+                    <LandingHeaderButton
+                      href="/analytics"
+                      title={t("header:default.analytics")}
+                    />
+                    <LandingHeaderButton
+                      href="/pricing"
+                      title={t("header:default.pricing")}
+                    />
+                    <LandingHeaderButton
+                      href="/support"
+                      title={t("header:default.support")}
+                    />
                   </Hidden>
                 </Grid>
               </div>
