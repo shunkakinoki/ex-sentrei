@@ -12,8 +12,8 @@
     "support": "Support"
   },
   "header": {
-    "product": "Product",
     "login": "Log In",
+    "product": "Product",
     "signup": "Sign Up For Free"
   },
   "landing": {
