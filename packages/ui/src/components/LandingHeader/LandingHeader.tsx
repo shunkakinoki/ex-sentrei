@@ -15,6 +15,7 @@ import {LandingKey} from "@sentrei/types/models/Landing";
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
 import LandingHeaderButton from "@sentrei/ui/components/LandingHeaderButton";
 import LandingHeaderLogo from "@sentrei/ui/components/LandingHeaderLogo";
+import LandingHeaderMenu from "@sentrei/ui/components/LandingHeaderMenu";
 import LandingHeaderMobileDialog from "@sentrei/ui/components/LandingHeaderMobileDialog";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import PaperCupsWidget from "@sentrei/ui/components/PaperCupsWidget";
@@ -111,17 +112,10 @@ export default function LandingHeader({
           <Toolbar>
             <Grid container alignItems="center" justify="center">
               <LandingHeaderLogo logo={logo} href="/" />
-              <div className={classes.spy}>
+              <div className={classes.menu}>
                 <Grid item>
                   <Hidden smDown implementation="css">
-                    <LandingHeaderButton
-                      href="/about"
-                      title={t("header:default.about")}
-                    />
-                    <LandingHeaderButton
-                      href="/analytics"
-                      title={t("header:default.analytics")}
-                    />
+                    <LandingHeaderMenu title={t("header:header.product")} />
                     <LandingHeaderButton
                       href="/pricing"
                       title={t("header:default.pricing")}

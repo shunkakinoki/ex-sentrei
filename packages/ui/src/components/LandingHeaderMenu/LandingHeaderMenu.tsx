@@ -1,5 +1,6 @@
-import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import * as React from "react";
 
 import LandingHeaderMenuPopover from "@sentrei/ui/components/LandingHeaderMenuPopover";
@@ -28,7 +29,8 @@ export default function LandingHeaderMenu({title}: Props): JSX.Element {
   const open = Boolean(anchorEl);
 
   return (
-    <Box
+    <Button
+      disableRipple
       className={classes.button}
       aria-owns={open ? "mouse-over-popover" : undefined}
       aria-haspopup="true"
@@ -36,11 +38,12 @@ export default function LandingHeaderMenu({title}: Props): JSX.Element {
       onMouseLeave={handlePopoverClose}
     >
       <Typography>{title}</Typography>
+      <KeyboardArrowDownIcon />
       <LandingHeaderMenuPopover
         anchorEl={anchorEl}
         open={open}
         onClose={handlePopoverClose}
       />
-    </Box>
+    </Button>
   );
 }

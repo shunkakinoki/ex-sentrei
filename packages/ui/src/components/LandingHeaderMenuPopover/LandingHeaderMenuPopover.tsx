@@ -29,12 +29,12 @@ export default function LandingHeaderMenuPopover({
       open={open}
       anchorEl={anchorEl}
       anchorOrigin={{
-        vertical: "top",
-        horizontal: "left",
+        vertical: "bottom",
+        horizontal: "center",
       }}
       transformOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
+        vertical: "top",
+        horizontal: "center",
       }}
       onClose={onClose}
       disableRestoreFocus

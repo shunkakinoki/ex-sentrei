@@ -12,6 +12,7 @@
     "support": "Support"
   },
   "header": {
+    "product": "Product",
     "login": "Log In",
     "signup": "Sign Up For Free"
   },
