@@ -15,7 +15,9 @@ import {LandingKey} from "@sentrei/types/models/Landing";
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
 import LandingHeaderButton from "@sentrei/ui/components/LandingHeaderButton";
 import LandingHeaderLogo from "@sentrei/ui/components/LandingHeaderLogo";
+import LandingHeaderMenuCompany from "@sentrei/ui/components/LandingHeaderMenuCompany";
 import LandingHeaderMenuProduct from "@sentrei/ui/components/LandingHeaderMenuProduct";
+import LandingHeaderMenuResources from "@sentrei/ui/components/LandingHeaderMenuResources";
 import LandingHeaderMobileDialog from "@sentrei/ui/components/LandingHeaderMobileDialog";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import PaperCupsWidget from "@sentrei/ui/components/PaperCupsWidget";
@@ -115,8 +117,9 @@ export default function LandingHeader({
               <div className={classes.menu}>
                 <Grid item>
                   <Hidden smDown implementation="css">
+                    <LandingHeaderMenuCompany />
                     <LandingHeaderMenuProduct />
-                    <LandingHeaderMenuProduct />
+                    <LandingHeaderMenuResources />
                     <LandingHeaderButton
                       href="/support"
                       title={t("header:default.support")}

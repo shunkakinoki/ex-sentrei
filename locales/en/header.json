@@ -12,6 +12,7 @@
     "support": "Support"
   },
   "header": {
+    "company": "Company",
     "login": "Log In",
     "product": "Product",
     "resources": "Resources",
