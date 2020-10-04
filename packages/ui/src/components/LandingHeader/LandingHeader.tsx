@@ -45,6 +45,8 @@ export default function LandingHeader({
     mobileSetAnchorEl,
   ] = React.useState<null | HTMLElement>(null);
 
+  const [onTop, setOnTop] = React.useState(true);
+
   const appBarClasses = classNames({
     [classes.appBar]: true,
     [classes.transparent]: true,
@@ -59,23 +61,40 @@ export default function LandingHeader({
     mobileSetAnchorEl(null);
   };
 
-  const headerColorChange = (): void => {
-    const windowsScrollTop = window.pageYOffset;
-    if (windowsScrollTop > 0) {
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove(classes.transparent);
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.add(classes.paper);
-    } else {
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.add(classes.transparent);
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove(classes.paper);
+  const handleOnTop = (): void => {
+    document.body
+      .getElementsByTagName("header")[0]
+      .classList.remove(classes.transparent);
+    document.body
+      .getElementsByTagName("header")[0]
+      .classList.add(classes.paper);
+  };
+
+  const handleNotTop = (): void => {
+    document.body
+      .getElementsByTagName("header")[0]
+      .classList.add(classes.transparent);
+    document.body
+      .getElementsByTagName("header")[0]
+      .classList.remove(classes.paper);
+  };
+
+  const headerColorChange = (): false | void => {
+    const offset =
+      window.pageYOffset ||
+      (document.documentElement && document.documentElement.scrollTop) ||
+      document.body.scrollTop;
+
+    if (offset >= 30) {
+      handleOnTop();
+      if (!onTop) {
+        setOnTop(false);
+        return false;
+      }
+      return false;
     }
+    handleNotTop();
+    return setOnTop(true);
   };
 
   React.useEffect(() => {
