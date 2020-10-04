@@ -8,10 +8,14 @@ import LandingHeaderMenuPopover from "@sentrei/ui/components/LandingHeaderMenuPo
 import LandingHeaderMenuStyles from "./LandingHeaderMenuStyles";
 
 export interface Props {
+  children: React.ReactNode;
   title: string;
 }
 
-export default function LandingHeaderMenu({title}: Props): JSX.Element {
+export default function LandingHeaderMenu({
+  children,
+  title,
+}: Props): JSX.Element {
   const classes = LandingHeaderMenuStyles();
 
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
@@ -46,7 +50,7 @@ export default function LandingHeaderMenu({title}: Props): JSX.Element {
         open={open}
         onClose={handleClose}
       >
-        <Typography>sample</Typography>
+        {children}
       </LandingHeaderMenuPopover>
     </>
   );

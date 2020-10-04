@@ -115,11 +115,18 @@ export default function LandingHeader({
               <div className={classes.menu}>
                 <Grid item>
                   <Hidden smDown implementation="css">
-                    <LandingHeaderMenu title={t("header:header.product")} />
-                    <LandingHeaderButton
-                      href="/pricing"
-                      title={t("header:default.pricing")}
-                    />
+                    <LandingHeaderMenu title={t("header:header.product")}>
+                      <LandingHeaderButton
+                        href="/pricing"
+                        title={t("header:default.pricing")}
+                      />
+                    </LandingHeaderMenu>
+                    <LandingHeaderMenu title={t("header:header.resources")}>
+                      <LandingHeaderButton
+                        href="/pricing"
+                        title={t("header:default.pricing")}
+                      />
+                    </LandingHeaderMenu>
                     <LandingHeaderButton
                       href="/support"
                       title={t("header:default.support")}
