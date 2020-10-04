@@ -1,9 +1,9 @@
-import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import * as React from "react";
+
+import LandingHeaderMenuPopover from "@sentrei/ui/components/LandingHeaderMenuPopover";
 
 import LandingHeaderMenuStyles from "./LandingHeaderMenuStyles";
 
@@ -40,24 +40,14 @@ export default function LandingHeaderMenu({title}: Props): JSX.Element {
         <Typography>{title}</Typography>
         <KeyboardArrowDownIcon />
       </Button>
-      <Popover
+      <LandingHeaderMenuPopover
+        anchorEl={anchorEl}
         id={id}
         open={open}
-        anchorEl={anchorEl}
         onClose={handleClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "center",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "center",
-        }}
       >
-        <Box onMouseLeave={handleClose}>
-          <Typography>The content of the Popover.</Typography>
-        </Box>
-      </Popover>
+        <Typography>sample</Typography>
+      </LandingHeaderMenuPopover>
     </>
   );
 }
