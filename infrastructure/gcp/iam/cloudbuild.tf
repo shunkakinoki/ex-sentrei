@@ -1,6 +1,6 @@
-resource "google_project_iam_member" "cloud_build_cloud_build_service_agent" {
+resource "google_project_iam_member" "cloud_build_cloud_build_builds_buiilder" {
   project = "sentrei-${var.environment}"
-  role    = "roles/cloudbuild.serviceAgent"
+  role    = "roles/cloudbuild.builds.builder"
   member  = "serviceAccount:${data.google_project.project.number}@cloudbuild.gserviceaccount.com"
 }
 
