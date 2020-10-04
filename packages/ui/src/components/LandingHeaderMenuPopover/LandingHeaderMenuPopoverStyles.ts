@@ -5,6 +5,12 @@ const LandingHeaderMenuPopoverStyles = makeStyles((theme: Theme) =>
     button: {
       margin: theme.spacing(1),
     },
+    popover: {
+      pointerEvents: "none",
+    },
+    paper: {
+      padding: theme.spacing(1),
+    },
   }),
 );
 

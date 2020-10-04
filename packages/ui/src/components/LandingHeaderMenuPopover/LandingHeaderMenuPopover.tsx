@@ -1,3 +1,4 @@
+import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 
@@ -6,19 +7,41 @@ import MuiButton from "@sentrei/ui/components/MuiButton";
 import LandingHeaderMenuPopoverStyles from "./LandingHeaderMenuPopoverStyles";
 
 export interface Props {
-  href: string;
-  title: string;
+  anchorEl: HTMLElement | null;
+  open: boolean;
+  onClose: () => void;
 }
 
 export default function LandingHeaderMenuPopover({
-  href,
-  title,
+  anchorEl,
+  open,
+  onClose,
 }: Props): JSX.Element {
   const classes = LandingHeaderMenuPopoverStyles();
 
   return (
-    <MuiButton className={classes.button} href={href}>
-      <Typography>{title}</Typography>
-    </MuiButton>
+    <Popover
+      id="mouse-over-popover"
+      className={classes.popover}
+      classes={{
+        paper: classes.paper,
+      }}
+      open={open}
+      anchorEl={anchorEl}
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "left",
+      }}
+      transformOrigin={{
+        vertical: "bottom",
+        horizontal: "left",
+      }}
+      onClose={onClose}
+      disableRestoreFocus
+    >
+      <MuiButton className={classes.button} href="/about">
+        <Typography>About</Typography>
+      </MuiButton>
+    </Popover>
   );
 }
