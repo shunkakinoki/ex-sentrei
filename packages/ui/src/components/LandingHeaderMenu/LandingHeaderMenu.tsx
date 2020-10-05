@@ -41,6 +41,7 @@ export default function LandingHeaderMenu({
           [classes.primary]: open,
         })}
         aria-describedby={id}
+        onMouseOver={handleClick}
         onMouseEnter={handleClick}
         onClick={handleClose}
       >
