@@ -1,4 +1,18 @@
 {
+  "company": {
+    "about": {
+      "description": "Who we are",
+      "title": "About"
+    },
+    "analytics": {
+      "description": "Open analytics of our product",
+      "title": "Analytics"
+    },
+    "media": {
+      "description": "Media resources",
+      "title": "Media"
+    }
+  },
   "header": {
     "company": "Company",
     "login": "Log In",
