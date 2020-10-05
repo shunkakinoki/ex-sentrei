@@ -38,9 +38,6 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
         <MuiLink href="/media">
           <Typography gutterBottom>{t("footer:footer.media")}</Typography>
         </MuiLink>
-        <Link href="https://pioneer.sentrei.com" target="_blank" rel="noopener">
-          <Typography gutterBottom>{t("footer:footer.pioneer")}</Typography>
-        </Link>
         <MuiLink href="/support">
           <Typography gutterBottom>{t("footer:footer.support")}</Typography>
         </MuiLink>
@@ -61,6 +58,9 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
         <Typography variant="h6" gutterBottom>
           {t("footer:footer.resources")}
         </Typography>
+        <Link href="https://pioneer.sentrei.com" target="_blank" rel="noopener">
+          <Typography gutterBottom>{t("footer:footer.pioneer")}</Typography>
+        </Link>
         <Link
           href="https://github.com/sentrei/sentrei/releases"
           target="_blank"
