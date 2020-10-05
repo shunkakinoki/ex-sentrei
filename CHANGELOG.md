@@ -1,3 +1,10 @@
+## [1.109.2](https://github.com/sentrei/sentrei/compare/v1.109.1...v1.109.2) (2020-10-05)
+
+### Performance Improvements
+
+- ⚡️ footer ([470e130](https://github.com/sentrei/sentrei/commit/470e1302ae91e972b5968ad2e993fa3347fc3162))
+- ⚡️ refactor landing banner ([a599648](https://github.com/sentrei/sentrei/commit/a599648a7a5836a3aa7e6ebcac6ecdb39e5a4a4f))
+
 ## [1.109.1](https://github.com/sentrei/sentrei/compare/v1.109.0...v1.109.1) (2020-10-05)
 
 ### Performance Improvements
