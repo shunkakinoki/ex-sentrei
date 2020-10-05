@@ -1,44 +1,47 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import ListItem, {ListItemProps} from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 
 import Typography from "@material-ui/core/Typography";
-import Link from "next-translate/Link";
-import {LinkProps} from "next/link";
 import * as React from "react";
 
-export type MuiListItemProps = Omit<ListItemProps, "href" | "classes"> &
-  Pick<LinkProps, "href" | "as" | "prefetch"> & {
-    icon: JSX.Element;
-    title: string;
-    description?: string;
-  };
+import MuiListItem from "@sentrei/ui/components/MuiListItem";
 
-const LandingHeaderMenuItem = React.forwardRef<MuiListItemProps, any>(
-  ({href, as, prefetch, icon, title, description, ...props}, ref) => (
-    <Link href={href} as={as} prefetch={prefetch} passHref>
-      <ListItem button component="a" ref={ref} {...props}>
-        <ListItemIcon>{icon}</ListItemIcon>
-        <ListItemText
-          primary={
-            <Typography align="left" variant="subtitle1" color="primary">
-              {title}
+export interface Props {
+  href: string;
+  rel?: string;
+  target?: string;
+  icon: JSX.Element;
+  title: string;
+  description?: string;
+}
+
+const LandingHeaderMenuItem = ({
+  href,
+  rel,
+  target,
+  icon,
+  title,
+  description,
+}: Props): JSX.Element => {
+  return (
+    <MuiListItem href={href} rel={rel} target={target}>
+      <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemText
+        primary={
+          <Typography align="left" variant="subtitle1" color="primary">
+            {title}
+          </Typography>
+        }
+        secondary={
+          description && (
+            <Typography component="span" variant="body2" color="textPrimary">
+              {description}
             </Typography>
-          }
-          secondary={
-            description && (
-              <Typography component="span" variant="body2" color="textPrimary">
-                {description}
-              </Typography>
-            )
-          }
-        />
-      </ListItem>
-    </Link>
-  ),
-);
+          )
+        }
+      />
+    </MuiListItem>
+  );
+};
 
 export default LandingHeaderMenuItem;
