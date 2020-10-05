@@ -44,10 +44,10 @@ jobs:
           GIT_COMMITTER_NAME: "sentrei-bot"
           GIT_AUTHOR_EMAIL: "70007101+sentrei-bot@users.noreply.github.com"
           GIT_COMMITTER_EMAIL: "70007101+sentrei-bot@users.noreply.github.com"
-      - if: needs.context.outputs.branch != 'main'
+      - if: github.ref != 'refs/heads/main'
         run: |
           echo "::set-env name=DIST_TAG::${{ env.BRANCH_NAME }} "
-      - if: needs.context.outputs.branch == 'main'
+      - if: github.ref == 'refs/heads/main'
         run: |
           echo "::set-env name=DIST_TAG::latest"
       - run: |
