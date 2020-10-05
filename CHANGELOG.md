@@ -1,3 +1,16 @@
+# [1.110.0](https://github.com/sentrei/sentrei/compare/v1.109.2...v1.110.0) (2020-10-05)
+
+### Features
+
+- 🎸 ini landing outline ([0307892](https://github.com/sentrei/sentrei/commit/0307892fe7d6a1434bedd08e4cb21ff15764de99))
+
+### Performance Improvements
+
+- ⚡️ ini i18n landing outline ([259a92c](https://github.com/sentrei/sentrei/commit/259a92ce79d4f85978526ca1685de97bd98dfd4c))
+- ⚡️ refactor landing outline ([f7d2fe6](https://github.com/sentrei/sentrei/commit/f7d2fe6d0daed7cca90c11f935940060668a11a7))
+- ⚡️ refactor landing screen ([b6e8115](https://github.com/sentrei/sentrei/commit/b6e8115bbc0f9a014b568a1d76e77b950cd3443c))
+- ⚡️ revamp landing banner w/ screen ([c081c76](https://github.com/sentrei/sentrei/commit/c081c76e85cff648966180792939985c0eb07184))
+
 ## [1.109.2](https://github.com/sentrei/sentrei/compare/v1.109.1...v1.109.2) (2020-10-05)
 
 ### Performance Improvements
