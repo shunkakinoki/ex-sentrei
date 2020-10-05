@@ -1,3 +1,9 @@
+## [1.109.1](https://github.com/sentrei/sentrei/compare/v1.109.0...v1.109.1) (2020-10-05)
+
+### Performance Improvements
+
+- ⚡️ release ([a3f9ee0](https://github.com/sentrei/sentrei/commit/a3f9ee02121072b461b7841dc622feb766dede1b))
+
 # [1.109.0](https://github.com/sentrei/sentrei/compare/v1.108.0...v1.109.0) (2020-10-05)
 
 ### Features
