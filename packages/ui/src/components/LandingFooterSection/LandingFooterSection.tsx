@@ -38,12 +38,43 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
         <MuiLink href="/media">
           <Typography gutterBottom>{t("footer:footer.media")}</Typography>
         </MuiLink>
-        <Link href="https://pioneer.sentrei.com" target="_blank" rel="noopener">
-          <Typography gutterBottom>{t("footer:footer.pioneer")}</Typography>
-        </Link>
         <MuiLink href="/support">
           <Typography gutterBottom>{t("footer:footer.support")}</Typography>
         </MuiLink>
+      </Grid>
+      <Grid item xs={12} sm={3} md={2}>
+        <Typography variant="h6" gutterBottom>
+          {t("footer:footer.product")}
+        </Typography>
+        <MuiLink href="/demo">
+          <Typography gutterBottom>{t("footer:footer.demo")}</Typography>
+        </MuiLink>
+        <MuiLink href="/pitch">
+          <Typography gutterBottom>{t("footer:footer.pitch")}</Typography>
+        </MuiLink>
+        <MuiLink href="/pricing">
+          <Typography gutterBottom>{t("footer:footer.pricing")}</Typography>
+        </MuiLink>
+        <Typography variant="h6" gutterBottom>
+          {t("footer:footer.resources")}
+        </Typography>
+        <Link href="https://pioneer.sentrei.com" target="_blank" rel="noopener">
+          <Typography gutterBottom>{t("footer:footer.pioneer")}</Typography>
+        </Link>
+        <Link
+          href="https://github.com/sentrei/sentrei/releases"
+          target="_blank"
+          rel="noopener"
+        >
+          <Typography gutterBottom>{t("footer:footer.releases")}</Typography>
+        </Link>
+        <Link
+          href="https://github.com/sentrei/sentrei/projects/1"
+          target="_blank"
+          rel="noopener"
+        >
+          <Typography gutterBottom>{t("footer:footer.roadmap")}</Typography>
+        </Link>
       </Grid>
       <Grid item xs={12} sm={3} md={2}>
         <Typography variant="h6" gutterBottom>
@@ -60,34 +91,6 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
         <MuiLink href="/terms">
           <Typography gutterBottom>{t("footer:footer.terms")}</Typography>
         </MuiLink>
-      </Grid>
-      <Grid item xs={12} sm={3} md={2}>
-        <Typography variant="h6" gutterBottom>
-          {t("footer:footer.product")}
-        </Typography>
-        <MuiLink href="/demo">
-          <Typography gutterBottom>{t("footer:footer.demo")}</Typography>
-        </MuiLink>
-        <MuiLink href="/pitch">
-          <Typography gutterBottom>{t("footer:footer.pitch")}</Typography>
-        </MuiLink>
-        <MuiLink href="/pricing">
-          <Typography gutterBottom>{t("footer:footer.pricing")}</Typography>
-        </MuiLink>
-        <Link
-          href="https://github.com/sentrei/sentrei/releases"
-          target="_blank"
-          rel="noopener"
-        >
-          <Typography gutterBottom>{t("footer:footer.releases")}</Typography>
-        </Link>
-        <Link
-          href="https://github.com/sentrei/sentrei/projects/1"
-          target="_blank"
-          rel="noopener"
-        >
-          <Typography gutterBottom>{t("footer:footer.roadmap")}</Typography>
-        </Link>
       </Grid>
       <Grid item xs={12} sm={3} md={2}>
         <Typography variant="h6" gutterBottom>

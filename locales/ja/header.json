@@ -1,26 +1,52 @@
 {
-  "about": {
-    "core": "コア・バリュー",
-    "investor": "投資家",
-    "mission": "ミッション",
-    "team": "チーム"
-  },
-  "default": {
-    "about": "会社について",
-    "analytics": "アナリティクス",
-    "pricing": "価格表",
-    "support": "サポート"
+  "company": {
+    "about": {
+      "description": "私たちは誰ですか",
+      "title": "約"
+    },
+    "analytics": {
+      "description": "当社製品のオープン分析",
+      "title": "分析"
+    },
+    "media": {
+      "description": "メディアリソース",
+      "title": "メディア"
+    }
   },
   "header": {
+    "company": "会社",
     "login": "Log In",
-    "signup": "Sign Up"
+    "product": "製品",
+    "resources": "リソース",
+    "signup": "Sign Up",
+    "support": "サポート"
   },
-  "landing": {
-    "faq": "FAQ",
-    "features": "特徴",
-    "pricing": "料金",
-    "product": "プロダクト",
-    "testimonial": "お客様の声",
-    "title": "セントレイ"
+  "product": {
+    "demo": {
+      "description": "デモビデオをご覧ください",
+      "title": "デモ"
+    },
+    "pitch": {
+      "description": "製品の売り込みを見てください",
+      "title": "ピッチ"
+    },
+    "pricing": {
+      "description": "価格表をご覧ください",
+      "title": "価格設定"
+    }
+  },
+  "resources": {
+    "pioneer": {
+      "description": "私たちのオープンジャーナル",
+      "title": "開拓者"
+    },
+    "releases": {
+      "description": "製品リリースログ",
+      "title": "リリース"
+    },
+    "roadmap": {
+      "description": "公式製品ロードマップ",
+      "title": "ロードマップ"
+    }
   }
 }

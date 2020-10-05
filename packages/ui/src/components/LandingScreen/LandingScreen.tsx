@@ -1,3 +1,4 @@
+import Box from "@material-ui/core/Box";
 import * as React from "react";
 
 import LandingBanner from "@sentrei/ui/components/LandingBanner";
@@ -9,7 +10,6 @@ import LandingPricing from "@sentrei/ui/components/LandingPricing";
 import LandingProduct, {
   Props as LandingProductProps,
 } from "@sentrei/ui/components/LandingProduct";
-import LandingSpacing from "@sentrei/ui/components/LandingSpacing";
 import LandingTestimonial, {
   Props as LandingTestimonialProps,
 } from "@sentrei/ui/components/LandingTestimonial";
@@ -32,39 +32,25 @@ export default function LandingScreen({
   return (
     <>
       <LandingBanner />
-      <LandingSpacing />
-      <div id="product">
-        <LandingProduct
-          connectImg={connectImg}
-          dataImg={dataImg}
-          videoImg={videoImg}
-        />
-      </div>
-      <LandingSpacing />
-      <div id="feature">
-        <LandingFeature
-          timeImg={timeImg}
-          focusImg={focusImg}
-          goalImg={goalImg}
-        />
-      </div>
-      <LandingSpacing />
-      <div id="testimonial">
-        <LandingTestimonial
-          personOneImg={personOneImg}
-          personTwoImg={personTwoImg}
-          personThreeImg={personThreeImg}
-        />
-      </div>
-      <LandingSpacing />
-      <div id="pricing">
-        <LandingPricing />
-      </div>
-      <LandingSpacing />
-      <div id="faq">
-        <LandingFaq />
-      </div>
-      <LandingSpacing />
+      <Box p={3} />
+      <LandingProduct
+        connectImg={connectImg}
+        dataImg={dataImg}
+        videoImg={videoImg}
+      />
+      <Box p={3} />
+      <LandingFeature timeImg={timeImg} focusImg={focusImg} goalImg={goalImg} />
+      <Box p={3} />
+      <LandingTestimonial
+        personOneImg={personOneImg}
+        personTwoImg={personTwoImg}
+        personThreeImg={personThreeImg}
+      />
+      <Box p={3} />
+      <LandingPricing />
+      <Box p={3} />
+      <LandingFaq />
+      <Box p={3} />
     </>
   );
 }

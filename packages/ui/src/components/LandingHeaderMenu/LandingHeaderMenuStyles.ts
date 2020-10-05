@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const LandingHeaderStyles = makeStyles((theme: Theme) =>
+const LandingHeaderMenuStyles = makeStyles((theme: Theme) =>
   createStyles({
     button: {
       "&:hover": {
@@ -8,7 +8,8 @@ const LandingHeaderStyles = makeStyles((theme: Theme) =>
       },
       margin: theme.spacing(1),
     },
+    primary: {color: theme.palette.primary.main},
   }),
 );
 
-export default LandingHeaderStyles;
+export default LandingHeaderMenuStyles;

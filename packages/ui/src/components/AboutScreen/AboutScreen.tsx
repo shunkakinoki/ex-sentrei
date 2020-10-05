@@ -12,21 +12,13 @@ export default function AboutScreen(): JSX.Element {
   return (
     <>
       <Box p={1} />
-      <div id="mission">
-        <AboutMission />
-      </div>
+      <AboutMission />
       <Box p={5} />
-      <div id="core">
-        <AboutCore />
-      </div>
+      <AboutCore />
       <Box p={3} />
-      <div id="team">
-        <AboutTeam />
-      </div>
+      <AboutTeam />
       <Box p={3} />
-      <div id="investor">
-        <AboutInvestor />
-      </div>
+      <AboutInvestor />
       <Box p={3} />
       <AboutMessage />
       <Box p={3} />

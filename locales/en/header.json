@@ -1,26 +1,52 @@
 {
-  "about": {
-    "core": "Core Values",
-    "investor": "Investors",
-    "mission": "Mission",
-    "team": "Team"
-  },
-  "default": {
-    "about": "About",
-    "analytics": "Analytics",
-    "pricing": "Pricing",
-    "support": "Support"
+  "company": {
+    "about": {
+      "description": "Who we are",
+      "title": "About"
+    },
+    "analytics": {
+      "description": "Open analytics of our product",
+      "title": "Analytics"
+    },
+    "media": {
+      "description": "Media resources",
+      "title": "Media"
+    }
   },
   "header": {
+    "company": "Company",
     "login": "Log In",
-    "signup": "Sign Up For Free"
-  },
-  "landing": {
-    "faq": "FAQ",
-    "features": "Features",
-    "pricing": "Pricing",
     "product": "Product",
-    "testimonial": "Testimonials",
-    "title": "Sentrei"
+    "resources": "Resources",
+    "signup": "Sign Up For Free",
+    "support": "Support"
+  },
+  "product": {
+    "demo": {
+      "description": "See our demo video",
+      "title": "Demo"
+    },
+    "pitch": {
+      "description": "Take a look at the product pitch",
+      "title": "Pitch"
+    },
+    "pricing": {
+      "description": "See the pricing table",
+      "title": "Pricing"
+    }
+  },
+  "resources": {
+    "pioneer": {
+      "description": "Our open journal",
+      "title": "Pioneer"
+    },
+    "releases": {
+      "description": "Product release log",
+      "title": "Releases"
+    },
+    "roadmap": {
+      "description": "Official product roadmap",
+      "title": "Roadmap"
+    }
   }
 }

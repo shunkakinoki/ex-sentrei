@@ -15,5 +15,3 @@ export type LandingKey =
   | "support"
   | "terms"
   | "404";
-
-export type LandingType = "about" | "default" | "landing";

@@ -51,7 +51,7 @@ const AnalyticsPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <>
-      <SentreiHeader type="default" landingKey="analytics" />
+      <SentreiHeader landingKey="analytics" />
       <AnalyticsScreen
         hourData={JSON.parse(hourData) as Analytics.Get[]}
         dayData={JSON.parse(dayData) as Analytics.Get[]}

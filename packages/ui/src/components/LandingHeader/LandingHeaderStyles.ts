@@ -39,10 +39,10 @@ const LandingHeaderStyles = makeStyles((theme: Theme) =>
       },
       marginLeft: "auto",
     },
-    spy: {
+    menu: {
       display: "none",
       padding: theme.spacing(1),
-      [theme.breakpoints.up("sm")]: {
+      [theme.breakpoints.up("md")]: {
         display: "block",
       },
       "& .active": {
