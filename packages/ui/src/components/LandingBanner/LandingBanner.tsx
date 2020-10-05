@@ -51,6 +51,7 @@ export default function LandingBanner(): JSX.Element {
         {t("index:banner.bannerTextOne")}
       </Typography>
       <Typography
+        gutterBottom
         variant="h5"
         align="center"
         color="textSecondary"
