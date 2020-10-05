@@ -1,4 +1,5 @@
 import Container from "@material-ui/core/Container";
+import {useTheme} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
 import useTranslation from "next-translate/useTranslation";
@@ -10,6 +11,7 @@ import LandingOutlineStyles from "./LandingOutlineStyles";
 
 export default function LandingOutline(): JSX.Element {
   const {t} = useTranslation();
+  const theme = useTheme();
   const classes = LandingOutlineStyles();
 
   return (
@@ -18,13 +20,16 @@ export default function LandingOutline(): JSX.Element {
         <div className={classes.container}>
           <Typography className={classes.typography}>
             {t("index:outline.problem.one")}
+            &nbsp;
             <RoughNotation
               animationDelay={300}
               animationDuration={3000}
-              color="secondary-light"
+              color={theme.palette.error.light}
               text={t("index:outline.problem.rough")}
-              type="highlight"
+              strokeWidth={9}
+              type="underline"
             />
+            &nbsp;
             {t("index:outline.problem.two")}
           </Typography>
         </div>
