@@ -1,26 +1,52 @@
 {
-  "about": {
-    "core": "核心价值",
-    "investor": "投资人",
-    "mission": "任务",
-    "team": "球队"
-  },
-  "default": {
-    "about": "关于",
-    "analytics": "分析工具",
-    "pricing": "价钱",
-    "support": "支持"
+  "company": {
+    "about": {
+      "description": "我们是谁",
+      "title": "关于"
+    },
+    "analytics": {
+      "description": "我们产品的开放分析",
+      "title": "分析工具"
+    },
+    "media": {
+      "description": "媒体资源",
+      "title": "媒体"
+    }
   },
   "header": {
+    "company": "公司",
     "login": "登入",
-    "signup": "免费注册"
-  },
-  "landing": {
-    "faq": "常问问题",
-    "features": "特征",
-    "pricing": "价钱",
     "product": "产品",
-    "testimonial": "感言",
-    "title": "森特雷"
+    "resources": "资源资源",
+    "signup": "免费注册",
+    "support": "支持"
+  },
+  "product": {
+    "demo": {
+      "description": "观看我们的演示视频",
+      "title": "演示版"
+    },
+    "pitch": {
+      "description": "看一下产品间距",
+      "title": "沥青"
+    },
+    "pricing": {
+      "description": "查看价格表",
+      "title": "价钱"
+    }
+  },
+  "resources": {
+    "pioneer": {
+      "description": "我们的开放日记",
+      "title": "先锋"
+    },
+    "releases": {
+      "description": "产品发布日志",
+      "title": "发布"
+    },
+    "roadmap": {
+      "description": "官方产品路线图",
+      "title": "路线图"
+    }
   }
 }
