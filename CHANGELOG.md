@@ -1,3 +1,15 @@
+# [1.109.0](https://github.com/sentrei/sentrei/compare/v1.108.0...v1.109.0) (2020-10-05)
+
+### Features
+
+- 🎸 ini mui list item ([4a15103](https://github.com/sentrei/sentrei/commit/4a151035c2f1423df27ba785acaab8c269917f3b))
+
+### Performance Improvements
+
+- ⚡️ adjust landing header menu item to dark mode ([7e8cfda](https://github.com/sentrei/sentrei/commit/7e8cfda19a397324bcd4f2ee93d42303b3241426))
+- ⚡️ ini mouse over for landing header menu ([6880ca7](https://github.com/sentrei/sentrei/commit/6880ca715a18b164b246759f5a3155c64f0f37c1))
+- ⚡️ refactor header descriptions ([0692dd4](https://github.com/sentrei/sentrei/commit/0692dd45bc3b101453c6725af8cbe02f1c7fe567))
+
 # [1.108.0](https://github.com/sentrei/sentrei/compare/v1.107.2...v1.108.0) (2020-10-05)
 
 ### Features
