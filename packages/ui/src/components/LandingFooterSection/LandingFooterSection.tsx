@@ -47,22 +47,6 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
       </Grid>
       <Grid item xs={12} sm={3} md={2}>
         <Typography variant="h6" gutterBottom>
-          {t("footer:footer.legal")}
-        </Typography>
-        <SegmentManager />
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <Link onClick={openConsentManager}>
-          <Typography gutterBottom>{t("footer:footer.cookies")}</Typography>
-        </Link>
-        <MuiLink href="/privacy">
-          <Typography gutterBottom>{t("footer:footer.privacy")}</Typography>
-        </MuiLink>
-        <MuiLink href="/terms">
-          <Typography gutterBottom>{t("footer:footer.terms")}</Typography>
-        </MuiLink>
-      </Grid>
-      <Grid item xs={12} sm={3} md={2}>
-        <Typography variant="h6" gutterBottom>
           {t("footer:footer.product")}
         </Typography>
         <MuiLink href="/demo">
@@ -74,6 +58,9 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
         <MuiLink href="/pricing">
           <Typography gutterBottom>{t("footer:footer.pricing")}</Typography>
         </MuiLink>
+        <Typography variant="h6" gutterBottom>
+          {t("footer:footer.resources")}
+        </Typography>
         <Link
           href="https://github.com/sentrei/sentrei/releases"
           target="_blank"
@@ -88,6 +75,22 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
         >
           <Typography gutterBottom>{t("footer:footer.roadmap")}</Typography>
         </Link>
+      </Grid>
+      <Grid item xs={12} sm={3} md={2}>
+        <Typography variant="h6" gutterBottom>
+          {t("footer:footer.legal")}
+        </Typography>
+        <SegmentManager />
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <Link onClick={openConsentManager}>
+          <Typography gutterBottom>{t("footer:footer.cookies")}</Typography>
+        </Link>
+        <MuiLink href="/privacy">
+          <Typography gutterBottom>{t("footer:footer.privacy")}</Typography>
+        </MuiLink>
+        <MuiLink href="/terms">
+          <Typography gutterBottom>{t("footer:footer.terms")}</Typography>
+        </MuiLink>
       </Grid>
       <Grid item xs={12} sm={3} md={2}>
         <Typography variant="h6" gutterBottom>
