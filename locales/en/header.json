@@ -34,5 +34,19 @@
       "description": "See the pricing table",
       "title": "Pricing"
     }
+  },
+  "resources": {
+    "pioneer": {
+      "description": "Our open journal",
+      "title": "Pioneer"
+    },
+    "releases": {
+      "description": "Product release log",
+      "title": "Releases"
+    },
+    "roadmap": {
+      "description": "Official product roadmap",
+      "title": "Roadmap"
+    }
   }
 }
