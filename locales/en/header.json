@@ -9,15 +9,15 @@
   },
   "product": {
     "demo": {
-      "description": "See our demo video.",
+      "description": "See our demo video",
       "title": "Demo"
     },
     "pitch": {
-      "description": "Take a look at the product pitch.",
+      "description": "Take a look at the product pitch",
       "title": "Pitch"
     },
     "pricing": {
-      "description": "See the pricing table.",
+      "description": "See the pricing table",
       "title": "Pricing"
     }
   }
