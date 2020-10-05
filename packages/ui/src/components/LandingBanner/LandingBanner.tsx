@@ -51,6 +51,7 @@ export default function LandingBanner(): JSX.Element {
         {t("index:banner.bannerTextOne")}
       </Typography>
       <Typography
+        gutterBottom
         variant="h5"
         align="center"
         color="textSecondary"
@@ -75,7 +76,7 @@ export default function LandingBanner(): JSX.Element {
       >
         {t("index:banner.bannerTextThree")}
       </Typography>
-      <Box pt={3} />
+      <Box py={1} />
       <Grid container justify="center" direction="row" spacing={1}>
         <Grid item xs={12} md={6}>
           <div className={classes.item}>
