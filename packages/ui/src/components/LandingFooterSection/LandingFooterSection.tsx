@@ -55,6 +55,8 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
         <MuiLink href="/pricing">
           <Typography gutterBottom>{t("footer:footer.pricing")}</Typography>
         </MuiLink>
+      </Grid>
+      <Grid item xs={12} sm={3} md={2}>
         <Typography variant="h6" gutterBottom>
           {t("footer:footer.resources")}
         </Typography>
@@ -92,13 +94,13 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
           <Typography gutterBottom>{t("footer:footer.terms")}</Typography>
         </MuiLink>
       </Grid>
-      <Grid item xs={12} sm={3} md={2}>
+      <Grid item xs={12} sm={4} md={2}>
         <Typography variant="h6" gutterBottom>
           {t("footer:footer.preferences")}
         </Typography>
         <LanguageButton />
       </Grid>
-      <Grid item xs={12} sm={3} md={2}>
+      <Grid item xs={12} sm={8} md={2}>
         {logo}
         <Typography
           gutterBottom
