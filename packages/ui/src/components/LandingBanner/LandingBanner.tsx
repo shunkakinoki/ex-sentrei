@@ -38,9 +38,7 @@ export default function LandingBanner(): JSX.Element {
 
   return (
     <Container maxWidth="sm" component="main">
-      <Typography component="h1" variant="h1" align="center">
-        <LandingBannerGradient />
-      </Typography>
+      <LandingBannerGradient />
       <Box p={1} />
       <Typography
         variant="h5"

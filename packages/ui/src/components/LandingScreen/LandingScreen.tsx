@@ -3,6 +3,7 @@ import * as React from "react";
 
 import LandingBanner from "@sentrei/ui/components/LandingBanner";
 import LandingFaq from "@sentrei/ui/components/LandingFaq";
+import LandingOutline from "@sentrei/ui/components/LandingOutline";
 import LandingPricing from "@sentrei/ui/components/LandingPricing";
 import LandingProduct, {
   Props as LandingProductProps,
@@ -18,7 +19,9 @@ export default function LandingScreen({
   return (
     <>
       <LandingBanner />
-      <Box p={3} />
+      <Box p={5} />
+      <LandingOutline />
+      <Box p={6} />
       <LandingProduct
         connectImg={connectImg}
         dataImg={dataImg}

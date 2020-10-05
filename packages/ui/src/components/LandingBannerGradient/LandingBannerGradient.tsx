@@ -10,7 +10,7 @@ export default function LandingBannerGradient(): JSX.Element {
   const classes = LandingBannerGradientStyles();
 
   return (
-    <>
+    <Typography align="center" component="h1" variant="h1">
       <div className={classes.container}>
         <Typography className={classes.typography}>
           {t("index:banner.bannerHeaderOne")}
@@ -41,6 +41,6 @@ export default function LandingBannerGradient(): JSX.Element {
           {t("index:banner.bannerHeaderThree")}
         </div>
       </div>
-    </>
+    </Typography>
   );
 }
