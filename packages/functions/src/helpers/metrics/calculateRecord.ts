@@ -43,11 +43,7 @@ const calculateRecord = (
     return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
   }
 
-  if (
-    nowDate.getDate() !== updatedDate.getDate() &&
-    nowDate.getHours() !== updatedDate.getHours() &&
-    getWeekNumber(nowDate) !== getWeekNumber(updatedDate)
-  ) {
+  if (getWeekNumber(nowDate) !== getWeekNumber(updatedDate)) {
     metricsData = {
       ...metricsData,
       period: {
