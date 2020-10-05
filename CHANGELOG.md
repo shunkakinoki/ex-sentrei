@@ -1,3 +1,34 @@
+# [1.108.0](https://github.com/sentrei/sentrei/compare/v1.107.2...v1.108.0) (2020-10-05)
+
+### Features
+
+- 🎸 complete landing header menu company ([8c8c3e1](https://github.com/sentrei/sentrei/commit/8c8c3e13fd3a05c10737459e693f7783be5f8e2c))
+- 🎸 complete refactor landing scroll components ([68de957](https://github.com/sentrei/sentrei/commit/68de957d68ea72fab8a93832e06ad39f5fa72f70))
+- 🎸 completely refactor header button & type ([e14496a](https://github.com/sentrei/sentrei/commit/e14496a73d1fe7d9c6a3e25c77d68280ba857cae))
+- 🎸 ini landing header menu ([1eb8207](https://github.com/sentrei/sentrei/commit/1eb820751258776dc798a755922a5b3d9653bc7f))
+- 🎸 ini landing header menu company & resources ([377ff94](https://github.com/sentrei/sentrei/commit/377ff949493c3087fbb36edd6a8907a16c0e8a51))
+- 🎸 ini landing header menu component ([5101484](https://github.com/sentrei/sentrei/commit/510148486702c57c9169da8391a001b4fea0af6e))
+- 🎸 ini landing header menu product ([30bcad3](https://github.com/sentrei/sentrei/commit/30bcad3ea125c6258fdee2e6c42f39993ec93e03))
+- 🎸 ini landing header menu product ([4b894a9](https://github.com/sentrei/sentrei/commit/4b894a99fef7c1ccaf6ea10fccaaf7453c4bdd34))
+- 🎸 ini landing header menu resources ([5b9a421](https://github.com/sentrei/sentrei/commit/5b9a42105afa67093874963ae846da89feae4bfb))
+- 🎸 ini proper landing header menu popover ([53ba61c](https://github.com/sentrei/sentrei/commit/53ba61c9a4dfb65f00e16adaea65e5108c16e7e6))
+- 🎸 ini scroll header react hook ([b2f933d](https://github.com/sentrei/sentrei/commit/b2f933dc467e1624e713fe84f1c9cd3b65615995))
+- 🎸 refactor landing header menu popover ([00ff346](https://github.com/sentrei/sentrei/commit/00ff346644ee21a6ae52d8a8605510c8e0be86f9))
+
+### Performance Improvements
+
+- ⚡️ ini hover primary for header menu button ([10988bb](https://github.com/sentrei/sentrei/commit/10988bbbca19d29e70f2f2d5bd4253184756818a))
+- ⚡️ ini i18n header & footer ([afaaae3](https://github.com/sentrei/sentrei/commit/afaaae32b37a278c03e46d420920a85ddfc5f796))
+- ⚡️ ini landing header menu ([a3dd688](https://github.com/sentrei/sentrei/commit/a3dd6883c0d7b422700e420c3ce127563c25e76a))
+- ⚡️ ini landing header menu primary ([9cf3940](https://github.com/sentrei/sentrei/commit/9cf39406501dc9f3e1b123e0f95e6d173d79546d))
+- ⚡️ ini landing menu popover ([f93feb8](https://github.com/sentrei/sentrei/commit/f93feb8952daaf97a1672e1fd8b24b5f8fe34931))
+- ⚡️ ini proper landing header mouuse ([3f0e0a6](https://github.com/sentrei/sentrei/commit/3f0e0a6bf610166aa70463625503ad7bacf00109))
+- ⚡️ refactor calculate record ([1f217d7](https://github.com/sentrei/sentrei/commit/1f217d7e269e71413d2c2fe6557b408cb81c9b08))
+- ⚡️ refactor footer pioneer ([ebdced8](https://github.com/sentrei/sentrei/commit/ebdced81282d2dc93c9371171e0b43f6435e0931))
+- ⚡️ refactor footer section ([d72e86a](https://github.com/sentrei/sentrei/commit/d72e86ab81ace9eb3d4ab7153ef969695af5249f))
+- ⚡️ refactor sentry environment ([7e9b99c](https://github.com/sentrei/sentrei/commit/7e9b99c3f6256f7e1d3bb7d87eb1bc5112e6ce6a))
+- ⚡️ reini header button hover primary ([e9e6feb](https://github.com/sentrei/sentrei/commit/e9e6febb277a3759f7d6663466f2c5dec0d65a46))
+
 ## [1.107.2](https://github.com/sentrei/sentrei/compare/v1.107.1...v1.107.2) (2020-10-03)
 
 ### Performance Improvements
