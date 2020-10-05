@@ -3811,10 +3811,10 @@
     "@opentelemetry/core" "^0.10.2"
     "@opentelemetry/resources" "^0.10.2"
 
-"@papercups-io/chat-widget@^1.1.0-beta.0":
-  version "1.1.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@papercups-io/chat-widget/-/chat-widget-1.1.0-beta.0.tgz#65b8f0b15c1b2354f25dec54639984e2e10eeac5"
-  integrity sha512-TA6CkGFy1Mn73LUARHGohCySO/Dl0WrCF16lnBFTxjOoM2m1ttba7rwctuJkJNGKNtoB84cp0XHsq+QXHwMmHA==
+"@papercups-io/chat-widget@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@papercups-io/chat-widget/-/chat-widget-1.1.0.tgz#0c7ec385b0dbbcfd37b092d63a9e1689329d1871"
+  integrity sha512-38Ksj3rAiK44FD3+5yXFrunliJwEqFtLY6+RUYrdUrKAQluyaXsOJd7RqNk0MALCuQiO3DLD/xQv1x+2Mw5Fgw==
   dependencies:
     framer-motion "^2.0.1"
     phoenix "^1.5.3"
