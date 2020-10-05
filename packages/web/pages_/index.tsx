@@ -10,9 +10,6 @@ import SentreiFooter from "@sentrei/web/components/SentreiFooter";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import ConnectPicture from "@sentrei/web/images/svg/ConnectPicture";
 import DataPicture from "@sentrei/web/images/svg/DataPicture";
-import FocusPicture from "@sentrei/web/images/svg/FocusPicture";
-import GoalPicture from "@sentrei/web/images/svg/GoalPicture";
-import TimePicture from "@sentrei/web/images/svg/TimePicture";
 import VideoPicture from "@sentrei/web/images/svg/VideoPicture";
 
 const Index: NextPage = () => {
@@ -30,12 +27,6 @@ const Index: NextPage = () => {
         connectImg={<ConnectPicture />}
         dataImg={<DataPicture />}
         videoImg={<VideoPicture />}
-        timeImg={<TimePicture />}
-        focusImg={<FocusPicture />}
-        goalImg={<GoalPicture />}
-        personOneImg={<FocusPicture />}
-        personTwoImg={<GoalPicture />}
-        personThreeImg={<TimePicture />}
       />
       <SentreiFooter />
     </>

@@ -6,7 +6,7 @@
     "bannerTextOne": "A dedicated virtual workspace for teams",
     "bannerTextRough": "visualize your work",
     "bannerTextThree": "- The workspace visualization platform -",
-    "bannerTextTwo": "that helps you ",
+    "bannerTextTwo": "that helps you",
     "googleText": "Sign up with Google",
     "startText": "Get Started Now (Beta)"
   },
@@ -27,6 +27,14 @@
     "titleOne": "Unlimited Time",
     "titleThree": "Meet personal goals",
     "titleTwo": "Focus Oriented"
+  },
+  "outline": {
+    "problem": {
+      "one": "It's",
+      "rough": "hard",
+      "two": "to see what's going on in remote work."
+    },
+    "solution": "We think we can change that."
   },
   "product": {
     "bottomSubTitle": "Our data analytics team will track everyone's presence on the workspace and present you with real-time updates for team productivity and efficiency, so that you can get your work done.",

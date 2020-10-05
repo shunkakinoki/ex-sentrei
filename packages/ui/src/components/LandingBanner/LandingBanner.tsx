@@ -38,9 +38,7 @@ export default function LandingBanner(): JSX.Element {
 
   return (
     <Container maxWidth="sm" component="main">
-      <Typography component="h1" variant="h1" align="center">
-        <LandingBannerGradient />
-      </Typography>
+      <LandingBannerGradient />
       <Box p={1} />
       <Typography
         variant="h5"
@@ -58,8 +56,9 @@ export default function LandingBanner(): JSX.Element {
         className={classes.text}
       >
         {t("index:banner.bannerTextTwo")}
+        &nbsp;
         <RoughNotation
-          animationDelay={3000}
+          animationDelay={300}
           animationDuration={3000}
           color="secondary-light"
           text={t("index:banner.bannerTextRough")}

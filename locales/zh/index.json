@@ -28,6 +28,14 @@
     "titleThree": "达到个人目标",
     "titleTwo": "关注焦点"
   },
+  "outline": {
+    "problem": {
+      "one": "它的",
+      "rough": "硬",
+      "two": "看看远程工作中发生了什么。"
+    },
+    "solution": "我们认为我们可以改变这一点。"
+  },
   "product": {
     "bottomSubTitle": "我们的数据分析团队将跟踪每个人在工作区中的存在，并向您提供实时更新，以提高团队的工作效率",
     "bottomTitleOne": " ",
