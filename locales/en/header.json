@@ -1,16 +1,4 @@
 {
-  "about": {
-    "core": "Core Values",
-    "investor": "Investors",
-    "mission": "Mission",
-    "team": "Team"
-  },
-  "default": {
-    "about": "About",
-    "analytics": "Analytics",
-    "pricing": "Pricing",
-    "support": "Support"
-  },
   "header": {
     "company": "Company",
     "login": "Log In",
@@ -19,12 +7,18 @@
     "signup": "Sign Up For Free",
     "support": "Support"
   },
-  "landing": {
-    "faq": "FAQ",
-    "features": "Features",
-    "pricing": "Pricing",
-    "product": "Product",
-    "testimonial": "Testimonials",
-    "title": "Sentrei"
+  "product": {
+    "demo": {
+      "description": "See our demo video.",
+      "title": "Demo"
+    },
+    "pitch": {
+      "description": "Take a look at the product pitch.",
+      "title": "Pitch"
+    },
+    "pricing": {
+      "description": "See the pricing table.",
+      "title": "Pricing"
+    }
   }
 }

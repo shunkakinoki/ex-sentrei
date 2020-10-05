@@ -122,7 +122,7 @@ export default function LandingHeader({
                     <LandingHeaderMenuResources />
                     <LandingHeaderButton
                       href="/support"
-                      title={t("header:default.support")}
+                      title={t("header:header.support")}
                     />
                   </Hidden>
                 </Grid>
