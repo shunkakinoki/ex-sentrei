@@ -59,7 +59,7 @@ export default function LandingBanner(): JSX.Element {
       >
         {t("index:banner.bannerTextTwo")}
         <RoughNotation
-          animationDelay={3000}
+          animationDelay={300}
           animationDuration={3000}
           color="secondary-light"
           text={t("index:banner.bannerTextRough")}
