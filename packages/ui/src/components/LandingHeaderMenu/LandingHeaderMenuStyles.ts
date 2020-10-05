@@ -8,6 +8,7 @@ const LandingHeaderMenuStyles = makeStyles((theme: Theme) =>
       },
       margin: theme.spacing(1),
     },
+    primary: {color: theme.palette.primary.main},
   }),
 );
 

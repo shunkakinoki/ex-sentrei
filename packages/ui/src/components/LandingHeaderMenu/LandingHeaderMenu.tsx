@@ -1,6 +1,7 @@
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import clsx from "clsx";
 import * as React from "react";
 
 import LandingHeaderMenuPopover from "@sentrei/ui/components/LandingHeaderMenuPopover";
@@ -36,7 +37,9 @@ export default function LandingHeaderMenu({
     <>
       <Button
         disableRipple
-        className={classes.button}
+        className={clsx(classes.button, {
+          [classes.primary]: open,
+        })}
         aria-describedby={id}
         onMouseEnter={handleClick}
         onClick={handleClose}
