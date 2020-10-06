@@ -6,6 +6,8 @@ import useTranslation from "next-translate/useTranslation";
 import getConfig from "next/config";
 import * as React from "react";
 
+import {trackEvent} from "@sentrei/common/utils/segment";
+
 const {publicRuntimeConfig} = getConfig();
 const accountId = publicRuntimeConfig.PAPERCUPS_ID;
 
@@ -35,6 +37,12 @@ export default function PaperCupsWidget({
         greeting={t("papercups:papercups.greeting")}
         primaryColor={theme.palette.primary.main}
         defaultIsOpen={defaultIsOpen}
+        onChatOpened={(): void => trackEvent("Papercups Widget Opened")}
+        onChatClosed={(): void => trackEvent("Papercups Widget Closed")}
+        onMessageSent={(mes): void => trackEvent("Papercups Message Sent", mes)}
+        onMessageReceived={(mes): void =>
+          trackEvent("Papercups Message Recevied", mes)
+        }
         customer={{
           name: customerName || "",
           email: customerEmail || "",
