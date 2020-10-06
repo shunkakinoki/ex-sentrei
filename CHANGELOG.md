@@ -1,3 +1,13 @@
+# [1.112.0](https://github.com/sentrei/sentrei/compare/v1.111.0...v1.112.0) (2020-10-06)
+
+### Features
+
+- 🎸 completely revamp segment ([0d4af9b](https://github.com/sentrei/sentrei/commit/0d4af9b980b8ad6d05d46fe8998ea882b38cb4de))
+
+### Performance Improvements
+
+- ⚡️ ini displayName field ([6c64097](https://github.com/sentrei/sentrei/commit/6c640979be05c463eddafeaf656d76abab537cf8))
+
 # [1.111.0](https://github.com/sentrei/sentrei/compare/v1.110.0...v1.111.0) (2020-10-06)
 
 ### Features
