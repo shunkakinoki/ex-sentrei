@@ -1,3 +1,14 @@
+# [1.115.0](https://github.com/sentrei/sentrei/compare/v1.114.2...v1.115.0) (2020-10-06)
+
+### Features
+
+- 🎸 complete migrate license to gnu gpl v3 ([3a19784](https://github.com/sentrei/sentrei/commit/3a197842e626774b8492926feafb6ec627c9fa8e))
+
+### Performance Improvements
+
+- ⚡️ ini day pioneer ([4a174d4](https://github.com/sentrei/sentrei/commit/4a174d4ddf828f4c3e4f128a2cab32915d0402ac))
+- ⚡️ ini vuepress day ([db76eb2](https://github.com/sentrei/sentrei/commit/db76eb26f19c35f8b75a95df8d6cf5b649c17516))
+
 ## [1.114.2](https://github.com/sentrei/sentrei/compare/v1.114.1...v1.114.2) (2020-10-06)
 
 ### Performance Improvements
