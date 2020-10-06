@@ -35,7 +35,7 @@ const BRANCH =
 
 const nextConfig = {
   target: "experimental-serverless-trace",
-  trailingSlash: false,
+  trailingSlash: true,
   publicRuntimeConfig: {
     DATA_CLIENT_ID: process.env.DATA_CLIENT_ID,
     PAPERCUPS_ID: process.env.PAPERCUPS_ID,
