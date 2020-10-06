@@ -1,3 +1,9 @@
+## [1.112.1](https://github.com/sentrei/sentrei/compare/v1.112.0...v1.112.1) (2020-10-06)
+
+### Performance Improvements
+
+- ⚡️ trailing slash true ([5fbaffb](https://github.com/sentrei/sentrei/commit/5fbaffb6ede5074ab5d026f8f2e5e374f2849d5a))
+
 # [1.112.0](https://github.com/sentrei/sentrei/compare/v1.111.0...v1.112.0) (2020-10-06)
 
 ### Features
