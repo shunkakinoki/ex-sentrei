@@ -70,7 +70,7 @@ export function reportWebVitals(metric: NextWebVitalsMetric): void {
   const {id, name, label, value} = metric;
   trackEvent(metric.name, {
     event_category:
-      label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
+      label === "web-vital" ? "Web Vitals" : "Next.js Custom Metric",
     value: Math.round(name === "CLS" ? value * 1000 : value),
     event_label: id,
     non_interaction: true,
