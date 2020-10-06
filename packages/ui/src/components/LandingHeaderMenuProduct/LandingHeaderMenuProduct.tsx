@@ -12,7 +12,7 @@ export default function LandingHeaderMenuProduct(): JSX.Element {
   const {t} = useTranslation();
 
   return (
-    <LandingHeaderMenu title={t("header:header.product")}>
+    <LandingHeaderMenu title={t("header:header.product")} type="product">
       <List dense>
         <LandingHeaderMenuItem
           href="/demo"
