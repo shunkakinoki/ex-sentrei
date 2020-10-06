@@ -1,3 +1,9 @@
+## [1.114.1](https://github.com/sentrei/sentrei/compare/v1.114.0...v1.114.1) (2020-10-06)
+
+### Performance Improvements
+
+- ⚡️ update track event react hook ([46835d5](https://github.com/sentrei/sentrei/commit/46835d53cbf8afb0891663b4c4737c9e9e4f1521))
+
 # [1.114.0](https://github.com/sentrei/sentrei/compare/v1.113.0...v1.114.0) (2020-10-06)
 
 ### Features
