@@ -39,6 +39,10 @@ export default function PaperCupsWidget({
         defaultIsOpen={defaultIsOpen}
         onChatOpened={(): void => trackEvent("Papercups Widget Opened")}
         onChatClosed={(): void => trackEvent("Papercups Widget Closed")}
+        onMessageSent={(mes): void => trackEvent("Papercups Message Sent", mes)}
+        onMessageReceived={(mes): void =>
+          trackEvent("Papercups Message Recevied", mes)
+        }
         customer={{
           name: customerName || "",
           email: customerEmail || "",

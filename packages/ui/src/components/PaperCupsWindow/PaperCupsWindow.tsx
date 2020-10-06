@@ -38,6 +38,12 @@ export default function PaperCupsWidget({
           primaryColor={theme.palette.primary.main}
           onChatOpened={(): void => trackEvent("Papercups Window Opened")}
           onChatClosed={(): void => trackEvent("Papercups Window Closed")}
+          onMessageSent={(mes): void =>
+            trackEvent("Papercups Message Sent", mes)
+          }
+          onMessageReceived={(mes): void =>
+            trackEvent("Papercups Message Recevied", mes)
+          }
           customer={{
             name: customerName || "",
             email: customerEmail || "",
