@@ -1,3 +1,16 @@
+# [1.111.0](https://github.com/sentrei/sentrei/compare/v1.110.0...v1.111.0) (2020-10-06)
+
+### Features
+
+- 🎸 ini event for papercups components ([7762eb6](https://github.com/sentrei/sentrei/commit/7762eb67a6f5139d108578619f8aaa5c264f0b51))
+- 🎸 refactor report web vitals ([aded6c5](https://github.com/sentrei/sentrei/commit/aded6c5247f780bb7d169d2b5e5598868fbb704c))
+
+### Performance Improvements
+
+- ⚡️ ini message event ([4ab4864](https://github.com/sentrei/sentrei/commit/4ab486474a03fdf2e3f71305a5394c72ba4e3513))
+- ⚡️ refactor chat window paper elevation ([93e41a9](https://github.com/sentrei/sentrei/commit/93e41a9aad39a57a615604f2e444732aa6b56cf6))
+- ⚡️ upgrade papercups widget ([0b5b55a](https://github.com/sentrei/sentrei/commit/0b5b55ab878c2f8783e90ab8703ea634247050bc))
+
 # [1.110.0](https://github.com/sentrei/sentrei/compare/v1.109.2...v1.110.0) (2020-10-05)
 
 ### Features
