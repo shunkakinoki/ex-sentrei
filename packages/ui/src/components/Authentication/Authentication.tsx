@@ -45,6 +45,7 @@ const Authentication = (): null => {
 
     identifyUser(user.uid, {
       avatar: user.photo,
+      displayName: user.name,
       name: user.name,
       email: user.email,
       userId: user.uid,

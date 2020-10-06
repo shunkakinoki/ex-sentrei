@@ -21,7 +21,6 @@ import LandingHeaderMenuResources from "@sentrei/ui/components/LandingHeaderMenu
 import LandingHeaderMobileDialog from "@sentrei/ui/components/LandingHeaderMobileDialog";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 import PaperCupsWidget from "@sentrei/ui/components/PaperCupsWidget";
-import SegmentHead from "@sentrei/ui/components/SegmentHead";
 import SeoLanding from "@sentrei/ui/components/SeoLanding";
 
 import LandingHeaderStyles from "./LandingHeaderStyles";
@@ -106,7 +105,6 @@ export default function LandingHeader({
 
   return (
     <>
-      <SegmentHead />
       <SeoLanding landingKey={landingKey} />
       {papercups && <PaperCupsWidget />}
       <div className={classes.grow}>
