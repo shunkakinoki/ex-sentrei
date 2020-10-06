@@ -1,3 +1,9 @@
+## [1.114.2](https://github.com/sentrei/sentrei/compare/v1.114.1...v1.114.2) (2020-10-06)
+
+### Performance Improvements
+
+- ⚡️ refactor landing outline color gray ([dafcbae](https://github.com/sentrei/sentrei/commit/dafcbae1c55ca89aa3a7bcca893332b11923fe9b))
+
 ## [1.114.1](https://github.com/sentrei/sentrei/compare/v1.114.0...v1.114.1) (2020-10-06)
 
 ### Performance Improvements
