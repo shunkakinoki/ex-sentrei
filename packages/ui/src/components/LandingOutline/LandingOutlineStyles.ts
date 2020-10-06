@@ -2,13 +2,16 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 import {GradientTop, GradientBottom} from "@sentrei/common/const/color";
 
-const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
+const LandingOutlineStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       position: "relative",
     },
     typography: {
-      color: theme.palette.grey[700],
+      color:
+        theme.palette.type === "light"
+          ? theme.palette.grey[800]
+          : theme.palette.grey[600],
       position: "relative",
       fontFamily: "-apple-system, system-ui, BlinkMacSystemFont, Roboto",
       fontSize: 60,
@@ -34,4 +37,4 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default LandingBannerGradientStyles;
+export default LandingOutlineStyles;
