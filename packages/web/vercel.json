@@ -4,7 +4,7 @@
   "cleanUrls": true,
   "public": false,
   "scope": "sentrei",
-  "trailingSlash": false,
+  "trailingSlash": true,
   "github": {
     "enabled": false,
     "autoJobCancelation": true,
