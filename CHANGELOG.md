@@ -1,3 +1,15 @@
+# [1.113.0](https://github.com/sentrei/sentrei/compare/v1.112.1...v1.113.0) (2020-10-06)
+
+### Features
+
+- 🎸 revamp custom events ([b82a508](https://github.com/sentrei/sentrei/commit/b82a5080d891ba25997bb129a15b4f73033d1759))
+- 🎸 upgrade next packages ([34e46ad](https://github.com/sentrei/sentrei/commit/34e46adb7f497ca8d8aff566da6ad653a70f57dc))
+
+### Performance Improvements
+
+- ⚡️ reini next compose plugins ([42c2341](https://github.com/sentrei/sentrei/commit/42c2341551fa4244b2d68a4d8533fb35cd81a334))
+- ⚡️ revert trailing trash ([879381d](https://github.com/sentrei/sentrei/commit/879381d645a6e0d3a69451f4f66f44b51eff5702))
+
 ## [1.112.1](https://github.com/sentrei/sentrei/compare/v1.112.0...v1.112.1) (2020-10-06)
 
 ### Performance Improvements
