@@ -28,7 +28,7 @@ export default function LandingBanner(): JSX.Element {
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
-        trackEvent("Sign In", {provider: "google"});
+        trackEvent("Signed In", {provider: "google"});
         if (query.redirect) {
           push(String(query.redirect));
         }
