@@ -73,6 +73,16 @@ module.exports = {
         children: readWeekFileList("2020"),
       },
       {
+        title: "2020/10",
+        collapsable: true,
+        children: readDayFileList("2020", "10"),
+      },
+      {
+        title: "2020/09",
+        collapsable: true,
+        children: readDayFileList("2020", "09"),
+      },
+      {
         title: "2020/08",
         collapsable: true,
         children: readDayFileList("2020", "08"),
