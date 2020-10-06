@@ -1,3 +1,9 @@
+# [1.114.0](https://github.com/sentrei/sentrei/compare/v1.113.0...v1.114.0) (2020-10-06)
+
+### Features
+
+- 🎸 ini landing header menu event ([b8b70fb](https://github.com/sentrei/sentrei/commit/b8b70fb64dcc33ee9edd3db5f7037eceefb3a0ec))
+
 # [1.113.0](https://github.com/sentrei/sentrei/compare/v1.112.1...v1.113.0) (2020-10-06)
 
 ### Features
