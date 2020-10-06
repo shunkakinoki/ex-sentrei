@@ -1,3 +1,9 @@
+## [1.115.1](https://github.com/sentrei/sentrei/compare/v1.115.0...v1.115.1) (2020-10-06)
+
+### Performance Improvements
+
+- ⚡️ ini vercel main.sentrei.com ([a1a9259](https://github.com/sentrei/sentrei/commit/a1a925921a3b192efbbcc824450625a95bebef52))
+
 # [1.115.0](https://github.com/sentrei/sentrei/compare/v1.114.2...v1.115.0) (2020-10-06)
 
 ### Features
