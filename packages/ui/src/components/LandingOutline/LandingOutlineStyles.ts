@@ -2,7 +2,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 import {GradientTop, GradientBottom} from "@sentrei/common/const/color";
 
-const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
+const LandingOutlineStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       position: "relative",
@@ -37,4 +37,4 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default LandingBannerGradientStyles;
+export default LandingOutlineStyles;
