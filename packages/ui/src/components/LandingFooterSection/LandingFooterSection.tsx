@@ -4,7 +4,6 @@ import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 
-import {openConsentManager} from "@segment/consent-manager";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 import UseAnimations from "react-useanimations";
@@ -14,7 +13,6 @@ import twitter from "react-useanimations/lib/twitter";
 
 import LanguageButton from "@sentrei/ui/components/LanguageButton";
 import MuiLink from "@sentrei/ui/components/MuiLink";
-import SegmentManager from "@sentrei/ui/components/SegmentManager";
 
 export interface Props {
   logo: JSX.Element;
@@ -82,11 +80,6 @@ export default function LandingFooterSection({logo}: Props): JSX.Element {
         <Typography variant="h6" gutterBottom>
           {t("footer:footer.legal")}
         </Typography>
-        <SegmentManager />
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <Link onClick={openConsentManager}>
-          <Typography gutterBottom>{t("footer:footer.cookies")}</Typography>
-        </Link>
         <MuiLink href="/privacy">
           <Typography gutterBottom>{t("footer:footer.privacy")}</Typography>
         </MuiLink>
