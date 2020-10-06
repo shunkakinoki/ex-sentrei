@@ -35,7 +35,7 @@ const OneTap = ({
       .signInWithCredential(FirebaseCredential)
       .then(() => {
         backdrop("loading");
-        trackEvent("Sign In", {provider: "onetap"});
+        trackEvent("Signed In", {provider: "onetap"});
         if (inviteId && spaceId) {
           auth.onAuthStateChanged(() => {
             invokeMemberSpace(spaceId, inviteId);

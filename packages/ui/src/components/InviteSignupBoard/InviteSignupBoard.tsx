@@ -63,7 +63,7 @@ export default function InviteSignupBoard({
     signinWithGoogle(lang)
       .then(() => {
         snackbar("dismiss");
-        trackEvent("Sign Up", {provider: "google"});
+        trackEvent("Signed Up", {provider: "google"});
         auth.onAuthStateChanged(() => {
           invokeMemberSpace(spaceId, invite.id);
         });
@@ -80,7 +80,7 @@ export default function InviteSignupBoard({
       signup(data.email, data.password, lang)
         .then(() => {
           backdrop("loading");
-          trackEvent("Sign Up", {provider: "email"});
+          trackEvent("Signed Up", {provider: "email"});
           auth.onAuthStateChanged(() => {
             invokeMemberSpace(spaceId, invite.id);
           });
