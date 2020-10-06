@@ -8,7 +8,10 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
       position: "relative",
     },
     typography: {
-      color: theme.palette.grey[700],
+      color:
+        theme.palette.type === "light"
+          ? theme.palette.grey[800]
+          : theme.palette.grey[600],
       position: "relative",
       fontFamily: "-apple-system, system-ui, BlinkMacSystemFont, Roboto",
       fontSize: 60,
