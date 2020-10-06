@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/sentrei/sentrei.git"
   },
-  "license": "MIT",
+  "license": "GNU GPL V3",
   "author": "Shun Kakinoki",
   "workspaces": {
     "packages": [
