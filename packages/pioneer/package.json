@@ -7,7 +7,7 @@
     "url": "https://github.com/sentrei/sentrei.git",
     "directory": "packages/pioneer"
   },
-  "license": "MIT",
+  "license": "GNU GPL V3",
   "author": "Shun Kakinoki",
   "scripts": {
     "build": "vuepress build src",
