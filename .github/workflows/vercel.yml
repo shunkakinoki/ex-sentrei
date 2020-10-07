@@ -46,8 +46,6 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: "--prod"
-          alias-domains: |
-            https://main.sentrei.com
       - if: success() && github.ref == 'refs/heads/main'
         uses: chrnorm/deployment-status@releases/v1
         with:
