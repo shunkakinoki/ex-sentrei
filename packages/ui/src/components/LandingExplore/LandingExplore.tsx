@@ -6,7 +6,7 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-export default function LandingOutline(): JSX.Element {
+export default function LandingExplore(): JSX.Element {
   const {t} = useTranslation();
   const theme = useTheme();
 
