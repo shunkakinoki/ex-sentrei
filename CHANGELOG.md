@@ -1,3 +1,9 @@
+## [1.116.1](https://github.com/sentrei/sentrei/compare/v1.116.0...v1.116.1) (2020-10-07)
+
+### Performance Improvements
+
+- ⚡️ ini mobile header ([08573d4](https://github.com/sentrei/sentrei/commit/08573d43c0d7d898304d162948d8fe9c67265f4a))
+
 # [1.116.0](https://github.com/sentrei/sentrei/compare/v1.115.1...v1.116.0) (2020-10-07)
 
 ### Features
