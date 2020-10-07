@@ -16,9 +16,8 @@ const LandingTimelinePointStyles = makeStyles((theme: Theme) =>
       margin: 0,
     },
     rootLine: {
-      minHeight: theme.spacing(15),
+      minHeight: theme.spacing(10),
     },
-
     icon: {
       color: "white",
     },
