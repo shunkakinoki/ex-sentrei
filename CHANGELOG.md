@@ -1,3 +1,14 @@
+# [1.117.0](https://github.com/sentrei/sentrei/compare/v1.116.1...v1.117.0) (2020-10-07)
+
+### Features
+
+- 🎸 ini japanese i18n ([ee284da](https://github.com/sentrei/sentrei/commit/ee284da32c70df32dc05f5461a8c438d9f923318))
+- 🎸 ini landing header support section ([d3d72b3](https://github.com/sentrei/sentrei/commit/d3d72b38402b44d40a3f89e237beef5d6e1a8ae3))
+
+### Performance Improvements
+
+- ⚡️ vercel action to master (tmp) ([7cd9a70](https://github.com/sentrei/sentrei/commit/7cd9a70f9acd75c414610786d157f3f751b6ea98))
+
 ## [1.116.1](https://github.com/sentrei/sentrei/compare/v1.116.0...v1.116.1) (2020-10-07)
 
 ### Performance Improvements
