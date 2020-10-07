@@ -13,6 +13,8 @@ import Skeleton from "@material-ui/lab/Skeleton";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import {trackEvent} from "@sentrei/common/utils/segment";
+
 import {AppTabModel} from "@sentrei/types/models/AppTab";
 import Profile from "@sentrei/types/models/Profile";
 import AppFeedback from "@sentrei/ui/components/AppFeedback";
@@ -68,26 +70,46 @@ export default function AppBar({
 
   const handleFeedbackClick = (event: React.MouseEvent<HTMLElement>): void => {
     feedbackSetAnchorEl(event.currentTarget);
+    trackEvent("Open App Menu", {type: "feedback"});
   };
   const handleListClick = (event: React.MouseEvent<HTMLElement>): void => {
     listSetAnchorEl(event.currentTarget);
+    trackEvent("Open App Menu", {type: "list"});
   };
   const handleMobileClick = (event: React.MouseEvent<HTMLElement>): void => {
     mobileSetAnchorEl(event.currentTarget);
+    trackEvent("Open App Menu", {type: "mobile"});
   };
   const handleOtherClick = (event: React.MouseEvent<HTMLElement>): void => {
     otherSetAnchorEl(event.currentTarget);
+    trackEvent("Open App Menu", {type: "other"});
   };
   const handleProfileClick = (event: React.MouseEvent<HTMLElement>): void => {
     profileSetAnchorEl(event.currentTarget);
+    trackEvent("Open App Menu", {type: "profile"});
   };
 
   const handleClose = (): void => {
-    feedbackSetAnchorEl(null);
-    listSetAnchorEl(null);
-    mobileSetAnchorEl(null);
-    otherSetAnchorEl(null);
-    profileSetAnchorEl(null);
+    if (feedbackAnchorEl) {
+      feedbackSetAnchorEl(null);
+      trackEvent("Close App Menu", {type: "feedback"});
+    }
+    if (listAnchorEl) {
+      listSetAnchorEl(null);
+      trackEvent("Close App Menu", {type: "list"});
+    }
+    if (mobileAnchorEl) {
+      mobileSetAnchorEl(null);
+      trackEvent("Close App Menu", {type: "mobile"});
+    }
+    if (otherAnchorEl) {
+      otherSetAnchorEl(null);
+      trackEvent("Close App Menu", {type: "other"});
+    }
+    if (profileAnchorEl) {
+      profileSetAnchorEl(null);
+      trackEvent("Close App Menu", {type: "profile"});
+    }
   };
 
   return (
