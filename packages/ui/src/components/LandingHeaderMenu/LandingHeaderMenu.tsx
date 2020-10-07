@@ -26,23 +26,19 @@ export default function LandingHeaderMenu({
     null,
   );
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    setAnchorEl(event.currentTarget);
+    if (!anchorEl) {
+      setAnchorEl(event.currentTarget);
+      trackEvent("Open Landing Menu", {type});
+    }
   };
 
   const handleClose = (): void => {
     setAnchorEl(null);
+    trackEvent("Close Landing Menu", {type});
   };
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
-
-  React.useEffect(() => {
-    if (open) {
-      trackEvent("Open Landing Menu", {type});
-    } else {
-      trackEvent("Close Landing Menu", {type});
-    }
-  }, [open, type]);
 
   return (
     <>
