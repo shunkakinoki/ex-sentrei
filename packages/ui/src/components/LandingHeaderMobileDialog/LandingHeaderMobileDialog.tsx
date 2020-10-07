@@ -66,19 +66,19 @@ export default function LandingHeaderMobileDialog({
         <ListItemIcon>
           <InfoIcon fontSize="small" />
         </ListItemIcon>
-        <ListItemText primary={t("header:default.about")} />
+        <ListItemText primary={t("header:header.about")} />
       </MuiMenuItem>
       <MuiMenuItem href="/pricing">
         <ListItemIcon>
           <LocalOfferIcon fontSize="small" />
         </ListItemIcon>
-        <ListItemText primary={t("header:default.pricing")} />
+        <ListItemText primary={t("header:header.pricing")} />
       </MuiMenuItem>
       <MuiMenuItem href="/support">
         <ListItemIcon>
           <AccessibilityIcon fontSize="small" />
         </ListItemIcon>
-        <ListItemText primary={t("header:default.support")} />
+        <ListItemText primary={t("header:header.support")} />
       </MuiMenuItem>
       <Divider />
       <MenuItem disabled>
