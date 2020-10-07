@@ -1,3 +1,9 @@
+# [1.118.0](https://github.com/sentrei/sentrei/compare/v1.117.0...v1.118.0) (2020-10-07)
+
+### Features
+
+- 🎸 upgrade next v9.5.4 ([30c9e2d](https://github.com/sentrei/sentrei/commit/30c9e2dbe0f1b4786c4fab787d06a7c93a565950))
+
 # [1.117.0](https://github.com/sentrei/sentrei/compare/v1.116.1...v1.117.0) (2020-10-07)
 
 ### Features
