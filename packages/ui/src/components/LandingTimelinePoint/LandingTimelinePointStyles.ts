@@ -6,7 +6,7 @@ import {
   GradientBottom,
 } from "@sentrei/common/const/color";
 
-const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
+const LandingTimelinePointStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       color: `linear-gradient(90deg, ${GradientTop}, ${GradientMiddle})`,
@@ -57,4 +57,4 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default LandingBannerGradientStyles;
+export default LandingTimelinePointStyles;

@@ -12,14 +12,14 @@ import clsx from "clsx";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
-import LandingTimelineDotStyles from "./LandingTimelineDotStyles";
+import LandingTimelinePointStyles from "./LandingTimelinePointStyles";
 
 export interface Props {
   type: "bond" | "focus" | "work";
 }
 
-export default function LandingTimelineDot({type}: Props): JSX.Element {
-  const classes = LandingTimelineDotStyles();
+export default function LandingTimelinePoint({type}: Props): JSX.Element {
+  const classes = LandingTimelinePointStyles();
   const {t} = useTranslation();
 
   return (
