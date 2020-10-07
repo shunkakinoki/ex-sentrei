@@ -122,8 +122,8 @@ export default function LandingHeader({
                     <LandingHeaderMenuProduct />
                     <LandingHeaderMenuResources />
                     <LandingHeaderButton
-                      href="/support"
-                      title={t("header:header.support")}
+                      href="/pricing"
+                      title={t("header:header.pricing")}
                     />
                   </Hidden>
                 </Grid>

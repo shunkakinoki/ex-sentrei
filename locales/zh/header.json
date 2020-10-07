@@ -16,10 +16,10 @@
   "header": {
     "company": "公司",
     "login": "登入",
+    "pricing": "价钱",
     "product": "产品",
     "resources": "资源资源",
-    "signup": "免费注册",
-    "support": "支持"
+    "signup": "免费注册"
   },
   "product": {
     "demo": {

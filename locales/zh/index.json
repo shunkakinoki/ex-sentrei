@@ -53,11 +53,6 @@
     "topTitleThree": "结合在一起",
     "topTitleTwo": "聚焦时"
   },
-  "screen": {
-    "labelOne": "键",
-    "labelThree": "工作",
-    "labelTwo": "焦点"
-  },
   "slider": {
     "titleOne": "这些团队的人",
     "titleThree": " Sentrei",
@@ -77,5 +72,10 @@
     "titleOne": "很棒的产品",
     "titleThree": "A Great Product",
     "titleTwo": "A Great Product"
+  },
+  "timeline": {
+    "bond": "键",
+    "focus": "焦点",
+    "work": "工作"
   }
 }
