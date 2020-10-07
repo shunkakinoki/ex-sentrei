@@ -8,6 +8,16 @@ import {
 
 const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
   createStyles({
+    root: {
+      color: `linear-gradient(90deg, ${GradientTop}, ${GradientMiddle})`,
+      display: "flex",
+      alignSelf: "baseline",
+      borderWidth: 0,
+      margin: 0,
+    },
+    seperator: {
+      backgroundColor: theme.palette.grey[400],
+    },
     typography: {
       color: theme.palette.grey[800],
       position: "relative",
@@ -18,19 +28,12 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
       lineHeight: "1.1em",
       letterSpacing: -3,
     },
-    gradient: {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      opacity: 1,
-      backgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      WebkitBackgroundClip: "text",
+    icon: {
+      color: "white",
     },
     top: {
-      color: `linear-gradient(90deg, ${GradientTop}, ${GradientMiddle})`,
+      background: `linear-gradient(90deg, ${GradientTop}, ${GradientMiddle})`,
+      fontSize: theme.typography.pxToRem(35),
     },
     center: {
       backgroundImage: `linear-gradient(90deg, ${GradientMiddle}, ${GradientBottom})`,
