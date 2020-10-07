@@ -2,7 +2,7 @@
   "landing": {
     "404": "404お探しのページが見つかりませんでした",
     "about": "会社について",
-    "analytics": "分析",
+    "analytics": "アナリティクス",
     "credits": "ありがとうございます",
     "demo": "デモ",
     "invite": "招待",
@@ -23,7 +23,7 @@
   },
   "space": {
     "activity": "アクティビティ",
-    "analytics": "分析",
+    "analytics": "アナリティクス",
     "home": "ホーム",
     "leaderboard": "リーダーボード",
     "members": "会員",

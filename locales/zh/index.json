@@ -25,7 +25,7 @@
   "feature": {
     "sectionTitle": "特征",
     "subTitleOne": "每个人都可以随时访问工作空间",
-    "subTitleThree": "跟踪花费在虚拟工作区上的每日分析以实现您的个人目标",
+    "subTitleThree": "跟踪花费在虚拟工作区上的每日アナリティクス以实现您的个人目标",
     "subTitleTwo": "我们提供了针对焦点的功能，因此您不会轻易分心",
     "titleOne": "无限时间",
     "titleThree": "达到个人目标",
@@ -35,14 +35,14 @@
     "problem": {
       "one": "它的",
       "rough": "硬",
-      "two": "看看远程工作中发生了什么。"
+      "two": "看看远程工作中发生了什么"
     },
-    "solution": "我们认为我们可以改变这一点。"
+    "solution": "我们认为我们可以改变这一点"
   },
   "product": {
-    "bottomSubTitle": "我们的数据分析团队将跟踪每个人在工作区中的存在，并向您提供实时更新，以提高团队的工作效率",
+    "bottomSubTitle": "我们的数据アナリティクス团队将跟踪每个人在工作区中的存在，并向您提供实时更新，以提高团队的工作效率",
     "bottomTitleOne": " ",
-    "bottomTitleThree": "分析和数据",
+    "bottomTitleThree": "アナリティクス和数据",
     "bottomTitleTwo": "深入的",
     "centerSubTitle": "厌倦了分钟受限的视频会议应用程序？我们的虚拟工作空间将永远为您服务-就像现实世界一样",
     "centerTitleOne": " ",
