@@ -53,10 +53,10 @@
     "topTitleThree": " while focusing",
     "topTitleTwo": "Bond together"
   },
-  "screen": {
-    "labelOne": "Bond",
-    "labelThree": "Work",
-    "labelTwo": "Focus"
+  "timeline": {
+    "bond": "Bond",
+    "focus": "Focus",
+    "work": "Work"
   },
   "slider": {
     "titleOne": "The people from these teams are ",

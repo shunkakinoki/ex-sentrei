@@ -19,6 +19,10 @@ export default function LandingScreen(): JSX.Element {
       <Box p={5} />
       <LandingTimelineDot type="bond" />
       <Box p={3} />
+      <LandingTimelineDot type="focus" />
+      <Box p={3} />
+      <LandingTimelineDot type="work" />
+      <Box p={3} />
       <LandingPricing />
       <Box p={3} />
       <LandingFaq />

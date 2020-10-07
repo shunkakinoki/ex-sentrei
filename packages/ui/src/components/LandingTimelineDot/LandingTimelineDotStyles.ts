@@ -16,21 +16,19 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
       margin: 0,
     },
     rootLine: {
-      background: `linear-gradient(0deg, ${GradientTop},  rgba(255,0,0,0))`,
       minHeight: theme.spacing(15),
     },
+
     icon: {
       color: "white",
     },
     typography: {
-      color: theme.palette.grey[800],
       position: "relative",
       fontFamily: "-apple-system, system-ui, BlinkMacSystemFont, Roboto",
-      fontSize: 50,
+      fontSize: 40,
       fontWeight: 900,
       margin: 0,
       lineHeight: "1.1em",
-      letterSpacing: -3,
     },
     gradient: {
       opacity: 1,
@@ -39,11 +37,22 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
       WebkitBackgroundClip: "text",
     },
     top: {
-      background: `linear-gradient(90deg, ${GradientTop}, ${GradientMiddle})`,
-      fontSize: theme.typography.pxToRem(35),
+      backgroundImage: `linear-gradient(90deg, ${GradientTop}, ${GradientMiddle})`,
+    },
+    topLine: {
+      background: `linear-gradient(0deg, ${GradientTop}, rgba(255,0,0,0))`,
     },
     center: {
       backgroundImage: `linear-gradient(90deg, ${GradientMiddle}, ${GradientBottom})`,
+    },
+    centerLine: {
+      background: `linear-gradient(0deg, ${GradientMiddle}, rgba(255,0,0,0))`,
+    },
+    bottom: {
+      backgroundImage: `linear-gradient(90deg, ${GradientBottom}, ${GradientTop})`,
+    },
+    bottomLine: {
+      background: `linear-gradient(0deg, ${GradientBottom}, rgba(255,0,0,0))`,
     },
   }),
 );

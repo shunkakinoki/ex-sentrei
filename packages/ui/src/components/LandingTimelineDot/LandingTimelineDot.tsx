@@ -26,29 +26,49 @@ export default function LandingTimelineDot({type}: Props): JSX.Element {
     <>
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineConnector classes={{root: classes.rootLine}} />
+          <TimelineConnector
+            classes={{root: classes.rootLine}}
+            className={clsx({
+              [classes.topLine]: type === "bond",
+              [classes.centerLine]: type === "focus",
+              [classes.bottomLine]: type === "work",
+            })}
+          />
         </TimelineSeparator>
         <TimelineContent />
       </TimelineItem>
       <Box display="flex" alignItems="center" justifyContent="center">
-        <IconButton className={classes.top} disabled>
+        <IconButton
+          className={clsx({
+            [classes.top]: type === "bond",
+            [classes.center]: type === "focus",
+            [classes.bottom]: type === "work",
+          })}
+          disabled
+        >
           {type === "bond" && (
-            <LooksOneIcon className={classes.icon} fontSize="large" />
+            <LooksOneIcon className={classes.icon} fontSize="small" />
           )}
           {type === "focus" && (
-            <LooksTwoIcon className={classes.icon} fontSize="large" />
+            <LooksTwoIcon className={classes.icon} fontSize="small" />
           )}
           {type === "work" && (
-            <Looks3Icon className={classes.icon} fontSize="large" />
+            <Looks3Icon className={classes.icon} fontSize="small" />
           )}
         </IconButton>
       </Box>
-      <Box py={2} />
+      <Box py={1} />
       <Box display="flex" alignItems="center" justifyContent="center">
         <div
-          className={clsx(classes.typography, classes.gradient, classes.center)}
+          className={clsx(classes.typography, classes.gradient, {
+            [classes.top]: type === "bond",
+            [classes.center]: type === "focus",
+            [classes.bottom]: type === "work",
+          })}
         >
-          {t("index:banner.bannerHeaderTwo")}
+          {type === "bond" && t("index:timeline.bond")}
+          {type === "focus" && t("index:timeline.focus")}
+          {type === "work" && t("index:timeline.work")}
         </div>
       </Box>
     </>
