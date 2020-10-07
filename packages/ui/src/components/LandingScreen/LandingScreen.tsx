@@ -14,9 +14,9 @@ export default function LandingScreen(): JSX.Element {
       <LandingBanner />
       <Box p={5} />
       <LandingOutline />
-      <Box p={5} />
+      <Box p={4} />
       <LandingExplore />
-      <Box p={5} />
+      <Box p={3} />
       <LandingTimelineDot type="bond" />
       <Box p={3} />
       <LandingTimelineDot type="focus" />

@@ -8,7 +8,12 @@ export default function LandingExplore(): JSX.Element {
 
   return (
     <Container maxWidth="md">
-      <Typography align="center" component="h6" variant="h6" color="primary">
+      <Typography
+        align="center"
+        component="p"
+        variant="subtitle2"
+        color="primary"
+      >
         {t("index:explore.title")}
       </Typography>
     </Container>
