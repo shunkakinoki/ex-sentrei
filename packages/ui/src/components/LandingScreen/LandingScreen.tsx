@@ -5,28 +5,16 @@ import LandingBanner from "@sentrei/ui/components/LandingBanner";
 import LandingFaq from "@sentrei/ui/components/LandingFaq";
 import LandingOutline from "@sentrei/ui/components/LandingOutline";
 import LandingPricing from "@sentrei/ui/components/LandingPricing";
-import LandingProduct, {
-  Props as LandingProductProps,
-} from "@sentrei/ui/components/LandingProduct";
+import LandingTimelineDot from "@sentrei/ui/components/LandingTimelineDot";
 
-export type Props = LandingProductProps;
-
-export default function LandingScreen({
-  connectImg,
-  dataImg,
-  videoImg,
-}: Props): JSX.Element {
+export default function LandingScreen(): JSX.Element {
   return (
     <>
       <LandingBanner />
       <Box p={5} />
       <LandingOutline />
       <Box p={6} />
-      <LandingProduct
-        connectImg={connectImg}
-        dataImg={dataImg}
-        videoImg={videoImg}
-      />
+      <LandingTimelineDot />
       <Box p={3} />
       <LandingPricing />
       <Box p={3} />
