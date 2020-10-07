@@ -22,15 +22,28 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
     icon: {
       color: "white",
     },
+    typography: {
+      color: theme.palette.grey[800],
+      position: "relative",
+      fontFamily: "-apple-system, system-ui, BlinkMacSystemFont, Roboto",
+      fontSize: 50,
+      fontWeight: 900,
+      margin: 0,
+      lineHeight: "1.1em",
+      letterSpacing: -3,
+    },
+    gradient: {
+      opacity: 1,
+      backgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      WebkitBackgroundClip: "text",
+    },
     top: {
       background: `linear-gradient(90deg, ${GradientTop}, ${GradientMiddle})`,
       fontSize: theme.typography.pxToRem(35),
     },
     center: {
       backgroundImage: `linear-gradient(90deg, ${GradientMiddle}, ${GradientBottom})`,
-    },
-    bottom: {
-      color: `linear-gradient(90deg, ${GradientBottom}, ${GradientTop})`,
     },
   }),
 );
