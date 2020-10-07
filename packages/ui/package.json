@@ -56,7 +56,7 @@
     "clsx": "^1.1.1",
     "emoji-mart": "^3.0.0",
     "framer-motion": "^2.6.10",
-    "next": "^9.5.3",
+    "next": "^9.5.4",
     "next-seo": "^4.11.0",
     "next-translate": "^0.17.2-canary.6",
     "react": "^16.13.1",
