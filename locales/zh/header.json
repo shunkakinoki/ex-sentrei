@@ -35,6 +35,10 @@
     "pricing": {
       "description": "查看价格表",
       "title": "价钱"
+    },
+    "support": {
+      "description": "获得我们团队的支持",
+      "title": "支持"
     }
   },
   "resources": {
