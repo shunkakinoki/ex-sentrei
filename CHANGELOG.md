@@ -1,3 +1,28 @@
+# [1.116.0](https://github.com/sentrei/sentrei/compare/v1.115.1...v1.116.0) (2020-10-07)
+
+### Features
+
+- 🎸 complete refactor header i18n & pricing ([3b7e2e1](https://github.com/sentrei/sentrei/commit/3b7e2e1485595bb4fb3311abc80bcad4d0553e9b))
+- 🎸 ini custom one tap styling ([3542801](https://github.com/sentrei/sentrei/commit/35428016c806e079bc5d57090cf1aae760cd96ae))
+- 🎸 ini icon for landing explore ([db4ab51](https://github.com/sentrei/sentrei/commit/db4ab518a3bd571d3a46269159056c7063b51ce9))
+- 🎸 ini landing explore ([eb5f67e](https://github.com/sentrei/sentrei/commit/eb5f67e4d2791defd2e3a101534618d4ed750bca))
+- 🎸 ini landing timeline dot ([078bde0](https://github.com/sentrei/sentrei/commit/078bde017d614bf7c47981da40070ece23fae5b1))
+- 🎸 migrate timeline dot to point ([a550443](https://github.com/sentrei/sentrei/commit/a550443cfc8516c513e93c6ac445487a6bce4ab7))
+
+### Performance Improvements
+
+- ⚡️ ini app bar track ([4369e51](https://github.com/sentrei/sentrei/commit/4369e51948a6e052e212469c876195ef0fb9389a))
+- ⚡️ ini complete landing timeline ([3f4f82f](https://github.com/sentrei/sentrei/commit/3f4f82f080dbab5333fff9d7642d5bcb0bcaf4ec))
+- ⚡️ ini landing mobile menu ([a943a74](https://github.com/sentrei/sentrei/commit/a943a7460605734f6dfe5ad77f2cae0c7f956493))
+- ⚡️ ini landing timeline dot ([92a01d1](https://github.com/sentrei/sentrei/commit/92a01d1b543172ef1610740484da4a48fb32af90))
+- ⚡️ ini landing timeline text ([c6c13cd](https://github.com/sentrei/sentrei/commit/c6c13cd804b993cd7ffaaa05c057b35d0c57f371))
+- ⚡️ ini timeline gradient ([8aff59b](https://github.com/sentrei/sentrei/commit/8aff59bd817516815174cf0c7c2b1bd5d58b0269))
+- ⚡️ ini timeline item ([7c6cde7](https://github.com/sentrei/sentrei/commit/7c6cde73080c4543b93e10528b324cdf2c6667b3))
+- ⚡️ refactor landing explore ([64b567e](https://github.com/sentrei/sentrei/commit/64b567e9b2a48239136c6d69ed7176a9a8d93d04))
+- ⚡️ refactor landing menu event ([c97a0fa](https://github.com/sentrei/sentrei/commit/c97a0fa4fec2b9cb0089c1c3c844f400b1be9566))
+- ⚡️ refactor landing screen ([315b199](https://github.com/sentrei/sentrei/commit/315b199c469d02ddcaa6c8f087046d47ccc359d1))
+- ⚡️ refactor landing screen and explore ([457470b](https://github.com/sentrei/sentrei/commit/457470b503f51f3b8aa67fba24009949e00942ac))
+
 ## [1.115.1](https://github.com/sentrei/sentrei/compare/v1.115.0...v1.115.1) (2020-10-06)
 
 ### Performance Improvements
