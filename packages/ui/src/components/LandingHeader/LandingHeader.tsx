@@ -11,6 +11,7 @@ import classNames from "classnames";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import {trackEvent} from "@sentrei/common/utils/segment";
 import {LandingKey} from "@sentrei/types/models/Landing";
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";
 import LandingHeaderButton from "@sentrei/ui/components/LandingHeaderButton";
@@ -54,10 +55,12 @@ export default function LandingHeader({
 
   const handleMobileClick = (event: React.MouseEvent<HTMLElement>): void => {
     mobileSetAnchorEl(event.currentTarget);
+    trackEvent("Open Landing Menu", {type: "mobile"});
   };
 
   const handleClose = (): void => {
     mobileSetAnchorEl(null);
+    trackEvent("Close Landing Menu", {type: "mobile"});
   };
 
   const handleOnTop = (): void => {
