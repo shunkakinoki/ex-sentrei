@@ -10,6 +10,7 @@ const oneTap = (callback: (res: any) => Promise<void>): void => {
       client_id,
       callback,
       context: "use",
+      prompt_parent_id: "google-one-tap-custom-id",
     });
     window.google.accounts.id.prompt();
   }
