@@ -9,8 +9,6 @@ import User from "@sentrei/types/models/User";
 import useBackdrop from "@sentrei/ui/hooks/useBackdrop";
 import useSnackbar from "@sentrei/ui/hooks/useSnackbar";
 
-import OneTapStyles from "./OneTapStyles";
-
 export interface Props {
   user: User.Get | undefined | null;
   delay?: boolean;
@@ -24,7 +22,6 @@ const OneTap = ({
   inviteId,
   spaceId,
 }: Props): JSX.Element => {
-  const classes = OneTapStyles();
   const {backdrop} = useBackdrop();
   const {snackbar} = useSnackbar();
 
@@ -69,7 +66,6 @@ const OneTap = ({
       <Head>
         <script src="https://accounts.google.com/gsi/client" async defer />
       </Head>
-      <div className={classes.onetap} id="google-one-tap-custom-id" />
     </>
   );
 };
