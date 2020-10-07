@@ -14,12 +14,14 @@
     }
   },
   "header": {
+    "about": "About",
     "company": "Company",
     "login": "Log In",
     "pricing": "Pricing",
     "product": "Product",
     "resources": "Resources",
-    "signup": "Sign Up For Free"
+    "signup": "Sign Up For Free",
+    "support": "Support"
   },
   "product": {
     "demo": {
