@@ -10,6 +10,9 @@
     "googleText": "Sign up with Google",
     "startText": "Get Started Now (Beta)"
   },
+  "explore": {
+    "title": "EXPLORE THE SENTREI WAY"
+  },
   "faq": {
     "bodyOne": "Yes, it comes with unlimited time for anyone - as long as you don't have simultaneously three people on the workspace. In that case, you will have to create a seperate workspace for free (which supports up to 3 people) or upgrade to the Pro version.",
     "bodyThree": "The dominant competitors on the market are premised on the fact that we will simultaneously communicate at all times, which hardly recreates the real needs for virtual workspaces. That's where we are here to help.",

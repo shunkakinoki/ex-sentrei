@@ -2,6 +2,7 @@ import Box from "@material-ui/core/Box";
 import * as React from "react";
 
 import LandingBanner from "@sentrei/ui/components/LandingBanner";
+import LandingExplore from "@sentrei/ui/components/LandingExplore";
 import LandingFaq from "@sentrei/ui/components/LandingFaq";
 import LandingOutline from "@sentrei/ui/components/LandingOutline";
 import LandingPricing from "@sentrei/ui/components/LandingPricing";
@@ -13,7 +14,9 @@ export default function LandingScreen(): JSX.Element {
       <LandingBanner />
       <Box p={5} />
       <LandingOutline />
-      <Box p={6} />
+      <Box p={5} />
+      <LandingExplore />
+      <Box p={2} />
       <LandingTimelineDot />
       <Box p={3} />
       <LandingPricing />
