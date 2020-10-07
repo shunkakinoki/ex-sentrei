@@ -15,18 +15,9 @@ const LandingBannerGradientStyles = makeStyles((theme: Theme) =>
       borderWidth: 0,
       margin: 0,
     },
-    seperator: {
-      backgroundColor: theme.palette.grey[400],
-    },
-    typography: {
-      color: theme.palette.grey[800],
-      position: "relative",
-      fontFamily: "-apple-system, system-ui, BlinkMacSystemFont, Roboto",
-      fontSize: 126,
-      fontWeight: 900,
-      margin: 0,
-      lineHeight: "1.1em",
-      letterSpacing: -3,
+    rootLine: {
+      background: `linear-gradient(0deg, ${GradientTop},  rgba(255,0,0,0))`,
+      minHeight: theme.spacing(15),
     },
     icon: {
       color: "white",

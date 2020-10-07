@@ -17,7 +17,7 @@ export default function LandingTimelineDot(): JSX.Element {
     <>
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineConnector />
+          <TimelineConnector classes={{root: classes.rootLine}} />
         </TimelineSeparator>
         <TimelineContent />
       </TimelineItem>
