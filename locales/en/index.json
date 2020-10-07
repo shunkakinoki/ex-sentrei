@@ -53,11 +53,6 @@
     "topTitleThree": " while focusing",
     "topTitleTwo": "Bond together"
   },
-  "timeline": {
-    "bond": "Bond",
-    "focus": "Focus",
-    "work": "Work"
-  },
   "slider": {
     "titleOne": "The people from these teams are ",
     "titleThree": " Sentrei",
@@ -77,5 +72,10 @@
     "titleOne": "A Great Product",
     "titleThree": "A Great Product",
     "titleTwo": "A Great Product"
+  },
+  "timeline": {
+    "bond": "Bond",
+    "focus": "Focus",
+    "work": "Work"
   }
 }
