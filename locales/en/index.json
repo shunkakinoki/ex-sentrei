@@ -10,6 +10,9 @@
     "googleText": "Sign up with Google",
     "startText": "Get Started Now (Beta)"
   },
+  "explore": {
+    "title": "EXPLORE THE SENTREI WAY"
+  },
   "faq": {
     "bodyOne": "Yes, it comes with unlimited time for anyone - as long as you don't have simultaneously three people on the workspace. In that case, you will have to create a seperate workspace for free (which supports up to 3 people) or upgrade to the Pro version.",
     "bodyThree": "The dominant competitors on the market are premised on the fact that we will simultaneously communicate at all times, which hardly recreates the real needs for virtual workspaces. That's where we are here to help.",
@@ -50,11 +53,6 @@
     "topTitleThree": " while focusing",
     "topTitleTwo": "Bond together"
   },
-  "screen": {
-    "labelOne": "Bond",
-    "labelThree": "Work",
-    "labelTwo": "Focus"
-  },
   "slider": {
     "titleOne": "The people from these teams are ",
     "titleThree": " Sentrei",
@@ -74,5 +72,10 @@
     "titleOne": "A Great Product",
     "titleThree": "A Great Product",
     "titleTwo": "A Great Product"
+  },
+  "timeline": {
+    "bond": "Bond",
+    "focus": "Focus",
+    "work": "Work"
   }
 }

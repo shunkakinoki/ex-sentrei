@@ -10,6 +10,9 @@
     "googleText": "使用Google注册",
     "startText": "入门-永久免费-"
   },
+  "explore": {
+    "title": "探索SENTREI方式"
+  },
   "faq": {
     "bodyOne": "是的，任何人都可以享受无限的时间-只要您在工作空间中同时没有三个人即可。在这种情况下，您将必须免费创建一个单独的工作区（最多支持3个人）或升级到Pro版本。",
     "bodyThree": "市场上的主要竞争者都基于这样一个事实，那就是我们将始终保持同步交流，这几乎无法再现对虚拟工作区的真正需求。那就是我们在这里为您提供帮助的地方.",
@@ -50,11 +53,6 @@
     "topTitleThree": "结合在一起",
     "topTitleTwo": "聚焦时"
   },
-  "screen": {
-    "labelOne": "键",
-    "labelThree": "工作",
-    "labelTwo": "焦点"
-  },
   "slider": {
     "titleOne": "这些团队的人",
     "titleThree": " Sentrei",
@@ -74,5 +72,10 @@
     "titleOne": "很棒的产品",
     "titleThree": "A Great Product",
     "titleTwo": "A Great Product"
+  },
+  "timeline": {
+    "bond": "键",
+    "focus": "焦点",
+    "work": "工作"
   }
 }

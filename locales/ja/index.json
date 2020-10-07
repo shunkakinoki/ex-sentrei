@@ -7,8 +7,11 @@
     "bannerTextRough": "発揮しよう",
     "bannerTextThree": "-集中に特化したチーム専用の空間-",
     "bannerTextTwo": "最大限のパフォーマンスを",
-    "googleText": "Google で サインインする",
+    "googleText": "Google で サインイン",
     "startText": "すべて 無料 でスタートする"
+  },
+  "explore": {
+    "title": "セントレイウェイを探索する"
   },
   "faq": {
     "bodyOne": "はい、それは誰にとっても無制限の時間を伴います-ワークスペースで同時に3人がいなければ。その場合は、独立したワークスペースを無料で作成するか（最大3人をサポート）、Proバージョンにアップグレードする必要があります。",
@@ -50,11 +53,6 @@
     "topTitleThree": "仕事に集中しよう",
     "topTitleTwo": "仲間と一緒に"
   },
-  "screen": {
-    "labelOne": "繋がる",
-    "labelThree": "作業",
-    "labelTwo": "集中"
-  },
   "slider": {
     "titleOne": "これらのチームの人々はSentreiを日々 ",
     "titleThree": " しております",
@@ -74,5 +72,10 @@
     "titleOne": "素晴らしい製品",
     "titleThree": "A Great Product",
     "titleTwo": "A Great Product"
+  },
+  "timeline": {
+    "bond": "繋がる",
+    "focus": "集中",
+    "work": "作業"
   }
 }

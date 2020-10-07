@@ -16,10 +16,10 @@
   "header": {
     "company": "Company",
     "login": "Log In",
+    "pricing": "Pricing",
     "product": "Product",
     "resources": "Resources",
-    "signup": "Sign Up For Free",
-    "support": "Support"
+    "signup": "Sign Up For Free"
   },
   "product": {
     "demo": {
