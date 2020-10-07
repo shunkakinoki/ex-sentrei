@@ -5,8 +5,8 @@
       "title": "关于"
     },
     "analytics": {
-      "description": "我们产品的开放分析",
-      "title": "分析工具"
+      "description": "我们产品的开放アナリティクス",
+      "title": "アナリティクス工具"
     },
     "media": {
       "description": "媒体资源",
@@ -35,6 +35,10 @@
     "pricing": {
       "description": "查看价格表",
       "title": "价钱"
+    },
+    "support": {
+      "description": "获得我们团队的支持",
+      "title": "支持"
     }
   },
   "resources": {

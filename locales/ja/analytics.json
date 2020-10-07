@@ -5,11 +5,11 @@
     "session": "セッション"
   },
   "analytics": {
-    "title": "分析"
+    "title": "アナリティクス"
   },
   "label": {
     "activity": "アクティビティ",
-    "analytics": "分析",
+    "analytics": "アナリティクス",
     "duration": "期間",
     "invites": "招待する",
     "members": "会員",

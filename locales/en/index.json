@@ -4,7 +4,7 @@
     "bannerHeaderThree": "Work.",
     "bannerHeaderTwo": "Focus.",
     "bannerTextOne": "A dedicated virtual workspace for teams",
-    "bannerTextRough": "visualize your work",
+    "bannerTextRough": "see your work",
     "bannerTextThree": "- The workspace visualization platform -",
     "bannerTextTwo": "that helps you",
     "googleText": "Sign up with Google",
@@ -33,9 +33,9 @@
   },
   "outline": {
     "problem": {
-      "one": "It's",
-      "rough": "hard",
-      "two": "to see what's going on in remote work."
+      "one": "It's hard to",
+      "rough": "see",
+      "two": "what's going on in remote work."
     },
     "solution": "We think we can change that."
   },

@@ -5,11 +5,11 @@
     "session": "届会"
   },
   "analytics": {
-    "title": "分析工具"
+    "title": "アナリティクス工具"
   },
   "label": {
     "activity": "活动",
-    "analytics": "分析工具",
+    "analytics": "アナリティクス工具",
     "duration": "持续时间",
     "invites": "邀请",
     "members": "会员",

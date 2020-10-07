@@ -35,6 +35,10 @@
     "pricing": {
       "description": "See the pricing table",
       "title": "Pricing"
+    },
+    "support": {
+      "description": "Get support from our team",
+      "title": "Support"
     }
   },
   "resources": {

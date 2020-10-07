@@ -2,7 +2,7 @@
   "landing": {
     "404": "404-找不到",
     "about": "关于",
-    "analytics": "分析工具",
+    "analytics": "アナリティクス工具",
     "credits": "谢谢。",
     "demo": "演示版",
     "invite": "邀请函",
@@ -23,7 +23,7 @@
   },
   "space": {
     "activity": "活动",
-    "analytics": "分析工具",
+    "analytics": "アナリティクス工具",
     "home": "家",
     "leaderboard": "排行榜",
     "members": "会员",

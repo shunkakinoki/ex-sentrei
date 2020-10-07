@@ -1,12 +1,12 @@
 {
   "company": {
     "about": {
-      "description": "私たちは誰ですか",
-      "title": "我々について"
+      "description": "私たちのミッション",
+      "title": "会社について"
     },
     "analytics": {
-      "description": "当社製品のオープン分析",
-      "title": "分析"
+      "description": "当社のオープンアナリティクス",
+      "title": "アナリティクス"
     },
     "media": {
       "description": "メディアリソース",
@@ -14,7 +14,7 @@
     }
   },
   "header": {
-    "about": "我々について",
+    "about": "会社について",
     "company": "会社",
     "login": "Log In",
     "pricing": "価格・プラン",
@@ -35,6 +35,10 @@
     "pricing": {
       "description": "価格表をご覧ください",
       "title": "価格・プラン"
+    },
+    "support": {
+      "description": "Sentreiサポートにお問い合わせ",
+      "title": "サポート"
     }
   },
   "resources": {
