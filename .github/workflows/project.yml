@@ -1,16 +1,27 @@
 name: Project
-on: issues
+on:
+  issues:
+    types: [labeled]
 jobs:
   automate-project-columns:
     runs-on: ubuntu-latest
     steps:
-      - if: github.event.action == 'labeled' && github.event.label.name == 'Roadmap'
+      - if: github.event.label.name == 'Roadmap'
         uses: alex-page/github-project-automation-plus@v0.3.0
         with:
           project: Roadmap
           column: Icebox
           repo-token: ${{ secrets.ACCESS_TOKEN }}
-      - if: github.event.action == 'labeled' && github.event.label.name == 'Bug'
+      - if: github.event.label.name == 'Bug'
+        uses: alex-page/github-project-automation-plus@v0.3.0
+        with:
+          project: Bugs
+          column: Icebox
+          repo-token: ${{ secrets.ACCESS_TOKEN }}
+      - if: |
+          startsWith(github.event.label.name, 'day') ||
+          startsWith(github.event.label.name, 'week') ||
+          startsWith(github.event.label.name, 'month')
         uses: alex-page/github-project-automation-plus@v0.3.0
         with:
           project: Bugs
