@@ -83,7 +83,7 @@ export default function LandingFooterTail({logo}: Props): JSX.Element {
             {process.env.SENTRY_ENVIRONMENT === "dev"
               ? process.env.SENTRY_ENVIRONMENT
               : process.env.VERCEL_GITHUB_COMMIT_REF}
-            &nbsp; From: Earth to Galaxy &nbsp; Version: v
+            &nbsp; Location: Earth &nbsp; Version: v
             {process.env.SENTREI_VERSION}
           </Typography>
         </Grid>

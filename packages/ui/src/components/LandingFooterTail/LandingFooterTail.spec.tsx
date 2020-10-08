@@ -5,6 +5,6 @@ import LandingFooterTail from ".";
 
 describe("LandingFooterTail", () => {
   test("render", () => {
-    shallow(<LandingFooterTail />);
+    shallow(<LandingFooterTail logo={<></>} />);
   });
 });

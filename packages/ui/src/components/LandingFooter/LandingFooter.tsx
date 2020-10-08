@@ -1,4 +1,3 @@
-import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 
 import * as React from "react";
@@ -21,7 +20,6 @@ export default function LandingLandingFooter({logo}: Props): JSX.Element {
       <footer className={classes.footer}>
         <Container maxWidth="lg" component="footer">
           <LandingFooterSection />
-          <Box py={1} />
           <LandingFooterCredits />
           <LandingFooterTail logo={logo} />
         </Container>
