@@ -1,3 +1,14 @@
+# [1.121.0](https://github.com/sentrei/sentrei/compare/v1.120.0...v1.121.0) (2020-10-08)
+
+### Features
+
+- 🎸 ini legal screen w/ markdown ([c068c05](https://github.com/sentrei/sentrei/commit/c068c0583562ab4b5ca8194aaa5eded5ee5203cf))
+
+### Performance Improvements
+
+- ⚡️ ini readme packages ([297573d](https://github.com/sentrei/sentrei/commit/297573ddd50ad14887a14c887b92854b576b3fd4))
+- ⚡️ remove landing foote tail location earth ([90680b4](https://github.com/sentrei/sentrei/commit/90680b4bf12ae81b275242bbe36e368719e20586))
+
 # [1.120.0](https://github.com/sentrei/sentrei/compare/v1.119.0...v1.120.0) (2020-10-08)
 
 ### Features
