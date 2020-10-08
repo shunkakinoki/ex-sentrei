@@ -1,3 +1,13 @@
+# [1.122.0](https://github.com/sentrei/sentrei/compare/v1.121.0...v1.122.0) (2020-10-08)
+
+### Features
+
+- 🎸 remove unused landing components ([f785a6e](https://github.com/sentrei/sentrei/commit/f785a6e5c3ebc222c63066b66b50af0246f33eb5))
+
+### Performance Improvements
+
+- ⚡️ refactor project label gha ([4045456](https://github.com/sentrei/sentrei/commit/4045456839620cc5a354f3eed52343561cea01c6))
+
 # [1.121.0](https://github.com/sentrei/sentrei/compare/v1.120.0...v1.121.0) (2020-10-08)
 
 ### Features
