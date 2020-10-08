@@ -101,18 +101,3 @@ resource "github_team_repository" "sentrei_pull" {
   repository = github_repository.sentrei.name
   permission = "pull"
 }
-
-resource "github_repository_project" "sentrei_roadmap" {
-  name       = "Roadmap"
-  repository = github_repository.sentrei.name
-}
-
-resource "github_repository_project" "sentrei_bugs" {
-  name       = "Bugs"
-  repository = github_repository.sentrei.name
-}
-
-resource "github_repository_project" "sentrei_sprint" {
-  name       = "Sprint"
-  repository = github_repository.sentrei.name
-}
