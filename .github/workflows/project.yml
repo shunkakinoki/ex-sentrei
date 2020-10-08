@@ -24,6 +24,6 @@ jobs:
           startsWith(github.event.label.name, 'month')
         uses: alex-page/github-project-automation-plus@v0.3.0
         with:
-          project: Bugs
+          project: Sprint
           column: Icebox
           repo-token: ${{ secrets.ACCESS_TOKEN }}
