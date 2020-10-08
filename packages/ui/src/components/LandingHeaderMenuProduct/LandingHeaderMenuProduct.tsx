@@ -1,5 +1,5 @@
 import List from "@material-ui/core/List";
-import ContactSupportIcon from "@material-ui/icons/ContactSupport";
+import AccessibilityIcon from "@material-ui/icons/Accessibility";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import MovieIcon from "@material-ui/icons/Movie";
 import SlideshowIcon from "@material-ui/icons/Slideshow";
@@ -35,9 +35,9 @@ export default function LandingHeaderMenuProduct(): JSX.Element {
         />
         <LandingHeaderMenuItem
           href="/support"
-          icon={<ContactSupportIcon />}
+          icon={<AccessibilityIcon />}
           title={t("header:product.support.title")}
-          description={t("header:product.pricing.description")}
+          description={t("header:product.support.description")}
         />
       </List>
     </LandingHeaderMenu>
