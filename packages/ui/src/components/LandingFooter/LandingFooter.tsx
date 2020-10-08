@@ -20,13 +20,10 @@ export default function LandingLandingFooter({logo}: Props): JSX.Element {
     <>
       <footer className={classes.footer}>
         <Container maxWidth="lg" component="footer">
-          <LandingFooterSection logo={logo} />
-          <Box m={3}>
-            <LandingFooterCredits />
-          </Box>
-          <Box mt={3}>
-            <LandingFooterCopyright />
-          </Box>
+          <LandingFooterSection />
+          <Box py={1} />
+          <LandingFooterCredits />
+          <LandingFooterCopyright logo={logo} />
         </Container>
       </footer>
     </>
