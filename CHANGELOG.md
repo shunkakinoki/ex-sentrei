@@ -1,3 +1,19 @@
+# [1.119.0](https://github.com/sentrei/sentrei/compare/v1.118.0...v1.119.0) (2020-10-08)
+
+### Bug Fixes
+
+- 🐛 correct SPDX license ([fd6ef4a](https://github.com/sentrei/sentrei/commit/fd6ef4afe3680b16d5be537efd27cd7bbf13ba7c))
+
+### Features
+
+- 🎸 complete upgrade all packages w/ ncu ([190445f](https://github.com/sentrei/sentrei/commit/190445f390d7e520654a35fc654c83fae2277405))
+- 🎸 ini debugger for next.js ([33fbd9a](https://github.com/sentrei/sentrei/commit/33fbd9a25605902382541b46cc3f04b6a09024cd))
+- 🎸 upgrade root packages w/ ncu ([bb4f38f](https://github.com/sentrei/sentrei/commit/bb4f38f61f1680d2a6c904c12e4280572fa09db1))
+
+### Performance Improvements
+
+- ⚡️ upgrade sentrei packages ([dfc21c0](https://github.com/sentrei/sentrei/commit/dfc21c01ba17f95f334adf64a851f1301d9d5549))
+
 # [1.118.0](https://github.com/sentrei/sentrei/compare/v1.117.0...v1.118.0) (2020-10-07)
 
 ### Features
