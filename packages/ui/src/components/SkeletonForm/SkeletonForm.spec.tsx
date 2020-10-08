@@ -5,6 +5,6 @@ import SkeletonForm from ".";
 
 describe("SkeletonForm", () => {
   test("render", () => {
-    shallow(<SkeletonForm logo={<></>} />);
+    shallow(<SkeletonForm />);
   });
 });
