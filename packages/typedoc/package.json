@@ -7,7 +7,7 @@
     "url": "https://github.com/sentrei/sentrei.git",
     "directory": "packages/typedoc"
   },
-  "license": "GNU GPL V3",
+  "license": "GPL-3.0-or-later",
   "author": "Shun Kakinoki",
   "scripts": {
     "alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy",
