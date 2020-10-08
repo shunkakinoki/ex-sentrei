@@ -1,3 +1,9 @@
+## [1.122.1](https://github.com/sentrei/sentrei/compare/v1.122.0...v1.122.1) (2020-10-08)
+
+### Performance Improvements
+
+- ⚡️ ini sentrei project ([dada3ef](https://github.com/sentrei/sentrei/commit/dada3ef58cd08955af6607085cbb426e9d4c66ce))
+
 # [1.122.0](https://github.com/sentrei/sentrei/compare/v1.121.0...v1.122.0) (2020-10-08)
 
 ### Features
