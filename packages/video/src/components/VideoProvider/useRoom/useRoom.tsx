@@ -1,5 +1,5 @@
 import {Callback} from "@sentrei/video/types";
-import EventEmitter from "events";
+import {EventEmitter} from "events";
 import {isMobile} from "@sentrei/video/utils";
 import Video, {ConnectOptions, LocalTrack, Room} from "twilio-video";
 import {useCallback, useEffect, useRef, useState} from "react";
