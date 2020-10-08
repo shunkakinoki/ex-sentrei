@@ -18,12 +18,21 @@ jobs:
           project: Bugs
           column: Icebox
           repo-token: ${{ secrets.ACCESS_TOKEN }}
-      - if: |
-          startsWith(github.event.label.name, 'day') ||
-          startsWith(github.event.label.name, 'week') ||
-          startsWith(github.event.label.name, 'month')
+      - if: startsWith(github.event.label.name, 'day')
         uses: alex-page/github-project-automation-plus@v0.3.0
         with:
-          project: Bugs
-          column: Icebox
+          project: Sprint
+          column: Day
+          repo-token: ${{ secrets.ACCESS_TOKEN }}
+      - if: startsWith(github.event.label.name, 'week')
+        uses: alex-page/github-project-automation-plus@v0.3.0
+        with:
+          project: Sprint
+          column: Week
+          repo-token: ${{ secrets.ACCESS_TOKEN }}
+      - if: startsWith(github.event.label.name, 'month')
+        uses: alex-page/github-project-automation-plus@v0.3.0
+        with:
+          project: Sprint
+          column: Month
           repo-token: ${{ secrets.ACCESS_TOKEN }}
