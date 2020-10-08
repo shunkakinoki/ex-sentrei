@@ -1,15 +1,32 @@
-import {NextPage} from "next";
+import {GetStaticProps, InferGetStaticPropsType} from "next";
 import * as React from "react";
 
-import PrivacyScreen from "@sentrei/ui/components/PrivacyScreen";
+import markdown from "@sentrei/common/utils/markdown";
+import LegalScreen from "@sentrei/ui/components/LegalScreen";
 import SentreiFooter from "@sentrei/web/components/SentreiFooter";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
-const Privacy: NextPage = () => {
+export interface Props {
+  content: string;
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const content = await markdown("PRIVACY");
+
+  return {
+    props: {
+      content,
+    },
+  };
+};
+
+const Privacy = ({
+  content,
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <>
       <SentreiHeader landingKey="privacy" />
-      <PrivacyScreen />
+      <LegalScreen content={content} />
       <SentreiFooter />
     </>
   );
