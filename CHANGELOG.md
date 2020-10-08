@@ -1,3 +1,17 @@
+# [1.120.0](https://github.com/sentrei/sentrei/compare/v1.119.0...v1.120.0) (2020-10-08)
+
+### Features
+
+- 🎸 complete refactor footer ([f86b481](https://github.com/sentrei/sentrei/commit/f86b481daacd61be0fabfa1c0c1b7be008cfd2e8))
+- 🎸 ini remark w/ vfile ([f7a2550](https://github.com/sentrei/sentrei/commit/f7a255077a5da0c98bae5e3745816f7df66794d8))
+
+### Performance Improvements
+
+- ⚡️ refactor footer tail earth to galaxy ([571b58f](https://github.com/sentrei/sentrei/commit/571b58fdcbbe7aa5fb590e9431d61ca70b3b7a0e))
+- ⚡️ refactor landing footer ([bb1b48d](https://github.com/sentrei/sentrei/commit/bb1b48da2f932a450614db9a50bc0af2c8513fa1))
+- ⚡️ refactor landing header menu support ([d62dcd9](https://github.com/sentrei/sentrei/commit/d62dcd9bd64224620f7bb9c3c2dc18b40e71c87e))
+- ⚡️ rename landing footer copyright to tail ([5be593d](https://github.com/sentrei/sentrei/commit/5be593d1b11175459aeb1dbcc8e0c8be2fd3211e))
+
 # [1.119.0](https://github.com/sentrei/sentrei/compare/v1.118.0...v1.119.0) (2020-10-08)
 
 ### Bug Fixes
