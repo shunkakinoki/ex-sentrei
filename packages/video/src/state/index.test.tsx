@@ -27,24 +27,4 @@ describe("the useAppState hook", () => {
       "useAppState must be used within the AppStateProvider",
     );
   });
-
-  it("should get a token using the REACT_APP_TOKEN_ENDPOINT environment variable when avaiable", async () => {
-    process.env.REACT_APP_TOKEN_ENDPOINT = "http://test.com/api/token";
-
-    const {result} = renderHook(useAppState, {wrapper});
-
-    let token;
-    await act(async () => {
-      token = await result.current.getToken("testname", "testroom");
-    });
-
-    expect(token).toBe("mockVideoToken");
-
-    expect(window.fetch).toHaveBeenCalledWith(
-      "http://test.com/api/token?identity=testname&roomName=testroom",
-      {
-        headers: {_headers: {}},
-      },
-    );
-  });
 });

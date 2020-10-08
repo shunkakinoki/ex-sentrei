@@ -7,7 +7,7 @@
     "url": "https://github.com/sentrei/sentrei.git",
     "directory": "packages/common"
   },
-  "license": "GNU GPL V3",
+  "license": "GPL-3.0-or-later",
   "author": "Shun Kakinoki",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -30,25 +30,25 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@segment/snippet": "^4.13.1",
-    "@sentrei/types": "^1.52.1-beta.1",
-    "@sentry/browser": "^5.23.0",
-    "@sentry/integrations": "5.23.0",
+    "@sentrei/types": "*",
+    "@sentry/browser": "^5.25.0",
+    "@sentry/integrations": "5.25.0",
     "@stripe/stripe-js": "^1.9.0",
     "@types/lodash.get": "^4.4.6",
     "@types/nprogress": "^0.2.0",
     "@types/segment-analytics": "^0.0.32",
-    "dayjs": "^1.8.35",
-    "firebase": "^7.19.1",
-    "firebase-admin": "^9.1.1",
+    "dayjs": "^1.9.1",
+    "firebase": "^7.22.1",
+    "firebase-admin": "^9.2.0",
     "lodash": "^4.17.20",
     "lodash.get": "^4.4.2",
     "mitt": "^2.1.0",
     "next": "^9.5.4",
-    "next-translate": "^0.17.2-canary.6",
+    "next-translate": "^0.17.2",
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "stripe": "^8.94.0"
+    "stripe": "^8.107.0"
   },
   "publishConfig": {
     "access": "public"

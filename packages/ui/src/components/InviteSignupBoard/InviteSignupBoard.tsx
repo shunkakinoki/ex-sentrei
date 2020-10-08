@@ -1,4 +1,4 @@
-import {yupResolver} from "@hookform/resolvers";
+import {yupResolver} from "@hookform/resolvers/yup";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
 import Checkbox from "@material-ui/core/Checkbox";

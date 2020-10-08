@@ -1,4 +1,4 @@
-import {yupResolver} from "@hookform/resolvers";
+import {yupResolver} from "@hookform/resolvers/yup";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
