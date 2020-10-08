@@ -78,14 +78,14 @@ export default function LandingFooterTail({logo}: Props): JSX.Element {
           </Box>
         </Grid>
         <Grid item xs={12} sm={2} md={2}>
-          <Typography variant="body2" color="textSecondary" align="center">
+          <Typography variant="caption" color="textSecondary" align="center">
             Environment: &nbsp;
             {process.env.SENTRY_ENVIRONMENT === "dev"
               ? process.env.SENTRY_ENVIRONMENT
               : process.env.VERCEL_GITHUB_COMMIT_REF}
-            &nbsp; Version: v{process.env.SENTREI_VERSION}
+            &nbsp; From: Earth to Galaxy &nbsp; Version: v
+            {process.env.SENTREI_VERSION}
           </Typography>
-          <Typography variant="body2" color="textSecondary" align="center" />
         </Grid>
       </Grid>
     </Container>
