@@ -17,7 +17,7 @@ export interface Props {
   logo: JSX.Element;
 }
 
-export default function LandingFooterCopyright({logo}: Props): JSX.Element {
+export default function LandingFooterTail({logo}: Props): JSX.Element {
   return (
     <Container maxWidth="md">
       <LandingFooterLogo logo={logo} />

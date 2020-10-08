@@ -3,9 +3,9 @@ import Container from "@material-ui/core/Container";
 
 import * as React from "react";
 
-import LandingFooterCopyright from "@sentrei/ui/components/LandingFooterCopyright";
 import LandingFooterCredits from "@sentrei/ui/components/LandingFooterCredits";
 import LandingFooterSection from "@sentrei/ui/components/LandingFooterSection";
+import LandingFooterTail from "@sentrei/ui/components/LandingFooterTail";
 
 import LandingFooterStyles from "./LandingFooterStyles";
 
@@ -23,7 +23,7 @@ export default function LandingLandingFooter({logo}: Props): JSX.Element {
           <LandingFooterSection />
           <Box py={1} />
           <LandingFooterCredits />
-          <LandingFooterCopyright logo={logo} />
+          <LandingFooterTail logo={logo} />
         </Container>
       </footer>
     </>
