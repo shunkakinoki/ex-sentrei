@@ -28,7 +28,7 @@ const LandingCtaStyles = makeStyles((theme: Theme) =>
       fontSize: 60,
       fontWeight: 900,
       margin: 0,
-      lineHeight: "1.1em",
+      lineHeight: "1.2em",
       letterSpacing: -3,
     },
     gradient: {
