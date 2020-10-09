@@ -3,7 +3,10 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 const LandingTaglineStyles = makeStyles((theme: Theme) =>
   createStyles({
     typography: {
-      color: theme.palette.text.primary,
+      color:
+        theme.palette.type === "light"
+          ? theme.palette.text.primary
+          : theme.palette.text.secondary,
       position: "relative",
       fontFamily: "-apple-system, system-ui, BlinkMacSystemFont, Roboto",
       fontSize: 60,
