@@ -6,6 +6,7 @@ import clsx from "clsx";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import LandingCaption from "@sentrei/ui/components/LandingCaption";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 
 import LandingCtaStyles from "./LandingCtaStyles";
@@ -17,6 +18,8 @@ export default function LandingCta(): JSX.Element {
   return (
     <>
       <Container maxWidth="md">
+        <LandingCaption>{t("index:cta.caption")}</LandingCaption>
+        <Box py={2} />
         <Typography component="h3" variant="h3" align="center">
           <div className={classes.container}>
             <Typography className={classes.typography}>
@@ -33,6 +36,7 @@ export default function LandingCta(): JSX.Element {
             </div>
           </div>
         </Typography>
+        <Box py={1} />
         <Typography
           component="h6"
           variant="h6"

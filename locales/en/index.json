@@ -10,14 +10,18 @@
     "googleText": "Sign up with Google",
     "startText": "Get Started Now (Beta)"
   },
+  "bond": {
+    "tagline": "Connect with your team"
+  },
   "cta": {
+    "caption": "Start your Sentrei Journey",
     "salesText": "Contact Sales",
     "startText": "Start Now for Free",
     "subtitle": "Work smarter, faster and together now.",
     "title": "Do great work with Sentrei"
   },
   "explore": {
-    "title": "EXPLORE THE SENTREI WAY"
+    "title": "Explore the Sentrei Way"
   },
   "faq": {
     "bodyOne": "Yes, it comes with unlimited time for anyone - as long as you don't have simultaneously three people on the workspace. In that case, you will have to create a seperate workspace for free (which supports up to 3 people) or upgrade to the Pro version.",
@@ -36,6 +40,9 @@
     "titleOne": "Unlimited Time",
     "titleThree": "Meet personal goals",
     "titleTwo": "Focus Oriented"
+  },
+  "focus": {
+    "tagline": "Accelerate your productivity"
   },
   "outline": {
     "problem": {
@@ -83,5 +90,8 @@
     "bond": "Bond",
     "focus": "Focus",
     "work": "Work"
+  },
+  "work": {
+    "tagline": "Work smarter with confidence"
   }
 }

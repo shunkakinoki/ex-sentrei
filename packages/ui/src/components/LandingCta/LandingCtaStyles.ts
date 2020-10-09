@@ -22,7 +22,7 @@ const LandingCtaStyles = makeStyles((theme: Theme) =>
       color:
         theme.palette.type === "light"
           ? theme.palette.grey[800]
-          : theme.palette.grey[600],
+          : theme.palette.grey[300],
       position: "relative",
       fontFamily: "-apple-system, system-ui, BlinkMacSystemFont, Roboto",
       fontSize: 60,
