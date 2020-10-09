@@ -10,6 +10,12 @@
     "googleText": "Google で サインイン",
     "startText": "すべて 無料 でスタートする"
   },
+  "cta": {
+    "salesText": "営業担当にお問い合わせください",
+    "startText": "今すぐ無料で始めましょう",
+    "subtitle": "よりスマートに、より速く、そして今すぐ一緒に仕事をしましょう。",
+    "title": "セントレイと素晴らしい仕事をする"
+  },
   "explore": {
     "title": "Sentreiを発見する"
   },
