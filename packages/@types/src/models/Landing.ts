@@ -11,6 +11,7 @@ export type LandingKey =
   | "privacy"
   | "pitch"
   | "reset-password"
+  | "sales"
   | "signup"
   | "support"
   | "terms"
