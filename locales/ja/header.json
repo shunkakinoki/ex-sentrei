@@ -11,6 +11,10 @@
     "media": {
       "description": "メディアリソース",
       "title": "メディア"
+    },
+    "substack": {
+      "description": "投資家向けの毎週の更新",
+      "title": "サブスタック"
     }
   },
   "header": {
