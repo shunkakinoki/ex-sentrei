@@ -1,3 +1,13 @@
+## [1.124.2](https://github.com/sentrei/sentrei/compare/v1.124.1...v1.124.2) (2020-10-09)
+
+### Bug Fixes
+
+- 🐛 typography cutout bug ([343e4e0](https://github.com/sentrei/sentrei/commit/343e4e0ad6c0d37ff0ca3b86ec941c4c9198c430))
+
+### Performance Improvements
+
+- ⚡️ complete refactor footer ([f3b5be5](https://github.com/sentrei/sentrei/commit/f3b5be5bb95f46089561c1e867af8393b1939409))
+
 ## [1.124.1](https://github.com/sentrei/sentrei/compare/v1.124.0...v1.124.1) (2020-10-09)
 
 ### Bug Fixes
