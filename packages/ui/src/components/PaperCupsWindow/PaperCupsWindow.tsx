@@ -10,6 +10,8 @@ import * as React from "react";
 
 import {trackEvent} from "@sentrei/common/utils/segment";
 
+import PaperCupsWindowStyles from "./PaperCupsWindowStyles";
+
 const {publicRuntimeConfig} = getConfig();
 const accountId = publicRuntimeConfig.PAPERCUPS_ID;
 
@@ -26,13 +28,14 @@ export default function PaperCupsWidget({
   customerUid,
   type = "support",
 }: Props): JSX.Element {
+  const classes = PaperCupsWindowStyles();
   const {t} = useTranslation();
   const theme = useTheme();
 
   return (
     <NoSsr>
       <Container maxWidth="md">
-        <Paper square elevation={24} style={{height: "70vh"}}>
+        <Paper square elevation={24} className={classes.window}>
           <ChatWindow
             accountId={accountId}
             requireEmailUpfront={type !== "support"}
