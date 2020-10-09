@@ -17,15 +17,14 @@ export default function LandingLandingFooter({logo}: Props): JSX.Element {
   const classes = LandingFooterStyles();
 
   return (
-    <>
-      <footer className={classes.footer}>
-        <Container maxWidth="lg" component="footer">
-          <LandingFooterSection />
-          <Box py={1} />
-          <LandingFooterCredits />
-          <LandingFooterTail logo={logo} />
-        </Container>
-      </footer>
-    </>
+    <footer className={classes.footer}>
+      <Box py={3} />
+      <Container maxWidth="lg" component="footer">
+        <LandingFooterSection />
+        <Box py={1} />
+        <LandingFooterCredits />
+        <LandingFooterTail logo={logo} />
+      </Container>
+    </footer>
   );
 }

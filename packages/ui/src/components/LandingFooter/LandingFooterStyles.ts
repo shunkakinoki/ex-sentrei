@@ -3,7 +3,6 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 const LandingFooterStyles = makeStyles((theme: Theme) =>
   createStyles({
     footer: {
-      padding: theme.spacing(6, 3),
       marginTop: "auto",
       backgroundColor:
         theme.palette.type === "light"
