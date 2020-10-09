@@ -6,6 +6,7 @@ import clsx from "clsx";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
 
+import LandingCaption from "@sentrei/ui/components/LandingCaption";
 import MuiButton from "@sentrei/ui/components/MuiButton";
 
 import LandingCtaStyles from "./LandingCtaStyles";
@@ -17,6 +18,8 @@ export default function LandingCta(): JSX.Element {
   return (
     <>
       <Container maxWidth="md">
+        <LandingCaption>Start your Sentrei Journey</LandingCaption>
+        <Box py={1} />
         <Typography component="h3" variant="h3" align="center">
           <div className={classes.container}>
             <Typography className={classes.typography}>
@@ -42,7 +45,7 @@ export default function LandingCta(): JSX.Element {
           {t("index:cta.subtitle")}
         </Typography>
       </Container>
-      <Box py={2} />
+      <Box py={1} />
       <Container maxWidth="sm" component="main">
         <Grid container justify="center" direction="row" spacing={1}>
           <Grid item xs={12} md={6}>

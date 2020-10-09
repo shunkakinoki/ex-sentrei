@@ -1,21 +1,15 @@
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
 import useTranslation from "next-translate/useTranslation";
 import * as React from "react";
+
+import LandingCaption from "@sentrei/ui/components/LandingCaption";
 
 export default function LandingExplore(): JSX.Element {
   const {t} = useTranslation();
 
   return (
     <Container maxWidth="md">
-      <Typography
-        align="center"
-        component="p"
-        variant="subtitle2"
-        color="primary"
-      >
-        {t("index:explore.title")}
-      </Typography>
+      <LandingCaption>{t("index:explore.title")}</LandingCaption>
     </Container>
   );
 }
