@@ -1,5 +1,6 @@
 import List from "@material-ui/core/List";
 import BookIcon from "@material-ui/icons/Book";
+import ContactMailIcon from "@material-ui/icons/ContactMail";
 import MapIcon from "@material-ui/icons/Map";
 import NewReleasesIcon from "@material-ui/icons/NewReleases";
 import useTranslation from "next-translate/useTranslation";
@@ -37,6 +38,14 @@ export default function LandingHeaderMenuresources(): JSX.Element {
           icon={<MapIcon />}
           title={t("header:resources.roadmap.title")}
           description={t("header:resources.roadmap.description")}
+        />
+        <LandingHeaderMenuItem
+          href="https://sentrei.substack.com"
+          target="_blank"
+          rel="noopener"
+          icon={<ContactMailIcon />}
+          title={t("header:resources.substack.title")}
+          description={t("header:resources.substack.description")}
         />
       </List>
     </LandingHeaderMenu>

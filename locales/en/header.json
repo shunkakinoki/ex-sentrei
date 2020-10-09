@@ -11,10 +11,6 @@
     "media": {
       "description": "Media resources",
       "title": "Media"
-    },
-    "substack": {
-      "description": "Weekly updates for investors",
-      "title": "Substack"
     }
   },
   "header": {
@@ -57,6 +53,10 @@
     "roadmap": {
       "description": "Official product roadmap",
       "title": "Roadmap"
+    },
+    "substack": {
+      "description": "Weekly updates for investors",
+      "title": "Substack"
     }
   }
 }
