@@ -9,10 +9,11 @@ const LandingTaglineStyles = makeStyles((theme: Theme) =>
           : theme.palette.grey[100],
       position: "relative",
       fontFamily: "-apple-system, system-ui, BlinkMacSystemFont, Roboto",
-      fontSize: 55,
-      fontWeight: 800,
+      fontSize: 60,
+      fontWeight: 900,
       margin: 0,
       lineHeight: "1.1em",
+      letterSpacing: -1,
     },
   }),
 );

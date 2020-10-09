@@ -6,7 +6,8 @@ import LandingCta from "@sentrei/ui/components/LandingCta";
 import LandingExplore from "@sentrei/ui/components/LandingExplore";
 import LandingOutline from "@sentrei/ui/components/LandingOutline";
 import LandingSectionBond from "@sentrei/ui/components/LandingSectionBond";
-import LandingTimelinePoint from "@sentrei/ui/components/LandingTimelinePoint";
+import LandingSectionFocus from "@sentrei/ui/components/LandingSectionFocus";
+import LandingSectionWork from "@sentrei/ui/components/LandingSectionWork";
 
 export default function LandingScreen(): JSX.Element {
   return (
@@ -19,9 +20,9 @@ export default function LandingScreen(): JSX.Element {
       <Box p={3} />
       <LandingSectionBond />
       <Box p={3} />
-      <LandingTimelinePoint type="focus" />
+      <LandingSectionFocus />
       <Box p={3} />
-      <LandingTimelinePoint type="work" />
+      <LandingSectionWork />
       <Box p={3} />
       <LandingCta />
       <Box p={3} />

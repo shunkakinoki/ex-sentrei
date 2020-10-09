@@ -11,7 +11,7 @@
     "startText": "Get Started Now (Beta)"
   },
   "bond": {
-    "tagline": "True connection for your team"
+    "tagline": "Connect with your team"
   },
   "cta": {
     "caption": "Start your Sentrei Journey",
@@ -40,6 +40,9 @@
     "titleOne": "Unlimited Time",
     "titleThree": "Meet personal goals",
     "titleTwo": "Focus Oriented"
+  },
+  "focus": {
+    "tagline": "Accelerate your productivity"
   },
   "outline": {
     "problem": {
@@ -87,5 +90,8 @@
     "bond": "Bond",
     "focus": "Focus",
     "work": "Work"
+  },
+  "work": {
+    "tagline": "Work smarter with confidence"
   }
 }
