@@ -16,12 +16,14 @@ export interface Props {
   customerName?: string;
   customerEmail?: string;
   customerUid?: string;
+  type?: "support" | "sales";
 }
 
 export default function PaperCupsWidget({
   customerName,
   customerEmail,
   customerUid,
+  type = "support",
 }: Props): JSX.Element {
   const {t} = useTranslation();
   const theme = useTheme();
@@ -31,13 +33,22 @@ export default function PaperCupsWidget({
       <Paper square elevation={24} component="span">
         <ChatWindow
           accountId={accountId}
-          title={t("papercups:papercups.support")}
+          requireEmailUpfront={type !== "support"}
+          title={
+            type === "support"
+              ? t("papercups:papercups.support")
+              : t("papercups:papercups.sales")
+          }
           subtitle={t("papercups:papercups.subTitle")}
           newMessagePlaceholder={t("papercups:papercups.messagePlaceholder")}
           greeting={t("papercups:papercups.greeting")}
           primaryColor={theme.palette.primary.main}
-          onChatOpened={(): void => trackEvent("Papercups Window Opened")}
-          onChatClosed={(): void => trackEvent("Papercups Window Closed")}
+          onChatOpened={(): void =>
+            trackEvent("Papercups Window Opened", {type})
+          }
+          onChatClosed={(): void =>
+            trackEvent("Papercups Window Closed", {type})
+          }
           onMessageSent={(mes): void =>
             trackEvent("Papercups Message Sent", mes)
           }
