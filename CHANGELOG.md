@@ -1,3 +1,22 @@
+# [1.125.0](https://github.com/sentrei/sentrei/compare/v1.124.2...v1.125.0) (2020-10-09)
+
+### Bug Fixes
+
+- 🐛 paper cups event rename ([a8b839e](https://github.com/sentrei/sentrei/commit/a8b839ecf67d4df63dbb729613296767a0c9ac4b))
+
+### Features
+
+- 🎸 complete refactor paper cups window ([23d6079](https://github.com/sentrei/sentrei/commit/23d607987e50d108ddfb0a4c9cef129ed806efc7))
+- 🎸 ini sales screen ([39f7d4f](https://github.com/sentrei/sentrei/commit/39f7d4f4ee7700409efa999d6d90fdeb8145e611))
+- 🎸 ini sales type for paper cups window ([191d03b](https://github.com/sentrei/sentrei/commit/191d03b27b5223507a09214acbc44a9d8e1bffff))
+
+### Performance Improvements
+
+- ⚡️ ini footer for sales & support ([5fd9f5a](https://github.com/sentrei/sentrei/commit/5fd9f5a7ccb08e198f23c6bd2946f44dcd81daf8))
+- ⚡️ ini mui styles for paper cups window ([7642f72](https://github.com/sentrei/sentrei/commit/7642f72aa225973ce24d116883f6e421a834db2b))
+- ⚡️ ini sales i18n ([b4d10c4](https://github.com/sentrei/sentrei/commit/b4d10c420fb2717adfadfc780eca80e5d5061399))
+- ⚡️ refactor sales related styling ([0bd5b1d](https://github.com/sentrei/sentrei/commit/0bd5b1d3c1571107e15257fe26670a2787629808))
+
 ## [1.124.2](https://github.com/sentrei/sentrei/compare/v1.124.1...v1.124.2) (2020-10-09)
 
 ### Bug Fixes
