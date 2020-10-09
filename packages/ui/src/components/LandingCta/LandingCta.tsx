@@ -44,26 +44,30 @@ export default function LandingCta(): JSX.Element {
       </Container>
       <Box py={2} />
       <Container maxWidth="sm" component="main">
-        <Grid container justify="center" direction="row" spacing={3}>
+        <Grid container justify="center" direction="row" spacing={1}>
           <Grid item xs={12} md={6}>
-            <MuiButton
-              className={classes.button}
-              color="primary"
-              variant="contained"
-              href="/signup"
-            >
-              <Typography noWrap>{t("index:cta.startText")}</Typography>
-            </MuiButton>
+            <div className={classes.item}>
+              <MuiButton
+                className={classes.button}
+                color="primary"
+                variant="contained"
+                href="/signup"
+              >
+                <Typography noWrap>{t("index:cta.startText")}</Typography>
+              </MuiButton>
+            </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <MuiButton
-              className={classes.button}
-              color="primary"
-              variant="outlined"
-              href="/support"
-            >
-              <Typography noWrap>{t("index:cta.salesText")}</Typography>
-            </MuiButton>
+            <div className={classes.item}>
+              <MuiButton
+                className={classes.button}
+                color="primary"
+                variant="outlined"
+                href="/support"
+              >
+                <Typography noWrap>{t("index:cta.salesText")}</Typography>
+              </MuiButton>
+            </div>
           </Grid>
         </Grid>
       </Container>

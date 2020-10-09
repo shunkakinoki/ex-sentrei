@@ -11,6 +11,13 @@ const LandingCtaStyles = makeStyles((theme: Theme) =>
     container: {
       position: "relative",
     },
+    item: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(1),
+    },
     typography: {
       color:
         theme.palette.type === "light"
