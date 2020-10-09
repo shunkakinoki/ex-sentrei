@@ -1,3 +1,9 @@
+## [1.125.1](https://github.com/sentrei/sentrei/compare/v1.125.0...v1.125.1) (2020-10-09)
+
+### Performance Improvements
+
+- ⚡️ refactor footer padding ([0ce2425](https://github.com/sentrei/sentrei/commit/0ce2425aedee4bd447a4a529cf9d6b2464d0b982))
+
 # [1.125.0](https://github.com/sentrei/sentrei/compare/v1.124.2...v1.125.0) (2020-10-09)
 
 ### Bug Fixes
