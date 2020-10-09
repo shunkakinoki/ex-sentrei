@@ -1,3 +1,14 @@
+# [1.123.0](https://github.com/sentrei/sentrei/compare/v1.122.1...v1.123.0) (2020-10-09)
+
+### Features
+
+- 🎸 ini cta component ([25e34a1](https://github.com/sentrei/sentrei/commit/25e34a1d3136c9dffbc029fdf095df27a9137932))
+
+### Performance Improvements
+
+- ⚡️ ini i18n cta ([ccfaeb8](https://github.com/sentrei/sentrei/commit/ccfaeb81de6bc963e03678948f6a327e0299701d))
+- ⚡️ refactor landing cta styles ([9bf983f](https://github.com/sentrei/sentrei/commit/9bf983f2cca047af7e915ca8daa9151b5a26fc3c))
+
 ## [1.122.1](https://github.com/sentrei/sentrei/compare/v1.122.0...v1.122.1) (2020-10-08)
 
 ### Performance Improvements
