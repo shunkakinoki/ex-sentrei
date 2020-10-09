@@ -1,3 +1,9 @@
+# [1.126.0](https://github.com/sentrei/sentrei/compare/v1.125.1...v1.126.0) (2020-10-09)
+
+### Features
+
+- 🎸 refactor substack to resources ([26b32eb](https://github.com/sentrei/sentrei/commit/26b32eb08ab27b3d80513a646477a0a154f52319))
+
 ## [1.125.1](https://github.com/sentrei/sentrei/compare/v1.125.0...v1.125.1) (2020-10-09)
 
 ### Performance Improvements
