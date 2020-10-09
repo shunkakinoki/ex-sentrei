@@ -10,7 +10,11 @@
     "googleText": "使用Google注册",
     "startText": "入门-永久免费-"
   },
+  "bond": {
+    "tagline": "与您的团队联系"
+  },
   "cta": {
+    "caption": "开始您的Sentrei旅程",
     "salesText": "联系销售",
     "startText": "立即免费开始",
     "subtitle": "现在就可以更聪明，更快地工作。",
@@ -36,6 +40,9 @@
     "titleOne": "无限时间",
     "titleThree": "达到个人目标",
     "titleTwo": "关注焦点"
+  },
+  "focus": {
+    "tagline": "加快团队生产力"
   },
   "outline": {
     "problem": {
@@ -83,5 +90,8 @@
     "bond": "键",
     "focus": "焦点",
     "work": "工作"
+  },
+  "work": {
+    "tagline": "充满信心地工作"
   }
 }

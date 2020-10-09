@@ -2,7 +2,7 @@
   "company": {
     "about": {
       "description": "私たちのミッション",
-      "title": "会社について"
+      "title": "会社概要"
     },
     "analytics": {
       "description": "当社のオープンアナリティクス",
@@ -14,7 +14,7 @@
     }
   },
   "header": {
-    "about": "会社について",
+    "about": "会社概要",
     "company": "会社",
     "login": "Log In",
     "pricing": "価格・プラン",
