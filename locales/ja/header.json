@@ -11,10 +11,6 @@
     "media": {
       "description": "メディアリソース",
       "title": "メディア"
-    },
-    "substack": {
-      "description": "投資家向けの毎週の更新",
-      "title": "サブスタック"
     }
   },
   "header": {
@@ -57,6 +53,10 @@
     "roadmap": {
       "description": "公式製品ロードマップ",
       "title": "ロードマップ"
+    },
+    "substack": {
+      "description": "投資家向けの毎週の更新",
+      "title": "サブスタック"
     }
   }
 }
