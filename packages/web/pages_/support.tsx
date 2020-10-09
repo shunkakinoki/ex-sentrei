@@ -5,6 +5,7 @@ import * as React from "react";
 import AuthContext from "@sentrei/common/context/AuthContext";
 
 import SupportScreen from "@sentrei/ui/components/SupportScreen";
+import SentreiFooter from "@sentrei/web/components/SentreiFooter";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const Support: NextPage = () => {
@@ -18,6 +19,7 @@ const Support: NextPage = () => {
     <>
       <SentreiHeader papercups={false} landingKey="support" />
       <SupportScreen />
+      <SentreiFooter />
     </>
   );
 };
