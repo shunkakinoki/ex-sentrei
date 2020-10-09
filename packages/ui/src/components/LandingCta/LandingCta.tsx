@@ -18,7 +18,7 @@ export default function LandingCta(): JSX.Element {
   return (
     <>
       <Container maxWidth="md">
-        <LandingCaption>Start your Sentrei Journey</LandingCaption>
+        <LandingCaption>{t("index:cta.caption")}</LandingCaption>
         <Box py={1} />
         <Typography component="h3" variant="h3" align="center">
           <div className={classes.container}>
