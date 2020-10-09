@@ -67,7 +67,7 @@ export default function LandingCta(): JSX.Element {
                 className={classes.button}
                 color="primary"
                 variant="outlined"
-                href="/support"
+                href="/sales"
               >
                 <Typography noWrap>{t("index:cta.salesText")}</Typography>
               </MuiButton>

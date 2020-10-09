@@ -41,7 +41,7 @@ export default function PaperCupsWidget({
         onChatClosed={(): void => trackEvent("Papercups Widget Closed")}
         onMessageSent={(mes): void => trackEvent("Papercups Message Sent", mes)}
         onMessageReceived={(mes): void =>
-          trackEvent("Papercups Message Recevied", mes)
+          trackEvent("Papercups Message Received", mes)
         }
         customer={{
           name: customerName || "",

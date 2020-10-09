@@ -1,6 +1,6 @@
 import {createStyles, makeStyles} from "@material-ui/core/styles";
 
-const SupportScreenStyles = makeStyles(() =>
+const SalesScreenStyles = makeStyles(() =>
   createStyles({
     window: {
       height: "70vh",
@@ -8,4 +8,4 @@ const SupportScreenStyles = makeStyles(() =>
   }),
 );
 
-export default SupportScreenStyles;
+export default SalesScreenStyles;

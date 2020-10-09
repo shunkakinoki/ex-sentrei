@@ -9,15 +9,12 @@ export interface Props {
   userId?: string | null;
 }
 
-export default function SupportScreen({
-  email,
-  name,
-  userId,
-}: Props): JSX.Element {
+export default function SalesScreen({email, name, userId}: Props): JSX.Element {
   return (
     <>
       <Box py={3} />
       <PaperCupsWindow
+        type="sales"
         customerEmail={email || ""}
         customerName={name || ""}
         customerUid={userId || ""}
