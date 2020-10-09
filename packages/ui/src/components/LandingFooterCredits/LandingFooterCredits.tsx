@@ -23,7 +23,7 @@ export default function LandingFooterCredits(): JSX.Element {
       <Typography
         variant="h6"
         component="h6"
-        color="textSecondary"
+        color="textPrimary"
         align="center"
       >
         {t("footer:footer.titleOne")}
