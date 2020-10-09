@@ -1,3 +1,16 @@
+## [1.124.1](https://github.com/sentrei/sentrei/compare/v1.124.0...v1.124.1) (2020-10-09)
+
+### Bug Fixes
+
+- 🐛 refactor landing footer section for support ([8fc90e7](https://github.com/sentrei/sentrei/commit/8fc90e7c921be218b59d4b1b4a5f95ab3a469c85))
+
+### Performance Improvements
+
+- ⚡️ ini substack for footer & header ([e10fc4d](https://github.com/sentrei/sentrei/commit/e10fc4dcb1f19c2359b2c3e99891b3fc6330fcef))
+- ⚡️ ini substack i18n ([0807788](https://github.com/sentrei/sentrei/commit/080778835e83da77d6e406af420541cc54970a74))
+- ⚡️ refactor i18n landing for tagline ([c03a0e8](https://github.com/sentrei/sentrei/commit/c03a0e8bb4d13b5a93c03cdd1f4e1b02cc412688))
+- ⚡️ refactor landing outline typography color ([92daa76](https://github.com/sentrei/sentrei/commit/92daa763b391356d5b03176dfb9dc85cb6489c47))
+
 # [1.124.0](https://github.com/sentrei/sentrei/compare/v1.123.0...v1.124.0) (2020-10-09)
 
 ### Features
