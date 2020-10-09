@@ -10,6 +10,12 @@
     "googleText": "Sign up with Google",
     "startText": "Get Started Now (Beta)"
   },
+  "cta": {
+    "salesText": "Contact Sales",
+    "startText": "Start Now for Free",
+    "subtitle": "Work smarter, faster and together now.",
+    "title": "Do great work with Sentrei"
+  },
   "explore": {
     "title": "EXPLORE THE SENTREI WAY"
   },

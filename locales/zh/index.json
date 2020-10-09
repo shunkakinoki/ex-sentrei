@@ -10,6 +10,12 @@
     "googleText": "使用Google注册",
     "startText": "入门-永久免费-"
   },
+  "cta": {
+    "salesText": "联系销售",
+    "startText": "立即免费开始",
+    "subtitle": "现在就可以更聪明，更快地工作。",
+    "title": "与Sentrei一起工作"
+  },
   "explore": {
     "title": "探索SENTREI方式"
   },
