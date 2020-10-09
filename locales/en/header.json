@@ -11,6 +11,10 @@
     "media": {
       "description": "Media resources",
       "title": "Media"
+    },
+    "substack": {
+      "description": "Weekly updates for investors",
+      "title": "Substack"
     }
   },
   "header": {

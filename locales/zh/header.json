@@ -11,6 +11,10 @@
     "media": {
       "description": "媒体资源",
       "title": "媒体"
+    },
+    "substack": {
+      "description": "投资者每周更新",
+      "title": "子堆栈"
     }
   },
   "header": {

@@ -1,4 +1,5 @@
 import List from "@material-ui/core/List";
+import ContactMailIcon from "@material-ui/icons/ContactMail";
 import InfoIcon from "@material-ui/icons/Info";
 import PermMediaIcon from "@material-ui/icons/PermMedia";
 import PollIcon from "@material-ui/icons/Poll";
@@ -31,6 +32,14 @@ export default function LandingHeaderMenucompany(): JSX.Element {
           icon={<PermMediaIcon />}
           title={t("header:company.media.title")}
           description={t("header:company.media.description")}
+        />
+        <LandingHeaderMenuItem
+          href="https://sentrei.substack.com"
+          target="_blank"
+          rel="noopener"
+          icon={<ContactMailIcon />}
+          title={t("header:company.substack.title")}
+          description={t("header:company.substack.description")}
         />
       </List>
     </LandingHeaderMenu>

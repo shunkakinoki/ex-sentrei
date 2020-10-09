@@ -27,9 +27,13 @@ export default function LandingFooterSection(): JSX.Element {
           <MuiLink href="/media">
             <Typography gutterBottom>{t("footer:footer.media")}</Typography>
           </MuiLink>
-          <MuiLink href="/support">
-            <Typography gutterBottom>{t("footer:footer.support")}</Typography>
-          </MuiLink>
+          <Link
+            href="https://sentrei.substack.com"
+            target="_blank"
+            rel="noopener"
+          >
+            <Typography gutterBottom>{t("footer:footer.substack")}</Typography>
+          </Link>
         </Grid>
         <Grid item xs={12} sm={3} md={3}>
           <Typography variant="h6" gutterBottom>
@@ -43,6 +47,9 @@ export default function LandingFooterSection(): JSX.Element {
           </MuiLink>
           <MuiLink href="/pricing">
             <Typography gutterBottom>{t("footer:footer.pricing")}</Typography>
+          </MuiLink>
+          <MuiLink href="/support">
+            <Typography gutterBottom>{t("footer:footer.support")}</Typography>
           </MuiLink>
         </Grid>
         <Grid item xs={12} sm={3} md={3}>

@@ -10,8 +10,8 @@ const LandingOutlineStyles = makeStyles((theme: Theme) =>
     typography: {
       color:
         theme.palette.type === "light"
-          ? theme.palette.grey[800]
-          : theme.palette.grey[400],
+          ? theme.palette.text.primary
+          : theme.palette.text.secondary,
       position: "relative",
       fontFamily: "-apple-system, system-ui, BlinkMacSystemFont, Roboto",
       fontSize: 60,

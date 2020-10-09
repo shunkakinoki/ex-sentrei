@@ -10,11 +10,15 @@
     "googleText": "Google で サインイン",
     "startText": "すべて 無料 でスタートする"
   },
+  "bond": {
+    "tagline": "メンバーと意思疎通"
+  },
   "cta": {
-    "salesText": "営業担当にお問い合わせください",
+    "caption": "さあ、Sentreiを始めよう",
+    "salesText": "営業担当にお問い合わせ",
     "startText": "今すぐ無料で始めましょう",
     "subtitle": "よりスマートに、より速く、そして今すぐ一緒に仕事をしましょう。",
-    "title": "セントレイと素晴らしい仕事をする"
+    "title": "素晴らしい仕事をしよう"
   },
   "explore": {
     "title": "Sentreiを発見する"
@@ -36,6 +40,9 @@
     "titleOne": "無制限の時間",
     "titleThree": "目標を達成",
     "titleTwo": "フォーカス指向"
+  },
+  "focus": {
+    "tagline": "チームの生産性を加速"
   },
   "outline": {
     "problem": {
@@ -83,5 +90,8 @@
     "bond": "繋がる",
     "focus": "集中",
     "work": "作業"
+  },
+  "work": {
+    "tagline": "自信を持って賢く働く"
   }
 }
