@@ -1,3 +1,4 @@
+import Container from "@material-ui/core/Container";
 import NoSsr from "@material-ui/core/NoSsr";
 import Paper from "@material-ui/core/Paper";
 
@@ -30,38 +31,40 @@ export default function PaperCupsWidget({
 
   return (
     <NoSsr>
-      <Paper square elevation={24} component="span">
-        <ChatWindow
-          accountId={accountId}
-          requireEmailUpfront={type !== "support"}
-          title={
-            type === "support"
-              ? t("papercups:papercups.support")
-              : t("papercups:papercups.sales")
-          }
-          subtitle={t("papercups:papercups.subTitle")}
-          newMessagePlaceholder={t("papercups:papercups.messagePlaceholder")}
-          greeting={t("papercups:papercups.greeting")}
-          primaryColor={theme.palette.primary.main}
-          onChatOpened={(): void =>
-            trackEvent("Papercups Window Opened", {type})
-          }
-          onChatClosed={(): void =>
-            trackEvent("Papercups Window Closed", {type})
-          }
-          onMessageSent={(mes): void =>
-            trackEvent("Papercups Message Sent", mes)
-          }
-          onMessageReceived={(mes): void =>
-            trackEvent("Papercups Message Received", mes)
-          }
-          customer={{
-            name: customerName || "",
-            email: customerEmail || "",
-            external_id: customerUid || "",
-          }}
-        />
-      </Paper>
+      <Container maxWidth="md">
+        <Paper square elevation={24} style={{height: "70vh"}}>
+          <ChatWindow
+            accountId={accountId}
+            requireEmailUpfront={type !== "support"}
+            title={
+              type === "support"
+                ? t("papercups:papercups.support")
+                : t("papercups:papercups.sales")
+            }
+            subtitle={t("papercups:papercups.subTitle")}
+            newMessagePlaceholder={t("papercups:papercups.messagePlaceholder")}
+            greeting={t("papercups:papercups.greeting")}
+            primaryColor={theme.palette.primary.main}
+            onChatOpened={(): void =>
+              trackEvent("Papercups Window Opened", {type})
+            }
+            onChatClosed={(): void =>
+              trackEvent("Papercups Window Closed", {type})
+            }
+            onMessageSent={(mes): void =>
+              trackEvent("Papercups Message Sent", mes)
+            }
+            onMessageReceived={(mes): void =>
+              trackEvent("Papercups Message Received", mes)
+            }
+            customer={{
+              name: customerName || "",
+              email: customerEmail || "",
+              external_id: customerUid || "",
+            }}
+          />
+        </Paper>
+      </Container>
     </NoSsr>
   );
 }
