@@ -43,7 +43,7 @@ export default function LandingBanner(): JSX.Element {
       <Typography
         variant="h5"
         align="center"
-        color="textSecondary"
+        color="textPrimary"
         className={classes.text}
       >
         {t("index:banner.bannerTextOne")}
@@ -52,7 +52,7 @@ export default function LandingBanner(): JSX.Element {
         gutterBottom
         variant="h5"
         align="center"
-        color="textSecondary"
+        color="textPrimary"
         className={classes.text}
       >
         {t("index:banner.bannerTextTwo")}
