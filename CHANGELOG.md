@@ -1,3 +1,19 @@
+# [1.124.0](https://github.com/sentrei/sentrei/compare/v1.123.0...v1.124.0) (2020-10-09)
+
+### Features
+
+- 🎸 ini landing caption ([20511dc](https://github.com/sentrei/sentrei/commit/20511dc8ebdb71a1fd455bec446f050b133ea097))
+- 🎸 ini landing section bond ([68142e4](https://github.com/sentrei/sentrei/commit/68142e4795b80d872ad0e555294c80020bed1ab0))
+- 🎸 ini landing section focus and work ([f5ae189](https://github.com/sentrei/sentrei/commit/f5ae189c4fa0c2d5584d645374fb338e87ffb090))
+- 🎸 ini landing tagline for bond section ([57fa08c](https://github.com/sentrei/sentrei/commit/57fa08cc9d0525a3261c4fda1a1b6536158413e9))
+
+### Performance Improvements
+
+- ⚡️ ini caption i18n for landing ctta ([7f71695](https://github.com/sentrei/sentrei/commit/7f71695a4faa625eb35c8474ba78d60c2637f60d))
+- ⚡️ refactor landing cta box spacing ([07d6254](https://github.com/sentrei/sentrei/commit/07d62541c1d4746bc2c0838af21fe1d261a8baba))
+- ⚡️ refactor tagline dark mode text color ([45e451f](https://github.com/sentrei/sentrei/commit/45e451f9522620379b8f499674918f133af88aa8))
+- ⚡️ refactor typography color for landing tagline ([2129894](https://github.com/sentrei/sentrei/commit/212989402c46e69c150fca478d85f18f3334bdfd))
+
 # [1.123.0](https://github.com/sentrei/sentrei/compare/v1.122.1...v1.123.0) (2020-10-09)
 
 ### Features
