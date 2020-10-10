@@ -1,3 +1,14 @@
+# [1.127.0](https://github.com/sentrei/sentrei/compare/v1.126.0...v1.127.0) (2020-10-10)
+
+### Features
+
+- 🎸 ini package-json:check ([c75d995](https://github.com/sentrei/sentrei/commit/c75d9959b30ca208163cc0bc24fe024c8743e446))
+
+### Performance Improvements
+
+- ⚡️ ncu self upgrade ([b4c28d6](https://github.com/sentrei/sentrei/commit/b4c28d6576e55404f3769a3328102f06c8faf4c9))
+- ⚡️ ncu upgrade all ([1878c3a](https://github.com/sentrei/sentrei/commit/1878c3ae2d92f9fee82b2f50d2cf680221a8a4c8))
+
 # [1.126.0](https://github.com/sentrei/sentrei/compare/v1.125.1...v1.126.0) (2020-10-09)
 
 ### Features
