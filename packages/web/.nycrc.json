@@ -3,7 +3,7 @@
   "extends": "@istanbuljs/nyc-config-typescript",
   "include": ["pages_/**/*"],
   "exclude": ["pages/api/__coverage__.js"],
-  "report-dir": "cypress-coverage",
+  "report-dir": "coverage",
   "reporter": [
     "json",
     "lcov"

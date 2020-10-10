@@ -67,3 +67,17 @@ jobs:
           state: "failure"
           deployment_id: ${{ steps.pull.outputs.deployment_id }}
           target_url: https://${{ github.event.pull_request.base.ref }}.preview.sentrei.com
+      - working-directory: packages/video
+        run: |
+          yarn run build:test
+      - working-directory: packages/video
+        run: |
+          yarn run test
+      - uses: codecov/codecov-action@v1.0.13
+        continue-on-error: true
+        timeout-minutes: 3
+        with:
+          file: packages/web/coverage/lcov.info
+          name: sentrei
+          fail_ci_if_error: true
+          flags: web

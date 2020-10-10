@@ -40,7 +40,7 @@
 **/web/.env.production.local
 **/web/.env.test.local
 **/web/.nyc_output
-**/web/cypress-coverage
+**/web/coverage
 **/web/cypress/integration/*.d.ts
 **/web/cypress/videos
 **/web/firebase.json
