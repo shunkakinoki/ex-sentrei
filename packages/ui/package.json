@@ -71,6 +71,7 @@
     "react-parallax-tilt": "^1.4.66",
     "react-player": "^2.6.2",
     "react-rough-notation": "^1.0.0",
+    "react-spring": "^9.0.0-rc.3",
     "react-toggle-dark-mode": "^1.0.2",
     "react-useanimations": "^2.0.5",
     "recharts": "^1.8.5",

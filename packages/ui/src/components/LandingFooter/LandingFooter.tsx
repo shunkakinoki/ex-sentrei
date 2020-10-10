@@ -25,6 +25,7 @@ export default function LandingLandingFooter({logo}: Props): JSX.Element {
         <LandingFooterCredits />
         <LandingFooterTail logo={logo} />
       </Container>
+      <Box py={1} />
     </footer>
   );
 }
