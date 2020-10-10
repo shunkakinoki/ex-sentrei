@@ -1,5 +1,9 @@
 {
   "baseUrl": "http://localhost:3000",
-  "fixturesFolder": false,
-  "projectId": "r3xjp1"
+  "nodeVersion": "system",
+  "env": {
+    "codeCoverage": {
+      "url": "/api/__coverage__"
+    }
+  }
 }
