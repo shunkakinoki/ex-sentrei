@@ -98,11 +98,11 @@
     "firebase-admin": "^9.2.0",
     "firebase-functions": "^3.11.0",
     "firebase-functions-test": "^0.2.2",
-    "firebase-tools": "^8.12.0",
+    "firebase-tools": "^8.12.1",
     "jest": "^26.5.2",
     "jest-when": "^2.7.2",
     "lodash": "^4.17.20",
-    "stripe": "8.107.0",
+    "stripe": "8.109.0",
     "tscpaths": "^0.0.9",
     "twilio": "^3.49.4",
     "uuid": "^8.3.1"
