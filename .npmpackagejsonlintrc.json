@@ -28,9 +28,7 @@
     "repository-type": "error",
     "scripts-type": "error",
     "version-type": "error",
-    "valid-values-author": ["error", [
-      "Shun Kakinoki"
-    ]],
+    "valid-values-author": ["error", ["Shun Kakinoki"]],
     "valid-values-private": ["error", [true, false]],
     "name-format": "error",
     "version-format": "error"
