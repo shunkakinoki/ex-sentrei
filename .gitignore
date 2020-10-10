@@ -39,8 +39,9 @@
 **/web/.env.preview.local
 **/web/.env.production.local
 **/web/.env.test.local
+**/web/.nyc_output
+**/web/coverage
 **/web/cypress/integration/*.d.ts
-**/web/cypress/integration/*.d.ts.map
 **/web/cypress/videos
 **/web/firebase.json
 **/web/out
