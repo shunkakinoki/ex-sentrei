@@ -44,7 +44,8 @@
     "swap:beta:env": "cp .beta.env .env",
     "swap:main": "cp main.firebase.json firebase.json",
     "swap:main:env": "cp .main.env .env",
-    "test": "start-server-and-test start http://localhost:3000 cypress",
+    "test": "cross-env CYPRESS_BASE_URL=http://preview.sentrei.com yarn run cypress",
+    "test:local": "start-server-and-test start http://localhost:3000 cypress",
     "typescript": "cd ../.. && yarn run typescript:build",
     "watch": "cd ../.. && yarn run watch"
   },
