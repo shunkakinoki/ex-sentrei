@@ -25,6 +25,10 @@ const LandingHeaderStyles = makeStyles((theme: Theme) =>
     },
     paper: {
       backgroundColor: theme.palette.background.paper,
+      opacity: 0.96,
+      "@supports (backdrop-filter: none)": {
+        backdropFilter: "blur(3px)",
+      },
     },
     sectionDesktop: {
       display: "none",
