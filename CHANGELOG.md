@@ -1,3 +1,15 @@
+# [1.129.0](https://github.com/sentrei/sentrei/compare/v1.128.0...v1.129.0) (2020-10-10)
+
+### Features
+
+- 🎸 ini cypress build ([27a334f](https://github.com/sentrei/sentrei/commit/27a334f61eeb63d7e8d115cea2926ee146a79e6f))
+
+### Performance Improvements
+
+- ⚡️ ini cypress gha ([e178135](https://github.com/sentrei/sentrei/commit/e178135ef8e485f35c3ca503a43e5055ed5766b5))
+- ⚡️ ini cypress gitignore ([193acfe](https://github.com/sentrei/sentrei/commit/193acfe39de12cd360daad02717a198abb432d17))
+- ⚡️ ini cypress test ([b1e67cc](https://github.com/sentrei/sentrei/commit/b1e67cc0785f00afd4c34e6c6abdf4c4f367bb11))
+
 # [1.128.0](https://github.com/sentrei/sentrei/compare/v1.127.0...v1.128.0) (2020-10-10)
 
 ### Features
