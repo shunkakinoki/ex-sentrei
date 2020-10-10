@@ -19,7 +19,7 @@
     "build:analyze": "cross-env ANALYZE=true yarn run build",
     "build:ignored": "cd ../.. && git diff --quiet HEAD^ HEAD ./packages/*/src/",
     "build:next": "next-translate && next build",
-    "build:test": "cross-env NODE_ENV=test yarn run build",
+    "build:test": "yarn run typescript && cross-env NODE_ENV=test next build",
     "coverage": "nyc report --reporter=lcov --reporter=text",
     "cypress": "cypress run --record false",
     "cypress:install": "cypress install",
