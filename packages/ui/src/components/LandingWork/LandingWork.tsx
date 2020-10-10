@@ -6,7 +6,7 @@ import * as React from "react";
 import LandingTagline from "@sentrei/ui/components/LandingTagline";
 import LandingTimelinePoint from "@sentrei/ui/components/LandingTimelinePoint";
 
-export default function LandingSectionWork(): JSX.Element {
+export default function LandingWork(): JSX.Element {
   const {t} = useTranslation();
 
   return (
