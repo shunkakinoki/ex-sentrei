@@ -4,10 +4,7 @@
   "include": ["pages_/**/*"],
   "exclude": ["pages/api/__coverage__.js"],
   "report-dir": "coverage",
-  "reporter": [
-    "json",
-    "lcov"
-  ],
+  "reporter": ["json", "lcov"],
   "all": true,
   "sourceMap": true,
   "instrument": true
