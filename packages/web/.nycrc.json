@@ -1,6 +1,11 @@
 {
+  "extension": [".js", ".jsx", ".ts", ".tsx"],
   "extends": "@istanbuljs/nyc-config-typescript",
+  "include": ["pages_/**/*"],
+  "exclude": ["pages/api/__coverage__.js"],
+  "report-dir": "coverage",
+  "reporter": ["json", "lcov"],
   "all": true,
-  "check-coverage": true,
-  "include": ["pages_/**/*.tsx", "src/**/*.ts", "src/**/*.tsx"]
+  "sourceMap": true,
+  "instrument": true
 }

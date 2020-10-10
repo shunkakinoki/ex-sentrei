@@ -19,7 +19,7 @@
     "build:analyze": "cross-env ANALYZE=true yarn run build",
     "build:ignored": "cd ../.. && git diff --quiet HEAD^ HEAD ./packages/*/src/",
     "build:next": "next-translate && next build",
-    "build:test": "cross-env NODE_ENV=test yarn run build",
+    "build:test": "yarn run typescript && cross-env NODE_ENV=test next build",
     "coverage": "nyc report --reporter=lcov --reporter=text",
     "cypress": "cypress run --record false",
     "cypress:install": "cypress install",
@@ -44,7 +44,8 @@
     "swap:beta:env": "cp .beta.env .env",
     "swap:main": "cp main.firebase.json firebase.json",
     "swap:main:env": "cp .main.env .env",
-    "test": "start-server-and-test start http://localhost:3000 cypress",
+    "test": "cross-env CYPRESS_BASE_URL=http://preview.sentrei.com yarn run cypress",
+    "test:local": "start-server-and-test start http://localhost:3000 cypress",
     "typescript": "cd ../.. && yarn run typescript:build",
     "watch": "cd ../.. && yarn run watch"
   },
@@ -81,13 +82,15 @@
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.1",
     "@cypress/code-coverage": "^3.8.1",
-    "@cypress/webpack-preprocessor": "^5.4.6",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@relative-ci/agent": "^1.3.0",
     "@sentry/cli": "^1.58.0",
+    "@testing-library/cypress": "^7.0.1",
+    "@types/testing-library__cypress": "^5.0.8",
     "babel-plugin-istanbul": "^6.0.0",
     "cross-env": "^7.0.2",
     "cypress": "^5.3.0",
+    "nyc": "^15.1.0",
     "start-server-and-test": "^1.11.5"
   },
   "publishConfig": {

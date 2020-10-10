@@ -14,7 +14,7 @@
       "@sentrei/web/*": ["src/*"]
     }
   },
-  "include": ["pages_/**/*", "src/**/*", "next-env.d.ts"],
+  "include": ["cypress/**/*", "pages_/**/*", "src/**/*", "next-env.d.ts"],
   "exclude": ["node_modules"],
   "references": [
     {
