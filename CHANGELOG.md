@@ -1,3 +1,13 @@
+# [1.130.0](https://github.com/sentrei/sentrei/compare/v1.129.0...v1.130.0) (2020-10-10)
+
+### Features
+
+- 🎸 ini react spring ([d5556b6](https://github.com/sentrei/sentrei/commit/d5556b62cc635200ee18eee2a5f4d722324ca88a))
+
+### Performance Improvements
+
+- ⚡️ refactor landing sections to each feature ([7f9d805](https://github.com/sentrei/sentrei/commit/7f9d8057f8b2ed562d8048a1f4a75f8aa63f0a63))
+
 # [1.129.0](https://github.com/sentrei/sentrei/compare/v1.128.0...v1.129.0) (2020-10-10)
 
 ### Features
