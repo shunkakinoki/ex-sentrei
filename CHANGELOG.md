@@ -1,3 +1,9 @@
+# [1.128.0](https://github.com/sentrei/sentrei/compare/v1.127.0...v1.128.0) (2020-10-10)
+
+### Features
+
+- 🎸 ini header frost glass css ([07fa917](https://github.com/sentrei/sentrei/commit/07fa917b272f9734ac0dff3f2328a2100515bcdf))
+
 # [1.127.0](https://github.com/sentrei/sentrei/compare/v1.126.0...v1.127.0) (2020-10-10)
 
 ### Features
