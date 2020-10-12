@@ -62,8 +62,7 @@ export default function SpacePanelActionCreateButton({
 
   return (
     <MuiButton
-      href="/[namespaceId]/rooms/create"
-      as={`/${namespaceId}/rooms/create`}
+      href={`/${namespaceId}/rooms/create`}
       fullWidth
       color="primary"
       variant="contained"

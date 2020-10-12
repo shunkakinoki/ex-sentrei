@@ -71,10 +71,7 @@ export default function MemberFab({space, members}: Props): JSX.Element {
         <Grid container>
           <Box p={3}>
             <Grid container direction="row">
-              <MuiLink
-                href="/[namespaceId]/members"
-                as={`/${space.namespaceId}/members`}
-              >
+              <MuiLink href={`/${space.namespaceId}/members`}>
                 <Typography
                   align="center"
                   variant="h5"

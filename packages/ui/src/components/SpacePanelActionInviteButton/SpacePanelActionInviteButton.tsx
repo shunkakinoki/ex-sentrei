@@ -51,8 +51,7 @@ export default function SpacePanelActionInviteButton({
 
   return (
     <MuiButton
-      href="/[namespaceId]/settings/invite"
-      as={`/${namespaceId}/settings/invite`}
+      href={`/${namespaceId}/settings/invite`}
       fullWidth
       color="primary"
       variant="outlined"

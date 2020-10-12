@@ -66,10 +66,7 @@ export default function SpacePanelBanner({
               </Grid>
               <Grid item xs={1} />
               <Grid item xs={1}>
-                <MuiButtonBase
-                  href="/[namespaceId]/settings/billing"
-                  as={`${namespaceId}/settings/billing`}
-                >
+                <MuiButtonBase href={`${namespaceId}/settings/billing`}>
                   <Chip
                     clickable
                     color={tier === "free" ? "default" : "primary"}

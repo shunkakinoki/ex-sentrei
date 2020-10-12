@@ -38,32 +38,28 @@ export default function GridSettingsSpaceTab({
       className={classes.tabs}
     >
       <GridSettingsButton
-        href="/[namespaceId]/settings"
-        as={`/${namespaceId}/settings`}
+        href={`/${namespaceId}/settings`}
         selected={value === 0}
         skeleton={skeleton}
       >
         {t("common:common.general")}
       </GridSettingsButton>
       <GridSettingsButton
-        href="/[namespaceId]/settings/billing"
-        as={`/${namespaceId}/settings/billing`}
+        href={`/${namespaceId}/settings/billing`}
         selected={value === 1}
         skeleton={skeleton}
       >
         {t("common:common.billing")}
       </GridSettingsButton>
       <GridSettingsButton
-        href="/[namespaceId]/settings/invite"
-        as={`/${namespaceId}/settings/invite`}
+        href={`/${namespaceId}/settings/invite`}
         selected={value === 2}
         skeleton={skeleton}
       >
         {t("common:common.invite")}
       </GridSettingsButton>
       <GridSettingsButton
-        href="/[namespaceId]/settings/quit"
-        as={`/${namespaceId}/settings/quit`}
+        href={`/${namespaceId}/settings/quit`}
         selected={value === 3}
         skeleton={skeleton}
       >

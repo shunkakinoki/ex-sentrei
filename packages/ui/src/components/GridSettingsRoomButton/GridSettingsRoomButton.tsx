@@ -40,32 +40,28 @@ export default function GridSettingsRoomTab({
       className={classes.tabs}
     >
       <GridSettingsButton
-        href="/[namespaceId]/[nameroomId]/settings"
-        as={`/${namespaceId}/${nameroomId}/settings`}
+        href={`/${namespaceId}/${nameroomId}/settings`}
         selected={value === 0}
         skeleton={skeleton}
       >
         {t("common:common.general")}
       </GridSettingsButton>
       <GridSettingsButton
-        href="/[namespaceId]/[nameroomId]/settings/color"
-        as={`/${namespaceId}/${nameroomId}/settings/color`}
+        href={`/${namespaceId}/${nameroomId}/settings/color`}
         selected={value === 1}
         skeleton={skeleton}
       >
         {t("common:common.color")}
       </GridSettingsButton>
       <GridSettingsButton
-        href="/[namespaceId]/[nameroomId]/settings/quit"
-        as={`/${namespaceId}/${nameroomId}/settings/quit`}
+        href={`/${namespaceId}/${nameroomId}/settings/quit`}
         selected={value === 2}
         skeleton={skeleton}
       >
         {t("common:common.quit")}
       </GridSettingsButton>
       <GridSettingsButton
-        href="/[namespaceId]/[nameroomId]/settings/delete"
-        as={`/${namespaceId}/${nameroomId}/settings/delete`}
+        href={`/${namespaceId}/${nameroomId}/settings/delete`}
         selected={value === 3}
         skeleton={skeleton}
       >

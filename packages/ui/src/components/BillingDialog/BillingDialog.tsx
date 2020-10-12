@@ -46,8 +46,7 @@ export default function BillingDialog({
         </DialogContent>
         <DialogActions>
           <MuiButton
-            href="/[namespaceId]/settings/billing"
-            as={`/${namespaceId}/settings/billing`}
+            href={`/${namespaceId}/settings/billing`}
             fullWidth
             color="primary"
             variant="contained"

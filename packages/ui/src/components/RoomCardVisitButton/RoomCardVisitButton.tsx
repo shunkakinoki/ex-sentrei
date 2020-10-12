@@ -81,8 +81,7 @@ export default function RoomCardVisitButton({
 
   return (
     <MuiButton
-      href="/[namespaceId]/[nameroomId]"
-      as={`/${space.namespaceId}/${room.nameroomId}`}
+      href={`/${space.namespaceId}/${room.nameroomId}`}
       fullWidth
       variant="outlined"
       color="inherit"

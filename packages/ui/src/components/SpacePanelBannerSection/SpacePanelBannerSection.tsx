@@ -24,11 +24,7 @@ export default function SpacePanelBannerSection({
       justifyContent="flex-start"
       direction="column"
     >
-      <MuiLink
-        href={`/[namespaceId]/${section}`}
-        as={`/${namespaceId}/${section}`}
-        color="inherit"
-      >
+      <MuiLink href={`/${namespaceId}/${section}`} color="inherit">
         <Typography variant="button" color="textSecondary" gutterBottom>
           {title}
         </Typography>

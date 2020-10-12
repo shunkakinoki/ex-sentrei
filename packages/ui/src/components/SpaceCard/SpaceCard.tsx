@@ -51,7 +51,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
   return (
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
-        <MuiAnchor href="/[namespaceId]" as={`/${space.namespaceId}`}>
+        <MuiAnchor href={`/${space.namespaceId}`}>
           {space.photoHash && isBlurhashValid(space.photoHash) ? (
             <Blurhash
               hash={space.photoHash}
@@ -117,8 +117,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
             </Grid>
             <Grid item xs={3}>
               <MuiButton
-                href="/[namespaceId]"
-                as={`/${space.namespaceId}`}
+                href={`/${space.namespaceId}`}
                 fullWidth
                 variant="outlined"
                 color="primary"

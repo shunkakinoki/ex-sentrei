@@ -47,16 +47,14 @@ export default function AppTabRoom({
           scrollButtons="auto"
         >
           <AppTabIcon
-            href="/[namespaceId]/[nameroomId]"
-            as={`/${namespaceId}/${nameroomId}`}
+            href={`/${namespaceId}/${nameroomId}`}
             label={t("common:common.room")}
             labelIcon={<VideocamIcon />}
             selected={value === 0}
             skeleton={skeleton}
           />
           <AppTabIcon
-            href="/[namespaceId]/[nameroomId]/settings"
-            as={`/${namespaceId}/${nameroomId}/settings`}
+            href={`/${namespaceId}/${nameroomId}/settings`}
             label={t("common:common.settings")}
             labelIcon={<SettingsIcon />}
             selected={value === 1}

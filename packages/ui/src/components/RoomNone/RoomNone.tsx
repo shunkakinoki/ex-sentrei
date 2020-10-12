@@ -27,8 +27,7 @@ export default function RoomNone({namespaceId}: Props): JSX.Element {
         <Box p={3} />
         <MuiButton
           fullWidth
-          href="/[namespaceId]/rooms/create"
-          as={`/${namespaceId}/rooms/create`}
+          href={`/${namespaceId}/rooms/create`}
           variant="outlined"
           color="primary"
         >
