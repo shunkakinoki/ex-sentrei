@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import Tab, {TabProps} from "@material-ui/core/Tab";
-import Link from "next/link";
-import {LinkProps} from "next/link";
+import Link, {LinkProps} from "next/link";
+
 import * as React from "react";
 
 export type MuiTabProps = Omit<TabProps, "href" | "classes"> &

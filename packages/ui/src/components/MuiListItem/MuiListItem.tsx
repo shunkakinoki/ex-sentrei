@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import ListItem, {ListItemProps} from "@material-ui/core/ListItem";
-import Link from "next/link";
-import {LinkProps} from "next/link";
+import Link, {LinkProps} from "next/link";
+
 import * as React from "react";
 
 export type MuiListItemProps = Omit<ListItemProps, "href" | "classes"> &

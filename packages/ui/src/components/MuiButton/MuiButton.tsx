@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import Button, {ButtonProps} from "@material-ui/core/Button";
-import Link from "next/link";
-import {LinkProps} from "next/link";
+import Link, {LinkProps} from "next/link";
+
 import * as React from "react";
 
 export type ButtonLinkProps = Omit<ButtonProps, "href" | "classes"> &

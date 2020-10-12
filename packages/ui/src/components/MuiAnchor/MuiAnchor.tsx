@@ -2,8 +2,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import Link from "next/link";
-import {LinkProps} from "next/link";
+import Link, {LinkProps} from "next/link";
+
 import * as React from "react";
 
 const MuiAnchor = React.forwardRef<LinkProps, any>(

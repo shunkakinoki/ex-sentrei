@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import MenuItem, {MenuItemProps} from "@material-ui/core/MenuItem";
-import Link from "next/link";
-import {LinkProps} from "next/link";
+import Link, {LinkProps} from "next/link";
+
 import * as React from "react";
 
 export type MuiMenuItemProps = Omit<MenuItemProps, "href" | "classes"> &
