@@ -1,5 +1,5 @@
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
+import ImageList from "@material-ui/core/ImageList";
+import ImageListItem from "@material-ui/core/ImageListItem";
 import * as React from "react";
 
 import Media from "@sentrei/types/models/Media";
@@ -15,13 +15,13 @@ export default function MediaGridList({data}: Props): JSX.Element {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={300} cols={3}>
+      <ImageList rowHeight={300} cols={3}>
         {data.map(media => (
-          <GridListTile key={media.title} cols={media.cols || 1}>
+          <ImageListItem key={media.title} cols={media.cols || 1}>
             {media.img}
-          </GridListTile>
+          </ImageListItem>
         ))}
-      </GridList>
+      </ImageList>
     </div>
   );
 }

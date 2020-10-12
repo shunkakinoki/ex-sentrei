@@ -20,7 +20,7 @@ const LandingCtaStyles = makeStyles((theme: Theme) =>
     },
     typography: {
       color:
-        theme.palette.type === "light"
+        theme.palette.mode === "light"
           ? theme.palette.grey[800]
           : theme.palette.grey[300],
       position: "relative",

@@ -41,7 +41,7 @@ const RoomStepperName = ({atom, form}: Props): JSX.Element => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
       <Box p={3}>
-        <Grid container justify="center" alignItems="center">
+        <Grid container justifyContent="center" alignItems="center">
           <Grid item xs={8}>
             <Controller
               as={

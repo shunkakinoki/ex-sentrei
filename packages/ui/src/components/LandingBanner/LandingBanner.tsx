@@ -78,7 +78,7 @@ export default function LandingBanner(): JSX.Element {
         {t("index:banner.bannerTextThree")}
       </Typography>
       <Box py={1} />
-      <Grid container justify="center" direction="row" spacing={1}>
+      <Grid container justifyContent="center" direction="row" spacing={1}>
         <Grid item xs={12} md={6}>
           <div className={classes.item}>
             <MuiButton

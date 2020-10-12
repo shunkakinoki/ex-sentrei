@@ -33,7 +33,7 @@ export default function SpaceHomeBoard({
 }: Props): JSX.Element {
   return (
     <Container maxWidth="md" component="main">
-      <Grid container justify="center" direction="row">
+      <Grid container justifyContent="center" direction="row">
         <Grid item xs={12} sm={12} md={6}>
           <Box px={1}>
             {rooms?.length === 0 && (

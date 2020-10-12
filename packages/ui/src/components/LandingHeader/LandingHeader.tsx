@@ -113,7 +113,7 @@ export default function LandingHeader({
       <div className={classes.grow}>
         <AppBar position="fixed" className={appBarClasses}>
           <Toolbar>
-            <Grid container alignItems="center" justify="center">
+            <Grid container alignItems="center" justifyContent="center">
               <LandingHeaderLogo logo={logo} href="/" />
               <div className={classes.menu}>
                 <Grid item>

@@ -54,10 +54,6 @@ export type LinkProps = LinkPropsBase &
 function Link(props: LinkProps): JSX.Element {
   const {href, innerRef, naked, ...other} = props;
 
-  if (naked) {
-    return <NextComposed ref={innerRef} href={href} {...other} />;
-  }
-
   return (
     <MuiLink
       component={NextComposed}

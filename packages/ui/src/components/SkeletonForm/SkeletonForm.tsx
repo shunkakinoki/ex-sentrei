@@ -18,7 +18,7 @@ export default function SkeletonForm(): JSX.Element {
         <Box p={6}>
           <Skeleton variant="rect" className={classes.title} />
         </Box>
-        <Grid container alignItems="center" justify="center" spacing={3}>
+        <Grid container alignItems="center" justifyContent="center" spacing={3}>
           {[...Array(3)].map((e, i) => (
             // eslint-disable-next-line react/no-array-index-key
             <Grid item key={i} xs={12}>

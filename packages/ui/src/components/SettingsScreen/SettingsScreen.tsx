@@ -38,7 +38,7 @@ const SettingsScreen = ({profile, user}: Props): JSX.Element => {
         tabLabelTwo={t("common:common.password")}
         tabLabelThree={t("common:common.other")}
         tabPanelOne={
-          <Grid container justify="center" direction="row" spacing={3}>
+          <Grid container justifyContent="center" direction="row" spacing={3}>
             <Grid item xs={12}>
               <SettingsFormNotification
                 profile={profile}

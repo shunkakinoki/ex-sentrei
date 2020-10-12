@@ -31,7 +31,7 @@ export default function SpaceActivityList({
     <>
       <SpaceSection title={t("space:activity.title")} />
       <Container maxWidth="md" component="main">
-        <Grid container alignItems="center" justify="center" spacing={3}>
+        <Grid container alignItems="center" justifyContent="center" spacing={3}>
           {activities.map(activity => (
             <Grid item key={activity.id} xs={12}>
               <ActivityCard activity={activity} />

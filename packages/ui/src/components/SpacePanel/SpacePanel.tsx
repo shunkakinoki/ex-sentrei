@@ -30,7 +30,7 @@ export default function SpacePanel({
         <Grid
           container
           alignItems="center"
-          justify="center"
+          justifyContent="center"
           direction="row"
           spacing={1}
         >

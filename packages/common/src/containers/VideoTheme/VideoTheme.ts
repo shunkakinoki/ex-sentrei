@@ -4,7 +4,7 @@ import SentreiTheme from "@sentrei/types/containers/SentreiTheme";
 
 const theme = createMuiTheme({
   palette: {
-    type: "dark",
+    mode: "dark",
     primary: {
       main: "#F22F46",
     },

@@ -23,7 +23,7 @@ export default function AboutCore(): JSX.Element {
           container
           spacing={3}
           direction="row"
-          justify="center"
+          justifyContent="center"
           alignItems="stretch"
           className={classes.container}
         >

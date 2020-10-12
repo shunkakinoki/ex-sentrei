@@ -5,7 +5,7 @@ const LandingFooterStyles = makeStyles((theme: Theme) =>
     footer: {
       marginTop: "auto",
       backgroundColor:
-        theme.palette.type === "light"
+        theme.palette.mode === "light"
           ? theme.palette.grey[200]
           : theme.palette.grey[800],
     },

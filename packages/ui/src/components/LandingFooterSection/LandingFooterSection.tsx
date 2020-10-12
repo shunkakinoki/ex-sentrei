@@ -13,7 +13,7 @@ export default function LandingFooterSection(): JSX.Element {
 
   return (
     <Container maxWidth="md">
-      <Grid container justify="space-evenly">
+      <Grid container justifyContent="space-evenly">
         <Grid item xs={12} sm={3} md={3}>
           <Typography variant="h6" gutterBottom>
             {t("footer:footer.company")}

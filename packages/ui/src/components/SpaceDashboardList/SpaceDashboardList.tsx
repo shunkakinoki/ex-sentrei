@@ -34,7 +34,7 @@ export default function SpaceDashboardList({spaces}: Props): JSX.Element {
         </Typography>
       </Box>
       <Container maxWidth="lg" component="main">
-        <Grid container alignItems="center" justify="center" spacing={3}>
+        <Grid container alignItems="center" justifyContent="center" spacing={3}>
           {spaces.map(space => (
             <Grid item key={space.id} xs={12} sm={6} md={4}>
               <SpaceCard space={space} />

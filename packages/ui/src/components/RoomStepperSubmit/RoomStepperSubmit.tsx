@@ -89,7 +89,7 @@ const RoomStepperSubmit = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
       <Box p={3}>
-        <Grid container justify="center" alignItems="center">
+        <Grid container justifyContent="center" alignItems="center">
           <FormControl>
             <TextField
               fullWidth

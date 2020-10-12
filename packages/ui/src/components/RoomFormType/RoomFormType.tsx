@@ -64,7 +64,7 @@ const RoomFormType = ({disabled, profile, room, user}: Props): JSX.Element => {
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
         <Grid container spacing={3}>
           <Box p={3}>
-            <Grid container justify="center" alignItems="center">
+            <Grid container justifyContent="center" alignItems="center">
               <FormControl>
                 <TextField
                   fullWidth

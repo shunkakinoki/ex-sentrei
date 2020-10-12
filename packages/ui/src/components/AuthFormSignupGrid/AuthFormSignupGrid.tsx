@@ -10,7 +10,7 @@ export default function AuthFormSignupGrid(): JSX.Element {
 
   return (
     <>
-      <Grid container justify="center">
+      <Grid container justifyContent="center">
         <Grid item>
           <MuiLink href="/login" variant="body2">
             {t("auth:signup.alreadyHaveLogin")}
@@ -18,7 +18,7 @@ export default function AuthFormSignupGrid(): JSX.Element {
         </Grid>
       </Grid>
       <Box p={1} />
-      <Grid container justify="center">
+      <Grid container justifyContent="center">
         <Grid item>
           <MuiLink href="/terms" variant="body2">
             {t("auth:signup.byAgreeTerms")}

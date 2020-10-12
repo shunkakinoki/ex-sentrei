@@ -47,7 +47,7 @@ export default function NotificationList({
         </Typography>
       </Box>
       <Container maxWidth="md" component="main">
-        <Grid container alignItems="center" justify="center" spacing={3}>
+        <Grid container alignItems="center" justifyContent="center" spacing={3}>
           {notifications.map(notification => (
             <Grid item key={notification.id} xs={12}>
               <NotificationCard notification={notification} userId={userId} />

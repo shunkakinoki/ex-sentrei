@@ -30,7 +30,7 @@ export default function ActivityCard({activity}: Props): JSX.Element {
         <Grid
           container
           direction="row"
-          justify="flex-end"
+          justifyContent="flex-end"
           alignItems="baseline"
           wrap="nowrap"
         >
@@ -52,7 +52,7 @@ export default function ActivityCard({activity}: Props): JSX.Element {
           container
           direction="row"
           alignItems="center"
-          justify="space-around"
+          justifyContent="space-around"
         >
           <Grid item xs={2} sm={2} md={1}>
             <Avatar src={activity.user.photo || undefined} />

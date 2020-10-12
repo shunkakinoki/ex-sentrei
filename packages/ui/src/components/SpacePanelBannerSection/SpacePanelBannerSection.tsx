@@ -18,7 +18,12 @@ export default function SpacePanelBannerSection({
   title,
 }: Props): JSX.Element {
   return (
-    <Grid container alignItems="center" justify="flex-start" direction="column">
+    <Grid
+      container
+      alignItems="center"
+      justifyContent="flex-start"
+      direction="column"
+    >
       <MuiLink
         href={`/[namespaceId]/${section}`}
         as={`/${namespaceId}/${section}`}

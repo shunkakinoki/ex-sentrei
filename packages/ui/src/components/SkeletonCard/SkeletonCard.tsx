@@ -23,7 +23,7 @@ export default function SkeletonCard(): JSX.Element {
         <Skeleton animation="wave" variant="rect" width="80%" />
         <Box p={1} />
         <div className={classes.container}>
-          <Grid container direction="row" justify="space-around">
+          <Grid container direction="row" justifyContent="space-around">
             <Grid item xs={9}>
               <Skeleton variant="circle">
                 <Avatar />

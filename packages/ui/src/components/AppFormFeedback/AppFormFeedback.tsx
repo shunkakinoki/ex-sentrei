@@ -111,7 +111,7 @@ const AppFormFeedback = ({handleClick, profile}: Props): JSX.Element => {
           container
           direction="row"
           alignItems="center"
-          justify="flex-start"
+          justifyContent="flex-start"
         >
           <Grid item xs={2}>
             <IconButton size="small" onClick={(): void => handleSelect(1)}>

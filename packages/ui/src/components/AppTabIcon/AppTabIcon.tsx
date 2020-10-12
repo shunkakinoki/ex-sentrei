@@ -43,8 +43,8 @@ export default function AppTabIcon({
   )((props: TabProps) => (
     <Tab
       {...props}
+      disabled
       component="nav"
-      selected={selected}
       label={
         <div>
           <span className={classes.labelIcon}>{labelIcon}</span> {label}

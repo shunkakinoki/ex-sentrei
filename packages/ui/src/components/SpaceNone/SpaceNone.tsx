@@ -22,7 +22,7 @@ export default function SpaceNone(): JSX.Element {
         alignItems="center"
         alignContent="center"
         direction="row"
-        justify="center"
+        justifyContent="center"
         spacing={3}
         className={classes.grid}
       >

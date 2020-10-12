@@ -15,7 +15,7 @@ function BadgeStatus({member}: Props): JSX.Element {
     <>
       {member.status === "online" ? (
         <BadgeOnline
-          overlap="circle"
+          overlap="circular"
           anchorOrigin={{
             vertical: "bottom",
             horizontal: "right",
@@ -26,7 +26,7 @@ function BadgeStatus({member}: Props): JSX.Element {
         </BadgeOnline>
       ) : member.status === "offline" ? (
         <BadgeOffline
-          overlap="circle"
+          overlap="circular"
           anchorOrigin={{
             vertical: "bottom",
             horizontal: "right",
@@ -37,7 +37,7 @@ function BadgeStatus({member}: Props): JSX.Element {
         </BadgeOffline>
       ) : (
         <BadgeAway
-          overlap="circle"
+          overlap="circular"
           anchorOrigin={{
             vertical: "bottom",
             horizontal: "right",

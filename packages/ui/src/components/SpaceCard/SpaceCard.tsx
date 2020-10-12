@@ -68,7 +68,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
         </MuiAnchor>
       </CardActionArea>
       <CardContent>
-        <Grid container direction="row" justify="space-between">
+        <Grid container direction="row" justifyContent="space-between">
           <Grid item xs={10}>
             <Typography
               component="h3"
@@ -99,7 +99,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
         </Grid>
         <Box p={1} />
         <div className={classes.container}>
-          <Grid container direction="row" justify="space-around">
+          <Grid container direction="row" justifyContent="space-around">
             <Grid item xs={9}>
               <AvatarGroup max={space.memberCount || 0}>
                 {members

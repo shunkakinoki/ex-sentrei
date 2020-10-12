@@ -53,7 +53,7 @@ export default function SpacePanelBanner({
         <Grid
           container
           alignItems="center"
-          justify="flex-start"
+          justifyContent="flex-start"
           direction="column"
           spacing={1}
         >
@@ -74,7 +74,7 @@ export default function SpacePanelBanner({
                     clickable
                     color={tier === "free" ? "default" : "primary"}
                     label={t(`common:common.${tier}`)}
-                    variant={tier === "free" ? "outlined" : "default"}
+                    variant={tier === "free" ? "outlined" : "filled"}
                   />
                 </MuiButtonBase>
               </Grid>

@@ -57,13 +57,13 @@ export default function LandingFooterCredits(): JSX.Element {
             transition={{duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98]}}
           >
             <MuiLink
-              color={theme.palette.type === "light" ? "primary" : "secondary"}
+              color={theme.palette.mode === "light" ? "primary" : "secondary"}
               href="/credits"
             >
               <Typography
                 variant="body2"
                 color={
-                  theme.palette.type === "light" ? "textSecondary" : "secondary"
+                  theme.palette.mode === "light" ? "textSecondary" : "secondary"
                 }
                 align="center"
               >
