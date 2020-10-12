@@ -7,14 +7,12 @@ import Link, {LinkProps} from "next/link";
 import * as React from "react";
 
 export type MuiTabProps = Omit<TabProps, "href" | "classes"> &
-  Pick<LinkProps, "href" | "as" | "prefetch">;
+  Pick<LinkProps, "href">;
 
-const MuiTab = React.forwardRef<MuiTabProps, any>(
-  ({href, as, prefetch, ...props}, ref) => (
-    <Link href={href} as={as} prefetch={prefetch} passHref>
-      <Tab ref={ref} {...props} />
-    </Link>
-  ),
-);
+const MuiTab = React.forwardRef<MuiTabProps, any>(({href, ...props}, ref) => (
+  <Link href={href} passHref>
+    <Tab ref={ref} {...props} />
+  </Link>
+));
 
 export default MuiTab;

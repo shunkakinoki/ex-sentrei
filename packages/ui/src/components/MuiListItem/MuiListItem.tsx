@@ -7,11 +7,11 @@ import Link, {LinkProps} from "next/link";
 import * as React from "react";
 
 export type MuiListItemProps = Omit<ListItemProps, "href" | "classes"> &
-  Pick<LinkProps, "href" | "as" | "prefetch">;
+  Pick<LinkProps, "href">;
 
 const MuiListItem = React.forwardRef<MuiListItemProps, any>(
-  ({href, as, prefetch, ...props}, ref) => (
-    <Link href={href} as={as} prefetch={prefetch} passHref>
+  ({href, ...props}, ref) => (
+    <Link href={href} passHref>
       <ListItem button component="a" ref={ref} {...props} />
     </Link>
   ),

@@ -7,11 +7,11 @@ import Link, {LinkProps} from "next/link";
 import * as React from "react";
 
 export type ButtonLinkProps = Omit<ButtonProps, "href" | "classes"> &
-  Pick<LinkProps, "href" | "as" | "prefetch">;
+  Pick<LinkProps, "href">;
 
 const MuiButton = React.forwardRef<ButtonLinkProps, any>(
-  ({href, as, prefetch, ...props}, ref) => (
-    <Link href={href} as={as} prefetch={prefetch} passHref>
+  ({href, ...props}, ref) => (
+    <Link href={href} passHref>
       <Button ref={ref} {...props} />
     </Link>
   ),
