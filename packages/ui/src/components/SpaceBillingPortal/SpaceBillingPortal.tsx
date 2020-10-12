@@ -1,5 +1,5 @@
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import Router from "next/router";
 import * as React from "react";
 
 import accessPortalLink from "@sentrei/common/services/accessPortalLink";
@@ -31,7 +31,9 @@ export default function SpaceBillingPortal({
   const handleClick = (): void => {
     backdrop("loading");
     trackEvent("Visit Customer Portal");
-    Router.pushI18n(portalLink);
+    if (portalLink) {
+      Router.push(portalLink);
+    }
   };
 
   React.useEffect(() => {

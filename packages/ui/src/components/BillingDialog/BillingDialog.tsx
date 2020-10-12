@@ -5,7 +5,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import {useTheme} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import MuiButton from "@sentrei/ui/components/MuiButton";

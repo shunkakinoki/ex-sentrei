@@ -10,7 +10,7 @@ import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import {deleteNotification} from "@sentrei/common/firebase/notifications";

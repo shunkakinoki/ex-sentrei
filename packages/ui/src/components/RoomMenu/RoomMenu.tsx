@@ -4,7 +4,7 @@ import Menu from "@material-ui/core/Menu";
 import DeleteIcon from "@material-ui/icons/Delete";
 import PaletteIcon from "@material-ui/icons/Palette";
 import SettingsIcon from "@material-ui/icons/Settings";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import MuiMenuItem from "@sentrei/ui/components/MuiMenuItem";

@@ -1,9 +1,8 @@
 import FormControl from "@material-ui/core/FormControl";
 import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
-import {useRouter} from "next/router";
+import Router, {useRouter} from "next/router";
+
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
@@ -13,11 +12,11 @@ import User from "@sentrei/types/models/User";
 
 export default function LanguageButton(): JSX.Element {
   const router = useRouter();
-  const {lang} = useTranslation();
+  const {locale} = router;
 
   const {user} = React.useContext(AuthContext);
 
-  const [period] = React.useState<User.Language>(lang as User.Language);
+  const [period] = React.useState<User.Language>(locale as User.Language);
 
   const pathnameNoLang = (): string => {
     if (
@@ -29,17 +28,14 @@ export default function LanguageButton(): JSX.Element {
     }
     return router.asPath
       .split("/")
-      .filter(section => section !== lang)
+      .filter(section => section !== locale)
       .join("/");
   };
 
   const handleChange = (event: React.ChangeEvent<{value: unknown}>): void => {
     const language = event.target.value as User.Language;
-    if ((event.target.value as User.Language) !== lang) {
-      Router.pushI18n({
-        url: pathnameNoLang(),
-        options: {lang: event.target.value},
-      });
+    if ((event.target.value as User.Language) !== locale) {
+      Router.push(pathnameNoLang());
     }
     if (user) {
       updateUser({language}, user.uid);

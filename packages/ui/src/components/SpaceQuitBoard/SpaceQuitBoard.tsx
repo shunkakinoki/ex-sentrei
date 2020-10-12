@@ -1,6 +1,6 @@
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import Router from "next/router";
 import * as React from "react";
 
 import {deleteMember} from "@sentrei/common/firebase/members";
@@ -36,7 +36,7 @@ const SpaceQuitBoard = ({
         trackEvent("Quit Space");
         backdrop("loading");
       });
-      Router.replaceI18n("/dashboard");
+      Router.replace("/dashboard");
     } catch (err) {
       snackbar("error", err.message);
     }

@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 
 import MuiLink, {LinkProps as MuiLinkProps} from "@material-ui/core/Link";
-import NextLink from "next-translate/Link";
+import NextLink from "next/link";
 import {LinkProps as NextLinkProps} from "next/link";
 import * as React from "react";
 

@@ -1,6 +1,6 @@
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import Router from "next/router";
 import * as React from "react";
 
 import {deleteRoom} from "@sentrei/common/firebase/rooms";
@@ -29,7 +29,7 @@ const RoomDeleteBoard = ({role, roomId, namespaceId}: Props): JSX.Element => {
         snackbar("success");
         trackEvent("Delete Room");
         backdrop("loading");
-        Router.pushI18n("/[namespaceId]", `/${namespaceId}`);
+        Router.push("/[namespaceId]", `/${namespaceId}`);
       });
     } catch (err) {
       snackbar("error", err.message);

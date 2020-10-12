@@ -7,7 +7,7 @@ import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import PeopleIcon from "@material-ui/icons/People";
 import PollIcon from "@material-ui/icons/Poll";
 import SettingsIcon from "@material-ui/icons/Settings";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import React from "react";
 
 import {AppTabSpaceKey} from "@sentrei/types/models/AppTab";

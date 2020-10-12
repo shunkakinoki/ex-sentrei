@@ -1,7 +1,7 @@
 import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType} from "next";
-import Router from "next-translate/Router";
 import dynamic from "next/dynamic";
-import {useRouter} from "next/router";
+import Router, {useRouter} from "next/router";
+
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
@@ -52,7 +52,7 @@ const InviteId = ({
   const {user} = React.useContext(AuthContext);
 
   if (user) {
-    Router.pushI18n("/dashboard");
+    Router.push("/dashboard");
   }
 
   if (user === undefined || spaceId === undefined) {

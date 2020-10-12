@@ -10,7 +10,7 @@ import InfoIcon from "@material-ui/icons/Info";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import DarkModeButton from "@sentrei/ui/components/DarkModeButton";

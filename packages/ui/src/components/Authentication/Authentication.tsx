@@ -1,4 +1,4 @@
-import Router from "next-translate/Router";
+import Router from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";

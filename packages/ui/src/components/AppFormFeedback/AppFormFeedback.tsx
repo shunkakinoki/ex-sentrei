@@ -6,7 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import TextField from "@material-ui/core/TextField";
 import clsx from "clsx";
 import {Emoji} from "emoji-mart";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
 import {atom, useRecoilState, RecoilState} from "recoil";

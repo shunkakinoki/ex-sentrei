@@ -5,7 +5,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import PersonIcon from "@material-ui/icons/Person";
 import SettingsIcon from "@material-ui/icons/Settings";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import React from "react";
 
 import {AppTabUserKey} from "@sentrei/types/models/AppTab";

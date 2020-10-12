@@ -36,6 +36,12 @@ const BRANCH =
 const nextConfig = {
   target: "experimental-serverless-trace",
   trailingSlash: false,
+  experimental: {
+    i18n: {
+      locales: ["en", "ja", "zh"],
+      defaultLocale: "en",
+    },
+  },
   publicRuntimeConfig: {
     DATA_CLIENT_ID: process.env.DATA_CLIENT_ID,
     PAPERCUPS_ID: process.env.PAPERCUPS_ID,

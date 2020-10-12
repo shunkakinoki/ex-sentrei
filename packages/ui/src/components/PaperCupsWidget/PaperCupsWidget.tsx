@@ -2,7 +2,7 @@ import NoSsr from "@material-ui/core/NoSsr";
 import {useTheme} from "@material-ui/core/styles";
 import {ChatWidget} from "@papercups-io/chat-widget";
 
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import getConfig from "next/config";
 import * as React from "react";
 

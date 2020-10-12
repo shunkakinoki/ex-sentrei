@@ -2,7 +2,7 @@ import Container from "@material-ui/core/Container";
 import Tabs from "@material-ui/core/Tabs";
 import SettingsIcon from "@material-ui/icons/Settings";
 import VideocamIcon from "@material-ui/icons/Videocam";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import React from "react";
 
 import {AppTabRoomKey} from "@sentrei/types/models/AppTab";

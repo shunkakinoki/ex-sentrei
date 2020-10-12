@@ -3,7 +3,7 @@ import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import LockIcon from "@material-ui/icons/Lock";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import SettingsIcon from "@material-ui/icons/Settings";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import Profile from "@sentrei/types/models/Profile";

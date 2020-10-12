@@ -1,5 +1,5 @@
 import Grid from "@material-ui/core/Grid";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import MuiLink from "@sentrei/ui/components/MuiLink";

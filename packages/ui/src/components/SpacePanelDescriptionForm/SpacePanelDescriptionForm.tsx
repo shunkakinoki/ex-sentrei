@@ -4,7 +4,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Input from "@material-ui/core/Input";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import KeyboardReturnIcon from "@material-ui/icons/KeyboardReturn";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";

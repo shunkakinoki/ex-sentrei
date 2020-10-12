@@ -9,8 +9,8 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import SpeedDial from "@material-ui/lab/SpeedDial";
 import SpeedDialAction from "@material-ui/lab/SpeedDialAction";
 import SpeedDialIcon from "@material-ui/lab/SpeedDialIcon";
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import Router from "next/router";
 import * as React from "react";
 
 import SpaceFabStyles from "./SpaceFabStyles";
@@ -52,7 +52,7 @@ export default function SpaceFab({namespaceId, type}: Props): JSX.Element {
             icon={<CreateIcon />}
             tooltipTitle={t("space:space.createSpace")}
             tooltipOpen
-            onClick={(): void => Router.pushI18n("/create")}
+            onClick={(): Promise<boolean> => Router.push("/create")}
           />
         )}
         {type === "space" && (
@@ -61,8 +61,8 @@ export default function SpaceFab({namespaceId, type}: Props): JSX.Element {
             icon={<MeetingRoomIcon />}
             tooltipTitle={t("common:common.create")}
             tooltipOpen
-            onClick={(): void =>
-              Router.pushI18n("/[namespaceId]/create", `/${namespaceId}/create`)
+            onClick={(): Promise<boolean> =>
+              Router.push("/[namespaceId]/create", `/${namespaceId}/create`)
             }
           />
         )}
@@ -72,8 +72,8 @@ export default function SpaceFab({namespaceId, type}: Props): JSX.Element {
             icon={<EditIcon />}
             tooltipTitle={t("common:common.edit")}
             tooltipOpen
-            onClick={(): void =>
-              Router.pushI18n("/[namespaceId]/edit", `/${namespaceId}/edit`)
+            onClick={(): Promise<boolean> =>
+              Router.push("/[namespaceId]/edit", `/${namespaceId}/edit`)
             }
           />
         )}
@@ -83,11 +83,8 @@ export default function SpaceFab({namespaceId, type}: Props): JSX.Element {
             icon={<GroupRoundedIcon />}
             tooltipTitle={t("common:common.members")}
             tooltipOpen
-            onClick={(): void =>
-              Router.pushI18n(
-                "/[namespaceId]/members",
-                `/${namespaceId}/members`,
-              )
+            onClick={(): Promise<boolean> =>
+              Router.push("/[namespaceId]/members", `/${namespaceId}/members`)
             }
           />
         )}
@@ -97,11 +94,8 @@ export default function SpaceFab({namespaceId, type}: Props): JSX.Element {
             icon={<SettingsIcon />}
             tooltipTitle={t("common:common.settings")}
             tooltipOpen
-            onClick={(): void =>
-              Router.pushI18n(
-                "/[namespaceId]/settings",
-                `/${namespaceId}/settings`,
-              )
+            onClick={(): Promise<boolean> =>
+              Router.push("/[namespaceId]/settings", `/${namespaceId}/settings`)
             }
           />
         )}
@@ -111,8 +105,8 @@ export default function SpaceFab({namespaceId, type}: Props): JSX.Element {
             icon={<ExitToAppIcon />}
             tooltipTitle={t("common:common.quit")}
             tooltipOpen
-            onClick={(): void =>
-              Router.pushI18n("/[namespaceId]/quit", `/${namespaceId}/quit`)
+            onClick={(): Promise<boolean> =>
+              Router.push("/[namespaceId]/quit", `/${namespaceId}/quit`)
             }
           />
         )}

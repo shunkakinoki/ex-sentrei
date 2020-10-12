@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import Tab, {TabProps} from "@material-ui/core/Tab";
-import Link from "next-translate/Link";
+import Link from "next/link";
 import {LinkProps} from "next/link";
 import * as React from "react";
 

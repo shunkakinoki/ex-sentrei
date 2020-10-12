@@ -10,7 +10,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 import Skeleton from "@material-ui/lab/Skeleton";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import {trackEvent} from "@sentrei/common/utils/segment";

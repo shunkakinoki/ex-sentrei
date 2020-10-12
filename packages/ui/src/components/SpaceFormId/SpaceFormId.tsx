@@ -2,8 +2,8 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import Router from "next/router";
 import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
@@ -59,7 +59,7 @@ const SpaceFormId = ({disabled, space}: Props): JSX.Element => {
         trackEvent("Edit Space Id");
         backdrop("loading");
         setTimeout(() => {
-          Router.replaceI18n("/dashboard");
+          Router.replace("/dashboard");
         }, 300);
       });
     } catch (err) {

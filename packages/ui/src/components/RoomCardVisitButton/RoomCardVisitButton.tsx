@@ -1,6 +1,6 @@
 import {createStyles, makeStyles} from "@material-ui/core/styles";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import {FreeTier, ProTier} from "@sentrei/common/const/tiers";
