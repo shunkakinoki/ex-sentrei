@@ -82,7 +82,7 @@ export default function LandingHeaderMobileDialog({
       </MuiMenuItem>
       <Divider />
       <MenuItem disabled>
-        <ListItemText primary={t("common:common.mode")} />
+        <ListItemText primary={t("header:mobile.mode")} />
       </MenuItem>
       <ListItem>
         <IconButton>
@@ -91,7 +91,7 @@ export default function LandingHeaderMobileDialog({
       </ListItem>
       <Divider />
       <MenuItem disabled>
-        <ListItemText primary={t("common:common.language")} />
+        <ListItemText primary={t("header:mobile.language")} />
       </MenuItem>
       <ListItem>
         <LanguageButton />

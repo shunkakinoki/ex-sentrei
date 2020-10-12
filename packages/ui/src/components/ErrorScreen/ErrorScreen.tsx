@@ -33,7 +33,7 @@ export default function ErrorScreen(): JSX.Element {
         <Grid item xs={12} sm={8} md={6}>
           <Box p={1}>
             <MuiButton fullWidth href="/" color="primary" variant="outlined">
-              {t("common:common.goHome")}
+              {t("_error:error.goHome")}
             </MuiButton>
           </Box>
         </Grid>

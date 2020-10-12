@@ -23,6 +23,10 @@
     "signup": "Sign Up",
     "support": "サポート"
   },
+  "mobile": {
+    "language": "言語",
+    "mode": "モード"
+  },
   "product": {
     "demo": {
       "description": "デモビデオをご覧ください",

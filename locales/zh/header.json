@@ -23,6 +23,10 @@
     "signup": "免费注册",
     "support": "支持"
   },
+  "mobile": {
+    "language": "语言",
+    "mode": "模式"
+  },
   "product": {
     "demo": {
       "description": "观看我们的演示视频",
