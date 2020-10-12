@@ -1,14 +1,4 @@
-const plugins = [
-  [
-    "styled-components",
-    {
-      ssr: true,
-      displayName: true,
-      preprocess: false,
-    },
-  ],
-  ["react-optimized-image/plugin"],
-];
+const plugins = [["react-optimized-image/plugin"]];
 
 const presets = ["next/babel"];
 
