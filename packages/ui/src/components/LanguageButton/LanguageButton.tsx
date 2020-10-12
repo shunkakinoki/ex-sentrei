@@ -18,24 +18,18 @@ export default function LanguageButton(): JSX.Element {
 
   const [period] = React.useState<User.Language>(locale as User.Language);
 
-  const pathnameNoLang = (): string => {
-    if (
-      router.pathname === "/" ||
-      router.pathname === "/ja" ||
-      router.pathname === "/zh"
-    ) {
-      return "/";
-    }
-    return router.asPath
-      .split("/")
-      .filter(section => section !== locale)
-      .join("/");
-  };
+  function setLocaleCookie(value: string): void {
+    document.cookie = `NEXT_LOCALE=${value || ""}; path=/`;
+  }
 
   const handleChange = (event: React.ChangeEvent<{value: unknown}>): void => {
     const language = event.target.value as User.Language;
     if ((event.target.value as User.Language) !== locale) {
-      Router.push(pathnameNoLang());
+      setLocaleCookie(language);
+      Router.push(window.location.origin);
+      setTimeout(() => {
+        Router.reload();
+      }, 300);
     }
     if (user) {
       updateUser({language}, user.uid);
