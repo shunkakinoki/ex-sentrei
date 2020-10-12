@@ -30,8 +30,8 @@
     "watch": "yarn run tsc -w --preserveWatchOutput"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
+    "@material-ui/core": "^v5.0.0-alpha.12",
+    "@material-ui/icons": "^5.0.0-alpha.11",
     "@material-ui/styles": "^4.10.0",
     "@primer/octicons-react": "^11.0.0",
     "@sentrei/common": "*",

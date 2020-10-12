@@ -28,7 +28,7 @@
     "watch": "yarn run tsc -w --preserveWatchOutput"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
+    "@material-ui/core": "^v5.0.0-alpha.12",
     "@segment/snippet": "^4.13.1",
     "@sentrei/types": "*",
     "@sentry/browser": "^5.25.0",
