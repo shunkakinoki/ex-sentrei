@@ -3590,27 +3590,17 @@
   dependencies:
     "@ndhoule/each" "^2.0.1"
 
-"@next/bundle-analyzer@^9.5.4":
-  version "9.5.4"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-9.5.4.tgz#f0046a2463c77aa054fcaa33d8a5c5fe222b4823"
-  integrity sha512-GU2rb8K9gjvZqMVvNRq2FN5hdQPCqhod0HTlmRUPi03L2oClYTc0IEIBg63KQ1auVs++av7w7LLrRvGQ/DNv8Q==
+"@next/bundle-analyzer@^9.5.5":
+  version "9.5.5"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-9.5.5.tgz#9cb5f67e8d3012ccfb87c10f20715fb7f918dd66"
+  integrity sha512-HDYa5oFtBlZXG/N1wsheOaj2XeOFEi0HzwPiyIP82TxjoDoB6HKDYRIV3JHIUCeGFjkA66jSh8r1EAHNOuU51A==
   dependencies:
     webpack-bundle-analyzer "3.6.1"
-
-"@next/env@9.5.4":
-  version "9.5.4"
-  resolved "https://registry.yarnpkg.com/@next/env/-/env-9.5.4.tgz#950f3370151a940ecac6e7e19cf125e6113e101e"
-  integrity sha512-uGnUO68/u9C8bqHj5obIvyGRDqe/jh1dFSLx03mJmlESjcCmV4umXYJOnt3XzU1VhVntSE+jUZtnS5bjYmmLfQ==
 
 "@next/env@9.5.5":
   version "9.5.5"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-9.5.5.tgz#db993649ec6e619e34a36de90dc2baa52fc5280f"
   integrity sha512-N9wdjU6XoqLqNQWtrGiWtp1SUuJsYK1cNrZ24A6YD+4w5CNV5SkZX6aewKZCCLP5Y8UNfTij2FkJiSYUfBjX8g==
-
-"@next/polyfill-module@9.5.4":
-  version "9.5.4"
-  resolved "https://registry.yarnpkg.com/@next/polyfill-module/-/polyfill-module-9.5.4.tgz#35ea31ce5f6bbf0ac31aac483b60d4ba17a79861"
-  integrity sha512-GA2sW7gs33s7RGPFqkMiT9asYpaV/Hhw9+XM9/UlPrkNdTaxZWaPa2iHgmqJ7k6OHiOmy+CBLFrUBgzqKNhs3Q==
 
 "@next/polyfill-module@9.5.5":
   version "9.5.5"
@@ -3621,22 +3611,6 @@
   version "9.5.3"
   resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.5.3.tgz#3275301f08045ecc709e3273031973a1f5e81427"
   integrity sha512-R2ZAyFjHHaMTBVi19ZZNRJNXiwn46paRi7EZvKNvMxbrzBcUYtSFj/edU3jQoF1UOcC6vGeMhtPqH55ONrIjCQ==
-  dependencies:
-    "@babel/code-frame" "7.10.4"
-    ally.js "1.4.1"
-    anser "1.4.9"
-    chalk "4.0.0"
-    classnames "2.2.6"
-    data-uri-to-buffer "3.0.0"
-    shell-quote "1.7.2"
-    source-map "0.8.0-beta.0"
-    stacktrace-parser "0.1.10"
-    strip-ansi "6.0.0"
-
-"@next/react-dev-overlay@9.5.4":
-  version "9.5.4"
-  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.5.4.tgz#7d88a710d23021020cca213bc77106df18950b2b"
-  integrity sha512-tYvNmOQ0inykSvcimkTiONMv4ZyFB2G2clsy9FKLLRZ2OA+Jiov6T7Pq6YpKbBwTLu/BQGVc7Qn4BZ5CDHR8ig==
   dependencies:
     "@babel/code-frame" "7.10.4"
     ally.js "1.4.1"
@@ -3669,11 +3643,6 @@
   version "9.5.3"
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.5.3.tgz#a14fb6489d412b201b98aa44716fb8727ca4c6ae"
   integrity sha512-W3VKOqbg+4Kw+k6M/SODf+WIzwcx60nAemGV1nNPa/yrDtAS2YcJfqiswrJ3+2nJHzqefAFWn4XOfM0fy8ww2Q==
-
-"@next/react-refresh-utils@9.5.4":
-  version "9.5.4"
-  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.5.4.tgz#3bfe067f0cfc717f079482d956211708c9e81126"
-  integrity sha512-TPhEiYxK5YlEuzVuTzgZiDN7SDh4drvUAqsO9Yccd8WLcfYqOLRN2fCALremW5mNLAZQZW3iFgW8PW8Gckq4EQ==
 
 "@next/react-refresh-utils@9.5.5":
   version "9.5.5"
@@ -19799,71 +19768,6 @@ next@*:
     vm-browserify "1.1.2"
     watchpack "2.0.0-beta.13"
     web-vitals "0.2.1"
-    webpack "4.44.1"
-    webpack-sources "1.4.3"
-
-next@^9.5.4:
-  version "9.5.4"
-  resolved "https://registry.yarnpkg.com/next/-/next-9.5.4.tgz#3c6aa3fd38ff1711e956ea2b6833475e0262ec35"
-  integrity sha512-dicsJSxiUFcRjeZ/rNMAO3HS5ttFFuRHhdAn5g7lHnWUZ3MnEX4ggBIihaoUr6qu2So9KoqUPXpS91MuSXUmBw==
-  dependencies:
-    "@ampproject/toolbox-optimizer" "2.6.0"
-    "@babel/code-frame" "7.10.4"
-    "@babel/core" "7.7.7"
-    "@babel/plugin-proposal-class-properties" "7.10.4"
-    "@babel/plugin-proposal-export-namespace-from" "7.10.4"
-    "@babel/plugin-proposal-numeric-separator" "7.10.4"
-    "@babel/plugin-proposal-object-rest-spread" "7.11.0"
-    "@babel/plugin-syntax-bigint" "7.8.3"
-    "@babel/plugin-syntax-dynamic-import" "7.8.3"
-    "@babel/plugin-syntax-jsx" "7.10.4"
-    "@babel/plugin-transform-modules-commonjs" "7.10.4"
-    "@babel/plugin-transform-runtime" "7.11.5"
-    "@babel/preset-env" "7.11.5"
-    "@babel/preset-modules" "0.1.4"
-    "@babel/preset-react" "7.10.4"
-    "@babel/preset-typescript" "7.10.4"
-    "@babel/runtime" "7.11.2"
-    "@babel/types" "7.11.5"
-    "@next/env" "9.5.4"
-    "@next/polyfill-module" "9.5.4"
-    "@next/react-dev-overlay" "9.5.4"
-    "@next/react-refresh-utils" "9.5.4"
-    ast-types "0.13.2"
-    babel-plugin-transform-define "2.0.0"
-    babel-plugin-transform-react-remove-prop-types "0.4.24"
-    browserslist "4.13.0"
-    buffer "5.6.0"
-    cacache "15.0.5"
-    caniuse-lite "^1.0.30001113"
-    chokidar "2.1.8"
-    crypto-browserify "3.12.0"
-    css-loader "4.3.0"
-    cssnano-simple "1.2.0"
-    find-cache-dir "3.3.1"
-    jest-worker "24.9.0"
-    loader-utils "2.0.0"
-    mkdirp "0.5.3"
-    native-url "0.3.4"
-    neo-async "2.6.1"
-    node-html-parser "^1.2.19"
-    path-browserify "1.0.1"
-    pnp-webpack-plugin "1.6.4"
-    postcss "7.0.32"
-    process "0.11.10"
-    prop-types "15.7.2"
-    react-is "16.13.1"
-    react-refresh "0.8.3"
-    resolve-url-loader "3.1.1"
-    sass-loader "10.0.2"
-    schema-utils "2.7.1"
-    stream-browserify "3.0.0"
-    style-loader "1.2.1"
-    styled-jsx "3.3.0"
-    use-subscription "1.4.1"
-    vm-browserify "1.1.2"
-    watchpack "2.0.0-beta.13"
-    web-vitals "0.2.4"
     webpack "4.44.1"
     webpack-sources "1.4.3"
 
