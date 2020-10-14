@@ -6,7 +6,7 @@ Sentrei, Inc.
 
 ## Brief company description.
 
-We help people see what's happening in remote work.
+A virtual workspace to help teams see what’s happening.
 
 ## Describe your goal for Camp. (e.g. "increase users")
 
