@@ -8,6 +8,28 @@ Sentrei, Inc.
 
 A virtual workspace to help teams see what’s happening.
 
+## Problem.
+
+1. It's hard to see what's going on in remote work.
+
+- Time spent on work
+- What app they are working on
+- Hard to have spontaneous conversations
+
+## Solution.
+
+1. Bond.
+
+Connect with your team.
+
+2. Focus.
+
+Accelerate team productivity.
+
+3. Work.
+
+Work smarter with confidence.
+
 ## Describe your goal for Camp. (e.g. "increase users")
 
 Achieve Ramen Revenue
