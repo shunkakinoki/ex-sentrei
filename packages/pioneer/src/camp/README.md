@@ -16,6 +16,12 @@ It's hard to see what's going on in remote work.
 - What app they are working on
 - Hard to have spontaneous conversations
 
+### Other problems.
+
+- It is difficult to have shared presence between teams
+- It is difficult to manage time in remote work
+- It is hard to gather to have a focus environment with others in remote work
+
 ## Solution.
 
 1. Bond.
