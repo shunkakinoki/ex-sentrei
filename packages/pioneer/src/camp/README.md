@@ -24,6 +24,8 @@ It's hard to see what's going on in remote work.
 
 ## Solution.
 
+Toggl meets Tandem.
+
 1. Bond.
 
 Connect with your team.
