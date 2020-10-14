@@ -6,7 +6,37 @@ Sentrei, Inc.
 
 ## Brief company description.
 
-We help people see what's happening in remote work.
+A virtual workspace to help teams see what’s happening.
+
+## Problem.
+
+It's hard to see what's going on in remote work.
+
+- Time spent on work
+- What app they are working on
+- Hard to have spontaneous conversations
+
+### Other problems.
+
+- It is difficult to have shared presence between teams
+- It is difficult to manage time in remote work
+- It is hard to gather to have a focus environment with others in remote work
+
+## Solution.
+
+Toggl meets Tandem.
+
+1. Bond.
+
+Connect with your team.
+
+2. Focus.
+
+Accelerate team productivity.
+
+3. Work.
+
+Work smarter with confidence.
 
 ## Describe your goal for Camp. (e.g. "increase users")
 
