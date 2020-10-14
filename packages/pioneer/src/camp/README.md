@@ -10,7 +10,7 @@ A virtual workspace to help teams see what’s happening.
 
 ## Problem.
 
-1. It's hard to see what's going on in remote work.
+It's hard to see what's going on in remote work.
 
 - Time spent on work
 - What app they are working on
