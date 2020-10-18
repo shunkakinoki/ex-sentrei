@@ -2,7 +2,7 @@ import ButtonBase from "@material-ui/core/ButtonBase";
 import {useTheme} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import {motion, AnimatePresence} from "framer-motion";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import UseAnimations from "react-useanimations";
 import heart from "react-useanimations/lib/heart";
@@ -57,13 +57,13 @@ export default function LandingFooterCredits(): JSX.Element {
             transition={{duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98]}}
           >
             <MuiLink
-              color={theme.palette.type === "light" ? "primary" : "secondary"}
+              color={theme.palette.mode === "light" ? "primary" : "secondary"}
               href="/credits"
             >
               <Typography
                 variant="body2"
                 color={
-                  theme.palette.type === "light" ? "textSecondary" : "secondary"
+                  theme.palette.mode === "light" ? "textSecondary" : "secondary"
                 }
                 align="center"
               >

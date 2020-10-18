@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 import FlareIcon from "@material-ui/icons/Flare";
 import ImportContactsIcon from "@material-ui/icons/ImportContacts";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import AboutCoreBanner from "@sentrei/ui/components/AboutCoreBanner";
@@ -23,7 +23,7 @@ export default function AboutCore(): JSX.Element {
           container
           spacing={3}
           direction="row"
-          justify="center"
+          justifyContent="center"
           alignItems="stretch"
           className={classes.container}
         >

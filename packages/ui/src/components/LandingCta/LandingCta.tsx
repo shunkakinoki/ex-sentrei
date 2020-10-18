@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import LandingCaption from "@sentrei/ui/components/LandingCaption";
@@ -48,7 +48,7 @@ export default function LandingCta(): JSX.Element {
       </Container>
       <Box py={2} />
       <Container maxWidth="sm" component="main">
-        <Grid container justify="center" direction="row" spacing={1}>
+        <Grid container justifyContent="center" direction="row" spacing={1}>
           <Grid item xs={12} md={6}>
             <div className={classes.item}>
               <MuiButton

@@ -4,7 +4,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import {useForm} from "react-hook-form";
 
@@ -64,7 +64,7 @@ const RoomFormType = ({disabled, profile, room, user}: Props): JSX.Element => {
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
         <Grid container spacing={3}>
           <Box p={3}>
-            <Grid container justify="center" alignItems="center">
+            <Grid container justifyContent="center" alignItems="center">
               <FormControl>
                 <TextField
                   fullWidth

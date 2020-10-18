@@ -3,7 +3,7 @@ import BookIcon from "@material-ui/icons/Book";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import MapIcon from "@material-ui/icons/Map";
 import NewReleasesIcon from "@material-ui/icons/NewReleases";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import LandingHeaderMenu from "@sentrei/ui/components/LandingHeaderMenu";

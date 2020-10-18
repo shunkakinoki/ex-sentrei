@@ -2,7 +2,7 @@ import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import Notification from "@sentrei/types/models/Notification";
@@ -47,7 +47,7 @@ export default function NotificationList({
         </Typography>
       </Box>
       <Container maxWidth="md" component="main">
-        <Grid container alignItems="center" justify="center" spacing={3}>
+        <Grid container alignItems="center" justifyContent="center" spacing={3}>
           {notifications.map(notification => (
             <Grid item key={notification.id} xs={12}>
               <NotificationCard notification={notification} userId={userId} />

@@ -5,7 +5,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import CreateIcon from "@material-ui/icons/Create";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import {getSpaces} from "@sentrei/common/firebase/spaces";
@@ -74,11 +74,7 @@ export default function AppListMenu({
       </MenuItem>
       {spaces &&
         spaces.map(space => (
-          <MuiMenuItem
-            key={space.id}
-            href="/[namespaceId]"
-            as={`/${space.namespaceId}`}
-          >
+          <MuiMenuItem key={space.id} href={`/${space.namespaceId}`}>
             <ListItemIcon>
               {space.photo ? (
                 <Avatar src={space.photo} />

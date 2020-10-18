@@ -4,7 +4,6 @@ import {AppProps, NextWebVitalsMetric} from "next/app";
 import Head from "next/head";
 import * as React from "react";
 import {RecoilRoot} from "recoil";
-import {ThemeProvider as StyledThemeProvider} from "styled-components";
 import useDarkMode from "use-dark-mode";
 
 import DarkTheme from "@sentrei/common/containers/DarkTheme";
@@ -45,23 +44,21 @@ const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
         />
       </Head>
       <SeoDefault />
-      <StyledThemeProvider theme={theme}>
-        <MaterialThemeProvider theme={theme}>
-          <CssBaseline />
-          <AuthContext.Provider value={{profile, user, setProfile, setUser}}>
-            <GlobalContext.Provider
-              value={{backdrop: BackdropEmitter, snackbar: SnackbarEmitter}}
-            >
-              <RecoilRoot>
-                <Authentication />
-                <Backdrop />
-                <Snackbar />
-                <Component {...pageProps} />
-              </RecoilRoot>
-            </GlobalContext.Provider>
-          </AuthContext.Provider>
-        </MaterialThemeProvider>
-      </StyledThemeProvider>
+      <MaterialThemeProvider theme={theme}>
+        <CssBaseline />
+        <AuthContext.Provider value={{profile, user, setProfile, setUser}}>
+          <GlobalContext.Provider
+            value={{backdrop: BackdropEmitter, snackbar: SnackbarEmitter}}
+          >
+            <RecoilRoot>
+              <Authentication />
+              <Backdrop />
+              <Snackbar />
+              <Component {...pageProps} />
+            </RecoilRoot>
+          </GlobalContext.Provider>
+        </AuthContext.Provider>
+      </MaterialThemeProvider>
     </>
   );
 };

@@ -10,7 +10,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import PersonIcon from "@material-ui/icons/Person";
 import SettingsIcon from "@material-ui/icons/Settings";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import signout from "@sentrei/common/services/signout";
@@ -73,7 +73,7 @@ export default function AppMobileDialog({
         <ListItemText primary={t("common:common.settings")} />
       </MuiMenuItem>
       <Divider />
-      <MenuItem onClick={(): Promise<void> => signout()}>
+      <MenuItem onClick={(): Promise<boolean> => signout()}>
         <ListItemIcon>
           <ExitToAppIcon fontSize="small" />
         </ListItemIcon>

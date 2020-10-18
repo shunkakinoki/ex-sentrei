@@ -8,8 +8,6 @@ import AppTabIconStyles from "./AppTabIconStyles";
 
 interface MuiAppTabIconProps {
   href: string;
-  // eslint-disable-next-line react/require-default-props
-  as?: string;
 }
 
 interface Props extends MuiAppTabIconProps {
@@ -20,7 +18,6 @@ interface Props extends MuiAppTabIconProps {
 }
 
 export default function AppTabIcon({
-  as,
   href,
   label,
   labelIcon,
@@ -43,8 +40,8 @@ export default function AppTabIcon({
   )((props: TabProps) => (
     <Tab
       {...props}
+      disabled
       component="nav"
-      selected={selected}
       label={
         <div>
           <span className={classes.labelIcon}>{labelIcon}</span> {label}
@@ -90,5 +87,5 @@ export default function AppTabIcon({
     return <SkeletonAppTabIcon />;
   }
 
-  return <MuiAppTabIcon href={href} as={as} />;
+  return <MuiAppTabIcon href={href} />;
 }

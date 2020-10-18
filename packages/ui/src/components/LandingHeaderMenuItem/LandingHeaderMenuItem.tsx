@@ -29,7 +29,7 @@ const LandingHeaderMenuItem = ({
   return (
     <MuiListItem href={href} rel={rel} target={target}>
       <ListItemIcon
-        color={theme.palette.type === "light" ? "primary" : "textPrimary"}
+        color={theme.palette.mode === "light" ? "primary" : "textPrimary"}
       >
         {icon}
       </ListItemIcon>
@@ -38,7 +38,7 @@ const LandingHeaderMenuItem = ({
           <Typography
             align="left"
             variant="subtitle1"
-            color={theme.palette.type === "light" ? "primary" : "textPrimary"}
+            color={theme.palette.mode === "light" ? "primary" : "textPrimary"}
           >
             {title}
           </Typography>
@@ -49,7 +49,7 @@ const LandingHeaderMenuItem = ({
               component="span"
               variant="body2"
               color={
-                theme.palette.type === "light" ? "textPrimary" : "textSecondary"
+                theme.palette.mode === "light" ? "textPrimary" : "textSecondary"
               }
             >
               {description}

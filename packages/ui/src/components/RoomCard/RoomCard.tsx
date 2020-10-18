@@ -7,7 +7,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ShareIcon from "@material-ui/icons/Share";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 
@@ -44,7 +44,7 @@ export default function RoomCard({
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       color: {
-        color: theme.palette.type === "light" ? room.color : "white",
+        color: theme.palette.mode === "light" ? room.color : "white",
         fontWeight: theme.typography.fontWeightRegular,
       },
       container: {
@@ -52,12 +52,12 @@ export default function RoomCard({
       },
       root: {
         backgroundImage:
-          theme.palette.type === "light"
+          theme.palette.mode === "light"
             ? `linear-gradient(to bottom right, ${room.color}26, ${room.color}4D)`
             : theme.palette.background.paper,
         borderRadius: theme.spacing(1),
         borderColor: room.color,
-        borderWidth: theme.palette.type === "light" ? 1 : 2,
+        borderWidth: theme.palette.mode === "light" ? 1 : 2,
         paddingTop: square ? "3%" : undefined,
         paddingBottom: square ? "3%" : undefined,
       },
@@ -84,13 +84,13 @@ export default function RoomCard({
           <Grid
             container
             direction="column"
-            justify="space-between"
+            justifyContent="space-between"
             alignItems="stretch"
           >
             <Grid
               container
               direction="row"
-              justify="space-between"
+              justifyContent="space-between"
               alignItems="center"
             >
               <Grid item xs={10}>
@@ -140,7 +140,7 @@ export default function RoomCard({
             />
             <Box p={3} />
             <div className={classes.container}>
-              <Grid container direction="row" justify="space-around">
+              <Grid container direction="row" justifyContent="space-around">
                 <Grid item xs={8} />
                 <Grid item xs={4}>
                   <RoomCardVisitButton

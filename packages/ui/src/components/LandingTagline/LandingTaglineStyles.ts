@@ -4,7 +4,7 @@ const LandingTaglineStyles = makeStyles((theme: Theme) =>
   createStyles({
     typography: {
       color:
-        theme.palette.type === "light"
+        theme.palette.mode === "light"
           ? theme.palette.text.primary
           : theme.palette.text.secondary,
       position: "relative",

@@ -2,7 +2,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import {Controller, useForm} from "react-hook-form";
 import * as Yup from "yup";

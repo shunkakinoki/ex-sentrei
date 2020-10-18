@@ -23,6 +23,10 @@
     "signup": "Sign Up For Free",
     "support": "Support"
   },
+  "mobile": {
+    "language": "Language",
+    "mode": "Mode"
+  },
   "product": {
     "demo": {
       "description": "See our demo video",

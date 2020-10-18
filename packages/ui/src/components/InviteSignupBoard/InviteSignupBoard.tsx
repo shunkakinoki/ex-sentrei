@@ -8,8 +8,8 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import Router, {useRouter} from "next/router";
 import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
@@ -44,7 +44,9 @@ export default function InviteSignupBoard({
   const classes = InviteSignupBoardStyles();
   const {backdrop} = useBackdrop();
   const {snackbar} = useSnackbar();
-  const {t, lang} = useTranslation();
+  const {t} = useTranslation();
+  const router = useRouter();
+  const {locale} = router;
 
   const InviteSignupBoardSchema = Yup.object().shape({
     email: Yup.string()
@@ -60,7 +62,7 @@ export default function InviteSignupBoard({
 
   const google = (): void => {
     snackbar("info", t("snackbar:snackbar.loading"));
-    signinWithGoogle(lang)
+    signinWithGoogle(locale)
       .then(() => {
         snackbar("dismiss");
         trackEvent("Signed Up", {provider: "google"});
@@ -68,7 +70,7 @@ export default function InviteSignupBoard({
           invokeMemberSpace(spaceId, invite.id);
         });
         setTimeout(() => {
-          Router.replaceI18n("/dashboard");
+          Router.replace("/dashboard");
         }, 5000);
       })
       .catch(err => snackbar("error", err.message));
@@ -77,7 +79,7 @@ export default function InviteSignupBoard({
   const onSubmit = (data: Record<string, string>): void => {
     snackbar("info", t("snackbar:snackbar.loading"));
     try {
-      signup(data.email, data.password, lang)
+      signup(data.email, data.password, locale)
         .then(() => {
           backdrop("loading");
           trackEvent("Signed Up", {provider: "email"});
@@ -85,7 +87,7 @@ export default function InviteSignupBoard({
             invokeMemberSpace(spaceId, invite.id);
           });
           setTimeout(() => {
-            Router.replaceI18n("/dashboard");
+            Router.replace("/dashboard");
           }, 5000);
         })
         .catch(err => {

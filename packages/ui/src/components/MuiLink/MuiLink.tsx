@@ -2,8 +2,8 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 
 import MuiLink, {LinkProps as MuiLinkProps} from "@material-ui/core/Link";
-import NextLink from "next-translate/Link";
-import {LinkProps as NextLinkProps} from "next/link";
+import NextLink, {LinkProps as NextLinkProps} from "next/link";
+
 import * as React from "react";
 
 type NextComposedProps = Omit<
@@ -15,7 +15,6 @@ type NextComposedProps = Omit<
 const NextComposed = React.forwardRef<HTMLAnchorElement, NextComposedProps>(
   (props, ref) => {
     const {
-      as,
       href,
       replace,
       scroll,
@@ -29,7 +28,6 @@ const NextComposed = React.forwardRef<HTMLAnchorElement, NextComposedProps>(
       <NextLink
         href={href}
         prefetch={prefetch}
-        as={as}
         replace={replace}
         scroll={scroll}
         shallow={shallow}
@@ -53,10 +51,6 @@ export type LinkProps = LinkPropsBase &
 
 function Link(props: LinkProps): JSX.Element {
   const {href, innerRef, naked, ...other} = props;
-
-  if (naked) {
-    return <NextComposed ref={innerRef} href={href} {...other} />;
-  }
 
   return (
     <MuiLink

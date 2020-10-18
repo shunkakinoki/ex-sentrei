@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import MuiLink from "@sentrei/ui/components/MuiLink";
@@ -13,7 +13,7 @@ export default function LandingFooterSection(): JSX.Element {
 
   return (
     <Container maxWidth="md">
-      <Grid container justify="space-evenly">
+      <Grid container justifyContent="space-evenly">
         <Grid item xs={12} sm={3} md={3}>
           <Typography variant="h6" gutterBottom>
             {t("footer:footer.company")}

@@ -1,4 +1,4 @@
-import {createStyles, fade, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, alpha, makeStyles, Theme} from "@material-ui/core/styles";
 
 const SpaceCardStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -9,9 +9,9 @@ const SpaceCardStyles = makeStyles((theme: Theme) =>
       height: theme.spacing(30),
     },
     placeholder: {
-      backgroundColor: fade(
+      backgroundColor: alpha(
         theme.palette.text.primary,
-        theme.palette.type === "light" ? 0.11 : 0.13,
+        theme.palette.mode === "light" ? 0.11 : 0.13,
       ),
     },
     root: {

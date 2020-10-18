@@ -3,7 +3,7 @@ import CategoryIcon from "@material-ui/icons/Category";
 import DescriptionIcon from "@material-ui/icons/Description";
 
 import SettingsIcon from "@material-ui/icons/Settings";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import Member from "@sentrei/types/models/Member";

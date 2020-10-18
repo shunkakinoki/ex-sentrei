@@ -1,7 +1,7 @@
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import Grid from "@material-ui/core/Grid";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import {
   BarChart,

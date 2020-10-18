@@ -1,5 +1,5 @@
 import Button from "@material-ui/core/Button";
-import Router from "next-translate/Router";
+import Router from "next/router";
 import * as React from "react";
 
 import {trackEvent} from "@sentrei/common/utils/segment";

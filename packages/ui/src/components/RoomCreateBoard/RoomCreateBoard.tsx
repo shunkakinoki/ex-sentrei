@@ -1,5 +1,5 @@
 import AddToPhotosIcon from "@material-ui/icons/AddToPhotos";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import {atom, RecoilState} from "recoil";

@@ -1,5 +1,5 @@
 import PeopleIcon from "@material-ui/icons/People";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import {atom, RecoilState} from "recoil";
 

@@ -1,6 +1,6 @@
 import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import LandingBannerGradientStyles from "./LandingBannerGradientStyles";

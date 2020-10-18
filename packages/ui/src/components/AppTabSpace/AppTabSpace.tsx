@@ -7,7 +7,7 @@ import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import PeopleIcon from "@material-ui/icons/People";
 import PollIcon from "@material-ui/icons/Poll";
 import SettingsIcon from "@material-ui/icons/Settings";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import React from "react";
 
 import {AppTabSpaceKey} from "@sentrei/types/models/AppTab";
@@ -16,11 +16,8 @@ import AppTabIcon from "@sentrei/ui/components/AppTabIcon";
 import AppTabSpaceStyles from "./AppTabSpaceStyles";
 
 interface Props {
-  // eslint-disable-next-line react/require-default-props
   skeleton?: boolean;
-  // eslint-disable-next-line react/require-default-props
   namespaceId?: string;
-  // eslint-disable-next-line react/require-default-props
   tabKey?: AppTabSpaceKey;
 }
 
@@ -54,56 +51,49 @@ export default function AppTabSpace({
           scrollButtons="auto"
         >
           <AppTabIcon
-            href="/[namespaceId]"
-            as={`/${namespaceId}`}
+            href={`/${namespaceId}`}
             label={t("common:common.home")}
             labelIcon={<HomeIcon />}
             selected={value === 0}
             skeleton={skeleton}
           />
           <AppTabIcon
-            href="/[namespaceId]/rooms"
-            as={`/${namespaceId}/rooms`}
+            href={`/${namespaceId}/rooms`}
             label={t("common:common.rooms")}
             labelIcon={<MeetingRoomIcon />}
             selected={value === 1}
             skeleton={skeleton}
           />
           <AppTabIcon
-            href="/[namespaceId]/activity"
-            as={`/${namespaceId}/activity`}
+            href={`/${namespaceId}/activity`}
             label={t("common:common.activity")}
             labelIcon={<HistoryIcon />}
             selected={value === 2}
             skeleton={skeleton}
           />
           <AppTabIcon
-            href="/[namespaceId]/analytics"
-            as={`/${namespaceId}/analytics`}
+            href={`/${namespaceId}/analytics`}
             label={t("common:common.analytics")}
             labelIcon={<PollIcon />}
             selected={value === 3}
             skeleton={skeleton}
           />
           <AppTabIcon
-            href="/[namespaceId]/leaderboard"
-            as={`/${namespaceId}/leaderboard`}
+            href={`/${namespaceId}/leaderboard`}
             label={t("common:common.leaderboard")}
             labelIcon={<FormatListNumberedIcon />}
             selected={value === 4}
             skeleton={skeleton}
           />
           <AppTabIcon
-            href="/[namespaceId]/members"
-            as={`/${namespaceId}/members`}
+            href={`/${namespaceId}/members`}
             label={t("common:common.members")}
             labelIcon={<PeopleIcon />}
             selected={value === 5}
             skeleton={skeleton}
           />
           <AppTabIcon
-            href="/[namespaceId]/settings"
-            as={`/${namespaceId}/settings`}
+            href={`/${namespaceId}/settings`}
             label={t("common:common.settings")}
             labelIcon={<SettingsIcon />}
             selected={value === 6}

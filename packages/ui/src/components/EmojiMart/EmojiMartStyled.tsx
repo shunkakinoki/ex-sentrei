@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import {experimentalStyled as styled} from "@material-ui/core/styles";
 
-const EmojiMartStyled = styled.div`
+const EmojiMartStyled = styled("div")`
   .emoji-mart,
   .emoji-mart * {
     box-sizing: border-box;

@@ -2,16 +2,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import ButtonBase, {ButtonBaseProps} from "@material-ui/core/ButtonBase";
-import Link from "next-translate/Link";
-import {LinkProps} from "next/link";
+import Link, {LinkProps} from "next/link";
+
 import * as React from "react";
 
 export type ButtonLinkProps = Omit<ButtonBaseProps, "href" | "classes"> &
-  Pick<LinkProps, "href" | "as" | "prefetch">;
+  Pick<LinkProps, "href">;
 
 const MuiButtonBase = React.forwardRef<ButtonLinkProps, any>(
-  ({href, as, prefetch, ...props}, ref) => (
-    <Link href={href} as={as} prefetch={prefetch} passHref>
+  ({href, ...props}, ref) => (
+    <Link href={href} passHref>
       <ButtonBase ref={ref} {...props} />
     </Link>
   ),

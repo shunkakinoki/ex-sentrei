@@ -10,7 +10,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import Skeleton from "@material-ui/lab/Skeleton";
 import {isBlurhashValid} from "blurhash";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import {Blurhash} from "react-blurhash";
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -51,7 +51,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
   return (
     <Card className={classes.root}>
       <CardActionArea className={classes.placeholder}>
-        <MuiAnchor href="/[namespaceId]" as={`/${space.namespaceId}`}>
+        <MuiAnchor href={`/${space.namespaceId}`}>
           {space.photoHash && isBlurhashValid(space.photoHash) ? (
             <Blurhash
               hash={space.photoHash}
@@ -68,7 +68,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
         </MuiAnchor>
       </CardActionArea>
       <CardContent>
-        <Grid container direction="row" justify="space-between">
+        <Grid container direction="row" justifyContent="space-between">
           <Grid item xs={10}>
             <Typography
               component="h3"
@@ -99,7 +99,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
         </Grid>
         <Box p={1} />
         <div className={classes.container}>
-          <Grid container direction="row" justify="space-around">
+          <Grid container direction="row" justifyContent="space-around">
             <Grid item xs={9}>
               <AvatarGroup max={space.memberCount || 0}>
                 {members
@@ -117,8 +117,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
             </Grid>
             <Grid item xs={3}>
               <MuiButton
-                href="/[namespaceId]"
-                as={`/${space.namespaceId}`}
+                href={`/${space.namespaceId}`}
                 fullWidth
                 variant="outlined"
                 color="primary"

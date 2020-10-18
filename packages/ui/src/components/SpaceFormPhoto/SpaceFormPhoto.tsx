@@ -1,5 +1,5 @@
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import Router from "next/router";
 import * as React from "react";
 
 import {trackEvent} from "@sentrei/common/utils/segment";
@@ -32,7 +32,7 @@ const SpaceFormPhoto = ({
     try {
       snackbar("success");
       trackEvent("Edit Space Photo");
-      await Router.replaceI18n("/dashboard");
+      await Router.replace("/dashboard");
     } catch (err) {
       snackbar("error", err.message);
     }

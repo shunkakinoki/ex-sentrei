@@ -1,5 +1,5 @@
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import {FreeTier} from "@sentrei/common/const/tiers";
@@ -51,8 +51,7 @@ export default function SpacePanelActionInviteButton({
 
   return (
     <MuiButton
-      href="/[namespaceId]/settings/invite"
-      as={`/${namespaceId}/settings/invite`}
+      href={`/${namespaceId}/settings/invite`}
       fullWidth
       color="primary"
       variant="outlined"

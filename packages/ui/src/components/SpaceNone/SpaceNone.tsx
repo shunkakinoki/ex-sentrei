@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import AddIcon from "@material-ui/icons/Add";
 
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import MuiButton from "@sentrei/ui/components/MuiButton";
@@ -22,7 +22,7 @@ export default function SpaceNone(): JSX.Element {
         alignItems="center"
         alignContent="center"
         direction="row"
-        justify="center"
+        justifyContent="center"
         spacing={3}
         className={classes.grid}
       >

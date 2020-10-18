@@ -3,7 +3,7 @@ import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import LockIcon from "@material-ui/icons/Lock";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import SettingsIcon from "@material-ui/icons/Settings";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import Profile from "@sentrei/types/models/Profile";
@@ -38,7 +38,7 @@ const SettingsScreen = ({profile, user}: Props): JSX.Element => {
         tabLabelTwo={t("common:common.password")}
         tabLabelThree={t("common:common.other")}
         tabPanelOne={
-          <Grid container justify="center" direction="row" spacing={3}>
+          <Grid container justifyContent="center" direction="row" spacing={3}>
             <Grid item xs={12}>
               <SettingsFormNotification
                 profile={profile}

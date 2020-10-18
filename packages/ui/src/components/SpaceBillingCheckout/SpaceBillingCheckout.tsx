@@ -1,4 +1,5 @@
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import {useRouter} from "next/router";
 import * as React from "react";
 
 import Stripe from "stripe";
@@ -21,22 +22,24 @@ export default function SpaceBillingCheckout({
   role,
   spaceId,
 }: Props): JSX.Element {
-  const {t, lang} = useTranslation();
+  const {t} = useTranslation();
   const {backdrop} = useBackdrop();
   const {snackbar} = useSnackbar();
+  const router = useRouter();
+  const {locale} = router;
 
   const [session, setSession] = React.useState<Stripe.Checkout.Session>();
 
   React.useEffect(() => {
     if (role === "admin")
-      accessCheckoutLink(spaceId, lang, window.location.href)
+      accessCheckoutLink(spaceId, locale ?? "en", window.location.href)
         .then((data): void => {
           setSession(data);
         })
         .catch(err => {
           snackbar("error", err.message);
         });
-  }, [role, spaceId, lang, snackbar]);
+  }, [role, spaceId, locale, snackbar]);
 
   const handleClick = async (): Promise<void> => {
     snackbar("info", t("snackbar:snackbar.loading"));

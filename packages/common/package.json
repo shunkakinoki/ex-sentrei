@@ -28,7 +28,7 @@
     "watch": "yarn run tsc -w --preserveWatchOutput"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
+    "@material-ui/core": "^v5.0.0-alpha.12",
     "@segment/snippet": "^4.13.1",
     "@sentrei/types": "*",
     "@sentry/browser": "^5.25.0",
@@ -44,8 +44,7 @@
     "lodash": "^4.17.20",
     "lodash.get": "^4.4.2",
     "mitt": "^2.1.0",
-    "next": "^9.5.4",
-    "next-translate": "^0.17.2",
+    "next": "^9.5.6-canary.0",
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

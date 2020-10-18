@@ -1,6 +1,6 @@
 import {createStyles, makeStyles} from "@material-ui/core/styles";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import {FreeTier, ProTier} from "@sentrei/common/const/tiers";
@@ -81,8 +81,7 @@ export default function RoomCardVisitButton({
 
   return (
     <MuiButton
-      href="/[namespaceId]/[nameroomId]"
-      as={`/${space.namespaceId}/${room.nameroomId}`}
+      href={`/${space.namespaceId}/${room.nameroomId}`}
       fullWidth
       variant="outlined"
       color="inherit"

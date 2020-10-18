@@ -3,8 +3,8 @@ import FormControl from "@material-ui/core/FormControl";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import Router from "next/router";
 import * as React from "react";
 import {useForm} from "react-hook-form";
 import {useRecoilState, RecoilState} from "recoil";
@@ -89,7 +89,7 @@ const RoomStepperSubmit = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
       <Box p={3}>
-        <Grid container justify="center" alignItems="center">
+        <Grid container justifyContent="center" alignItems="center">
           <FormControl>
             <TextField
               fullWidth

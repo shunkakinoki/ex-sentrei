@@ -8,7 +8,7 @@ const MediaGridListStyles = makeStyles((theme: Theme) =>
       justifyContent: "space-around",
       overflow: "hidden",
       backgroundColor:
-        theme.palette.type === "light"
+        theme.palette.mode === "light"
           ? theme.palette.background.default
           : theme.palette.background.paper,
     },

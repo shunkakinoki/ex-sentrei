@@ -1,6 +1,6 @@
 import Box from "@material-ui/core/Box";
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
+import Router from "next/router";
 import * as React from "react";
 import {useForm} from "react-hook-form";
 import {useRecoilState, RecoilState} from "recoil";
@@ -66,7 +66,7 @@ const SpaceStepperSubmit = ({
         backdrop("loading");
         setActiveForm({id: "", name: ""});
         setActiveStep(0);
-        Router.replaceI18n("/dashboard");
+        Router.replace("/dashboard");
       });
     } catch (err) {
       snackbar("error", err.message);

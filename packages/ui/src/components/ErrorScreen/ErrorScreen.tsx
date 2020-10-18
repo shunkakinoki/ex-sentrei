@@ -2,7 +2,7 @@ import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import MuiButton from "@sentrei/ui/components/MuiButton";
@@ -29,11 +29,11 @@ export default function ErrorScreen(): JSX.Element {
         {t("_error:error.pageNotFound")}
       </Typography>
       <Box py={3} />
-      <Grid container justify="center">
+      <Grid container justifyContent="center">
         <Grid item xs={12} sm={8} md={6}>
           <Box p={1}>
             <MuiButton fullWidth href="/" color="primary" variant="outlined">
-              {t("common:common.goHome")}
+              {t("_error:error.goHome")}
             </MuiButton>
           </Box>
         </Grid>

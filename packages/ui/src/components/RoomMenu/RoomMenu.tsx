@@ -4,7 +4,7 @@ import Menu from "@material-ui/core/Menu";
 import DeleteIcon from "@material-ui/icons/Delete";
 import PaletteIcon from "@material-ui/icons/Palette";
 import SettingsIcon from "@material-ui/icons/Settings";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import MuiMenuItem from "@sentrei/ui/components/MuiMenuItem";
@@ -45,28 +45,19 @@ export default function RoomMenu({
       open={open}
       onClose={onClose}
     >
-      <MuiMenuItem
-        href="/[namespaceId]/[nameroomId]/settings/color"
-        as={`/${namespaceId}/${nameroomId}/settings/color`}
-      >
+      <MuiMenuItem href={`/${namespaceId}/${nameroomId}/settings/color`}>
         <ListItemIcon>
           <PaletteIcon fontSize="small" />
         </ListItemIcon>
         <ListItemText primary={t("room:room.color")} />
       </MuiMenuItem>
-      <MuiMenuItem
-        href="/[namespaceId]/[nameroomId]/settings"
-        as={`/${namespaceId}/${nameroomId}/settings`}
-      >
+      <MuiMenuItem href={`/${namespaceId}/${nameroomId}/settings`}>
         <ListItemIcon>
           <SettingsIcon fontSize="small" />
         </ListItemIcon>
         <ListItemText primary={t("room:room.settings")} />
       </MuiMenuItem>
-      <MuiMenuItem
-        href="/[namespaceId]/[nameroomId]/settings/delete"
-        as={`/${namespaceId}/${nameroomId}/settings/delete`}
-      >
+      <MuiMenuItem href={`/${namespaceId}/${nameroomId}/settings/delete`}>
         <ListItemIcon>
           <DeleteIcon fontSize="small" />
         </ListItemIcon>

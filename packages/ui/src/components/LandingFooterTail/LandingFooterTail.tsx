@@ -25,7 +25,7 @@ export default function LandingFooterTail({logo}: Props): JSX.Element {
         container
         direction="row"
         alignItems="center"
-        justify="space-between"
+        justifyContent="space-between"
         spacing={2}
       >
         <Grid item xs={12} sm={4} md={4}>
@@ -36,7 +36,12 @@ export default function LandingFooterTail({logo}: Props): JSX.Element {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={3} md={3}>
-          <Grid container direction="row" spacing={2} justify="flex-start">
+          <Grid
+            container
+            direction="row"
+            spacing={2}
+            justifyContent="flex-start"
+          >
             <Grid item>
               <Link
                 href="https://github.com/sentrei/sentrei"

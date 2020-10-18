@@ -2,7 +2,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import NotificationNoneStyles from "./NotificationNoneStyles";
@@ -18,7 +18,7 @@ export default function NotificationNone(): JSX.Element {
         alignItems="center"
         alignContent="center"
         direction="row"
-        justify="center"
+        justifyContent="center"
         spacing={3}
         className={classes.grid}
       >

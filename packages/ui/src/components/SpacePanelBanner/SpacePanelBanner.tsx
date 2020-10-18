@@ -5,7 +5,7 @@ import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import Space from "@sentrei/types/models/Space";
@@ -53,7 +53,7 @@ export default function SpacePanelBanner({
         <Grid
           container
           alignItems="center"
-          justify="flex-start"
+          justifyContent="flex-start"
           direction="column"
           spacing={1}
         >
@@ -66,15 +66,12 @@ export default function SpacePanelBanner({
               </Grid>
               <Grid item xs={1} />
               <Grid item xs={1}>
-                <MuiButtonBase
-                  href="/[namespaceId]/settings/billing"
-                  as={`${namespaceId}/settings/billing`}
-                >
+                <MuiButtonBase href={`${namespaceId}/settings/billing`}>
                   <Chip
                     clickable
                     color={tier === "free" ? "default" : "primary"}
                     label={t(`common:common.${tier}`)}
-                    variant={tier === "free" ? "outlined" : "default"}
+                    variant={tier === "free" ? "outlined" : "filled"}
                   />
                 </MuiButtonBase>
               </Grid>

@@ -31,7 +31,7 @@ const GridSettings = ({
 }: Props): JSX.Element => {
   return (
     <Container maxWidth="md">
-      <Grid container justify="center" direction="row" spacing={1}>
+      <Grid container justifyContent="center" direction="row" spacing={1}>
         <Grid item xs={12} sm={3} md={2}>
           {model === "room" && skeleton && tabRoomKey && (
             <GridSettingsRoomButton skeleton tabKey={tabRoomKey} />

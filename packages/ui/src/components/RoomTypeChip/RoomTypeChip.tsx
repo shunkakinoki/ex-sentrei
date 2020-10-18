@@ -2,7 +2,7 @@ import Chip from "@material-ui/core/Chip";
 import EventSeatIcon from "@material-ui/icons/EventSeat";
 import FlareIcon from "@material-ui/icons/Flare";
 import WorkIcon from "@material-ui/icons/Work";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import Room from "@sentrei/types/models/Room";

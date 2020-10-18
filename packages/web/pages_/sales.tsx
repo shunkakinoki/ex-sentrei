@@ -1,5 +1,5 @@
 import {NextPage} from "next";
-import Router from "next-translate/Router";
+import Router from "next/router";
 import * as React from "react";
 
 import AuthContext from "@sentrei/common/context/AuthContext";
@@ -12,7 +12,7 @@ const Sales: NextPage = () => {
   const {user} = React.useContext(AuthContext);
 
   if (user) {
-    Router.pushI18n(`/[namespaceId/sales`, `/${user.uid}/sales`);
+    Router.push(`/[namespaceId/sales`, `/${user.uid}/sales`);
   }
 
   return (

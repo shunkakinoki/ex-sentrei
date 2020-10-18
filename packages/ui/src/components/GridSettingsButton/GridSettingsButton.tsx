@@ -8,19 +8,15 @@ import GridSettingsButtonStyles from "./GridSettingsButtonStyles";
 
 interface MuiGridTabIconProps {
   href: string;
-  // eslint-disable-next-line react/require-default-props
-  as?: string;
 }
 
 interface Props extends MuiGridTabIconProps {
   children: string;
   selected: boolean;
-  // eslint-disable-next-line react/require-default-props
   skeleton?: boolean;
 }
 
 export default function GridTabIcon({
-  as,
   href,
   children,
   selected = false,
@@ -45,7 +41,6 @@ export default function GridTabIcon({
   return (
     <MuiButton
       href={href}
-      as={as}
       size="large"
       color={selected ? "primary" : "inherit"}
       className={clsx(classes.button, {

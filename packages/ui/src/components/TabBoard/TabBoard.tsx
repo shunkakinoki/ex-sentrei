@@ -54,7 +54,7 @@ const TabBoard = ({
 
   return (
     <Container maxWidth={size}>
-      <Grid container justify="center" direction="row" spacing={1}>
+      <Grid container justifyContent="center" direction="row" spacing={1}>
         <Tabs
           value={value}
           onChange={handleChange}

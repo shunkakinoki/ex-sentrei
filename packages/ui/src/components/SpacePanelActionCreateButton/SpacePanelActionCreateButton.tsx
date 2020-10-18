@@ -1,5 +1,5 @@
 import CreateIcon from "@material-ui/icons/Create";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import {FreeTier, ProTier} from "@sentrei/common/const/tiers";
@@ -62,8 +62,7 @@ export default function SpacePanelActionCreateButton({
 
   return (
     <MuiButton
-      href="/[namespaceId]/rooms/create"
-      as={`/${namespaceId}/rooms/create`}
+      href={`/${namespaceId}/rooms/create`}
       fullWidth
       color="primary"
       variant="contained"

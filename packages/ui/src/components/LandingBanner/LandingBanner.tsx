@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import {useRouter} from "next/router";
 import * as React from "react";
 
@@ -20,12 +20,14 @@ import BannerStyles from "./LandingBannerStyles";
 export default function LandingBanner(): JSX.Element {
   const classes = BannerStyles();
   const {snackbar} = useSnackbar();
-  const {t, lang} = useTranslation();
+  const {t} = useTranslation();
   const {push, query} = useRouter();
+  const router = useRouter();
+  const {locale} = router;
 
   const google = (): void => {
     snackbar("info", t("snackbar:snackbar.loading"));
-    signinWithGoogle(lang)
+    signinWithGoogle(locale)
       .then(() => {
         snackbar("dismiss");
         trackEvent("Signed In", {provider: "google"});
@@ -76,7 +78,7 @@ export default function LandingBanner(): JSX.Element {
         {t("index:banner.bannerTextThree")}
       </Typography>
       <Box py={1} />
-      <Grid container justify="center" direction="row" spacing={1}>
+      <Grid container justifyContent="center" direction="row" spacing={1}>
         <Grid item xs={12} md={6}>
           <div className={classes.item}>
             <MuiButton

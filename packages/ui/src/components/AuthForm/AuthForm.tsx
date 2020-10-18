@@ -5,9 +5,9 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 
-import Router from "next-translate/Router";
-import useTranslation from "next-translate/useTranslation";
-import {useRouter} from "next/router";
+import useTranslation from "next-locale/useTranslation";
+import Router, {useRouter} from "next/router";
+
 import * as React from "react";
 import {useForm, Controller} from "react-hook-form";
 
@@ -35,8 +35,10 @@ export default function AuthForm({type}: Props): JSX.Element {
   const classes = AuthFormStyles();
   const {backdrop} = useBackdrop();
   const {snackbar} = useSnackbar();
-  const {t, lang} = useTranslation();
+  const {t} = useTranslation();
   const {query} = useRouter();
+  const router = useRouter();
+  const {locale} = router;
 
   const AuthFormSchema = Yup.object().shape({
     email: Yup.string()
@@ -61,12 +63,12 @@ export default function AuthForm({type}: Props): JSX.Element {
 
   const google = (): void => {
     snackbar("info", t("snackbar:snackbar.loading"));
-    signinWithGoogle(lang)
+    signinWithGoogle(locale)
       .then(() => {
         snackbar("dismiss");
         trackEvent("Signed In", {provider: "google"});
         if (query.redirect) {
-          Router.pushI18n(String(query.redirect));
+          Router.push(String(query.redirect));
         }
       })
       .catch(err => snackbar("error", err.message));
@@ -90,12 +92,12 @@ export default function AuthForm({type}: Props): JSX.Element {
         break;
       case "login":
         try {
-          signin(data.email, data.password, lang)
+          signin(data.email, data.password, locale)
             .then(() => {
               backdrop("loading");
               trackEvent("Log In", {provider: "email"});
               if (query.redirect) {
-                Router.pushI18n(String(query.redirect));
+                Router.push(String(query.redirect));
               }
             })
             .catch(err => {
@@ -108,12 +110,12 @@ export default function AuthForm({type}: Props): JSX.Element {
         break;
       case "signup":
         try {
-          signup(data.email, data.password, lang)
+          signup(data.email, data.password, locale)
             .then(() => {
               backdrop("loading");
               trackEvent("Signed Up", {provider: "email"});
               if (query.redirect) {
-                Router.pushI18n(String(query.redirect));
+                Router.push(String(query.redirect));
               }
             })
             .catch(err => {

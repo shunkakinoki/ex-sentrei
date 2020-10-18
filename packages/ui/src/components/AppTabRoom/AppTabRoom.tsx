@@ -2,7 +2,7 @@ import Container from "@material-ui/core/Container";
 import Tabs from "@material-ui/core/Tabs";
 import SettingsIcon from "@material-ui/icons/Settings";
 import VideocamIcon from "@material-ui/icons/Videocam";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import React from "react";
 
 import {AppTabRoomKey} from "@sentrei/types/models/AppTab";
@@ -47,16 +47,14 @@ export default function AppTabRoom({
           scrollButtons="auto"
         >
           <AppTabIcon
-            href="/[namespaceId]/[nameroomId]"
-            as={`/${namespaceId}/${nameroomId}`}
+            href={`/${namespaceId}/${nameroomId}`}
             label={t("common:common.room")}
             labelIcon={<VideocamIcon />}
             selected={value === 0}
             skeleton={skeleton}
           />
           <AppTabIcon
-            href="/[namespaceId]/[nameroomId]/settings"
-            as={`/${namespaceId}/${nameroomId}/settings`}
+            href={`/${namespaceId}/${nameroomId}/settings`}
             label={t("common:common.settings")}
             labelIcon={<SettingsIcon />}
             selected={value === 1}

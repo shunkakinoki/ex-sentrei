@@ -9,7 +9,7 @@ const LandingOutlineStyles = makeStyles((theme: Theme) =>
     },
     typography: {
       color:
-        theme.palette.type === "light"
+        theme.palette.mode === "light"
           ? theme.palette.text.primary
           : theme.palette.text.secondary,
       position: "relative",

@@ -1,6 +1,6 @@
 import {NimblePicker, EmojiData} from "emoji-mart";
 import data from "emoji-mart/data/twitter.json";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 import useDarkMode from "use-dark-mode";
 

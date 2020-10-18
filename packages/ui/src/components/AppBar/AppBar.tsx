@@ -10,7 +10,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 import Skeleton from "@material-ui/lab/Skeleton";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import {trackEvent} from "@sentrei/common/utils/segment";
@@ -121,12 +121,6 @@ export default function AppBar({
               href={
                 (model === "space" && namespaceId) ||
                 (model === "room" && namespaceId)
-                  ? "/[namespaceId]"
-                  : "/dashboard"
-              }
-              as={
-                (model === "space" && namespaceId) ||
-                (model === "room" && namespaceId)
                   ? `/${namespaceId}`
                   : "/dashboard"
               }
@@ -135,12 +129,6 @@ export default function AppBar({
             </MuiButtonBase>
             <MuiButtonBase
               href={
-                (model === "space" && namespaceId) ||
-                (model === "room" && namespaceId)
-                  ? "/[namespaceId]"
-                  : "/dashboard"
-              }
-              as={
                 (model === "space" && namespaceId) ||
                 (model === "room" && namespaceId)
                   ? `/${namespaceId}`
@@ -156,10 +144,7 @@ export default function AppBar({
               )}
             </MuiButtonBase>
             {nameroomId && (
-              <MuiButtonBase
-                href="/[namespaceId]/[nameroomId]"
-                as={`/${namespaceId}/${nameroomId}`}
-              >
+              <MuiButtonBase href={`/${namespaceId}/${nameroomId}`}>
                 <Typography display="inline">{nameroomId}</Typography>
               </MuiButtonBase>
             )}
@@ -206,11 +191,6 @@ export default function AppBar({
             )}
             <MuiButton
               href={
-                namespaceId || profile?.namespaceId
-                  ? "/[namespaceId]/support"
-                  : "/support"
-              }
-              as={
                 namespaceId || profile?.namespaceId
                   ? `/${namespaceId ?? profile?.namespaceId}/support`
                   : "/support"

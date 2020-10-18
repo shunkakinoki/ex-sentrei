@@ -1,7 +1,7 @@
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-locale/useTranslation";
 import * as React from "react";
 
 import MuiButton from "@sentrei/ui/components/MuiButton";
@@ -27,8 +27,7 @@ export default function RoomNone({namespaceId}: Props): JSX.Element {
         <Box p={3} />
         <MuiButton
           fullWidth
-          href="/[namespaceId]/rooms/create"
-          as={`/${namespaceId}/rooms/create`}
+          href={`/${namespaceId}/rooms/create`}
           variant="outlined"
           color="primary"
         >
